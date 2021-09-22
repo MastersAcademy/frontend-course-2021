@@ -1,0 +1,26 @@
+name: Awesome Linter
+
+on: pull_request
+
+jobs:
+  lint-js:
+    name: Lint JS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.18.4
+      - run: npm install --production
+      - run: npm run lint:js
+
+  lint-css:
+    name: Lint CSS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.18.4
+      - run: npm install --production
+      - run: npm run lint:css
