@@ -4,24 +4,26 @@
     "description": "Репозиторій з курсу «Advanced Front-end» проекту Masters Academy",
     "scripts": {
         "lint": "lint-staged",
-        "lint:all": "npm run lint:css && npm run lint:js",
+        "lint:all": "npm run lint:branch-name && npm run lint:css && npm run lint:js",
         "lint:js": "eslint --config .eslintrc.js ./homeworks/**/*.js",
         "lint:css": "stylelint --config .stylelintrc ./homeworks/**/*.{css,scss}",
+        "lint:branch-name": "branch-name-lint ./.branchlintrc.json",
         "prepare": "husky install"
     },
     "dependencies": {
+        "faker": "^5.5.3"
+    },
+    "devDependencies": {
         "@types/faker": "^5.5.8",
+        "branch-name-lint": "^2.1.1",
         "eslint": "^7.32.0",
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-plugin-html": "^6.2.0",
         "eslint-plugin-import": "^2.24.2",
         "eslint-plugin-no-jquery": "^2.6.0",
-        "faker": "^5.5.3",
-        "stylelint": "^13.13.1"
-    },
-    "devDependencies": {
         "husky": "^7.0.2",
-        "lint-staged": "^11.1.2"
+        "lint-staged": "^11.1.2",
+        "stylelint": "^13.13.1"
     },
     "author": "DrSmile444 <dmytro.vakulenko@masterofcode.com>",
     "license": "MIT",
