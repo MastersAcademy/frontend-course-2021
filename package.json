@@ -5,9 +5,9 @@
     "scripts": {
         "lint": "lint-staged",
         "lint:all": "npm run lint:branch-name && npm run lint:css && npm run lint:js",
-        "lint:js": "eslint --config .eslintrc.js ./homeworks/**/*.js",
-        "lint:css": "stylelint --config .stylelintrc ./homeworks/**/*.{css,scss}",
-        "lint:branch-name": "branch-name-lint ./.branchlintrc.json",
+        "lint:js": "npx eslint --config .eslintrc.js ./homeworks/**/*.js",
+        "lint:css": "npx stylelint --config .stylelintrc ./homeworks/**/*.{css,scss}",
+        "lint:branch-name": "npx branch-name-lint ./.branchlintrc.json",
         "prepare": "husky install"
     },
     "dependencies": {
