@@ -1,0 +1,17 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "\033[0;33m"
+echo "***************************************************"
+echo ""
+echo "We use branch-name-lint."
+echo "To push a branch, be sure you have homework number, dash, and description split by underscore. Example branch name:"
+echo ""
+echo "  * 1-basics"
+echo "  * 2-js_dom"
+echo "  * 3-promises_async_await"
+echo ""
+echo "***************************************************"
+echo "\033[0m"
+
+npm run lint:branch-name
