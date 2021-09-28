@@ -4,13 +4,14 @@
     "description": "Репозиторій з курсу «Advanced Front-end» проекту Masters Academy",
     "scripts": {
         "lint": "lint-staged",
-        "lint:all": "npm run lint:css && npm run lint:js",
-        "lint:js": "eslint --config .eslintrc.js ./homeworks/**/*.js",
-        "lint:css": "stylelint --config .stylelintrc ./homeworks/**/*.{css,scss}",
+        "lint:all": "npm run lint:branch-name && npm run lint:css && npm run lint:js",
+        "lint:js": "npx eslint --config .eslintrc.js ./homeworks/**/*.js",
+        "lint:css": "npx stylelint --config .stylelintrc ./homeworks/**/*.{css,scss}",
+        "lint:branch-name": "npx branch-name-lint ./.branchlintrc.json",
         "prepare": "husky install"
     },
     "dependencies": {
-        "@types/faker": "^5.5.8",
+        "branch-name-lint": "^2.1.1",
         "eslint": "^7.32.0",
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-plugin-html": "^6.2.0",
@@ -20,6 +21,7 @@
         "stylelint": "^13.13.1"
     },
     "devDependencies": {
+        "@types/faker": "^5.5.8",
         "husky": "^7.0.2",
         "lint-staged": "^11.1.2"
     },
