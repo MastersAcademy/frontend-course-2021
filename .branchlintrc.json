@@ -22,6 +22,6 @@
         "regexOptions": "i",
         "separator": "",
         "msgDoesNotMatchRegex": "Branch \"%s\" does not match the allowed pattern: \"%s\"",
-        "msgBranchDisallowed": "Pushing to \"%s\" is not allowed, use the .\n\nExample:\n* feature/TIC-20_branch_name\n\n"
+        "msgBranchDisallowed": "Pushing to \"%s\" is not allowed, use homework pattern.\n\nExample:\n* 1-basics\n* 2-js_dom\n\n"
     }
 }
