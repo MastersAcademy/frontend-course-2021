@@ -25,7 +25,7 @@ jobs:
       - run: npm install --production
       - run: npm run lint:css
 
-  lint-css:
+  lint-branch-name:
     name: Lint Branch Name
     runs-on: ubuntu-latest
     steps:
