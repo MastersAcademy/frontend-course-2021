@@ -1,6 +1,6 @@
-Version of a node - v10.19.0 ,
+Version of a node - v17.0.0 ,
 Path to a node - /usr/bin/node , 
-Version of a npm - 6.14.4 .
+Version of a npm - 8.1.0 .
  
 
 
