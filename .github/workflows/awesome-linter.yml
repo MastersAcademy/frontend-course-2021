@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 12.18.4
+          node-version: 14.18.1
       - run: npm install --production
       - run: npm run lint:js
 
@@ -21,6 +21,17 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 12.18.4
+          node-version: 14.18.1
       - run: npm install --production
       - run: npm run lint:css
+
+  lint-css:
+    name: Lint Branch Name
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.18.1
+      - run: npm install --production
+      - run: npm run lint:branch-name
