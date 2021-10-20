@@ -1,0 +1,3 @@
+- node -v [v14.18.1]
+- pwd [/Users/roman/Desktop/Github/frontend-course-2021]
+- npm -v [6.14.15]
