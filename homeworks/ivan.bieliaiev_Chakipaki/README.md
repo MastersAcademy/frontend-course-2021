@@ -1,3 +1,3 @@
 - node v14.18.1
 - /Users/ivanbelyaeve/.nvm/versions/node/v14.18.1/bin/node
-- npm 6.14.15
+- npm v6.14.15
