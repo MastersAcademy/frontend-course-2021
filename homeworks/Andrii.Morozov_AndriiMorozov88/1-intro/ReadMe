@@ -1,0 +1,3 @@
+node -v v12.22.5
+which node /usr/bin/node
+npm -v 7.5.2
