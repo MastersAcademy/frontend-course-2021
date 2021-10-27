@@ -1,0 +1,56 @@
+.main {
+  max-width: 300px;
+  height: auto;
+  background: #70A8BD;
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+
+.main-window {
+  padding: 10px;
+  height: 450px;
+  background: #FFF;
+  margin: 10px;
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
+
+.main-message {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.main-button {
+  width: 60px;
+  height: 20px;
+  background: #FFF;
+  border: 2px solid #000;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.main-input {
+  width: 140px;
+}
+
+
+.main-new-message {
+  margin: 10px auto 0;
+  background: #C0E2EE;
+  border: 2px solid #000;
+  border-radius: 4px;
+  min-height: 40px;
+  max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-new-button-delete {
+  margin-bottom: 10px;
+  width: 25px;
+  height: 25px;
+  background: #F00;
+}
