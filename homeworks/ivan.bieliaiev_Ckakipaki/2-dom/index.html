@@ -4,34 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <header class="header">
-         <h1 class="header_title">
-             Chat Emulator
-         </h1>
+        <h1>
+            Chat Emulator
+        </h1>
     </header>
     <main class="chat">
-        <container class="messeges">
+        <div class="messeges">
             <div class="messege__item mes__item1">
-                <p class="messege__text">Hello</p>
-                <a href="#" class="delete__messege">&#10005</a>
+                <p class="messege__text">
+                    Hello
+                    <a href="#" class="delete__button delete__button1">del</a>
+                </p>
             </div>
-            <div class="messege__item mes__item1">
-                <p class="messege__text">How are you?</p>
-                <a href="#" class="delete__messege">&#10005</a>
+            <div class="messege__item mes__item2">
+                <p class="messege__text">
+                    How are you?
+                    <a href="#" class="delete__button delete__button2">del</a>
+                </p>
             </div>
-        </container>
-        <contsiner class="inputs">
+        </div>
+        <div class="inputs">
             <form action="get" class="send">
-                <input type="button" value="Send">
-                <input type="textArea" class="text">
+                <input type="textArea" class="input__text">
+                <input type="button" value="Send" class="input__button">
             </form>
-        </contsiner>
+        </div>
     </main>
-    <footer class="footer">
-        Work: Ivan Bieliaiev
-    </footer>
+    <!-- <script src="app.js"></script> -->
 </body>
 </html>
