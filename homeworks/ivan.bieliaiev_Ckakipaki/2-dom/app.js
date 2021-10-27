@@ -3,7 +3,7 @@ const messeges = document.querySelector('.messeges');
 
 let amountOfMesseges = (document.querySelectorAll('.messege__item')).length;
 
-function createMessege(){
+function createMessege() {
     let div = document.createElement('div');
     div.classList = `messege__item mes__item${amountOfMesseges + 1}`;
     let p = document.createElement('p');
@@ -19,22 +19,22 @@ function createMessege(){
     amountOfMesseges++;
 }
 // For click (adding and removing messeges)
-document.addEventListener('click', function(e){
-    console.log(e.target.classList[0])
-    if(e.target.classList[0] === 'delete__button'){
-        let tar = document.querySelector(`.${e.target.classList[1]}`);
-        messeges.removeChild(tar.parentElement)
-    } else if (e.target.classList[0] === 'input__button'){
-        if(inputText.value.length > 0) {
-            createMessege()
+document.addEventListener('click', function(e) {
+        console.log(e.target.classList[0])
+        if (e.target.classList[0] === 'delete__button') {
+            let tar = document.querySelector(`.${e.target.classList[1]}`);
+            messeges.removeChild(tar.parentElement)
+        } else if (e.target.classList[0] === 'input__button') {
+            if (inputText.value.length > 0) {
+                createMessege()
+            }
         }
-    }
-    
-})
-// For Enter key
-document.addEventListener('keypress', function(e){
-    if(e.key === 'Enter'){
-        if(inputText.value.length > 0) {
+
+    })
+    // For Enter key
+document.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        if (inputText.value.length > 0) {
             createMessege();
         }
     }

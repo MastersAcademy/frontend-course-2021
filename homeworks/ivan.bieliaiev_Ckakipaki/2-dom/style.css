@@ -1,19 +1,21 @@
 * {
-    margin:  0;
-    padding:  0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-a, a:hover {
+
+a,
+a:hover {
     color: black;
     text-decoration: none;
 }
+
 
 /* body {
     margin: 20px auto;
     max-width: 1200px;
     border: 3px solid black;
 } */
-
 
 .chat {
     width: 100%;
@@ -73,6 +75,7 @@ a, a:hover {
 .input__text:focus {
     background: coral;
 }
+
 .input__button {
     margin: 20px 0 0 0;
     line-height: 1.5;
