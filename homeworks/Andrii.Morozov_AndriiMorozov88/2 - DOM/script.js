@@ -5,11 +5,11 @@ function sendMessage() {
     mainChat.append(chatMessage);
     chatMessage.className = 'chatMessage';
     chatMessage.innerText = result;
-    chatMessage.style.width = 40 + 20*result.length + 'px';
-    document.querySelector('input[type=text]').value = ""}
+    chatMessage.style.width = 40 + 20 * result.length + 'px';
+    document.querySelector('input[type=text]').value = ''  };
 const mainChat = document.querySelector('.chatBody');
 document.querySelector('#btn').onclick = sendMessage;
-document.onkeydown = function( e )  {
+document.onkeydown = function(e)  {
     if ( e.keyCode === 13)  {
         sendMessage()       };
     };
