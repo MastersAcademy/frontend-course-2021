@@ -1,5 +1,5 @@
 const button = document.querySelector('[data-button]');
-const input = document.querySelector('[data-input]');
+const textarea = document.querySelector('[data-textarea]');
 const scroll = document.querySelector('.main-window');
 const message = document.querySelector('[data-window-message]');
 
@@ -8,14 +8,16 @@ let data = '';
 let index = 1;
 
 function updateValue(e) {
-    data = e.target.value;
+    if (e.data) {
+        data += e.data;
+    }
 }
 
 const crateAndDeleteMessage = () => {
     if (data.length) {
         message.insertAdjacentHTML('beforeend', `<div class="main-new-message"><p class="main-new-text">${data}</p><button class="main-new-button-delete" data-columns=${index++}>X</button></div>`);
         data = '';
-        input.value = '';
+        textarea.value = '';
         buttonSend = document.querySelectorAll('[data-columns]');
         for (let i = 0; i < buttonSend.length; i++) {
             // eslint-disable-next-line no-loop-func
@@ -28,8 +30,14 @@ const crateAndDeleteMessage = () => {
     return null;
 };
 
-input.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
+textarea.addEventListener('keypress', (e) => {
+    if (e.shiftKey && e.key === 'Enter') {
+        data += '<br>';
+    }
+});
+
+textarea.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
         crateAndDeleteMessage();
     }
 });
@@ -38,4 +46,4 @@ button.addEventListener('click', () => {
     crateAndDeleteMessage();
 });
 
-input.addEventListener('input', updateValue);
+textarea.addEventListener('input', updateValue);
