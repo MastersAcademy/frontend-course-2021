@@ -21,19 +21,19 @@ function createMessege() {
 // For click (adding and removing messeges)
 document.addEventListener('click', (e) => {
     if (e.target.classList[0] === 'delete__button') {
-        let tar = document.querySelector(`.${e.target.classList[1]}`);
-        messeges.removeChild(tar.parentElement)
+        const tar = document.querySelector(`.${e.target.classList[1]}`);
+        messeges.removeChild(tar.parentElement);
     } else if (e.target.classList[0] === 'input__button') {
         if (inputText.value.length > 0) {
-            createMessege()
+            createMessege();
         }
     }
-})
+});
 // For Enter key
-document.addEventListener('keypress', function(e) {
+document.addEventListener('keypress',(e) => {
     if (e.key === 'Enter') {
         if (inputText.value.length > 0) {
             createMessege();
         }
     }
-})
+});
