@@ -1,79 +1,80 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+    margin:  0;
+    padding:  0;
     box-sizing: border-box;
 }
-a, a:hover{
+a, a:hover {
     color: black;
     text-decoration: none;
 }
 
-body{
+/* body {
     margin: 20px auto;
     max-width: 1200px;
     border: 3px solid black;
-}
+} */
 
-.header{
-    text-align: center;
-    font-size: 30px;
-    border-bottom: 3px solid black;
-    line-height: 1.7;
-}
 
-.chat{
+.chat {
     width: 100%;
-}
-
-.messeges{
+    max-width: 1200px;
+    border: 3px solid black;
     height: 100%;
-    min-height: 300px;
-    margin: 0 auto;
-    max-width: 900px;
+    min-height: 500px;
+    margin: 30px auto;
 }
 
-.messege__item{
+.messeges {
+    height: 100%;
+    width: 100%;
+    min-height: 300px;
+    border-bottom: 2px solid black;
+}
+
+.messege__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 20px auto;
     border: 1.5px solid black;
     border-radius: 20px;
     padding: 10px 20px;
-    margin: 20px 0 20px 0;
 }
 
-.messege__text{
-    position: relative;
+.messege__text {
     font-size: 20px;
-    z-index: 0;
 }
 
-.delete__button{
-    position: absolute;
-    right: 2px;
-    top: 2px;
+.delete__button {
+    font-size: 25px;
     transition: color 0.1s linear;
-    z-index: 1;
 }
 
-.delete__button:hover{
+.delete__button:hover {
     color: coral;
     cursor: pointer;
 }
 
-.inputs{
-    border-top: 2px solid black;
+.inputs {
     width: 100%;
-    margin: 0 auto;
     padding: 40px 60px;
 }
 
-.input__text{
+.input__text {
     height: 50px;
     width: 150px;
     border: 1px solid black;
     margin: 0 40px 0 0;
     border-radius: 20px;
+    transition: all .1s linear;
 }
 
-.input__button{
+.input__text:focus {
+    background: coral;
+}
+.input__button {
+    margin: 20px 0 0 0;
     line-height: 1.5;
     font-size: 20px;
     height: 40px;
