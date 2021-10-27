@@ -55,13 +55,14 @@ body{
 
 .delete__button:hover{
     color: coral;
+    cursor: pointer;
 }
 
 .inputs{
     border-top: 2px solid black;
     width: 100%;
     margin: 0 auto;
-    padding: 40px 60px 40px 60px ;
+    padding: 40px 60px;
 }
 
 .input__text{
