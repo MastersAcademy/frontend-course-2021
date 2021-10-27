@@ -1,78 +1,78 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a,
 a:hover {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .chat {
-    width: 100%;
-    max-width: 1200px;
-    border: 3px solid black;
-    height: 100%;
-    min-height: 500px;
-    margin: 30px auto;
+  width: 100%;
+  max-width: 1200px;
+  border: 3px solid black;
+  height: 100%;
+  min-height: 500px;
+  margin: 30px auto;
 }
 
 .messeges {
-    height: 100%;
-    width: 100%;
-    min-height: 300px;
-    border-bottom: 2px solid black;
+  height: 100%;
+  width: 100%;
+  min-height: 300px;
+  border-bottom: 2px solid black;
 }
 
 .messege__item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 900px;
-    margin: 20px auto;
-    border: 1.5px solid black;
-    border-radius: 20px;
-    padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 20px auto;
+  border: 1.5px solid black;
+  border-radius: 20px;
+  padding: 10px 20px;
 }
 
 .messege__text {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .delete__button {
-    font-size: 25px;
-    transition: color 0.1s linear;
+  font-size: 25px;
+  transition: color 0.1s linear;
 }
 
 .delete__button:hover {
-    color: coral;
-    cursor: pointer;
+  color: coral;
+  cursor: pointer;
 }
 
 .inputs {
-    width: 100%;
-    padding: 40px 60px;
+  width: 100%;
+  padding: 40px 60px;
 }
 
 .input__text {
-    height: 50px;
-    width: 150px;
-    border: 1px solid black;
-    margin: 0 40px 0 0;
-    border-radius: 20px;
-    transition: all .1s linear;
+  height: 50px;
+  width: 150px;
+  border: 1px solid black;
+  margin: 0 40px 0 0;
+  border-radius: 20px;
+  transition: all .1s linear;
 }
 
 .input__text:focus {
-    background: coral;
+  background: coral;
 }
 
 .input__button {
-    margin: 20px 0 0 0;
-    line-height: 1.5;
-    font-size: 20px;
-    height: 40px;
-    width: 100px;
+  margin: 20px 0 0 0;
+  line-height: 1.5;
+  font-size: 20px;
+  height: 40px;
+  width: 100px;
 }
