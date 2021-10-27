@@ -33,4 +33,4 @@ jobs:
       - uses: lekterable/branchlint-action@v1.0.0
         with:
           allowed: |
-            /^[0-9]+-(?:[\\d\\w]){3,70}/i
+            /^[0-9]+-(?:[\d\w]){3,70}/i
