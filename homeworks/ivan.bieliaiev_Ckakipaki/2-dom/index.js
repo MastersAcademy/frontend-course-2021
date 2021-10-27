@@ -30,7 +30,7 @@ document.addEventListener('click', (e) => {
     }
 });
 // For Enter key
-document.addEventListener('keypress',(e) => {
+document.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         if (inputText.value.length > 0) {
             createMessege();
