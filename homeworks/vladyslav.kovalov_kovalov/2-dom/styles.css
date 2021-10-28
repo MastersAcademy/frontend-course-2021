@@ -85,7 +85,7 @@ body {
   position: absolute;
 }
 
-.message:hover > .message__button {
+.message:hover  .message__button {
   visibility: visible;
 }
 
