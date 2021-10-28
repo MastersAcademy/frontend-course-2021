@@ -1,0 +1,66 @@
+.container {
+    display: block;
+    height: 800px;
+    width: 500px;
+    border: solid 2px grey;    
+    margin: auto;
+
+}
+
+.main {
+    display: block;    
+    height: 600px;
+    width: auto;
+    overflow: auto;
+    background-image: url(cat_space.jpg);
+}
+
+.footer {
+    display: block;
+    height: 200px;
+    width: 500px;
+    background-color:whitesmoke;
+    }
+
+.message {
+    display: block;
+    height: 100;
+    width: auto;
+    margin: 20px;    
+    color: black;
+    background-color: yellowgreen;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    border: solid 1px grey;
+    border-radius: 10px;
+    text-align: left;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.input {
+    display: inline-block;
+    margin: 5px;
+    height: 50px;
+    width: 373px;
+    text-align: left;
+    background-color:whitesmoke;
+    border: none;
+    cursor: text;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.send {
+    display: inline-block;
+    margin: 5px 5px 5px 0px;
+    height: 56px;
+    width: 100px;
+    text-align: center;    
+    background-color: whitesmoke;   
+    border: none;
+    color: black;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 20px;
+}
