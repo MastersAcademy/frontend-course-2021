@@ -16,7 +16,15 @@
             <div class="chat">
                 <div class="chat__body" data-chat>
                     <div class="dialogue" data-dialogue></div>
-                    <template data-chat-template></template>
+                    <template data-chat-template>
+                        <span class="message" data-dialogue-message>
+                            <span class="message__text"
+                            data-message-text></span>
+                            <button class="message__button" data-messsage-button>
+                                <i class="message__icon fas fa-times" data-message-button-icon aria-hidden="true">
+                                </i></button>
+                            </span>
+                    </template>
                 </div>
                 <div class="chat__footer">
                     <form class="message-form" data-message-form>
