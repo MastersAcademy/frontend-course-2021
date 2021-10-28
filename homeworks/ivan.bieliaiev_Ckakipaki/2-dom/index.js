@@ -3,15 +3,6 @@ const messeges = document.querySelector('.messeges');
 
 let amountOfMesseges = (document.querySelectorAll('.messege__item')).length;
 
-inputText.onfocus  = () => {
-    inputText.addEventListener('keydown', (e) => {
-        const keyCode = e.which || e.keyCode;
-        if (keyCode === 13 && !e.shiftKey) {
-            e.preventDefault();
-        }
-    });
-}
-
 function createMessege() {
     if (inputText.value.length > 0) {
         const div = document.createElement('div');
@@ -26,7 +17,7 @@ function createMessege() {
         div.appendChild(a);
         messeges.appendChild(div);
         inputText.value = '';
-        amountOfMesseges++; 
+        amountOfMesseges++;
     }
 }
 // For click (adding and removing messeges)
