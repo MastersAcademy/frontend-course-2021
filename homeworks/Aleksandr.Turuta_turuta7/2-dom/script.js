@@ -1,49 +1,50 @@
-const button = document.querySelector('[data-button]');
-const textarea = document.querySelector('[data-textarea]');
-const scroll = document.querySelector('.main-window');
-const message = document.querySelector('[data-window-message]');
+const buttonEl = document.querySelector('[data-message-send]');
+const textareaEl = document.querySelector('[data-message-field]');
+const scrollEl = document.querySelector('[data-main-window]');
+const messageEl = document.querySelector('[data-window-message]');
 
-let buttonSend;
+const templateEl = document.querySelector('#template');
+const returnTextContent = templateEl.content.querySelector('[data-text-message]');
+const returnDiv = templateEl.content.querySelector('[data-new-message]');
+
 let data = '';
 let index = 1;
 
-function updateValue(e) {
-    if (e.data) {
-        data += e.data;
-    }
-}
-
-const crateAndDeleteMessage = () => {
-    if (data.length) {
-        message.insertAdjacentHTML('beforeend', `<div class="main-new-message"><p class="main-new-text">${data}</p><button class="main-new-button-delete" data-columns=${index++}>X</button></div>`);
-        data = '';
-        textarea.value = '';
-        buttonSend = document.querySelectorAll('[data-columns]');
-        for (let i = 0; i < buttonSend.length; i++) {
-            // eslint-disable-next-line no-loop-func
-            buttonSend[i].addEventListener('click', () => {
-                buttonSend[i].parentNode.remove(buttonSend[i].dataset.columns);
-            });
-        }
-        scroll.scrollTop = scroll.scrollHeight;
-    }
-    return null;
+const addDataValue = (e) => {
+    data = e.target.value;
 };
 
-textarea.addEventListener('keypress', (e) => {
-    if (e.shiftKey && e.key === 'Enter') {
-        data += '<br>';
-    }
-});
+const createMessage = () => {
+    if (!data.length) return;
+    returnTextContent.textContent = data;
+    returnDiv.id = index++;
+    messageEl.append(templateEl.content.cloneNode(true));
+    data = '';
+    textareaEl.value = '';
+    scrollEl.scrollTop = scrollEl.scrollHeight;
+};
 
-textarea.addEventListener('keypress', (e) => {
+const deleteMessage = () => {
+    const message2 = document.querySelectorAll('.main-new-message');
+    const buttonDEl = document.querySelectorAll('.main-new-button-delete');
+    for (let i = 0; i < message2.length; i++) {
+        buttonDEl[i].addEventListener('click', () => {
+            message2[i].remove(message2[i].id);
+        });
+    }
+};
+
+textareaEl.addEventListener('keypress', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
-        crateAndDeleteMessage();
+        e.preventDefault();
+        createMessage();
+        deleteMessage();
     }
 });
 
-button.addEventListener('click', () => {
-    crateAndDeleteMessage();
+buttonEl.addEventListener('click', () => {
+    createMessage();
+    deleteMessage();
 });
 
-textarea.addEventListener('input', updateValue);
+textareaEl.addEventListener('input', addDataValue);

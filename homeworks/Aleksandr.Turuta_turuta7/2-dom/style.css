@@ -6,16 +6,15 @@
   border-radius: 10px;
 }
 
-.main-window {
+.main__window {
   padding: 10px;
   height: 450px;
   background: #FFF;
   margin: 10px;
-  word-wrap: break-word;
   overflow-y: scroll;
 }
 
-.main-message {
+.main__message {
   margin-top: 10px;
   margin-bottom: 10px;
   display: flex;
@@ -23,21 +22,33 @@
   flex-wrap: wrap;
 }
 
-.main-button {
+.main__button {
   width: 60px;
   height: 20px;
   background: #FFF;
   border: 2px solid #000;
   border-radius: 5px;
   text-align: center;
+  transition: .5s;
 }
 
-.main-textarea {
+.main__button:hover {
+  background: #AEEB91;
+  transform: scale(1.2);
+}
+
+.main__textarea {
   width: 140px;
 }
 
+.template__text {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  width: 85%;
+}
 
-.main-new-message {
+.template__message {
+  height: auto;
   margin: 10px auto 0;
   background: #C0E2EE;
   border: 2px solid #000;
@@ -48,9 +59,10 @@
   justify-content: space-between;
 }
 
-.main-new-button-delete {
+.template__button-delete {
   margin-bottom: 10px;
   width: 25px;
   height: 25px;
   background: #F00;
+  border-radius: 15px;
 }
