@@ -125,7 +125,7 @@ body {
   color: #A5B1C2;
 }
 
-.message-form__button:hover > .message-form__icon {
+.message-form__button:hover  .message-form__icon {
   color: #45AAF2;
   transition: color .5s ease-in-out;
 }
