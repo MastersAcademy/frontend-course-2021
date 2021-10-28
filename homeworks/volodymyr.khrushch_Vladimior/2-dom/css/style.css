@@ -1,5 +1,5 @@
 body {
-  background-color: #fef6e4;
+  background-color: #Fef6e4;
 }
 
 .content {
@@ -39,7 +39,7 @@ body {
   padding: 15px;
   list-style: none;
   border-radius: 25px;
-  background-color: #f3d2c1;
+  background-color: #F3d2c1;
   -webkit-box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
   -moz-box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
   box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
@@ -55,7 +55,7 @@ body {
   width: 90px;
   border: 3px solid rgba(120, 212, 255, 0.548);
   border-radius: 5px;
-  background-color: #f3d2c1;
+  background-color: #F3d2c1;
 }
 
 .inputMessage {
@@ -66,7 +66,7 @@ body {
 }
 
 .addBtn:hover {
-  background-color: #f582ae;
+  background-color: #F582ae;
   -webkit-box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
   -moz-box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
   box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
