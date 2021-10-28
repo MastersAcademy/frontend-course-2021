@@ -33,5 +33,5 @@ input.addEventListener('keydown', (event) => {
     if (event.code === 'Enter' && !event.shiftKey) {
         event.preventDefault();
         button.click();
-    } 
+    }
 });
