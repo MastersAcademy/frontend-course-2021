@@ -6,18 +6,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="wrapper">
-    <div class="message">
-        <template id="tmpl">
-            <div class="text">
-                <p class="content"></p>
+<div class="main_wrapper">
+    <div class="modal_wrapper" data-message-wrapper>
+        <template data-template>
+            <div class="text-container">
+                <p class="text" data-message></p>
             </div>
         </template>
     </div>
-    <div class="send_message">
-        <textarea class="write_message" id="myTextArea" type="text" placeholder="Повідомлення..."></textarea>
-        <button class="send" type="button">Відправити</button>
-    </div>
+    <form class="send_message" data-form-send>
+        <input class="written_text" type="text" placeholder="Повідомлення..." data-writen-text>
+        <button class="button_send" type="submit">Відправити</button>
+    </form>
 </div>
 <script src="script/script.js"></script>
 </body>
