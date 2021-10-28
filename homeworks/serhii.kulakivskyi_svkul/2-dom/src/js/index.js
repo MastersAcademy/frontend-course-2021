@@ -13,20 +13,20 @@
 
         initLayout() {
             const mainLayout = document.createElement('div');
-            mainLayout.className = 'ma__chat-wrapper';
+            mainLayout.className = 'chat__wrapper';
 
             const messagesWrapper = document.createElement('div');
-            messagesWrapper.className = 'ma__chat-messages';
+            messagesWrapper.className = 'chat__messages';
 
             const controlsWrapper = document.createElement('div');
-            controlsWrapper.className = 'ma__chat-controls';
+            controlsWrapper.className = 'controls';
 
             const textarea = document.createElement('textarea');
-            textarea.className = 'ma__chat-textarea';
+            textarea.className = 'controls__textarea';
             textarea.placeholder = 'Type something here...';
 
             const submitButton = document.createElement('button');
-            submitButton.className = 'ma__chat-button';
+            submitButton.className = 'controls__button';
             submitButton.type = 'button';
             submitButton.textContent = 'Send';
 
@@ -55,7 +55,7 @@
 
             this.messagesWrapper.addEventListener('click', (e) => {
                 const isSvg = e.target.closest('svg');
-                const message = e.target.closest('.ma__chat-message');
+                const message = e.target.closest('[data-chat-message]');
 
                 if (message && isSvg) {
                     this.messagesWrapper.removeChild(message);
@@ -65,7 +65,8 @@
 
         messageLayout(str) {
             const message = document.createElement('div');
-            message.className = 'ma__chat-message';
+            message.className = 'chat__message';
+            message.dataset.chatMessage = '';
 
             const messageText = document.createElement('p');
             messageText.innerText = str;

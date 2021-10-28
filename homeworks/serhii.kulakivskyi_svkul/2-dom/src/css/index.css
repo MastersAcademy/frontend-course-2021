@@ -1,10 +1,10 @@
-.ma__chat-wrapper {
+.chat__wrapper {
   max-width: 350px;
   border: 1px solid;
   border-radius: 4px;
 }
 
-.ma__chat-messages {
+.chat__messages {
   height: 300px;
   padding: 1rem;
   border-bottom: 1px solid;
@@ -12,7 +12,7 @@
   overflow-y: auto;
 }
 
-.ma__chat-message {
+.chat__message {
   position: relative;
   margin-bottom: 1rem;
   padding: 5px;
@@ -20,7 +20,7 @@
   user-select: none;
 }
 
-.ma__chat-message button {
+.chat__message button {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -31,21 +31,21 @@
   z-index: 1;
 }
 
-.ma__chat-message p {
+.chat__message p {
   margin: 0;
 }
 
-.ma__chat-controls {
+.controls {
   padding: 1rem;
   display: flex;
   align-items: flex-start;
 }
 
-.ma__chat-textarea {
+.controls__textarea {
   flex: 1;
 }
 
-.ma__chat-button {
+.controls__button {
   margin-left: 1rem;
   padding: .5rem 1.5rem;
   background-color: transparent;
