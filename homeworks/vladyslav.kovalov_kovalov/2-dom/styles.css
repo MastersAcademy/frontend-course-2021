@@ -59,19 +59,21 @@ body {
 }
 
 .message:last-of-type {
+  margin-bottom: 0;
   animation-name: slideIn;
   animation-duration: .5s;
   animation-timing-function: ease-in-out;
-  margin-bottom: 0;
 }
 
 @keyframes slideIn {
 
   from {
+    margin-bottom: -2rem;
     right: -100px;
   }
 
   to {
+    margin-bottom: 0;
     right: 10px;
   }
 }
