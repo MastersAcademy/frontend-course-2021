@@ -3,7 +3,7 @@ const button = document.querySelector('[data-btn]');
 const input = document.querySelector('[data-input]');
 const close = document.getElementsByClassName('close');
 // create the element received from the input field and the delete element
-button.addEventListener("click", function newElement() {
+button.addEventListener('click', function newElement() {
     const li = document.createElement('li');
     li.classList.add('message');
     const inputValue = document.querySelector('[data-input]').value.replace(/\n/g, '<br />');
@@ -26,7 +26,7 @@ button.addEventListener("click", function newElement() {
             const delet = this.parentElement;
             delet.style.display = 'none';
         };
-    };
+    }
 });
 // send by pressing the enter, and the transition is the shift enter
 input.addEventListener('keydown', (event) => {
