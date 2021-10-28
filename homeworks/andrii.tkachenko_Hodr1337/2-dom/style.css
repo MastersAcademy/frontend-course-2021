@@ -4,7 +4,7 @@
 }
 
 html, body {
-  background: #eee;
+  background: #EEE;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -18,7 +18,7 @@ main {
   font-family: Helvetica, Arial, Sans, sans-serif;
 }
 
-h1{
+h1 {
   margin: 0;
   padding: 10px 0;
   font-size: 32px;
@@ -27,8 +27,8 @@ h1{
 
 .chat {
   min-height: 200px;
-  content: '';
-  background: white;
+  content: "";
+  background: #FFF;
   padding: 5px 10px;
 }
 
@@ -36,7 +36,7 @@ h1{
 input, button {
   width: 100%;
   font: inherit;
-  background: #fff;
+  background: #FFF;
   border: none;
   margin-top: 10px;
   padding: 5px 10px;
@@ -44,28 +44,31 @@ input, button {
 
 button:hover {
   cursor: pointer;
-  background: #ddd;
+  background: #DDD;
 }
 
 @media all and (min-width: 500px) {
+
   .chat {
     height: calc(100% - 160px);
   }
+
   input {
     width: calc(100% - 160px);
   }
+
   button {
     float: right;
     width: 150px;
   }
 }
+
 .created-message {
   width: 475px;
   height: auto;
-  word-wrap: break-word;  
-  background-color: #f0f2f5;  
-  border-radius: 5px;  
-  margin-top: 5px; 
+  word-wrap: break-word;
+  background-color: #F0F2F5;
+  border-radius: 5px;
+  margin-top: 5px;
   padding: 5px;
 }
-  
