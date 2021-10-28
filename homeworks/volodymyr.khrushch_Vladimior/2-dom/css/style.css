@@ -16,9 +16,9 @@ body {
   overflow: auto;
   border-radius: 10px;
   background-color: rgb(183, 142, 221);
-  -webkit-box-shadow: 27px -16px 35px -12px rgba(75, 75, 75, 0.29);
-  -moz-box-shadow: 27px -16px 35px -12px rgba(75, 75, 75, 0.29);
-  box-shadow: 27px -16px 35px -12px rgba(75, 75, 75, 0.29);
+  -webkit-box-shadow: 27px -16px 35px -12px rgb(75, 75, 75);
+  -moz-box-shadow: 27px -16px 35px -12px rgb(75, 75, 75);
+  box-shadow: 27px -16px 35px -12px rgb(75, 75, 75);
 }
 
 .myUL {
