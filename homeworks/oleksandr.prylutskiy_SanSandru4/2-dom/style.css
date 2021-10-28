@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 400px;
+    height: 500px;
+}
+
+main, .divMessages, .btnSend, .msg { 
+    border: 2px solid #000;
+}
+
+.divMessages {
+    width: 386px;
+    height: 450px;
+    overflow: auto;
+}
+
+.blockSend, .divMessages{
+    margin: 5px;
+}
+
+.inputMessage {
+    padding-left: 3px;
+    width: 277px;
+    height: 27px;
+}
+
+.btnSend {
+    width: 100px;
+    height: 31px;
+    border-radius: 4px;
+}
+
+.msg {
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+    width: 89%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.close {
+    position: absolute;
+    font-size: 10px;
+    color: #000;
+}
+
+.cls-btn {
+    margin-left: 15px;
+    color: #000;
+    font-weight: bold;
+    float: right;
+    font-size: 26px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
