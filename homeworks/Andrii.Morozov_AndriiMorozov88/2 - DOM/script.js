@@ -6,16 +6,14 @@ function sendMessage() {
     mainChat.append(chatMessage);
     chatMessage.className = 'chatMessage';
     chatMessage.innerText = result;
-    console.log (chatMessage.style.width);
     document.querySelector('input[type=text]').value = '';
-};
+}
 document.querySelector('#btn').onclick = sendMessage;
-document.onkeydown = function( e ) {
-    if (e.keyCode === 13)  {
-        sendMessage()
-    };
-};
-    
+document.onkeydown = function (e) {
+    if (e.keyCode === 13) {
+        sendMessage();
+    }
+}  
 
     
     
