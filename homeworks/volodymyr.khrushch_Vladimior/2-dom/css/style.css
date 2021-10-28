@@ -1,5 +1,5 @@
 body {
-  background-color: #FeF6E4;
+  background-color: #FEF6E4;
 }
 
 .content {
@@ -12,10 +12,10 @@ body {
 .messageBox {
   width: 350px;
   height: 450px;
-  border: 3px solid rgba(120, 212, 255, 0.548);
+  border: 3px solid rgb(120, 212, 255);
   overflow: auto;
   border-radius: 10px;
-  background-color: rgba(183, 142, 221, 0.233);
+  background-color: rgb(183, 142, 221);
   -webkit-box-shadow: 27px -16px 35px -12px rgba(75, 75, 75, 0.29);
   -moz-box-shadow: 27px -16px 35px -12px rgba(75, 75, 75, 0.29);
   box-shadow: 27px -16px 35px -12px rgba(75, 75, 75, 0.29);
@@ -28,21 +28,21 @@ body {
 .close {
   display: flex;
   justify-content: flex-end;
-  color: rgba(22, 0, 146, 0.863);
+  color: rgb(22, 0, 146);
 }
 
 .message {
   width: 200px;
-  margin: 15px 10px 15px 0px;
+  margin: 15px 10px 15px 1px;
   word-break: break-all;
-  border: 3px solid rgba(88, 88, 88, 0.336);
+  border: 3px solid rgb(88, 88, 88);
   padding: 15px;
   list-style: none;
   border-radius: 25px;
   background-color: #F3D2C1;
-  -webkit-box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
-  -moz-box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
-  box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
+  -webkit-box-shadow: 23px 19px 25px -15px rgb(0, 0, 0);
+  -moz-box-shadow: 23px 19px 25px -15px rgb(0, 0, 0);
+  box-shadow: 23px 19px 25px -15px rgb(0, 0, 0);
 }
 
 .inputBox {
@@ -53,7 +53,7 @@ body {
 .addBtn {
   height: 35px;
   width: 90px;
-  border: 3px solid rgba(120, 212, 255, 0.548);
+  border: 3px solid rgb(120, 212, 255);
   border-radius: 5px;
   background-color: #F3D2C1;
 }
@@ -61,18 +61,18 @@ body {
 .inputMessage {
   height: 60px;
   width: 340px;
-  border: 3px solid rgba(120, 212, 255, 0.548);
+  border: 3px solid rgb(120, 212, 255);
   border-radius: 5px;
 }
 
 .addBtn:hover {
   background-color: #F582AE;
-  -webkit-box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
-  -moz-box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
-  box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
+  -webkit-box-shadow: 23px 19px 25px -15px rgb(0, 0, 0);
+  -moz-box-shadow: 23px 19px 25px -15px rgb(0, 0, 0);
+  box-shadow: 23px 19px 25px -15px rgb(0, 0, 0);
 }
 
 .close:hover {
   cursor: pointer;
-  color: rgb(255, 0, 51);
+  color: rgb(226, 3, 3);
 }

@@ -3,7 +3,7 @@ const button = document.querySelector('[data-btn]');
 const input = document.querySelector('[data-input]');
 const close = document.getElementsByClassName('close');
 // create the element received from the input field and the delete element
-button.addEventListener('click', function newElement() {
+button.addEventListener('click', (newElement) => {
     const li = document.createElement('li');
     li.classList.add('message');
     const inputValue = document.querySelector('[data-input]').value.replace(/\n/g, '<br />');
@@ -34,4 +34,4 @@ input.addEventListener('keydown', (event) => {
         event.preventDefault();
         button.click();
     }
-});
+})/n
