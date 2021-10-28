@@ -14,6 +14,6 @@ button.addEventListener('click', myClick);
 
 input.addEventListener('keypress', (e) => {
     if (!e.shiftKey && e.key === 'Enter') {
-    myClick();
+        myClick();
     }
 });
