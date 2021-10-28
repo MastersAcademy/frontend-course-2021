@@ -4,34 +4,10 @@ class App {
         this.template = document.querySelector('[data-chat-template]');
     }
 
-    create(message) {
-        const element = document.createElement('span');
-        element.classList.add('message');
-        element.dataset.dialogueMessage = '';
-
-        const text = document.createElement('span');
-        text.classList.add('message__text');
-        text.textContent = message;
-
-        const button = document.createElement('button');
-        button.classList.add('message__button');
-        button.dataset.messsageButton = '';
-
-        const icon = document.createElement('i');
-        icon.classList.add('message__icon', 'fas', 'fa-times');
-        icon.dataset.messageButtonIcon = '';
-
-        button.append(icon);
-        element.append(text);
-        element.append(button);
-
-        return element;
-    }
-
-    add(element) {
-        const clone = this.template.content.cloneNode(true);
-        clone.append(element);
-        this.dialogue.append(clone);
+    add(messageText) {
+        const message = this.template.content.cloneNode(true);
+        message.querySelector('[data-message-text]').textContent = messageText;
+        this.dialogue.appendChild(message);
     }
 
     remove(element) {
@@ -51,8 +27,7 @@ document
         const message = document.querySelector('[data-message-input]');
 
         if (message.value) {
-            const element = app.create(message.value);
-            app.add(element);
+            app.add(message.value);
             message.value = '';
         }
 
