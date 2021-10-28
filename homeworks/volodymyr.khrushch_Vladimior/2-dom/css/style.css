@@ -1,0 +1,78 @@
+body {
+  background-color: #fef6e4;
+}
+
+.content {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.messageBox {
+  width: 350px;
+  height: 450px;
+  border: 3px solid rgba(120, 212, 255, 0.548);
+  overflow: auto;
+  border-radius: 10px;
+  background-color: rgba(183, 142, 221, 0.233);
+  -webkit-box-shadow: 27px -16px 35px -12px rgba(75, 75, 75, 0.29);
+  -moz-box-shadow: 27px -16px 35px -12px rgba(75, 75, 75, 0.29);
+  box-shadow: 27px -16px 35px -12px rgba(75, 75, 75, 0.29);
+}
+
+.myUL {
+  padding-left: 2px;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  color: rgba(22, 0, 146, 0.863);
+}
+
+.message {
+  width: 200px;
+  margin: 15px 10px 15px 0px;
+  word-break: break-all;
+  border: 3px solid rgba(88, 88, 88, 0.336);
+  padding: 15px;
+  list-style: none;
+  border-radius: 25px;
+  background-color: #f3d2c1;
+  -webkit-box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
+  box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
+}
+
+.inputBox {
+  margin-top: 10px;
+  width: 350px;
+}
+
+.addBtn {
+  height: 35px;
+  width: 90px;
+  border: 3px solid rgba(120, 212, 255, 0.548);
+  border-radius: 5px;
+  background-color: #f3d2c1;
+}
+
+.inputMessage {
+  height: 60px;
+  width: 340px;
+  border: 3px solid rgba(120, 212, 255, 0.548);
+  border-radius: 5px;
+}
+
+.addBtn:hover {
+  background-color: #f582ae;
+  -webkit-box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
+  box-shadow: 23px 19px 25px -15px rgba(0, 0, 0, 0.29);
+}
+
+.close:hover {
+  cursor: pointer;
+  color: rgb(255, 0, 51);
+}
