@@ -32,6 +32,4 @@ button.addEventListener('click', () => {
 input.addEventListener('keydown', (event) => {
     if (event.code === 'Enter' && !event.shiftKey) {
         event.preventDefault();
-        button.click();
-    }
-});
+        button.click();}});
