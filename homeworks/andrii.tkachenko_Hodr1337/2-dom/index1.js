@@ -10,8 +10,8 @@ function sendMessage() {
         messageChatHistory.classList.add('created-message');
         document.body.querySelector('[data-chat]').append(messageChatHistory);
     } else {
-        alert('Can not send empty message')
-    };
+        alert('Can not send empty message');
+    }
 }
 
 button.addEventListener('click', sendMessage);
