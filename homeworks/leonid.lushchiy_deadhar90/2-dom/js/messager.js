@@ -10,7 +10,7 @@ const yyyy = today.getFullYear();
 const hh = String(today.getHours()).padStart(2, '0');
 const mn = String(today.getMinutes()).padStart(2, '0');
 
-today = mm + '.' + dd + '.' + yyyy + ' | ' + hh + ':' + mn;
+const today = `${mm}.${dd}.${yyyy} | ${hh}:${mn}`;
 
 //  send new message from textarea to div
 send.addEventListener('click', () => {
@@ -21,8 +21,8 @@ send.addEventListener('click', () => {
 
     //  inner to a new div
     if (newMessage) {
-        message.innerHTML = '<span>From:' + userName + '</span><p>' + newMessage + '</p><span>' + today + '</span>';
-        delMessage.innerHTML = "&#128465;";
+        message.innerHTML = `<span>From:${userName}</span><p>${newMessage}</p><span>${today}</span>`;
+        delMessage.innerHTML = '&#128465;';
 
         //  add del button
         message.appendChild(delMessage);
@@ -44,7 +44,7 @@ send.addEventListener('click', () => {
         //  delite message
         delMessage.addEventListener('click', (event) => {
             const confDialog = window.confirm('delete this message?');
-			let removeParent = event.target;
+            const removeParent = event.target;
             if (confDialog) {
                 if (removeParent.tagName === 'DIV') {
                     removeParent.parentNode.remove(message);
@@ -55,14 +55,14 @@ send.addEventListener('click', () => {
             }
         });
     } else {
-    // red border if message not enter
-    inputArea.style.border = "1px solid red";
-}
+        // red border if message not enter
+        inputArea.style.border = '1px solid red';
+    }
 });
 
 //  enter - send message + shift+enter - \n
 inputArea.addEventListener('keyup', (event) => {
     if (event.code === 'Enter' && !event.shiftKey) {
         send.click();
-    } else (event.code === 'Enter' && event.shiftKey)
+    } else (event.code === 'Enter' && event.shiftKey);
 });

@@ -45,7 +45,7 @@ body, .main {
 }
 
 @keyframes fromLeft {
-  0% { left: 100px; opacity: 0;}
+  0% {left: 100px; opacity: 0;}
   100% { left: 170px; opacity: 1;}
 }
 
@@ -58,7 +58,7 @@ body, .main {
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background-color:#FF0000;
+  background-color: #F00;
   position: absolute;
   left: calc(100% + 10px);
   top: calc(50% - 10px);
@@ -83,7 +83,7 @@ body, .main {
 
 [data-lable] {
   width: 100%;
-  background-color: #FFFFFF;
+  background-color: #FFF;
 }
 
 [data-lable] textarea {
@@ -98,14 +98,14 @@ body, .main {
   text-align: center;
   background-color: #7666D7;
   margin: 5px;
-  color: #FFFFFF;
+  color: #FFF;
 }
 
 [data-close] {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #FF0000;
+  background-color: #F00;
 }
 
 [data-userName], [data-lable] button, [data-lable] textarea {
