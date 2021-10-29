@@ -1,21 +1,11 @@
 const list = document.querySelector('[data-list]');
+const template = document.querySelector('[data-message-template]');
 const form = document.querySelector('[data-form]');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-
-    const message = document.createElement('li');
-    message.className = 'content__message';
-    const btn = document.createElement('button');
-    btn.className = 'content__delete';
-    btn.setAttribute('data-delete', '');
-    const text = document.createElement('p');
-    text.setAttribute('style', 'white-space: pre-line');
-
-    btn.textContent = 'X';
-    text.textContent = form.textarea.value;
-    message.appendChild(btn);
-    message.appendChild(text);
+    const message = template.content.cloneNode(true);
+    message.querySelector('[data-message]').textContent = form.textarea.value;
     list.appendChild(message);
     form.textarea.value = '';
 });
@@ -24,7 +14,7 @@ const deleteElement = (e) => {
     if (e.target.hasAttribute('data-delete')) {
         e.target.parentElement.remove();
     } else if (e.target.hasAttribute('data-emoji')) {
-        e.target.parentElement.parentElement.remove();
+        e.target.closest('li').remove();
     }
 };
 
