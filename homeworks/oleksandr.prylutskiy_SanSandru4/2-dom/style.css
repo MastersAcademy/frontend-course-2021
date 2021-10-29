@@ -40,7 +40,7 @@ main, .divMessages, .btnSend, .msg {
   border-radius: 4px;
 }
 
-.msg {
+.messageBox {
   position: relative;
   margin: 10px;
   padding: 10px;
