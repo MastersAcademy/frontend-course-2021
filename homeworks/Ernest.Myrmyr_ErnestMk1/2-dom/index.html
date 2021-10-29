@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2-dom</title>
+        <link rel="stylesheet" href="./styles.css">
+        <script src="script.js" defer></script>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="main-area">
+                <ul data-list class="messages">
+                    <li>Hello</li>
+                    <li>World</li>
+                    <li>I</li>
+                    <li>Am</li>
+                    <li>Newbie</li>
+                </ul>
+            </div>
+
+            <div class="bottom-area">
+                <div class="area-block">
+                    <textarea
+                        data-text
+                        name="area"
+                        class="textarea"
+                        placeholder="Message"
+                    ></textarea>
+                </div>
+
+                <div class="button-block">
+                    <button class="send-button" data-button>Send</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:flex-end;
+  height: 100vh;
+  background-color: blue;
+}
+
+.bottom-area {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.send-button {
+  height: 5.5vh;
+  width: 10vh;
+  margin-left: 15px;
+  color: inherit;
+  font-size: 17px;
+  font-weight: 900;
+  border: 0;
+  border-radius: 15px;
+  background-color: #f00;
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+
+.send-button:hover {
+  transform: scale(1.2);
+}
+
+.textarea {
+  height: 5.5vh;
+  width: 50vh;
+  border-radius: 15px;
+  text-indent: 0.5rem;
+  outline: none;
+  resize: none;
+}
+
+.textarea::placeholder {
+  text-indent: 0.5rem;
+}
