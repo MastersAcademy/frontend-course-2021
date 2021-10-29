@@ -64,7 +64,7 @@ send.addEventListener('click', () => {
 inputArea.addEventListener('keyup', (event) => {
     if (event.code === 'Enter' && !event.shiftKey) {
         send.click();
-    } if (event.code === 'Enter' && event.shiftKey) {
-        return;
+    } else { 
+    	event.code === 'Enter' && event.shiftKey;
     }
 });
