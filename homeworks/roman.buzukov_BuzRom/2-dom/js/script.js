@@ -16,4 +16,4 @@ const deleteElement = (e) => {
     }
 };
 
-list.addEventListener('click', deleteElement);
+document.querySelector('[data-message]').addEventListener('click', deleteElement);
