@@ -6,10 +6,10 @@ let amountOfMesseges = (document.querySelectorAll('.messege__item')).length;
 
 inputText.addEventListener('keydown', (e) => {
     const keyCode = e.which || e.keyCode;
-    if(keyCode === 13 && !e.shiftKey) {
+    if (keyCode === 13 && !e.shiftKey) {
         e.preventDefault();
     }
-})
+});
 function createMessege() {
     if (inputText.value.length > 0) {
         const div = document.createElement('div');
@@ -26,7 +26,6 @@ function createMessege() {
         inputText.value = '';
         amountOfMesseges++;
         messeges.scrollTop = messeges.scrollHeight;
-        
     }
 }
 // For click on button (adding and removing messeges)
@@ -37,12 +36,12 @@ document.addEventListener('click', (e) => {
     }
 });
 
-inputBtn.addEventListener('click', (e) => {
+inputBtn.addEventListener('click', () => {
     createMessege();
-})
+});
 // For Enter key
 document.addEventListener('keydown', (e) => {
-    if(e.shiftKey === false && e.key ===  "Enter") {
+    if (e.shiftKey === false && e.key === 'Enter') {
         createMessege();
         e.preventDefault();
     }
