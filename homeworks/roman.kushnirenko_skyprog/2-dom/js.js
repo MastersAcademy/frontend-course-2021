@@ -1,4 +1,4 @@
-let chat_messages = document.querySelector("[data-all_messages");
+let chat_messages = document.querySelector("[data-all_messages]");
 chat_form_input = document.querySelector("[data-text_input]");
 chat_form_submit = document.querySelector("[data-text_submit]");
 
