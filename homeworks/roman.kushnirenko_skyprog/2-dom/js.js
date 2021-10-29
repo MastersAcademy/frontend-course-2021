@@ -1,6 +1,6 @@
 const chatMessages = document.querySelector('[data-all_messages]');
-let chatFormInput = document.querySelector('[data-text_input]');
-let chatFormSubmit = document.querySelector('[data-text_submit]');
+const chatFormInput = document.querySelector('[data-text_input]');
+const chatFormSubmit = document.querySelector('[data-text_submit]');
 
 chatFormSubmit.addEventListener('click', (event) => {
     event.preventDefault();
@@ -35,4 +35,4 @@ chatFormInput.addEventListener('keypress', (e) => {
         e.preventDefault();
         creatMassege();
     }
-});
+})
