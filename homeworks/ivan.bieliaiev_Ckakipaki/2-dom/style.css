@@ -46,6 +46,8 @@ a:hover {
 .item__delete {
   font-size: 25px;
   transition: color .1s linear;
+  background: none;
+  border: 0;
 }
 
 .item__delete:hover {
@@ -56,6 +58,9 @@ a:hover {
 .chat__input {
   width: 100%;
   padding: 40px 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .input__text {

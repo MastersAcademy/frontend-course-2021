@@ -17,11 +17,11 @@ function createMessege() {
         const p = document.createElement('p');
         p.classList = 'item__text';
         p.innerText = inputText.value;
-        const a = document.createElement('a');
-        a.classList = `item__delete item__del${amountOfMesseges + 1}`;
-        a.innerHTML = '&#9746';
+        const button = document.createElement('button');
+        button.classList = `item__delete item__del${amountOfMesseges + 1}`;
+        button.innerHTML = '&#9746';
         div.appendChild(p);
-        div.appendChild(a);
+        div.appendChild(button);
         messeges.appendChild(div);
         inputText.value = '';
         amountOfMesseges++;
