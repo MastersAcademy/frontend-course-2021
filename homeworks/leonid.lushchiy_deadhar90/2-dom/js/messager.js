@@ -68,4 +68,3 @@ inputArea.addEventListener('keyup', (event) => {
         event.preventDefault();
     }
 });
-
