@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-dom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="chat">
+        <div class="wrapper">
+            <div data-message class="chat__message">
+
+            </div>
+            <div class="chat__send-menu">
+                <textarea class="chat__entry-textarea" data-textarea  type="text" placeholder="Type something here..." ></textarea>
+                <button data-btn class="chat__entry-btn">Send</button>
+            </div>
+        </div>
+    </section>
+    <template data-template>
+        <div class="template__new-message" data-new-message>
+            <p class="template__message-text"  data-message-text></p>
+            <button class="template__delete-btn" data-delete-btn>X</button>
+        </div>
+    </template>
+    <script src="script.js"></script>
+</body>
+</html>
