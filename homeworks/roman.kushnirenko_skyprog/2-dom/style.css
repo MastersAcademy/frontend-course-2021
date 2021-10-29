@@ -6,6 +6,7 @@
     border-radius: 5px;
     background-color: #859FA9;
   }
+
   .chat_messages {
     height: 480px;
     border-bottom: 2px solid #000;
@@ -14,6 +15,7 @@
     overflow: auto;
     overflow-y: scroll;
   }
+
   .chat_message_content {
     display: block;
     position: relative;
@@ -31,6 +33,7 @@
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
   }
+
   .chat-form_input {
     width: 380px;
     height: 27px;
@@ -39,12 +42,12 @@
     margin-left: 18px;
     border-radius: 5px;
     word-break: break-all;
-    overflow: scoll;
     resize: none;
     background-color: #ADC4ED;
     font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
   }
+
   .chat-form_submit {
     position: absolute;
     margin-left: 22px;
@@ -55,6 +58,7 @@
     border-radius: 13px;
     font-size: 18px;
   }
+
   .close_message {
     position: absolute;
     top: 2px;
