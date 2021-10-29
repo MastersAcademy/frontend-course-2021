@@ -13,20 +13,20 @@
 
         initLayout() {
             const mainLayout = document.createElement('div');
-            mainLayout.className = 'chat__wrapper';
+            mainLayout.className = 'chat';
 
             const messagesWrapper = document.createElement('div');
             messagesWrapper.className = 'chat__messages';
 
             const controlsWrapper = document.createElement('div');
-            controlsWrapper.className = 'controls';
+            controlsWrapper.className = 'chat__controls';
 
             const textarea = document.createElement('textarea');
-            textarea.className = 'controls__textarea';
+            textarea.className = 'chat__controls-textarea';
             textarea.placeholder = 'Type something here...';
 
             const submitButton = document.createElement('button');
-            submitButton.className = 'controls__button';
+            submitButton.className = 'chat__controls-button';
             submitButton.type = 'button';
             submitButton.textContent = 'Send';
 
@@ -54,10 +54,10 @@
             });
 
             this.messagesWrapper.addEventListener('click', (e) => {
-                const isSvg = e.target.closest('svg');
+                const isChatBtn = e.target.closest('[data-chat-message-btn');
                 const message = e.target.closest('[data-chat-message]');
 
-                if (message && isSvg) {
+                if (message && isChatBtn) {
                     this.messagesWrapper.removeChild(message);
                 }
             });
@@ -65,13 +65,16 @@
 
         messageLayout(str) {
             const message = document.createElement('div');
-            message.className = 'chat__message';
+            message.className = 'chat__message-item';
             message.dataset.chatMessage = '';
 
             const messageText = document.createElement('p');
+            messageText.className = 'chat__message-item-text';
             messageText.innerText = str;
 
             const messageClose = document.createElement('button');
+            messageClose.className = 'chat__message-item-btn';
+            messageClose.dataset.chatMessageBtn = '';
             messageClose.type = 'button';
             messageClose.innerHTML = `
             <svg style="width:12px;height:12px" viewBox="0 0 24 24">

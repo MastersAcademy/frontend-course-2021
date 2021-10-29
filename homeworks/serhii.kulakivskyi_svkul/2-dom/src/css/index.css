@@ -1,4 +1,4 @@
-.chat__wrapper {
+.chat {
   max-width: 350px;
   border: 1px solid;
   border-radius: 4px;
@@ -12,7 +12,7 @@
   overflow-y: auto;
 }
 
-.chat__message {
+.chat__message-item {
   position: relative;
   margin-bottom: 1rem;
   padding: 5px;
@@ -20,7 +20,11 @@
   user-select: none;
 }
 
-.chat__message button {
+.chat__message-item-text {
+  margin: 0;
+}
+
+.chat__message-item-btn {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -31,21 +35,17 @@
   z-index: 1;
 }
 
-.chat__message p {
-  margin: 0;
-}
-
-.controls {
+.chat__controls {
   padding: 1rem;
   display: flex;
   align-items: flex-start;
 }
 
-.controls__textarea {
+.chat__controls-textarea {
   flex: 1;
 }
 
-.controls__button {
+.chat__controls-button {
   margin-left: 1rem;
   padding: .5rem 1.5rem;
   background-color: transparent;
