@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  display: flex;
+  justify-content: stretch;
+  overflow: hidden;
+  height: 100%;
+  flex-direction: column;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.chat_area {
+  flex: 1;
+  overflow-y: scroll;
+  padding: 0 10px;
+  margin-bottom: 30px;
+}
+
+.control_area {
+  height: 50px;
+  margin-bottom: 20px;
+  display: inline-flex;
+}
+
+.input {
+  flex-grow: 1;
+}
+
+.button {
+  padding: 0 25px;
+  background: #0000B8;
+  color: #FFF;
+}
+
+.button:hover {
+  transition: all .5s ease-out;
+  color: #0000B8;
+  background: #FFF;
+}
+
+.item {
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #CCC;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item__delete {
+  transition: all .5s ease-out;
+  background: #FFF;
+  color: #F00;
+  border: none;
+}
+
+.item__delete:hover {
+  background: #F00;
+  color: #FFF;
+}
