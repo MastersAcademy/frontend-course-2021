@@ -14,7 +14,7 @@ main {
   height: 500px;
 }
 
-main, .divMessages, .btnSend, .msg { 
+main, .divMessages, .btnSend, .msg {
   border: 2px solid #000;
 }
 
