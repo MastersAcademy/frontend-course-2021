@@ -6,8 +6,8 @@ formSendEl.addEventListener('submit', (event) => {
     const writtenText = document.querySelector('[data-writen-text]').value;
     if (writtenText.length > 0) {
         const messageEL = templateEl.content.cloneNode(true);
+        messageEL.querySelector('[data-message]').textContent = writtenText;
         messageWrapperEl.prepend(messageEL);
-        messageWrapperEl.querySelector('[data-message]').textContent = writtenText;
         formSendEl.reset();
     }
 });
