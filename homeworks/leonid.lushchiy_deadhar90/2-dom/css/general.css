@@ -110,6 +110,6 @@ body, .main {
 	[data-userName], [data-lable] button, [data-lable] textarea {
 		outline: none;
 		border: none;
-		font-family: san-serif, Arial;
+		font-family: sans-serif, Arial;
 	}
 	
