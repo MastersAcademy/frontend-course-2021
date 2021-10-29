@@ -45,7 +45,7 @@ body, .main {
 }
 
 @keyframes fromLeft {
-  0% {left: 100px; opacity: 0;}
+  0% { left: 100px; opacity: 0;}
   100% { left: 170px; opacity: 1;}
 }
 

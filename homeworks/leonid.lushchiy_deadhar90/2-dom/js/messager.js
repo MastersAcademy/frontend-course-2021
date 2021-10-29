@@ -10,7 +10,7 @@ const yyyy = today.getFullYear();
 const hh = String(today.getHours()).padStart(2, '0');
 const mn = String(today.getMinutes()).padStart(2, '0');
 
-const today = `${mm}.${dd}.${yyyy} | ${hh}:${mn}`;
+today = `${mm}.${dd}.${yyyy} | ${hh}:${mn}`;
 
 //  send new message from textarea to div
 send.addEventListener('click', () => {
