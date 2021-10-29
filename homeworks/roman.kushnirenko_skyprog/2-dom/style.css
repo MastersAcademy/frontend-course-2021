@@ -1,4 +1,4 @@
-  .chat {
+.chat {
     margin: 0 auto;
     width: 540px;
     height: 558px;
@@ -31,7 +31,7 @@
     word-break: break-all;
     border: 1px solid #000;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
   }
 
   .chat-form_input {
@@ -44,7 +44,7 @@
     word-break: break-all;
     resize: none;
     background-color: #ADC4ED;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     font-size: 15px;
   }
 
