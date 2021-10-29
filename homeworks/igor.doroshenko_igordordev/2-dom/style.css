@@ -1,0 +1,59 @@
+@font-face {
+    font-family: Monsterrat-Regular;
+    src: url(fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Monsterrat-SemiBold;
+    src: url(fonts/Montserrat-SemiBold.ttf);
+}
+
+.chat {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    font-family: Monsterrat-Regular;
+    width: 100%;
+    max-width: 1000px;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+.chat__title {
+    font-family: Monsterrat-SemiBold;
+}
+
+.messages-list {
+    padding: 0px 45px;
+}
+
+.messages-list__item {
+    overflow: auto;
+    max-width: 900px;
+    padding-top: 15px;
+    font-size: 18px;
+    margin: 5px;
+    margin-bottom: 10px;
+    min-height: 40px;
+    background-color: white;
+    list-style-type: none;
+    border: 1px solid darkgrey;
+    border-radius: 10px;
+}
+
+.input-form {
+    border-top: 3px solid gainsboro;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 50px;
+    padding: 20px 10px;
+}
+
+.input-form__field {
+    position: relative;
+    flex-grow: 1;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
