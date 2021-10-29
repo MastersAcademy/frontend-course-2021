@@ -1,115 +1,115 @@
 body {
-	height: 100vh;
-	margin: 0px;
-	padding: 0px;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 body, .main {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-	.main {
-		background-image: url(../img/main.jpg);
-		background-position: fixed;
-		background-repeat: no-repeat;
-		border-radius: 10px;
-		width: 400px;
-		overflow: hidden;
-		box-shadow: 3px 3px 5px 1px;
-	}
 
-	[data-userName] {
-		margin: 10px;
-		border-radius: 3px;
-	}
+.main {
+  background-image: url("../img/main.jpg");
+  background-position: fixed;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  width: 400px;
+  overflow: hidden;
+  box-shadow: 3px 3px 5px 1px;
+}
 
-	[data-tweets] {
-		width: 100%;
-		height: 400px;
-		overflow: auto;
-		overflow-x: hidden;
-	}
+[data-userName] {
+  margin: 10px;
+  border-radius: 3px;
+}
 
-	.message {
-		background-color: lightgrey;
-		position: relative;
-		animation: fromLeft 1s linear;
-		width: 150px;
-		word-break: break-word;
-		left: 170px;
-		margin: 10px;
-		border-radius: 10px;
-	}
+[data-tweets] {
+  width: 100%;
+  height: 400px;
+  overflow: auto;
+  overflow-x: hidden;
+}
 
-	@keyframes fromLeft {
-		0% {left: 100px; opacity: 0;}
-		100% { left: 170px; opacity: 1;}
-	}
+.message {
+  background-color: #C0C0C0;
+  position: relative;
+  animation: fromLeft 1s linear;
+  width: 150px;
+  word-break: break-word;
+  left: 170px;
+  margin: 10px;
+  border-radius: 10px;
+}
 
-	.message span {
-		font-size: 10px;
-		margin-left: 3px;
-	}
+@keyframes fromLeft {
+  0% { left: 100px; opacity: 0;}
+  100% { left: 170px; opacity: 1;}
+}
 
-	.delMessage {
-		height: 20px;
-		width: 20px;
-		border-radius: 50%;
-		background-color: red;
-		position: absolute;
-		left: calc(100% + 10px);
-		top: calc(50% - 10px);
-		text-align: center;
-		cursor: pointer;
-	}
+.message span {
+  font-size: 10px;
+  margin-left: 3px;
+}
 
-	.userName {
-		font-size: 10px;
-	}
+.delMessage {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color:#FF0000;
+  position: absolute;
+  left: calc(100% + 10px);
+  top: calc(50% - 10px);
+  text-align: center;
+  cursor: pointer;
+}
 
-	[data-tweets] p {
-		padding: 15px;
-	}
+.userName {
+  font-size: 10px;
+}
 
-	[data-lable] {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-		align-items: center;
-	}
+[data-tweets] p {
+  padding: 15px;
+}
 
-	[data-lable] {
-		width: 100%;
-		background-color: white;
-	}
+[data-lable] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
 
-	[data-lable] textarea {
-		width: 350px;
-	}
+[data-lable] {
+  width: 100%;
+  background-color: #FFFFFF;
+}
 
-	[data-lable] button {
-		height: 30px;
-		width: 30px;
-		border-radius: 50%;
-		cursor: pointer;
-		text-align: center;
-		background-color: #7666D7;
-		margin: 5px;
-		color: white;
-	}
+[data-lable] textarea {
+  width: 350px;
+}
 
-	[data-close] {
-		width: 10px;
-		height: 10px;
-		border-radius: 50%;
-		background-color: red;
-	}
+[data-lable] button {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  background-color: #7666D7;
+  margin: 5px;
+  color: #FFFFFF;
+}
 
-	[data-userName], [data-lable] button, [data-lable] textarea {
-		outline: none;
-		border: none;
-		font-family: sans-serif, Arial;
-	}
-	
+[data-close] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #FF0000;
+}
+
+[data-userName], [data-lable] button, [data-lable] textarea {
+  outline: none;
+  border: none;
+  font-family: sans-serif, Arial;
+}
