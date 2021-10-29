@@ -11,7 +11,7 @@
   height: 600px;
   width: auto;
   overflow: auto;
-  background-image: url(cat_space.jpg);
+  background-image: url("cat_space.jpg");
 }
 
 .footer {

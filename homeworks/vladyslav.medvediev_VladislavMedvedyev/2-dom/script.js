@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const send = document.querySelector('.send');
 const input = document.querySelector('.input');
 function messageSend() {
@@ -14,7 +15,7 @@ function messageSend() {
     }
 }
 send.addEventListener('click', messageSend);
-input.addEventListener('keyup', function (event) {
+input.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {
         messageSend();
     }
