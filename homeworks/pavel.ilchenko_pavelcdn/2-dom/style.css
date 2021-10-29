@@ -1,0 +1,16 @@
+.chat {
+  width: 500px;
+  height: auto;
+  margin: auto;
+  border: 1px solid #000;
+}
+
+.message {
+  padding: 10px;
+  display: inline;
+}
+
+.chat__chatArea {
+  display: flex;
+  flex-direction: column-reverse;
+}
