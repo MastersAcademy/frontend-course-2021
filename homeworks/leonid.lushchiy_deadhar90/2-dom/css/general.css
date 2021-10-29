@@ -87,7 +87,8 @@ body, .main {
 }
 
 [data-lable] textarea {
-  width: 350px;
+  min-width: 350px;
+  resize: vertical;
 }
 
 [data-lable] button {
