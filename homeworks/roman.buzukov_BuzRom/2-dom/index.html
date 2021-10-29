@@ -12,21 +12,21 @@
    <div class="container">
       <div class="content">
          <ul class="content__list" data-list>
-            <li class="content__item">
-               <button class="content__item-delete" data-delete>X</button>
-               <p class="content__item-text">Hello, world! <span data-emoji>&#127875;</span></p>
+            <li class="content__list-item message" data-message>
+               <button class="message__delete" data-delete>X</button>
+               <p class="message__text">Hello, world! <span data-emoji>&#127875;</span></p>
             </li>
          </ul>
          <template data-message-template>
-            <li class="content__item">
-               <button class="content__item-delete" data-delete>X</button>
-               <p class="content__item-text" data-message></p>
+            <li class="content__list-item message" data-message>
+               <button class="message__delete" data-delete>X</button>
+               <p class="message__text" data-text></p>
             </li>
          </template>
-         <form class="content__form" data-form>
-            <textarea class="content__form-textarea" name="textarea" data-textarea placeholder="Here is your text..."
+         <form class="content__form form" data-form>
+            <textarea class="form__textarea" name="message_field" data-textarea placeholder="Here is your text..."
                required></textarea>
-            <button class="content__form-submit" type="submit" data-submit>SEND</button>
+            <button class="form__submit" type="submit" data-submit>SEND</button>
          </form>
       </div>
    </div>

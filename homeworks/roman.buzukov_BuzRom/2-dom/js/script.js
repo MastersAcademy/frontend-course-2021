@@ -5,17 +5,15 @@ const form = document.querySelector('[data-form]');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     const message = template.content.cloneNode(true);
-    message.querySelector('[data-message]').textContent = form.textarea.value;
+    message.querySelector('[data-text]').textContent = form.message_field.value;
     list.appendChild(message);
-    form.textarea.value = '';
+    form.message_field.value = '';
 });
 
 const deleteElement = (e) => {
-    if (e.target.hasAttribute('data-delete')) {
-        e.target.parentElement.remove();
-    } else if (e.target.hasAttribute('data-emoji')) {
-        e.target.closest('li').remove();
+    if (e.target.hasAttribute('data-delete') || e.target.hasAttribute('data-emoji')) {
+        e.target.closest('[data-message]').remove();
     }
 };
 
-document.addEventListener('click', deleteElement);
+list.addEventListener('click', deleteElement);
