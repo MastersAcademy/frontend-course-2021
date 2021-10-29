@@ -1,0 +1,40 @@
+.row {
+  display: block;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.message-window {
+  height: 80vh;
+  background: #FAFAFA;
+  overflow: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.message {
+  margin: 5px auto;
+  width: 90%;
+  background: #ABABAB;
+}
+
+.close {
+  float: right;
+}
+
+.message-input-block {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.message-input-block-input {
+  width: 80%;
+}
+
+.addBtn {
+  padding: 5px;
+  border: 1px solid #000;
+}
