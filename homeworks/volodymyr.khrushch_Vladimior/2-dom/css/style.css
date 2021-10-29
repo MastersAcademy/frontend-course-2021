@@ -1,6 +1,10 @@
+/* main styles */
+
 body {
   background-color: #FEF6E4;
 }
+
+/* styling the content block */
 
 .content {
   margin-top: 30px;
@@ -9,7 +13,7 @@ body {
   align-items: center;
 }
 
-.messageBox {
+.content__message {
   width: 350px;
   height: 450px;
   border: 3px solid rgb(120, 212, 255);
@@ -21,17 +25,17 @@ body {
   box-shadow: 27px -16px 35px -12px rgb(75, 75, 75);
 }
 
-.myUL {
+.content__message__list {
   padding-left: 2px;
 }
 
-.close {
+.content__message__close {
   display: flex;
   justify-content: flex-end;
   color: rgb(22, 0, 146);
 }
 
-.message {
+.content__message__element {
   width: 200px;
   margin: 15px 10px 15px 1px;
   word-break: break-all;
@@ -45,12 +49,14 @@ body {
   box-shadow: 23px 19px 25px -15px rgb(0, 0, 0);
 }
 
-.inputBox {
+/* input field block */
+
+.content__input {
   margin-top: 10px;
   width: 350px;
 }
 
-.addBtn {
+.content__input__button {
   height: 35px;
   width: 90px;
   border: 3px solid rgb(120, 212, 255);
@@ -58,21 +64,23 @@ body {
   background-color: #F3D2C1;
 }
 
-.inputMessage {
+.content__input__field {
   height: 60px;
   width: 340px;
   border: 3px solid rgb(120, 212, 255);
   border-radius: 5px;
 }
 
-.addBtn:hover {
+/* elements with hover effect */
+
+.content__input__button:hover {
   background-color: #F582AE;
   -webkit-box-shadow: 23px 19px 25px -15px rgb(0, 0, 0);
   -moz-box-shadow: 23px 19px 25px -15px rgb(0, 0, 0);
   box-shadow: 23px 19px 25px -15px rgb(0, 0, 0);
 }
 
-.close:hover {
+.content__message__close:hover {
   cursor: pointer;
   color: rgb(226, 3, 3);
 }

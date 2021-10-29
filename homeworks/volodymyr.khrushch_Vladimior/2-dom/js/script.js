@@ -1,11 +1,11 @@
 // get the button and input field and close button
 const button = document.querySelector('[data-btn]');
 const input = document.querySelector('[data-input]');
-const close = document.getElementsByClassName('close');
+const close = document.getElementsByClassName('content__message__close');
 // create the element received from the input field and the delete element
 button.addEventListener('click', () => {
     const li = document.createElement('li');
-    li.classList.add('message');
+    li.classList.add('content__message__element');
     const inputValue = document.querySelector('[data-input]').value.replace(/\n/g, '<br />');
     li.innerHTML = inputValue;
     if (inputValue === '') {
@@ -17,7 +17,7 @@ button.addEventListener('click', () => {
 
     const span = document.createElement('div');
     const txt = document.createTextNode('\u2A2F');
-    span.className = 'close';
+    span.className = 'content__message__close';
     span.append(txt);
     li.append(span);
     let i;
