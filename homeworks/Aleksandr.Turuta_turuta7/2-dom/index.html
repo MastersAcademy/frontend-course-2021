@@ -9,19 +9,19 @@
 </head>
 <body>
 <main class="main">
-    <div class="main__window" data-main-window>
-        <div class="main__window__message" data-window-message></div>
+    <div class="main__container" data-main-container>
+        <div class="main__container__messages" data-container-messages></div>
     </div>
-    <div class="main__message">
-        <textarea class="main__textarea" data-message-field type="text" placeholder="message"></textarea>
+    <div class="main__control">
+        <textarea class="main__text" data-message-field type="text" placeholder="message"></textarea>
         <button class="main__button" data-message-send>Send</button>
     </div>
 </main>
 
 <template id="template">
-    <div class="template__message" data-new-message>
-        <pre class="template__text" data-text-message></pre>
-        <button class="template__button-delete">X</button>
+    <div class="message" data-new-message>
+        <pre class="message__text" data-message-text></pre>
+        <button class="message__button-delete" data-button-delete-message>X</button>
     </div>
   </template>
 <script src="script.js"></script>

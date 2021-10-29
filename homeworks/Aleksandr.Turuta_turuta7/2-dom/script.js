@@ -1,50 +1,85 @@
-const buttonEl = document.querySelector('[data-message-send]');
-const textareaEl = document.querySelector('[data-message-field]');
-const scrollEl = document.querySelector('[data-main-window]');
-const messageEl = document.querySelector('[data-window-message]');
+const buttonSendMessage = document.querySelector('[data-message-send]');
+const textValueMessage = document.querySelector('[data-message-field]');
+const scrollContent = document.querySelector('[data-main-container]');
+const createMessageDiv = document.querySelector('[data-container-messages]');
 
 const templateEl = document.querySelector('#template');
-const returnTextContent = templateEl.content.querySelector('[data-text-message]');
-const returnDiv = templateEl.content.querySelector('[data-new-message]');
 
-let data = '';
 let index = 1;
 
-const addDataValue = (e) => {
-    data = e.target.value;
+const listenerButtonDeleted = (i) => {
+    const buttonDelete = document.querySelector(`[data-button_delete="${i}"]`);
+    buttonDelete.addEventListener('click', () => {
+        document.querySelector(`[data-number_message="${buttonDelete.dataset.button_delete}"]`).remove();
+    });
 };
 
 const createMessage = () => {
-    if (!data.length) return;
-    returnTextContent.textContent = data;
-    returnDiv.id = index++;
-    messageEl.append(templateEl.content.cloneNode(true));
-    data = '';
-    textareaEl.value = '';
-    scrollEl.scrollTop = scrollEl.scrollHeight;
+    if (!textValueMessage.value) return;
+
+    templateEl.content.querySelector('[data-message-text]')
+        .textContent = textValueMessage.value;
+
+    templateEl.content.querySelector('[data-new-message]')
+        .setAttribute('data-number_message', index);
+
+    templateEl.content.querySelector('[data-button-delete-message]')
+        .setAttribute('data-button_delete', index);
+
+    const clonedNode = templateEl.content.cloneNode(true);
+    createMessageDiv.append(clonedNode);
+
+    textValueMessage.value = '';
+
+    scrollContent.scrollTop = scrollContent.scrollHeight;
+
+    listenerButtonDeleted(index++);
 };
 
-const deleteMessage = () => {
-    const message2 = document.querySelectorAll('.main-new-message');
-    const buttonDEl = document.querySelectorAll('.main-new-button-delete');
-    for (let i = 0; i < message2.length; i++) {
-        buttonDEl[i].addEventListener('click', () => {
-            message2[i].remove(message2[i].id);
-        });
-    }
-};
+buttonSendMessage.addEventListener('click', () => createMessage());
 
-textareaEl.addEventListener('keypress', (e) => {
+textValueMessage.addEventListener('keypress', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
         createMessage();
-        deleteMessage();
     }
 });
 
-buttonEl.addEventListener('click', () => {
-    createMessage();
-    deleteMessage();
-});
+// const addDataValue = (e) => {
+//     data = e.target.value;
+// };
 
-textareaEl.addEventListener('input', addDataValue);
+// const createMessage = () => {
+//     if (!data.length) return;
+//     // returnTextContent.textContent = data;
+//     // returnDiv.id = index++;
+//     messageEl.append(templateEl.content.cloneNode(true));
+//     data = '';
+//     textareaEl.value = '';
+//     scrollEl.scrollTop = scrollEl.scrollHeight;
+// };
+
+// const deleteMessage = () => {
+//     const message2 = document.querySelectorAll('.main-new-message');
+//     const buttonDEl = document.querySelectorAll('.main-new-button-delete');
+//     for (let i = 0; i < message2.length; i++) {
+//         buttonDEl[i].addEventListener('click', () => {
+//             message2[i].remove(message2[i].id);
+//         });
+//     }
+// };
+
+// textareaEl.addEventListener('keypress', (e) => {
+//     if (e.key === 'Enter' && !e.shiftKey) {
+//         e.preventDefault();
+//         createMessage();
+//         deleteMessage();
+//     }
+// });
+
+// buttonEl.addEventListener('click', () => {
+//     createMessage();
+//     deleteMessage();
+// });
+
+// textareaEl.addEventListener('input', addDataValue);
