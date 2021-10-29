@@ -1,7 +1,7 @@
 const chat = document.querySelector(".divMessages");
 const input = document.querySelector(".inputMessage");
 const btnSub = document.querySelector(".btnSend");
-let message = "";
+let message = '';
 
 btnSub.addEventListener("click", () => {
     message = input.value;
