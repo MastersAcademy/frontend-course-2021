@@ -3,10 +3,8 @@ const button = document.querySelector('button');
 
 function onlySpacesCheck() {
     if (input.value.trim().length > 0) {
-        return true
-    } else {
-        return false
-    };
+        return true;
+    }
 }
 
 function sendMessage() {
@@ -18,8 +16,8 @@ function sendMessage() {
         messageChatHistory.classList.add('created-message');
         document.body.querySelector('[data-chat]').append(messageChatHistory);
     } else {
-        alert('Can not send empty message')
-    };
+        alert('Can not send empty message');
+    }
 }
 
 button.addEventListener('click', sendMessage);
