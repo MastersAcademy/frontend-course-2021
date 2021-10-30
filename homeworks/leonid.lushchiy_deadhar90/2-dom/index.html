@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Chat</title>
+	</head>
+		<script type="text/javascript" src="js/messager.js" defer></script>
+		<style type="text/css">
+			@import url(css/general.css);
+		</style>
+	<body>
+		<main class="main" [data-main]>
+			<input type="text" name="name" placeholder="enter your name" data-userName required />
+			<div id="tweets" data-tweets></div>
+			<div data-lable class="sendField">
+				<textarea type="text" name="NewMessage" data-message placeholder="type your message"></textarea>
+				<button id="send" data-button-send type="submit">&#9658;</button>
+			</div>
+		</main>
+	</body>
+</html>
