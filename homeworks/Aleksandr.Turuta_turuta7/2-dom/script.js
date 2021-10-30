@@ -1,85 +1,46 @@
-const buttonSendMessage = document.querySelector('[data-message-send]');
-const textValueMessage = document.querySelector('[data-message-field]');
-const scrollContent = document.querySelector('[data-main-container]');
-const createMessageDiv = document.querySelector('[data-container-messages]');
-
-const templateEl = document.querySelector('#template');
+const buttonSendMessageEl = document.querySelector('[data-message-send]');
+const textValueMessageEl = document.querySelector('[data-message-field]');
+const scrollContentEl = document.querySelector('[data-main-container]');
+const messageListEl = document.querySelector('[data-container-messages]');
 
 let index = 1;
 
-const listenerButtonDeleted = (i) => {
-    const buttonDelete = document.querySelector(`[data-button_delete="${i}"]`);
-    buttonDelete.addEventListener('click', () => {
-        document.querySelector(`[data-number_message="${buttonDelete.dataset.button_delete}"]`).remove();
+const listenerButtonDeleted = (buttonDeleteMessage) => {
+    buttonDeleteMessage.addEventListener('click', () => {
+        document.querySelector(`[data-number-message="${buttonDeleteMessage.dataset.buttonDelete}"]`).remove();
     });
 };
 
 const createMessage = () => {
-    if (!textValueMessage.value) return;
+    const messageTemplateEl = document.querySelector('[data-message-template]').content;
 
-    templateEl.content.querySelector('[data-message-text]')
-        .textContent = textValueMessage.value;
+    const messageEl = messageTemplateEl.cloneNode(true);
 
-    templateEl.content.querySelector('[data-new-message]')
-        .setAttribute('data-number_message', index);
+    messageEl.querySelector('[data-message-text]')
+        .textContent = textValueMessageEl.value;
 
-    templateEl.content.querySelector('[data-button-delete-message]')
-        .setAttribute('data-button_delete', index);
+    messageEl.querySelector('[data-new-message]')
+        .setAttribute('data-number-message', index);
 
-    const clonedNode = templateEl.content.cloneNode(true);
-    createMessageDiv.append(clonedNode);
+    const buttonDeleteMessage = messageEl.querySelector('[data-button-delete-message]');
+    buttonDeleteMessage.setAttribute('data-button-delete', index++);
 
-    textValueMessage.value = '';
+    messageListEl.append(messageEl);
 
-    scrollContent.scrollTop = scrollContent.scrollHeight;
+    textValueMessageEl.value = '';
 
-    listenerButtonDeleted(index++);
+    scrollContentEl.scrollTop = scrollContentEl.scrollHeight;
+
+    listenerButtonDeleted(buttonDeleteMessage);
 };
 
-buttonSendMessage.addEventListener('click', () => createMessage());
-
-textValueMessage.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
-        createMessage();
-    }
+buttonSendMessageEl.addEventListener('click', () => {
+    if (textValueMessageEl.value) createMessage();
 });
 
-// const addDataValue = (e) => {
-//     data = e.target.value;
-// };
-
-// const createMessage = () => {
-//     if (!data.length) return;
-//     // returnTextContent.textContent = data;
-//     // returnDiv.id = index++;
-//     messageEl.append(templateEl.content.cloneNode(true));
-//     data = '';
-//     textareaEl.value = '';
-//     scrollEl.scrollTop = scrollEl.scrollHeight;
-// };
-
-// const deleteMessage = () => {
-//     const message2 = document.querySelectorAll('.main-new-message');
-//     const buttonDEl = document.querySelectorAll('.main-new-button-delete');
-//     for (let i = 0; i < message2.length; i++) {
-//         buttonDEl[i].addEventListener('click', () => {
-//             message2[i].remove(message2[i].id);
-//         });
-//     }
-// };
-
-// textareaEl.addEventListener('keypress', (e) => {
-//     if (e.key === 'Enter' && !e.shiftKey) {
-//         e.preventDefault();
-//         createMessage();
-//         deleteMessage();
-//     }
-// });
-
-// buttonEl.addEventListener('click', () => {
-//     createMessage();
-//     deleteMessage();
-// });
-
-// textareaEl.addEventListener('input', addDataValue);
+textValueMessageEl.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        if (textValueMessageEl.value) createMessage();
+    }
+});
