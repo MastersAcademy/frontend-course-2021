@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: 14.18.1
       - run: npm install --production
+      - uses: xt0rted/stylelint-problem-matcher@v1.2.0
       - run: npm run lint:css
 
   lint-branch-name:
