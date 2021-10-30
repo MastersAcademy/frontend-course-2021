@@ -1,16 +1,18 @@
-const button = document.querySelector('[data-button]');
-const textarea = document.querySelector('[data-text]');
+const mesSendActionEl = document.querySelector('[data-button]');
+const messToFillEl = document.querySelector('[data-text]');
 const listOfMessages = document.querySelector('[data-list]');
 
-button.addEventListener('click', () => {
+mesSendActionEl.addEventListener('click', (e) => {
+    e.preventDefault();
     const element = document.createElement('li');
-    element.innerHTML = textarea.value;
+    element.textContent = messToFillEl.value;
     listOfMessages.appendChild(element);
-    textarea.value = '';
+    messToFillEl.value = '';
 });
 
-textarea.addEventListener('keyup', (e) => {
-    if (e.keyCode === 13) {
-        button.click();
+messToFillEl.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        mesSendActionEl.click();
     }
 });

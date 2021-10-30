@@ -38,7 +38,7 @@ body {
   transform: scale(1.2);
 }
 
-.textarea {
+.input {
   height: 5.5vh;
   width: 50vh;
   border-radius: 15px;
@@ -47,6 +47,6 @@ body {
   resize: none;
 }
 
-.textarea::placeholder {
+.input::placeholder {
   text-indent: .5rem;
 }

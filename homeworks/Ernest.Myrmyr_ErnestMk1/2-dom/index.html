@@ -21,20 +21,31 @@
                 </ul>
             </div>
 
-            <div class="bottom-area">
-                <div class="area-block">
-                    <textarea
-                        data-text
-                        name="area"
-                        class="textarea"
-                        placeholder="Message"
-                    ></textarea>
-                </div>
+            <form
+              method="get"
+              name='formToSubmit'
+              data-form
+            >
+                <div class="bottom-area">
+                    <div class="area-block">
+                        <input
+                            data-text
+                            name="area"
+                            type='text'
+                            class="input"
+                            placeholder="Message"
+                        ></input>
+                    </div>
 
-                <div class="button-block">
-                    <button class="send-button" data-button>Send</button>
+                    <div class="button-block">
+                        <input
+                          class="send-button"
+                          data-button
+                          type='submit'
+                        ></input>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </body>
 </html>
