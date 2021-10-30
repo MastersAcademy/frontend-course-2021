@@ -122,6 +122,11 @@ module.exports = {
             rules: {
                 'no-multiple-empty-lines': 'off',
             },
+            "settings": {
+                "react": {
+                    "version": "detect"
+                }
+            }
         },
     ],
 };

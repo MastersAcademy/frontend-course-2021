@@ -14,31 +14,30 @@ body {
 .container {
   width: 100%;
   font-size: 18px;
-  background: white;
+  background: rgb(255,255,255);
   border-radius: 10px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
 }
 
 .message {
   height: 600px;
-  padding: 0px 80px;
+  padding: 0 80px;
   overflow-y: auto;
   margin: 0;
 }
 
 .message::-webkit-scrollbar {
   width: 10px;
-  background-color: #f9f9fd;
+  background-color: "#F9F9FD";
 }
 
 .message::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: #0F5643;
+  background-color: "#0F5643";
 }
 
 .message::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-  background-color: #f9f9fd;
+  background-color: "#f9f9fd";
 }
 
 .message__content {
@@ -55,7 +54,7 @@ body {
   width: 92%;
   word-wrap: break-word;
   display: block;
-  color: white;
+  color: rgb(255,255,255);
 }
 
 .message__content__delete__button {
@@ -90,21 +89,20 @@ body {
   width: 200px;
   margin-left: 20px;
   font-size: 20px;
-  font-weight: bolder;
+  font-weight: 700;
   border-radius: 5px;
   border: none;
   color: #40AB8C;
 }
 
 .send-form__content__textarea::-webkit-scrollbar {
-  background-color: #f9f9fd;
+  background-color: "#f9f9fd";
 }
 
 .send-form__content__textarea::-webkit-scrollbar-thumb {
-  background-color: #0F5643;
+  background-color: "#0F5643";
 }
 
 .send-form__content__textarea::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-  background-color: #f9f9fd;
+  background-color: "#f9f9fd";
 }
