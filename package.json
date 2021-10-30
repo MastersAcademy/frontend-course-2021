@@ -4,6 +4,7 @@
     "description": "Репозиторій з курсу «Advanced Front-end» проекту Masters Academy",
     "scripts": {
         "lint": "lint-staged",
+        "lint:fix": "eslint --fix --ext .js,.jsx .",
         "lint:all": "npm run lint:branch-name && npm run lint:css && npm run lint:js",
         "lint:js": "npx eslint --config .eslintrc.js ./homeworks/**/*.js",
         "lint:css": "npx stylelint --config .stylelintrc ./homeworks/**/*.{css,scss}",
