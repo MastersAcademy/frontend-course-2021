@@ -3,12 +3,12 @@ const button = document.querySelector('button');
 
 function onlySpacesCheck() {
     if (input.value.trim().length > 0) {
-        return true;
+        return 'true';
     }
 }
 
 function sendMessage() {
-    if (input.value.length > 0 && onlySpacesCheck() === true) {
+    if (input.value.length > 0 && onlySpacesCheck() === 'true') {
         const message = input.value;
         input.value = '';
         const messageChatHistory = document.createElement('div');
