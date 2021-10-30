@@ -1,8 +1,19 @@
+const removeMessage = (event) => {
+    const parent = event.target.parentElement;
+    if (event.target.className === 'close') {
+        parent.remove();
+    }
+};
+
 const addNewMessage = (text) => {
     const newEl = document.createElement('li');
-    document.body.querySelector('[data-main-box]').append(newEl);
+    const newElCloseBtn = document.createElement('span');
     newEl.classList.add('main-box_msg');
+    newElCloseBtn.classList.add('close');
     newEl.textContent = text;
+    newElCloseBtn.textContent = '×';
+    newEl.appendChild(newElCloseBtn);
+    document.body.querySelector('[data-main-box]').append(newEl);
 };
 
 const sendMessage = (event) => {
@@ -17,4 +28,6 @@ const sendMessage = (event) => {
 };
 
 const sendBtn = document.querySelector('[data-send-btn]');
+const messageBox = document.querySelector('[data-main-box]');
+messageBox.addEventListener('click', removeMessage);
 sendBtn.addEventListener('click', sendMessage);
