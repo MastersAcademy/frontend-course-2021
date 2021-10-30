@@ -4,6 +4,8 @@ const button = document.querySelector('button');
 function onlySpacesCheck() {
     if (input.value.trim().length > 0) {
         return 'true';
+    } else {
+        return 'false';
     }
 }
 
