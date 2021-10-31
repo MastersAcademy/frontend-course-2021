@@ -10,7 +10,7 @@ body {
   padding: 0;
 }
 
-.wrap {
+.main {
   display: flex;
   justify-content: stretch;
   overflow: hidden;
