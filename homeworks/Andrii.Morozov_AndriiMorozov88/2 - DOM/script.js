@@ -11,6 +11,6 @@ function sendMessage(event) {
         chatField.append(cloneMessage);
         template.className = 'chat__message';
         messageInputField.reset();
-    }  
+    }
 }
 messageInputField.addEventListener('submit', sendMessage);
