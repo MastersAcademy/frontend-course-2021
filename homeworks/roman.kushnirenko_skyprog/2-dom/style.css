@@ -61,11 +61,10 @@
 
 .close_message {
   position: absolute;
-  top: 2px;
-  right: 3px;
   border-radius: 100%;
   height: 22px;
   background: transparent;
   cursor: pointer;
-  margin-top: -1px;
+  margin-top: -24px;
+  margin-left: 463px;
 }

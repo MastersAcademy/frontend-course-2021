@@ -11,13 +11,19 @@
 
 <body>
     <main class="chat">
-        <section class="chat_messages" data-all_messages>
+        <section class="chat_messages" data-all-messages>
         </section>
 
-        <section class="char_bottom">
+        <template data-template>
+            <div class="chat_message_content" data-message-content></div>
+            <button class="close_message" data-close-message>x</button>
+        </template>
+
+        <section class="chat_bottom">
             <form class='chat_form'>
-                <textarea class='chat-form_input' data-text_input name="post_text" placeholder="Enter message..."></textarea>
-                <input type='submit' class='chat-form_submit' data-text_submit value='Send'>
+                <textarea class='chat-form_input' data-text-input name="post_text"
+                    placeholder="Enter message..."></textarea>
+                <button type='submit' class='chat-form_submit' data-text-submit>Send</button>
         </section>
     </main>
 

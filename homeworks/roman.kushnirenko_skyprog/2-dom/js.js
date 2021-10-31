@@ -1,27 +1,25 @@
-const chatMessages = document.querySelector('[data-all_messages]');
-const chatFormInput = document.querySelector('[data-text_input]');
-const chatFormSubmit = document.querySelector('[data-text_submit]');
+const chatMessages = document.querySelector('[data-all-messages]');
+const chatFormInput = document.querySelector('[data-text-input]');
+const chatFormSubmit = document.querySelector('[data-text-submit]');
+
+const template = document.querySelector('[data-template]');
+const chatMessageContent = template.content.querySelector('[data-message-content]');
+const closeMessage = template.content.querySelector('[data-close-message]');
 
 function creatMassege() {
-    const chatMessageContent = document.createElement('div');
-    chatMessageContent.className = 'chat_message_content';
-    chatMessages.append(chatMessageContent);
+    const messageInput = chatFormInput.value.replace(/\n/g, '<br/>');
+    chatMessageContent.innerHTML = messageInput;
 
-    const message = chatFormInput.value.replace(/\n/g, '<br/>');
+    let messageShow = template.content.cloneNode(true);
+    chatMessages.appendChild(messageShow);
     chatFormInput.value = '';
-    chatMessageContent.innerHTML = message;
-
-    const closeMessage = document.createElement('button');
-    closeMessage.textContent = 'x';
-    closeMessage.className = 'close_message';
-    chatMessageContent.append(closeMessage);
-
-    chatMessages.scrollTop = 9999;
 
     closeMessage.addEventListener('click', () => {
         chatMessages.removeChild(chatMessageContent);
     });
-}
+
+    chatMessages.scrollTop = 9999;
+};
 
 chatFormSubmit.addEventListener('click', (event) => {
     event.preventDefault();
