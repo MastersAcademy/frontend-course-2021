@@ -2,10 +2,10 @@ body {
   background-color: #C2C286;
 }
 
-h1 {
+.main__title {
+  text-align: center;
   font-size: 60px;
   color: #15630E;
-  text-align: center;
 }
 
 .chat__body {
