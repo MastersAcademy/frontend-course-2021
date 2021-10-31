@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@200;300&family=Poppins:wght@300&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  width: 370px;
+  height: 400px;
+  border: 1px solid #F0F0F0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  position: relative;
+}
+
+.messages-wrap {
+  height: 313px;
+  overflow: auto;
+}
+
+.bottom-area {
+  height: 80px;
+  border-top: 3px solid #A9A9A9;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+
+.message {
+  border: 2px solid #A9A9A9;
+  border-radius: 10px;
+  margin: 15px;
+  position: relative;
+  line-height: 1.5;
+  padding: 15px 27px 15px 10px;
+}
+
+.button-remove {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  border-radius: 100%;
+  padding-top: 0;
+}
+
+.button-send {
+  border-radius: 5px;
+  width: 50px;
+  height: 28px;
+  margin: 15px;
+}
+
+.textarea {
+  width: 260px;
+  margin: 15px;
+  outline: none;
+  resize: none;
+  padding: 6px 3px 1px 4px;
+  line-height: 1.5;
+}
