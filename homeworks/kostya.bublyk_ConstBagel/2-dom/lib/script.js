@@ -20,10 +20,6 @@ function showChatStory() {
         X
       </button>
     </div>`).join('');
-    updateEventListenersForDeleteButtons();
-}
-
-function updateEventListenersForDeleteButtons() {
     const deleteMessageButtons = document.querySelectorAll(`[${deleteMessageDataRole}]`);
     deleteMessageButtons.forEach((button) => button.addEventListener('click', (event) => {
         const pickedId = +event.target.id;

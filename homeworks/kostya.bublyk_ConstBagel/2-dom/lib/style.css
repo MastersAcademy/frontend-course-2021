@@ -5,16 +5,16 @@
 }
 
 html {
-  background-color: #81ecec;
+  background-color: #81ECEC;
 }
 
 .chat-wrapper {
   width: 50%;
   height: 50%;
   margin: 5% auto;
-  border-left: 1px solid blue;
-  border-right: 1px solid blue;
-  background-color: white;
+  border-left: 1px solid #00F;
+  border-right: 1px solid #00F;
+  background-color: #FFF;
 }
 
 .chat-header {
@@ -42,8 +42,8 @@ html {
   display: flex;
   min-height: 50px;
   border-radius: 10px;
-  background-color:#0984e3;
-  color: white;
+  background-color: #0984E3;
+  color: #FFF;
   font-size: 1.2em;
 }
 
@@ -72,12 +72,12 @@ html {
 
 .chat-send-button {
   width: 30%;
-  background-color: blue;
-  color: white;
-  font-weight: bold;
-  font-size: 16pt;
+  background-color: #00F;
+  color: #FFF;
+  font-weight: 700;
+  font-size: 2em;
 }
 
 .chat-send-button:hover {
-  background-color: #0984e3;
+  background-color: #0984E3;
 }
