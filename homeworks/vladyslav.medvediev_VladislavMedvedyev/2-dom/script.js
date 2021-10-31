@@ -1,21 +1,21 @@
-const send = document.querySelector('.send');
-const input = document.querySelector('.input');
-function messageSend() {
-    const message = document.querySelector('.input').value;
+const sendEl = document.querySelector('[data-send]');
+const formEl = document.querySelector('[data-form]');
+function sendMessage() {
+    const messageEl = document.querySelector('[data-input]').value;
     const createP = document.createElement('p');
-    const main = document.querySelector('.main');
-    if (message.length === 0) {
-        alert('Please write your message');
-    } else {
-        createP.textContent = message;
+    const mainEl = document.querySelector('[data-main]');
+    if (messageEl.length > 0) {
+        createP.textContent = messageEl;
         createP.className = 'message';
-        main.appendChild(createP);
-        document.querySelector('.input').value = '';
+        mainEl.appendChild(createP);
+        document.querySelector('[data-input]').value = '';
+    } else {
+        alert('Please write your message');
     }
 }
-send.addEventListener('click', messageSend);
-input.addEventListener('keyup', (event) => {
-    if (event.key === 'Enter') {
-        messageSend();
-    }
-});
+function blockDefault(event) {
+    event.preventDefault();
+}
+sendEl.addEventListener('click', sendMessage);
+formEl.addEventListener('submit', blockDefault);
+formEl.addEventListener('submit', sendMessage);
