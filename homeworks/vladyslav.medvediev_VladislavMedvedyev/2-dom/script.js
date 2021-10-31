@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const send = document.querySelector('.send');
 const input = document.querySelector('.input');
 function messageSend() {
