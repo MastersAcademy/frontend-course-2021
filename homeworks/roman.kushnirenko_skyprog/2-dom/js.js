@@ -10,7 +10,7 @@ function creatMassege() {
     const messageInput = chatFormInput.value.replace(/\n/g, '<br/>');
     chatMessageContent.innerHTML = messageInput;
 
-    let messageShow = template.content.cloneNode(true);
+    const messageShow = template.content.cloneNode(true);
     chatMessages.appendChild(messageShow);
     chatFormInput.value = '';
 
@@ -19,7 +19,7 @@ function creatMassege() {
     });
 
     chatMessages.scrollTop = 9999;
-};
+}
 
 chatFormSubmit.addEventListener('click', (event) => {
     event.preventDefault();
