@@ -5,6 +5,8 @@
 }
 
 .message-window {
+  display: flex;
+  flex-direction: column;
   height: 80vh;
   background: #FAFAFA;
   overflow: auto;
@@ -14,13 +16,11 @@
 }
 
 .message {
+  display: flex;
+  justify-content: space-between;
   margin: 5px auto;
   width: 90%;
   background: #ABABAB;
-}
-
-.close {
-  float: right;
 }
 
 .message-input-block {

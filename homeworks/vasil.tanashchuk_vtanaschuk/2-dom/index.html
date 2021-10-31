@@ -1,25 +1,22 @@
 <!doctype html>
-
 <html>
 <head>
   <link rel="stylesheet" href="lib/style.css">
 </head>
-
 <body>
-
 <div class="row">
-  <ul class="message-window" data-message-otput>
-  </ul>
-  <div class="message-input-block">
-    <input type="search" class="message-input-block-input" placeholder="enter your message" data-message-input>
-    <span class="addBtn" data-message-input-btn>Add</span>
+  <div class="message-window" data-message-otput>
+    <template data-post-template>
+      <article class="message">
+        <h2 data-post-title></h2>
+      </article>
+    </template>
   </div>
+  <form class="message-input-block" data-message-form>
+    <input type="search" class="message-input-block-input" placeholder="enter your message" data-message-input>
+    <button class="addBtn" data-message-input-btn>Add</button>
+  </form>
 </div>
-
-
-
-
-
 <script src="lib/script.js"></script>
 </body>
 </html>
