@@ -5,7 +5,7 @@ const messagerWrapper = document.querySelector('[data-wrapper]');
 const form = document.querySelector('[data-form]');
 
 function addMessage () {
-    const li = `<li>${input.value}</li>`;
+    const li = `<li class="list-tab">${input.value}</li>`;
     ulList.insertAdjacentHTML('beforeend', li);
     messagerWrapper.scrollTo(this.li);
     input.value = '';
