@@ -1,0 +1,60 @@
+.main-box {
+  width: 600px;
+  height: 500px;
+  overflow-y: scroll;
+  margin: auto;
+  padding: 30px;
+  border: 2px solid #000;
+}
+
+.main-box_msg {
+  position: relative;
+  width: 500px;
+  margin: 30px auto;
+  padding: 10px 30px 30px;
+  border: 2px solid #000;
+  border-radius: 15px;
+  list-style: none;
+  font: 20px Arial, sans-serif;
+}
+
+.main-box_msg .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #000;
+  border-radius: 15px;
+  font: 25px Arial, sans-serif;
+  line-height: 15px;
+  cursor: pointer;
+}
+
+.new-msg-form {
+  width: 600px;
+  margin: auto;
+  padding: 30px;
+  border: 2px solid #000;
+  border-top: 0;
+}
+
+.new-msg-form_text {
+  min-width: 400px;
+  min-height: 20px;
+  margin: 10px auto;
+  padding: 15px 5px;
+  border: 2px solid #000;
+  font: 18px Arial, sans-serif;
+}
+
+.new-msg-form_btn {
+  width: 150px;
+  padding: 15px;
+  margin: 0 0 0 30px;
+  border: 2px solid #000;
+  border-radius: 15px;
+  font: 18px Arial, sans-serif;
+  text-transform: capitalize;
+}
