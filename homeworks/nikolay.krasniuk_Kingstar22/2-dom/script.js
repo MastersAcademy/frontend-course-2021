@@ -11,16 +11,6 @@ function generalMessage(item) {
     messageWindow.append(template.content.cloneNode(true));
 }
 
-// function deleteMessage() {
-//     const deleteBtn = document.querySelectorAll('[data-delete-btn]');
-
-//     deleteBtn.forEach((item, i) => {
-//         item.addEventListener('click', () => {
-//             console.log(i);
-//         });
-//     });
-// }
-
 function addMessage() {
     if (entryTextarea.value.length !== 0) {
         const messagesObj = {
@@ -44,6 +34,5 @@ entryTextarea.addEventListener('keypress', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
         addMessage();
-        // deleteMessage();
     }
 });
