@@ -8,7 +8,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #c7c7c7;
+  background-color: #C7C7C7;
 }
 
 .container {
@@ -23,7 +23,6 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  border-radius: 0px;
   background-color: #FFF;
   box-shadow: rgba(107, 69, 69, .2) 0 2px 8px 0;
 }
@@ -57,8 +56,6 @@ body {
   overflow-wrap: anywhere;
   margin-bottom: 1rem;
 }
-
-
 
 .message__button {
   border: 0;
@@ -110,7 +107,7 @@ body {
 }
 
 .message-form__button:hover  .message-form__icon {
-  color: #2d94dd;
+  color: #2D94DD;
   transition: color .5s ease-in-out;
 }
 
@@ -121,5 +118,5 @@ body {
   padding: .5rem .75rem;
   border: 0;
   background-color: transparent;
-  color: #adb7c5;
+  color: #ADB7C5;
 }
