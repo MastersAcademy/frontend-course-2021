@@ -1,6 +1,6 @@
-const chat = document.querySelector('.messages');
-const input = document.querySelector('.input-message');
-const btnSub = document.querySelector('.btn-send');
+const chat = document.querySelector('[data-info="chat-out-message"]');
+const input = document.querySelector('[data-info="chat-input-message"]');
+const btnSub = document.querySelector('[data-rule="button-click"]');
 let message = '';
 
 function chatMessage() {
