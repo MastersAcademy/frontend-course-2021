@@ -3,23 +3,28 @@ const chatFormInput = document.querySelector('[data-text-input]');
 const chatFormSubmit = document.querySelector('[data-text-submit]');
 
 const template = document.querySelector('[data-template]');
-const containerM = template.content.querySelector('[data-container]');
-const chatMessageContent = template.content.querySelector('[data-message-content]');
-const closeMessage = template.content.querySelector('[data-close-message]');
+
 
 function createMessage() {
-    const messageInput = chatFormInput.value.replace(/\n/g, '<br/>');
+    const messageInput = chatFormInput.value;
+
+    const messageShow = template.content.cloneNode(true).firstElementChild;
+    const containerM = messageShow.querySelector('[data-container]');
+    const chatMessageContent = messageShow.querySelector('[data-message-content]');
+    const closeMessage = messageShow.querySelector('[data-close-message]');
+
     chatMessageContent.textContent = messageInput;
 
-    const messageShow = template.content.cloneNode(true);
     chatMessages.appendChild(messageShow);
     chatFormInput.value = '';
 
     closeMessage.addEventListener('click', () => {
-        chatMessages.removeChild(containerM);
+        messageShow.remove(containerM);
     });
 
     chatMessages.scrollTop = 9999;
+
+    console.log(messageShow)
 }
 
 chatFormSubmit.addEventListener('click', (event) => {
