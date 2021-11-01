@@ -10,38 +10,38 @@ body {
   align-items: center;
 }
 
-main {
+.basis {
   width: 400px;
   height: 500px;
 }
 
-main, .divMessages, .btnSend, .messageBox {
+.basis, .messages, .btn-send, .message-box {
   border: 2px solid #000;
 }
 
-.divMessages {
+.messages {
   width: 386px;
   height: 450px;
   overflow: auto;
 }
 
-.blockSend, .divMessages {
+.block-send, .messages {
   margin: 5px;
 }
 
-.inputMessage {
+.input-message {
   padding-left: 3px;
   width: 277px;
   height: 27px;
 }
 
-.btnSend {
+.btn-send {
   width: 100px;
   height: 31px;
   border-radius: 4px;
 }
 
-.messageBox {
+.messages-box {
   position: relative;
   margin: 10px;
   padding: 10px;
