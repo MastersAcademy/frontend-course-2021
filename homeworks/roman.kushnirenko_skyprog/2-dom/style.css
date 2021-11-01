@@ -59,12 +59,16 @@
   font-size: 18px;
 }
 
+ .container_message {
+   position: relative;
+ }
+
 .close_message {
   position: absolute;
   border-radius: 100%;
   height: 22px;
   background: transparent;
   cursor: pointer;
-  margin-top: -24px;
-  margin-left: 463px;
+  top: 2px;
+  right: 39px;
 }

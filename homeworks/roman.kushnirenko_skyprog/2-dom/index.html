@@ -15,13 +15,15 @@
         </section>
 
         <template data-template>
-            <div class="chat_message_content" data-message-content></div>
-            <button class="close_message" data-close-message>x</button>
+            <div class="container_message" data-container>
+                <div class="chat_message_content" data-message-content></div>
+                <button class="close_message" data-close-message>x</button>
+            </div>
         </template>
 
         <section class="chat_bottom">
-            <form class='chat_form'>
-                <textarea class='chat-form_input' data-text-input name="post_text"
+            <form class="chat_form">
+                <textarea class="chat-form_input" data-text-input name="post_text"
                     placeholder="Enter message..."></textarea>
                 <button type='submit' class='chat-form_submit' data-text-submit>Send</button>
         </section>
