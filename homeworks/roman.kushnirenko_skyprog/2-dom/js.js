@@ -4,7 +4,6 @@ const chatFormSubmit = document.querySelector('[data-text-submit]');
 
 const template = document.querySelector('[data-template]');
 
-
 function createMessage() {
     const messageInput = chatFormInput.value;
 
@@ -25,7 +24,7 @@ function createMessage() {
     chatMessages.scrollTop = 9999;
 
     console.log(messageShow)
-}
+};
 
 chatFormSubmit.addEventListener('click', (event) => {
     event.preventDefault();
