@@ -14,7 +14,7 @@ btnSub.addEventListener('click', () => {
 input.addEventListener('keyup', (event) => {
     if (event.keyCode === 13) {
         message = input.value;
-        chat.innerHTML += `<div class="messages-box">${message}</div>`;
+        chat.innerHTML += `<div class="message-box">${message}</div>`;
         input.value = '';
         const scr = chat.scrollHeight;
         chat.scrollTop = scr;

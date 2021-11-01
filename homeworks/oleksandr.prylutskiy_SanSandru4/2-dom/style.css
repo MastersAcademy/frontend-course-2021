@@ -30,6 +30,7 @@ body {
 }
 
 .input-message {
+  margin-left: 5px;
   padding-left: 3px;
   width: 277px;
   height: 27px;
@@ -41,7 +42,7 @@ body {
   border-radius: 4px;
 }
 
-.messages-box {
+.message-box {
   position: relative;
   margin: 10px;
   padding: 10px;
