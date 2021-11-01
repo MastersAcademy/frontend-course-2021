@@ -22,9 +22,7 @@ function createMessage() {
     });
 
     chatMessages.scrollTop = 9999;
-
-    console.log(messageShow)
-};
+}
 
 chatFormSubmit.addEventListener('click', (event) => {
     event.preventDefault();
