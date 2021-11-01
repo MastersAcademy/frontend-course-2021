@@ -11,7 +11,8 @@ function addMessage () {
     input.value = '';
 };
 
-form.addEventListener('submit', function () {
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
     if (input.value !== '') {
         addMessage();
     }
