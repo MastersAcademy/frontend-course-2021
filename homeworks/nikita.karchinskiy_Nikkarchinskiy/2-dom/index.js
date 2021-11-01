@@ -1,32 +1,24 @@
-const ulList = document.querySelector('.message-list');
+const ulList = document.querySelector('[data-message-list');
+const input = document.querySelector('[data-input');
+const btn = document.querySelector('[data-btn]');
+const messagerWrapper = document.querySelector('[data-wrapper]');
+const form = document.querySelector('[data-form]');
 
-const input = document.querySelector('.input');
-
-const btn = document.querySelector('.send-message-btn');
-
-const messagerWrapper = document.querySelector('.message-wrapper');
-
-// function createMessage (text) {
-//     // let html = '';
-//     // html = `<li>${text.value}</li>`;
-//     ulList.insertAdjacentHTML('beforeend', `<li>${text.value}</li>`);
-//     console.log("1");
-// };
-
-btn.addEventListener('click', function () {
+function addMessage () {
     const li = `<li>${input.value}</li>`;
+    ulList.insertAdjacentHTML('beforeend', li);
+    messagerWrapper.scrollTo(this.li);
+    input.value = '';
+};
+
+form.addEventListener('submit', function () {
     if (input.value !== '') {
-        ulList.insertAdjacentHTML('beforeend', li);
-        messagerWrapper.scrollTo(this.li);
-        input.value = '';
+        addMessage();
     }
 });
 
 input.addEventListener('keydown', (event) => {
-    const li = `<li>${input.value}</li>`;
     if (event.key === 'Enter' && !event.shiftKey && input.value !== '') {
-        ulList.insertAdjacentHTML('beforeend', li);
-        messagerWrapper.scrollTo(this.li);
-        input.value = '';
+        addMessage();
     }
 });
