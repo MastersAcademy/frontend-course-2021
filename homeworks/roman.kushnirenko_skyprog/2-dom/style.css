@@ -59,9 +59,9 @@
   font-size: 18px;
 }
 
- .container_message {
-   position: relative;
- }
+.container_message {
+  position: relative;
+}
 
 .close_message {
   position: absolute;
