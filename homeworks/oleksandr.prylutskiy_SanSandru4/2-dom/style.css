@@ -1,0 +1,52 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.basis {
+  margin-top: 10px;
+  width: 400px;
+  height: 500px;
+}
+
+.basis, .messages, .btn-send, .message-box {
+  border: 2px solid #000;
+}
+
+.messages {
+  width: 386px;
+  height: 450px;
+  overflow: auto;
+}
+
+.block-send, .messages {
+  margin: 5px;
+}
+
+.input-message {
+  padding-left: 3px;
+  width: 277px;
+  height: 27px;
+}
+
+.btn-send {
+  width: 100px;
+  height: 31px;
+  border-radius: 4px;
+}
+
+.message-box {
+  margin: 10px;
+  padding: 10px;
+  width: 89%;
+  height: auto;
+  background-color: #E8F7E7;
+  border-radius: 12px;
+}
