@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: 14.18.1
       - run: npm install --production
+      - uses: xt0rted/stylelint-problem-matcher@v1.2.0
       - run: npm run lint:css
 
   lint-branch-name:
@@ -33,4 +34,4 @@ jobs:
       - uses: lekterable/branchlint-action@v1.0.0
         with:
           allowed: |
-            /^[0-9]+-(?:[\\d\\w]){5,70}/i
+            /^[0-9]+-(?:[\d\w]){3,70}/i
