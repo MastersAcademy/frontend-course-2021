@@ -18,14 +18,14 @@ const inputEl = document.querySelector('[data-message-input]');
 inputForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const postListEl = document.querySelector('[data-message-otput]');
-    const postTemplateEl = document.querySelector('[data-post-template]');
+    const messageListEl = document.querySelector('[data-message-otput]');
+    const messageTemplateEl = document.querySelector('[data-message-template]');
     const newMessage = inputEl.value;
 
     if (newMessage) {
-        const postEl = postTemplateEl.content.cloneNode(true);
-        postEl.querySelector('[data-post-title]').textContent = newMessage;
-        postListEl.appendChild(postEl);
+        const messageEl = messageTemplateEl.content.cloneNode(true);
+        messageEl.querySelector('[data-message-text]').textContent = newMessage;
+        messageListEl.appendChild(messageEl);
         addClose();
         inputEl.value = '';
     }
