@@ -11,20 +11,39 @@ function generalMessage(item) {
     messageWindow.append(template.content.cloneNode(true));
 }
 
+// function deleteMessage() {
+//     const deleteBtn = document.querySelectorAll('[data-delete-btn]');
+
+//     deleteBtn.forEach((item, i) => {
+//         item.addEventListener('click', () => {
+//             console.log(i);
+//         });
+//     });
+// }
+
 function addMessage() {
-    const messageObj = {
-        message: entryTextarea.value,
-    };
-    messagesArray.push(messageObj);
-    const newMessage = messagesArray[messagesArray.length - 1].message;
-    generalMessage(newMessage);
-    entryTextarea.value = '';
+    if (entryTextarea.value.length !== 0) {
+        const messagesObj = {
+            message: entryTextarea.value,
+        };
+        messagesArray.push(messagesObj);
+        const newMessage = messagesArray[messagesArray.length - 1].message;
+        generalMessage(newMessage);
+        entryTextarea.value = '';
+    } else {
+        alert('field is empty');
+    }
 }
 
-sendBtn.addEventListener('click', addMessage);
+sendBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    addMessage();
+});
 
-entryTextarea.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
+entryTextarea.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
         addMessage();
+        // deleteMessage();
     }
 });
