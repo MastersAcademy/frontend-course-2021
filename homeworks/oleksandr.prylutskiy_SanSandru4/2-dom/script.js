@@ -4,19 +4,24 @@ const btnSub = document.querySelector('.btn-send');
 let message = '';
 
 btnSub.addEventListener('click', () => {
-    message = input.value;
-    chat.innerHTML += `<div class="message-box">${message}</div>`;
-    input.value = '';
-    const scr = chat.scrollHeight;
-    chat.scrollTop = scr;
+    chatMessage();
+    chatScroll(chat);
 });
 
 input.addEventListener('keyup', (event) => {
     if (event.keyCode === 13) {
-        message = input.value;
-        chat.innerHTML += `<div class="message-box">${message}</div>`;
-        input.value = '';
-        const scr = chat.scrollHeight;
-        chat.scrollTop = scr;
+        chatMessage();
+        chatScroll(chat);
     }
 });
+
+function chatMessage() {
+    message = input.value;
+    chat.innerHTML += `<div class="message-box">${message}</div>`;
+    input.value = '';
+}
+
+function chatScroll (inValue) {
+    const scr = inValue.scrollHeight;
+    inValue.scrollTop = scr;
+}
