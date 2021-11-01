@@ -14,6 +14,10 @@ body {
   background-color: #00F;
 }
 
+.main-area {
+  border: solid #F00;
+}
+
 .bottom-area {
   display: flex;
   align-items: center;
@@ -49,4 +53,15 @@ body {
 
 .input::placeholder {
   text-indent: .5rem;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  list-style: none;
+  width: 60vh;
+  gap: 3vh;
+  font-size: large;
+  font-weight: 900;
 }
