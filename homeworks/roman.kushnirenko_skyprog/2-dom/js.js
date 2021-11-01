@@ -18,7 +18,7 @@ function createMessage() {
     chatFormInput.value = '';
 
     closeMessage.addEventListener('click', () => {
-        messageShow.remove(containerM);
+        messageShow.remove();
     });
 
     chatMessages.scrollTop = 9999;
