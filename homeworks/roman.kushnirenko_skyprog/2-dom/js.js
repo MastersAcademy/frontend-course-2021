@@ -7,7 +7,6 @@ const containerM = template.content.querySelector('[data-container]');
 const chatMessageContent = template.content.querySelector('[data-message-content]');
 const closeMessage = template.content.querySelector('[data-close-message]');
 
-
 function createMessage() {
     const messageInput = chatFormInput.value.replace(/\n/g, '<br/>');
     chatMessageContent.textContent = messageInput;
