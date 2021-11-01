@@ -2,12 +2,12 @@ const sendEl = document.querySelector('[data-send]');
 const formEl = document.querySelector('[data-form]');
 function sendMessage() {
     const messageEl = document.querySelector('[data-input]').value;
-    const createP = document.createElement('p');
     const mainEl = document.querySelector('[data-main]');
     if (messageEl.length > 0) {
-        createP.textContent = messageEl;
-        createP.className = 'message';
-        mainEl.appendChild(createP);
+        const dataPostTemplate = document.querySelector('[data-post-template]');
+        const postEl = dataPostTemplate.content.cloneNode(true);
+        postEl.querySelector('[data-post-p]').textContent = messageEl;
+        mainEl.appendChild(postEl);
         document.querySelector('[data-input]').value = '';
     } else {
         alert('Please write your message');
