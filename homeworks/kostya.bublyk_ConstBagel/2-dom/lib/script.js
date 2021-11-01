@@ -44,7 +44,6 @@ sendMessageButton.addEventListener('click', () => sendMessage());
 
 inputMessageField.addEventListener('keydown', (event) => {
     if (event.which === 13) {
-        inputMessageField.blur();
         sendMessage();
     }
 });
