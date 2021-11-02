@@ -21,7 +21,7 @@ function createMessage() {
         messageShow.remove();
     });
 
-    chatMessages.scrollTop = 9999;
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
 chatFormSubmit.addEventListener('click', (event) => {
