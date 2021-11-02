@@ -45,11 +45,25 @@ body {
 }
 
 .blog-sort {
-  margin-top: 13px;
+  margin-top: 20px;
   margin-right: 12px;
   width: 93px;
-  height: 36px;
-  font-family: 'Rubik', sans-serif;
+  height: 37px;
+  font-size: 24px;
+}
+
+.blog-filter {
+  margin-top: 18px;
+  margin-right: 28px;
+  width: 230px;
+  height: 30px;
+  font-size: 18px;
+}
+
+.blog-sort, .blog-filter {
+  padding-left: 10px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 28px;
   background: #F7F6FB;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
