@@ -1,4 +1,3 @@
-const sendEl = document.querySelector('[data-send]');
 const formEl = document.querySelector('[data-form]');
 function sendMessage() {
     const messageEl = document.querySelector('[data-input]').value;
@@ -16,6 +15,5 @@ function sendMessage() {
 function blockDefault(event) {
     event.preventDefault();
 }
-sendEl.addEventListener('click', sendMessage);
 formEl.addEventListener('submit', blockDefault);
 formEl.addEventListener('submit', sendMessage);
