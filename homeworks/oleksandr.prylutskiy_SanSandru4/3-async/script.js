@@ -1,7 +1,8 @@
 const url = 'https://jsonplaceholder.typicode.com/posts';
-let blogMsg = document.querySelector('[data-blog-msg]');
+const blogMsg = document.querySelector('[data-blog-msg]');
+const sortAZ = document.querySelector('[data-sort-az]');
 
-console.log(blogMsg);
+console.log(sortAZ);
 
 fetch(url)
 .then((response) => response.json())
@@ -18,8 +19,6 @@ fetch(url)
         postBody.innerHTML = `${blogArr[i].body}`;
         postBody.classList.add('post-body');
         msg.appendChild(postBody);
-        // console.log(`${i} - ${blogArr[i].title}`);
-        console.log(`${i} - ${blogArr[i].body}`);
     }
 });
 
