@@ -3,6 +3,36 @@ body {
   font-family: "Lato";
 }
 
+.loader {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none repeat scroll 0 0 #000;
+}
+
+.loader_inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -30px;
+  margin-top: -30px;
+  width: 70px;
+  height: 70px;
+  background-image: url("load.gif");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #000;
+}
+
+.hide {
+  display: none;
+}
+
 .main-content {
   height: auto;
   width: 845px;
@@ -58,10 +88,12 @@ body {
 }
 
 .post-list {
+  max-height: 70vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  overflow-y: scroll;
   padding: 0 20px 20px;
 }
 
