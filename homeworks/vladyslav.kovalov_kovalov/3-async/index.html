@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a99b8e16e5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header-section">
+        <h1 class="header-section__title">
+            Posts
+        </h1>
+        <div class="header-section__actions">
+            <form class="actions-section__form" onsubmit='return false' data-post-filter>
+                    <input type="text" name="" id="" class="actions-section__filter-control"
+                    data-post-filter-control>
+            </form>
+            <button class="actions-section__button button" data-button-sort>Switch<i class="button__icon fas fa-sort-amount-up-alt" data-button-sort-icon></i></button>
+        </div>
+    </header>
+    <main class="posts-section" data-posts-section>
+    </main>
+    <template data-post-template>
+        <article class="posts-section__element post" data-post>
+            <h2 class="post__title" data-post-title></h2>
+            <p class="post__body" data-post-body></p>
+           <div class="post__footer" data-post-footer>
+            <button class="post__button button button--delete" data-delete-button><i class="button__icon fas fa-trash-alt fa-2x" data-delete-button-icon></i></button>
+           </div>
+        </article>
+    </template>
+    <template data-loader-template>
+        <div class="loader" data-loader></div>
+    </template>
+    <template data-notification-message-template>
+        <article class="posts-section__element post notificaton-message" data-notification-message>
+            <p class="post__body notificaton-message__body" data-notification-message-body></p>
+           </div>
+        </article>
+    </template>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
