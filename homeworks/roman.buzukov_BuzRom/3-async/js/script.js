@@ -1,57 +1,58 @@
-const container = document.querySelector('[data-container]');
-const list = document.querySelector('[data-list]');
-const template = document.querySelector('[data-post-template]');
-const posts = [];
-let filtered = posts;
-const sort = document.querySelector('[data-sort]');
-const filter = document.querySelector('[data-filter]');
+const containerEl = document.querySelector('[data-container]');
+const listEl = document.querySelector('[data-list]');
+const templateEl = document.querySelector('[data-post-template]');
+const postsEl = [];
+let filteredEl = postsEl;
+const sortEl = document.querySelector('[data-sort]');
+const filterEl = document.querySelector('[data-filter]');
 
 const getRender = (array) => {
-    list.innerHTML = '';
+    listEl.innerHTML = '';
     array.map((element) => {
-        const postEl = template.content.cloneNode(true);
-        postEl.querySelector('[data-post]').setAttribute('id', `${element.id}`);
-        postEl.querySelector('[data-title]').textContent = element.title;
-        postEl.querySelector('[data-body]').textContent = element.body;
-        return list.appendChild(postEl);
+        const item = templateEl.content.cloneNode(true);
+        item.querySelector('[data-post]').setAttribute('id', `${element.id}`);
+        item.querySelector('[data-title]').textContent = element.title;
+        item.querySelector('[data-body]').textContent = element.body;
+        return listEl.appendChild(item);
     });
 };
 
 window.addEventListener('load', () => {
-    if (container) {
+    if (containerEl) {
         setTimeout(() => {
             fetch('https://jsonplaceholder.typicode.com/posts/?_limit=30')
                 .then((response) => response.json())
                 .then((data) => {
-                    data.forEach((item) => posts.push(item));
-                    getRender(posts);
+                    data.forEach((item) => postsEl.push(item));
+                    getRender(postsEl);
                 });
-            container.classList.add('loaded');
+            containerEl.classList.add('loaded');
         }, 3000);
     }
 });
 
-sort.addEventListener('change', (e) => {
+sortEl.addEventListener('change', (e) => {
     if (e.target.value === 'A-Z') {
-        filtered.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
-        getRender(filtered);
+        filteredEl.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+        getRender(filteredEl);
     }
     if (e.target.value === 'Z-A') {
-        filtered.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()));
-        getRender(filtered);
+        filteredEl.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()));
+        getRender(filteredEl);
     }
 });
 
-filter.addEventListener('keyup', () => {
-    filtered = posts.filter((el) => el.title.toLowerCase().includes(filter.value.toLowerCase()));
-    getRender(filtered);
+filterEl.addEventListener('keyup', () => {
+    const value = filterEl.value.toLowerCase();
+    filteredEl = postsEl.filter((item) => item.title.toLowerCase().includes(value));
+    getRender(filteredEl);
 });
 
 const deleteElement = (e) => {
     if (e.target.hasAttribute('data-delete')) {
         const post = e.target.closest('[data-post]');
         post.setAttribute('style', 'visibility: hidden');
-        container.classList.remove('loaded');
+        containerEl.classList.remove('loaded');
         setTimeout(() => {
             fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}`, {
                 method: 'DELETE',
@@ -59,17 +60,17 @@ const deleteElement = (e) => {
                 .then((response) => response.json())
                 .then(() => {
                     alert('Post deleted');
-                    filtered = filtered.filter((item) => +post.id !== item.id);
+                    filteredEl = filteredEl.filter((item) => +post.id !== item.id);
                     post.remove();
-                    console.log(filtered);
+                    console.log(filteredEl);
                 })
                 .catch(() => {
                     alert('Something went wrong');
                     post.setAttribute('style', 'visibility: visible');
                 });
-            container.classList.add('loaded');
+            containerEl.classList.add('loaded');
         }, 1000);
     }
 };
 
-list.addEventListener('click', deleteElement);
+listEl.addEventListener('click', deleteElement);
