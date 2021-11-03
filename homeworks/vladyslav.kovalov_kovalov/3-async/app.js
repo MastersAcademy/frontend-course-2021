@@ -72,7 +72,9 @@ class App {
         } else {
             icon.classList.replace('fa-sort-amount-down-alt', 'fa-sort-amount-up-alt');
         }
-        [...this.postsContainerEl.children].reverse()
+
+        [...this.postsContainerEl.children]
+            .sort((a, b) => (a > b ? 1 : -1))
             .forEach((element) => this.postsContainerEl.appendChild(element));
     }
 
