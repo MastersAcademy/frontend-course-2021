@@ -12,16 +12,21 @@ body {
 
 .blog-block {
   position: relative;
+  display: flex;
   margin-top: 62px;
   width: 992px;
   height: 900px;
   background: linear-gradient(180deg, #F6F5FB 14.31%, #FEFEFF 94.46%);
   box-shadow: 0px 4px 96px rgba(0, 0, 0, 0.18);
   border-radius: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  overflow: hidden;
 }
 
 .blog-header {
-  position: absolute;
+  position: relative;
   width: 992px;
   height: 70px;
   background: #FFFFFF;
@@ -67,4 +72,53 @@ body {
   background: #F7F6FB;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
+}
+
+.blog-main-block {
+  width: 992px;
+  height: 830px;
+  overflow: auto;
+}
+
+.out-blog-msg {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.blog-msg {
+  margin-top: 47px;
+  width: 414px;
+  height: 340px;
+  background: #FFFFFF;
+  box-shadow: 0px 1px 50px rgba(0, 0, 0, 0.06);
+  border-radius: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.post-title {
+  margin-top: 44px;
+  margin-left: 39px;
+  margin-bottom: 25px;
+  padding-right: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.post-title:first-letter {
+  color: #FF726C;
+}
+
+.post-body {
+  margin-top: 44px;
+  margin-left: 39px;
+  margin-bottom: 25px;
+  padding-right: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
 }
