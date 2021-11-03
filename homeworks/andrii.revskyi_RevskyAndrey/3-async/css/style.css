@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.text_danger {
+  color: #F22;
+}
+
+.page-content {
+  display: flex;
+  justify-content: stretch;
+  overflow: hidden;
+  height: 100%;
+  flex-direction: column;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 50px;
+  width: 1200px;
+  margin: 25px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.control_area {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #CCC;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item__delete {
+  transition: all .5s ease-out;
+  background: #FFF;
+  color: #F00;
+  border: none;
+}
+
+.item__delete:hover {
+  background: #F00;
+  color: #FFF;
+}
