@@ -66,6 +66,7 @@ body {
 .blog-article {
   background-color: #FFFF;
   border-radius: 30px;
+  padding: 5px;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -88,5 +89,6 @@ body {
 .loader {
   width: 100%;
   height: 500px;
-  background: url("../img/spinner.gif") center;
+  background: url("../img/spinner.gif") center no-repeat;
+  background-color: #FFFF;
 }
