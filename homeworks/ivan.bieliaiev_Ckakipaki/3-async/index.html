@@ -6,20 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="main">
+    <section class="main" data-main>
         <header class="main__header">
             <h1 class="header__logo">blog</h1>
             <div class="header__rightSide">
                 <form action="sort" class="rightSide__sort">
-                    <select data-sorting="1" size="1" class="sort__section">
-                        <option disabled selected value="sort">sort</option>
-                        <option data-sorting-default value="default">Default</option>
+                    <select data-sorting size="1" class="sort__section">
+                        <option data-sorting-def selected value="sort">sort</option>
                         <option data-sorting-AtZ value="A__to__Z">A to Z</option>
-                        <option data-sorting-ZtA value="Z__to___A">Z to A</option>
+                        <option data-sorting-ZtA value="Z__to__A">Z to A</option>
 
                     </select>
                 </form>
-                <input type="text" name="filter" class="rightSide__filter" placeholder="filter">
+                <input data-filter type="text" name="filter" class="rightSide__filter" placeholder="filter">
             </div>
         </header>
         <section class="main__blog" data-blog>

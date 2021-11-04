@@ -1,6 +1,13 @@
-// Create post's markup with value text, title, id
+// Blog section
+const requestUrl = 'https://jsonplaceholder.typicode.com/posts';
 const blog = document.querySelector('[data-blog]');
+const sorting = document.querySelector('[data-sorting]');
+const filtering = document.querySelector('[data-filter]');
+const sortDefault = document.querySelector('[data-sorting-def]');
+const sortAtoZ = document.querySelector('[data-sorting-AtZ]');
+const sortZtoA = document.querySelector('[data-sorting-ZtA]');
 
+// Create markup and inner for post by FUNC createPostsList
 function postMarkupPost(id, title, text) {
     const article = document.createElement('article');
     const p = document.createElement('p');
@@ -24,28 +31,65 @@ function postMarkupPost(id, title, text) {
     blog.appendChild(article);
 }
 
-// Appending posts to blog container
-function createPosts(content) {
+// Appending posts to blog container by FUNC postMarkupPost
+function createPostsList(content, blog) {
     for (let i = 0; i < content.length; i++) {
         postMarkupPost(content[i].id, content[i].title, content[i].body);
     }
 }
 
-// Rendering posts from JSON
-setTimeout(async () => {
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-        let content = await response.json();
-        content = content.slice(0, 10);
-        // Create Post
-        await createPosts(content);
-        // Delete post
-        await document.addEventListener('click', (e) => {
-            if (e.target.classList[0] === 'delete__button') {
-                blog.removeChild(e.target.parentElement.parentElement);
-            }
-        });
-    } catch (e) {
-        console.log(e);
+// Rendering posts from JSON and
+async function requestPosts(url) {
+    fetch(url)
+        .then((response) => {
+            return response.json();
+        }).then((response) => {
+            const content = response.slice(0, 10);
+            createPostsList(content);
+            return content
+        }).catch((err) => {
+            console.log(err)
+        })
+}
+requestPosts(requestUrl)
+
+async function requestPostsAZ(url) {
+    fetch(url)
+        .then((response) => {
+            return response.json();
+        }).then((response) => {
+            let content = response.slice(0, 10);
+            content = content.sort((a, b) => a.title > b.title ? 1 : -1);
+            console.log(content)
+            createPostsList(content);
+            return content
+        }).catch((err) => {
+            console.log(err)
+        })
+}
+
+async function requestPostsZA(url) {
+    fetch(url)
+        .then((response) => {
+            return response.json();
+        }).then((response) => {
+            let content = response.slice(0, 10);
+            content = content.sort((a, b) => a.title < b.title ? 1 : -1);
+            console.log(content)
+            createPostsList(content);
+            return content
+        }).catch((err) => {
+            console.log(err)
+        })
+}
+
+sorting.addEventListener('change', () => {
+    blog.innerHTML = ''
+    if(sorting.value === 'A__to__Z') {
+        requestPostsAZ(requestUrl)
+    } else if(sorting.value === 'Z__to__A') {
+        requestPostsZA(requestUrl)
+    } else if(sorting.value === 'sort'){
+        requestPosts(requestUrl);
     }
-}, 3000);
+})
