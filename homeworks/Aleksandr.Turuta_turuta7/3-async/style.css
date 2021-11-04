@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap");
+
+.body {
+  max-width: 1200px;
+  height: auto;
+  background: #B6C0C4;
+  font-family: "Roboto", sans-serif;
+}
+
+.main {
+  width: 90%;
+  min-height: 200px;
+  margin: 0 auto;
+  display: flex;
+  background: #CECBCC;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.main__header {
+  width: 100%;
+  height: 50px;
+  background: #FFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 20px 20px 0 0;
+  justify-content: space-between;
+}
+
+.main__header-sort-and-filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.main__header-title {
+  margin-left: 20px;
+  text-transform: uppercase;
+}
+
+.main__header-title::first-letter {
+  color: #F00;
+}
+
+.main__header-button-sort {
+  min-width: 80px;
+  min-height: 30px;
+  border-radius: 15px;
+  margin-right: 20px;
+}
+
+.main__header-input-filter {
+  min-width: 180px;
+  min-height: 20px;
+  border-radius: 10px;
+}
+
+.main__header-input-filter[type="text"] {
+  padding: 0 10px;
+}
+
+.main__container__messages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  transition: 1s;
+  justify-content: center;
+}
+
+.post__title::first-letter {
+  color: #F00;
+  text-transform: uppercase;
+}
+
+.post {
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px;
+  width: 400px;
+  height: 400px;
+  background: #FFF;
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+
+.loader-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 50%;
+}
+
+.loader-1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #000;
+  background: linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 50%);
+  position: relative;
+  animation: loader-1 1.5s infinite linear;
+  transform: translateZ(0);
+}
+
+.loader-1::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  border-radius: 100% 0 0;
+}
+
+.loader-1::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #CECBCC;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@-webkit-keyframes loader-1 {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-1 {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

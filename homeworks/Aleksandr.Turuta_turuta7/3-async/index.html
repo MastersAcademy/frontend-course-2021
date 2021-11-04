@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>3-async-Turuta</title>
+</head>
+
+<body class="body">
+
+    <main class="main">
+        <div class="main__header">
+            <h1 class="main__header-title">blog</h1>
+            <div class="main__header-sort-and-filter">
+                <button class="main__header-button-sort" data-button-sort></button>
+                <input class="main__header-input-filter" placeholder="filter" type="text" data-input>
+            </div>
+                  </div>
+        <div class="main__container__messages" data-container-messages>
+
+            <div class="window-loader" data-window-loader></div>
+        </div>
+    </main>
+
+    <template data-loader>
+        <div class="loader-container">
+            <div class="loader-1"></div>
+        </div>
+    </template>
+
+    <template data-post>
+        <div class="post">
+            <h2 class="post__title" data-title></h2>
+            <p class=post__body data-body></p>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
