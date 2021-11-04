@@ -63,19 +63,24 @@ window.addEventListener('load', () => {
     }
 });
 
+const sortFilter = (array, value, type) => {
+    let arr = array;
+    arr = arr.filter((item) => item.title.toLowerCase().includes(value));
+    if (type === 'A-Z') {
+        arr = arr.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+        renderPosts(arr);
+    }
+    if (type === 'Z-A') {
+        arr = arr.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()));
+        renderPosts(arr);
+    }
+    return renderPosts(arr);
+};
+
 sortEl.addEventListener('change', (e) => {
-    if (e.target.value === 'A-Z') {
-        filtered.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
-        renderPosts(filtered);
-    }
-    if (e.target.value === 'Z-A') {
-        filtered.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()));
-        renderPosts(filtered);
-    }
+    sortFilter(posts, filterEl.value.toLowerCase(), e.target.value);
 });
 
 filterEl.addEventListener('keyup', () => {
-    const value = filterEl.value.toLowerCase();
-    filtered = posts.filter((item) => item.title.toLowerCase().includes(value));
-    renderPosts(filtered);
+    sortFilter(posts, filterEl.value.toLowerCase(), sortEl.value);
 });
