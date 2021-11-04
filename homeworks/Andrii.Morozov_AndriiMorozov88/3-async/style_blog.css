@@ -1,9 +1,10 @@
 body {
   background-color: #C2C286;
 }
+
 .blog_filter {
   display: flex;
-  background-color: white;
+  background-color: #FAFAFA;
   width: 90%;
   height: 50px;
   border-radius: 5px;
@@ -13,19 +14,19 @@ body {
 }
 
 .blog_filter-filter {
-    display: inline-block;
-    margin: auto;
+  display: inline-block;
+  margin: auto;
 }
 
 .blog_filter-blog {
    display: inline-block;
    margin: auto;
    font-size: 30px;
-   color: brown;
+   color: #B82B2B;
 }
 
 .blog_container {
-    background: grey;
+    background: #918E8E;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -35,10 +36,10 @@ body {
 
   .blog_container-el {  
     margin-bottom: 15px;
-      margin-left: 15px;
-      background: rgb(54, 54, 33);
-      width: 150px;
-      height: 100px;
-      border-radius: 5px;
+    margin-left: 15px;
+    background: #363621;
+    width: 150px;
+    height: 100px;
+    border-radius: 5px;
   }
 
