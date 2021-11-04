@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyFirstBlog</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style_blog.css">
+</head>
+<body>
+    <header class="blog_filter">
+        <div class="blog_filter-blog">БЛОГ</div>
+        <div class="blog_filter-filter">
+        <select data-sort>
+            <option selected value="0"></option>
+            <option value="1">None Sorted</option>
+            <option value="2">A-Z</option>
+            <option value="3">Z-A</option>
+        </select>
+    <button data-btn>Sort</button>
+    <input type="text" placeholder="filter" data-input-filter>
+        </div>
+    </header>
+    <main class="blog_container" data-blog-container>
+
+    </main>
+    <script src="script_blog.js"></script>
+</body>
+</html>
