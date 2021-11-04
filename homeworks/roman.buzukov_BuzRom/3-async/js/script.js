@@ -76,6 +76,6 @@ sortEl.addEventListener('change', (e) => {
 
 filterEl.addEventListener('keyup', () => {
     const value = filterEl.value.toLowerCase();
-    filtered = filtered.filter((item) => item.title.toLowerCase().includes(value));
+    filtered = posts.filter((item) => item.title.toLowerCase().includes(value));
     renderPosts(filtered);
 });
