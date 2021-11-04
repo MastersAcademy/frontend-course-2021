@@ -34,46 +34,60 @@ function createPostsList(content) {
     }
 }
 
+const loading = document.createElement('p');
+loading.innerText = 'Loading...';
 // Rendering posts from JSON and
 async function requestPosts(url) {
-    fetch(url)
-        .then((response) => response.json())
-        .then((response) => {
-            const content = response.slice(0, 10);
-            createPostsList(content);
-            return content;
-        }).catch((err) => {
-            console.log(err);
-        });
+    blog.appendChild(loading);
+    setTimeout(() => {
+        fetch(url)
+            .then((response) => response.json())
+            .then((response) => {
+                const content = response.slice(0, 10);
+                createPostsList(content);
+                return content;
+            }).catch((err) => {
+                console.log(err);
+            });
+        blog.removeChild(loading);
+    }, 3000);
 }
 requestPosts(requestUrl);
 
 async function requestPostsAZ(url) {
-    fetch(url)
-        .then((response) => response.json())
-        .then((response) => {
-            let content = response.slice(0, 10);
-            content = content.sort((a, b) => a.title > b.title ? 1 : - 1);
-            console.log(content);
-            createPostsList(content);
-            return content;
-        }).catch((err) => {
-            console.log(err);
-        });
+    blog.appendChild(loading);
+    setTimeout(() => {
+        fetch(url)
+            .then((response) => response.json())
+            .then((response) => {
+                let content = response.slice(0, 10);
+                content = content.sort((a, b) => (a.title > b.title ? 1 : -1));
+                console.log(content);
+                createPostsList(content);
+                return content;
+            }).catch((err) => {
+                console.log(err);
+            });
+        blog.removeChild(loading);
+    }, 3000);
 }
 
 async function requestPostsZA(url) {
-    fetch(url)
-        .then((response) => response.json())
-        .then((response) => {
-            let content = response.slice(0, 10);
-            content = content.sort((a, b) => a.title < b.title ? 1 : -1);
-            console.log(content);
-            createPostsList(content);
-            return content;
-        }).catch((err) => {
-            console.log(err);
-        });
+    blog.appendChild(loading);
+    setTimeout(() => {
+        fetch(url)
+            .then((response) => response.json())
+            .then((response) => {
+                let content = response.slice(0, 10);
+                content = content.sort((a, b) => (a.title < b.title ? 1 : -1));
+                console.log(content);
+                createPostsList(content);
+                return content;
+            }).catch((err) => {
+                console.log(err);
+            });
+        blog.removeChild(loading);
+    }, 3000);
 }
 
 sorting.addEventListener('change', () => {
@@ -92,3 +106,22 @@ document.addEventListener('click', (e) => {
         blog.removeChild(e.target.parentElement.parentElement);
     }
 });
+
+// filtering.oninput = () => {
+//     const val = this.value.trim();
+//     const textList = document.querySelectorAll('.post__title');
+//     if (val !== '') {
+//         textList.forEach((el) => {
+//             const arr = el.innerText.split('');
+//             if (arr.includes(val) === -1) {
+//                 el.parentElement.classList.remove('hide');
+//             } else {
+//                 el.parentElement.classList.add('hide');
+//             }
+//         });
+//     } else {
+//         textList.forEach((el) => {
+//             el.classList.remove('hide');
+//         });
+//     }
+// };
