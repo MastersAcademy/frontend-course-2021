@@ -1,117 +1,117 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    width: 100%;
-    height: 100%;
-    border: 10px solid rgb(187, 187, 187);
-    background: rgb(0, 162, 255);
+body {
+  width: 100%;
+  height: 100%;
+  border: 10px solid rgb(187, 187, 187);
+  background: rgb(0, 162, 255);
 }
 
 /* Main content (All)*/
-.main{
-    margin: 0 auto;
-    width: 100%;
-    max-width: 900px;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.876);
-    overflow: hidden;
+.main {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.876);
+  overflow: hidden;
 }
 
 /*TOP.Logo with sort and filter option */
-.main__header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px 50px;
+.main__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 50px;
 }
 
 /* Header logo('blog') */
-.header__logo{
-    font-size: 25px;
-    font-weight: bold;
-    text-transform: uppercase;
+.header__logo {
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.header__logo::first-letter{
-    color: rgb(255, 38, 0);
+.header__logo::first-letter {
+  color: rgb(255, 38, 0);
 }
 
 /* Header right side(sort option and filter) */
-.header__rightSide{
-    display: flex;
-    flex-direction: row;
-    margin: 0 20px 0 300px;
+.header__rightSide {
+  display: flex;
+  flex-direction: row;
+  margin: 0 20px 0 300px;
 }
 
 /* Header Sorting */
-.sort__section{
-    font-size: 16px;
-    height: 25px;
-    width: 90px;
-    border-radius: 7px;
-    text-transform: uppercase;
+.sort__section {
+  font-size: 16px;
+  height: 25px;
+  width: 90px;
+  border-radius: 7px;
+  text-transform: uppercase;
 }
 
 /* Header filter */
-.rightSide__filter{
-    height: 25px;
-    font-size: 16px;
-    width: 120px;
-    margin: 0 0 0 30px;
+.rightSide__filter {
+  height: 25px;
+  font-size: 16px;
+  width: 120px;
+  margin: 0 0 0 30px;
 }
 
 /* Blog posts container */
-.main__blog{
-    background: rgb(212, 212, 212);
-    padding: 30px 60px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.main__blog {
+  background: rgb(212, 212, 212);
+  padding: 30px 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* Post */
-.blog__post{
-    position: relative;
-    margin: 0 0 30px 0;
-    width: 45%;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.876);
-    border-radius: 30px;
+.blog__post {
+  position: relative;
+  margin: 0 0 30px;
+  width: 45%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.876);
+  border-radius: 30px;
 }
 
 /* Post title */
-.post__title{
-    margin: 0 0 25px 0;
-    font-size: 20px;
-    text-transform: uppercase;
+.post__title {
+  margin: 0 0 25px;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
-.post__title::first-letter{
-    color: rgb(255, 38, 0);
+.post__title::first-letter {
+  color: rgb(255, 38, 0);
 }
 
 /* Post innerText */
-.post__text{
-    font-size: 17px;
-    margin: 0 0 25px 0;
+.post__text {
+  font-size: 17px;
+  margin: 0 0 25px;
 }
 
 /* Delete post button container */
-.post__delete{
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    width: 100%;
-    text-align: right;
+.post__delete {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 100%;
+  text-align: right;
 }
 
-.delete__button{
-    width: 50px;
+.delete__button {
+  width: 50px;
 }
