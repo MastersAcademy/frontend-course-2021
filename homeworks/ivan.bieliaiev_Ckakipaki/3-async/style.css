@@ -11,7 +11,6 @@ body {
   background: rgb(0, 162, 255);
 }
 
-/* Main content (All)*/
 .main {
   margin: 0 auto;
   width: 100%;
@@ -21,7 +20,6 @@ body {
   overflow: hidden;
 }
 
-/*TOP.Logo with sort and filter option */
 .main__header {
   display: flex;
   flex-direction: row;
@@ -30,7 +28,6 @@ body {
   margin: 20px 50px;
 }
 
-/* Header logo('blog') */
 .header__logo {
   font-size: 25px;
   font-weight: bold;
@@ -41,14 +38,12 @@ body {
   color: rgb(255, 38, 0);
 }
 
-/* Header right side(sort option and filter) */
 .header__rightSide {
   display: flex;
   flex-direction: row;
   margin: 0 20px 0 300px;
 }
 
-/* Header Sorting */
 .sort__section {
   font-size: 16px;
   height: 25px;
@@ -57,7 +52,6 @@ body {
   text-transform: uppercase;
 }
 
-/* Header filter */
 .rightSide__filter {
   height: 25px;
   font-size: 16px;
@@ -65,7 +59,6 @@ body {
   margin: 0 0 0 30px;
 }
 
-/* Blog posts container */
 .main__blog {
   background: rgb(212, 212, 212);
   padding: 30px 60px;
@@ -76,7 +69,6 @@ body {
   justify-content: space-between;
 }
 
-/* Post */
 .blog__post {
   position: relative;
   margin: 0 0 30px;
@@ -86,7 +78,6 @@ body {
   border-radius: 30px;
 }
 
-/* Post title */
 .post__title {
   margin: 0 0 25px;
   font-size: 20px;
@@ -97,13 +88,11 @@ body {
   color: rgb(255, 38, 0);
 }
 
-/* Post innerText */
 .post__text {
   font-size: 17px;
   margin: 0 0 25px;
 }
 
-/* Delete post button container */
 .post__delete {
   position: absolute;
   bottom: 15px;
