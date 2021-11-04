@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html>
+  <head>
+     <title>Blog</title>
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+
+  <body>
+    <div class="blog-wrapper">
+      <header class="blog-header">
+        <h1 class="blog-title">Blog</h1>
+        <section class="blog-manage-section">
+          <select class="blog-order-select" data-role="blog-select-order">
+            <option data-role="blog-option-order">
+              Sort
+            </option>
+            <option data-role="blog-option-order">
+              Sort from A to Z
+            </option>
+            <option data-role="blog-option-order">
+              Sort from Z to A
+            </option>
+          </select> 
+          <input class="blog-search-input" data-role="blog-input-search" type="text" placeholder="Filter"/>
+        </section>
+      </header>
+      <main class="main-section" data-role="blog-main-section">
+      </main>
+    </div>
+    <script src="scripts/helpers.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
