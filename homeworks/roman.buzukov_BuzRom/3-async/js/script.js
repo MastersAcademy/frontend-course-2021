@@ -1,14 +1,15 @@
 const containerEl = document.querySelector('[data-container]');
 const listEl = document.querySelector('[data-list]');
 const templateEl = document.querySelector('[data-post-template]');
-const postsEl = [];
-let filteredEl = postsEl;
 const sortEl = document.querySelector('[data-sort]');
 const filterEl = document.querySelector('[data-filter]');
+const deleteEl = document.getElementsByClassName('post__delete-img');
+const posts = [];
+let filtered = posts;
 
-const getRender = (array) => {
+const renderPosts = (postsArray) => {
     listEl.innerHTML = '';
-    array.map((element) => {
+    postsArray.map((element) => {
         const item = templateEl.content.cloneNode(true);
         item.querySelector('[data-post]').setAttribute('id', `${element.id}`);
         item.querySelector('[data-title]').textContent = element.title;
@@ -23,8 +24,8 @@ window.addEventListener('load', () => {
             fetch('https://jsonplaceholder.typicode.com/posts/?_limit=30')
                 .then((response) => response.json())
                 .then((data) => {
-                    data.forEach((item) => postsEl.push(item));
-                    getRender(postsEl);
+                    data.forEach((item) => posts.push(item));
+                    renderPosts(posts);
                 });
             containerEl.classList.add('loaded');
         }, 3000);
@@ -33,23 +34,24 @@ window.addEventListener('load', () => {
 
 sortEl.addEventListener('change', (e) => {
     if (e.target.value === 'A-Z') {
-        filteredEl.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
-        getRender(filteredEl);
+        filtered.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+        renderPosts(filtered);
     }
     if (e.target.value === 'Z-A') {
-        filteredEl.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()));
-        getRender(filteredEl);
+        filtered.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()));
+        renderPosts(filtered);
     }
 });
 
 filterEl.addEventListener('keyup', () => {
     const value = filterEl.value.toLowerCase();
-    filteredEl = postsEl.filter((item) => item.title.toLowerCase().includes(value));
-    getRender(filteredEl);
+    filtered = posts.filter((item) => item.title.toLowerCase().includes(value));
+    renderPosts(filtered);
 });
 
 const deleteElement = (e) => {
-    if (e.target.hasAttribute('data-delete')) {
+    // if (e.target.hasAttribute('data-delete')) {
+    if (e.target) {
         const post = e.target.closest('[data-post]');
         post.setAttribute('style', 'visibility: hidden');
         containerEl.classList.remove('loaded');
@@ -60,9 +62,8 @@ const deleteElement = (e) => {
                 .then((response) => response.json())
                 .then(() => {
                     alert('Post deleted');
-                    filteredEl = filteredEl.filter((item) => +post.id !== item.id);
+                    filtered = filtered.filter((item) => +post.id !== item.id);
                     post.remove();
-                    console.log(filteredEl);
                 })
                 .catch(() => {
                     alert('Something went wrong');
@@ -73,4 +74,7 @@ const deleteElement = (e) => {
     }
 };
 
-listEl.addEventListener('click', deleteElement);
+// listEl.addEventListener('click', deleteElement);
+Array.from(deleteEl).forEach((item) => {
+    item.addEventListener('click', deleteElement);
+});
