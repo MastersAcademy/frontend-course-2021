@@ -10,9 +10,9 @@ async function getArticles() {
  * object with functions for sorting
  */
 const orderBy = {
-    'DEF': (arr) => [...arr],
-    'ASC': (arr) => [...arr].sort((a,b) => a.title.localeCompare(b.title)),
-    'DESC': (arr) => [...arr].sort((a,b)=> b.title.localeCompare(a.title)),
+    DEF: (arr) => [...arr],
+    ASC: (arr) => [...arr].sort((a, b) => a.title.localeCompare(b.title)),
+    DESC: (arr) => [...arr].sort((a, b) => b.title.localeCompare(a.title)),
 };
 /**
  * storage for actual sorting and searching parameters. Set 'DEF' as default value for order
@@ -50,8 +50,8 @@ function displayArticles(articles) {
 async function initApp() {
     mainField.classList.add('loader');
     initialData = await (new Promise((resolve) => setTimeout(() => {
-      mainField.classList.remove('loader');
-      resolve(getArticles());
+        mainField.classList.remove('loader');
+        resolve(getArticles());
     }, 3000)));
     titlesWithLowerCase = initialData.map((article) => article.title.toLowerCase());
     stateStorage.data = [...initialData];
