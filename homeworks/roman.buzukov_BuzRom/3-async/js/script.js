@@ -3,11 +3,11 @@ const listEl = document.querySelector('[data-list]');
 const templateEl = document.querySelector('[data-post-template]');
 const sortEl = document.querySelector('[data-sort]');
 const filterEl = document.querySelector('[data-filter]');
-const deleteEl = document.getElementsByClassName('post__delete-img');
+const remove = document.getElementsByClassName('post__delete-img');
 const posts = [];
 let filtered = posts;
 
-const deleteElement = (e) => {
+const deletePost = (e) => {
     if (e.target) {
         const post = e.target.closest('[data-post]');
         post.setAttribute('style', 'visibility: hidden');
@@ -32,8 +32,8 @@ const deleteElement = (e) => {
 };
 
 const addDeleteListener = () => {
-    Array.from(deleteEl).forEach((item) => {
-        item.addEventListener('click', deleteElement);
+    Array.from(remove).forEach((item) => {
+        item.addEventListener('click', deletePost);
     });
 };
 
@@ -57,7 +57,6 @@ window.addEventListener('load', () => {
                 .then((data) => {
                     data.forEach((item) => posts.push(item));
                     renderPosts(posts);
-                    addDeleteListener();
                 });
             containerEl.classList.add('loaded');
         }, 3000);
