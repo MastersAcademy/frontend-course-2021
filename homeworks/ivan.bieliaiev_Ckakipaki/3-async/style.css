@@ -17,7 +17,7 @@ body {
   max-width: 900px;
   border-radius: 30px;
   background: rgb(255, 255, 255);
-  opacity: 0.876;
+  opacity: .876;
   overflow: hidden;
 }
 
@@ -76,7 +76,7 @@ body {
   width: 45%;
   padding: 20px;
   background: rgb(255, 255, 255);
-  opacity: 0.876;
+  opacity: .876;
   border-radius: 30px;
 }
 
