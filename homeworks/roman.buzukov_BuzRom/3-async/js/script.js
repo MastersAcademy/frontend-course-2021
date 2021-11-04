@@ -7,19 +7,6 @@ const deleteEl = document.getElementsByClassName('post__delete-img');
 const posts = [];
 let filtered = posts;
 
-console.log(deleteEl);
-
-const renderPosts = (postsArray) => {
-    listEl.innerHTML = '';
-    postsArray.map((element) => {
-        const item = templateEl.content.cloneNode(true);
-        item.querySelector('[data-post]').setAttribute('id', `${element.id}`);
-        item.querySelector('[data-title]').textContent = element.title;
-        item.querySelector('[data-body]').textContent = element.body;
-        return listEl.appendChild(item);
-    });
-};
-
 const deleteElement = (e) => {
     if (e.target) {
         const post = e.target.closest('[data-post]');
@@ -44,6 +31,24 @@ const deleteElement = (e) => {
     }
 };
 
+const addDeleteListener = () => {
+    Array.from(deleteEl).forEach((item) => {
+        item.addEventListener('click', deleteElement);
+    });
+};
+
+const renderPosts = (postsArray) => {
+    listEl.innerHTML = '';
+    postsArray.map((element) => {
+        const item = templateEl.content.cloneNode(true);
+        item.querySelector('[data-post]').setAttribute('id', `${element.id}`);
+        item.querySelector('[data-title]').textContent = element.title;
+        item.querySelector('[data-body]').textContent = element.body;
+        addDeleteListener();
+        return listEl.appendChild(item);
+    });
+};
+
 window.addEventListener('load', () => {
     if (containerEl) {
         setTimeout(() => {
@@ -52,10 +57,7 @@ window.addEventListener('load', () => {
                 .then((data) => {
                     data.forEach((item) => posts.push(item));
                     renderPosts(posts);
-                    Array.from(deleteEl).forEach((item) => {
-                        item.addEventListener('click', deleteElement);
-                    });
-                    console.log(deleteEl);
+                    addDeleteListener();
                 });
             containerEl.classList.add('loaded');
         }, 3000);
