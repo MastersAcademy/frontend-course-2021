@@ -16,7 +16,8 @@ body {
   width: 100%;
   max-width: 900px;
   border-radius: 30px;
-  background: rgba(255, 255, 255, 0.876);
+  background: rgb(255, 255, 255);
+  opacity: 0.876;
   overflow: hidden;
 }
 
@@ -30,7 +31,7 @@ body {
 
 .header__logo {
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -74,7 +75,8 @@ body {
   margin: 0 0 30px;
   width: 45%;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.876);
+  background: rgb(255, 255, 255);
+  opacity: 0.876;
   border-radius: 30px;
 }
 
