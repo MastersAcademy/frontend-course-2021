@@ -1,20 +1,47 @@
-/*
-Before sending a request for posts, add a timeout of 3 seconds
+const url = 'https://jsonplaceholder.typicode.com/posts';
+const blog = document.querySelector('[data-blog]');
 
-When opening the page, show the loading and hide it after downloading the posts
+async function timeOut(ms){
+    setTimeout(() => console.log('timeout', ms / 1000, 'seconds'), ms);
+}
 
-Render a list of posts according to the attached layout
+async function renderPosts(url) {
+    try {
+        console.log('Rendering');
+        const response = await fetch(url);
+        let content = await response.json();
+        content = await content.slice(0, 10);
+        console.log(content);
+        createPost(content, )
+    }
+    catch (e) {
+        console.log(e);
+    }
+}
 
-Add sorting and title filter to posts that have been rendered.
+function createPost(content){
+    for(let  i = 0; i < content.length; i++){
+        const article = document.createElement('article');
+        const p = document.createElement('p');
+        const h1 = document.createElement('h1');
+        const div = document.createElement('div');
+        const button = document.createElement('button');
+        article.setAttribute(`data-post`, content[i].id)
+        button.attributes = `data-delete-post = ${content[i].id}`;
+        article.classList = 'blog__post';
+        p.classList = 'post__text';
+        h1.classList = 'post__title';
+        div.classList = 'post__delete';
+        button.classList = 'delete__button';
+        button.textContent = "delete";
+        h1.textContent = content[i].title;
+        p.textContent = content[i].body;
+        div.appendChild(button);
+        article.appendChild(h1);
+        article.appendChild(p);
+        article.appendChild(div);
+        blog.appendChild(article);
+    }
+}
 
-Sorting has 3 options:
-a. Initial version (without sorting)
-b. Sort from A to Z
-c. Sort from Z to A
-
-In the filter field when entering text, only those posts are displayed whose titles match the text (non-case-sensitive match)
-For example: the text "ed T" will leave posts with the titles "red text", "rED T"
-
-Sorting and filtering should work in combination, ie when displaying search results, the selected sorting should be applied to them.
-
-*/
+renderPosts(url)

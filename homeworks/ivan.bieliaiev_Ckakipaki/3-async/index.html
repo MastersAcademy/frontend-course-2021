@@ -9,24 +9,19 @@
     <section class="main">
         <header class="main__header">
             <h1 class="header__logo">blog</h1>
-            <form action="sort" class="header__sort">
-                <select size="1" name="hero[]">
-                    <option disabled selected value="Чебурашка">sort</option>
-                    <option value="Чебурашка">Чебурашка</option>
-                    <option value="Крокодил Гена">Крокодил Гена</option>
-                    <option value="Шапокляк">Шапокляк</option>
-                </select>
-            </form>
-            <input type="text" name="filter" class="header__filter" placeholder="filter">
+            <div class="header__rightSide">
+                <form action="sort" class="rightSide__sort">
+                    <select size="1" name="hero[]" class="sort__section">
+                        <option disabled selected value="Чебурашка">sort</option>
+                        <option value="Чебурашка">Чебурашка</option>
+                        <option value="Крокодил Гена">Крокодил Гена</option>
+                        <option value="Шапокляк">Шапокляк</option>
+                    </select>
+                </form>
+                <input type="text" name="filter" class="rightSide__filter" placeholder="filter">
+            </div>
         </header>
-        <section class="main__blog">
-            <article class="blog__post">
-                <h1 class="post__title">title</h1>
-                <p class="post__text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt dicta pariatur quidem aliquam magni officia rem ratione, maxime fugit, reiciendis necessitatibus quas adipisci dolor molestiae placeat sit a, ad voluptate.
-                </p>
-                <button class="post__delete">delete</button>
-            </article>
+        <section class="main__blog" data-blog>
         </section>
     </section>
     <script src="app.js"></script>
