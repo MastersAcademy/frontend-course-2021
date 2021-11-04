@@ -1,20 +1,26 @@
-const url = 'https://jsonplaceholder.typicode.com/posts';
-const blog = document.querySelector('[data-blog]');
-
 // Rendering posts from JSON
-async function renderPosts(url) {
+setTimeout(async () => {
     try {
-        const response = await fetch(url);
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
         let content = await response.json();
-        content = await content.slice(0, 10);
-        createPosts(content);
+        content = content.slice(0, 10);
+        // Create Post
+        await createPosts(content);
+        // Delete post
+        await document.addEventListener('click', e => {
+            if(e.target.classList[0] = "delete__button") {
+                blog.removeChild(e.target.parentElement.parentElement)
+            }
+            
+        })
     }
     catch (e) {
         console.log(e);
     }
-}
+}, 3000)
 
-// Create post markup with value text, title, id
+// Create post's markup with value text, title, id
+const blog = document.querySelector('[data-blog]');
 function postMarkupPost(id, title, text){
     const article = document.createElement('article');
     const p = document.createElement('p');
@@ -41,15 +47,6 @@ function postMarkupPost(id, title, text){
 // Appending posts to blog container
 function createPosts(content){
     for(let i = 0; i < content.length; i++){
-        postMarkupPost(i, content[i].title, content[i].body);
+        postMarkupPost(content[i].id, content[i].title, content[i].body);
     }
 }
-
-renderPosts(url)
-
-
-document.addEventListener('click', e => {
-    if(e.classList = "[data-delete-post]") {
-        blog.removeChild(e.target.parentElement.parentElement)
-    }
-})

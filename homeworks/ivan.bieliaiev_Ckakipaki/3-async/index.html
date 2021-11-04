@@ -11,11 +11,12 @@
             <h1 class="header__logo">blog</h1>
             <div class="header__rightSide">
                 <form action="sort" class="rightSide__sort">
-                    <select size="1" name="hero[]" class="sort__section">
-                        <option disabled selected value="Чебурашка">sort</option>
-                        <option value="Чебурашка">Чебурашка</option>
-                        <option value="Крокодил Гена">Крокодил Гена</option>
-                        <option value="Шапокляк">Шапокляк</option>
+                    <select data-sorting="1" size="1" class="sort__section">
+                        <option disabled selected value="sort">sort</option>
+                        <option data-sorting-default value="default">Default</option>
+                        <option data-sorting-AtZ value="A__to__Z">A to Z</option>
+                        <option data-sorting-ZtA value="Z__to___A">Z to A</option>
+
                     </select>
                 </form>
                 <input type="text" name="filter" class="rightSide__filter" placeholder="filter">
