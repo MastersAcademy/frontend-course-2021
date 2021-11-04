@@ -4,8 +4,8 @@ const templateEl = document.querySelector('[data-post-template]');
 const sortEl = document.querySelector('[data-sort]');
 const filterEl = document.querySelector('[data-filter]');
 const remove = document.getElementsByClassName('post__delete-img');
-const posts = [];
-let filtered = posts;
+const data = [];
+let posts = data;
 
 const deletePost = (e) => {
     if (e.target) {
@@ -19,7 +19,7 @@ const deletePost = (e) => {
                 .then((response) => response.json())
                 .then(() => {
                     alert('Post deleted');
-                    filtered = filtered.filter((item) => +post.id !== item.id);
+                    posts = posts.filter((item) => +post.id !== item.id);
                     post.remove();
                 })
                 .catch(() => {
@@ -54,27 +54,27 @@ window.addEventListener('load', () => {
         setTimeout(() => {
             fetch('https://jsonplaceholder.typicode.com/posts/?_limit=30')
                 .then((response) => response.json())
-                .then((data) => {
-                    data.forEach((item) => posts.push(item));
-                    renderPosts(posts);
+                .then((res) => {
+                    res.forEach((item) => data.push(item));
+                    renderPosts(data);
                 });
             containerEl.classList.add('loaded');
         }, 3000);
     }
 });
 
-const sortFilter = (array, value, type) => {
-    let arr = array;
-    arr = arr.filter((item) => item.title.toLowerCase().includes(value));
+const sortFilter = (postsArray, value, type) => {
+    let array = postsArray;
+    array = array.filter((item) => item.title.toLowerCase().includes(value));
     if (type === 'A-Z') {
-        arr = arr.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
-        renderPosts(arr);
+        array = array.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+        renderPosts(array);
     }
     if (type === 'Z-A') {
-        arr = arr.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()));
-        renderPosts(arr);
+        array = array.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()));
+        renderPosts(array);
     }
-    return renderPosts(arr);
+    return renderPosts(array);
 };
 
 sortEl.addEventListener('change', (e) => {
