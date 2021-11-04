@@ -20,7 +20,7 @@
 
 .main__header {
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   background: #FFF;
   display: flex;
   flex-direction: row;
@@ -39,6 +39,7 @@
 .main__header-title {
   margin-left: 20px;
   text-transform: uppercase;
+  transition: .2s;
 }
 
 .main__header-title::first-letter {
@@ -50,12 +51,14 @@
   min-height: 30px;
   border-radius: 15px;
   margin-right: 20px;
+  transition: .2s;
 }
 
 .main__header-input-filter {
-  min-width: 180px;
+  width: 100%;
   min-height: 20px;
   border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .main__header-input-filter[type="text"] {
@@ -80,10 +83,24 @@
   padding: 20px;
   margin: 20px;
   width: 400px;
-  height: 400px;
+  height: auto;
   background: #FFF;
   border: 2px solid #000;
   border-radius: 10px;
+  box-shadow: 0 24px 38px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+}
+
+.post__image {
+  margin-left: 85%;
+  width: 40px;
+  height: 40px;
+  transition: .2s;
+}
+
+.main__header-button-sort:hover,
+.main__header-title:hover,
+.post__image:hover {
+  transform: scale(1.2);
 }
 
 .loader-container {
@@ -126,6 +143,18 @@
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+@media (max-width: 400px) {
+
+  .main__header {
+    flex-direction: column;
+  }
+
+  .main__header-sort-and-filter {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 @-webkit-keyframes loader-1 {
