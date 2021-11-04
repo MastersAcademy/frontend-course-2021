@@ -1,67 +1,31 @@
-import { HTTP } from './http.js';
+import { Post } from './post.js';
+import { Notification } from './notification.js';
+import { Loader } from './loader.js';
 
 class App {
-    constructor() {
-        this.postTemplateEl = document.querySelector('[data-post-template]');
-        this.loaderTemplateEl = document.querySelector('[data-loader-template]');
+    constructor(url) {
+        this.url = url;
         this.postsContainerEl = document.querySelector('[data-posts-section]');
-        this.notificationMessageTemplateEl = document.querySelector('[data-notification-message-template]');
     }
 
-    createPostElement(data) {
-        const element = this.postTemplateEl.content.cloneNode(true);
-
-        const title = data.body.charAt(0).toUpperCase() + data.body.slice(1);
-        const body = data.body.charAt(0).toUpperCase() + data.body.slice(1);
-        const { id } = data;
-
-        element.querySelector('[data-post-title]').textContent = title;
-        element.querySelector('[data-post-body]').textContent = body;
-        element.querySelector('[data-post]').dataset.id = id;
-        return element;
+    async getPosts() {
+        const response = await fetch(`${this.url}?_start=0&_end=30`);
+        return response.json();
     }
 
-    addPost(postElement) {
-        this.postsContainerEl.appendChild(postElement);
+    async deletePost(postId) {
+        const path = `${this.url}/${postId}`;
+        const response = await fetch(path, {
+            method: 'DELETE',
+        });
+        const posts = await response.json();
+        return posts;
     }
 
     removePost(event) {
         if (event.target.dataset.deleteButtonIcon === '') {
             this.postsContainerEl.removeChild(event.target.closest('[data-post]'));
         }
-    }
-
-    createLoaderElement() {
-        const content = this.loaderTemplateEl.content.cloneNode(true);
-        const element = content.querySelector('[data-loader]');
-        return element;
-    }
-
-    toggleLoader() {
-        const element = this.createLoaderElement();
-
-        const loader = document.querySelector('[data-loader]');
-
-        if (!this.postsContainerEl.contains(loader)) {
-            this.postsContainerEl.appendChild(element);
-        } else {
-            this.postsContainerEl.removeChild(loader);
-        }
-    }
-
-    createNotificationMessageElement() {
-        const content = this.notificationMessageTemplateEl.content.cloneNode(true);
-        const element = content.querySelector('[data-notification-message]');
-        return element;
-    }
-
-    toggleNotificatonMessage(textMessage) {
-        const element = this.createNotificationMessageElement();
-        element.querySelector('[data-notification-message-body]').textContent = textMessage;
-        this.postsContainerEl.prepend(element);
-        setTimeout(() => {
-            this.postsContainerEl.removeChild(document.querySelector('[data-notification-message]'));
-        }, 2000);
     }
 
     sortPosts() {
@@ -75,7 +39,7 @@ class App {
 
         [...this.postsContainerEl.children]
             .sort((a, b) => (a > b ? 1 : -1))
-            .forEach((element) => this.postsContainerEl.appendChild(element));
+            .forEach((element) => this.postsContainerEl.append(element));
     }
 
     filterPosts(event) {
@@ -93,20 +57,39 @@ class App {
 }
 
 const url = 'https://jsonplaceholder.typicode.com/posts';
-const http = new HTTP(url);
-const app = new App();
+const app = new App(url);
+const loader = new Loader();
+const notification = new Notification();
 
-window.addEventListener('DOMContentLoaded', () => {
-    app.toggleLoader();
+function initLoader() {
+    const loaderElement = loader.create();
+    loader.add(loaderElement);
+    loader.show();
+}
+
+function initNotification(textMessage) {
+    const notificationElement = notification.create(textMessage);
+    notification.add(notificationElement);
+    notification.show();
     setTimeout(() => {
-        http.getPosts().then((data) => {
-            data.forEach((post) => {
-                const postElement = app.createPostElement(post);
-                app.addPost(postElement);
+        notification.remove();
+    }, 1500);
+}
+
+function initContentLoad() {
+    initLoader();
+    setTimeout(() => {
+        app.getPosts().then((data) => {
+            data.forEach((postData) => {
+                const post = new Post(postData);
+                const postElement = post.create();
+                post.add(postElement);
             });
-        }).catch((error) => console.log(error)).finally(app.toggleLoader());
+        }).catch((error) => console.log(error)).finally(loader.remove());
     }, 3000);
-});
+}
+
+initContentLoad();
 
 document.querySelector('[data-button-sort]').addEventListener('click', () => {
     app.sortPosts();
@@ -122,9 +105,13 @@ document.querySelector('[data-posts-section]').addEventListener('click', (event)
     app.removePost(event);
 
     if (event.target.dataset.deleteButtonIcon === '') {
+        initNotification('You have deleted the post!');
+
         const postId = event.target.closest('[data-post]').dataset;
-        http.deletePost(postId)
-            .then(app.toggleNotificatonMessage('Post was deleted'))
-            .catch(() => app.toggleNotificatonMessage('Something went wrong!'));
+        app.deletePost(postId)
+            .then()
+            .catch(() => {
+                initNotification('Oops, something went wrong!');
+            });
     }
 });

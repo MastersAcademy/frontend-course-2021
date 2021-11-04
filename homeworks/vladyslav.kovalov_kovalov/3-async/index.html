@@ -40,16 +40,15 @@
             </article>
         </template>
         <template data-loader-template>
-            <div class="loader" data-loader></div>
+            <div class="loader display-none" data-loader></div>
         </template>
         <template data-notification-message-template>
-            <article class="posts-section__element post notificaton-message" data-notification-message>
+            <article class="posts-section__element post notificaton-message display-none" data-notification-message>
                 <p class="post__body notificaton-message__body" data-notification-message-body></p>
+            </article>
+        </template>
     </div>
-    </article>
-    </template>
-    </div>
-    <script type="module" src="app.js"></script>
+    <script type="module" defer src="app.js"></script>
 </body>
 
 </html>
