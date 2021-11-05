@@ -35,31 +35,34 @@ function deleteEl(element) {
 fetch(url)
 .then((response) => response.json())
 .then((json) => {
-    const blogArr = json;
-    for (let i = 0; i < blogArr.length; i++) {
-        render(`${blogArr[i].title}`, `${blogArr[i].body}`);
+    const blogSort = json;
+    for (let i = 0; i < blogSort.length; i++) {
+        render(`${blogSort[i].title}`, `${blogSort[i].body}`);
     };
 
-    sortPost.addEventListener("change", function() {
+    sortPost.addEventListener("click", function() {
         if(`${sortPost.value}` == "No sort") {
-            const blogSort = blogArr;
             deleteEl(blogMsg);
+            fetch(url)
+            .then((response) => response.json())
+            .then((json) => {const blogArr = json;
+                for (let i = 0; i < blogArr.length; i++) {
+                    render(`${blogArr[i].title}`, `${blogArr[i].body}`);
+                };
+            });
+        }
+        else if(`${sortPost.value}` == "Sort A-Z") {
+            deleteEl(blogMsg);
+            blogSort.sort(forward("title"));
             for (let i = 0; i < blogSort.length; i++) {
                 render(`${blogSort[i].title}`, `${blogSort[i].body}`);
             };
         }
-        else if(`${sortPost.value}` == "Sort A-Z") {
-            deleteEl(blogMsg);
-            blogArr.sort(forward("title"));
-            for (let i = 0; i < blogArr.length; i++) {
-                render(`${blogArr[i].title}`, `${blogArr[i].body}`);
-            };
-        }
         else if(`${sortPost.value}` == "Sort Z-A") {
             deleteEl(blogMsg);
-            blogArr.sort(back("title"));
-            for (let i = 0; i < blogArr.length; i++) {
-                render(`${blogArr[i].title}`, `${blogArr[i].body}`);
+            blogSort.sort(back("title"));
+            for (let i = 0; i < blogSort.length; i++) {
+                render(`${blogSort[i].title}`, `${blogSort[i].body}`);
             };
         };
     })
@@ -67,8 +70,7 @@ fetch(url)
     filterPostTitle.addEventListener("change", (event) => {
         deleteEl(blogMsg);
         const postStr = filterPostTitle.value;
-        console.log(postStr);
-        const blogFilter = blogArr.filter(x => {return x.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1;});
+        const blogFilter = blogSort.filter(x => {return x.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1;});
         for (let i = 0; i < blogFilter.length; i++) {
             render(`${blogFilter[i].title}`, `${blogFilter[i].body}`);
         };
