@@ -24,4 +24,13 @@ export class Notification {
         const notification = document.querySelector('[data-notification-message]');
         notification.classList.remove('display-none');
     }
+
+    render(textMessage) {
+        const notificationElement = this.create(textMessage);
+        this.add(notificationElement);
+        this.show();
+        setTimeout(() => {
+            this.remove();
+        }, 1500);
+    }
 }
