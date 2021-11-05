@@ -2,6 +2,13 @@
 const requestUrl = 'https://jsonplaceholder.typicode.com/posts';
 const blog = document.querySelector('[data-blog]');
 const sorting = document.querySelector('[data-sorting]');
+const filtering = document.querySelector('[data-filter]');
+
+// For loading
+const loading = document.createElement('p');
+loading.innerText = 'Loading...';
+loading.style.color = 'Orange';
+loading.style.fontSize = '25px';
 
 // Create markup and inner for post by FUNC createPostsList
 function postMarkupPost(id, title, text) {
@@ -34,9 +41,44 @@ function createPostsList(content) {
     }
 }
 
-const loading = document.createElement('p');
-loading.innerText = 'Loading...';
-// Rendering posts from JSON and
+// Filtering
+function filter() {
+    filtering.oninput = (e) => {
+        const val = e.target.value.trim().toLowerCase();
+        const textList = document.querySelectorAll('.post__title');
+        if (val !== '') {
+            textList.forEach((el) => {
+                if (el.innerText.toLowerCase().search(val) === -1) {
+                    el.parentElement.classList.add('hide');
+                } else {
+                    el.parentElement.classList.remove('hide');
+                }
+            });
+        } else {
+            textList.forEach((elem) => {
+                elem.parentElement.classList.remove('hide');
+            });
+        }
+    };
+}
+
+// Delete post
+function deletePost() {
+    document.addEventListener('click', (e) => {
+        if (e.target.classList[0] === 'delete__button') {
+            const deleteMessege = document.createElement('div');
+            deleteMessege.innerText = `Post: ${e.target.attributes[0].value} deleted`;
+            deleteMessege.classList.add('post__delete__outText');
+            document.body.appendChild(deleteMessege);
+            setTimeout(() => {
+                blog.removeChild(e.target.parentElement.parentElement);
+                document.body.removeChild(deleteMessege);
+            }, 800);
+        }
+    });
+}
+
+// For default sorting
 async function requestPosts(url) {
     blog.appendChild(loading);
     setTimeout(() => {
@@ -45,6 +87,8 @@ async function requestPosts(url) {
             .then((response) => {
                 const content = response.slice(0, 10);
                 createPostsList(content);
+                filter();
+                deletePost();
                 return content;
             }).catch((err) => {
                 console.log(err);
@@ -54,6 +98,7 @@ async function requestPosts(url) {
 }
 requestPosts(requestUrl);
 
+// For sort A to Z
 async function requestPostsAZ(url) {
     blog.appendChild(loading);
     setTimeout(() => {
@@ -64,6 +109,8 @@ async function requestPostsAZ(url) {
                 content = content.sort((a, b) => (a.title > b.title ? 1 : -1));
                 console.log(content);
                 createPostsList(content);
+                deletePost();
+                filter();
                 return content;
             }).catch((err) => {
                 console.log(err);
@@ -72,6 +119,7 @@ async function requestPostsAZ(url) {
     }, 3000);
 }
 
+// For sort Z to A
 async function requestPostsZA(url) {
     blog.appendChild(loading);
     setTimeout(() => {
@@ -82,6 +130,8 @@ async function requestPostsZA(url) {
                 content = content.sort((a, b) => (a.title < b.title ? 1 : -1));
                 console.log(content);
                 createPostsList(content);
+                deletePost();
+                filter();
                 return content;
             }).catch((err) => {
                 console.log(err);
@@ -90,6 +140,7 @@ async function requestPostsZA(url) {
     }, 3000);
 }
 
+// Sorting
 sorting.addEventListener('change', () => {
     blog.innerHTML = '';
     if (sorting.value === 'A__to__Z') {
@@ -100,28 +151,3 @@ sorting.addEventListener('change', () => {
         requestPosts(requestUrl);
     }
 });
-
-document.addEventListener('click', (e) => {
-    if (e.target.classList[0] === 'delete__button') {
-        blog.removeChild(e.target.parentElement.parentElement);
-    }
-});
-
-// filtering.oninput = () => {
-//     const val = this.value.trim();
-//     const textList = document.querySelectorAll('.post__title');
-//     if (val !== '') {
-//         textList.forEach((el) => {
-//             const arr = el.innerText.split('');
-//             if (arr.includes(val) === -1) {
-//                 el.parentElement.classList.remove('hide');
-//             } else {
-//                 el.parentElement.classList.add('hide');
-//             }
-//         });
-//     } else {
-//         textList.forEach((el) => {
-//             el.classList.remove('hide');
-//         });
-//     }
-// };

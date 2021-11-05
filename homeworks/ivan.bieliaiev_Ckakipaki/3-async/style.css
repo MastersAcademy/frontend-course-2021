@@ -9,6 +9,7 @@ body {
   height: 100%;
   border: 10px solid rgb(187, 187, 187);
   background: rgb(0, 162, 255);
+  position: relative;
 }
 
 .main {
@@ -103,4 +104,18 @@ body {
 
 .delete__button {
   width: 50px;
+}
+
+.hide {
+  display: none;
+}
+
+.post__delete__outText {
+  padding: 5px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  font-size: 25px;
+  font-weight: 700;
+  background: rgb(223, 146, 2);
 }
