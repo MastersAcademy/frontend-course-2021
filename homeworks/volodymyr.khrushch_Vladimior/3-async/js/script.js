@@ -33,11 +33,11 @@ sorting.addEventListener('change', (event) => {
 document.querySelector('[data-input]').addEventListener('input', (e) => {
     const val = e.target.value.toLowerCase();
 
-    for(const element of container.querySelectorAll('[data-title]')) {
+    container.querySelectorAll('[data-title]').forEach((element) => {
         element.closest('[data-card]').style.display = element.innerText.toLowerCase().includes(val)
-                  ? 'block'
-                  : 'none';
-      }
+            ? 'block'
+            : 'none';
+    });
 });
 
 renderPosts();
