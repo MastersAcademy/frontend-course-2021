@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1:first-letter, h2:first-letter, p:first-letter {
+  color: red;
+}
+
+body {
+  background-color: #E0FFFF;
+  font-family: sans-serif;
+}
+
+.header-panel {
+  display: grid;
+  grid-template-columns: 850px 150px 280px;
+  grid-auto-rows: 60px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin: 0 auto;
+  width: 1280px;
+  background-color: #FFFFFF;
+}
+
+.header-panel__title {
+  height: 60px;
+  padding-top: 6px;
+  padding-left: 75px;
+  text-transform: uppercase;
+  font-size: 44px;
+}
+
+.header-panel__sort {
+  font-size: 16px;
+  height: 32px;
+  margin-top: 12px;
+  border-radius: 30px;
+  text-align: center;
+  background-color: #F5F5F5;
+}
+
+.header-panel__filter {
+  padding-left: 15px;
+}
+
+.filter__input {
+  font-size: 16px;
+  height: 30px;
+  margin-top: 12px;
+  border-radius: 30px;
+  padding-left: 20px;
+  vertical-align: middle;
+}
+
+.articles-area {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 600px);
+  justify-content: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 1280px;
+  background-color: #F5F5F5;
+}
+
+.articles-area__article {
+  border-radius: 20px;
+  height: 300px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  margin: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+}
+
+.article__title {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.article__title:first-letter {
+  text-transform: uppercase;
+}
+
+.article__content {
+  font-size: 24px;
+}
+
+.article__content:first-letter {
+  text-transform: uppercase;
+}
+
+.loading-window {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 300px;
+  color: white;
+  background: rgba(0, 0, 0, .9);
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, .8) 0 0 0 1920px;
+}
+
+.loading-window--hidden {
+  display: none;
+}
