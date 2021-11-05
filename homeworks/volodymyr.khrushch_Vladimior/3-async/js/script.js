@@ -33,7 +33,7 @@ sorting.addEventListener('change', (event) => {
 document.querySelector('[data-input]').addEventListener('input', (e) => {
     const val = e.target.value.toLowerCase();
 
-    container.querySelectorAll('[data-title]').forEach((n) => {
+    container.querySelectorAll('[data-title]').forEach(n => {
         n.closest('[data-card]').style.display = n.innerText.toLowerCase().includes(val)
             ? 'block'
             : 'none';
