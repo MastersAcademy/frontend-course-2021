@@ -5,14 +5,14 @@ body {
 
 .loader {
   z-index: 9999;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: none repeat scroll 0 0 #000;
+  height: 70vh;
+  background: none repeat scroll 0 0 transparent;
 }
 
 .loader_inner {
@@ -26,19 +26,23 @@ body {
   background-image: url("load.gif");
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: #000;
+  background-color: transparent;
 }
 
 .hide {
   display: none;
 }
 
-.main-content {
+.wrapper {
   height: auto;
   width: 845px;
   margin: 100px auto;
   border-radius: 30px;
   background-color: #F6F5FB;
+}
+
+.main-content {
+  position: relative;
 }
 
 .header {
@@ -89,7 +93,7 @@ body {
 }
 
 .post-list {
-  max-height: 70vh;
+  height: 70vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -114,6 +118,7 @@ body {
 
 .post-list__item-title::first-letter {
   color: #F27171;
+  text-transform: uppercase;
 }
 
 .trash-bnt {

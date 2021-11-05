@@ -6,71 +6,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="loader">
-    <div class="loader_inner"></div>
-</div>
-<main class="main-content">
+<div class="wrapper">
     <header class="header">
         <h1 class="site-title">Blog</h1>
         <div class="posts-sort">
             <label for="sort" hidden>sort field</label>
-            <select class="sort-field" name="sort" id="sort">
+            <select class="sort-field" name="sort" id="sort" data-sort>
                 <option value="default">sort</option>
                 <option value="a-z">A &#8594; Z</option>
                 <option value="z-a">Z &#8594; A</option>
             </select>
             <label for="filter" hidden>filter</label>
-            <input class="filter-field" type="text" placeholder="Filter" id="filter">
+            <input class="filter-field" type="text" placeholder="Filter" id="filter" data-filter>
         </div>
     </header>
-    <ul class="post-list" data-main-box>
-        <li class="post-list__item">
-            <h2 class="post-list__item-title">Title</h2>
-            <p class="post-list__item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
-                consequuntur cum deserunt doloribus
-                dolorum eligendi enim magnam minus, nostrum numquam praesentium quod quos similique tempore voluptatem.
-                Debitis eaque esse est! Debitis eaque esse est!</p>
-            <div class="trash-bnt">
-                <a href="#" class="trash-btn__link">
-                    <img class="trash-btn__icon" src="Trash-Icon.png" alt="Trash" width=66 height=42>
-                </a>
-            </div>
-        </li>
-        <li class="post-list__item">
-            <h2 class="post-list__item-title">Title</h2>
-            <p class="post-list__item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi consequuntur cum deserunt doloribus
-                dolorum eligendi enim magnam minus, nostrum numquam praesentium quod quos similique tempore voluptatem.
-                Debitis eaque esse est! Debitis eaque esse est!</p>
-            <div class="trash-bnt">
-                <a href="#" class="trash-btn__link">
-                    <img class="trash-btn__icon" src="Trash-Icon.png" alt="Trash" width="66" height="42">
-                </a>
-            </div>
-        </li>
-        <li class="post-list__item">
-            <h2 class="post-list__item-title">Title</h2>
-            <p class="post-list__item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi consequuntur cum deserunt doloribus
-                dolorum eligendi enim magnam minus, nostrum numquam praesentium quod quos similique tempore voluptatem.
-                Debitis eaque esse est! Debitis eaque esse est!</p>
-            <div class="trash-bnt">
-                <a href="#" class="trash-btn__link">
-                    <img class="trash-btn__icon" src="Trash-Icon.png" alt="Trash" width="66" height="42">
-                </a>
-            </div>
-        </li>
-        <li class="post-list__item">
-            <h2 class="post-list__item-title">Title</h2>
-            <p class="post-list__item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi consequuntur cum deserunt doloribus
-                dolorum eligendi enim magnam minus, nostrum numquam praesentium quod quos similique tempore voluptatem.
-                Debitis eaque esse est! Debitis eaque esse est!</p>
-            <div class="trash-bnt">
-                <a href="#" class="trash-btn__link">
-                    <img class="trash-btn__icon" src="Trash-Icon.png" alt="Trash" width="66" height="42">
-                </a>
-            </div>
-        </li>
-    </ul>
-</main>
+    <main class="main-content">
+        <div class="loader">
+            <div class="loader_inner"></div>
+        </div>
+        <ul class="post-list" data-main-box>
+        </ul>
+    </main>
+</div>
 <script src="main.js"></script>
 </body>
 </html>
