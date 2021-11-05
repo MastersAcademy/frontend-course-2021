@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+  <title>BLOG</title>
+</head>
+
+<body>
+  <div class="load" data-load>
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+  </div>
+
+  <article class="content">
+
+    <nav class="content__navigation">
+
+      <section class="content__header">
+        <h1>BLOG</h1>
+      </section>
+
+      <section class="content__sorting">
+        <select name="sort" data-sort class="content__sorting-icon">
+          <option value="" selected>Sort</option>
+          <option value="asc">Sorting A-Z</option>
+          <option value="desc">Sorting Z-A</option>
+        </select>
+      </section>
+
+      <section class="content__filter">
+        <input type="text" data-input class="content__filter-input">
+      </section>
+
+    </nav>
+    <main class="content__main">
+      <section class="content__posts" data-blogs>
+
+      </section>
+    </main>
+
+  </article>
+</body>
+
+</html>
