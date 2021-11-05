@@ -31,13 +31,13 @@ function loadSite() {
             filterSearch.addEventListener('keyup', () => {
                 const value = filterSearch.value.toLowerCase();
                 const filterFound = arrayJson.filter((item) => (
-                    item.title.toLowerCase().includes(value))
-                );
+                    item.title.toLowerCase().includes(value)),
+                    );
                 if (filterFound.value !== '') {
                     allContent.innerHTML = '';
                     filterFound.map((show) => {
-                        const articleShow
-                            = dataContentTemplate.content.cloneNode(true).firstElementChild;
+                        const articleShow = dataContentTemplate.content
+                            .cloneNode(true).firstElementChild;
                         const articleTitle = articleShow.querySelector('[data-article-title]');
                         const articleText = articleShow.querySelector('[data-article-text]');
                         const removeBtn = articleShow.querySelector('[data-remove-btn]');
