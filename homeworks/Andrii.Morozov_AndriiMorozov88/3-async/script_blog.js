@@ -18,10 +18,10 @@ function fetchDataA() {
             for (let i = 0; i < data.length; i++) {
                 for (let j = 0; j < data.length; j++) {
                     if (data[i].title < data[j].title) {
-                        [data[i], data[j]] = [data[j], data[i]]; 
+                        [data[i], data[j]] = [data[j], data[i]];
+                    }
+                }
             }
-        }
-       }
      for (let i = 0; i < data.length; i++) {
         let blogElement = document.createElement('div');
         blogElement.className = 'blog_container-el';
