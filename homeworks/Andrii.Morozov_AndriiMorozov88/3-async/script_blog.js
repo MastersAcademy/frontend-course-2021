@@ -75,14 +75,14 @@ document.querySelector('[data-btn]').addEventListener('click', () => {
     const sort = document.querySelector('[data-sort]');
     if (sort.value === '1') {
         blogContainer.innerHTML = '';
-        setTimeout(fetchData, 100);
+        setTimeout(fetchData, 3000);
     }
     if (sort.value === '2') {
         blogContainer.innerHTML = '';
-        setTimeout(fetchDataA, 100);
+        setTimeout(fetchDataA, 3000);
     }
     if (sort.value === '3') {
         blogContainer.innerHTML = '';
-        setTimeout(fetchDataZ, 100);
+        setTimeout(fetchDataZ, 3000);
     }
 });
