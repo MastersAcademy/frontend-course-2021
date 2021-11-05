@@ -4,8 +4,8 @@ const templateEl = document.querySelector('[data-post-template]');
 const sortEl = document.querySelector('[data-sort]');
 const filterEl = document.querySelector('[data-filter]');
 const removeBtn = document.getElementsByClassName('post__delete');
-const data = [];
-let posts = data;
+const dataPosts = [];
+let posts = dataPosts;
 
 const deletePost = (e) => {
     if (e.target) {
@@ -55,8 +55,8 @@ window.addEventListener('load', () => {
             fetch('https://jsonplaceholder.typicode.com/posts/?_limit=30')
                 .then((response) => response.json())
                 .then((res) => {
-                    res.forEach((item) => data.push(item));
-                    renderPosts(data);
+                    res.forEach((item) => dataPosts.push(item));
+                    renderPosts(dataPosts);
                 });
             containerEl.classList.add('loaded');
         }, 3000);
