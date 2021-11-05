@@ -68,6 +68,10 @@ body {
   border: none;
 }
 
+.main {
+  position: relative;
+}
+
 .news-window {
   width: 1100px;
   margin: 20px auto;

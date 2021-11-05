@@ -2,6 +2,7 @@ const preloader = document.querySelector('[data-preloader]');
 const list = document.querySelector('[data-list]');
 const selectEl = document.querySelector('[data-select]');
 const filterEl = document.querySelector('[data-filter]');
+let state = [];
 
 function createItem({ title, body }) {
     const template = document.createElement('div');
@@ -13,26 +14,29 @@ function createItem({ title, body }) {
     list.appendChild(template);
 }
 
-list.addEventListener('click', (e) => {
-    if (e.target.name === 'delete') {
-        e.target.parentNode.remove();
-    }
-});
+const sortByAlphabet = (titleA, titleB) => {
+    if (titleA > titleB) { return 1; }
+    if (titleA < titleB) { return -1; }
+    return 0;
+};
 
-selectEl.addEventListener('change', (e) => {
-    e.preventDefault();
-    console.log(selectEl.value);
-});
+const sortByAlphabetReverce = (titleA, titleB) => sortByAlphabet(titleB, titleA);
 
-filterEl.addEventListener('keyup', (e) => {
-    e.preventDefault();
-    console.log(filterEl.value);
-});
+function sortAndFilterPost() {
+    const filterValue = filterEl.value;
+    const sortValue = selectEl.value;
+    const filteredArr = state.filter(({ title }) => title.includes(filterValue));
+    filteredArr.sort((a, b) => {
+        const [titleA, titleB] = [a.title, b.title];
+        if (sortValue === 'default') return 0;
+        if (sortValue === 'az') return sortByAlphabet(titleA, titleB);
+        return sortByAlphabetReverce(titleA, titleB);
+    });
+    return filteredArr;
+}
 
-async function getPost() {
-    const url = 'https://jsonplaceholder.typicode.com/posts';
-    const response = await fetch(url).then((res) => res.json());
-    return response;
+async function getPost(url) {
+    return fetch(url).then((res) => res.json());
 }
 
 function render(arr) {
@@ -41,8 +45,30 @@ function render(arr) {
     });
 }
 
+list.addEventListener('click', (e) => {
+    if (e.target.name === 'delete') {
+        e.target.parentNode.remove();
+    }
+});
+
+selectEl.addEventListener('change', (e) => {
+    e.preventDefault();
+    list.innerHTML = '';
+    const sortedArr = sortAndFilterPost();
+    render(sortedArr);
+});
+
+filterEl.addEventListener('keyup', (e) => {
+    e.preventDefault();
+    list.innerHTML = '';
+    const sortedArr = sortAndFilterPost();
+    render(sortedArr);
+});
+
 async function init() {
-    const data = await getPost();
+    const baseUrl = 'https://jsonplaceholder.typicode.com/posts';
+    const data = await getPost(baseUrl);
+    state = data;
     setTimeout(() => {
         preloader.classList.add('hide');
         render(data);

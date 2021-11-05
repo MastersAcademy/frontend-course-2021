@@ -11,22 +11,18 @@
         <h1 class="title">Blog</h1>
             <div class="control_area">
             <select class="control_area__select" data-select>
-                <option selected disabled > Sort</option>
-                <option value="az" >Sort from A to Z</option>
-                <option value="za">Sort from Z to A</option>
+                <option selected  value="default" > Default </option>
+                <option value="az" > Sort from A to Z </option>
+                <option value="za"> Sort from Z to A </option>
             </select>
             <input class="control_area__search" name="search" data-filter>
 
         </div>
     </header>
     <main class="main">
+        <div class="preloader" data-preloader>LOADING ...</div>
+        <div class="news-window" data-list></div>
 
-        <div class="preloader" data-preloader>
-        LOADING ...
-        </div>
-
-        <div class="news-window" data-list>
-        </div>
     </main>
 </section>
 <script src="js/main.js"></script>
