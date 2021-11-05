@@ -25,21 +25,19 @@ function showTweets(jsonObj) {
     }
 }
 
-const loadBlog = new Promise((resolve, reject) => {
+const loadBlog = new Promise((resolve) => {
     window.onload = setTimeout(() => {
         const blog = request.response;
         resolve(showTweets(blog));
     }, 3000);
 });
 
-
-
 // want to do error but not work
 // function showError() {
 //     const squer = document.querySelector('.rollingSquer');
 //     squer.classList.add('error');
 //     squer.classList.remove('rollingSquer');
-//}
+// }
 
 // hidden preloader when load from server
 loadBlog.then(() => {
@@ -60,22 +58,16 @@ filtring.addEventListener('change', () => {
                 node: node,
                 relevantText: node.querySelector('h1').textContent,
             };
-        }).sort((a,b) => {
-            return a.relevantText.localeCompare(b.relevantText);
-        }).forEach((item) => {
-            dataTweets.appendChild(item.node);
-        });
+        }).sort((a, b) => { return a.relevantText.localeCompare(b.relevantText);
+            }).forEach((item) => { dataTweets.appendChild(item.node); });
     } if (filtring.options[filtring.selectedIndex].value === 'fromZtoA') {
         Array.prototype.map.call(nodesToSort, (node) => {
             return {
                 node: node,
                 relevantText: node.querySelector('h1').textContent,
             };
-        }).reverse((a,b) => {
-            return b.relevantText.localeCompare(a.relevantText);
-        }).forEach((item) => {
-            dataTweets.appendChild(item.node);
-        });
+        }).reverse((a, b) => { return b.relevantText.localeCompare(a.relevantText);
+            }).forEach((item) => { dataTweets.appendChild(item.node); });
     }
 });
 
@@ -89,7 +81,7 @@ input.addEventListener('input', () => {
     for (i; i < article.length; i++) {
         const H1 = article[i].getElementsByTagName('h1')[0];
         if (H1.innerHTML.toUpperCase().trim().indexOf(filter) > -1) {
-            article[i].style.display = ''
+            article[i].style.display = '';
         } else {
             article[i].style.display = 'none';
         }
