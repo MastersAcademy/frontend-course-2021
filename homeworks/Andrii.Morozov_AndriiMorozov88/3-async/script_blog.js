@@ -1,10 +1,5 @@
 const blogContainer = document.querySelector('[data-blog-container]');
-let filter = document.querySelector('[data-input-filter]');
-filter.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        fetchDataFilter();
-    }
-})
+const filter = document.querySelector('[data-input-filter]');
 function fetchData() {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
@@ -71,6 +66,11 @@ function fetchDataFilter() {
             filter.value = '';
         });
 }
+filter.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        fetchDataFilter();
+    }
+});
 document.querySelector('[data-btn]').addEventListener('click', () => {
     const sort = document.querySelector('[data-sort]');
     if (sort.value === '1') {
