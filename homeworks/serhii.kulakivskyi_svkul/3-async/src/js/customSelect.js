@@ -34,7 +34,6 @@
 
             const selectOptions = document.createElement('div');
             selectOptions.className = 'select__list';
-            selectOptions.dataset.selectList = '';
 
             if (this.currentValue.options.length) {
                 this.currentValue.options.forEach((option) => {
