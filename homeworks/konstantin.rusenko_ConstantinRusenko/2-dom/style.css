@@ -1,0 +1,61 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 400px;
+  height: 350px;
+  position: absolute;
+  top: calc(50% - 200px);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border: 1px solid #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main__message-window {
+  position: absolute;
+  bottom: 0;
+}
+
+.main__chat-window {
+  width: 350px;
+  height: 200px;
+  border: 1px solid #000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: left;
+  font-size: 1.6em;
+  padding: 15px;
+}
+
+.message-window__text-area {
+  resize: none;
+}
+
+.message-window__add-button {
+  position: absolute;
+  bottom: 10px;
+}
+
+.new-message {
+  margin-bottom: 5px;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 2px;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  align-items: center;
+}
+
+.del-button {
+  background: none;
+  border: 1px solid #000;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+}
