@@ -42,24 +42,24 @@ function postMarkupPost(id, title, text) {
     blog.appendChild(article);
 }
 // Appending posts to blog container by FUNC postMarkupPost
-function createPostsList(content) {
-    content.forEach((el) => {
+function createPostsList(posts) {
+    posts.forEach((el) => {
         postMarkupPost(el.id, el.title, el.body);
     });
 }
 // Delete post
-function deletePost() {
+function addDeleteSupport() {
     document.addEventListener('click', (e) => {
         const deleteMessege = document.createElement('div');
         if (e.target.classList[0] === 'delete__button') {
             deleteMessege.innerText = `Post: ${e.target.attributes[0].value} deleted`;
             deleteMessege.classList.add('post__delete__outText');
             document.body.appendChild(deleteMessege);
-            setTimeout(() => {
-                blog.removeChild(e.target.parentElement.parentElement);
-                document.body.removeChild(deleteMessege);
-            }, 800);
+            blog.removeChild(e.target.parentElement.parentElement);
         }
+        setTimeout(() => {
+            document.body.removeChild(deleteMessege);
+        }, 500);
     });
 }
 // Filtering
@@ -86,7 +86,7 @@ function filter() {
 // For Sorting
 async function reloadChanged() {
     sorting.addEventListener('change', () => {
-        const content = [];
+        const posts = [];
         const onPageArticle = document.querySelectorAll('[data-post]');
         const onPageTitle = document.querySelectorAll('.post__title');
         const onPageText = document.querySelectorAll('.post__text');
@@ -96,19 +96,18 @@ async function reloadChanged() {
                 title: onPageTitle[i].innerText,
                 body: onPageText[i].innerHTML,
             };
-            content.push(obj);
+            posts.push(obj);
         }
         blog.innerHTML = '';
-        console.log(sorting.value);
         switch (sorting.value) {
             case 'AtoZ':
-                createPostsList(content.sort((a, b) => (a.title > b.title ? 1 : -1)));
+                createPostsList(posts.sort((a, b) => (a.title > b.title ? 1 : -1)));
                 break;
             case 'ZtoA':
-                createPostsList(content.sort((a, b) => (a.title < b.title ? 1 : -1)));
+                createPostsList(posts.sort((a, b) => (a.title < b.title ? 1 : -1)));
                 break;
             default:
-                createPostsList(content);
+                createPostsList(posts);
         }
     });
 }
@@ -117,9 +116,9 @@ async function init() {
     blog.appendChild(loading);
     setTimeout(() => {
         async function initialization() {
-            const content = await getElements(requestUrl);
-            await createPostsList(content);
-            await deletePost();
+            const posts = await getElements(requestUrl);
+            await createPostsList(posts);
+            await addDeleteSupport();
             await filter();
             await reloadChanged();
         }
