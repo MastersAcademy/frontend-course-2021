@@ -8,14 +8,6 @@ request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
 
-const load = new Promise((resolve, reject) => {
-    request.onload = setTimeout(function doBlog() {
-        const blog = request.response;
-        resolve(showTweets(blog));
-        reject(showError());
-    }, 3000);
-});
-
 // do element from Array
 function showTweets(jsonObj) {
     const tweets = jsonObj;
@@ -33,15 +25,24 @@ function showTweets(jsonObj) {
     }
 }
 
+const loadBlog = new Promise((resolve, reject) => {
+    window.onload = setTimeout(() => {
+        const blog = request.response;
+        resolve(showTweets(blog));
+    }, 3000);
+});
+
+
+
 // want to do error but not work
-function showError() {
-    const squer = document.querySelector('.rollingSquer');
-    squer.classList.add('error');
-    squer.classList.remove('rollingSquer');
-}
+// function showError() {
+//     const squer = document.querySelector('.rollingSquer');
+//     squer.classList.add('error');
+//     squer.classList.remove('rollingSquer');
+//}
 
 // hidden preloader when load from server
-load.then(function() {
+loadBlog.then(() => {
     const preloaderEl = document.querySelector('[data-preloader]');
     preloaderEl.classList.add('hidden');
     preloaderEl.classList.remove('visible');
