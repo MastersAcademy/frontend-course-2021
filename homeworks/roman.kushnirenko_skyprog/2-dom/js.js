@@ -8,7 +8,6 @@ function createMessage() {
     const messageInput = chatFormInput.value;
 
     const messageShow = template.content.cloneNode(true).firstElementChild;
-    const containerM = messageShow.querySelector('[data-container]');
     const chatMessageContent = messageShow.querySelector('[data-message-content]');
     const closeMessage = messageShow.querySelector('[data-close-message]');
 
