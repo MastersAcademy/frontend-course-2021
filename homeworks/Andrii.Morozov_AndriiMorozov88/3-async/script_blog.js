@@ -16,7 +16,7 @@ function fetchDataA() {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
         .then((data) => {
-            data.sort((a, b) => a.title > b.title ? 1 : -1);
+            data.sort((a, b) => (a.title > b.title) ? 1 : -1);
             for (let i = 0; i < data.length; i++) {
                 const blogElement = document.createElement('div');
                 blogElement.className = 'blog_container-el';
@@ -29,7 +29,7 @@ function fetchDataZ() {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
         .then((data) => {
-            data.sort((a, b) => a.title > b.title ? -1 : 1);
+            data.sort((a, b) => (a.title > b.title) ? -1 : 1);
             for (let i = 0; i < data.length; i++) {
                 const blogElement = document.createElement('div');
                 blogElement.className = 'blog_container-el';
