@@ -1,4 +1,25 @@
 const blogContainer = document.querySelector('[data-blog-container]');
+document.querySelector('[data-btn]').addEventListener('click', () => {
+    let sort = document.querySelector('[data-sort]');
+    if (sort.value === '1') {
+        blogContainer.innerHTML = "";
+       setTimeout(fetchData, 100); 
+    }
+    if (sort.value === '2') {
+        blogContainer.innerHTML = "";
+        setTimeout(fetchDataA, 100);
+    }
+    if (sort.value === '3') {
+        blogContainer.innerHTML = "";
+        setTimeout(fetchDataZ, 100);
+    } 
+    });
+let filter = document.querySelector('[data-input-filter]');
+filter.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        fetchDataFilter();
+    }
+})
 function fetchData() {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
@@ -53,40 +74,22 @@ function fetchDataFilter() {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
         .then((data) => {
-            blogContainer.innerHTML = "";
+            blogContainer.innerHTML = '';
             for (let i = 0; i < data.length; i++) {
                 if (data[i].title.indexOf(filter.value) !== -1) {
-                    let blogElement = document.createElement('div');
+                    const blogElement = document.createElement('div');
                     blogElement.className = 'blog_container-el';
                     blogContainer.append(blogElement);
                     blogElement.innerText = data[i].title;
                 }
             }
-        filter.value = ''; 
+            filter.value = '';
         });
 }
- 
-document.querySelector('[data-btn]').addEventListener('click', () => {
-let sort = document.querySelector('[data-sort]');
-if (sort.value === '1') {
-    blogContainer.innerHTML = "";
-   setTimeout(fetchData, 100);
-   
-}
-if (sort.value === '2') {
-    blogContainer.innerHTML = "";
-    setTimeout(fetchDataA, 100);
-}
 
-
-if (sort.value === '3') {
-    blogContainer.innerHTML = "";
-    setTimeout(fetchDataZ, 100);
-} 
-});
-let filter = document.querySelector('[data-input-filter]');
+/*let filter = document.querySelector('[data-input-filter]');
 filter.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         fetchDataFilter();
     }
-})
+})*/
