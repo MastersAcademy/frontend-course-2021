@@ -21,22 +21,23 @@ function loadSite() {
                 articleTitle.textContent = show.title;
                 articleText.textContent = show.body;
 
-
                 removeBtn.addEventListener('click', () => {
                     articleShow.remove();
                 });
-            },
-        );
+                return show;
+            });
+
 
             // Filtering
             filterSearch.addEventListener('keyup', () => {
                 const value = filterSearch.value.toLowerCase();
                 const filterFound = arrayJson.filter((item) =>
-                item.title.toLowerCase().includes(value));
+                  item.title.toLowerCase().includes(value));
                 if (filterFound.value !== '') {
                     allContent.innerHTML = '';
                     filterFound.map((show) => {
-                        const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
+                        const articleShow = 
+                          dataContentTemplate.content.cloneNode(true).firstElementChild;
                         const articleTitle = articleShow.querySelector('[data-article-title]');
                         const articleText = articleShow.querySelector('[data-article-text]');
                         const removeBtn = articleShow.querySelector('[data-remove-btn]');
@@ -81,12 +82,12 @@ sortSelect.addEventListener('change', function () {
             articleText.textContent = show.body;
 
             removeBtn.addEventListener('click', () => {
-                    articleShow.remove();
-                });
-            },
-        );
+                articleShow.remove();
+            });
+        });
     }
-    else if (this.value === 'sort_z-a') {
+    else if (this.value === 'sort_z-a') 
+    {
         const sortArrayZa = arrayJson.sort((a, b) => a.title.localeCompare(b.title)).reverse();
         allContent.innerHTML = '';
 
