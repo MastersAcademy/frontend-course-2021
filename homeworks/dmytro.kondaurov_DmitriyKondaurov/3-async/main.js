@@ -1,10 +1,16 @@
-const listOfPosts = document.body.querySelector('[data-main-box]');
+const fieldForPosts = document.body.querySelector('[data-main-box]');
+let listOfPosts = [];
 const postFilter = document.body.querySelector('[data-filter]');
-// const postSort = document.body.querySelector('[data-sort]');
+const postSort = document.body.querySelector('[data-sort]');
 
-const hideLoader = () => {
-    document.querySelector('.loader_inner').classList.add('hide');
-    document.querySelector('.loader').classList.add('hide');
+const preLoader = (flag) => {
+    if (flag === false) {
+        document.querySelector('.loader_inner').classList.add('hide');
+        document.querySelector('.loader').classList.add('hide');
+    } else {
+        document.querySelector('.loader_inner').classList.remove('hide');
+        document.querySelector('.loader').classList.remove('hide');
+    }
 };
 
 const addPost = (title, text) => {
@@ -30,23 +36,57 @@ const addPost = (title, text) => {
     newElCloseBtn.append(newElCloseBtnLink);
     newElCloseBtnLink.append(newElCloseBtnImg);
     newEl.append(newElTitle, newElText, newElCloseBtn);
-    listOfPosts.append(newEl);
+    fieldForPosts.append(newEl);
 };
 
-const filterPosts = (post) => {
-    if (postFilter.value === '') {
-        return true;
-    } return !!post.title.includes(postFilter.value);
+const filterEl = (post) => post.firstElementChild.textContent.localeCompare(postFilter.value) === 1;
+const sortEl = (a, b) => {
+    const aTitle = a.firstElementChild.textContent.toUpperCase();
+    const bTitle = b.firstElementChild.textContent.toUpperCase();
+    if (postSort.value === 'a-z') {
+        if (aTitle < bTitle) {
+            return -1;
+        }
+        if (aTitle > bTitle) {
+            return 1;
+        }
+        return 0;
+    } if (postSort.value === 'z-a') {
+        if (aTitle < bTitle) {
+            return 1;
+        }
+        if (aTitle > bTitle) {
+            return -1;
+        }
+        return 0;
+    }
+    return 0;
 };
 
-setTimeout(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-        .then((response) => response.json())
-        .then((json) => {
-            json
-                .filter((post) => filterPosts(post))
-                // .sort((post) => addPost(post.title, post.body))
-                .map((post) => addPost(post.title, post.body));
-        })
-        .then(hideLoader);
-}, 3000);
+const reRenderPosts = () => {
+    fieldForPosts.innerHTML = '';
+    listOfPosts
+        .filter(filterEl)
+        .sort(sortEl)
+        // eslint-disable-next-line max-len
+        .map((post) => addPost(post.firstElementChild.textContent, post.firstElementChild.nextElementSibling.textContent));
+};
+
+postFilter.addEventListener('change', reRenderPosts);
+postSort.addEventListener('change', reRenderPosts);
+
+const getPosts = () => {
+    setTimeout(() => {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then((response) => response.json())
+            .then((json) => {
+                json.map((post) => addPost(post.title, post.body));
+            })
+            .then(() => {
+                listOfPosts = Array.from(document.body.querySelector('[data-main-box]').children);
+            })
+            .then(preLoader(false));
+    }, 3000);
+};
+
+window.onload = () => getPosts();
