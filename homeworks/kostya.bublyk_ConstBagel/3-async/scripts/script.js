@@ -42,7 +42,7 @@ function displayArticles(articles) {
     mainField.innerHTML = articles.map((article) => `
         <article class="blog-article">
         <h2 class="blog-article-title">${article.title}</h2>
-        <p class="blog-article-text">${article.body}<p>
+        <p class="blog-article-text">${article.body}</p>
         </article>
     `).join('');
 }
