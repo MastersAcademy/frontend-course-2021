@@ -1,4 +1,5 @@
 (() => {
+    const BASE_URL = 'https://jsonplaceholder.typicode.com/posts';
     const { CustomSelect } = window;
     const loader = document.querySelector('[data-loader]');
     const filterInput = document.querySelector('[data-blog-filter]');
@@ -10,12 +11,12 @@
     const selectObj = {
         currentValue: {
             value: '',
-            text: 'Sort',
+            text: 'Default',
         },
         options: [
             {
                 value: '',
-                text: 'Sort',
+                text: 'Default',
             },
             {
                 value: 'asc',
@@ -51,7 +52,7 @@
         return postEl;
     }
 
-    function appendPosts(value = '', sortType = '') {
+    const appendPosts = (value = '', sortType = '') => {
         postsWrapper.innerHTML = '';
 
         const filteredPosts = posts
@@ -70,29 +71,15 @@
 
         return new Promise((res) => {
             const postsEl = document.createDocumentFragment();
-
             filteredPosts.forEach((post) => {
                 const el = postLayout(post);
 
                 postsEl.appendChild(el);
             });
-
             postsWrapper.appendChild(postsEl);
             res();
         });
-    }
-
-    function showMessage(type, text) {
-        const message = document.createElement('div');
-        message.classList = type === 'success' ? 'message__item message__item--success' : 'message__item message__item--error';
-        message.textContent = text;
-
-        messageWrapper.appendChild(message);
-
-        setTimeout(() => {
-            messageWrapper.removeChild(message);
-        }, 1500);
-    }
+    };
 
     // eslint-disable-next-line no-new
     const select = new CustomSelect('[data-select="sort"]', selectObj, (sortType) => {
@@ -100,52 +87,64 @@
     });
     select.render();
 
+    function showMessage(type, text) {
+        const message = document.createElement('div');
+        message.classList = type === 'success' ? 'message__item message__item--success' : 'message__item message__item--error';
+        message.textContent = text;
+        messageWrapper.appendChild(message);
+        setTimeout(() => {
+            messageWrapper.removeChild(message);
+        }, 1500);
+    }
+
+    const deletePost = async (postId) => {
+        loader.classList.add('active');
+
+        try {
+            await fetch(`${BASE_URL}${postId}`, {
+                method: 'DELETE',
+            });
+            posts = posts.filter((post) => post.id !== +postId);
+            await appendPosts(
+                filterInput.value.toLowerCase(),
+                select.selectedValueEl.dataset.selectValue,
+            );
+            showMessage('success', `Post: ${postId} successfully deleted`);
+        } catch (error) {
+            showMessage('error', `Post: Failed to delete ${postId}`);
+        } finally {
+            loader.classList.remove('active');
+        }
+    };
+
+    // init fn
     (async () => {
         loader.classList.add('active');
 
         try {
             await new Promise((res) => setTimeout(res, 3000));
-            const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+            const res = await fetch(BASE_URL);
             const data = await res.json();
             posts = data;
-            appendPosts();
+            await appendPosts();
         } catch (error) {
             console.log(error);
         } finally {
             loader.classList.remove('active');
         }
-    })();
 
-    filterInput.addEventListener('input', (e) => {
-        const { value } = e.target;
-        appendPosts(value.toLowerCase(), select.selectedValueEl.dataset.selectValue);
-    });
+        filterInput.addEventListener('input', (e) => {
+            const { value } = e.target;
+            appendPosts(value.toLowerCase(), select.selectedValueEl.dataset.selectValue);
+        });
 
-    postsWrapper.addEventListener('click', async (e) => {
-        const isPostDeleteBtn = e.target.closest('[data-post-delete');
+        postsWrapper.addEventListener('click', async (e) => {
+            const isPostDeleteBtn = e.target.closest('[data-post-delete');
 
-        if (isPostDeleteBtn) {
-            const postId = isPostDeleteBtn.dataset.postDelete;
-            loader.classList.add('active');
-
-            try {
-                await await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
-                    method: 'DELETE',
-                });
-
-                posts = posts.filter((post) => post.id !== +postId);
-
-                await appendPosts(
-                    filterInput.value.toLowerCase(),
-                    select.selectedValueEl.dataset.selectValue,
-                );
-
-                showMessage('success', `Post: ${postId} successfully deleted`);
-            } catch (error) {
-                showMessage('error', `Post: Failed to delete ${postId}`);
-            } finally {
-                loader.classList.remove('active');
+            if (isPostDeleteBtn) {
+                const postId = isPostDeleteBtn.dataset.postDelete;
+                deletePost(postId);
             }
-        }
-    });
+        });
+    })();
 })();

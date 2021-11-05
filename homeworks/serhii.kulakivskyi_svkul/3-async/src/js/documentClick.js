@@ -1,11 +1,20 @@
 document.addEventListener('click', (e) => {
-    const targetFinder = e.target.closest('[data-select]');
+    const customSelectTarget = e.target.closest('[data-select]');
+    const customAccordionTarget = e.target.closest('[data-accordion]');
 
-    if (!targetFinder) {
-        const targetList = document.querySelector('.select__list.active');
+    if (!customSelectTarget) {
+        const customSelectOpened = document.querySelector('.select__list.active');
 
-        if (targetList) {
-            targetList.classList.remove('active');
+        if (customSelectOpened) {
+            customSelectOpened.classList.remove('active');
+        }
+    }
+
+    if (!customAccordionTarget) {
+        const customAccordionOpened = document.querySelector('.accordion__list.active');
+
+        if (customAccordionOpened) {
+            customAccordionOpened.classList.remove('active');
         }
     }
 });
