@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-body{
+body {
   background-color: #E4EFFE;
   margin: 0;
   padding: 0;
@@ -8,49 +8,49 @@ body{
   font-style: normal;
   display: flex;
   justify-content: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-.content{
+.content {
   margin-top: 62px;
-  box-shadow: 0px 4px 96px 0px #0000002E;
+  box-shadow: 1px 4px 96px 1px #0000002E;
 }
 
-.content__header{
+.content__header {
   font-size: 42px;
   line-height: 50px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
-.content__header::first-letter{
+.content__header::first-letter {
   font-size: 42px;
   line-height: 50px;
   color: #FF726C;
 }
 
-.content__posts__title{
+.content__posts__title {
   font-size: 24px;
   line-height: 28px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
-.content__posts__text{
+.content__posts__text {
   font-size: 18px;
   line-height: 21px;
 }
 
-.content__posts__title::first-letter{
+.content__posts__title::first-letter {
   color: #FF726C;
   text-transform: capitalize;
 }
 
-.content__main{
+.content__main {
   display: flex;
   width: 950px;
   background-color: #FFF;
 }
 
-.content__navigation{
+.content__navigation {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   background-color: #FFF;
@@ -59,25 +59,24 @@ body{
   justify-content: space-around;
 }
 
-.content__sorting{
+.content__sorting {
   align-self: center;
-
 }
 
-.content__sorting-icon{
+.content__sorting-icon {
   width: 93px;
   height: 36px;
   border-radius: 30px;
   text-align: center;
 }
 
-.content__filter-input{
+.content__filter-input {
   width: 230px;
   height: 36px;
   border-radius: 30px;
 }
 
-.content__filter{
+.content__filter {
   align-self: center;
 }
 
@@ -96,7 +95,6 @@ body{
 }
 
   /* preloader */
-
 .load {
   position: absolute;
   top: 50%;
@@ -116,19 +114,19 @@ body{
 }
 
 .load :first-child {
-  background: #19a68c;
+  background: #19A68C;
   animation-delay: -1.5s;
 }
 .load :nth-child(2) {
-  background: #f63d3a;
+  background: #F63D3A;
   animation-delay: -1s;
 }
 .load :nth-child(3) {
-  background: #fda543;
+  background: #FDA543;
   animation-delay: -0.5s;
 }
 .load :last-child {
-  background: #193b48;
+  background: #193B48;
 }
 
 @keyframes spin {
@@ -144,5 +142,5 @@ body{
   }
   75% {
     transform: translate(0, 160%);
-  }
+ }
 }
