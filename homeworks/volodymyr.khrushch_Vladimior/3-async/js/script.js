@@ -5,13 +5,14 @@ const load = document.querySelector('[data-load]');
 const renderPosts = async (search) => {
     let url = 'https://jsonplaceholder.typicode.com/posts';
     if (search) {
-      url += `?_sort=title&_order=${search}`;
+        url += `?_sort=title&_order=${search}`;
     }
     const render = await fetch(url);
     const posts = await render.json();
     load.style.display = 'none';
     let blogPosts = '';
-      posts.forEach((posts) => {
+    let postsRender = posts;
+    postsRender.forEach((posts) => {
         blogPosts += `
         <div class='content__posts__card' data-card>
         <h3 class='content__posts__title' data-title>${posts.title}</h3>
