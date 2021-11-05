@@ -48,7 +48,8 @@ function filter() {
         const textList = document.querySelectorAll('.post__title');
         if (val !== '') {
             textList.forEach((el) => {
-                if (el.innerText.toLowerCase().search(val) === -1) {
+                const current = el.innerText.toLowerCase();
+                if (current.search(val) === -1) {
                     el.parentElement.classList.add('hide');
                 } else {
                     el.parentElement.classList.remove('hide');
@@ -65,8 +66,8 @@ function filter() {
 // Delete post
 function deletePost() {
     document.addEventListener('click', (e) => {
+        const deleteMessege = document.createElement('div');
         if (e.target.classList[0] === 'delete__button') {
-            const deleteMessege = document.createElement('div');
             deleteMessege.innerText = `Post: ${e.target.attributes[0].value} deleted`;
             deleteMessege.classList.add('post__delete__outText');
             document.body.appendChild(deleteMessege);
