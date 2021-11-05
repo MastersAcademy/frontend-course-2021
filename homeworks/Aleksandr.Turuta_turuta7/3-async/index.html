@@ -9,24 +9,33 @@
     <title>3-async-Turuta</title>
 </head>
 
-<body class="body">
+<body class="body" data-body>
 
-    <main class="main">
+    <main class="main" data-main>
         <div class="main__header">
             <h1 class="main__header-title">blog</h1>
             <div class="main__header-sort-and-filter">
                 <button class="main__header-button-sort" data-button-sort></button>
-                <input class="main__header-input-filter" placeholder="filter" type="text" data-input>
+                <input class="main__header-input-filter" placeholder="Filter" type="text" data-input>
             </div>
         </div>
         <div class="main__container__messages" data-container-messages>
-            <div class="window-loader" data-window-loader></div>
+            <div class="window__loader" data-window-loader></div>
         </div>
     </main>
 
     <template data-loader>
-        <div class="loader-container">
+        <div class="loader__container">
             <div class="loader-1"></div>
+        </div>
+    </template>
+
+    <template data-message>
+        <div class="message">
+            <div class="message__window">
+                  <h2 class="message__text" data-message-text>test</h2>
+                <button class="message__button" data-button-ok>ok</button>
+                </div>
         </div>
     </template>
 

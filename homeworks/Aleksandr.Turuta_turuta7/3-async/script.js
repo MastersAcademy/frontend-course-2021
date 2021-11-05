@@ -2,8 +2,11 @@ const messageListEl = document.querySelector('[data-container-messages]');
 const postTemplateEl = document.querySelector('[data-post]').content;
 const inputFilterEl = document.querySelector('[data-input]');
 const buttonSortEl = document.querySelector('[data-button-sort]');
+const messageTemplateEl = document.querySelector('[data-message]').content;
+const messageUserEl = messageTemplateEl.cloneNode(true).firstElementChild;
 const loadingTemplateEl = document.querySelector('[data-loader]').content;
 const loadingEl = loadingTemplateEl.cloneNode(true).firstElementChild;
+const buttonMessageOk = messageUserEl.querySelector('[data-button-ok]');
 
 let postsData = [];
 let cloneData = [];
@@ -17,6 +20,11 @@ const url = 'https://jsonplaceholder.typicode.com/posts';
 
 // loading page
 document.querySelector('[data-window-loader]').append(loadingEl);
+
+const renderMessageUser = (textMessage = '') => {
+    messageUserEl.querySelector('[data-message-text]').textContent = textMessage;
+    document.querySelector('[data-main]').append(messageUserEl);
+};
 
 const dataPosts = async () => {
     const returnPosts = await fetch(url);
@@ -36,16 +44,14 @@ const addEventListenerPost = async () => {
         postData.querySelector('[data-image]').addEventListener('click', async () => {
             postsData = postsData.filter((post) => post.id !== Number(postData.dataset.idPost));
             cloneData = postsData;
-
             const resultResponse = await deletePost(postData.dataset.idPost);
             if (resultResponse.status === 200) {
-                alert(`message: id:${postData.dataset.idPost} delete`);
+                renderMessageUser(`message: id:${postData.dataset.idPost} delete`);
                 postData.remove();
             } else {
-                alert('message: error delete ');
+                renderMessageUser('message: error delete ');
             }
         });
-        return null;
     });
 };
 
@@ -98,4 +104,8 @@ inputFilterEl.addEventListener('input', async () => {
     cloneData = postsData.filter((item) => item.title.toLowerCase()
         .includes(inputFilterEl.value.toLowerCase()));
     renderPost(cloneData);
+});
+
+buttonMessageOk.addEventListener('click', () => {
+    messageUserEl.remove();
 });
