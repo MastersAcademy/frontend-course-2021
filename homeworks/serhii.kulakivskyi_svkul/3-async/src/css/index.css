@@ -93,6 +93,7 @@ body {
   position: relative;
   flex: 1;
   z-index: 1;
+  overflow: hidden;
 }
 
 .blog__header {
@@ -229,8 +230,9 @@ body {
   color: var(--loader-color);
 }
 
-.blog__news {
+.blog__news-posts-wrapper {
   overflow-x: auto;
+  max-height: 100%;
 }
 
 .blog__news-list {

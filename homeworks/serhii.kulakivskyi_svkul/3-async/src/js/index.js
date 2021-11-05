@@ -101,15 +101,20 @@
         loader.classList.add('active');
 
         try {
-            await fetch(`${BASE_URL}${postId}`, {
+            const response = await fetch(`${BASE_URL}/${postId}`, {
                 method: 'DELETE',
             });
-            posts = posts.filter((post) => post.id !== +postId);
-            await appendPosts(
-                filterInput.value.toLowerCase(),
-                select.selectedValueEl.dataset.selectValue,
-            );
-            showMessage('success', `Post: ${postId} successfully deleted`);
+
+            if (response.status >= 200 && response.status <= 299) {
+                posts = posts.filter((post) => post.id !== +postId);
+                await appendPosts(
+                    filterInput.value.toLowerCase(),
+                    select.selectedValueEl.dataset.selectValue,
+                );
+                showMessage('success', `Post: ${postId} successfully deleted`);
+            } else {
+                throw new Error();
+            }
         } catch (error) {
             showMessage('error', `Post: Failed to delete ${postId}`);
         } finally {
