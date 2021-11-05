@@ -1,0 +1,3 @@
+- node -v [v14.18.1]
+- which node [/Users/roman/.nvm/versions/node/v14.18.1/bin/node]
+- npm -v [6.14.15]
