@@ -13,14 +13,12 @@ function fetchData() {
 }
 function fetchDataA() {
     fetch('https://jsonplaceholder.typicode.com/posts')
-        .then((response) => {
-            return response.json();
-        })
-   .then(function(data) {
-       for (let i = 0; i < data.length; i++) {
-        for (let j = 0; j < data.length; j++) {
-            if (data[i].title < data[j].title) {
-                [data[i], data[j]] = [data[j], data[i]]; 
+        .then(response => response.json())
+        .then(data => {
+            for (let i = 0; i < data.length; i++) {
+                for (let j = 0; j < data.length; j++) {
+                    if (data[i].title < data[j].title) {
+                        [data[i], data[j]] = [data[j], data[i]]; 
             }
         }
        }
@@ -32,16 +30,14 @@ function fetchDataA() {
      }   
     });
  }
- function fetchDataZ() {
+function fetchDataZ() {
     fetch('https://jsonplaceholder.typicode.com/posts')
-   .then((response) => {
-     return response.json();
-   })
-   .then(function(data) {
-       for (let i = 0; i < data.length; i++) {
-        for (let j = 0; j < data.length; j++) {
-            if (data[i].title > data[j].title) {
-                [data[i], data[j]] = [data[j], data[i]]; 
+       .then(response => response.json())
+       .then(data => {
+           for (let i = 0; i < data.length; i++) {
+               for (let j = 0; j < data.length; j++) {
+                   if (data[i].title > data[j].title) {
+                       [data[i], data[j]] = [data[j], data[i]]; 
             }
         }
        }
@@ -56,12 +52,10 @@ function fetchDataA() {
 }
 function fetchDataFilter() {
     fetch('https://jsonplaceholder.typicode.com/posts')
-   .then((response) => {
-     return response.json();
-   })
-   .then(function(data) {
+   .then(response => response.json())
+   .then(data => {
     blogContainer.innerHTML = "";
-     for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
          if (data[i].title.indexOf(filter.value) !== -1) {
          
         let blogElement = document.createElement('div');
