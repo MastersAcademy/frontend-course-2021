@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-async</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loading">
+        <img class="loading-image" src="loading.gif" alt="Loading..." />
+    </div>
+    <div class="wrapper">
+        <main class="blog">
+            <header class="blog__header">
+                <h1 class="blog__header-title">Blog</h1>
+                <div class="blog__header-sort">
+                    <button class="blog__header-sort-button">
+                        <span class="blog__header-sort-text">Sort</span>
+                        <span class="blog__header-sort-symbol">^</span>
+                    </button>
+                    <div class="blog__header-sort-content">
+                        <a href="#" data-sort-initial>Initial</a>
+                        <a href="#" data-sort-descending>A-Z</a>
+                        <a href="#" data-sort-ascending>Z-A</a>
+                    </div>
+                </div>
+                <input type="text" class="blog__header-filter" data-filter>
+            </header>
+            <section class="blog__content" data-content>
+<!--                <template class="blog__content-post" data-post>-->
+<!--                    <h2 class="blog__content-post-title" data-title></h2>-->
+<!--                    <p class="blog__content-post-text" data-text></p>-->
+<!--                </template>-->
+            </section>
+        </main>
+    </div>
+<script src="app.js"></script>
+</body>
+</html>
