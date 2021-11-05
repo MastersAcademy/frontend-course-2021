@@ -42,20 +42,20 @@ async function fetchArticles() {
     createArticles(sortedArticles);
     loadingBLock.classList.add('loading-window--hidden');
 
-    sortSelect.addEventListener('change', function () {
+    sortSelect.addEventListener('change', () => {
         sortedArticles = sortArticles(articlesDefault, sortSelect);
         articlesList.innerHTML = '';
 
         createArticles(sortedArticles);
     });
 
-    filterInput.addEventListener('input', function () {
+    filterInput.addEventListener('input', () => {
         sortedArticles = sortArticles(articlesDefault, sortSelect);
         let filteredArticles = sortedArticles.slice();
-        filteredArticles = filteredArticles.filter((article) => article.title.includes(filterInput.value.toLowerCase()));
+        filteredArticles = filteredArticles.filter((article) => article.title
+        .includes(filterInput.value.toLowerCase()));
         articlesList.innerHTML = '';
 
-        createArticles(filteredArticles); });
-}
+        createArticles(filteredArticles); }); }
 
 fetchArticles();

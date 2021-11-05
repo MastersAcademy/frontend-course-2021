@@ -4,7 +4,7 @@
 }
 
 h1::first-letter, h2::first-letter, p::first-letter {
-  color: #800000;
+  color: #ff0000;
 }
 
 body {
@@ -88,7 +88,7 @@ body {
   font-size: 24px;
 }
 
-.article__content:first-letter {
+.article__content::first-letter {
   text-transform: uppercase;
 }
 
