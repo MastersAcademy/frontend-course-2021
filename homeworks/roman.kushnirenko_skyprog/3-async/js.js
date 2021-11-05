@@ -26,13 +26,13 @@ function loadSite() {
                     articleShow.remove();
                 });
             },
-            );
+        );
 
             // Filtering
             filterSearch.addEventListener('keyup', () => {
                 const value = filterSearch.value.toLowerCase();
                 const filterFound = arrayJson.filter((item) =>
-                    item.title.toLowerCase().includes(value));
+                item.title.toLowerCase().includes(value));
                 if (filterFound.value !== '') {
                     allContent.innerHTML = '';
                     filterFound.map((show) => {
@@ -47,10 +47,10 @@ function loadSite() {
 
                         removeBtn.addEventListener('click', () => {
                             articleShow.remove();
-                        })
-                    }
-                    );
-                };
+                        });
+                    },
+                );
+                }
             });
         } catch (e) {
             alert('Something went wrong, update the page!');
@@ -67,45 +67,42 @@ setTimeout(loadSite, 3000);
 // Sorting
 sortSelect.addEventListener('change', function () {
     if (this.value === 'sort_a-z') {
-        const sortArrayAz = arrayJson.sort((a, b) => 
-        a.title !== b.title ? a.title < b.title ? -1 : 1 : 0);
-        allContent.innerHTML = '';
+        const sortArrayAz = arrayJson.sort((a, b) => a.title.localeCompare(b.title));
+            allContent.innerHTML = '';
 
         sortArrayAz.map((show) => {
-                const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
-                const articleTitle = articleShow.querySelector('[data-article-title]');
-                const articleText = articleShow.querySelector('[data-article-text]');
-                const removeBtn = articleShow.querySelector('[data-remove-btn]');
-                allContent.appendChild(articleShow);
+            const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
+            const articleTitle = articleShow.querySelector('[data-article-title]');
+            const articleText = articleShow.querySelector('[data-article-text]');
+            const removeBtn = articleShow.querySelector('[data-remove-btn]');
+            allContent.appendChild(articleShow);
 
-                articleTitle.textContent = show.title;
-                articleText.textContent = show.body;
+            articleTitle.textContent = show.title;
+            articleText.textContent = show.body;
 
-                removeBtn.addEventListener('click', () => {
+            removeBtn.addEventListener('click', () => {
                     articleShow.remove();
                 });
             },
         );
     }
     else if (this.value === 'sort_z-a') {
-        const sortArrayZa = arrayJson.sort((a, b) => 
-        a.title !== b.title ? a.title < b.title ? -1 : 1 : 0).reverse();
+        const sortArrayZa = arrayJson.sort((a, b) => a.title.localeCompare(b.title)).reverse();
         allContent.innerHTML = '';
 
         sortArrayZa.map((show) => {
-                const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
-                const articleTitle = articleShow.querySelector('[data-article-title]');
-                const articleText = articleShow.querySelector('[data-article-text]');
-                const removeBtn = articleShow.querySelector('[data-remove-btn]');
-                allContent.appendChild(articleShow);
+            const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
+            const articleTitle = articleShow.querySelector('[data-article-title]');
+            const articleText = articleShow.querySelector('[data-article-text]');
+            const removeBtn = articleShow.querySelector('[data-remove-btn]');
+            allContent.appendChild(articleShow);
 
-                articleTitle.textContent = show.title;
-                articleText.textContent = show.body;
+            articleTitle.textContent = show.title;
+            articleText.textContent = show.body;
 
-                removeBtn.addEventListener('click', () => {
-                    articleShow.remove();
-                });
-            },
-        );
+            removeBtn.addEventListener('click', () => {
+                articleShow.remove();
+            });
+        });
     }
 });
