@@ -52,20 +52,14 @@ filtring.addEventListener('change', () => {
     const nodesToSort = dataTweets.querySelectorAll('.tweet');
     if (filtring.options[filtring.selectedIndex].value === 'withOut') {
         document.location.reload();
-    } if (filtring.options[filtring.selectedIndex].value === 'fromAtoZ') {
-        Array.prototype.map.call(nodesToSort, (node) => {
-            return {
-                node: node,
-                relevantText: node.querySelector('h1').textContent,
-            };
+    } 
+    if (filtring.options[filtring.selectedIndex].value === 'fromAtoZ') {
+        Array.prototype.map.call(nodesToSort, (node) => { return { node: node, relevantText: node.querySelector('h1').textContent, };
         }).sort((a, b) => { return a.relevantText.localeCompare(b.relevantText);
         }).forEach((item) => { dataTweets.appendChild(item.node); });
-    } if (filtring.options[filtring.selectedIndex].value === 'fromZtoA') {
-        Array.prototype.map.call(nodesToSort, (node) => {
-            return {
-                node: node,
-                relevantText: node.querySelector('h1').textContent,
-            };
+    } 
+    if (filtring.options[filtring.selectedIndex].value === 'fromZtoA') {
+        Array.prototype.map.call(nodesToSort, (node) => { return { node: node, relevantText: node.querySelector('h1').textContent, };
         }).reverse((a, b) => { return b.relevantText.localeCompare(a.relevantText);
         }).forEach((item) => { dataTweets.appendChild(item.node); });
     }
