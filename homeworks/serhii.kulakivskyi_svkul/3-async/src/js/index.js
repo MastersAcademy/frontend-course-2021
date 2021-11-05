@@ -5,6 +5,7 @@
     const filterInput = document.querySelector('[data-blog-filter]');
     const postsWrapper = document.querySelector('[data-posts]');
     const messageWrapper = document.querySelector('[data-message]');
+    let select = null;
 
     let posts = [];
 
@@ -29,7 +30,7 @@
         ],
     };
 
-    function postLayout(data) {
+    const getPostLayout = (data) => {
         const postEl = document.createElement('article');
         postEl.className = 'news-item';
         postEl.dataset.postId = data.id;
@@ -50,7 +51,7 @@
         `;
 
         return postEl;
-    }
+    };
 
     const appendPosts = (value = '', sortType = '') => {
         postsWrapper.innerHTML = '';
@@ -72,7 +73,7 @@
         return new Promise((res) => {
             const postsEl = document.createDocumentFragment();
             filteredPosts.forEach((post) => {
-                const el = postLayout(post);
+                const el = getPostLayout(post);
 
                 postsEl.appendChild(el);
             });
@@ -81,13 +82,7 @@
         });
     };
 
-    // eslint-disable-next-line no-new
-    const select = new CustomSelect('[data-select="sort"]', selectObj, (sortType) => {
-        appendPosts(filterInput.value.toLowerCase(), sortType);
-    });
-    select.render();
-
-    function showMessage(type, text) {
+    const showMessage = (type, text) => {
         const message = document.createElement('div');
         message.classList = type === 'success' ? 'message__item message__item--success' : 'message__item message__item--error';
         message.textContent = text;
@@ -95,7 +90,7 @@
         setTimeout(() => {
             messageWrapper.removeChild(message);
         }, 1500);
-    }
+    };
 
     const deletePost = async (postId) => {
         loader.classList.add('active');
@@ -126,17 +121,10 @@
     (async () => {
         loader.classList.add('active');
 
-        try {
-            await new Promise((res) => setTimeout(res, 3000));
-            const res = await fetch(BASE_URL);
-            const data = await res.json();
-            posts = data;
-            await appendPosts();
-        } catch (error) {
-            console.log(error);
-        } finally {
-            loader.classList.remove('active');
-        }
+        select = new CustomSelect('[data-select="sort"]', selectObj, (sortType) => {
+            appendPosts(filterInput.value.toLowerCase(), sortType);
+        });
+        select.render();
 
         filterInput.addEventListener('input', (e) => {
             const { value } = e.target;
@@ -151,5 +139,20 @@
                 deletePost(postId);
             }
         });
+
+        try {
+            await new Promise((res) => setTimeout(res, 3000));
+            const res = await fetch(BASE_URL);
+            const data = await res.json();
+            posts = data;
+            await appendPosts(
+                filterInput.value.toLowerCase(),
+                select.selectedValueEl.dataset.selectValue,
+            );
+        } catch (error) {
+            console.log(error);
+        } finally {
+            loader.classList.remove('active');
+        }
     })();
 })();
