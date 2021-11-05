@@ -53,7 +53,7 @@ const whileLoading = () => {
     mainEl.appendChild(loadingGifWrapper);
 };
 
-setTimeout(requestPosts, 0);
+setTimeout(requestPosts, 3000);
 whileLoading();
 
 filtering.addEventListener('keypress', (e) => {
