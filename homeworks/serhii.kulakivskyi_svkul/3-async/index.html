@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Rubik:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="./src/css/normalize.css">
+  <link rel="stylesheet" href="./src/css/animations.css">
+  <link rel="stylesheet" href="./src/css/index.css">
+</head>
+<body>
+  <section class="blog">
+    <header class="blog__header">
+      <a href="." class="logo">Blog</a>
+
+      <div class="blog__header-controls controls">
+        <div class="controls__sort">
+          <p class="controls__sort-label">Sort:</p>
+
+          <div class="controls__sort select" data-select='sort'></div>
+        </div>
+
+        <input class="controls__filter input" type="text" placeholder="Filter..." data-blog-filter>
+      </div>
+    </header>
+
+    <section class="blog__news">
+      <div class="loader" data-loader>
+        <svg class="rotate-center" style="width:52px;height:52px" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" />
+        </svg>
+      </div>
+
+      <div class="blog__news-posts-wrapper">
+        <main class="blog__news-list" data-posts></main>
+      </div>
+    </section>
+  </section>
+
+  <div class="message__wrapper" data-message></div>
+
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="./src/js/customSelect.js"></script>
+  <script src="./src/js/index.js"></script>
+</body>
+</html>
