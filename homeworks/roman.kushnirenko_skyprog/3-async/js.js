@@ -1,5 +1,5 @@
-const loadPage = document.querySelector('.loading');
-let allContent = document.querySelector('.content');
+const loadPage = document.querySelector('[data-loading]');
+let allContent = document.querySelector('[data-all-content]');
 const dataContentTemplate = document.querySelector('[data-content-template]');
 const sortSelect = document.querySelector('[data-sort]');
 const filterSearch = document.querySelector('[data-header-filter]');
@@ -15,8 +15,8 @@ function loadSite() {
             arrayJson.map(
                 function ShowDate(show) {
                     let articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
-                    let articleTitle = articleShow.querySelector('.article__title');
-                    let articleText = articleShow.querySelector('.article__text');
+                    let articleTitle = articleShow.querySelector('[data-article-title]');
+                    let articleText = articleShow.querySelector('[data-article-text]');
                     const removeBtn = articleShow.querySelector('[data-remove-btn]');
                     allContent.appendChild(articleShow);
 
@@ -29,6 +29,7 @@ function loadSite() {
                 }
             );
 
+            // Filtering
             filterSearch.addEventListener('keyup', () => {
                 const value = filterSearch.value.toLowerCase();
                 let filterFound = arrayJson.filter((item) => item.title.toLowerCase().includes(value));
@@ -37,8 +38,8 @@ function loadSite() {
                     filterFound.map(
                         function ShowDate(show) {
                             let articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
-                            let articleTitle = articleShow.querySelector('.article__title');
-                            let articleText = articleShow.querySelector('.article__text');
+                            let articleTitle = articleShow.querySelector('[data-article-title]');
+                            let articleText = articleShow.querySelector('[data-article-text]');
                             const removeBtn = articleShow.querySelector('[data-remove-btn]');
                             allContent.appendChild(articleShow);
 
@@ -53,13 +54,15 @@ function loadSite() {
                 }
             });
         } catch (e) {
-            alert("Error loading, update the page please!")
+            alert("Something went wrong, update the page!")
             console.error(e)
         }
     }
     loadPage.style.display = 'none';
+
     getDate()
 }
+
 setTimeout(loadSite, 3000);
 
 // Sorting
@@ -71,8 +74,8 @@ sortSelect.addEventListener('change', function () {
         sortArrayAz.map(
             function ShowDate(show) {
                 let articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
-                let articleTitle = articleShow.querySelector('.article__title');
-                let articleText = articleShow.querySelector('.article__text');
+                let articleTitle = articleShow.querySelector('[data-article-title]');
+                let articleText = articleShow.querySelector('[data-article-text]');
                 const removeBtn = articleShow.querySelector('[data-remove-btn]');
                 allContent.appendChild(articleShow);
 
@@ -93,8 +96,8 @@ sortSelect.addEventListener('change', function () {
             function ShowDate(show) {
 
                 let articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
-                let articleTitle = articleShow.querySelector('.article__title');
-                let articleText = articleShow.querySelector('.article__text');
+                let articleTitle = articleShow.querySelector('[data-article-title]');
+                let articleText = articleShow.querySelector('[data-article-text]');
                 const removeBtn = articleShow.querySelector('[data-remove-btn]');
                 allContent.appendChild(articleShow);
 
