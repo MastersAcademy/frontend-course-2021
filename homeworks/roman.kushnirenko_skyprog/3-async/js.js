@@ -30,8 +30,8 @@ function loadSite() {
             // Filtering
             filterSearch.addEventListener('keyup', () => {
                 const value = filterSearch.value.toLowerCase();
-                const filterFound = arrayJson.filter((item) => 
-                    item.title.toLowerCase().includes(value));
+                const filterFound = arrayJson.filter((item) => item.title.toLowerCase()
+                    .includes(value));
                 if (filterFound.value !== '') {
                     allContent.innerHTML = '';
                     filterFound.map((show) => {
