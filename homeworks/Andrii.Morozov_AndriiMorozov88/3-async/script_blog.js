@@ -9,13 +9,13 @@ function fetchData() {
                 blogContainer.append(blogElement);
                 blogElement.innerText = data[i].title;
             }
-    });
- }
- function fetchDataA_Z() {
+        });
+}
+function fetchDataA() {
     fetch('https://jsonplaceholder.typicode.com/posts')
-   .then((response) => {
-     return response.json();
-   })
+        .then((response) => {
+            return response.json();
+        })
    .then(function(data) {
        for (let i = 0; i < data.length; i++) {
         for (let j = 0; j < data.length; j++) {
@@ -32,7 +32,7 @@ function fetchData() {
      }   
     });
  }
- function fetchDataZ_A() {
+ function fetchDataZ() {
     fetch('https://jsonplaceholder.typicode.com/posts')
    .then((response) => {
      return response.json();
@@ -83,13 +83,13 @@ if (sort.value == 1) {
 }
 if (sort.value == 2) {
     blogContainer.innerHTML = "";
-    setTimeout(fetchDataA_Z, 100);
+    setTimeout(fetchDataA, 100);
 }
 
 
 if (sort.value == 3) {
     blogContainer.innerHTML = "";
-    setTimeout(fetchDataZ_A, 100);
+    setTimeout(fetchDataZ, 100);
 } 
 });
 let filter = document.querySelector('[data-input-filter]');
