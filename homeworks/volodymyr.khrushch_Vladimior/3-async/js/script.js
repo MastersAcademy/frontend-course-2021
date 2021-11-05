@@ -39,5 +39,24 @@ document.querySelector('[data-input]').addEventListener('input', (e) => {
             : 'none';
     });
 });
+let filter = function () {
+    let input = document.querySelector('[data-input]');
 
+    input.addEventListener('keyup', () => {
+        let filter = input.value.toLowerCase(),
+            filterElements = container.querySelectorAll('[data-title]');
+
+        filterElements.forEach(item => {
+            if (item.innerHTML.toLowerCase().indexOf(filter) > -1) {
+                item.closest('[data-card]').style.display = '';
+            } else {
+                item.closest('[data-card]').style.display = 'none';
+            }
+        })
+
+    })
+
+  };
+
+filter();
 renderPosts();
