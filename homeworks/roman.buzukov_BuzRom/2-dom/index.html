@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+   <div class="container">
+      <div class="content">
+         <ul class="content__list" data-list>
+            <li class="content__list-item message" data-message>
+               <button class="message__delete" data-delete>X</button>
+               <p class="message__text">Hello, world! <span data-emoji>&#127875;</span></p>
+            </li>
+         </ul>
+         <template data-message-template>
+            <li class="content__list-item message" data-message>
+               <button class="message__delete" data-delete>X</button>
+               <p class="message__text" data-text></p>
+            </li>
+         </template>
+         <form class="content__form form" data-form>
+            <textarea class="form__textarea" name="message_field" data-textarea placeholder="Here is your text..."
+               required></textarea>
+            <button class="form__submit" type="submit" data-submit>SEND</button>
+         </form>
+      </div>
+   </div>
+   <script src="js/script.js"></script>
+</body>
+
+</html>
