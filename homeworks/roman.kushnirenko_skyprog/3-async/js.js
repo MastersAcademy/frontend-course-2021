@@ -1,7 +1,6 @@
 const loadPage = document.querySelector('.loading');
-let blog = document.querySelector('.blog');
 let allContent = document.querySelector('.content');
-let dataContentTemplate = document.querySelector('[data-content-template]');
+const dataContentTemplate = document.querySelector('[data-content-template]');
 const sortSelect = document.querySelector('[data-sort]');
 const filterSearch = document.querySelector('[data-header-filter]');
 let arrayJson;
@@ -32,7 +31,7 @@ function loadSite() {
 
             filterSearch.addEventListener('keyup', () => {
                 const value = filterSearch.value.toLowerCase();
-                filterFound = arrayJson.filter((item) => item.title.toLowerCase().includes(value));
+                let filterFound = arrayJson.filter((item) => item.title.toLowerCase().includes(value));
                 if (filterFound.value !== '') {
                     allContent.innerHTML = '';
                     filterFound.map(
@@ -40,10 +39,15 @@ function loadSite() {
                             let articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
                             let articleTitle = articleShow.querySelector('.article__title');
                             let articleText = articleShow.querySelector('.article__text');
+                            const removeBtn = articleShow.querySelector('[data-remove-btn]');
                             allContent.appendChild(articleShow);
 
                             articleTitle.textContent = show.title;
                             articleText.textContent = show.body;
+
+                            removeBtn.addEventListener('click', function () {
+                                articleShow.remove();
+                            })
                         }
                     );
                 }
