@@ -46,7 +46,7 @@ const addEventListenerPost = async () => {
             cloneData = postsData;
             const resultResponse = await deletePost(postData.dataset.idPost);
             if (resultResponse.status === 200) {
-                renderMessageUser(`message: id:${postData.dataset.idPost} delete`);
+                renderMessageUser(`message: Post number id:${postData.dataset.idPost} delete`);
                 postData.remove();
             } else {
                 renderMessageUser('message: error delete ');

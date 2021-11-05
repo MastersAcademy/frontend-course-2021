@@ -117,6 +117,7 @@
 .message {
   position: fixed;
   top: 0;
+  left: 0;
   width: 90%;
   height: 100vh;
   backdrop-filter: blur(4px);
@@ -153,6 +154,8 @@
 }
 
 .message__text {
+  display: flex;
+  text-align: center;
   color: #FFF;
   font-size: 30px;
 }
