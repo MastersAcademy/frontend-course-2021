@@ -76,7 +76,7 @@ sortBy.addEventListener('change', (e) => {
     if (e.target.value === 'A-Z') {
         arrayOfPostObjects.sort((a, b) => a.title.localeCompare(b.title));
 
-        clearingPage()
+        clearingPage();
         postsDrawing(arrayOfPostObjects);
     } else if (e.target.value === 'Z-A') {
         arrayOfPostObjects.sort((a, b) => b.title.localeCompare(a.title));
