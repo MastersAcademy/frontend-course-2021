@@ -16,9 +16,10 @@
             "12",
             "13",
             "14",
-            "15"
+            "15",
+            "16"
         ],
-        "regex": "^[0-9]+-(?:[\\d\\w]){5,70}",
+        "regex": "^[0-9]+-(?:[\\d\\w]){3,70}",
         "regexOptions": "i",
         "separator": "",
         "msgDoesNotMatchRegex": "Branch \"%s\" does not match the allowed pattern: \"%s\"",
