@@ -1,14 +1,26 @@
-// Blog section
 const requestUrl = 'https://jsonplaceholder.typicode.com/posts';
 const blog = document.querySelector('[data-blog]');
 const sorting = document.querySelector('[data-sorting]');
 const filtering = document.querySelector('[data-filter]');
-
 // For loading
 const loading = document.createElement('p');
 loading.innerText = 'Loading...';
 loading.style.color = 'Orange';
 loading.style.fontSize = '25px';
+
+// GET
+async function getElements(url) {
+    try {
+        const response = await fetch(url);
+        const content = await response.json();
+        const data = await content.splice(0, 10);
+        return data;
+    } catch (err) {
+        alert(err);
+    }
+}
+
+// POST
 
 // Create markup and inner for post by FUNC createPostsList
 function postMarkupPost(id, title, text) {
@@ -33,14 +45,27 @@ function postMarkupPost(id, title, text) {
     article.appendChild(div);
     blog.appendChild(article);
 }
-
 // Appending posts to blog container by FUNC postMarkupPost
 function createPostsList(content) {
-    for (let i = 0; i < content.length; i++) {
-        postMarkupPost(content[i].id, content[i].title, content[i].body);
-    }
+    content.forEach((el) => {
+        postMarkupPost(el.id, el.title, el.body);
+    });
 }
-
+// Delete post
+function deletePost() {
+    document.addEventListener('click', (e) => {
+        const deleteMessege = document.createElement('div');
+        if (e.target.classList[0] === 'delete__button') {
+            deleteMessege.innerText = `Post: ${e.target.attributes[0].value} deleted`;
+            deleteMessege.classList.add('post__delete__outText');
+            document.body.appendChild(deleteMessege);
+            setTimeout(() => {
+                blog.removeChild(e.target.parentElement.parentElement);
+                document.body.removeChild(deleteMessege);
+            }, 800);
+        }
+    });
+}
 // Filtering
 function filter() {
     filtering.oninput = (e) => {
@@ -62,93 +87,49 @@ function filter() {
         }
     };
 }
-
-// Delete post
-function deletePost() {
-    document.addEventListener('click', (e) => {
-        const deleteMessege = document.createElement('div');
-        if (e.target.classList[0] === 'delete__button') {
-            deleteMessege.innerText = `Post: ${e.target.attributes[0].value} deleted`;
-            deleteMessege.classList.add('post__delete__outText');
-            document.body.appendChild(deleteMessege);
-            setTimeout(() => {
-                blog.removeChild(e.target.parentElement.parentElement);
-                document.body.removeChild(deleteMessege);
-            }, 800);
+// For Sorting
+async function reloadChanged() {
+    sorting.addEventListener('change', () => {
+        const content = [];
+        const onPageArticle = document.querySelectorAll('[data-post]');
+        const onPageTitle = document.querySelectorAll('.post__title');
+        const onPageText = document.querySelectorAll('.post__text');
+        for (let i = 0; i < onPageArticle.length; i++) {
+            const obj = {
+                id: onPageArticle[i].attributes[0].value,
+                title: onPageTitle[i].innerText,
+                body: onPageText[i].innerHTML,
+            };
+            content.push(obj);
+        }
+        blog.innerHTML = '';
+        console.log(sorting.value);
+        switch (sorting.value) {
+            case 'AtoZ':
+                createPostsList(content.sort((a, b) => (a.title > b.title ? 1 : -1)));
+                break;
+            case 'ZtoA':
+                createPostsList(content.sort((a, b) => (a.title < b.title ? 1 : -1)));
+                break;
+            default:
+                createPostsList(content);
         }
     });
 }
-
-// For default sorting
-async function requestPosts(url) {
+// Initialization
+async function init() {
     blog.appendChild(loading);
     setTimeout(() => {
-        fetch(url)
-            .then((response) => response.json())
-            .then((response) => {
-                const content = response.slice(0, 10);
-                createPostsList(content);
-                filter();
-                deletePost();
-                return content;
-            }).catch((err) => {
-                console.log(err);
-            });
-        blog.removeChild(loading);
-    }, 3000);
-}
-requestPosts(requestUrl);
-
-// For sort A to Z
-async function requestPostsAZ(url) {
-    blog.appendChild(loading);
-    setTimeout(() => {
-        fetch(url)
-            .then((response) => response.json())
-            .then((response) => {
-                let content = response.slice(0, 10);
-                content = content.sort((a, b) => (a.title > b.title ? 1 : -1));
-                console.log(content);
-                createPostsList(content);
-                deletePost();
-                filter();
-                return content;
-            }).catch((err) => {
-                console.log(err);
-            });
+        async function initialization() {
+            const content = await getElements(requestUrl);
+            await createPostsList(content);
+            await deletePost();
+            await filter();
+            await reloadChanged();
+        }
+        initialization();
         blog.removeChild(loading);
     }, 3000);
 }
 
-// For sort Z to A
-async function requestPostsZA(url) {
-    blog.appendChild(loading);
-    setTimeout(() => {
-        fetch(url)
-            .then((response) => response.json())
-            .then((response) => {
-                let content = response.slice(0, 10);
-                content = content.sort((a, b) => (a.title < b.title ? 1 : -1));
-                console.log(content);
-                createPostsList(content);
-                deletePost();
-                filter();
-                return content;
-            }).catch((err) => {
-                console.log(err);
-            });
-        blog.removeChild(loading);
-    }, 3000);
-}
-
-// Sorting
-sorting.addEventListener('change', () => {
-    blog.innerHTML = '';
-    if (sorting.value === 'A__to__Z') {
-        requestPostsAZ(requestUrl);
-    } else if (sorting.value === 'Z__to__A') {
-        requestPostsZA(requestUrl);
-    } else if (sorting.value === 'sort') {
-        requestPosts(requestUrl);
-    }
-});
+init();
