@@ -3,14 +3,9 @@ let listOfPosts = [];
 const postFilter = document.body.querySelector('[data-filter]');
 const postSort = document.body.querySelector('[data-sort]');
 
-const preLoader = (flag) => {
-    if (flag === false) {
-        document.querySelector('.loader_inner').classList.add('hide');
-        document.querySelector('.loader').classList.add('hide');
-    } else {
-        document.querySelector('.loader_inner').classList.remove('hide');
-        document.querySelector('.loader').classList.remove('hide');
-    }
+const preLoader = () => {
+    document.querySelector('.loader_inner').classList.add('hide');
+    document.querySelector('.loader').classList.add('hide');
 };
 
 const addPost = (title, text) => {
@@ -85,7 +80,7 @@ const getPosts = () => {
             .then(() => {
                 listOfPosts = Array.from(document.body.querySelector('[data-main-box]').children);
             })
-            .then(preLoader(false));
+            .then(preLoader);
     }, 3000);
 };
 
