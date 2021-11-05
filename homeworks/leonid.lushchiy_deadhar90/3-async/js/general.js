@@ -59,7 +59,7 @@ filtring.addEventListener('change', () => {
                 relevantText: node.querySelector('h1').textContent,
             };
         }).sort((a, b) => { return a.relevantText.localeCompare(b.relevantText);
-            }).forEach((item) => { dataTweets.appendChild(item.node); });
+        }).forEach((item) => { dataTweets.appendChild(item.node); });
     } if (filtring.options[filtring.selectedIndex].value === 'fromZtoA') {
         Array.prototype.map.call(nodesToSort, (node) => {
             return {
@@ -67,7 +67,7 @@ filtring.addEventListener('change', () => {
                 relevantText: node.querySelector('h1').textContent,
             };
         }).reverse((a, b) => { return b.relevantText.localeCompare(a.relevantText);
-            }).forEach((item) => { dataTweets.appendChild(item.node); });
+        }).forEach((item) => { dataTweets.appendChild(item.node); });
     }
 });
 

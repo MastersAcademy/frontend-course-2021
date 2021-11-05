@@ -12,7 +12,7 @@ body {
   background-size: cover;
 }
 
-[data-header] {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -26,20 +26,20 @@ body {
   border-bottom: 2px solid #000;
 }
 
-[data-filter] * {
+.filter * {
   height: 20px;
   margin: 10px;
   padding: 0;
 }
 
-[data-logo] h1, [data-logo] p {
+.logo h1, .logo p {
   padding: 0;
   margin: 0;
   margin-left: 10px;
   text-align: center;
 }
 
-[data-filter] {
+.filter {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -50,7 +50,7 @@ body {
   align-items: center;
 }
 
-[data-main-block] {
+.main_block {
   position: absolute;
   top: 50px;
   padding: 15px;
@@ -61,7 +61,7 @@ body {
   align-items: flex-start;
 }
 
-[data-tweets] {
+.tweets {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,7 +79,7 @@ body {
   padding: 10px;
 }
 
-[data-preloader] {
+.preloader {
   position: fixed;
   top: 0;
   left: 0;

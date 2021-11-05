@@ -11,15 +11,15 @@
     <script src="js/general.js" defer></script>
 </head>
 <body>
-    <div data-preloader class="visible">
+    <div data-preloader class="visible preloader">
         <div class="rollingSquer"></div>
     </div>
-    <header data-header>
-        <aside data-logo>
+    <header data-header class="header">
+        <aside data-logo class="logo">
             <h1>FavoriteBlog</h1>
             <p>yourFavoriteBlogInWeb</p>
         </aside>
-        <nav data-filter>
+        <nav data-filter class="filter">
             <select data-select-option>
                 <option value="withOut">without sorting</option>
                 <option value="fromAtoZ">A to Z</option>
@@ -29,8 +29,8 @@
             <input type="text" name="search" data-mySearch placeholder="Start typing">
         </nav>
     </header>
-    <main data-main-block>
-        <section data-tweets></section>
+    <main data-main-block class="main_block">
+        <section data-tweets class="tweets"></section>
     </main>
 </body>
 </html>
