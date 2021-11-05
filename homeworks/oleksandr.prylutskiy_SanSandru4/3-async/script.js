@@ -2,7 +2,7 @@ const url = 'https://jsonplaceholder.typicode.com/posts';
 const blogMsg = document.querySelector('[data-blog-msg]');
 const sortPost = document.querySelector('[data-blog-sort]');
 const filterPostTitle = document.querySelector('[data-blog-filter]');
-const postStr = '';
+let postStr = '';
 
 function forward(field) {
     return (a, b) => (a[field] > b[field] ? 1 : -1);
@@ -45,15 +45,13 @@ fetch(url)
                 deleteEl(blogMsg);
                 fetch(url)
                     .then((response) => (response.json()))
-                    .then((json) => { 
+                    .then((json) => {
                         const blogArr = json;
                         for (let i = 0; i < blogArr.length; i++) {
                             render(`${blogArr[i].title}`, `${blogArr[i].body}`);
                         }
-                    }
-                    )
+                    },);
             }
-
             else if (`${sortPost.value}` === 'Sort A-Z') {
                 deleteEl(blogMsg);
                 blogSort.sort(forward('title'));
@@ -61,7 +59,6 @@ fetch(url)
                     render(`${blogSort[i].title}`, `${blogSort[i].body}`);
                 }
             }
-
             else if (`${sortPost.value}` === 'Sort Z-A') {
                 deleteEl(blogMsg);
                 blogSort.sort(back('title'));
@@ -74,8 +71,7 @@ fetch(url)
         filterPostTitle.addEventListener('change', () => {
             deleteEl(blogMsg);
             postStr = filterPostTitle.value;
-            const blogFilter = blogSort.filter( (x) => {
-                return x.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1;});
+            const blogFilter = blogSort.filter( (x) => {return x.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1;});
             for (let i = 0; i < blogFilter.length; i++) {
                 render(`${blogFilter[i].title}`, `${blogFilter[i].body}`);
             }
