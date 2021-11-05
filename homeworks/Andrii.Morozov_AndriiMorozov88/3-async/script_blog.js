@@ -27,7 +27,7 @@ function fetchDataA() {
                 blogElement.className = 'blog_container-el';
                 blogContainer.append(blogElement);
                 blogElement.innerText = data[i].title;
-            }  
+            }
         });
 }
 function fetchDataZ() {
@@ -41,13 +41,12 @@ function fetchDataZ() {
                     }
                 }
             }
-     for (let i = 0; i < data.length; i++) {
-        let blogElement = document.createElement('div');
-        blogElement.className = 'blog_container-el';
-        blogContainer.append(blogElement);
-        blogElement.innerText = data[i].title;
-        
-     }  
+            for (let i = 0; i < data.length; i++) {
+                let blogElement = document.createElement('div');
+                blogElement.className = 'blog_container-el';
+                blogContainer.append(blogElement);
+                blogElement.innerText = data[i].title;
+            }  
     });
 }
 function fetchDataFilter() {
