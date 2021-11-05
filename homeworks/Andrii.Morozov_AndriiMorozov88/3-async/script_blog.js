@@ -1,16 +1,14 @@
 const blogContainer = document.querySelector('[data-blog-container]');
 function fetchData() {
     fetch('https://jsonplaceholder.typicode.com/posts')
-        .then((response) => {
-            return response.json();
-        })
-        .then(function (data) {
+        .then(response => response.json())
+        .then(data => {
             for (let i = 0; i < data.length; i++) {
                 const blogElement = document.createElement('div');
-        blogElement.className = 'blog_container-el';
-        blogContainer.append(blogElement);
-        blogElement.innerText = data[i].title;
-     }   
+                blogElement.className = 'blog_container-el';
+                blogContainer.append(blogElement);
+                blogElement.innerText = data[i].title;
+            }
     });
  }
  function fetchDataA_Z() {
