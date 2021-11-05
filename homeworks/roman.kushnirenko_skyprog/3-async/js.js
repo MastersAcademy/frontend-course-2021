@@ -27,7 +27,6 @@ function loadSite() {
                 return show;
             });
 
-
             // Filtering
             filterSearch.addEventListener('keyup', () => {
                 const value = filterSearch.value.toLowerCase();
