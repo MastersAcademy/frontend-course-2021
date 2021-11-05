@@ -30,25 +30,14 @@ sorting.addEventListener('change', (event) => {
 });
 
 // Filter
+document.querySelector('[data-input]').addEventListener('input', (e) => {
+    const val = e.target.value.toLowerCase();
 
-const filter = function () {
-    const input = document.querySelector('[data-input]');
-
-    input.addEventListener('keyup', () => {
-        const filters = input.value.toLowerCase();
-        const filterElements = container.querySelectorAll('[data-title]');
-
-        filterElements.forEach((item) => {
-            if (item.innerHTML.toLowerCase().indexOf(filters) > -1) {
-                item.closest('[data-card]').style.display = '';
-            } else {
-                item.closest('[data-card]').style.display = 'none';
-            }
-        });
-
+    container.querySelectorAll('[data-title]').forEach((element) => {
+        element.closest('[data-card]').style.display = element.innerText.toLowerCase().includes(val)
+            ? 'block'
+            : 'none';
     });
+});
 
-};
-
-filter();
 renderPosts();
