@@ -51,8 +51,9 @@ async function fetchArticles() {
         sortedArticles = sortArticles(articlesDefault, sortSelect);
         let filteredArticles = sortedArticles.slice();
         filteredArticles = filteredArticles.filter((article) => article.title
-        .includes(filterInput.value.toLowerCase()));
+            .includes(filterInput.value.toLowerCase()));
         articlesList.innerHTML = '';
-        createArticles(filteredArticles); }); }
+        createArticles(filteredArticles); });
+    }
 
 fetchArticles();
