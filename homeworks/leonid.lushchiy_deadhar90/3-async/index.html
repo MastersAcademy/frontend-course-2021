@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FBlog</title>
+    <style>
+        @import url(css/general_style.css);
+    </style>
+    <script src="js/general.js" defer></script>
+</head>
+<body>
+    <div data-preloader class="visible">
+        <div class="rollingSquer"></div>
+    </div>
+    <header data-header>
+        <aside data-logo>
+            <h1>FavoriteBlog</h1>
+            <p>yourFavoriteBlogInWeb</p>
+        </aside>
+        <nav data-filter>
+            <select data-select-option>
+                <option value="withOut">without sorting</option>
+                <option value="fromAtoZ">A to Z</option>
+                <option value="fromZtoA">Z to A</option>
+            </select>
+            <p>Search:</p>
+            <input type="text" name="search" data-mySearch placeholder="Start typing">
+        </nav>
+    </header>
+    <main data-main-block>
+        <section data-tweets></section>
+    </main>
+</body>
+</html>

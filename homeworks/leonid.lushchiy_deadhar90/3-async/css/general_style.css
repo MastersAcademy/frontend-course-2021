@@ -1,0 +1,119 @@
+::-webkit-scrollbar { 
+  display: none; 
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+[data-header] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 2;
+  border-bottom: 2px solid #000;
+}
+
+[data-filter] * {
+  height: 20px;
+  margin: 10px;
+  padding: 0;
+}
+
+[data-logo] h1, [data-logo] p{
+  padding: 0px;
+  margin: 0px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+[data-filter] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-main-block] {
+  position: absolute;
+  top: 50px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+[data-tweets] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tweet {
+  width: 80%;
+  box-shadow: 2px 4px 4px #000;
+  margin: 20px;
+}
+
+.tweet h1, .tweet p {
+  padding: 10px;
+}
+
+[data-preloader] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 3;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rollingSquer {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #fff;
+  animation: rolling 1s infinite;
+}
+
+@keyframes rolling {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #f00;
+}
