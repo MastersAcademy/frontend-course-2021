@@ -27,17 +27,17 @@ function fetchDataA() {
                 blogElement.className = 'blog_container-el';
                 blogContainer.append(blogElement);
                 blogElement.innerText = data[i].title;
-            }   
-    });
+            }  
+        });
 }
 function fetchDataZ() {
     fetch('https://jsonplaceholder.typicode.com/posts')
-       .then((response) => response.json())
-       .then((data) => {
+        .then((response) => response.json())
+        .then((data) => {
             for (let i = 0; i < data.length; i++) {
                 for (let j = 0; j < data.length; j++) {
                     if (data[i].title > data[j].title) {
-                       [data[i], data[j]] = [data[j], data[i]]; 
+                        [data[i], data[j]] = [data[j], data[i]];
                     }
                 }
             }
@@ -70,18 +70,18 @@ function fetchDataFilter() {
  
 document.querySelector('[data-btn]').addEventListener('click', () => {
 let sort = document.querySelector('[data-sort]');
-if (sort.value == 1) {
+if (sort.value === '1') {
     blogContainer.innerHTML = "";
    setTimeout(fetchData, 100);
    
 }
-if (sort.value == 2) {
+if (sort.value === '2') {
     blogContainer.innerHTML = "";
     setTimeout(fetchDataA, 100);
 }
 
 
-if (sort.value == 3) {
+if (sort.value === '3') {
     blogContainer.innerHTML = "";
     setTimeout(fetchDataZ, 100);
 } 
