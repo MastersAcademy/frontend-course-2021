@@ -74,7 +74,3 @@ document.querySelector('[data-btn]').addEventListener('click', () => {
         setTimeout(fetchDataZ, 3000);
     }
 });
-let arr = ['b', 'a', 'ab', 'qc', 'm']
-let newArr = arr;
-arr.sort();
-console.log (newArr);
