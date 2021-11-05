@@ -54,7 +54,7 @@ async function fetchArticles() {
         filteredArticles = filteredArticles.filter((article) => article.title
             .includes(filterInput.value.toLowerCase()));
         articlesList.innerHTML = '';
-        createArticles(filteredArticles); 
+        createArticles(filteredArticles);
     });
 }
 
