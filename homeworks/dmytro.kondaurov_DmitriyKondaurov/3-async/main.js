@@ -1,8 +1,8 @@
-window.onload = () => {
+const listOfPosts = document.body.querySelector('[data-main-box]');
+const hideLoader = () => {
     document.querySelector('.loader_inner').classList.add('hide');
     document.querySelector('.loader').classList.add('hide');
 };
-
 const addPost = (title, text) => {
     const newEl = document.createElement('li');
     const newElCloseBtn = document.createElement('div');
@@ -16,10 +16,16 @@ const addPost = (title, text) => {
     newElCloseBtn.classList.add('trash-bnt');
     newElCloseBtnLink.classList.add('trash-btn__link');
     newElCloseBtnImg.classList.add('trash-btn__icon');
+    newElCloseBtnImg.src = 'Trash-Icon.png';
+    newElCloseBtnImg.alt = 'Trash';
+    newElCloseBtnImg.width = 66;
+    newElCloseBtnImg.height = 42;
     newElText.textContent = text;
     newElTitle.textContent = title;
+    newElCloseBtn.append(newElCloseBtnLink);
+    newElCloseBtnLink.append(newElCloseBtnImg);
     newEl.append(newElTitle, newElText, newElCloseBtn);
-    document.body.querySelector('[data-main-box]').append(newEl);
+    listOfPosts.append(newEl);
 };
 
 setTimeout(() => {
@@ -28,5 +34,6 @@ setTimeout(() => {
         .then((json) => {
             console.log(json);
             json.map((post) => addPost(post.title, post.body));
-        });
+        })
+        .then(hideLoader);
 }, 3000);
