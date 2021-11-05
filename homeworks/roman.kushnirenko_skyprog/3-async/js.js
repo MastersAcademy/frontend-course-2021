@@ -30,13 +30,14 @@ function loadSite() {
             // Filtering
             filterSearch.addEventListener('keyup', () => {
                 const value = filterSearch.value.toLowerCase();
-                const filterFound = arrayJson.filter((item) =>
-                  item.title.toLowerCase().includes(value));
+                const filterFound = arrayJson.filter((item) => (
+                    item.title.toLowerCase().includes(value))
+                );
                 if (filterFound.value !== '') {
                     allContent.innerHTML = '';
                     filterFound.map((show) => {
-                        const articleShow = 
-                          dataContentTemplate.content.cloneNode(true).firstElementChild;
+                        const articleShow
+                            = dataContentTemplate.content.cloneNode(true).firstElementChild;
                         const articleTitle = articleShow.querySelector('[data-article-title]');
                         const articleText = articleShow.querySelector('[data-article-text]');
                         const removeBtn = articleShow.querySelector('[data-remove-btn]');
@@ -48,8 +49,8 @@ function loadSite() {
                         removeBtn.addEventListener('click', () => {
                             articleShow.remove();
                         });
-                    },
-                );
+                        return show;
+                    });
                 }
             });
         } catch (e) {
@@ -68,7 +69,7 @@ setTimeout(loadSite, 3000);
 sortSelect.addEventListener('change', function () {
     if (this.value === 'sort_a-z') {
         const sortArrayAz = arrayJson.sort((a, b) => a.title.localeCompare(b.title));
-            allContent.innerHTML = '';
+        allContent.innerHTML = '';
 
         sortArrayAz.map((show) => {
             const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
@@ -83,10 +84,9 @@ sortSelect.addEventListener('change', function () {
             removeBtn.addEventListener('click', () => {
                 articleShow.remove();
             });
+            return show;
         });
-    }
-    else if (this.value === 'sort_z-a') 
-    {
+    } else if (this.value === 'sort_z-a') {
         const sortArrayZa = arrayJson.sort((a, b) => a.title.localeCompare(b.title)).reverse();
         allContent.innerHTML = '';
 
@@ -103,6 +103,7 @@ sortSelect.addEventListener('change', function () {
             removeBtn.addEventListener('click', () => {
                 articleShow.remove();
             });
+            return show;
         });
     }
 });
