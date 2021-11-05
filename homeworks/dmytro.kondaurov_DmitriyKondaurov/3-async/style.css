@@ -62,6 +62,7 @@ body {
 
 .site-title::first-letter {
   color: #F27171;
+  text-transform: uppercase;
 }
 
 .sort-field {
