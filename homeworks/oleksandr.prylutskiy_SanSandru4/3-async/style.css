@@ -17,7 +17,7 @@ body {
   width: 992px;
   height: 900px;
   background: linear-gradient(180deg, #F6F5FB 14.31%, #FEFEFF 94.46%);
-  box-shadow: 0 4px 96px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 96px hsla(0, 0%, 0%, .18);
   border-radius: 30px;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -70,7 +70,7 @@ body {
   font-family: "Roboto", sans-serif;
   line-height: 28px;
   background: #F7F6FB;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
   border-radius: 30px;
 }
 
@@ -92,7 +92,7 @@ body {
   width: 414px;
   height: 340px;
   background: #FFF;
-  box-shadow: 0 1px 50px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 50px rgba(0, 0, 0, .06);
   border-radius: 30px;
   font-family: "Roboto", sans-serif;
 }

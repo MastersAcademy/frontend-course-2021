@@ -1,6 +1,6 @@
 const url = 'https://jsonplaceholder.typicode.com/posts';
 const blogMsg = document.querySelector('[data-blog-msg]');
-const sortPost= document.querySelector('[data-blog-sort]');
+const sortPost = document.querySelector('[data-blog-sort]');
 const filterPostTitle = document.querySelector('[data-blog-filter]');
 const postStr = '';
 
@@ -41,18 +41,19 @@ fetch(url)
         }
 
         sortPost.addEventListener('click', () => {
-            if (`${sortPost.value}` === "No sort") {
+            if (`${sortPost.value}` === 'No sort') {
                 deleteEl(blogMsg);
                 fetch(url)
-                .then((response) => (response.json()))
-                .then((json) => { 
-                    const blogArr = json;
-                    for (let i = 0; i < blogArr.length; i++) {
-                        render(`${blogArr[i].title}`, `${blogArr[i].body}`);
-                    }
+                    .then((response) => (response.json()))
+                    .then((json) => { 
+                        const blogArr = json;
+                        for (let i = 0; i < blogArr.length; i++) {
+                            render(`${blogArr[i].title}`, `${blogArr[i].body}`);
+                        }
                     }
                     )
             }
+
             else if (`${sortPost.value}` === 'Sort A-Z') {
                 deleteEl(blogMsg);
                 blogSort.sort(forward('title'));
@@ -60,6 +61,7 @@ fetch(url)
                     render(`${blogSort[i].title}`, `${blogSort[i].body}`);
                 }
             }
+
             else if (`${sortPost.value}` === 'Sort Z-A') {
                 deleteEl(blogMsg);
                 blogSort.sort(back('title'));
@@ -76,6 +78,7 @@ fetch(url)
                 return x.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1;});
             for (let i = 0; i < blogFilter.length; i++) {
                 render(`${blogFilter[i].title}`, `${blogFilter[i].body}`);
-            };
-        });
+            }
+        }
+        )
     })
