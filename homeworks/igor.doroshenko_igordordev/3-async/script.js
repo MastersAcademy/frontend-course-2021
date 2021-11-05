@@ -45,9 +45,7 @@ async function fetchArticles() {
     sortSelect.addEventListener('change', () => {
         sortedArticles = sortArticles(articlesDefault, sortSelect);
         articlesList.innerHTML = '';
-
-        createArticles(sortedArticles);
-    });
+        createArticles(sortedArticles); });
 
     filterInput.addEventListener('input', () => {
         sortedArticles = sortArticles(articlesDefault, sortSelect);
@@ -55,7 +53,6 @@ async function fetchArticles() {
         filteredArticles = filteredArticles.filter((article) => article.title
         .includes(filterInput.value.toLowerCase()));
         articlesList.innerHTML = '';
-
         createArticles(filteredArticles); }); }
 
 fetchArticles();

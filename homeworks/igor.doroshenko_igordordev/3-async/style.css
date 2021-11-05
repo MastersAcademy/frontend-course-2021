@@ -4,7 +4,7 @@
 }
 
 h1::first-letter, h2::first-letter, p::first-letter {
-  color: #ff0000;
+  color: #F00;
 }
 
 body {
