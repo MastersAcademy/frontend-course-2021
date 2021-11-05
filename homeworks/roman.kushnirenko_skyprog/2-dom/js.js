@@ -25,7 +25,7 @@ function createMessage() {
 
 chatFormSubmit.addEventListener('click', (event) => {
     event.preventDefault();
-    if (!chatFormInput.value == '') {
+    if (!chatFormInput.value === '') {
         createMessage();
     }
 });
