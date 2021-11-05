@@ -28,7 +28,8 @@ const selectOrderField = document.querySelector('[data-role="blog-select-order"]
 const searchInputField = document.querySelector('[data-role="blog-input-search"]');
 const mainField = document.querySelector('[data-role="blog-main-section"]');
 /** Set order values for option tags */
-Object.keys(orderBy).forEach((orderName, index) => { selectOrderField.options[index].value = orderName; });
+Object.keys(orderBy)
+    .forEach((orderName, index) => { selectOrderField.options[index].value = orderName; });
 /**
  * variables for keeping initial data from response and titles in lower case
  */
