@@ -16,13 +16,7 @@ function fetchDataA() {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
         .then((data) => {
-            for (let i = 0; i < data.length; i++) {
-                for (let j = 0; j < data.length; j++) {
-                    if (data[i].title < data[j].title) {
-                        [data[i], data[j]] = [data[j], data[i]];
-                    }
-                }
-            }
+            data.sort((a, b) => a.title > b.title ? 1 : -1);
             for (let i = 0; i < data.length; i++) {
                 const blogElement = document.createElement('div');
                 blogElement.className = 'blog_container-el';
@@ -35,13 +29,7 @@ function fetchDataZ() {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
         .then((data) => {
-            for (let i = 0; i < data.length; i++) {
-                for (let j = 0; j < data.length; j++) {
-                    if (data[i].title > data[j].title) {
-                        [data[i], data[j]] = [data[j], data[i]];
-                    }
-                }
-            }
+            data.sort((a, b) => a.title > b.title ? -1 : 1);
             for (let i = 0; i < data.length; i++) {
                 const blogElement = document.createElement('div');
                 blogElement.className = 'blog_container-el';
@@ -86,3 +74,7 @@ document.querySelector('[data-btn]').addEventListener('click', () => {
         setTimeout(fetchDataZ, 3000);
     }
 });
+let arr = ['b', 'a', 'ab', 'qc', 'm']
+let newArr = arr;
+arr.sort();
+console.log (newArr);
