@@ -8,11 +8,10 @@ const renderPosts = async (search) => {
         url += `?_sort=title&_order=${search}`;
     }
     const render = await fetch(url);
-    const posts = await render.json();
+    const postBox = await render.json();
     load.style.display = 'none';
     let blogPosts = '';
-    let postsRender = posts;
-    postsRender.forEach((posts) => {
+    postBox.forEach((posts) => {
         blogPosts += `
         <div class='content__posts__card' data-card>
         <h3 class='content__posts__title' data-title>${posts.title}</h3>
@@ -34,8 +33,8 @@ sorting.addEventListener('change', (event) => {
 document.querySelector('[data-input]').addEventListener('input', (e) => {
     const val = e.target.value.toLowerCase();
 
-    container.querySelectorAll('[data-title]').forEach((term) => {
-        term.closest('[data-card]').style.display = term.innerText.toLowerCase().includes(val)
+    container.querySelectorAll('[data-title]').forEach((n) => {
+        n.closest('[data-card]').style.display = n.innerText.toLowerCase().includes(val)
             ? 'block'
             : 'none';
     });
