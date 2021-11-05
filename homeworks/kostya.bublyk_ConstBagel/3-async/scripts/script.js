@@ -15,10 +15,10 @@ const orderBy = {
     DESC: (arr) => [...arr].sort((a, b) => b.title.localeCompare(a.title)),
 };
 /**
- * storage for actual sorting and searching parameters. Set 'DEF' as default value for order
+ * storage for actual sorting and searching parameters.
  */
 const stateStorage = {
-    order: Object.keys(orderBy).shift(),
+    order: '',
     data: null,
 };
 /**
@@ -27,9 +27,8 @@ const stateStorage = {
 const selectOrderField = document.querySelector('[data-role="blog-select-order"]');
 const searchInputField = document.querySelector('[data-role="blog-input-search"]');
 const mainField = document.querySelector('[data-role="blog-main-section"]');
-const orderOptions = document.querySelectorAll('[data-role="blog-option-order"]');
 /** Set order values for option tags */
-Object.keys(orderBy).forEach((orderName, index) => { orderOptions[index].value = orderName; });
+Object.keys(orderBy).forEach((orderName, index) => { selectOrderField.options[index].value = orderName; });
 /**
  * variables for keeping initial data from response and titles in lower case
  */
@@ -54,6 +53,7 @@ async function initApp() {
         resolve(getArticles());
     }, 3000)));
     titlesWithLowerCase = initialData.map((article) => article.title.toLowerCase());
+    stateStorage.order = selectOrderField.options[selectOrderField.selectedIndex].value;
     stateStorage.data = [...initialData];
     displayArticles(initialData);
 }
