@@ -34,6 +34,7 @@
 
             const selectOptions = document.createElement('div');
             selectOptions.className = 'select__list';
+            selectOptions.dataset.selectList = '';
 
             if (this.currentValue.options.length) {
                 this.currentValue.options.forEach((option) => {
@@ -84,6 +85,14 @@
                     if (this.cb) {
                         this.cb(selectOption.dataset.selectValue);
                     }
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                const customSelectTarget = e.target.closest('[data-select]');
+
+                if (!customSelectTarget || customSelectTarget !== this.container) {
+                    this.selectOptionsEl.classList.remove('active');
                 }
             });
         }
