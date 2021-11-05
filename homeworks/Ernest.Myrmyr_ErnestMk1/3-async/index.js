@@ -1,5 +1,4 @@
 const mainEl = document.querySelector('[data-main]');
-const formEl = document.querySelector('[data-form]');
 const sortBy = document.querySelector('[data-sorting]');
 const filtering = document.querySelector('[data-filter]');
 const arrayOfPostObjects = [];
@@ -18,15 +17,15 @@ const postsDrawing = (object) => {
         postContent.className = 'post-content';
 
         const postObject = {};
-        postObject['id'] = object[i].id;
-        postObject['body'] = postContent.textContent;
-        postObject['title'] = postTitle.textContent;
+        postObject.id = object[i].id;
+        postObject.body = postContent.textContent;
+        postObject.title = postTitle.textContent;
         arrayOfPostObjects.push(postObject);
-    };
+    }
 };
 const clearingPage = () => {
     let childToRemove = mainEl.lastChild;
-    while(childToRemove) {
+    while (childToRemove) {
         mainEl.removeChild(childToRemove);
         childToRemove = mainEl.lastChild;
     }
@@ -41,7 +40,7 @@ const requestPosts = () => {
             mainEl.removeChild(iframeEl);
 
             postsDrawing(json);
-        })
+        });
 };
 
 const whileLoading = () => {
@@ -50,7 +49,7 @@ const whileLoading = () => {
     loadingGif.classList.add('loading');
     const loadingGifWrapper = document.createElement('div');
     loadingGifWrapper.classList.add('loading-gif-wrapper');
-    loadingGifWrapper.appendChild(loadingGif)
+    loadingGifWrapper.appendChild(loadingGif);
     mainEl.appendChild(loadingGifWrapper);
 };
 
@@ -61,8 +60,11 @@ filtering.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         e.preventDefault();
         for (let i = 0; i < arrayOfPostObjects.length; i++) {
-            if (arrayOfPostObjects[i].title.toLowerCase().includes(filtering.value.toLowerCase()) === false) {
-                const postToRemove = document.querySelector(`.post-num-${i+1}`);
+            if (arrayOfPostObjects[i]
+                .title
+                .toLowerCase()
+                .includes(filtering.value.toLowerCase()) === false) {
+                const postToRemove = document.querySelector(`.post-num-${i + 1}`);
                 mainEl.removeChild(postToRemove);
             }
         }
@@ -72,18 +74,14 @@ filtering.addEventListener('keypress', (e) => {
 sortBy.addEventListener('change', (e) => {
     e.preventDefault();
     if (e.target.value === 'A-Z') {
-        arrayOfPostObjects.sort((a, b) => {
-            return a.title.localeCompare(b.title);
-        });
+        arrayOfPostObjects.sort((a, b) => a.title.localeCompare(b.title));
 
         clearingPage()
         postsDrawing(arrayOfPostObjects);
     } else if (e.target.value === 'Z-A') {
-        arrayOfPostObjects.sort((a, b) => {
-            return b.title.localeCompare(a.title);
-        });
+        arrayOfPostObjects.sort((a, b) => b.title.localeCompare(a.title));
 
-        clearingPage()
+        clearingPage();
         postsDrawing(arrayOfPostObjects);
     }
 });
