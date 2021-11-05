@@ -10,14 +10,10 @@ loading.style.fontSize = '25px';
 
 // GET
 async function getElements(url) {
-    try {
-        const response = await fetch(url);
-        const content = await response.json();
-        const data = await content.splice(0, 10);
-        return data;
-    } catch (err) {
-        alert(err);
-    }
+    const response = await fetch(url);
+    const content = await response.json();
+    const data = await content.splice(0, 10);
+    return data;
 }
 
 // POST
