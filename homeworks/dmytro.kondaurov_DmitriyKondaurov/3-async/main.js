@@ -17,6 +17,7 @@ const addPost = (title, text) => {
 };
 
 const filterEl = (post) => post.querySelector('[data-post-title]').textContent.localeCompare(postFilter.value) === 1;
+
 const sortElForward = (a, b) => {
     const aTitle = a.querySelector('[data-post-title]').textContent.toUpperCase();
     const bTitle = b.querySelector('[data-post-title]').textContent.toUpperCase();
@@ -67,7 +68,7 @@ const getPosts = () => {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then((response) => response.json())
             .then((json) => {
-                json.map((post) => addPost(post.title, post.body));
+                json.forEach((post) => addPost(post.title, post.body));
             })
             .then(() => {
                 listOfPosts = Array.from(document.body.querySelector('[data-main-box]').children);
