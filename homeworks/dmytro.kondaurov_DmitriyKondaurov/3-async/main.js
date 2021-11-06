@@ -3,9 +3,8 @@ let listOfPosts = [];
 const postFilter = document.body.querySelector('[data-filter]');
 const postSort = document.body.querySelector('[data-sort]');
 
-const preLoader = () => {
-    document.querySelector('.loader_inner').classList.add('hide');
-    document.querySelector('.loader').classList.add('hide');
+const hideLoaderGifImage = () => {
+    document.querySelector('[data-main-content-loader]').classList.add('hide');
 };
 
 const addPost = (title, text) => {
@@ -17,7 +16,9 @@ const addPost = (title, text) => {
     const newElText = document.createElement('p');
     newEl.classList.add('post-list__item');
     newElTitle.classList.add('post-list__item-title');
+    newElTitle.setAttribute('data-post-title', '');
     newElText.classList.add('post-list__item-text');
+    newElText.setAttribute('data-post-text', '');
     newElCloseBtn.classList.add('trash-bnt');
     newElCloseBtnLink.classList.add('trash-btn__link');
     newElCloseBtnImg.classList.add('trash-btn__icon');
@@ -35,25 +36,26 @@ const addPost = (title, text) => {
 };
 
 const filterEl = (post) => post.firstElementChild.textContent.localeCompare(postFilter.value) === 1;
-const sortEl = (a, b) => {
-    const aTitle = a.firstElementChild.textContent.toUpperCase();
-    const bTitle = b.firstElementChild.textContent.toUpperCase();
-    if (postSort.value === 'a-z') {
-        if (aTitle < bTitle) {
-            return -1;
-        }
-        if (aTitle > bTitle) {
-            return 1;
-        }
-        return 0;
-    } if (postSort.value === 'z-a') {
-        if (aTitle < bTitle) {
-            return 1;
-        }
-        if (aTitle > bTitle) {
-            return -1;
-        }
-        return 0;
+const sortElForward = (a, b) => {
+    const aTitle = a.querySelector('[data-post-title]').textContent.toUpperCase();
+    const bTitle = b.querySelector('[data-post-title]').textContent.toUpperCase();
+    if (aTitle < bTitle) {
+        return -1;
+    }
+    if (aTitle > bTitle) {
+        return 1;
+    }
+    return 0;
+};
+
+const sortElReverse = (a, b) => {
+    const aTitle = a.querySelector('[data-post-title]').textContent.toUpperCase();
+    const bTitle = b.querySelector('[data-post-title]').textContent.toUpperCase();
+    if (aTitle < bTitle) {
+        return 1;
+    }
+    if (aTitle > bTitle) {
+        return -1;
     }
     return 0;
 };
@@ -62,9 +64,18 @@ const reRenderPosts = () => {
     fieldForPosts.innerHTML = '';
     listOfPosts
         .filter(filterEl)
-        .sort(sortEl)
-        // eslint-disable-next-line max-len
-        .map((post) => addPost(post.firstElementChild.textContent, post.firstElementChild.nextElementSibling.textContent));
+        .sort((a, b) => {
+            if (postSort.value === 'a-z') {
+                return sortElForward(a, b);
+            } if (postSort.value === 'z-a') {
+                return sortElReverse(a, b);
+            } return 0;
+        })
+        .forEach((element) => {
+            const postTitle = element.querySelector('[data-post-title]').textContent;
+            const postText = element.querySelector('[data-post-text]').textContent;
+            addPost(postTitle, postText);
+        });
 };
 
 postFilter.addEventListener('change', reRenderPosts);
@@ -80,8 +91,8 @@ const getPosts = () => {
             .then(() => {
                 listOfPosts = Array.from(document.body.querySelector('[data-main-box]').children);
             })
-            .then(preLoader);
+            .then(hideLoaderGifImage);
     }, 3000);
 };
 
-window.onload = () => getPosts();
+getPosts();

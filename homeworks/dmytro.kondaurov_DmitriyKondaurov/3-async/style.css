@@ -3,7 +3,7 @@ body {
   font-family: "Lato";
 }
 
-.loader {
+.main-content__loader {
   z-index: 9999;
   position: absolute;
   top: 0;
@@ -15,7 +15,7 @@ body {
   background: none repeat scroll 0 0 transparent;
 }
 
-.loader_inner {
+.loader__inner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -54,7 +54,7 @@ body {
   background-color: #FFF;
 }
 
-.site-title {
+.header__site-title {
   display: inline-block;
   padding: 20px 20px 10px ;
   margin: 0;
@@ -64,12 +64,12 @@ body {
   font-weight: 900;
 }
 
-.site-title::first-letter {
+.header__site-title::first-letter {
   color: #F27171;
   text-transform: uppercase;
 }
 
-.sort-field {
+.header__sort-field {
   width: 80px;
   padding: 2px 0;
   margin: 0 20px;
@@ -82,7 +82,7 @@ body {
   text-transform: capitalize;
 }
 
-.filter-field {
+.header__filter-field {
   padding: 7px 10px;
   width: 180px;
   background-color: #F7F6FB;
