@@ -66,7 +66,7 @@ fetch(url)
             deleteEl(blogMsg);
             postStr = filterPostTitle.value;
             const blogFilter = blogSort.filter((el) => {
-                el.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1
+                return el.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1
             });
             for (let i = 0; i < blogFilter.length; i++) {
                 render(`${blogFilter[i].title}`, `${blogFilter[i].body}`);
