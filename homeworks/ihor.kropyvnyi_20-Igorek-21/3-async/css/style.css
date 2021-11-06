@@ -80,6 +80,7 @@ body {
   font-family: "Roboto";
   font-size: 16px;
   line-height: 17px;
+  padding-left: 20px;
 }
 
 .holder__header__input {
@@ -150,4 +151,5 @@ body {
 .holder__header__select--activ:hover,
 .holder__header__input--activ:hover {
   background-color: #D9D9D9;
+  cursor: pointer;
 }
