@@ -11,10 +11,15 @@
     <div class="container">
         <header class="header">
             <h1 class="headerName">blog</h1>
-            <p class="headerSort" data-sort>Sort</p>
+            <form class="headerForm" action="">Sort by
+                <select class="headerSort" data-sort>
+                    <option selected value="initial">initial</option>
+                    <option value="aToZ">A-Z</option>
+                    <option value="zToA">Z-A</option>
+                </select>
+            </form>
             <form class="headerFilter" action="" type="submit">
-                <input type="text" placeholder="Filter">
-                <input type="button" name="" id=""data-button>           
+                <input type="text" placeholder="Filter">                        
             </form>
         </header>
         <main class="main">

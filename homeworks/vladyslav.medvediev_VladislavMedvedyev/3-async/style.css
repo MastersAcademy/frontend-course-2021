@@ -47,12 +47,12 @@ body {
   left: 5%;
 }
 
-.headerSort {
+.headerForm {
   position: relative;
-  left: 65%;
+  left: 60%;
 }
 
 .headerFilter {
   position: relative;
-  left: 70%;
+  left: 65%;
 }
