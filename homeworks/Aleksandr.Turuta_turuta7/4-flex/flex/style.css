@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #C14F4F;
+}
+
+.main {
+  display: flex;
+  flex-grow: 1;
+}
+
+.header {
+  width: 100%;
+  height: 150px;
+  background: #C14F4F;
+}
+
+.main__left {
+  width: 100px;
+  height: 100%;
+  background: #C28181;
+}
+
+.main__center {
+  height: 100%;
+  width: 100%;
+  background: #699EBD;
+}
+
+.main__right {
+  width: 100px;
+  height: 100%;
+  background: #C28181;
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background: #C14F4F;
+}
