@@ -50,8 +50,9 @@ fetch(url)
                         for (let i = 0; i < blogArr.length; i++) {
                             render(`${blogArr[i].title}`, `${blogArr[i].body}`);
                         }
-                    },);
+                    });
             }
+
             else if (`${sortPost.value}` === 'Sort A-Z') {
                 deleteEl(blogMsg);
                 blogSort.sort(forward('title'));
@@ -59,6 +60,7 @@ fetch(url)
                     render(`${blogSort[i].title}`, `${blogSort[i].body}`);
                 }
             }
+
             else if (`${sortPost.value}` === 'Sort Z-A') {
                 deleteEl(blogMsg);
                 blogSort.sort(back('title'));
@@ -71,10 +73,11 @@ fetch(url)
         filterPostTitle.addEventListener('change', () => {
             deleteEl(blogMsg);
             postStr = filterPostTitle.value;
-            const blogFilter = blogSort.filter( (x) => {return x.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1;});
+            const blogFilter = blogSort.filter((x) => { return x.title.toLowerCase().
+                    indexOf(postStr.toLowerCase()) > -1; });
             for (let i = 0; i < blogFilter.length; i++) {
                 render(`${blogFilter[i].title}`, `${blogFilter[i].body}`);
             }
-        }
+        },
         )
     })
