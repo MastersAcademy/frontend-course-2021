@@ -49,25 +49,25 @@ function createPostsList(posts) {
 }
 // Delete post
 function addDeleteSupport() {
-    const deleteMessege = document.createElement('div');
     function presentMessege(el) {
+        const deleteMessege = document.createElement('div');
         deleteMessege.innerText = `Post: ${el.target.attributes[0].value} deleted`;
         deleteMessege.classList.add('post__delete__outText');
         document.body.appendChild(deleteMessege);
+        setTimeout(() => {
+            document.body.removeChild(deleteMessege);
+        }, 500);
     }
     document.addEventListener('click', (e) => {
         if (e.target.classList[0] === 'delete__button') {
             blog.removeChild(e.target.closest('article'));
             presentMessege(e);
         }
-        setTimeout(() => {
-            document.body.removeChild(deleteMessege);
-        }, 500);
     });
 }
 // Filtering
 function filter() {
-    filtering.oninput = (e) => {
+    filtering.addEventListener('input', (e) => {
         const val = e.target.value.trim().toLowerCase();
         const textList = document.querySelectorAll('.post__title');
         if (val !== '') {
@@ -84,22 +84,40 @@ function filter() {
                 elem.parentElement.classList.remove('hide');
             });
         }
-    };
+    });
 }
 // For Sorting
-async function reloadChanged() {
+async function reloadSortedPage() {
     sorting.addEventListener('change', () => {
+        const filterVal = filtering.value;
+        console.log(filterVal);
         const posts = [];
         const onPageArticle = document.querySelectorAll('[data-post]');
-        const onPageTitle = document.querySelectorAll('.post__title');
-        const onPageText = document.querySelectorAll('.post__text');
-        for (let i = 0; i < onPageArticle.length; i++) {
-            const obj = {
-                id: onPageArticle[i].attributes[0].value,
-                title: onPageTitle[i].innerText,
-                body: onPageText[i].innerHTML,
-            };
-            posts.push(obj);
+        if (filterVal !== '') {
+            const filterArticles = [];
+            onPageArticle.forEach((e) => {
+                if (e.classList[1] === undefined) {
+                    filterArticles.push(e);
+                }
+            });
+            console.log(filterArticles);
+            filterArticles.forEach((e) => {
+                const obj = {
+                    id: e.attributes[0].value,
+                    title: e.querySelector('.post__title').innerText,
+                    body: e.querySelector('.post__text').innerText,
+                };
+                posts.push(obj);
+            });
+        } else {
+            onPageArticle.forEach((e) => {
+                const obj = {
+                    id: e.attributes[0].value,
+                    title: e.querySelector('.post__title').innerText,
+                    body: e.querySelector('.post__text').innerText,
+                };
+                posts.push(obj);
+            });
         }
         blog.innerHTML = '';
         switch (sorting.value) {
@@ -115,19 +133,19 @@ async function reloadChanged() {
     });
 }
 // Initialization
-async function init() {
-    blog.appendChild(loading);
+async function attachHandlers(data) {
     setTimeout(() => {
-        async function initialization() {
-            const posts = await getElements(requestUrl);
-            await createPostsList(posts);
-            await addDeleteSupport();
-            await filter();
-            await reloadChanged();
-        }
-        initialization();
         blog.removeChild(loading);
+        createPostsList(data);
+        addDeleteSupport();
+        filter();
+        reloadSortedPage();
     }, 3000);
 }
+async function firstInit() {
+    blog.appendChild(loading);
+    const posts = await getElements(requestUrl);
+    attachHandlers(posts);
+}
 
-init();
+firstInit();
