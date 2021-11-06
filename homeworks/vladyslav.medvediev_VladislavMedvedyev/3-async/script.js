@@ -1,3 +1,4 @@
+const sortEl = document.querySelector('[data-sort]');
 async function getPosts() {
     return fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
@@ -9,7 +10,7 @@ function sort(sortMethod = 'default') {
         switch (sortMethod) {
             case ('default'):
             default:
-                console.log(posts);
+                // console.log(posts);
                 break;
             case ('a-z'):
                 posts.sort((a, b) => {
@@ -23,7 +24,7 @@ function sort(sortMethod = 'default') {
                     }
                     return 0;
                 });
-                console.log(posts);
+                // console.log(posts);
                 break;
             case ('z-a'):
                 posts.sort((a, b) => {
@@ -37,7 +38,7 @@ function sort(sortMethod = 'default') {
                     }
                     return 0;
                 });
-                console.log(posts);
+                // console.log(posts);
                 break;
         }
         const article1TitleEl = document.querySelector('[data-title-1]');
@@ -58,18 +59,26 @@ function sort(sortMethod = 'default') {
         article4ContentEl.textContent = posts[3].body;
     })();
 }
-setTimeout(sort, 1000);
-const sortEl = document.querySelector('[data-sort]');
+setTimeout(sort, 3000);
+function preloader() {
+    document.body.classList.add('loaded_hiding');
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded_hiding');
+}
+preloader();
 sortEl.addEventListener('change', function () {
     if (this.value === 'aToZ') {
         setTimeout(() => {
             sort('a-z');
-        }, 1000);
+        }, 3000);
     } if (this.value === 'zToA') {
         setTimeout(() => {
             sort('z-a');
-        }, 1000);
+        }, 3000);
     } if (this.value === 'initial') {
-        setTimeout(sort, 1000);
+        setTimeout(() => {
+            sort();
+            preloader();
+        }, 3000);
     }
 });
