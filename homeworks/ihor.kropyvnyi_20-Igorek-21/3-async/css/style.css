@@ -90,6 +90,10 @@ body {
   border-radius: 30px;
 }
 
+.holder__header__input[type="text"] {
+  padding-left: 20px;
+}
+
 .holder__header__input[type] {
   font-family: "Roboto";
   font-style: normal;

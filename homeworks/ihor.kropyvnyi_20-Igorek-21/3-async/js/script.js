@@ -2,27 +2,35 @@ const loderEl = document.querySelector('[data-loared]');
 const templateItemsEl = document.querySelector('[data-tamplate-items]');
 const holderContentEl = document.querySelector('[data-holder-content]');
 const headerSelectEl = document.querySelector('[data-header-select]');
+const headerInputEl = document.querySelector('[data-header-input]');
 
 function addElement(content) {
     holderContentEl.textContent = '';
-    content.forEach((item) => {
+    content.forEach((copy) => {
         const itemsEl = templateItemsEl.content.cloneNode(true);
-        itemsEl.querySelector('[data-articl-title]').textContent = item.title;
-        itemsEl.querySelector('[data-articl-text]').textContent = item.body;
+        itemsEl.querySelector('[data-articl-title]').textContent = copy.title;
+        itemsEl.querySelector('[data-articl-text]').textContent = copy.body;
         holderContentEl.append(itemsEl);
     });
 }
 
-const add = (ite) => {
-    addElement(ite);
+const sortTitle = (item) => {
+    addElement(item);
     headerSelectEl.addEventListener('change', (evt) => {
-        if (evt.target.value === 'sort-A-Z') {
-            ite.sort((a, b) => a.title.localeCompare(b.title));
-            addElement(ite);
+        if (evt.target.value === 'without-sort') {
+            item.sort((a, b) => a.id - (b.id));
+            addElement(item);
+        } else if (evt.target.value === 'sort-A-Z') {
+            item.sort((a, b) => a.title.localeCompare(b.title));
+            addElement(item);
         } else if (evt.target.value === 'sort-Z-A') {
-            ite.sort((a, b) => b.title.localeCompare(a.title));
-            addElement(ite);
+            item.sort((a, b) => b.title.localeCompare(a.title));
+            addElement(item);
         }
+    });
+    headerInputEl.addEventListener('input', () => {
+        const filteredText = item.filter((a) => a.title.includes(headerInputEl.value));
+        addElement(filteredText);
     });
 };
 
@@ -30,12 +38,12 @@ function getResponse() {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
         .then((data) => {
-            const info = data.splice(0, 8);
-            add(info);
+            const info = data.splice(0, 30);
+            sortTitle(info);
             return info;
         })
         .catch(() => {
-            console.log('error');
+            alert('Page not found');
         });
 }
 
