@@ -1,8 +1,9 @@
-const postArea = document.querySelector('[data-content]');
-const sortDesc = document.querySelector('[data-sort-descending]');
-const sortAsc = document.querySelector('[data-sort-ascending]');
-const sortInitial = document.querySelector('[data-sort-initial]');
-const filterData = document.querySelector('[data-filter]');
+const postAreaEL = document.querySelector('[data-content]');
+const sortDescEl = document.querySelector('[data-sort-descending]');
+const sortAscEL = document.querySelector('[data-sort-ascending]');
+const sortInitialEl = document.querySelector('[data-sort-initial]');
+const filterDataEl = document.querySelector('[data-filter]');
+const templateEl = document.querySelector('[data-post]');
 
 window.addEventListener('load', () => {
     setTimeout(() => {
@@ -13,42 +14,35 @@ window.addEventListener('load', () => {
         }
 
         function renderPosts(posts) {
-            postArea.innerHTML = '';
-            for (let i = 0; i < posts.length; i++) {
-                const post = document.createElement('div');
-                post.classList.add('blog__content-post');
-                const title = document.createElement('h2');
-                title.textContent = posts[i].title.toUpperCase();
-                title.classList.add('blog__content-post-title');
-                const text = document.createElement('p');
-                text.textContent = posts[i].body;
-                text.classList.add('blog__content-post-text');
-                post.append(title);
-                post.append(text);
-                postArea.append(post);
-            }
+            postAreaEL.innerHTML = '';
+            posts.map((item) => {
+                const postEl = templateEl.content.cloneNode(true);
+                postEl.querySelector('[data-title]').textContent = item.title;
+                postEl.querySelector('[data-text]').textContent = item.body;
+                return postAreaEL.append(postEl);
+            });
         }
 
         loadPosts().then((posts) => {
             renderPosts(posts);
 
-            sortInitial.addEventListener('click', () => {
+            sortInitialEl.addEventListener('click', () => {
                 renderPosts(posts);
             });
 
-            sortDesc.addEventListener('click', () => {
+            sortDescEl.addEventListener('click', () => {
                 posts.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
                 renderPosts(posts);
             });
 
-            sortAsc.addEventListener('click', () => {
+            sortAscEL.addEventListener('click', () => {
                 posts.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()));
                 renderPosts(posts);
             });
 
-            filterData.addEventListener('input', () => {
+            filterDataEl.addEventListener('keyup', () => {
                 posts.filter((item) => item.title.toLowerCase()
-                    .includes(filterData.value.toLowerCase()));
+                    .includes(filterDataEl.value.toLowerCase()));
                 renderPosts(posts);
             });
         });
