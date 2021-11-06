@@ -2,40 +2,21 @@ const fieldForPosts = document.body.querySelector('[data-main-box]');
 let listOfPosts = [];
 const postFilter = document.body.querySelector('[data-filter]');
 const postSort = document.body.querySelector('[data-sort]');
+let template = document.querySelector('[data-post-template]');
 
 const hideLoaderGifImage = () => {
     document.querySelector('[data-main-content-loader]').classList.add('hide');
 };
 
 const addPost = (title, text) => {
-    const newEl = document.createElement('li');
-    const newElCloseBtn = document.createElement('div');
-    const newElCloseBtnLink = document.createElement('a');
-    const newElCloseBtnImg = document.createElement('img');
-    const newElTitle = document.createElement('h2');
-    const newElText = document.createElement('p');
-    newEl.classList.add('post-list__item');
-    newElTitle.classList.add('post-list__item-title');
-    newElTitle.setAttribute('data-post-title', '');
-    newElText.classList.add('post-list__item-text');
-    newElText.setAttribute('data-post-text', '');
-    newElCloseBtn.classList.add('trash-bnt');
-    newElCloseBtnLink.classList.add('trash-btn__link');
-    newElCloseBtnImg.classList.add('trash-btn__icon');
-    newElCloseBtnLink.href = '#';
-    newElCloseBtnImg.src = 'Trash-Icon.png';
-    newElCloseBtnImg.alt = 'Trash';
-    newElCloseBtnImg.width = 66;
-    newElCloseBtnImg.height = 42;
-    newElText.textContent = text;
-    newElTitle.textContent = title;
-    newElCloseBtn.append(newElCloseBtnLink);
-    newElCloseBtnLink.append(newElCloseBtnImg);
-    newEl.append(newElTitle, newElText, newElCloseBtn);
-    fieldForPosts.append(newEl);
+    const newEl = template.content.querySelector('[data-post-item]');
+    const cloneNewEl = newEl.cloneNode(true);
+    cloneNewEl.querySelector('[data-post-text]').textContent = text;
+    cloneNewEl.querySelector('[data-post-title]').textContent = title;
+    fieldForPosts.append(cloneNewEl);
 };
 
-const filterEl = (post) => post.firstElementChild.textContent.localeCompare(postFilter.value) === 1;
+const filterEl = (post) => post.querySelector('[data-post-title]').textContent.localeCompare(postFilter.value) === 1;
 const sortElForward = (a, b) => {
     const aTitle = a.querySelector('[data-post-title]').textContent.toUpperCase();
     const bTitle = b.querySelector('[data-post-title]').textContent.toUpperCase();
@@ -90,6 +71,8 @@ const getPosts = () => {
             })
             .then(() => {
                 listOfPosts = Array.from(document.body.querySelector('[data-main-box]').children);
+                listOfPosts.shift();
+                template = document.querySelector('[data-post-template]');
             })
             .then(hideLoaderGifImage);
     }, 3000);

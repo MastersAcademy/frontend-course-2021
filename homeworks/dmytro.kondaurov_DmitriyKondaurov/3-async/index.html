@@ -23,6 +23,18 @@
             <div class="loader__inner"></div>
         </div>
         <ul class="post-list" data-main-box>
+            <template data-post-template>
+                <li class="post-list__item" data-post-item>
+                    <h2 class="post-list__item-title" data-post-title>Title</h2>
+                    <p class="post-list__item-text" data-post-text>Lorem ipsum dolor sit amet.</p>
+                    <div class="trash-bnt" data-post-trash-bnt>
+                        <a href="#" class="trash-btn__link" data-post-trash-bnt-link>
+                            <img class="trash-btn__icon" src="Trash-Icon.png" alt="Trash" data-post-trash-bnt-icon
+                                 width=66 height=42>
+                        </a>
+                    </div>
+                </li>
+            </template>
         </ul>
     </main>
 </div>
