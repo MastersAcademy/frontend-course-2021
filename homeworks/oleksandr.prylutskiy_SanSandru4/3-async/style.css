@@ -10,8 +10,7 @@ body {
   background-color: #E4EFFE;
 }
 
-.blog-block {
-  position: relative;
+.block_blog {
   display: flex;
   margin-top: 62px;
   width: 992px;
@@ -25,7 +24,7 @@ body {
   overflow: hidden;
 }
 
-.blog-header {
+.header_blog {
   position: relative;
   width: 992px;
   height: 70px;
@@ -36,7 +35,7 @@ body {
   justify-content: space-between;
 }
 
-.blog-logo {
+.blog_logo {
   margin-top: 13px;
   margin-left: 48px;
   font-family: "Rubik", sans-serif;
@@ -45,11 +44,11 @@ body {
   color: #000;
 }
 
-.blog-logo::first-letter {
+.blog_logo::first-letter {
   color: #FF726C;
 }
 
-.blog-sort {
+.blog_sort {
   margin-top: 20px;
   margin-right: 12px;
   width: 93px;
@@ -57,7 +56,7 @@ body {
   font-size: 24px;
 }
 
-.blog-filter {
+.blog_filter {
   margin-top: 18px;
   margin-right: 28px;
   width: 230px;
@@ -65,7 +64,7 @@ body {
   font-size: 18px;
 }
 
-.blog-sort, .blog-filter {
+.blog_sort, .blog_filter {
   padding-left: 10px;
   font-family: "Roboto", sans-serif;
   line-height: 28px;
@@ -74,20 +73,20 @@ body {
   border-radius: 30px;
 }
 
-.blog-main-block {
+.main_blog_block {
   width: 992px;
   height: 830px;
   overflow: auto;
 }
 
-.out-blog-msg {
+.out_blog_msg {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-.blog-msg {
+.blog_msg {
   margin-top: 47px;
   width: 414px;
   height: 340px;
@@ -97,7 +96,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.post-title {
+.post_title {
   margin-top: 44px;
   margin-left: 39px;
   margin-bottom: 25px;
@@ -108,11 +107,11 @@ body {
   color: #000;
 }
 
-.post-title::first-letter {
+.post_title::first-letter {
   color: #FF726C;
 }
 
-.post-body {
+.post_body {
   margin-top: 44px;
   margin-left: 39px;
   margin-bottom: 25px;

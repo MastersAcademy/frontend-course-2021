@@ -1,8 +1,7 @@
 const url = 'https://jsonplaceholder.typicode.com/posts';
-const blogMsg = document.querySelector('[data-blog-msg]');
-const sortPost = document.querySelector('[data-blog-sort]');
-const filterPostTitle = document.querySelector('[data-blog-filter]');
-let postStr = '';
+const blogMsgEl = document.querySelector('[data-blog-msg]');
+const sortPostEl = document.querySelector('[data-blog-sort]');
+const filterPostTitleEl = document.querySelector('[data-blog-filter]');
 
 function forward(field) {
     return (a, b) => (a[field] > b[field] ? 1 : -1);
@@ -14,22 +13,26 @@ function back(field) {
 
 function render(bTitle, bBody) {
     const msg = document.createElement('ol');
-    msg.classList.add('blog-msg');
-    blogMsg.appendChild(msg);
+    msg.classList.add('blog_msg');
+    blogMsgEl.appendChild(msg);
     const postTitle = document.createElement('H1');
     postTitle.innerHTML = bTitle;
-    postTitle.classList.add('post-title');
+    postTitle.classList.add('post_title');
     msg.appendChild(postTitle);
     const postBody = document.createElement('p');
     postBody.innerHTML = bBody;
-    postBody.classList.add('post-body');
+    postBody.classList.add('post_body');
     msg.appendChild(postBody);
 }
 
-function deleteEl(element) {
+function cleanPost(element) {
     while (element.firstChild) {
         element.removeChild(element.firstChild);
     }
+}
+
+function filterBlog(fBlog, str) {
+    return fBlog.filter((el) => el.title.toLowerCase().indexOf(str.toLowerCase()) > -1);
 }
 
 fetch(url)
@@ -40,21 +43,21 @@ fetch(url)
             render(`${blogSort[i].title}`, `${blogSort[i].body}`);
         }
 
-        sortPost.addEventListener('click', () => {
-            if (`${sortPost.value}` === 'No sort') {
-                deleteEl(blogMsg);
+        sortPostEl.addEventListener('click', () => {
+            if (`${sortPostEl.value}` === 'No sort') {
+                cleanPost(blogMsgEl);
                 blogSort.sort(forward('id'));
                 for (let i = 0; i < blogSort.length; i++) {
                     render(`${blogSort[i].title}`, `${blogSort[i].body}`);
                 }
-            } else if (`${sortPost.value}` === 'Sort A-Z') {
-                deleteEl(blogMsg);
+            } else if (`${sortPostEl.value}` === 'Sort A-Z') {
+                cleanPost(blogMsgEl);
                 blogSort.sort(forward('title'));
                 for (let i = 0; i < blogSort.length; i++) {
                     render(`${blogSort[i].title}`, `${blogSort[i].body}`);
                 }
-            } else if (`${sortPost.value}` === 'Sort Z-A') {
-                deleteEl(blogMsg);
+            } else if (`${sortPostEl.value}` === 'Sort Z-A') {
+                cleanPost(blogMsgEl);
                 blogSort.sort(back('title'));
                 for (let i = 0; i < blogSort.length; i++) {
                     render(`${blogSort[i].title}`, `${blogSort[i].body}`);
@@ -62,12 +65,10 @@ fetch(url)
             }
         });
 
-        filterPostTitle.addEventListener('change', () => {
-            // const blogFilter = new blogFilter();
-            deleteEl(blogMsg);
-            postStr = filterPostTitle.value;
-            // eslint-disable-next-line max-len
-            const blogFilter = blogSort.filter((el) => el.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1);
+        filterPostTitleEl.addEventListener('change', () => {
+            cleanPost(blogMsgEl);
+            const postStr = filterPostTitleEl.value;
+            const blogFilter = filterBlog(blogSort, postStr);
             for (let i = 0; i < blogFilter.length; i++) {
                 render(`${blogFilter[i].title}`, `${blogFilter[i].body}`);
             }

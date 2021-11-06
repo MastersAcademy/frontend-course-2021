@@ -9,22 +9,28 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="blog-block" data-block>
-        <header class="blog-header" data-blog-header>
-            <div class="blog-logo">BLOG</div>
-            <div class="blog-manipulation">
-                <select name="Sort" class="blog-sort" data-blog-sort>
+    <section class="block_blog" data-block>
+        <header class="header_blog" data-blog-header>
+            <div class="blog_logo">BLOG</div>
+            <div class="blog_manipulation">
+                <select name="Sort" class="blog_sort" data-blog-sort>
                     <option value="No sort" data-sort-no>Sort</option>
                     <option value="Sort A-Z" data-sort-az>A-Z</option>
                     <option value="Sort Z-A" data-sort-za>Z-A</option>
                 </select>
-                <input type="text" placeholder="Filter" class="blog-filter" data-blog-filter>
+                <input type="text" placeholder="Filter" class="blog_filter" data-blog-filter>
             </div>
         </header>
-        <main class="blog-main-block" data-blog-main>
-            <ul class="out-blog-msg" data-blog-msg></ul>
+        <main class="main_blog_block" data-blog-main>
+            <ul class="out_blog_msg" data-blog-msg></ul>
         </main>
     </section>
+    <template class="post_block" data-template-blok>
+        <ol class="blog_msg">
+            <h2 class="post_title" data-post-title></h2>
+            <p class="post_body" data-post-body></p>
+        </ol>
+    </template>
     <script src="script.js"></script>
 </body>
 </html>
