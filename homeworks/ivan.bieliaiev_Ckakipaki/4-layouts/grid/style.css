@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: 25vh 50vh 25vh;
+}
+
+.grid__top {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background: rgb(223, 74, 74);
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.grid__center {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 25% 50% 25%;
+}
+
+.center__left {
+  position: relative;
+  background: rgb(163, 65, 150);
+}
+
+.center__middle {
+  position: relative;
+  background: rgb(29, 96, 158);
+}
+
+.center__right {
+  position: relative;
+  background: rgb(29, 158, 89);
+}
+
+.grid__bottom {
+  position: relative;
+  background: rgb(114, 108, 25);
+}
