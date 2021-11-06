@@ -39,38 +39,36 @@ fetch(url)
         for (let i = 0; i < blogSort.length; i++) {
             render(`${blogSort[i].title}`, `${blogSort[i].body}`);
         }
-        const blogArr = blogSort;
-        console.log(blogArr);
 
         sortPost.addEventListener('click', () => {
             if (`${sortPost.value}` === 'No sort') {
                 deleteEl(blogMsg);
-                console.log(blogSort);
+                blogSort.sort(forward('id'));
                 for (let i = 0; i < blogSort.length; i++) {
                     render(`${blogSort[i].title}`, `${blogSort[i].body}`);
                 }
             } else if (`${sortPost.value}` === 'Sort A-Z') {
                 deleteEl(blogMsg);
-                blogArr.sort(forward('title'));
-                for (let i = 0; i < blogArr.length; i++) {
-                    render(`${blogArr[i].title}`, `${blogArr[i].body}`);
+                blogSort.sort(forward('title'));
+                for (let i = 0; i < blogSort.length; i++) {
+                    render(`${blogSort[i].title}`, `${blogSort[i].body}`);
                 }
             } else if (`${sortPost.value}` === 'Sort Z-A') {
                 deleteEl(blogMsg);
-                blogArr.sort(back('title'));
-                for (let i = 0; i < blogArr.length; i++) {
-                    render(`${blogArr[i].title}`, `${blogArr[i].body}`);
+                blogSort.sort(back('title'));
+                for (let i = 0; i < blogSort.length; i++) {
+                    render(`${blogSort[i].title}`, `${blogSort[i].body}`);
                 }
             }
-        },);
+        });
 
         filterPostTitle.addEventListener('change', () => {
             deleteEl(blogMsg);
             postStr = filterPostTitle.value;
-            const blogFilter = blogSort.filter(
-                (x) => { return x.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1; });
+            const blogFilter = blogSort.filter( (el) => el.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1);
             for (let i = 0; i < blogFilter.length; i++) {
                 render(`${blogFilter[i].title}`, `${blogFilter[i].body}`);
             }
-        },)
+        })
     });
+
