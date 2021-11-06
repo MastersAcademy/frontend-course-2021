@@ -1,12 +1,14 @@
 const requestUrl = 'https://jsonplaceholder.typicode.com/posts';
+
+// DOM elements
 const blog = document.querySelector('[data-blog]');
 const sorting = document.querySelector('[data-sorting]');
 const filtering = document.querySelector('[data-filter]');
-// For loading
+
+// For first loading
 const loading = document.createElement('p');
 loading.innerText = 'Loading...';
-loading.style.color = 'Orange';
-loading.style.fontSize = '25px';
+loading.classList.add('loading');
 
 // GET
 async function getElements(url) {
@@ -16,9 +18,9 @@ async function getElements(url) {
     return data;
 }
 
-// POST
+// REMDERING POSTS_________________________________________
 
-// Create markup and inner for post by FUNC createPostsList
+// POST MARKUP
 function postMarkupPost(id, title, text) {
     const article = document.createElement('article');
     const p = document.createElement('p');
@@ -41,23 +43,28 @@ function postMarkupPost(id, title, text) {
     article.appendChild(div);
     blog.appendChild(article);
 }
-// Appending posts to blog container by FUNC postMarkupPost
+// Appending posts to blog container
 function createPostsList(posts) {
     posts.forEach((el) => {
         postMarkupPost(el.id, el.title, el.body);
     });
 }
-// Delete post
+
+// DELETING___________________________________________
+
+// Present messege before Deleting post
+function presentMessege(el) {
+    const deleteMessege = document.createElement('div');
+    deleteMessege.innerText = `Post: ${el.target.attributes[0].value} deleted`;
+    deleteMessege.classList.add('post__delete__outText');
+    document.body.appendChild(deleteMessege);
+    setTimeout(() => {
+        document.body.removeChild(deleteMessege);
+    }, 500);
+}
+
+// Deleting post
 function addDeleteSupport() {
-    function presentMessege(el) {
-        const deleteMessege = document.createElement('div');
-        deleteMessege.innerText = `Post: ${el.target.attributes[0].value} deleted`;
-        deleteMessege.classList.add('post__delete__outText');
-        document.body.appendChild(deleteMessege);
-        setTimeout(() => {
-            document.body.removeChild(deleteMessege);
-        }, 500);
-    }
     document.addEventListener('click', (e) => {
         if (e.target.classList[0] === 'delete__button') {
             blog.removeChild(e.target.closest('article'));
@@ -65,60 +72,51 @@ function addDeleteSupport() {
         }
     });
 }
-// Filtering
+
+// FILTERING________________________________________________
+
+// For sorting and filtering
+function filteringElemets(value) {
+    const textList = document.querySelectorAll('.post__title');
+    if (value !== '') {
+        textList.forEach((el) => {
+            const current = el.innerText.toLowerCase();
+            if (current.search(value) === -1) {
+                el.parentElement.classList.add('hide');
+            } else {
+                el.parentElement.classList.remove('hide');
+            }
+        });
+    } else {
+        textList.forEach((elem) => {
+            elem.parentElement.classList.remove('hide');
+        });
+    }
+}
+
+// For default filtering without sort
 function filter() {
     filtering.addEventListener('input', (e) => {
         const val = e.target.value.trim().toLowerCase();
-        const textList = document.querySelectorAll('.post__title');
-        if (val !== '') {
-            textList.forEach((el) => {
-                const current = el.innerText.toLowerCase();
-                if (current.search(val) === -1) {
-                    el.parentElement.classList.add('hide');
-                } else {
-                    el.parentElement.classList.remove('hide');
-                }
-            });
-        } else {
-            textList.forEach((elem) => {
-                elem.parentElement.classList.remove('hide');
-            });
-        }
+        filteringElemets(val);
     });
 }
-// For Sorting
+
+// SORTING________________________________________________
 async function reloadSortedPage() {
     sorting.addEventListener('change', () => {
-        const filterVal = filtering.value;
+        const filterVal = filtering.value.trim();
         console.log(filterVal);
         const posts = [];
         const onPageArticle = document.querySelectorAll('[data-post]');
-        if (filterVal !== '') {
-            const filterArticles = [];
-            onPageArticle.forEach((e) => {
-                if (e.classList[1] === undefined) {
-                    filterArticles.push(e);
-                }
-            });
-            console.log(filterArticles);
-            filterArticles.forEach((e) => {
-                const obj = {
-                    id: e.attributes[0].value,
-                    title: e.querySelector('.post__title').innerText,
-                    body: e.querySelector('.post__text').innerText,
-                };
-                posts.push(obj);
-            });
-        } else {
-            onPageArticle.forEach((e) => {
-                const obj = {
-                    id: e.attributes[0].value,
-                    title: e.querySelector('.post__title').innerText,
-                    body: e.querySelector('.post__text').innerText,
-                };
-                posts.push(obj);
-            });
-        }
+        onPageArticle.forEach((e) => {
+            const obj = {
+                id: e.attributes[0].value,
+                title: e.querySelector('.post__title').innerText,
+                body: e.querySelector('.post__text').innerText,
+            };
+            posts.push(obj);
+        });
         blog.innerHTML = '';
         switch (sorting.value) {
             case 'AtoZ':
@@ -130,9 +128,15 @@ async function reloadSortedPage() {
             default:
                 createPostsList(posts);
         }
+        if (filterVal !== '') {
+            filteringElemets(filterVal);
+        }
     });
 }
-// Initialization
+
+// FIRST INITIALIZATION______________________________
+
+// Timimg with first loading page
 async function attachHandlers(data) {
     setTimeout(() => {
         blog.removeChild(loading);
@@ -142,10 +146,13 @@ async function attachHandlers(data) {
         reloadSortedPage();
     }, 3000);
 }
+
+// First Present page
 async function firstInit() {
     blog.appendChild(loading);
     const posts = await getElements(requestUrl);
     attachHandlers(posts);
 }
 
+// First init(Starter)
 firstInit();

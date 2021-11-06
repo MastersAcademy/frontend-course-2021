@@ -106,6 +106,8 @@ body {
   width: 50px;
 }
 
+/* Support elements */
+
 .hide {
   display: none;
 }
@@ -118,4 +120,9 @@ body {
   font-size: 25px;
   font-weight: 700;
   background: rgb(223, 146, 2);
+}
+
+.loading {
+  color: rgba(255, 166, 0, .774);
+  font-size: 25px;
 }
