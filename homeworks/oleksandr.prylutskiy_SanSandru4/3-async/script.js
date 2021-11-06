@@ -63,11 +63,11 @@ fetch(url)
         });
 
         filterPostTitle.addEventListener('change', () => {
+            // const blogFilter = new blogFilter();
             deleteEl(blogMsg);
             postStr = filterPostTitle.value;
-            const blogFilter = blogSort.filter((el) => {
-                return el.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1;
-            });
+            // eslint-disable-next-line max-len
+            const blogFilter = blogSort.filter((el) => el.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1);
             for (let i = 0; i < blogFilter.length; i++) {
                 render(`${blogFilter[i].title}`, `${blogFilter[i].body}`);
             }
