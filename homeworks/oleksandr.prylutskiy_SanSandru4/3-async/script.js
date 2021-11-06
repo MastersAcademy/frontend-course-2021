@@ -65,7 +65,7 @@ fetch(url)
         filterPostTitle.addEventListener('change', () => {
             deleteEl(blogMsg);
             postStr = filterPostTitle.value;
-            const blogFilter = blogSort.filter(function (el) {
+            const blogFilter = blogSort.filter((el) => {
                 return el.title.toLowerCase().indexOf(postStr.toLowerCase()) > -1;
             });
             for (let i = 0; i < blogFilter.length; i++) {
