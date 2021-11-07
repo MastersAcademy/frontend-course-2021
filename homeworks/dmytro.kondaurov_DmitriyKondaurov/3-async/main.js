@@ -4,7 +4,7 @@ const postFilterEl = document.body.querySelector('[data-filter]');
 const postSortEl = document.body.querySelector('[data-sort]');
 const template = document.querySelector('[data-post-template]');
 
-const hideLoaderGifImage = () => {
+const hideLoader = () => {
     document.querySelector('[data-main-content-loader]').classList.add('hide');
 };
 
@@ -52,7 +52,7 @@ const getPosts = () => {
             .then(() => {
                 listOfPosts = Array.from(document.body.querySelectorAll('[data-post-item]'));
             })
-            .then(hideLoaderGifImage);
+            .then(hideLoader);
     }, 3000);
 };
 
