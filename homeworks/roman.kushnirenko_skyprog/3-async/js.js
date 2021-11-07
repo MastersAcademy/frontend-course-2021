@@ -12,7 +12,13 @@ function loadSite() {
             arrayJson = await response.json();
 
             arrayJson.map((show) => {
-                createArticle(show);
+                const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
+                const articleTitle = articleShow.querySelector('[data-article-title]');
+                const articleText = articleShow.querySelector('[data-article-text]');
+                allContent.appendChild(articleShow);
+                articleTitle.textContent = show.title;
+                articleText.textContent = show.body;
+                return show;
             });
 
             // Filtering
@@ -20,12 +26,17 @@ function loadSite() {
                 const value = filterSearch.value.toLowerCase();
                 const filterFound = arrayJson.filter((item) => item.title.toLowerCase()
                     .includes(value));
-                    
                 if (filterFound.value !== '') {
                     allContent.innerHTML = '';
 
                     filterFound.map((show) => {
-                        createArticle(show);
+                        const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
+                        const articleTitle = articleShow.querySelector('[data-article-title]');
+                        const articleText = articleShow.querySelector('[data-article-text]');
+                        allContent.appendChild(articleShow);
+                        articleTitle.textContent = show.title;
+                        articleText.textContent = show.body;
+                        return show;
                     });
                 }
             });
@@ -41,16 +52,6 @@ function loadSite() {
 
 setTimeout(loadSite, 3000);
 
-  function createArticle(show) {
-    const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
-    const articleTitle = articleShow.querySelector('[data-article-title]');
-    const articleText = articleShow.querySelector('[data-article-text]');
-    allContent.appendChild(articleShow);
-    articleTitle.textContent = show.title;
-    articleText.textContent = show.body;
-    return show;
-    }
-
 // Sorting
 sortSelect.addEventListener('change', function () {
     if (this.value === 'a-z') {
@@ -58,22 +59,32 @@ sortSelect.addEventListener('change', function () {
         allContent.innerHTML = '';
 
         sortArrayAz.map((show) => {
-            createArticle(show);
+            const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
+            const articleTitle = articleShow.querySelector('[data-article-title]');
+            const articleText = articleShow.querySelector('[data-article-text]');
+            allContent.appendChild(articleShow);
+            articleTitle.textContent = show.title;
+            articleText.textContent = show.body;
+            return show;
         });
     } else if (this.value === 'z-a') {
         const sortArrayZa = arrayJson.sort((a, b) => a.title.localeCompare(b.title)).reverse();
         allContent.innerHTML = '';
 
         sortArrayZa.map((show) => {
-            createArticle(show);
+            const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
+            const articleTitle = articleShow.querySelector('[data-article-title]');
+            const articleText = articleShow.querySelector('[data-article-text]');
+            allContent.appendChild(articleShow);
+            articleTitle.textContent = show.title;
+            articleText.textContent = show.body;
+            return show;
         });
     }
 });
 
 document.addEventListener('click', (event) => {
     if (event.target.closest('[data-remove-btn]')) {
-        document.querySelector("[data-article]").remove();
-     }
+        document.querySelector('[data-article]').remove();
+    }
   });
-  
-
