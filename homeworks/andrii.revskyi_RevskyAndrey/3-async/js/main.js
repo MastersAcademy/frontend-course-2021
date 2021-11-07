@@ -23,7 +23,8 @@ const sortByAlphabet = (titleA, titleB) => {
 const sortByAlphabetReverce = (titleA, titleB) => sortByAlphabet(titleB, titleA);
 
 function sortAndFilterPost() {
-    const filterValue = filterEl.value;
+    const userInput = filterEl.value;
+    const filterValue = userInput.toLowerCase();
     const sortValue = selectEl.value;
     const filteredArr = state.filter(({ title }) => title.includes(filterValue));
     filteredArr.sort((a, b) => {
