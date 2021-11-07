@@ -16,7 +16,7 @@ html,
   line-height: 1;
   font-size: 16px;
   color: #000;
-  min-width: 800px;
+  min-width: 1005px;
   max-width: 1005px;
   margin: 62px auto;
   background-color: #F6F5FB;
@@ -36,13 +36,13 @@ html,
   max-height: 50px;
 }
 
-.main_header_bar_form {
+.main_form {
   min-width: 347px;
   display: flex;
   justify-content: space-between;
 }
 
-.main_header_bar_sorting {
+.main_sorting {
   min-width: 93px;
   min-height: 36px;
   text-align: center;
@@ -55,28 +55,28 @@ html,
   color: #000;
 }
 
-.main_header_bar_filter {
+.main_filter {
   font-size: 18px;
   min-width: 230px;
   min-height: 36px;
   background-color: #F7F6FB;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .25);
   border-radius: 30px;
+  text-indent: 15px;
 }
 
 .main_content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: 0;
-  padding: 30px;
+  padding: 0 0 30px;
 }
 
 .content_wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 30px 0 0;
+  margin: 30px 0 0 30px;
   padding: 44px 20px 28px;
   width: 416px;
   box-shadow: 0 1px 50px 0 rgba(0, 0, 0, .06);
@@ -85,7 +85,7 @@ html,
 }
 
 .delete_wrapper {
-  min-width: 400px;
+  width: 400px;
   padding-right: 16px;
   display: flex;
   flex-direction: row-reverse;
@@ -97,8 +97,11 @@ html,
   border: none;
 }
 
+.main_sorting:hover,
+.main_filter:hover,
 .delete:hover {
-  background-color: #F6F5FB;
+  background-color: #E2DEE8;
+  cursor: pointer;
 }
 
 .delete:active {
