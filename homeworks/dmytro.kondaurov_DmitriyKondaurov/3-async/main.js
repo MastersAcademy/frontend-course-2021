@@ -1,8 +1,8 @@
-const fieldForPosts = document.body.querySelector('[data-main-box]');
+const fieldForPostsEl = document.body.querySelector('[data-main-box]');
 let listOfPosts = [];
-const postFilter = document.body.querySelector('[data-filter]');
-const postSort = document.body.querySelector('[data-sort]');
-let template = document.querySelector('[data-post-template]');
+const postFilterEl = document.body.querySelector('[data-filter]');
+const postSortEl = document.body.querySelector('[data-sort]');
+const template = document.querySelector('[data-post-template]');
 
 const hideLoaderGifImage = () => {
     document.querySelector('[data-main-content-loader]').classList.add('hide');
@@ -13,10 +13,10 @@ const addPost = (title, text) => {
     const cloneNewEl = newEl.cloneNode(true);
     cloneNewEl.querySelector('[data-post-text]').textContent = text;
     cloneNewEl.querySelector('[data-post-title]').textContent = title;
-    fieldForPosts.append(cloneNewEl);
+    fieldForPostsEl.append(cloneNewEl);
 };
 
-const filterEl = (post) => post.querySelector('[data-post-title]').textContent.localeCompare(postFilter.value) === 1;
+const filterEl = (post) => post.querySelector('[data-post-title]').textContent.localeCompare(postFilterEl.value) === 1;
 
 const sortElForward = (a, b) => {
     const aTitle = a.querySelector('[data-post-title]').textContent.toUpperCase();
@@ -42,14 +42,28 @@ const sortElReverse = (a, b) => {
     return 0;
 };
 
+const getPosts = () => {
+    setTimeout(() => {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then((response) => response.json())
+            .then((json) => {
+                json.forEach((post) => addPost(post.title, post.body));
+            })
+            .then(() => {
+                listOfPosts = Array.from(document.body.querySelectorAll('[data-post-item]'));
+            })
+            .then(hideLoaderGifImage);
+    }, 3000);
+};
+
 const reRenderPosts = () => {
-    fieldForPosts.innerHTML = '';
+    fieldForPostsEl.innerHTML = '';
     listOfPosts
         .filter(filterEl)
         .sort((a, b) => {
-            if (postSort.value === 'a-z') {
+            if (postSortEl.value === 'a-z') {
                 return sortElForward(a, b);
-            } if (postSort.value === 'z-a') {
+            } if (postSortEl.value === 'z-a') {
                 return sortElReverse(a, b);
             } return 0;
         })
@@ -60,23 +74,7 @@ const reRenderPosts = () => {
         });
 };
 
-postFilter.addEventListener('change', reRenderPosts);
-postSort.addEventListener('change', reRenderPosts);
-
-const getPosts = () => {
-    setTimeout(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then((response) => response.json())
-            .then((json) => {
-                json.forEach((post) => addPost(post.title, post.body));
-            })
-            .then(() => {
-                listOfPosts = Array.from(document.body.querySelector('[data-main-box]').children);
-                listOfPosts.shift();
-                template = document.querySelector('[data-post-template]');
-            })
-            .then(hideLoaderGifImage);
-    }, 3000);
-};
+postFilterEl.addEventListener('change', reRenderPosts);
+postSortEl.addEventListener('change', reRenderPosts);
 
 getPosts();
