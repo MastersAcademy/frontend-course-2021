@@ -76,7 +76,7 @@ body {
   justify-content: center;
 }
 
-.post-style {
+.post {
   min-width: calc(var(--screen-width) / 2);
   max-width: calc(var(--screen-width) / 1.2);
   height: 30vh;

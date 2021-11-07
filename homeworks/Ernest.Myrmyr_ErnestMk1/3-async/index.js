@@ -5,7 +5,7 @@ const arrayOfPostObjects = [];
 const postsDrawing = (object) => {
     for (let i = 0; i < 25; i++) {
         const divForPost = document.createElement('div');
-        divForPost.classList.add('post-style', `post-num-${object[i].id}`);
+        divForPost.classList.add('post', `post-num-${object[i].id}`);
         mainEl.appendChild(divForPost);
         const postContent = document.createElement('p');
         const postTitle = document.createElement('h3');
