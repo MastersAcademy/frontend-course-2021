@@ -94,6 +94,7 @@ body {
   box-shadow: 0 1px 50px rgba(0, 0, 0, .06);
   border-radius: 30px;
   font-family: "Roboto", sans-serif;
+  list-style-type: none;
 }
 
 .post__title {
