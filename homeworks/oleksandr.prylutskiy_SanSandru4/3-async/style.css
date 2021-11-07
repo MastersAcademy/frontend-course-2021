@@ -10,7 +10,7 @@ body {
   background-color: #E4EFFE;
 }
 
-.block_blog {
+.whole_blog {
   display: flex;
   margin-top: 62px;
   width: 992px;
@@ -35,7 +35,7 @@ body {
   justify-content: space-between;
 }
 
-.blog_logo {
+.header__logo {
   margin-top: 13px;
   margin-left: 48px;
   font-family: "Rubik", sans-serif;
@@ -44,11 +44,11 @@ body {
   color: #000;
 }
 
-.blog_logo::first-letter {
+.header__logo::first-letter {
   color: #FF726C;
 }
 
-.blog_sort {
+.header__manipulation-sort {
   margin-top: 20px;
   margin-right: 12px;
   width: 93px;
@@ -56,7 +56,7 @@ body {
   font-size: 24px;
 }
 
-.blog_filter {
+.header__manipulation-filter {
   margin-top: 18px;
   margin-right: 28px;
   width: 230px;
@@ -64,7 +64,7 @@ body {
   font-size: 18px;
 }
 
-.blog_sort, .blog_filter {
+.header__manipulation-sort, .header__manipulation-filter {
   padding-left: 10px;
   font-family: "Roboto", sans-serif;
   line-height: 28px;
@@ -73,20 +73,20 @@ body {
   border-radius: 30px;
 }
 
-.main_blog_block {
+.main__blog {
   width: 992px;
   height: 830px;
   overflow: auto;
 }
 
-.out_blog_msg {
+.main__blog_msg {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-.blog_msg {
+.blog__msg {
   margin-top: 47px;
   width: 414px;
   height: 340px;
@@ -96,7 +96,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.post_title {
+.post__title {
   margin-top: 44px;
   margin-left: 39px;
   margin-bottom: 25px;
@@ -107,11 +107,11 @@ body {
   color: #000;
 }
 
-.post_title::first-letter {
+.post__title::first-letter {
   color: #FF726C;
 }
 
-.post_body {
+.post__body {
   margin-top: 44px;
   margin-left: 39px;
   margin-bottom: 25px;

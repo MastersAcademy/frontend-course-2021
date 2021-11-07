@@ -12,17 +12,19 @@ function back(field) {
 }
 
 function render(bTitle, bBody) {
-    const msg = document.createElement('ol');
-    msg.classList.add('blog_msg');
-    blogMsgEl.appendChild(msg);
-    const postTitle = document.createElement('H1');
-    postTitle.innerHTML = bTitle;
-    postTitle.classList.add('post_title');
-    msg.appendChild(postTitle);
-    const postBody = document.createElement('p');
-    postBody.innerHTML = bBody;
-    postBody.classList.add('post_body');
-    msg.appendChild(postBody);
+    const templatePost = document.querySelector('[data-template-blok]');
+    const cloneTemplate = templatePost.content.cloneNode(true);
+    const postTitle = cloneTemplate.querySelector('h2');
+    const postBody = cloneTemplate.querySelector('p');
+    postTitle.textContent = bTitle;
+    postBody.textContent = bBody;
+    blogMsgEl.appendChild(cloneTemplate);
+}
+
+function showPost(blog) {
+    for (let i = 0; i < blog.length; i++) {
+        render(`${blog[i].title}`, `${blog[i].body}`);
+    }
 }
 
 function cleanPost(element) {
@@ -39,29 +41,21 @@ fetch(url)
     .then((response) => response.json())
     .then((json) => {
         const blogSort = json;
-        for (let i = 0; i < blogSort.length; i++) {
-            render(`${blogSort[i].title}`, `${blogSort[i].body}`);
-        }
+        showPost(blogSort);
 
         sortPostEl.addEventListener('click', () => {
             if (`${sortPostEl.value}` === 'No sort') {
                 cleanPost(blogMsgEl);
                 blogSort.sort(forward('id'));
-                for (let i = 0; i < blogSort.length; i++) {
-                    render(`${blogSort[i].title}`, `${blogSort[i].body}`);
-                }
+                showPost(blogSort);
             } else if (`${sortPostEl.value}` === 'Sort A-Z') {
                 cleanPost(blogMsgEl);
                 blogSort.sort(forward('title'));
-                for (let i = 0; i < blogSort.length; i++) {
-                    render(`${blogSort[i].title}`, `${blogSort[i].body}`);
-                }
+                showPost(blogSort);
             } else if (`${sortPostEl.value}` === 'Sort Z-A') {
                 cleanPost(blogMsgEl);
                 blogSort.sort(back('title'));
-                for (let i = 0; i < blogSort.length; i++) {
-                    render(`${blogSort[i].title}`, `${blogSort[i].body}`);
-                }
+                showPost(blogSort);
             }
         });
 
@@ -73,4 +67,5 @@ fetch(url)
                 render(`${blogFilter[i].title}`, `${blogFilter[i].body}`);
             }
         });
-    });
+    })
+    .catch(console.log('Error!'));
