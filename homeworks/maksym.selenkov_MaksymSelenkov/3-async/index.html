@@ -13,10 +13,10 @@
         <main class="blog">
             <header class="blog__header">
                 <h1 class="blog__header-title">Blog</h1>
-                <div class="blog__header-sort">
-                    <button class="blog__header-sort-button">
-                        <span class="blog__header-sort-text">Sort</span>
-                        <span class="blog__header-sort-symbol">^</span>
+                <div class="blog__header-sort sort">
+                    <button class="sort__button">
+                        <span class="sort__text">Sort</span>
+                        <span class="sort__symbol">^</span>
                     </button>
                     <div class="blog__header-sort-content">
                         <a href="#" data-sort-initial>Initial</a>
@@ -27,10 +27,10 @@
                 <input type="text" class="blog__header-filter" data-filter>
             </header>
             <section class="blog__content" data-content>
-                <template  data-post>
-                        <div class="blog__content-post">
-                        <h2 class="blog__content-post-title" data-title></h2>
-                        <p class="blog__content-post-text" data-text></p>
+                <template data-post>
+                        <div class="blog__content-post post" >
+                        <h2 class="post__title" data-title></h2>
+                        <p class="post__text" data-text></p>
                         </div>
                 </template>
             </section>

@@ -60,7 +60,7 @@
   margin-left: auto;
 }
 
-.blog__header-sort-button {
+.sort__button {
   max-width: 93px;
   width: 100%;
   max-height: 36px;
@@ -69,7 +69,7 @@
   border-radius: 30px;
 }
 
-.blog__header-sort-text {
+.sort__text {
   max-width: 45px;
   width: 100%;
   max-height: 28px;
@@ -80,7 +80,7 @@
   color: #000;
 }
 
-.blog__header-sort-symbol {
+.sort__symbol {
   max-width: 11px;
   max-height: 28px;
   font-family: Roboto, serif;
@@ -138,7 +138,7 @@
   flex-wrap: wrap;
 }
 
-.blog__content-post-title {
+.post__title {
   max-width: 330px;
   font-family: Roboto, serif;
   font-style: normal;
@@ -147,7 +147,7 @@
   color: #FF726C;
 }
 
-.blog__content-post-text {
+.post__text {
   font-family: Roboto, serif;
   font-style: normal;
   font-size: 18px;
