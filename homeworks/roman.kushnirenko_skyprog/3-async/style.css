@@ -98,11 +98,8 @@ body {
   line-height: 21px;
 }
 
+.article__text::first-letter,
 .content__article::first-letter {
-  text-transform: uppercase;
-}
-
-.article__text::first-letter {
   text-transform: uppercase;
 }
 
@@ -110,14 +107,14 @@ body {
   height: 50px;
 }
 
-.article__remove--btn img {
+.img_remove {
   width: 57px;
   height: 57px;
   top: 258px;
   left: 316px;
 }
 
-.article__remove--btn {
+.article__removebtn {
   width: 57px;
   height: 57px;
   background: transparent;
