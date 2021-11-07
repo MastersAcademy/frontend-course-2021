@@ -22,9 +22,6 @@ body {
   transform: translate(-50%, -50%);
   width: 70px;
   height: 70px;
-  background-image: url("load.gif");
-  background-repeat: no-repeat;
-  background-position: center center;
   background-color: transparent;
 }
 
