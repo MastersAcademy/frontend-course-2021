@@ -1,76 +1,59 @@
+const url = 'https://jsonplaceholder.typicode.com/posts';
 const blogContainer = document.querySelector('[data-blog-container]');
+const sort = document.querySelector('[data-sort]');
 const filter = document.querySelector('[data-input-filter]');
-function fetchData() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-        .then((response) => response.json())
-        .then((data) => {
-            for (let i = 0; i < data.length; i++) {
-                const blogElement = document.createElement('div');
-                blogElement.className = 'blog_container-el';
-                blogContainer.append(blogElement);
-                blogElement.innerText = data[i].title;
-            }
-        });
+async function getData() {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
 }
-function fetchDataA() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-        .then((response) => response.json())
-        .then((data) => {
-            data.sort((a, b) => (a.title > b.title ? 1 : -1));
-            for (let i = 0; i < data.length; i++) {
-                const blogElement = document.createElement('div');
-                blogElement.className = 'blog_container-el';
-                blogContainer.append(blogElement);
-                blogElement.innerText = data[i].title;
-            }
-        });
+
+async function noneSorted() {
+    const content  = await getData ();
+    blogContainer.innerHTML = '';
+    for (let i = 0; i < content.length; i++) {
+        const blogElement = document.createElement('div');
+        blogElement.className = 'blog_container-el';
+        blogContainer.append(blogElement);
+        blogElement.innerText = content[i].title;
+    } 
 }
-function fetchDataZ() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-        .then((response) => response.json())
-        .then((data) => {
-            data.sort((a, b) => (a.title > b.title ? -1 : 1));
-            for (let i = 0; i < data.length; i++) {
-                const blogElement = document.createElement('div');
-                blogElement.className = 'blog_container-el';
-                blogContainer.append(blogElement);
-                blogElement.innerText = data[i].title;
-            }
-        });
-}
-function fetchDataFilter() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-        .then((response) => response.json())
-        .then((data) => {
-            blogContainer.innerHTML = '';
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].title.indexOf(filter.value) !== -1) {
-                    const blogElement = document.createElement('div');
-                    blogElement.className = 'blog_container-el';
-                    blogContainer.append(blogElement);
-                    blogElement.innerText = data[i].title;
-                }
-            }
-            filter.value = '';
-        });
-}
-filter.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        fetchDataFilter();
+async function sortStartA () {
+    const content  = await getData ();
+    content.sort((a, b) => (a.title < b.title ? -1 : 1));
+    blogContainer.innerHTML = '';
+    for (let i = 0; i < content.length; i++) {
+        const blogElement = document.createElement('div');
+        blogElement.className = 'blog_container-el';
+        blogContainer.append(blogElement);
+        blogElement.innerText = content[i].title;
     }
-});
-document.querySelector('[data-btn]').addEventListener('click', () => {
-    const sort = document.querySelector('[data-sort]');
-    if (sort.value === '1') {
+}
+async function sortStartZ () {
+    const content  = await getData ();
+    content.sort((a, b) => (a.title > b.title ? -1 : 1));
+    blogContainer.innerHTML = '';
+    for (let i = 0; i < content.length; i++) {
+        const blogElement = document.createElement('div');
+        blogElement.className = 'blog_container-el';
+        blogContainer.append(blogElement);
+        blogElement.innerText = content[i].title;
+    }
+}
+sort.addEventListener('change', (e) => {
+    if (sort.value === '0') {
         blogContainer.innerHTML = '';
-        setTimeout(fetchData, 3000);
+    }
+    if (sort.value === '1') {
+        noneSorted();
     }
     if (sort.value === '2') {
         blogContainer.innerHTML = '';
-        setTimeout(fetchDataA, 3000);
+        sortStartA ();
     }
     if (sort.value === '3') {
         blogContainer.innerHTML = '';
-        setTimeout(fetchDataZ, 3000);
+        sortStartZ ();;
     }
 });
+
