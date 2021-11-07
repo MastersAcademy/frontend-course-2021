@@ -5,24 +5,24 @@ const sortInitialEl = document.querySelector('[data-sort-initial]');
 const filterDataEl = document.querySelector('[data-filter]');
 const templateEl = document.querySelector('[data-post]');
 
+async function loadPosts() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=21');
+    const posts = await response.json();
+    return posts;
+}
+
+function renderPosts(posts) {
+    postAreaEL.innerHTML = '';
+    posts.forEach((item) => {
+        const postEl = templateEl.content.cloneNode(true);
+        postEl.querySelector('[data-title]').textContent = item.title;
+        postEl.querySelector('[data-text]').textContent = item.body;
+        return postAreaEL.append(postEl);
+    });
+}
+
 window.addEventListener('load', () => {
     setTimeout(() => {
-        async function loadPosts() {
-            const response = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=21');
-            const posts = await response.json();
-            return posts;
-        }
-
-        function renderPosts(posts) {
-            postAreaEL.innerHTML = '';
-            posts.map((item) => {
-                const postEl = templateEl.content.cloneNode(true);
-                postEl.querySelector('[data-title]').textContent = item.title;
-                postEl.querySelector('[data-text]').textContent = item.body;
-                return postAreaEL.append(postEl);
-            });
-        }
-
         loadPosts().then((posts) => {
             renderPosts(posts);
 
