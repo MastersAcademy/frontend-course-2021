@@ -30,7 +30,8 @@ function loadSite() {
                     allContent.innerHTML = '';
 
                     filterFound.map((show) => {
-                        const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
+                        const articleShow = dataContentTemplate.content
+                            .cloneNode(true).firstElementChild;
                         const articleTitle = articleShow.querySelector('[data-article-title]');
                         const articleText = articleShow.querySelector('[data-article-text]');
                         allContent.appendChild(articleShow);
@@ -87,4 +88,4 @@ document.addEventListener('click', (event) => {
     if (event.target.closest('[data-remove-btn]')) {
         document.querySelector('[data-article]').remove();
     }
-  });
+});
