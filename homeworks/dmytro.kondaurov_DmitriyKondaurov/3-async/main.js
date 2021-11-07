@@ -65,7 +65,8 @@ const reRenderPosts = () => {
                 return sortElForward(a, b);
             } if (postSortEl.value === 'z-a') {
                 return sortElReverse(a, b);
-            } return 0;
+            }
+            return 0;
         })
         .forEach((element) => {
             const postTitle = element.querySelector('[data-post-title]').textContent;
