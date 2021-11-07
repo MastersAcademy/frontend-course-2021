@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-container">
+    <div class="loader" data-loader></div>
+    <header class="header">
+        <h1 class="header__title">BLOG</h1>
+        <div>
+            <div class="header__dropdown-container">
+                <button class="header__drop-button">Sort v</button>
+                <div class="dropdown__select-container">
+                    <button class="dropdown__select-button" data-initial >Initial </button>
+                    <button class="dropdown__select-button" data-sort>A to Z</button>
+                    <button class="dropdown__select-button" data-sort-revers>Z to A</button>
+                </div>
+            </div>
+            <input type="text" class="header__input-filter" placeholder="Filter" data-filter>
+        </div>
+    </header>
+    <section class="posts-container" data-posts-wrapper>
+    </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
+
