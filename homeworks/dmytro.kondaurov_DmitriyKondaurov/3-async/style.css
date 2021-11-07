@@ -101,7 +101,7 @@ body {
   padding: 0 20px 20px;
 }
 
-.post-list__item {
+.post {
   list-style: none;
   width: 300px;
   margin: 20px 10px;
@@ -110,12 +110,12 @@ body {
   background-color: #FFF;
 }
 
-.post-list__item-title {
+.post__title {
   font-size: 20px;
   font-weight: 900;
 }
 
-.post-list__item-title::first-letter {
+.post__title::first-letter {
   color: #F27171;
   text-transform: uppercase;
 }
