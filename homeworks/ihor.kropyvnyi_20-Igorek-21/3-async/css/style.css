@@ -80,7 +80,8 @@ body {
   font-family: "Roboto";
   font-size: 16px;
   line-height: 17px;
-  padding-left: 20px;
+  padding-left: 12px;
+  cursor: pointer;
 }
 
 .holder__header__input {
@@ -92,7 +93,7 @@ body {
 }
 
 .holder__header__input[type="text"] {
-  padding-left: 20px;
+  padding-left: 15px;
 }
 
 .holder__header__input[type] {
@@ -145,11 +146,11 @@ body {
   border: none;
   padding: 0;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .content__article__delete--activ:hover,
 .holder__header__select--activ:hover,
 .holder__header__input--activ:hover {
   background-color: #D9D9D9;
-  cursor: pointer;
 }
