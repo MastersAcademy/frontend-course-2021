@@ -7,7 +7,6 @@ async function getData() {
     const data = await response.json();
     return data;
 }
-
 async function noneSorted() {
     const content  = await getData ();
     blogContainer.innerHTML = '';
@@ -16,29 +15,15 @@ async function noneSorted() {
         blogElement.className = 'blog_container-el';
         blogContainer.append(blogElement);
         blogElement.innerText = content[i].title;
-    } 
-}
-async function sortStartA () {
-    const content  = await getData ();
-    content.sort((a, b) => (a.title < b.title ? -1 : 1));
-    blogContainer.innerHTML = '';
-    for (let i = 0; i < content.length; i++) {
-        const blogElement = document.createElement('div');
-        blogElement.className = 'blog_container-el';
-        blogContainer.append(blogElement);
-        blogElement.innerText = content[i].title;
     }
+} 
+async function sortStartA () {
+    blogContainer.innerHTML = '';
+    createBlogEl ();
 }
 async function sortStartZ () {
-    const content  = await getData ();
-    content.sort((a, b) => (a.title > b.title ? -1 : 1));
     blogContainer.innerHTML = '';
-    for (let i = 0; i < content.length; i++) {
-        const blogElement = document.createElement('div');
-        blogElement.className = 'blog_container-el';
-        blogContainer.append(blogElement);
-        blogElement.innerText = content[i].title;
-    }
+    createBlogEl ()
 }
 sort.addEventListener('change', (e) => {
     if (sort.value === '0') {
@@ -56,4 +41,19 @@ sort.addEventListener('change', (e) => {
         sortStartZ ();;
     }
 });
+async function createBlogEl () {
+    const content  = await getData ();
+    if (sort.value === '2') {
+        content.sort((a, b) => (a.title < b.title ? -1 : 1));;
+    }
+    if (sort.value === '3') {
+        content.sort((a, b) => (a.title > b.title ? -1 : 1));;
+    }
+    for (let i = 0; i < content.length; i++) {
+        const blogElement = document.createElement('div');
+        blogElement.className = 'blog_container-el';
+        blogContainer.append(blogElement);
+        blogElement.innerText = content[i].title;
+    }
+}
 
