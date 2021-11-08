@@ -62,7 +62,7 @@ filtring.addEventListener('change', () => {
             });
             const keys = Object.keys(dict);
             keys.sort().forEach((k) => parent.appendChild(dict[k]));
-        }
+        };
         sorting('.tweet');
     }
     if (filtring.options[filtring.selectedIndex].value === 'fromZtoA') {
@@ -74,7 +74,7 @@ filtring.addEventListener('change', () => {
             });
             const keys = Object.keys(dict);
             keys.reverse().forEach((k) => parent.appendChild(dict[k]));
-        }
+        };
         resorting('.tweet');
     }
 });
