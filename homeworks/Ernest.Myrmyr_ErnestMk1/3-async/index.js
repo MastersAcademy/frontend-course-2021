@@ -1,7 +1,6 @@
 const mainEl = document.querySelector('[data-main]');
 const sortBy = document.querySelector('[data-sorting]');
 const filtering = document.querySelector('[data-filter]');
-const formEl = document.querySelector('[data-form]');
 const arrayOfPostObjects = [];
 const postsDrawing = (object) => {
     for (let i = 0; i < 25; i++) {
