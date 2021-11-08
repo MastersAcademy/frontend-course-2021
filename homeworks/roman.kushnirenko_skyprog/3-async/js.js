@@ -5,6 +5,17 @@ const sortSelect = document.querySelector('[data-sort]');
 const filterSearch = document.querySelector('[data-header-filter]');
 let arrayJson;
 
+async function getDate() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=35');
+        arrayJson = await response.json();
+        createArticle(arrayJson);
+    } catch (e) {
+        alert('Something went wrong, update the page!');
+        console.error(e);
+    }
+}
+
 function loadSite() {
     loadPage.style.display = 'none';
     getDate();
@@ -24,17 +35,6 @@ function createArticle(arrDate) {
     });
 }
 
-async function getDate() {
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=35');
-        arrayJson = await response.json();
-        createArticle(arrayJson);
-    } catch (e) {
-        alert('Something went wrong, update the page!');
-        console.error(e);
-    }
-}
-
 filterSearch.addEventListener('keyup', () => {
     const value = filterSearch.value.toLowerCase();
     const filterFound = arrayJson.filter((item) => item.title.toLowerCase().includes(value));
@@ -49,7 +49,6 @@ sortSelect.addEventListener('change', function () {
         const sortArrayAz = arrayJson.sort((a, b) => a.title.localeCompare(b.title));
         allContent.innerHTML = '';
         createArticle(sortArrayAz);
-
     } else if (this.value === 'z-a') {
         const sortArrayZa = arrayJson.sort((a, b) => a.title.localeCompare(b.title)).reverse();
         allContent.innerHTML = '';
