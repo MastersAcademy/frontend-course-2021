@@ -5,6 +5,18 @@ const sortSelect = document.querySelector('[data-sort]');
 const filterSearch = document.querySelector('[data-header-filter]');
 let arrayJson;
 
+function createArticle(arrDate) {
+    arrDate.forEach((show) => {
+        const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
+        const articleTitle = articleShow.querySelector('[data-article-title]');
+        const articleText = articleShow.querySelector('[data-article-text]');
+        articleTitle.textContent = show.title;
+        articleText.textContent = show.body;
+        allContent.appendChild(articleShow);
+        return show;
+    });
+}
+
 async function getDate() {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=35');
@@ -22,18 +34,6 @@ function loadSite() {
 }
 
 setTimeout(loadSite, 3000);
-
-function createArticle(arrDate) {
-    arrDate.forEach((show) => {
-        const articleShow = dataContentTemplate.content.cloneNode(true).firstElementChild;
-        const articleTitle = articleShow.querySelector('[data-article-title]');
-        const articleText = articleShow.querySelector('[data-article-text]');
-        articleTitle.textContent = show.title;
-        articleText.textContent = show.body;
-        allContent.appendChild(articleShow);
-        return show;
-    });
-}
 
 filterSearch.addEventListener('keyup', () => {
     const value = filterSearch.value.toLowerCase();
