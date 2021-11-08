@@ -3,10 +3,10 @@
   justify-content: center;
   grid-template-columns: 250px 400px 250px;
   grid-template-rows: 150px 500px 80px;
-  grid-template-areas: 
-    'header header header'
-    'sidel main sider'
-    'footer footer footer';
+  grid-template-areas:
+    "header header header"
+    "sidel main sider"
+    "footer footer footer";
 }
 
 .header {
