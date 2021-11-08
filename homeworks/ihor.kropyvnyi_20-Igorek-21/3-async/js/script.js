@@ -1,4 +1,4 @@
-const loderEl = document.querySelector('[data-loared]');
+const loaderEl = document.querySelector('[data-loared]');
 const templateItemsEl = document.querySelector('[data-tamplate-items]');
 const holderContentEl = document.querySelector('[data-holder-content]');
 const headerSelectEl = document.querySelector('[data-header-select]');
@@ -14,27 +14,27 @@ function addElement(content) {
     });
 }
 
-const sortTitle = (item) => {
-    addElement(item);
-    headerSelectEl.addEventListener('change', (evt) => {
-        if (evt.target.value === 'without-sort') {
-            item.sort((a, b) => a.id - (b.id));
-            addElement(item);
-        } else if (evt.target.value === 'sort-A-Z') {
-            item.sort((a, b) => a.title.localeCompare(b.title));
-            addElement(item);
-        } else if (evt.target.value === 'sort-Z-A') {
-            item.sort((a, b) => b.title.localeCompare(a.title));
-            addElement(item);
+const sortTitle = (post) => {
+    addElement(post);
+    headerSelectEl.addEventListener('change', (event) => {
+        if (event.target.value === 'without-sort') {
+            post.sort((a, b) => a.id - (b.id));
+            addElement(post);
+        } else if (event.target.value === 'sort-A-Z') {
+            post.sort((a, b) => a.title.localeCompare(b.title));
+            addElement(post);
+        } else {
+            post.sort((a, b) => b.title.localeCompare(a.title));
+            addElement(post);
         }
     });
     headerInputEl.addEventListener('input', () => {
-        const filteredText = item.filter((a) => a.title.includes(headerInputEl.value));
+        const filteredText = post.filter((a) => a.title.includes(headerInputEl.value));
         addElement(filteredText);
     });
 };
 
-function getResponse() {
+const loadPosts = () => {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
         .then((data) => {
@@ -45,11 +45,11 @@ function getResponse() {
         .catch(() => {
             alert('Page not found');
         });
-}
+};
 
 window.addEventListener('load', () => {
-    getResponse();
+    loadPosts();
     setTimeout(() => {
-        loderEl.classList.add('loading');
+        loaderEl.classList.add('loading');
     }, 3000);
 });

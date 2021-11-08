@@ -3,7 +3,7 @@ body {
   height: 100%;
   background-color: #E0EDFD;
   color: #000;
-  font-family: sans-serif;
+  font-family: "Roboto";
 }
 
 .loader {
@@ -38,9 +38,7 @@ body {
   display: none;
 }
 
-.holder__header__title::first-letter,
-.content__article__title::first-letter,
-.content__article__text::first-letter {
+.title--first-letter::first-letter {
   text-transform: uppercase;
   color: #F30606;
 }
@@ -55,7 +53,7 @@ body {
   border-radius: 30px;
 }
 
-.holder__header {
+.header {
   height: 70px;
   width: 992px;
   border-radius: 30px 30px 0 0;
@@ -64,25 +62,27 @@ body {
   justify-content: space-around;
 }
 
-.holder__header__title {
+.header__title {
   margin: 13px;
   font-family: "Rubik";
   font-size: 42px;
   line-height: 50px;
 }
 
-.holder__header__select {
+.header__select {
   min-width: 93px;
   height: 36px;
   margin: 17px 1px 21px 210px;
   background: #F7F6FB;
   border-radius: 30px;
-  font-family: "Roboto";
+  font-family: inherit;
   font-size: 16px;
   line-height: 17px;
+  padding-left: 12px;
+  cursor: pointer;
 }
 
-.holder__header__input {
+.header__input {
   width: 230px;
   height: 36px;
   margin: 15px 38px 17px 1px;
@@ -90,25 +90,22 @@ body {
   border-radius: 30px;
 }
 
-.holder__header__input[type="text"] {
-  padding-left: 20px;
-}
-
-.holder__header__input[type] {
-  font-family: "Roboto";
+.header__input[type] {
+  font-family: inherit;
   font-style: normal;
   font-size: 18px;
   line-height: 21px;
+  padding-left: 15px;
 }
 
-.holder__content {
+.content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 50px 30px;
 }
 
-.holder__content__article {
+.article {
   margin-top: 50px;
   padding: 44px 20px 28px;
   width: 380px;
@@ -120,15 +117,15 @@ body {
   justify-content: space-between;
 }
 
-.content__article__text {
-  font-family: "Roboto";
+.article__text {
+  font-family: inherit;
   font-style: normal;
   font-size: 18px;
   line-height: 21px;
 }
 
-.content__article__title {
-  font-family: "Roboto";
+.article__title {
+  font-family: inherit;
   font-style: normal;
   font-size: 24px;
   line-height: 28px;
@@ -136,7 +133,7 @@ body {
   vertical-align: top;
 }
 
-.content__article__delete {
+.article__delete {
   margin-left: 290px;
   width: 57px;
   height: 57px;
@@ -144,10 +141,9 @@ body {
   border: none;
   padding: 0;
   border-radius: 10px;
+  cursor: pointer;
 }
 
-.content__article__delete--activ:hover,
-.holder__header__select--activ:hover,
-.holder__header__input--activ:hover {
+.element--active:hover {
   background-color: #D9D9D9;
 }

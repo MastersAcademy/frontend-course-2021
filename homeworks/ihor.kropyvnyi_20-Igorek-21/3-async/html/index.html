@@ -16,21 +16,21 @@
         <div class="loader__show"></div>
     </article>
     <main class="holder">
-        <header class="holder__header">
-            <h1 class="holder__header__title">BLOG</h1>
-            <select class="holder__header__select holder__header__select--activ" data-header-select>
-                <option selected value="without-sort" >Sort</option>
+        <header class="header">
+            <h1 class="header__title title--first-letter">BLOG</h1>
+            <select class="header__select element--active" data-header-select>
+                <option selected value="without-sort">Sort</option>
                 <option value="sort-A-Z">Sort from A to Z</option>
                 <option value="sort-Z-A">Sort from Z to A</option>
             </select>
-            <input class="holder__header__input holder__header__input--activ" type="text" placeholder="Filter" data-header-input>
+            <input class="header__input element--active" type="text" placeholder="Filter" data-header-input>
         </header>
-        <section class="holder__content" data-holder-content></section>
+        <section class="content" data-holder-content></section>
         <template data-tamplate-items>
-                <article class="holder__content__article">
-                    <h2 class="content__article__title" data-articl-title></h2>
-                    <p class="content__article__text" data-articl-text></p>
-                    <button class="content__article__delete content__article__delete--activ"><img  src="../img/remove.png" alt="button remove"></button>
+                <article class="article">
+                    <h2 class="article__title title--first-letter" data-articl-title></h2>
+                    <p class="article__text title--first-letter" data-articl-text></p>
+                    <button class="article__delete element--active"><img  src="../img/remove.png" alt="button remove"></button>
                 </article>
         </template>
     </main>
