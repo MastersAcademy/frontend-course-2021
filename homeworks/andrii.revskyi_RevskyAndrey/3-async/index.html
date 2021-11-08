@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-async</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section class="page-content">
+    <header class="header">
+        <h1 class="title">Blog</h1>
+            <div class="control_area">
+            <select class="control_area__select" data-select>
+                <option selected  value="default" > Default </option>
+                <option value="az" > Sort from A to Z </option>
+                <option value="za"> Sort from Z to A </option>
+            </select>
+            <input class="control_area__search" name="search" data-filter>
+
+        </div>
+    </header>
+    <main class="main">
+        <div class="preloader" data-preloader>LOADING ...</div>
+        <div class="news-window" data-list></div>
+
+    </main>
+</section>
+<script src="js/main.js"></script>
+</body>
+</html>
