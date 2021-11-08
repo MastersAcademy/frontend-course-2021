@@ -1,7 +1,5 @@
 const ulList = document.querySelector('[data-list]');
 const selectFiltr = document.querySelector('[data-filter-wrapper]');
-// const optAlfavit = document.querySelector('[data-filter-alfavit]');
-// const optRevAlfavit = document.querySelector('[data-filter-rev-alfavit]');
 const inputFiltr = document.querySelector('[data-filtr-text]');
 const postArr = [];
 let timeOut;
@@ -54,15 +52,3 @@ selectFiltr.addEventListener('change', (event) => {
         getPosts();
     }
 });
-
-// function filterAlf() => {
-//     ulList.innerHTML = '';
-//     const filteredArr = postArr.sort();
-//     filteredArr.forEach(current => createMessage(current.title, current.body))
-// }
-
-// selectFiltr.addEventListener('click', (event) => {
-//     if (event.target.value === 'From A to Z') {
-
-//     }
-// });
