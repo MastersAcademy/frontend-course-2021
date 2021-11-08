@@ -1,6 +1,7 @@
 const mainEl = document.querySelector('[data-main]');
 const sortBy = document.querySelector('[data-sorting]');
 const filtering = document.querySelector('[data-filter]');
+const formEl = document.querySelector('[data-form]');
 const arrayOfPostObjects = [];
 const postsDrawing = (object) => {
     for (let i = 0; i < 25; i++) {
@@ -53,34 +54,41 @@ const whileLoading = () => {
     mainEl.appendChild(loadingGifWrapper);
 };
 
-setTimeout(requestPosts, 3000);
+setTimeout(requestPosts, 0);
 whileLoading();
 
 filtering.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         e.preventDefault();
+        const filteredObject = [];
+
         for (let i = 0; i < arrayOfPostObjects.length; i++) {
             if (arrayOfPostObjects[i]
                 .title
                 .toLowerCase()
-                .includes(filtering.value.toLowerCase()) === false) {
-                const postToRemove = document.querySelector(`.post-num-${i + 1}`);
-                mainEl.removeChild(postToRemove);
+                .includes(e.target.value.toLowerCase())) {
+                filteredObject.push(arrayOfPostObjects[i]);
             }
         }
+
+        clearingPage();
+        postsDrawing(filteredObject);
     }
 });
 
 sortBy.addEventListener('change', (e) => {
     e.preventDefault();
     if (e.target.value === 'A-Z') {
-        arrayOfPostObjects.sort((a, b) => a.title.localeCompare(b.title));
+        const azSorted = arrayOfPostObjects.slice().sort((a, b) => a.title.localeCompare(b.title));
 
         clearingPage();
-        postsDrawing(arrayOfPostObjects);
+        postsDrawing(azSorted);
     } else if (e.target.value === 'Z-A') {
-        arrayOfPostObjects.sort((a, b) => b.title.localeCompare(a.title));
+        const zaSorted = arrayOfPostObjects.slice().sort((a, b) => b.title.localeCompare(a.title));
 
+        clearingPage();
+        postsDrawing(zaSorted);
+    } else if (e.target.value === 'initial') {
         clearingPage();
         postsDrawing(arrayOfPostObjects);
     }
