@@ -27,16 +27,16 @@ async function createSortBlogEl() {
 async function noneSorted() {
     blogContainer.innerHTML = '';
     createSortBlogEl();
-} 
-async function sortStartA () {
+}
+async function sortStartA() {
     blogContainer.innerHTML = '';
     createSortBlogEl();
 }
-async function sortStartZ () {
+async function sortStartZ() {
     blogContainer.innerHTML = '';
-    createSortBlogEl()
+    createSortBlogEl();
 }
-sort.addEventListener('change', (e) => {
+sort.addEventListener('change', () => {
     if (sort.value === '0') {
         blogContainer.innerHTML = '';
     }
@@ -45,11 +45,11 @@ sort.addEventListener('change', (e) => {
     }
     if (sort.value === '2') {
         blogContainer.innerHTML = '';
-        sortStartA ();
+        sortStartA();
     }
     if (sort.value === '3') {
         blogContainer.innerHTML = '';
-        sortStartZ ();;
+        sortStartZ();
     }
 });
 form.addEventListener('submit', filter);
