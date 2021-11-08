@@ -2,7 +2,10 @@ body {
   font-family: "Roboto", "Arial", sans-serif;
   display: flex;
   justify-content: center;
-  background-color: rgb(155, 235, 255);
+  background-image: url("photo/1_qvphkxaDna8aw0zZ8-fx5A.jpeg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
   overflow: auto;
 }
 
@@ -15,9 +18,10 @@ body {
 }
 
 .header {
+  position: relative;
   list-style-type: none;
   height: 4rem;
-  width: 70rem;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,13 +33,38 @@ body {
   padding: 20px;
 }
 
+.select-wapper {
+  border: 2px solid rgb(255, 164, 90);
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.select-wapper:focus-visible {
+  outline: none;
+  border: 2px solid rgb(255, 118, 5);
+}
+
+.select-wapper > option {
+  border: 2px solid rgb(255, 118, 5);
+}
+
+.filter-by-text {
+  border: 2px solid rgb(255, 164, 90);
+  border-radius: 10px;
+}
+
+.filter-by-text:focus-visible {
+  outline: none;
+  border: 2px solid rgb(255, 118, 5);
+}
+
 .header-title::first-letter {
   color: rgb(255, 0, 0);
 }
 
 .list-wrapper {
   overflow-y: auto;
-  min-height: 40rem;
+  min-height: 39rem;
   height: max-content;
   overflow-y: auto;
 }
@@ -57,6 +86,13 @@ body {
   border-radius: 10px;
   margin-bottom: 15px;
   word-break: break-all;
+}
+
+.tab-error {
+  list-style-type: none;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .tab-title::first-letter {
