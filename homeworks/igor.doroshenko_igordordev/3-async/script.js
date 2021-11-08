@@ -8,13 +8,12 @@ const timeDelay = (milliSecond) => new Promise((r) => setTimeout(() => r(), mill
 function sortArticles(articlesArr, sortCondition) {
     let articlesSorted = articlesArr.slice();
     if (sortCondition.value === 'sort-a-z') {
-        articlesSorted.sort((a, b) => ((a.title > b.title) ? 1 : -1));
-    } else if (sortCondition.value === 'sort-z-a') {
-        articlesSorted.sort((a, b) => ((a.title > b.title) ? 1 : -1)).reverse();
-    } else if (sortCondition.value === 'sort-default') {
-        articlesSorted = articlesArr;
+        return articlesSorted.sort((a, b) => ((a.title > b.title) ? 1 : -1));
     }
-    return articlesSorted;
+    if (sortCondition.value === 'sort-z-a') {
+        return articlesSorted.sort((a, b) => ((a.title > b.title) ? 1 : -1)).reverse();
+    }
+    return articlesArr;
 }
 
 function createArticles(sortedArticles) {
