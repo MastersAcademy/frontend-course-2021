@@ -1,29 +1,40 @@
 const url = 'https://jsonplaceholder.typicode.com/posts';
 const blogContainer = document.querySelector('[data-blog-container]');
 const sort = document.querySelector('[data-sort]');
-const filter = document.querySelector('[data-input-filter]');
+const form = document.querySelector('[data-filter]');
+const dataInput = document.querySelector('[data-input]');
+
 async function getData() {
     const response = await fetch(url);
     const data = await response.json();
     return data;
 }
-async function noneSorted() {
+async function create_SortBlogEl () {
     const content  = await getData ();
-    blogContainer.innerHTML = '';
+    if (sort.value === '2') {
+        content.sort((a, b) => (a.title < b.title ? -1 : 1));;
+    }
+    if (sort.value === '3') {
+        content.sort((a, b) => (a.title > b.title ? -1 : 1));;
+    }
     for (let i = 0; i < content.length; i++) {
         const blogElement = document.createElement('div');
-        blogElement.className = 'blog_container-el';
+        blogElement.className = 'blog__container-el';
         blogContainer.append(blogElement);
         blogElement.innerText = content[i].title;
     }
+}
+async function noneSorted() {
+    blogContainer.innerHTML = '';
+    create_SortBlogEl ();
 } 
 async function sortStartA () {
     blogContainer.innerHTML = '';
-    createBlogEl ();
+    create_SortBlogEl ();
 }
 async function sortStartZ () {
     blogContainer.innerHTML = '';
-    createBlogEl ()
+    create_SortBlogEl ()
 }
 sort.addEventListener('change', (e) => {
     if (sort.value === '0') {
@@ -41,7 +52,10 @@ sort.addEventListener('change', (e) => {
         sortStartZ ();;
     }
 });
-async function createBlogEl () {
+form.addEventListener('submit', filter);
+async function filter (event) {
+    event.preventDefault();
+    blogContainer.innerHTML = '';
     const content  = await getData ();
     if (sort.value === '2') {
         content.sort((a, b) => (a.title < b.title ? -1 : 1));;
@@ -50,10 +64,12 @@ async function createBlogEl () {
         content.sort((a, b) => (a.title > b.title ? -1 : 1));;
     }
     for (let i = 0; i < content.length; i++) {
+        if (content[i].title.indexOf(dataInput.value.toLowerCase()) !== -1) {
         const blogElement = document.createElement('div');
-        blogElement.className = 'blog_container-el';
+        blogElement.className = 'blog__container-el';
         blogContainer.append(blogElement);
         blogElement.innerText = content[i].title;
+        }
     }
+    form.reset();
 }
-

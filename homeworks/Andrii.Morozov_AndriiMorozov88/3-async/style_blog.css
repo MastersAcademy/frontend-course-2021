@@ -2,7 +2,7 @@ body {
   background-color: #C2C286;
 }
 
-.blog_filter {
+.header__content {
   display: flex;
   background-color: #FAFAFA;
   width: 90%;
@@ -12,19 +12,19 @@ body {
   margin-right: auto;
 }
 
-.blog_filter-filter {
-  display: inline-block;
+.header__content-filter {
+  display: flex;
   margin: auto;
 }
 
-.blog_filter-blog {
+.header__content-blog {
   display: inline-block;
   margin: auto;
   font-size: 30px;
   color: #B82B2B;
 }
 
-.blog_container {
+.blog__container {
   background: #918E8E;
   margin: auto;
   display: flex;
@@ -34,7 +34,7 @@ body {
   border-radius: 5px;
 }
 
-.blog_container-el {
+.blog__container-el {
   margin-bottom: 15px;
   margin-left: 15px;
   background: #363621;
