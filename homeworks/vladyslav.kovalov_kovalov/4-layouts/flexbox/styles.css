@@ -9,3 +9,45 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.header-block {
+  background-color: #45AAF2;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-block {
+  height: 500px;
+  display: flex;
+}
+
+.section-block__element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-block__element--left {
+  background-color: #2D98DA;
+  flex-basis: 200px;
+}
+
+.section-block__element--center {
+  background-color: #4B7BEC;
+  flex-grow: 1;
+}
+
+.section-block__element--right {
+  background-color: #2D98DA;
+  flex-basis: 200px;
+}
+
+.footer-block {
+  background-color: #45AAF2;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
