@@ -1,13 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-h1::first-letter, h2::first-letter, p::first-letter {
+.header-panel__title::first-letter, .article__title::first-letter, .article__content::first-letter {
   color: #F00;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background-color: #E0FFFF;
   font-family: sans-serif;
 }
@@ -24,6 +21,8 @@ body {
 }
 
 .header-panel__title {
+  margin: 0;
+  padding: 0;
   height: 60px;
   padding-top: 6px;
   padding-left: 75px;

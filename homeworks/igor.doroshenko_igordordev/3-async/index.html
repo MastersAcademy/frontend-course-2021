@@ -19,9 +19,15 @@
             <input type="text" class="filter__input" placeholder="Filter" required article-filter-input>
         </form>
     </header>
-    <main class="articles-area">
+    <main class="articles-area" articles-area>
     </main>
-    <aside class="loading-window">
+    <template article-template>
+        <article class="articles-area__article article">
+            <h2 class="article__title" article__title></h2>
+            <p class="article__content" article__content></p>
+        </article>
+    </template>
+    <aside class="loading-window" loading-window>
         <p>Articles are loading...</p>
     </aside>
     <script src="script.js"></script>
