@@ -6,25 +6,34 @@ body {
   padding: 0;
   font-family: Roboto;
   font-style: normal;
-  display: flex;
-  justify-content: center;
   font-family: "Roboto", sans-serif;
 }
 
 .content {
-  margin-top: 62px;
-  box-shadow: 1px 4px 96px 1px #0000002E;
+  width: 100%;
+  max-width: 950px;
+  background-color: #FFF;
+  box-shadow: inset 1px 4px 96px #D1D1D1;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.content__header {
+.header__logo {
   font-size: 42px;
   line-height: 50px;
   font-weight: 700;
 }
 
-.content__header::first-letter {
-  font-size: 42px;
-  line-height: 50px;
+.header__logo--link{
+  text-decoration: none;
+  color: #000;
+}
+
+.header__logo--link:hover{
+  color: #FF726C;
+}
+
+.header__logo::first-letter {
   color: #FF726C;
 }
 
@@ -44,54 +53,67 @@ body {
   text-transform: capitalize;
 }
 
-.content__main {
-  display: flex;
-  width: 950px;
-  background-color: #FFF;
+.header{
+  padding-top: 65px;
 }
 
-.content__navigation {
+.header__navigation {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   background-color: #FFF;
-  width: 950px;
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
   justify-content: space-around;
+  width: 100%;
+  max-width: 950px;
+  box-shadow: 1px 4px 96px #D1D1D1;
 }
 
-.content__sorting {
+.header__sorting,
+.header__filter {
   align-self: center;
 }
 
-.content__sorting-icon {
+.header__sorting-icon {
   width: 93px;
   height: 36px;
   border-radius: 30px;
   text-align: center;
+  background-color: #FFF;
+  font-size: 14px;
+  line-height: 28px;
+  box-shadow: 1px 1px 4px #BFBFBF;
+  border: none;
+  outline: none;
 }
 
-.content__filter-input {
+.header__filter-input {
+  font-size: 18px;
+  line-height: 21px;
+  padding-left: 16px;
   width: 230px;
   height: 36px;
   border-radius: 30px;
-}
-
-.content__filter {
-  align-self: center;
+  border: none;
+  box-shadow: inset 1px 2px 3px #BFBFBF;
+  outline: none;
 }
 
 .content__posts__card {
-  width: 416px;
+  width: 400px;
   height: 340px;
   word-wrap: break-word;
   border-radius: 30px;
-  margin: 10px;
+  padding-left: 20px;
+  box-shadow: 1px 1px 50px #D4D4D4;
 }
 
 .content__posts {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 40px 1px;
   background-color: #FFF;
 }
 
@@ -104,7 +126,7 @@ body {
   height: 100px;
 }
 
-.load hr {
+.load__circle{
   border: 0;
   margin: 0;
   width: 40%;

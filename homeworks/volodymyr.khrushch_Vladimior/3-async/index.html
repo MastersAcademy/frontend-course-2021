@@ -6,46 +6,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
   <title>BLOG</title>
 </head>
 
 <body>
-  <div class="load" data-load>
-    <hr />
-    <hr />
-    <hr />
-    <hr />
-  </div>
 
-  <article class="content">
+  <header class="header">
 
-    <nav class="content__navigation">
+    <nav class="header__navigation">
+        <section class="header__logo">
+          <a href="#" class="header__logo--link"><h1>BLOG</h1></a>
+        </section>
 
-      <section class="content__header">
-        <h1>BLOG</h1>
-      </section>
+        <section class="header__sorting">
+          <select name="sort" data-sort class="header__sorting-icon">
+            <option value="" selected>Sort</option>
+            <option value="asc">Sorting A-Z</option>
+            <option value="desc">Sorting Z-A</option>
+          </select>
+        </section>
 
-      <section class="content__sorting">
-        <select name="sort" data-sort class="content__sorting-icon">
-          <option value="" selected>Sort</option>
-          <option value="asc">Sorting A-Z</option>
-          <option value="desc">Sorting Z-A</option>
-        </select>
-      </section>
-
-      <section class="content__filter">
-        <input type="text" data-input class="content__filter-input">
-      </section>
-
+        <section class="header__filter">
+          <input type="text" data-input class="header__filter-input" placeholder="Filter">
+        </section>
     </nav>
-    <main class="content__main">
-      <section class="content__posts" data-blogs>
 
-      </section>
-    </main>
+  </header>
 
-  </article>
+  <main class="content">
+    <div class="load" data-load>
+      <div class="load__circle"></div>
+      <div class="load__circle"></div>
+      <div class="load__circle"></div>
+      <div class="load__circle"></div>
+    </div>
+
+    <article class="content__posts" data-blogs>
+
+    </article>
+  </main>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
