@@ -10,16 +10,15 @@
 }
 
 .grid__top {
-  position: relative;
+  display: grid;
+  align-items: center;
   width: 100%;
-  text-align: center;
+  height: 100%;
   background: rgb(223, 74, 74);
 }
 
-h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+h1{
+  justify-self: center;
 }
 
 .grid__center {
@@ -29,21 +28,25 @@ h1 {
 }
 
 .center__left {
-  position: relative;
+  display: grid;
+  align-items: center;
   background: rgb(163, 65, 150);
 }
 
 .center__middle {
-  position: relative;
+  display: grid;
+  align-items: center;
   background: rgb(29, 96, 158);
 }
 
 .center__right {
-  position: relative;
+  display: grid;
+  align-items: center;
   background: rgb(29, 158, 89);
 }
 
 .grid__bottom {
-  position: relative;
+  display: grid;
+  align-items: center;
   background: rgb(114, 108, 25);
 }
