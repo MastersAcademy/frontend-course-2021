@@ -4,7 +4,7 @@ const filterDataEl = document.querySelector('[data-filter]');
 const templateEl = document.querySelector('[data-post]');
 
 async function loadPosts() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=21');
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=20');
     const posts = await response.json();
     return posts;
 }

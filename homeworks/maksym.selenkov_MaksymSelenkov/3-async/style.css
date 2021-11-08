@@ -114,3 +114,6 @@
   padding: 10px 35px;
 }
 
+.post__text::first-letter {
+  text-transform: uppercase;
+}
