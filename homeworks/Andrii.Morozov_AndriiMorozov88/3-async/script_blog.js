@@ -36,7 +36,6 @@ async function sortStartZ() {
     blogContainer.innerHTML = '';
     createSortBlogEl();
 }
-form.addEventListener('submit', filter);
 async function filter(event) {
     event.preventDefault();
     blogContainer.innerHTML = '';
@@ -57,6 +56,7 @@ async function filter(event) {
     }
     form.reset();
 }
+form.addEventListener('submit', filter);
 sort.addEventListener('change', () => {
     if (sort.value === '0') {
         blogContainer.innerHTML = '';
@@ -73,4 +73,3 @@ sort.addEventListener('change', () => {
         sortStartZ();
     }
 });
-
