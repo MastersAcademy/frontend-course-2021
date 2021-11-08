@@ -55,25 +55,25 @@ filtring.addEventListener('change', () => {
     }
     if (filtring.options[filtring.selectedIndex].value === 'fromAtoZ') {
         function sorting() {
-            nodeList.forEach(node => {
+            nodeList.forEach((node) => {
                 const key = node.querySelector('h1').innerText;
                 dict[key] = node;
                 node.parentNode.removeChild(node);
             });
             const keys = Object.keys(dict);
-            keys.sort().forEach(k => parent.appendChild(dict[k]));
+            keys.sort().forEach((k) => parent.appendChild(dict[k]));
         }
         sorting('.tweet');
     }
     if (filtring.options[filtring.selectedIndex].value === 'fromZtoA') {
         function resorting() {
-            nodeList.forEach(node => {
+            nodeList.forEach((node) => {
                 const key = node.querySelector('h1').innerText;
                 dict[key] = node;
                 node.parentNode.removeChild(node);
             });
             const keys = Object.keys(dict);
-            keys.reverse().forEach(k => parent.appendChild(dict[k]));
+            keys.reverse().forEach((k) => parent.appendChild(dict[k]));
         }
         resorting('.tweet');
     }
