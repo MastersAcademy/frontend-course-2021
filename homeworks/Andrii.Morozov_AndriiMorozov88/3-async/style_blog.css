@@ -49,10 +49,3 @@ body {
   color: #41B651;
   align-items: flex-start;
 }
-
-.blog__container-el-title {
-  margin-top: 10px;
-  margin-left: 10px;
-  font-size: 20px;
-  color: #000;
-}
