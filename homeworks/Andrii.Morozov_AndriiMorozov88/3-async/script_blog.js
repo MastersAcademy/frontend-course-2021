@@ -21,20 +21,27 @@ async function createSortBlogEl() {
         const blogElement = document.createElement('div');
         blogElement.className = 'blog__container-el';
         blogContainer.append(blogElement);
-        blogElement.innerText = content[i].title;
+        const title = document.createElement('div');
+        title.className = 'blog__container-el-title';
+        blogElement.append(title);
+        title.innerText = 'Title';
+        const blogElementText = document.createElement('div');
+        blogElement.append(blogElementText);
+        blogElementText.innerText = content[i].title;
+        
     }
 }
 async function noneSorted() {
     blogContainer.innerHTML = '';
-    createSortBlogEl();
+    setTimeout(createSortBlogEl, 3000);
 }
 async function sortStartA() {
     blogContainer.innerHTML = '';
-    createSortBlogEl();
+    setTimeout(createSortBlogEl, 3000);;
 }
 async function sortStartZ() {
     blogContainer.innerHTML = '';
-    createSortBlogEl();
+    setTimeout(createSortBlogEl, 3000);
 }
 async function filter(event) {
     event.preventDefault();
@@ -49,9 +56,15 @@ async function filter(event) {
     for (let i = 0; i < content.length; i++) {
         if (content[i].title.indexOf(dataInput.value.toLowerCase()) !== -1) {
             const blogElement = document.createElement('div');
-            blogElement.className = 'blog__container-el';
-            blogContainer.append(blogElement);
-            blogElement.innerText = content[i].title;
+        blogElement.className = 'blog__container-el';
+        blogContainer.append(blogElement);
+        const title = document.createElement('div');
+        title.className = 'blog__container-el-title';
+        blogElement.append(title);
+        title.innerText = 'Title';
+        const blogElementText = document.createElement('div');
+        blogElement.append(blogElementText);
+        blogElementText.innerText = content[i].title;
         }
     }
     form.reset();

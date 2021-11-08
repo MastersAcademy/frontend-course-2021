@@ -24,6 +24,11 @@ body {
   color: #B82B2B;
 }
 
+.header__content-blog:first-letter {
+  font-size: 50px;
+  color: #000;
+}
+
 .blog__container {
   background: #918E8E;
   margin: auto;
@@ -39,6 +44,15 @@ body {
   margin-left: 15px;
   background: #363621;
   width: 150px;
-  height: 200px;
+  height: 150px;
   border-radius: 5px;
+  color: #41B651;
+  align-items: flex-start;
+}
+
+.blog__container-el-title {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+  color: #000;
 }
