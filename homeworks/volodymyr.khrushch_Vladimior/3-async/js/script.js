@@ -9,10 +9,10 @@ const addPosts = async (result) => {
 
     addPostBox.forEach((posts) => {
         blogPosts += `
-        <section class='content__posts__card' data-card>
+        <article class='content__posts__card' data-card>
         <h3 class='content__posts__title' data-title>${posts.title}</h3>
         <p class='content__posts__text'>${posts.body}</p>
-        </section>
+        </article>
         `;
     });
 

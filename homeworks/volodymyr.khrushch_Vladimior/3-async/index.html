@@ -13,38 +13,41 @@
 
   <header class="header">
 
-    <nav class="header__navigation">
-        <section class="header__logo">
-          <a href="#" class="header__logo--link"><h1>BLOG</h1></a>
-        </section>
+    <section class="header__navigation">
+        <article class="header__logo">
+          <a href="#" class="header__logo__link"><h1>BLOG</h1></a>
+        </article>
 
-        <section class="header__sorting">
-          <select name="sort" data-sort class="header__sorting-icon">
+        <article  class="header__sorting">
+          <select name="sort" data-sort class="header__sorting__icon">
             <option value="" selected>Sort</option>
             <option value="asc">Sorting A-Z</option>
             <option value="desc">Sorting Z-A</option>
           </select>
-        </section>
+        </article>
 
-        <section class="header__filter">
-          <input type="text" data-input class="header__filter-input" placeholder="Filter">
-        </section>
-    </nav>
+        <article class="header__filter">
+          <input type="text" data-input class="header__filter__input" placeholder="Filter">
+        </article>
+    </section>
 
   </header>
 
   <main class="content">
-    <div class="load" data-load>
-      <div class="load__circle"></div>
-      <div class="load__circle"></div>
-      <div class="load__circle"></div>
-      <div class="load__circle"></div>
-    </div>
 
-    <article class="content__posts" data-blogs>
+    <section class="content__posts" data-blogs>
 
-    </article>
+    </section>
+
   </main>
+
+  <div class="load" data-load>
+    <div class="load__circle"></div>
+    <div class="load__circle"></div>
+    <div class="load__circle"></div>
+    <div class="load__circle"></div>
+  </div>
+
   <script src="js/script.js"></script>
 </body>
 
