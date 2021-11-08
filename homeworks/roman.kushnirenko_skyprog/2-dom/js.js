@@ -8,7 +8,6 @@ function createMessage() {
     const messageInput = chatFormInput.value;
 
     const messageShow = template.content.cloneNode(true).firstElementChild;
-    const containerM = messageShow.querySelector('[data-container]');
     const chatMessageContent = messageShow.querySelector('[data-message-content]');
     const closeMessage = messageShow.querySelector('[data-close-message]');
 
@@ -18,15 +17,15 @@ function createMessage() {
     chatFormInput.value = '';
 
     closeMessage.addEventListener('click', () => {
-        messageShow.remove(containerM);
+        messageShow.remove();
     });
 
-    chatMessages.scrollTop = 9999;
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
 chatFormSubmit.addEventListener('click', (event) => {
     event.preventDefault();
-    if (!chatFormInput.value == '') {
+    if (!chatFormInput.value === '') {
         createMessage();
     }
 });
