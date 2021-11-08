@@ -13,17 +13,10 @@
         <main class="blog">
             <header class="blog__header">
                 <h1 class="blog__header-title">Blog</h1>
-                <div class="blog__header-sort sort">
-                    <button class="sort__button">
-                        <span class="sort__text">Sort</span>
-                        <span class="sort__symbol">^</span>
-                    </button>
-                    <div class="blog__header-sort-content">
-                        <a href="#" data-sort-initial>Initial</a>
-                        <a href="#" data-sort-descending>A-Z</a>
-                        <a href="#" data-sort-ascending>Z-A</a>
-                    </div>
-                </div>
+                <select class="blog__header-sort" data-sort>
+                        <option value="A-Z">A-Z</option>
+                        <option value="Z-A">Z-A</option>
+                </select>
                 <input type="text" class="blog__header-filter" data-filter>
             </header>
             <section class="blog__content" data-content>

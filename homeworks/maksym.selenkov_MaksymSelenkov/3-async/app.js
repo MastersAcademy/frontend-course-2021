@@ -1,7 +1,5 @@
 const postAreaEL = document.querySelector('[data-content]');
-const sortDescEl = document.querySelector('[data-sort-descending]');
-const sortAscEL = document.querySelector('[data-sort-ascending]');
-const sortInitialEl = document.querySelector('[data-sort-initial]');
+const sortData = document.querySelector('[data-sort]');
 const filterDataEl = document.querySelector('[data-filter]');
 const templateEl = document.querySelector('[data-post]');
 
@@ -25,27 +23,23 @@ setTimeout(() => {
     loadPosts().then((posts) => {
         renderPosts(posts);
 
-        sortInitialEl.addEventListener('click', () => {
-            renderPosts(posts);
+        sortData.addEventListener('change', (event) => {
+            if (event.target.value === 'A-Z') {
+                posts.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+                renderPosts(posts);
+            }
+
+            if (event.target.value === 'Z-A') {
+                posts.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()));
+                renderPosts(posts);
+            }
         });
 
-        sortDescEl.addEventListener('click', () => {
-            posts.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
-            renderPosts(posts);
-        });
-
-        sortAscEL.addEventListener('click', () => {
-            posts.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()));
-            renderPosts(posts);
-        });
-
-        filterDataEl.addEventListener('input', () => {
+        filterDataEl.addEventListener('keyup', () => {
             posts.filter((item) => item.title.toLowerCase()
                 .includes(filterDataEl.value.toLowerCase()));
-            console.log(filterDataEl.value);
             renderPosts(posts);
         });
     });
-
     document.querySelector('.loading').style.display = 'none';
 }, 3000);
