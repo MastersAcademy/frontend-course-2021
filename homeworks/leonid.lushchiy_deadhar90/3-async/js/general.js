@@ -48,35 +48,35 @@ loadBlog.then(() => {
 
 filtring.addEventListener('change', () => {
     const nodeList = document.querySelectorAll('article');
-        const dict = {};
-        const parent = nodeList[0].parentNode;
-        if (filtring.options[filtring.selectedIndex].value === 'withOut') {
-            document.location.reload();
+    const dict = {};
+    const parent = nodeList[0].parentNode;
+    if (filtring.options[filtring.selectedIndex].value === 'withOut') {
+        document.location.reload();
+    }
+    if (filtring.options[filtring.selectedIndex].value === 'fromAtoZ') {
+        function sorting() {
+            nodeList.forEach(node => {
+                const key = node.querySelector('h1').innerText;
+                dict[key] = node;
+                node.parentNode.removeChild(node);
+            });
+            const keys = Object.keys(dict);
+            keys.sort().forEach(k => parent.appendChild(dict[k]));
         }
-        if (filtring.options[filtring.selectedIndex].value === 'fromAtoZ') {
-            function sorting() {
-                nodeList.forEach(node => {
-                    const key = node.querySelector('h1').innerText;
-                    dict[key] = node;
-                    node.parentNode.removeChild(node);
-                });
-                const keys = Object.keys(dict);
-                keys.sort().forEach(k => parent.appendChild(dict[k]));
-            }
-            sorting('.tweet');
+        sorting('.tweet');
+    }
+    if (filtring.options[filtring.selectedIndex].value === 'fromZtoA') {
+        function resorting() {
+            nodeList.forEach(node => {
+                const key = node.querySelector('h1').innerText;
+                dict[key] = node;
+                node.parentNode.removeChild(node);
+            });
+            const keys = Object.keys(dict);
+            keys.reverse().forEach(k => parent.appendChild(dict[k]));
         }
-        if (filtring.options[filtring.selectedIndex].value === 'fromZtoA') {
-            function resorting() {
-                nodeList.forEach(node => {
-                    const key = node.querySelector('h1').innerText;
-                    dict[key] = node;
-                    node.parentNode.removeChild(node);
-                });
-                const keys = Object.keys(dict);
-                keys.reverse().forEach(k => parent.appendChild(dict[k]));
-            }
-            resorting('.tweet');
-        }
+        resorting('.tweet');
+    }
 });
 
 // filtring text from input
