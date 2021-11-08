@@ -107,11 +107,9 @@ body {
   height: 50px;
 }
 
-.img_remove {
+.removebtn__img {
   width: 57px;
   height: 57px;
-  top: 258px;
-  left: 316px;
 }
 
 .article__removebtn {
@@ -119,13 +117,14 @@ body {
   height: 57px;
   background: transparent;
   position: absolute;
-  top: 258px;
-  left: 316px;
+  bottom: 30px;
+  right: 40px;
   cursor: pointer;
   border: none;
 }
 
 .loading {
+  display: block;
   margin: 0 auto;
   margin-top: 100px;
   min-width: 200px;
