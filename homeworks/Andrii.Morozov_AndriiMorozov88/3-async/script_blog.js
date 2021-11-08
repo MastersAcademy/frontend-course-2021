@@ -36,6 +36,27 @@ async function sortStartZ() {
     blogContainer.innerHTML = '';
     createSortBlogEl();
 }
+form.addEventListener('submit', filter);
+async function filter(event) {
+    event.preventDefault();
+    blogContainer.innerHTML = '';
+    const content = await getData();
+    if (sort.value === '2') {
+        content.sort((a, b) => (a.title < b.title ? -1 : 1));
+    }
+    if (sort.value === '3') {
+        content.sort((a, b) => (a.title > b.title ? -1 : 1));
+    }
+    for (let i = 0; i < content.length; i++) {
+        if (content[i].title.indexOf(dataInput.value.toLowerCase()) !== -1) {
+            const blogElement = document.createElement('div');
+            blogElement.className = 'blog__container-el';
+            blogContainer.append(blogElement);
+            blogElement.innerText = content[i].title;
+        }
+    }
+    form.reset();
+}
 sort.addEventListener('change', () => {
     if (sort.value === '0') {
         blogContainer.innerHTML = '';
@@ -52,24 +73,4 @@ sort.addEventListener('change', () => {
         sortStartZ();
     }
 });
-form.addEventListener('submit', filter);
-async function filter (event) {
-    event.preventDefault();
-    blogContainer.innerHTML = '';
-    const content  = await getData ();
-    if (sort.value === '2') {
-        content.sort((a, b) => (a.title < b.title ? -1 : 1));;
-    }
-    if (sort.value === '3') {
-        content.sort((a, b) => (a.title > b.title ? -1 : 1));;
-    }
-    for (let i = 0; i < content.length; i++) {
-        if (content[i].title.indexOf(dataInput.value.toLowerCase()) !== -1) {
-        const blogElement = document.createElement('div');
-        blogElement.className = 'blog__container-el';
-        blogContainer.append(blogElement);
-        blogElement.innerText = content[i].title;
-        }
-    }
-    form.reset();
-}
+
