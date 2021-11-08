@@ -54,7 +54,7 @@ filtring.addEventListener('change', () => {
         document.location.reload();
     }
     if (filtring.options[filtring.selectedIndex].value === 'fromAtoZ') {
-        function sorting() {
+        const sorting = () => {
             nodeList.forEach((node) => {
                 const key = node.querySelector('h1').innerText;
                 dict[key] = node;
@@ -66,7 +66,7 @@ filtring.addEventListener('change', () => {
         sorting('.tweet');
     }
     if (filtring.options[filtring.selectedIndex].value === 'fromZtoA') {
-        function resorting() {
+        const resorting = () => {
             nodeList.forEach((node) => {
                 const key = node.querySelector('h1').innerText;
                 dict[key] = node;
