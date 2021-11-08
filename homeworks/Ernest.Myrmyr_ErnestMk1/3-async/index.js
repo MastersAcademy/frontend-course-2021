@@ -75,12 +75,12 @@ const whileLoading = () => {
     mainEl.appendChild(loadingGifWrapper);
 };
 
-setTimeout(requestPosts, 0);
+setTimeout(requestPosts, 3000);
 whileLoading();
 
 filtering.addEventListener('change', (e) => {
     e.preventDefault();
-    let filteredObject = [];
+    const filteredObject = [];
 
     for (let i = 0; i < arrayOfPostObjects.length; i++) {
         if (arrayOfPostObjects[i]
