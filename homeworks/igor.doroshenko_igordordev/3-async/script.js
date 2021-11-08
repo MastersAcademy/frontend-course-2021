@@ -19,11 +19,11 @@ function sortArticles(articlesArr, sortCondition) {
 function createTemplateArticles(sortedArticles) {
     sortedArticles.forEach((article) => {
         const articleTemplateEl = document.querySelector('[article-template]');
-        const articleTitleEl = articleTemplateEl.content.querySelector('[article__title]');
-        const articleContentEl = articleTemplateEl.content.querySelector('[article__content]');
+        const articlesCloneTemplate = articleTemplateEl.content.cloneNode(true);
+        const articleTitleEl = articlesCloneTemplate.querySelector('[article__title]');
+        const articleContentEl = articlesCloneTemplate.querySelector('[article__content]');
         articleTitleEl.textContent = article.title;
         articleContentEl.textContent = article.body;
-        const articlesCloneTemplate = articleTemplateEl.content.cloneNode(true);
         articlesAreaEl.append(articlesCloneTemplate);
     });
 }

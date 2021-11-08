@@ -1,4 +1,6 @@
-.header-panel__title::first-letter, .article__title::first-letter, .article__content::first-letter {
+.header-panel__title::first-letter,
+.article__title::first-letter,
+.article__content::first-letter {
   color: #F00;
 }
 
