@@ -24,11 +24,6 @@ body {
   color: #B82B2B;
 }
 
-.header__content-blog:first-letter {
-  font-size: 50px;
-  color: #000;
-}
-
 .blog__container {
   background: #918E8E;
   margin: auto;
