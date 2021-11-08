@@ -3,24 +3,46 @@ const sortBy = document.querySelector('[data-sorting]');
 const filtering = document.querySelector('[data-filter]');
 const arrayOfPostObjects = [];
 const postsDrawing = (object) => {
-    for (let i = 0; i < 25; i++) {
-        const divForPost = document.createElement('div');
-        divForPost.classList.add('post', `post-num-${object[i].id}`);
-        mainEl.appendChild(divForPost);
-        const postContent = document.createElement('p');
-        const postTitle = document.createElement('h3');
-        divForPost.appendChild(postTitle);
-        divForPost.appendChild(postContent);
-        postTitle.textContent = object[i].title;
-        postTitle.className = 'post-title';
-        postContent.textContent = object[i].body;
-        postContent.className = 'post-content';
+    if (object.length > 25) {
+        for (let i = 0; i < 25; i++) {
+            const divForPost = document.createElement('div');
+            divForPost.classList.add('post', `post-num-${object[i].id}`);
+            mainEl.appendChild(divForPost);
+            const postContent = document.createElement('p');
+            const postTitle = document.createElement('h3');
+            divForPost.appendChild(postTitle);
+            divForPost.appendChild(postContent);
+            postTitle.textContent = object[i].title;
+            postTitle.className = 'post-title';
+            postContent.textContent = object[i].body;
+            postContent.className = 'post-content';
 
-        const postObject = {};
-        postObject.id = object[i].id;
-        postObject.body = postContent.textContent;
-        postObject.title = postTitle.textContent;
-        arrayOfPostObjects.push(postObject);
+            const postObject = {};
+            postObject.id = object[i].id;
+            postObject.body = postContent.textContent;
+            postObject.title = postTitle.textContent;
+            arrayOfPostObjects.push(postObject);
+        }
+    } else {
+        for (let i = 0; i < object.length; i++) {
+            const divForPost = document.createElement('div');
+            divForPost.classList.add('post', `post-num-${object[i].id}`);
+            mainEl.appendChild(divForPost);
+            const postContent = document.createElement('p');
+            const postTitle = document.createElement('h3');
+            divForPost.appendChild(postTitle);
+            divForPost.appendChild(postContent);
+            postTitle.textContent = object[i].title;
+            postTitle.className = 'post-title';
+            postContent.textContent = object[i].body;
+            postContent.className = 'post-content';
+
+            const postObject = {};
+            postObject.id = object[i].id;
+            postObject.body = postContent.textContent;
+            postObject.title = postTitle.textContent;
+            arrayOfPostObjects.push(postObject);
+        }
     }
 };
 const clearingPage = () => {
@@ -53,26 +75,24 @@ const whileLoading = () => {
     mainEl.appendChild(loadingGifWrapper);
 };
 
-setTimeout(requestPosts, 3000);
+setTimeout(requestPosts, 0);
 whileLoading();
 
-filtering.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        e.preventDefault();
-        const filteredObject = [];
+filtering.addEventListener('change', (e) => {
+    e.preventDefault();
+    let filteredObject = [];
 
-        for (let i = 0; i < arrayOfPostObjects.length; i++) {
-            if (arrayOfPostObjects[i]
-                .title
-                .toLowerCase()
-                .includes(e.target.value.toLowerCase())) {
-                filteredObject.push(arrayOfPostObjects[i]);
-            }
+    for (let i = 0; i < arrayOfPostObjects.length; i++) {
+        if (arrayOfPostObjects[i]
+            .title
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase())) {
+            filteredObject.push(arrayOfPostObjects[i]);
         }
-
-        clearingPage();
-        postsDrawing(filteredObject);
     }
+
+    clearingPage();
+    postsDrawing(filteredObject);
 });
 
 sortBy.addEventListener('change', (e) => {
