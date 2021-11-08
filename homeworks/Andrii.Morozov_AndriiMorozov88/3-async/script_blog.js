@@ -25,15 +25,15 @@ async function createSortBlogEl() {
 }
 async function noneSorted() {
     blogContainer.innerHTML = '';
-    createSortBlogEl();
+    setTimeout(createSortBlogEl, 3000);
 }
 async function sortStartA() {
     blogContainer.innerHTML = '';
-    createSortBlogEl();
+    setTimeout(createSortBlogEl, 3000);
 }
 async function sortStartZ() {
     blogContainer.innerHTML = '';
-    createSortBlogEl();
+    setTimeout(createSortBlogEl, 3000);
 }
 async function filter(event) {
     event.preventDefault();
