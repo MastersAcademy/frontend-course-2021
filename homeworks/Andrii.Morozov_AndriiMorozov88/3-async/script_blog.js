@@ -9,13 +9,13 @@ async function getData() {
     const data = await response.json();
     return data;
 }
-async function create_SortBlogEl () {
-    const content  = await getData ();
+async function createSortBlogEl() {
+    const content = await getData();
     if (sort.value === '2') {
-        content.sort((a, b) => (a.title < b.title ? -1 : 1));;
+        content.sort((a, b) => (a.title < b.title ? -1 : 1));
     }
     if (sort.value === '3') {
-        content.sort((a, b) => (a.title > b.title ? -1 : 1));;
+        content.sort((a, b) => (a.title > b.title ? -1 : 1));
     }
     for (let i = 0; i < content.length; i++) {
         const blogElement = document.createElement('div');
@@ -26,15 +26,15 @@ async function create_SortBlogEl () {
 }
 async function noneSorted() {
     blogContainer.innerHTML = '';
-    create_SortBlogEl ();
+    createSortBlogEl();
 } 
 async function sortStartA () {
     blogContainer.innerHTML = '';
-    create_SortBlogEl ();
+    createSortBlogEl();
 }
 async function sortStartZ () {
     blogContainer.innerHTML = '';
-    create_SortBlogEl ()
+    createSortBlogEl()
 }
 sort.addEventListener('change', (e) => {
     if (sort.value === '0') {
