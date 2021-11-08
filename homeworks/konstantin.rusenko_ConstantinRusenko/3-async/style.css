@@ -1,0 +1,129 @@
+body {
+  background-color: #DBE7F5;
+  width: 75%;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFF;
+  border-radius: 6px 6px 0 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.logo {
+  margin-left: 20px;
+}
+
+.logo::first-letter {
+  color: #C00;
+}
+
+.header_controls {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.controls__sort {
+  margin-right: 20px;
+  padding: 5px;
+  background-color: #F7F6FB;
+  border-radius: 6px;
+  border: 1px solid #BDC3CB;
+}
+
+.controls__filter {
+  padding: 5px;
+  background-color: #F7F6FB;
+  border: none;
+  border-radius: 6px;
+  border: 1px solid #BDC3CB;
+}
+
+.posts {
+  display: flex;
+  flex-direction: block;
+  justify-content: space-around;
+  background-color: #FAF9FD;
+  width: 100%;
+  min-height: 600px;
+  flex-wrap: wrap;
+  border-radius: 0 0 6px 6px;
+}
+
+.new-post {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  height: 300px;
+  flex-direction: column;
+  border-radius: 6px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
+  background-color: #FFF;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.new-post__title::first-letter {
+  color: #C00;
+  text-transform: uppercase;
+}
+
+.new-post__title {
+  margin: 15px;
+}
+
+.new-post__body {
+  height: 100px;
+  margin: 15px;
+}
+
+.del-button {
+  background: none;
+  align-self: flex-end;
+  margin: 16px;
+  border: 1px solid #000;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.status-message {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  top: 0%;
+  height: 200px;
+  width: 300px;
+  border-radius: 6px;
+  font-size: 1.4em;
+}
+
+.loader {
+  position: absolute;
+  top: 35%;
+  border: 16px solid #F3F3F3;
+  border-radius: 50%;
+  border-top: 16px solid #3498DB;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

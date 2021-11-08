@@ -1,0 +1,43 @@
+.container_main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+
+.header {
+  height: 150px;
+  width: 100%;
+  background-color: rgb(63, 70, 30);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+}
+
+.middle {
+  height: 100%;
+  width: 50%;
+  background: rgb(216, 185, 11);
+}
+
+.left {
+  height: 100%;
+  width: 25%;
+  background-color: rgb(95, 79, 60);
+}
+
+.right {
+  height: 100%;
+  width: 25%;
+  background-color: rgb(68, 96, 119);
+}
+
+.footer {
+  height: 100px;
+  width: 100%;
+  background-color: rgb(61, 128, 109);
+}
