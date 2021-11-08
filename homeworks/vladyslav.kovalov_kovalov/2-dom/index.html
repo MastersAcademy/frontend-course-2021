@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            src="https://kit.fontawesome.com/a99b8e16e5.js"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="styles.css" />
+        <title>Simple chat app</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="chat">
+                <div class="chat__body" data-chat>
+                    <div class="dialogue" data-dialogue></div>
+                    <template data-chat-template>
+                        <span class="message" data-dialogue-message>
+                            <span class="message__text"
+                            data-message-text></span>
+                            <button class="message__button" data-messsage-button>
+                                <i class="message__icon fas fa-times" data-message-button-icon aria-hidden="true">
+                                </i></button>
+                            </span>
+                    </template>
+                </div>
+                <div class="chat__footer">
+                    <form class="message-form" data-message-form>
+                        <input
+                            type="text"
+                            class="message-form__input"
+                            placeholder="Type your message..."
+                            data-message-input
+                        />
+                        <button
+                            class="message-form__button"
+                            data-message-submit
+                        >
+                            <i
+                                class="
+                                    message-form__icon
+                                    fas
+                                    fa-paper-plane fa-2x
+                                "
+                            ></i>
+                        </button>
+                    </form>
+                </div>
+                <button class="chat__button button--clear" data-clear>
+                    Clear messages
+                </button>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
