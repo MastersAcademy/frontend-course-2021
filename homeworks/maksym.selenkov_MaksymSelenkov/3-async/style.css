@@ -74,12 +74,15 @@
 }
 
 .blog__content {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 430px);
+  gap: 40px 40px;
+  justify-content: center;
+  padding: 40px;
 }
 
 .post {
-  max-width: 330px;
+  max-width: 430px;
   width: 100%;
   background: #FFF;
   box-shadow: 0 1px 50px rgba(0, 0, 0, .06);
@@ -89,17 +92,18 @@
 }
 
 .post__title {
-  max-width: 330px;
+  max-width: 430px;
   font-family: Roboto, serif;
   font-style: normal;
   font-size: 24px;
   line-height: 28px;
   color: #0E0E0E;
+  padding: 10px 35px;
 }
 
 .post__title::first-letter {
   color: #FF726C;
-  font-size: 180%;
+  text-transform: uppercase;
 }
 
 .post__text {
@@ -107,5 +111,6 @@
   font-style: normal;
   font-size: 18px;
   line-height: 21px;
+  padding: 10px 35px;
 }
 
