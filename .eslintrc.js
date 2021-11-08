@@ -45,6 +45,7 @@ module.exports = {
         'import/extensions': 'off',
         'no-underscore-dangle': 'off',
         'class-methods-use-this': 'off',
+        'no-param-reassign': ['error', { props: false }],
 
         'no-jquery/no-other-methods': 'error',
         'no-jquery/no-other-utils': 'error',
