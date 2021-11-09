@@ -1,22 +1,23 @@
 <!doctype html>
-<html>
-<head>
-  <link rel="stylesheet" href="lib/style.css">
-</head>
-<body>
-<div class="row">
-  <div class="message-window" data-message-otput>
-    <template data-message-template>
-      <div class="message">
-        <span data-message-text></span>
-      </div>
-    </template>
-  </div>
-  <form class="message-input-block" data-message-form>
-    <input type="search" class="message-input-block-input" placeholder="enter your message" data-message-input>
-    <button class="addBtn" data-message-input-btn>Add</button>
-  </form>
-</div>
-<script src="lib/script.js"></script>
-</body>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="lib/style.css">
+        <title>2-dom</title>
+    </head>
+    <body>
+        <div class="row">
+            <div class="message-window" data-message-otput>
+                <template data-message-template>
+                    <div class="message">
+                        <span data-message-text></span>
+                    </div>
+                </template>
+            </div>
+            <form class="message-input-block" data-message-form>
+                <input type="search" class="message-input-block-input" placeholder="enter your message" data-message-input>
+                <button class="addBtn" data-message-input-btn type="submit">Add</button>
+            </form>
+        </div>
+        <script src="lib/script.js"></script>
+    </body>
 </html>
