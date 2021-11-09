@@ -65,6 +65,7 @@ body {
   overflow-y: auto;
   width: 100%;
   height: calc(100% - 72px);
+  max-height: calc(100% - 72px);
 }
 
 .blog__preloader {
