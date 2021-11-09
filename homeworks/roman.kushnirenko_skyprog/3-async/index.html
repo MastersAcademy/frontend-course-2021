@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <main class="blog">
+
+        <header class="header">
+            <div class="header__icon">BLOG</div>
+            <div class="header__inputs">
+                <select class="header__sort" data-sort name="sort">
+                    <option value="default" selected>Sort</option>
+                    <option value="a-z">A - z</option>
+                    <option value="z-a">z - A</option>
+                </select>
+                <input type="search" class="header__filter" data-header-filter placeholder="Filter" value="">
+            </div>
+        </header>
+
+        <section class="content" data-all-content>
+            <div class="loading" data-loading>
+                The page is loading...
+            </div>
+        </section>
+
+        <template data-content-template>
+            <article class="content__article" data-article>
+                <h1 class="article__title" data-article-title></h1>
+                    <p class="article__text" data-article-text></p>
+                <button class="article__removebtn" data-remove-btn><img class="removebtn__img" src="https://s3-alpha-sig.figma.com/img/fc79/dbc8/ca892b8f222e7476d95cb5283a69c996?Expires=1636934400&Signature=cTVmUN4AgRrht4QMeE-vSae86ZGZ4~ylPwKiS~YrYSI~~3VFdBMS8EUK3pcSjPDh70fChEc2cJq~65rUNC5hL0tffu0K8WhBRtzj3lwa-ZAgvJcVQrntK7JUplKsGyPxf0ES4fs3QUCJI2LUy4pc3h6dzB2qDyr6qjIGUfJMZB6JQMLDXivjcEbZqjFdAcMosKV4KRb4ByJ7zRLy-TLGviD5tquK1JsgUtUXd6hbAn5Urdk~DBogfHbfs7X4V4v7YO3ayvZ8FpJGxAin48UhWmj1iuNzywhQXfDEzeDqCBqmsvZMFq4KFwjAsuh-hEX-yHKZikh3XcO2BQlaqcoGEA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"/></button>
+            </article>
+        </template>
+
+    </main>
+    <script src="js.js"></script>
+</body>
+
+</html>
