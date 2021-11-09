@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer_shell {
+  width: 350px;
+  height: 500px;
+  border: 2px solid #000;
+}
+
+.main__form_manipulation_calendar {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.name_data {
+  font-size: 21px;
+  margin-bottom: 15px;
+}
+
+.calendar_for_take_data {
+  margin-bottom: 15px;
+}
+
+.btn__add_event {
+  width: 200px;
+  height: 30px;
+  margin-bottom: 15px;
+}
+
+.out-information {
+  height: 35px;
+}
