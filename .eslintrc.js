@@ -122,6 +122,7 @@ module.exports = {
                 '@html-eslint/require-button-type': 'error',
                 '@html-eslint/no-multiple-empty-lines': ['error', { max: 1 }],
                 '@html-eslint/require-li-container': 'off', // don't work with li in template tag
+                '@html-eslint/element-newline': 'error',
             },
         },
     ],
