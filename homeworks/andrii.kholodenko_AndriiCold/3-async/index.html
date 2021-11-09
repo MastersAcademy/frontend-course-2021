@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="page_body">
-<div class="load" data-load></div>
-<div class="load_content" data-page-body-wrapper>
-    <header CLASS="main_header">
-        <img src="img/logo.svg" alt="blog logo" class="logo_img">
-        <div class="main_header_bar">
-            <div class="main_form">
-                <select form name="sort" class="main_sorting" data-sort>
-                    <option value="Sort">Sort</option>
-                    <option value="A-z">A-z</option>
-                    <option value="Z-a">Z-a</option>
-                </select>
-                <input type="text" class="main_filter" placeholder="Filter" data-filter>
-            </div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Blog</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body class="page_body">
+        <div class="load" data-load></div>
+        <div class="load_content" data-page-body-wrapper>
+            <header CLASS="main_header">
+                <img src="img/logo.svg" alt="blog logo" class="logo_img">
+                <div class="main_header_bar">
+                    <div class="main_form">
+                        <select form name="sort" class="main_sorting" data-sort>
+                            <option value="Sort">Sort</option>
+                            <option value="A-z">A-z</option>
+                            <option value="Z-a">Z-a</option>
+                        </select>
+                        <input type="text" class="main_filter" placeholder="Filter" data-filter>
+                    </div>
+                </div>
+            </header>
+            <main class="main_content" data-main-content>
+                <template data-template>
+                    <div class="content_wrapper">
+                        <div class="content_wrapper_text">
+                            <h2 class="title" data-title></h2>
+                            <p class="content" data-text></p>
+                        </div>
+                        <div class="delete_wrapper">
+                            <button class="delete" type="button">
+                                <img src="img/delete.png" alt="blog delete">
+                            </button>
+                        </div>
+                    </div>
+                </template>
+            </main>
         </div>
-    </header>
-    <main class="main_content"  data-main-content>
-            <template data-template>
-        <div class="content_wrapper">
-            <div class="content_wrapper_text">
-                <h2 class="title" data-title></h2>
-                <p class="content" data-text></p>
-            </div>
-            <div class="delete_wrapper">
-                <button class="delete">
-                    <img src="img/delete.png" alt="blog delete">
-                </button>
-            </div>
-        </div>
-            </template>
-    </main>
-</div>
-<script src="script/script.js"></script>
-</body>
+        <script src="script/script.js"></script>
+    </body>
 </html>
