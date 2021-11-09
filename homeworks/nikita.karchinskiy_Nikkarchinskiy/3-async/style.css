@@ -12,7 +12,7 @@ body {
 .main-wrapper {
   width: 70rem;
   min-height: 44rem;
-  background-color: rgb(238, 237, 237);
+  background-color: #EEEDED;
   border-radius: 20px;
   overflow-y: auto;
 }
@@ -27,39 +27,50 @@ body {
   justify-content: space-between;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: #FFF;
   margin-bottom: 30px;
   box-sizing: border-box;
   padding: 20px;
 }
 
 .select-wapper {
-  border: 2px solid rgb(255, 164, 90);
+  border: 2px solid #FFA45A;
   background-color: transparent;
   border-radius: 10px;
+  cursor: pointer;
+  padding: 4px;
 }
 
 .select-wapper:focus-visible {
   outline: none;
-  border: 2px solid rgb(255, 118, 5);
+  border: 2px solid #FF7605;
 }
 
-.select-wapper > option {
-  border: 2px solid rgb(255, 118, 5);
+.filte-sort {
+  cursor: pointer;
+  background-color: #FF7605;
 }
 
 .filter-by-text {
-  border: 2px solid rgb(255, 164, 90);
+  padding: 4px;
+  border: 2px solid #FFA45A;
   border-radius: 10px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.filter-by-text:hover {
+  background-color: #FCB377;
 }
 
 .filter-by-text:focus-visible {
   outline: none;
-  border: 2px solid rgb(255, 118, 5);
+  border: 2px solid #FF7605;
+  background-color: #FF9C4B;
 }
 
 .header-title::first-letter {
-  color: rgb(255, 0, 0);
+  color: #F00;
 }
 
 .list-wrapper {
@@ -82,7 +93,7 @@ body {
   width: 30rem;
   height: 20rem;
   padding: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: #FFF;
   border-radius: 10px;
   margin-bottom: 15px;
   word-break: break-all;
@@ -96,5 +107,24 @@ body {
 }
 
 .tab-title::first-letter {
-  color: rgb(255, 0, 0);
+  color: #F00;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  transition: .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 75px;
+  height: 75px;
+  border-radius: 10px solid rgb(13, 71, 161);
 }

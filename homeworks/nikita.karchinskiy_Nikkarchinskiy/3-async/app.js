@@ -1,4 +1,4 @@
-const ulList = document.querySelector('[data-list]');
+const ulListEl = document.querySelector('[data-list]');
 const selectFiltr = document.querySelector('[data-filter-wrapper]');
 const inputFiltr = document.querySelector('[data-filtr-text]');
 const postArr = [];
@@ -6,7 +6,7 @@ let timeOut;
 
 function createMessage(dataTitle, dataBody) {
     const li = `<li class="tab"><h2 class="tab-title">${dataTitle}</h2><p class="tab-text">${dataBody}</p></li>`;
-    ulList.insertAdjacentHTML('beforeend', li);
+    ulListEl.insertAdjacentHTML('beforeend', li);
 }
 
 async function getPosts() {
@@ -29,17 +29,17 @@ inputFiltr.addEventListener('input', (event) => {
             return lowerPostTitle.includes(searchValue);
         });
         if (resultSearch !== []) {
-            ulList.innerHTML = '';
+            ulListEl.innerHTML = '';
             resultSearch.forEach((current) => createMessage(current.title, current.body));
         } else {
-            ulList.innerHTML = '';
-            ulList.innerHTML = '<li class="tab-error"><p class="tab-error-text">No matches found</p></li>';
+            ulListEl.innerHTML = '';
+            ulListEl.innerHTML = '<li class="tab-error"><p class="tab-error-text">No matches found</p></li>';
         }
     }, 750);
 });
 
 selectFiltr.addEventListener('change', (event) => {
-    ulList.innerHTML = '';
+    ulListEl.innerHTML = '';
     if (event.target.value === 'From A to Z') {
         const postArrAlf = postArr.sort((a, b) => a.title.toLowerCase()
             .localeCompare(b.title.toLowerCase()));
