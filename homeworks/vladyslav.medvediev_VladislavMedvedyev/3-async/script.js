@@ -89,7 +89,7 @@
 //     }
 // });
 const sortEl = document.querySelector('[data-sort]');
-const prom = new Promise((resolve, reject) => {
+new Promise((resolve) => {
     setTimeout(async () => {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts');
         const data = await response.json();
@@ -113,13 +113,13 @@ const prom = new Promise((resolve, reject) => {
         switch (sortMethod) {
             case ('default'):
             default:
-                // console.log(posts);
+                console.log(posts);
                 break;
             case ('a-z'):
                 posts.sort((a, b) => {
-                    const titleA = a.title.toUpperCase();
+                    const titleA = a.title.toUpperCase(); // Можно удалить переменные?
                     const titleB = b.title.toUpperCase();
-                    if (titleA < titleB) {
+                    if (titleA < titleB) { // Просто подставить a.title < b.title
                         return -1;
                     }
                     if (titleA > titleB) {
@@ -127,7 +127,7 @@ const prom = new Promise((resolve, reject) => {
                     }
                     return 0;
                 });
-                // console.log(posts);
+                console.log(posts);
                 break;
             case ('z-a'):
                 posts.sort((a, b) => {
@@ -141,7 +141,7 @@ const prom = new Promise((resolve, reject) => {
                     }
                     return 0;
                 });
-                // console.log(posts);
+                console.log(posts);
                 break;
         }
         const article1TitleEl = document.querySelector('[data-title-1]');
@@ -181,15 +181,7 @@ const prom = new Promise((resolve, reject) => {
 }).finally(() => {
     const preloader = document.querySelector('[data-preloader]');
     preloader.classList.add('hide-preloader');
-    setInterval(function() {
-          preloader.classList.add('preloader-hidden');
+    setInterval(() => {
+        preloader.classList.add('preloader-hidden');
     }, 990);
 });
-
-// window.onload = function () {
-//     const preloader = document.querySelector('[data-preloader]');
-//     preloader.classList.add('hide-preloader');
-//     setInterval(function() {
-//           preloader.classList.add('preloader-hidden');
-//     }, 990);
-// };
