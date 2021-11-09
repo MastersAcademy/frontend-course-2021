@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-async</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loading">
+        <img class="loading-image" src="loading.gif" alt="Loading..." />
+    </div>
+    <div class="wrapper">
+        <main class="blog">
+            <header class="blog__header">
+                <h1 class="blog__header-title">Blog</h1>
+                <select class="blog__header-sort" data-sort>
+                        <option value="A-Z">A-Z</option>
+                        <option value="Z-A">Z-A</option>
+                </select>
+                <input type="text" class="blog__header-filter" data-filter>
+            </header>
+            <section class="blog__content" data-content>
+                <template data-post>
+                        <div class="blog__content-post post" >
+                        <h2 class="post__title" data-title></h2>
+                        <p class="post__text" data-text></p>
+                        </div>
+                </template>
+            </section>
+        </main>
+    </div>
+<script defer src="app.js"></script>
+</body>
+</html>
