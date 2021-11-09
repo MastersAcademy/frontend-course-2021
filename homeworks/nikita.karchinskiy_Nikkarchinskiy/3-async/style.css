@@ -122,9 +122,3 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.loader {
-  width: 75px;
-  height: 75px;
-  border-radius: 10px solid rgb(13, 71, 161);
-}
