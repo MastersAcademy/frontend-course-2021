@@ -1,0 +1,44 @@
+.wrapper {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 250px 400px 250px;
+  grid-template-rows: 150px 500px 80px;
+  grid-template-areas: "header header header"
+    "sidel main sider"
+    "footer footer footer";
+}
+
+.header {
+  grid-area: header;
+  background: rgb(197, 119, 29);
+  padding: 30px;
+  text-align: center;
+}
+
+.sidel {
+  grid-area: sidel;
+  background: rgb(78, 51, 21);
+  padding: 30px;
+  text-align: center;
+}
+
+.main {
+  grid-area: main;
+  background: rgb(97, 80, 61);
+  padding: 30px;
+  text-align: center;
+}
+
+.sider {
+  grid-area: sider;
+  background: rgb(161, 146, 128);
+  padding: 30px;
+  text-align: center;
+}
+
+.footer {
+  grid-area: footer;
+  background: rgb(167, 128, 83);
+  padding: 30px;
+  text-align: center;
+}

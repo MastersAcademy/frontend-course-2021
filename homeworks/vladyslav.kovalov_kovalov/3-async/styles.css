@@ -53,6 +53,16 @@ body {
 
 .button {
   border: 0;
+  cursor: pointer;
+}
+
+.button__icon {
+  margin-left: .25rem;
+  color: #A4B0BE;
+}
+
+.button:hover .button__icon {
+  color: #333;
 }
 
 .button--sort {
@@ -64,12 +74,6 @@ body {
 .button--delete {
   background-color: transparent;
 }
-
-.button__icon {
-  margin-left: .25rem;
-  color: #A4B0BE;
-}
-
 
 .posts-section {
   padding: 1rem;
@@ -126,10 +130,6 @@ body {
 
 .post__button {
   margin: 1rem;
-}
-
-.post__button:hover .button__icon {
-  color: #333;
 }
 
 .notificaton-message__body {

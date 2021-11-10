@@ -7,15 +7,11 @@ export class Post {
         this.body = body;
     }
 
-    create() {
+    render() {
         const element = this.templateEl.content.cloneNode(true);
         element.querySelector('[data-post-title]').textContent = this.capitalizeString(this.title);
         element.querySelector('[data-post-body]').textContent = this.capitalizeString(this.body);
         element.querySelector('[data-post]').dataset.id = this.id;
-        return element;
-    }
-
-    add(element) {
         this.containerEl.append(element);
     }
 
