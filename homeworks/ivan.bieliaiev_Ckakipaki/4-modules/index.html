@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Modules</title>
+</head>
+<body>
+    <section class="main">
+        <div class="main__left">
+            <h1 class="left__title">
+                Date
+            </h1>
+            <input type="text" data-input-date class="left__input">
+            <button type="submit" data-mondays class="left__button">
+                Get month mondays
+            </button>
+            <button type="submit" data-is-long class="left__button">
+                Is month long?
+            </button>
+            <button type="submit" data-shortest-week class="left__button">
+                Days in shortest week
+            </button>
+            <button type="submit" data-full-weeks class="left__button">
+                Full weeks in month
+            </button>
+        </div>
+        <div class="main__right">
+            <h1 class="right__title">
+                Current time
+            </h1>
+            <div class="right__time"></div>
+            <select data-time-zone size="1" class="right__timezones">
+                <option data-zone="kiev" selected value="kiev">sort</option>
+                <option data-sort="tokyo" value="tokyo">A to Z</option>
+                <option data-sort="london" value="london">Z to A</option>
+                <option data-sort="new-York" value="new-York">Z to A</option>
+            </select>
+        </div>
+    </section>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
