@@ -1,25 +1,20 @@
+import { HTTP } from './http.js';
 import { Post } from './post.js';
 import { Notification } from './notification.js';
 import { Loader } from './loader.js';
 
 class App {
-    constructor(url) {
-        this.url = url;
+    constructor(http) {
+        this.http = http;
         this.postsContainerEl = document.querySelector('[data-posts-section]');
     }
 
-    async getPosts() {
-        const response = await fetch(`${this.url}?_start=0&_end=30`);
-        return response.json();
+    getPosts() {
+        return this.http.getPosts();
     }
 
-    async deletePost(postId) {
-        const path = `${this.url}/${postId}`;
-        const response = await fetch(path, {
-            method: 'DELETE',
-        });
-        const posts = await response.json();
-        return posts;
+    deletePost() {
+        return this.http.deletePost();
     }
 
     removePost(event) {
@@ -44,46 +39,27 @@ class App {
 
     filterPosts(event) {
         const text = event.toLowerCase();
-        [...this.postsContainerEl.children].forEach((post) => {
-            const element = post.querySelector('[data-post-title]').textContent;
-            const currentPost = post;
-            if (element.toLowerCase().indexOf(text) !== -1) {
-                currentPost.classList.remove('display-none');
-            } else {
-                currentPost.classList.add('display-none');
-            }
+        [...this.postsContainerEl.children].forEach((postEl) => {
+            const title = postEl.querySelector('[data-post-title]').textContent;
+            const isVisible = title.toLowerCase().includes(text);
+            postEl.classList.toggle('display-none', !isVisible);
         });
     }
 }
 
 const url = 'https://jsonplaceholder.typicode.com/posts';
-const app = new App(url);
+const http = new HTTP(url);
+const app = new App(http);
 const loader = new Loader();
 const notification = new Notification();
 
-function initLoader() {
-    const loaderElement = loader.create();
-    loader.add(loaderElement);
-    loader.show();
-}
-
-function initNotification(textMessage) {
-    const notificationElement = notification.create(textMessage);
-    notification.add(notificationElement);
-    notification.show();
-    setTimeout(() => {
-        notification.remove();
-    }, 1500);
-}
-
 function initContentLoad() {
-    initLoader();
+    loader.show();
     setTimeout(() => {
         app.getPosts().then((data) => {
             data.forEach((postData) => {
                 const post = new Post(postData);
-                const postElement = post.create();
-                post.add(postElement);
+                post.render();
             });
         }).catch((error) => console.log(error)).finally(loader.remove());
     }, 3000);
@@ -96,22 +72,21 @@ document.querySelector('[data-button-sort]').addEventListener('click', () => {
 });
 
 document.querySelector('[data-post-filter]').addEventListener('keyup', (event) => {
+    event.preventDefault();
     const input = document.querySelector('[data-post-filter-control]');
     app.filterPosts(input.value);
-    event.preventDefault();
 });
 
 document.querySelector('[data-posts-section]').addEventListener('click', (event) => {
     app.removePost(event);
 
     if (event.target.dataset.deleteButtonIcon === '') {
-        initNotification('You have deleted the post!');
+        notification.render('You have deleted the post!');
 
         const postId = event.target.closest('[data-post]').dataset;
         app.deletePost(postId)
-            .then()
             .catch(() => {
-                initNotification('Oops, something went wrong!');
+                notification.render('Oops, something went wrong!');
             });
     }
 });

@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>2-dom</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<ul class="main-box" data-main-box >
-    <li class="main-box_msg"><span class="close">&#215;</span>Hello</li>
-    <li class="main-box_msg"><span class="close">&#215;</span>Is anybody here?</li>
-</ul>
-<form class="new-msg-form" action="#">
-    <input id="msg-text" class="new-msg-form_text" type="text" name="msg-text" placeholder="Type something here..."
-           data-send-txt>
-    <label for="msg-text" hidden>Type new message here</label>
-    <button class="new-msg-form_btn" data-send-btn>send</button>
-</form>
-<script src="main.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>2-dom</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <ul class="main-box" data-main-box>
+            <li class="main-box_msg">
+                <span class="close">&#215;</span>Hello
+            </li>
+            <li class="main-box_msg">
+                <span class="close">&#215;</span>Is anybody here?
+            </li>
+        </ul>
+        <form class="new-msg-form" action="#">
+            <input id="msg-text" class="new-msg-form_text" type="text" name="msg-text" placeholder="Type something here..."
+                data-send-txt>
+            <label for="msg-text" hidden>Type new message here</label>
+            <button class="new-msg-form_btn" data-send-btn type="button">send</button>
+        </form>
+        <script src="main.js"></script>
+    </body>
 </html>
