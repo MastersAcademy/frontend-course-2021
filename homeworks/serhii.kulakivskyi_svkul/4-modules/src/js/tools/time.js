@@ -73,3 +73,17 @@ export function fullWeeksNumberInMonth(date) {
 
     return fullWeeks.length;
 }
+
+/**
+* Task *
+* @param timeZone - string of time zone. Example: "Europe/London"
+* @returns {string} string of current time
+*/
+export function getCurrentTime(timeZone) {
+    return (new Date()).toLocaleString('en-En', {
+        hour: '2-digit',
+        hour12: false,
+        minute: '2-digit',
+        timeZone: timeZone === 'current' ? Intl.DateTimeFormat().resolvedOptions().timeZone : timeZone,
+    });
+}
