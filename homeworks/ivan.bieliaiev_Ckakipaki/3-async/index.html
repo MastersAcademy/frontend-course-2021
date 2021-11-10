@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-    <section class="main" data-main>
-        <header class="main__header">
-            <h1 class="header__logo">blog</h1>
-            <div class="header__rightSide">
-                <form action="sort" class="rightSide__sort">
-                    <select data-sorting size="1" class="sort__section">
-                        <option data-sort='default' selected value="sort">sort</option>
-                        <option data-sort='AtoZ' value="AtoZ">A to Z</option>
-                        <option data-sort='ZtoA' value="ZtoA">Z to A</option>
-                    </select>
-                </form>
-                <input data-filter type="text" name="filter" class="rightSide__filter" placeholder="filter">
-            </div>
-        </header>
-        <section class="main__blog" data-blog>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <section class="main" data-main>
+            <header class="main__header">
+                <h1 class="header__logo">blog</h1>
+                <div class="header__rightSide">
+                    <form action="sort" class="rightSide__sort">
+                        <select data-sorting size="1" class="sort__section">
+                            <option data-sort="default" selected value="sort">sort</option>
+                            <option data-sort="AtoZ" value="AtoZ">A to Z</option>
+                            <option data-sort="ZtoA" value="ZtoA">Z to A</option>
+                        </select>
+                    </form>
+                    <input data-filter type="text" name="filter" class="rightSide__filter" placeholder="filter">
+                </div>
+            </header>
+            <section class="main__blog" data-blog>
+            </section>
         </section>
-    </section>
-    <script src="app.js"></script>
-</body>
+        <script src="app.js"></script>
+    </body>
 </html>
