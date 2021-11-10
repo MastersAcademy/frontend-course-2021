@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Homework 3-async</title>
+    </head>
+
+    <body>
+        <header class="header-panel">
+            <h1 class="header-panel__title">Blog</h1>
+            <select class="header-panel__sort sort" article-sort-option>
+                <option class="sort__element" value="sort-default" selected>Sort</option>
+                <option class="sort__element" value="sort-a-z">From A to Z</option>
+                <option class="sort__element" value="sort-z-a">From Z to A</option>
+            </select>
+            <form action="#" method="post" class="header-panel__filter filter">
+                <input type="text" class="filter__input" placeholder="Filter" required article-filter-input>
+            </form>
+        </header>
+        <main class="articles-area" articles-area>
+        </main>
+        <template article-template>
+            <article class="articles-area__article article">
+                <h2 class="article__title" article__title></h2>
+                <p class="article__content" article__content></p>
+            </article>
+        </template>
+        <aside class="loading-window" loading-window>
+            <p>Articles are loading...</p>
+        </aside>
+        <script src="script.js"></script>
+    </body>
+
+</html>
