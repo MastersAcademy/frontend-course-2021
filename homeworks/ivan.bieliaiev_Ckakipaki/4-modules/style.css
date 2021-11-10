@@ -53,6 +53,12 @@ body {
   background: rgb(98, 227, 250);
 }
 
+.left__result {
+  display: none;
+  font-size: inherit;
+  margin: 0 0 20px 20px;
+}
+
 .main__right {
   display: flex;
   flex-direction: column;
@@ -75,3 +81,4 @@ body {
 .right__timezones {
   font-size: 22px;
 }
+
