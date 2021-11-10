@@ -1,32 +1,38 @@
-/**
- * @param date - date string of any supported format
- * @returns array of Friday dates in a month the date from
- *
-export function getMondaysOfMonth(date) {
-    return [1, 8, 15, 22, 29];
-}
+// export function getMondaysOfMonth(date) {
+//     const inputData = date.value;
+//     const inputDataArray = inputData.split('-');
+//     const year = inputDataArray[0];
+//     const month = inputDataArray[1];
+//     const day = inputDataArray[2];
+//     const mondayInMonth = new Date(year, month, day);
+//     const mondays = [];
+//     mondayInMonth.setDate(1);
+//     while (mondayInMonth.getDay() !== 1) {
+//         mondayInMonth.setDate(mondayInMonth.getDay() + 1);
+//     }
+//     while (mondayInMonth.getMonth() === month) {
+//         mondays.push(new Date(mondayInMonth.getTime()));
+//         mondayInMonth.setDate(mondayInMonth.getDate() + 7);
+//     }
+//     return mondays;
+// }
 
-/**
- * @param date - date string of any supported format
- * @returns {boolean} true if month of a date has 31 day, otherwise returns false
- *
 export function isMonthLong(date) {
-    return false;
+    const inputData = date.value;
+    const inputDataArray = inputData.split('-');
+    const year = inputDataArray[0];
+    const month = inputDataArray[1];
+    const lengthMonth = new Date(year, month, 0);
+    const longMonth = lengthMonth.getDate();
+    if (longMonth === 31) {
+        return true;
+    } return false;
 }
 
-/**
- * @param date - date string of any supported format
- * @returns {number} number of days in a shortest week of the date month
- *
-export function shortestWeekDaysNumber(date) {
-    return 3;
-}
+// export function shortestWeekDaysNumber(date) {
+//     return 3;
+// }
 
-/**
- * @param date - date string of any supported format
- * @returns {number} number of full weeks in the date month. To be full, week should start
- * and end in the same month
- *
-export function fullWeeksNumberInMonth(date) {
-    return 3;
-} */
+// export function fullWeeksNumberInMonth(date) {
+//     return 3;
+// }
