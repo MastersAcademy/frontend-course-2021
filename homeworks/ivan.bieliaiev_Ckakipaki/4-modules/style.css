@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.main {
+  font-size: 28px;
+  border: 2px solid rgba(1, 1, 1, .6);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.main__left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+
+.left__title {
+  margin: 0 0 20px;
+}
+
+.left__input {
+  width: 300px;
+  font-size: inherit;
+  padding: 2px;
+  margin: 0 0 20px;
+}
+
+.left__input:focus {
+  background: rgba(111, 173, 168, .6);
+}
+
+.left__button {
+  width: 300px;
+  margin: 0 0 20px;
+  padding: 5px;
+  font-size: 25px;
+  transition: all .5s linear;
+}
+
+.left__button:active {
+  background: rgb(98, 227, 250);
+}
+
+.main__right {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 30%;
+  border: 1px solid rgb(1, 1, 1);
+  border-radius: 10px;
+  height: 300px;
+  margin: 30px;
+}
+
+.right__title {
+  margin: 0 0 20px;
+}
+
+.right__time {
+  margin: 0 0 20px;
+}
+
+.right__timezones {
+  font-size: 22px;
+}
