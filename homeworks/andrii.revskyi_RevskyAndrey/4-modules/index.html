@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>4-modules</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <section class="app">
+            <form class="form" data-form onsubmit="return false">
+                <label class="label">Date:</label>
+                <input value="2021-11-11" data-input class="data-input" placeholder="Enter Date" type="date">
+                <br>
+                <button type="button" class="btn" data-btn-monday>Get month mondays</button>
+                <p class="text">
+                    Mondays: <span data-text-monday></span>
+                </p>
+
+                <button type="button" class="btn" data-btn-month>Is month long</button>
+                <p class="text">
+                    This month has 31 days: <span data-text-month> </span>
+                </p>
+
+                <button type="button" class="btn" data-btn-week>Days of shortest week in month</button>
+                <p class="text">
+                    The shortest week in this month has: <span data-text-week></span>
+                </p>
+
+                <button type="button" class="btn" data-btn-full>Full week in month</button>
+                <p class="text">
+                    This month has <span data-text-full> </span> full weeks
+                </p>
+            </form>
+
+            <div class="time-box">
+                <p class="time" data-time>00:00:00</p>
+                <select class="select" data-select-timezone>
+                    <option value="Current" selected> Current time</option>
+                    <option value="Tokyo"> Tokyo</option>
+                    <option value="London"> London</option>
+                    <option value="NewYork"> New York</option>
+                </select>
+            </div>
+        </section>
+        <script type="module" src="js/index.js"></script>
+    </body>
+</html>
