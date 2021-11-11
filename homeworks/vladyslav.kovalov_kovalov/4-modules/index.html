@@ -22,10 +22,14 @@
             <section class="card">
                 <h2 class="card__title">Date</h2>
                 <form class="card__form">
-                    <input type="text" class="card__control" date-picker>
+                    <input type="text" class="card__control" min="" max="" date-picker>
                 </form>
             </section>
-        </div>a
+            <section class="card" data-card="getFridaysOfMonth">
+                <div class="card__results" data-result>&nbsp;</div>
+                <button type="button" class="card__button" data-button>Fridays</button>
+            </section>
+        </div>
         <script type="module" defer src="styles.css"></script>
     </body>
 </html>
