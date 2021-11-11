@@ -1,21 +1,23 @@
-// export function getMondaysOfMonth(date) {
-//     const inputData = date.value;
-//     const inputDataArray = inputData.split('-');
-//     const year = inputDataArray[0];
-//     const month = inputDataArray[1];
-//     const day = inputDataArray[2];
-//     const mondayInMonth = new Date(year, month, day);
-//     const mondays = [];
-//     mondayInMonth.setDate(1);
-//     while (mondayInMonth.getDay() !== 1) {
-//         mondayInMonth.setDate(mondayInMonth.getDay() + 1);
-//     }
-//     while (mondayInMonth.getMonth() === month) {
-//         mondays.push(new Date(mondayInMonth.getTime()));
-//         mondayInMonth.setDate(mondayInMonth.getDate() + 7);
-//     }
-//     return mondays;
-// }
+export function getMondaysOfMonth(date) {
+    const inputData = date.value;
+    const inputDataArray = inputData.split('-');
+    const year = inputDataArray[0];
+    const month = +inputDataArray[1];
+    const day = inputDataArray[2];
+    const mondayInMonth = new Date(year, month - 1, day);
+    const mondays = [];
+    while (mondayInMonth.getDay() !== 1) {
+        mondayInMonth.setDate(mondayInMonth.getDay() + 1);
+    }
+    console.log(new Date(mondayInMonth.getTime()));
+    while (mondayInMonth.getMonth() + 1 === month) {
+        const dateNum = new Date(mondayInMonth.getTime()).getDate();
+        console.log(dateNum);
+        mondays.push(new Date(mondayInMonth.getTime()).getDate());
+        mondayInMonth.setDate(mondayInMonth.getDate() + 7);
+    }
+    return mondays;
+}
 
 export function isMonthLong(date) {
     const inputData = date.value;
