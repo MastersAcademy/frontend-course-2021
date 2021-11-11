@@ -13,3 +13,12 @@ export function getMondaysOfMonth(date) {
     }
     return res;
 }
+/**
+ * @param date - date string of any supported format
+ * @returns {boolean} true if month of a date has 31 day, otherwise returns false
+ */
+export function isMonthLong(date) {
+    const dateObject = new Date(date);
+    dateObject.setDate(31);
+    return dateObject.getDate() === 31;
+}
