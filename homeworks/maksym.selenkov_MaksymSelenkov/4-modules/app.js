@@ -2,11 +2,11 @@ import {
     getMondaysOfMonth, isMonthLong, fullWeeksNumberInMonth, shortestWeekDaysNumber,
 } from './time.js';
 
-const userDate = document.querySelector('[data-input]').value;
+const userDate = new Date(document.querySelector('[data-input]').value);
 
 const mondaysBtnEl = document.querySelector('[data-mondays]');
 mondaysBtnEl.addEventListener('click', () => {
-    getMondaysOfMonth(userDate);
+    mondaysBtnEl.after(getMondaysOfMonth(userDate));
 });
 
 const longMonthEl = document.querySelector('[data-month]');
