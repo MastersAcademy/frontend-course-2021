@@ -48,3 +48,20 @@ export function shortestWeekDaysNumber(date) {
     }
     return Math.min(firstWeekLength, lastWeekLength);
 }
+/**
+ * @param date - date string of any supported format
+ * @returns {number} of full weeks in the date month.
+ */
+export function fullWeeksNumberInMonth(date) {
+    const dateObject = new Date(date);
+    const dateYear = dateObject.getFullYear();
+    const dateMonth = dateObject.getMonth();
+    if (isMonthLong(date)) {
+        return Math.trunc((31 - shortestWeekDaysNumber(date)) / 7);
+    } if (dateMonth !== 1) {
+        return Math.trunc((30 - shortestWeekDaysNumber(date)) / 7);
+    } if (((dateYear % 4 === 0) && (dateYear % 100 !== 0)) || (dateYear % 400 === 0)) {
+        return Math.trunc((29 - shortestWeekDaysNumber(date)) / 7);
+    }
+    return Math.trunc((28 - shortestWeekDaysNumber(date)) / 7);
+}
