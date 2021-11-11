@@ -8,8 +8,24 @@
     </head>
     <body>
         <div class="page-container" data-page>
-
-        </div>
+            <section class="card">
+                <form class="card__form">
+                    <input type="text" class="card__control card__control--clock" value="" disabled data-clock>
+                    <select name="" id="" class="card__control card__timezone-selection" data-timezone>
+                        <option value="EET" class="card__timezone" selected>Current</option>
+                        <option value="JST" class="card__timezone" selected>Tokyo</option>
+                        <option value="GMT" class="card__timezone" selected>London</option>
+                        <option value="EST" class="card__timezone" selected>New York</option>
+                    </select>
+                </form>
+            </section>
+            <section class="card">
+                <h2 class="card__title">Date</h2>
+                <form class="card__form">
+                    <input type="text" class="card__control" date-picker>
+                </form>
+            </section>
+        </div>a
         <script type="module" defer src="styles.css"></script>
     </body>
 </html>
