@@ -31,9 +31,28 @@ export function isMonthLong(date) {
     } return false;
 }
 
-// export function shortestWeekDaysNumber(date) {
-//     return 3;
-// }
+export function shortestWeekDaysNumber(date) {
+    const inputData = date.value;
+    const inputDataArray = inputData.split('-');
+    const year = inputDataArray[0];
+    const month = inputDataArray[1];
+    const firstDayMonth = new Date(year, month - 1, 1);
+    const lastDayMonth = new Date(year, month, 0);
+    console.log(firstDayMonth);
+    let firstWeek = 0;
+    let lastWeek = 1;
+    while (firstDayMonth.getDay() !== 1) {
+        firstDayMonth.setDate(firstDayMonth.getDate() + 1);
+        firstWeek++;
+    }
+    while (lastDayMonth.getDay() !== 1) {
+        lastDayMonth.setDate(lastDayMonth.getDate() - 1);
+        lastWeek++;
+    }
+    if (firstWeek < lastWeek) {
+        return firstWeek;
+    } return lastWeek;
+}
 
 // export function fullWeeksNumberInMonth(date) {
 //     return 3;
