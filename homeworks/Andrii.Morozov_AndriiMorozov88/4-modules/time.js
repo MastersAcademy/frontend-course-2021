@@ -1,13 +1,13 @@
 const calendar = document.querySelector('[data-date]');
 export function receiveDayDates() {
-    let monthDays = document.querySelector('[data-day-dates]');
+    const monthDays = document.querySelector('[data-day-dates]');
     monthDays.style.display = 'flex';
     monthDays.style.height = '30px';
-    let long = [0, 2, 4, 6, 7, 9, 11];
-    let short = [3, 5, 8, 10];
+    const long = [0, 2, 4, 6, 7, 9, 11];
+    const short = [3, 5, 8, 10];
     calendar.addEventListener('change', () => {
         monthDays.innerText = '';
-        let date  = new Date(calendar.value);
+        const date = new Date(calendar.value);
         let weekDay = date.getDay();
         let dateOnly = date.getDate();
         let monthOnly = date.getMonth();
@@ -33,9 +33,9 @@ export function receiveDayDates() {
     });
 }
 export function longMonth() {
-    let longMonthOutput = document.querySelector('[data-long-month]');
+    const longMonthOutput = document.querySelector('[data-long-month]');
     longMonthOutput.style.height = '30px';
-    let long = [0, 2, 4, 6, 7, 9, 11];
+    const long = [0, 2, 4, 6, 7, 9, 11];
     let btn = document.querySelector('[data-long]');
     btn.addEventListener('click', () => {
         let date  = new Date(calendar.value);
@@ -45,8 +45,8 @@ export function longMonth() {
     });
 }
 export function shortestWeek () {
-    let long = [0, 2, 4, 6, 7, 9, 11];
-    let short = [3, 5, 8, 10];
+    const long = [0, 2, 4, 6, 7, 9, 11];
+    const short = [3, 5, 8, 10];
     let buttonShortWeek = document.querySelector('[data-btn-short-week]');
     let resultShortWeek = document.querySelector('[data-short-week]');
     resultShortWeek.style.height = '30px';

@@ -1,4 +1,5 @@
-import {receiveDayDates, longMonth, shortestWeek, fullWeek} from './time.js';
+import { receiveDayDates, longMonth, shortestWeek, fullWeek } from './time.js';
+
 receiveDayDates();
 longMonth();
 shortestWeek();
