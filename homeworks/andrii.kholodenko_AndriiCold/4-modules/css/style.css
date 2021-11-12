@@ -1,0 +1,21 @@
+.page-body {
+  max-width: 700px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  height: 100%;
+  font-size: 28px;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+.button {
+  font-size: inherit;
+}
+
+.input_date {
+  font-size: inherit;
+}
