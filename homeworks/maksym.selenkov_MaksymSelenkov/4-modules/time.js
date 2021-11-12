@@ -23,10 +23,17 @@ export function isMonthLong(date) {
     return result;
 }
 
-export function shortestWeekDaysNumber(date = new Date()) {
-    return date;
+export function shortestWeekDaysNumber(date) {
+    const firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+    const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
+    console.log(lastDay);
+    const firstWeek = 7 - firstDay;
+    const lastWeek = lastDay + 1;
+    const result = document.createElement('div');
+    result.textContent = firstWeek > lastWeek ? lastWeek : firstWeek;
+    return result;
 }
 
-export function fullWeeksNumberInMonth(date = new Date()) {
+export function fullWeeksNumberInMonth(date) {
     return date;
 }
