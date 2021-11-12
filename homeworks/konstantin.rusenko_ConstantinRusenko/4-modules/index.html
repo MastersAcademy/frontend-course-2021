@@ -8,13 +8,29 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="controls">
-        <input type="date" class="control__input" data-input>
-        <button class="" data->1</button>
-        <button class="" data->2</button>
-        <button class="" data->3</button>
-        <button class="" data->4</button>
-    </div>
+    <main class="main">
+        <div class="controls">
+            <label class="data control">Data:</label>
+            <input type="date" class="control__input control" data-input>
+            <button class="control-button control" data-month-length>Is month long?</button>
+            <label class="out-info control" data-length></label>
+            <button class="control-button control" data-get-mondays>Get month mondays</button>
+            <label class="out-info control" data-monday></label>
+            <button class="control-button control" data-shortest-week>Days of shortest week in month</button>
+            <label class="out-info control" data-shortest></label>
+            <button class="control-button control" data-full-weeks>Full weeks in month</button>
+            <label class="out-info control" data-full></label>
+        </div>
+        <div class="time-block">
+            <div class="time-block__clock clock" data-clock></div>
+            <select class="time-block__select" data-select>
+                <option value="0">Current</option>
+                <option value="-2">London</option>
+                <option value="7">Tokio</option>
+                <option value="-3">New York</option>
+            </select>
+        </div>
+    </main>
     <script type="module" src="index.js"></script>
 </body>
 </html>
