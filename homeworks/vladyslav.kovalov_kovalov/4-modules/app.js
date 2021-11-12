@@ -40,7 +40,7 @@ document.querySelector('[data-datepicker]').addEventListener('change', (e) => {
 
     Array.from(document.querySelector('[data-page]').children).filter((element) => element.dataset.card).forEach((element) => {
         const cardResult = element.children[0];
-        cardResult.textContent = '&nbsp;';
+        cardResult.innerHTML = '&nbsp;';
         return cardResult;
     });
 });
