@@ -4,20 +4,21 @@ import {
     shortestWeekDaysNumber,
     fullWeeksNumberInMonth,
 } from './time.js';
-import { cityTime } from './asterisk.js';
+import { addHours, subtractHours } from './asterisk.js';
 
 const userMonthEl = document.querySelector('[data-userMonth]');
 const daySelectorEl = document.querySelector('[data-daySelector]');
+const dayCountBtnEl = document.querySelector('[data-dayCount]');
 const citySelectorEl = document.querySelector('[data-citySelector]');
+const time = document.querySelector('[data-time-state]');
+
+const DAYS = ['Sundays', 'Mondays', 'Tuesdays', 'Wednesdays', 'Thursdays', 'Fridays', 'Saturdays'];
 
 daySelectorEl.addEventListener('change', () => {
-    console.log(daySelectorEl.value);
-    const days = ['Sundays', 'Mondays', 'Tuesdays', 'Wednesdays', 'Thursdays', 'Fridays', 'Saturdays'];
-    document.querySelector('[data-dayCount]')
-        .textContent = `Get month ${days[daySelectorEl.value]}`;
+    dayCountBtnEl.textContent = `Get month ${DAYS[daySelectorEl.value]}`;
 });
 
-document.querySelector('[data-dayCount]').addEventListener('click', () => {
+dayCountBtnEl.addEventListener('click', () => {
     if (userMonthEl.value) {
         document.querySelector('[data-dayCount-state]')
             .textContent = getDaysOfMonth(userMonthEl.value, Number(daySelectorEl.value));
@@ -45,10 +46,10 @@ document.querySelector('[data-fullWeeks]').addEventListener('click', () => {
     }
 });
 
-citySelectorEl.addEventListener('change', () => {
-    if (citySelectorEl.value === 'Local') {
-        cityTime();
+setInterval(() => {
+    if (citySelectorEl.value >= 0) {
+        time.textContent = addHours(new Date(), Number(citySelectorEl.value));
     } else {
-        cityTime(citySelectorEl.value);
+        time.textContent = subtractHours(new Date(), Math.abs(Number(citySelectorEl.value)));
     }
-});
+}, 1000);
