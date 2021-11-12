@@ -1,5 +1,5 @@
 import {
-    getMondaysOfMonth,
+    getDaysOfMonth,
     isMonthLong,
     shortestWeekDaysNumber,
     fullWeeksNumberInMonth,
@@ -7,12 +7,20 @@ import {
 import { cityTime } from './asterisk.js';
 
 const userMonthEl = document.querySelector('[data-userMonth]');
+const daySelectorEl = document.querySelector('[data-daySelector]');
 const citySelectorEl = document.querySelector('[data-citySelector]');
+
+daySelectorEl.addEventListener('change', () => {
+    console.log(daySelectorEl.value);
+    const days = ['Sundays', 'Mondays', 'Tuesdays', 'Wednesdays', 'Thursdays', 'Fridays', 'Saturdays'];
+    document.querySelector('[data-dayCount]')
+        .textContent = `Get month ${days[daySelectorEl.value]}`;
+});
 
 document.querySelector('[data-dayCount]').addEventListener('click', () => {
     if (userMonthEl.value) {
         document.querySelector('[data-dayCount-state]')
-            .textContent = getMondaysOfMonth(userMonthEl.value);
+            .textContent = getDaysOfMonth(userMonthEl.value, Number(daySelectorEl.value));
     }
 });
 

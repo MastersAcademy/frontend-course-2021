@@ -17,17 +17,17 @@ const getWeeksInMonth = (date) => {
     return weeks;
 };
 
-export const getMondaysOfMonth = (date) => {
-    const mondaysCount = [];
-    const weeks = getWeeksInMonth(date);
-    if (weeks[0].length === 7) {
-        mondaysCount.push(weeks[0][0]);
+export const getDaysOfMonth = (date, value) => {
+    const splitDate = date.split('-');
+    const month = splitDate[1] - 1;
+    const year = splitDate[0];
+    const totalDays = new Date(year, month + 1, 0).getDate();
+    const days = [];
+    for (let i = 1; i <= totalDays; i++) {
+        const checkDay = new Date(year, month, i);
+        if (checkDay.getDay() === value) days.push(checkDay.getDate());
     }
-    weeks.shift();
-    weeks.forEach((week) => {
-        mondaysCount.push(week[0]);
-    });
-    return `[${mondaysCount.join(', ')}]`;
+    return `[${days.join(', ')}]`;
 };
 
 export const isMonthLong = (date) => {
