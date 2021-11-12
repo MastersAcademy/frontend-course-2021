@@ -3,6 +3,8 @@ import { Time } from './time.js';
 class App {
     constructor(timeValue) {
         this.datePickerEl = document.querySelector('[data-datepicker]');
+        this.pageEl = document.querySelector('[data-page]');
+        this.timezoneEl = document.querySelector('[data-timezone]');
         this.time = new Date(timeValue);
         this.clock = document.querySelector('[data-clock]');
     }
@@ -31,9 +33,9 @@ const app = new App(now);
 app.initTodayDate();
 const interval = app.renderTime(new Date());
 
-const time = new Time();
+const time = new Time(now);
 
-document.querySelector('[data-datepicker]').addEventListener('change', (e) => {
+app.datePickerEl.addEventListener('change', (e) => {
     e.preventDefault();
     const { value } = e.target;
     app.time = new Date(value);
@@ -45,16 +47,17 @@ document.querySelector('[data-datepicker]').addEventListener('change', (e) => {
     });
 });
 
-document.querySelector('[data-page]').addEventListener('click', (e) => {
+app.pageEl.addEventListener('click', (e) => {
     if (e.target.dataset.button === '') {
         const currentElement = e.target.previousElementSibling;
         const { card: action } = e.target.closest('[data-card]').dataset;
-        const result = time[action](app.time);
+        time.time = app.time;
+        const result = time[action]();
         currentElement.textContent = result;
     }
 });
 
-document.querySelector('[data-timezone]').addEventListener('change', (e) => {
+app.timezoneEl.addEventListener('change', (e) => {
     const { value } = e.target;
     const timezone = app.convertTZ(new Date(), value);
     clearInterval(interval);
