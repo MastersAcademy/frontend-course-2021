@@ -1,0 +1,32 @@
+.main {
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr;
+  justify-items: center;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  margin: auto;
+  max-width: 400px;
+  max-height: 500px;
+  background-color: rgb(250, 238, 185);
+}
+
+.section {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr;
+  align-items: center;
+}
+
+.section button {
+  background-color: rgb(235, 154, 5);
+  border-radius: 15px;
+}
+
+.section p {
+  text-align: center;
+  border-radius: 15px;
+}
+
+.date__input {
+  background-color: rgb(133, 189, 45);
+  border-radius: 15px;
+}
