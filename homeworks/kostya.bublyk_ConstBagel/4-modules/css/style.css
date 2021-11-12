@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 80%;
+  height: 50%;
+  margin: auto;
+  border: 1px solid #6E6E6E;
+  display: flex;
+}
+
+.main-block {
+  width: 20%;
+  margin-left: 5%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn {
+  width: 100%;
+  min-height: 30px;
+}
