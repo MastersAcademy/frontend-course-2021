@@ -1,32 +1,37 @@
-// /**
-//  * @param date - date string of any supported format
-//  * @returns array of Friday dates in a month the date from
-//  */
-// export function getMondaysOfMonth(date) {
-//     return [1, 8, 15, 22, 29];
-// }
+const fullWeekNum = 7;
 
-// /**
-//  * @param date - date string of any supported format
-//  * @returns {boolean} true if month of a date has 31 day, otherwise returns false
-//  */
-// export function isMonthLong(date) {
-//     return false;
-// }
+function daysOfMonth(date) {
+    const days = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+    return days;
+}
 
-// /**
-//  * @param date - date string of any supported format
-//  * @returns {number} number of days in a shortest week of the date month
-//  */
-// export function shortestWeekDaysNumber(date) {
-//     return 3;
-// }
+export function getMondaysOfMonth(date) {
+    const mondaysOfMonth = [];
+    for (let i = 1; i <= daysOfMonth(date); i++) {
+        const day = new Date(date.getFullYear(), date.getMonth(), i);
+        if (day.getDay() === 1) {
+            mondaysOfMonth.push(day.getDate());
+        }
+    }
+    return mondaysOfMonth;
+}
 
-// /**
-//  * @param date - date string of any supported format
-//  * @returns {number} number of full weeks in the date month. To be full,
-//  * week should start and end in the same month
-//  */
-// export function fullWeeksNumberInMonth(date) {
-//     return 3;
-// }
+export function isMonthLong(date) {
+    if (daysOfMonth(date) === 31) {
+        return true;
+    }
+    return false;
+}
+
+export function shortestWeekDaysNumber(date) {
+    const numfirstDay = new Date(date.setDate(1)).getDay();
+    const numlastDay = new Date(date.setDate(daysOfMonth(date))).getDay();
+
+    const dayFirstWeek = fullWeekNum - (numfirstDay - 1);
+    const dayLastWeek = fullWeekNum - (fullWeekNum - numlastDay);
+    return Math.min(dayFirstWeek, dayLastWeek);
+}
+
+export function fullWeeksNumberInMonth(date) {
+    return Math.trunc(((daysOfMonth(date) - shortestWeekDaysNumber(date)) / 7));
+}
