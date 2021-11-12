@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Date</title>
+    </head>
+    <body>
+        <article class="content">
+            <article class="content_case">
+                <div>
+                    <div for="party">Date:</div>
+                    <input type="date" class="date" data-date value="2021-11-10">
+                </div>
+                <div>
+                    <button type="button" class="content_button" name="button" data-monday>Get month monday</button>
+                </div>
+                <div data-out-monday class="content_text">
+                    <p>1, 8, 15, 22, 29</p>
+                </div>
+                <div>
+                    <button type="button" class="content_button" name="button" data-fullMonth>Is month long?</button>
+                </div>
+                <div data-out-month class="content_text">
+                    <p>False</p>
+                </div>
+                <div>
+                    <button type="button" class="content_button" name="button" data-shortWeek>Days of shortest week in month</button>
+                </div>
+                <div data-out-short class="content_text">
+                    <p>2</p>
+                </div>
+                <div>
+                    <button type="button" class="content_button" name="button" data-fullWeek>Full weeks in month</button>
+                </div>
+                <div data-out-week class="content_text">
+                    <p>4</p>
+                </div>
+            </article>
+        </article>
+        <script type="module" src="js/script.js"></script>
+    </body>
+</html>
