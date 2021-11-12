@@ -37,5 +37,4 @@ export function fullWeeksNumberInMonth(date) {
         default:
             return false;
     }
-    return false;
 }

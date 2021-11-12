@@ -15,6 +15,13 @@ const isLongBtnResult = document.querySelector('[data-is-long-result]');
 const shortestWeekBtnResult = document.querySelector('[data-shortest-week-result]');
 const fullWeeksBtnResult = document.querySelector('[data-full-weeks-result]');
 
+inputDate.addEventListener('input', () => {
+    mondaysBtnResult.innerText = '';
+    isLongBtnResult.innerText = '';
+    shortestWeekBtnResult.innerText = '';
+    fullWeeksBtnResult.innerText = '';
+});
+
 mondaysBtn.addEventListener('click', () => {
     const result = getMondaysOfMonth(inputDate.value);
     if (result === false) {

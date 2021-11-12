@@ -58,27 +58,3 @@ body {
   font-size: inherit;
   margin: 0 0 20px 20px;
 }
-
-.main__right {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  width: 30%;
-  border: 1px solid rgb(1, 1, 1);
-  border-radius: 10px;
-  height: 300px;
-  margin: 30px;
-}
-
-.right__title {
-  margin: 0 0 20px;
-}
-
-.right__time {
-  margin: 0 0 20px;
-}
-
-.right__timezones {
-  font-size: 22px;
-}
-
