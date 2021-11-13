@@ -41,8 +41,7 @@ export const shortestWeekDaysNumber = (date) => {
     const weeks = getWeeksInMonth(date);
     const firstWeek = weeks[0].length;
     const lastWeek = weeks[weeks.length - 1].length;
-    return (firstWeek < lastWeek)
-        ? firstWeek : lastWeek;
+    return Math.min(firstWeek, lastWeek);
 };
 
 export const fullWeeksNumberInMonth = (date) => {

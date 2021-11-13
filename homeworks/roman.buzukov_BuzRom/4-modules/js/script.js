@@ -6,13 +6,13 @@ import {
 } from './time.js';
 import { addHours, subtractHours } from './asterisk.js';
 
+const DAYS = ['Sundays', 'Mondays', 'Tuesdays', 'Wednesdays', 'Thursdays', 'Fridays', 'Saturdays'];
+
 const userMonthEl = document.querySelector('[data-userMonth]');
 const daySelectorEl = document.querySelector('[data-daySelector]');
 const dayCountBtnEl = document.querySelector('[data-dayCount]');
 const citySelectorEl = document.querySelector('[data-citySelector]');
-const time = document.querySelector('[data-time-state]');
-
-const DAYS = ['Sundays', 'Mondays', 'Tuesdays', 'Wednesdays', 'Thursdays', 'Fridays', 'Saturdays'];
+const timeEl = document.querySelector('[data-time-state]');
 
 daySelectorEl.addEventListener('change', () => {
     dayCountBtnEl.textContent = `Get month ${DAYS[daySelectorEl.value]}`;
@@ -48,8 +48,8 @@ document.querySelector('[data-fullWeeks]').addEventListener('click', () => {
 
 setInterval(() => {
     if (citySelectorEl.value >= 0) {
-        time.textContent = addHours(new Date(), Number(citySelectorEl.value));
+        timeEl.textContent = addHours(new Date(), Number(citySelectorEl.value));
     } else {
-        time.textContent = subtractHours(new Date(), Math.abs(Number(citySelectorEl.value)));
+        timeEl.textContent = subtractHours(new Date(), Math.abs(Number(citySelectorEl.value)));
     }
 }, 1000);
