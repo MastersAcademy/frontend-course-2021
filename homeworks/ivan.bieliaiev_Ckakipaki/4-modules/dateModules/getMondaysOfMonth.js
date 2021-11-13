@@ -1,3 +1,4 @@
+// import
 import { firstWeeDayMonth } from './firstWeekDayMonth.js';
 
 export function getMondaysOfMonth(date) {
