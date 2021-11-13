@@ -9,8 +9,7 @@ function getMatrixOfCurrentMonth(pickedDate) {
     date.setMonth(date.getMonth() + 1);
     date.setDate(0);
     const after = Array(amountDaysPerWeek - (date.getDay() + 1)).fill(null);
-    const pickedMonth = Array(date.getDate())
-        .fill(1)
+    const pickedMonth = Array(date.getDate()).fill(1)
         .map((numb, index) => {
             date.setDate(numb + index);
             return {
@@ -21,9 +20,7 @@ function getMatrixOfCurrentMonth(pickedDate) {
     const fullWeeksOfPickedMonth = [...before, ...pickedMonth, ...after];
     return Array(fullWeeksOfPickedMonth.length / amountDaysPerWeek)
         .fill(null)
-        .map(() =>
-            fullWeeksOfPickedMonth.splice(0, amountDaysPerWeek).filter(Boolean)
-        );
+        .map(() => fullWeeksOfPickedMonth.splice(0, amountDaysPerWeek).filter(Boolean));
 }
 
 /**
@@ -53,14 +50,13 @@ export function isMonthLong(date) {
  * @returns {number} number of days in a shortest week of the date month
  */
 export function shortestWeekDaysNumber(date) {
-    return Math.min(
-        ...getMatrixOfCurrentMonth(date).map((week) => week.length)
-    );
+    return Math.min(...getMatrixOfCurrentMonth(date).map((week) => week.length));
 }
 
 /**
  * @param date - date string of any supported format
- * @returns {number} number of full weeks in the date month. To be full, week should start and end in the same month
+ * @returns {number} number of full weeks in the date month.
+ * To be full, week should start and end in the same month
  */
 export function fullWeeksNumberInMonth(date) {
     return getMatrixOfCurrentMonth(date).filter((week) => week.length === 7)
