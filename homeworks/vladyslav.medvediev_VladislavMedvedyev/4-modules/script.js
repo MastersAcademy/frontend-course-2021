@@ -1,6 +1,6 @@
 import {
     getMondaysOfMonth, isMonthLong, shortestWeekDaysNumber, fullWeeksNumberInMonth,
-} from './time';
+} from './time.js';
 
 const getMondaysButton = document.querySelector('[data-get-mondays__button]');
 const monthLongButtonEl = document.querySelector('[data-month-long__button]');
