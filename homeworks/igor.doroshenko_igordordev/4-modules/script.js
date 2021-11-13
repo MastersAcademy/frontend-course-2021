@@ -48,8 +48,6 @@ setInterval(function liveClock() {
 
     currentTimeEl.textContent = currentHours + ':' + currentMinutes;
 
-    //worldTimeEl.textContent = subtractHours(currentDate, 5);
-
     countryListEl.addEventListener('change', function () {
         if (countryListEl.value === 'current') {
             worldTimeEl.textContent = subtractHours(currentDate, 0);
