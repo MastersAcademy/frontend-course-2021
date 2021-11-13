@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Rubik:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-    <section class="whole_blog" data-block>
-        <header class="header_blog" data-blog-header>
-            <div class="header__logo">BLOG</div>
-            <div class="header__manipulation">
-                <select name="Sort" class="header__manipulation-sort" data-blog-sort>
-                    <option value="No sort" data-sort-no>Sort</option>
-                    <option value="Sort A-Z" data-sort-az>A-Z</option>
-                    <option value="Sort Z-A" data-sort-za>Z-A</option>
-                </select>
-                <input type="text" placeholder="Filter" class="header__manipulation-filter" data-blog-filter>
-            </div>
-        </header>
-        <main class="main__blog" data-blog-main>
-            <ul class="main__blog_msg" data-blog-msg></ul>
-        </main>
-    </section>
-    <template class="blog__post_sample" data-template-blok>
-        <li class="blog__msg">
-            <h2 class="post__title" data-post-title></h2>
-            <p class="post__body" data-post-body></p>
-        </li>
-    </template>
-    <script src="script.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Rubik:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <section class="whole_blog" data-block>
+            <header class="header_blog" data-blog-header>
+                <div class="header__logo">BLOG</div>
+                <div class="header__manipulation">
+                    <select name="Sort" class="header__manipulation-sort" data-blog-sort>
+                        <option value="No sort" data-sort-no>Sort</option>
+                        <option value="Sort A-Z" data-sort-az>A-Z</option>
+                        <option value="Sort Z-A" data-sort-za>Z-A</option>
+                    </select>
+                    <input type="text" placeholder="Filter" class="header__manipulation-filter" data-blog-filter>
+                </div>
+            </header>
+            <main class="main__blog" data-blog-main>
+                <ul class="main__blog_msg" data-blog-msg></ul>
+            </main>
+        </section>
+        <template class="blog__post_sample" data-template-blok>
+            <li class="blog__msg">
+                <h2 class="post__title" data-post-title></h2>
+                <p class="post__body" data-post-body></p>
+            </li>
+        </template>
+        <script src="script.js"></script>
+    </body>
 </html>

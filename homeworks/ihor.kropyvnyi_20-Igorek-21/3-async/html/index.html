@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>3-async</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Rubik:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <article class="loader" data-loared>
-        <div class="loader__show"></div>
-    </article>
-    <main class="holder">
-        <header class="holder__header">
-            <h1 class="holder__header__title">BLOG</h1>
-            <select class="holder__header__select holder__header__select--activ" data-header-select>
-                <option selected value="without-sort" >Sort</option>
-                <option value="sort-A-Z">Sort from A to Z</option>
-                <option value="sort-Z-A">Sort from Z to A</option>
-            </select>
-            <input class="holder__header__input holder__header__input--activ" type="text" placeholder="Filter" data-header-input>
-        </header>
-        <section class="holder__content" data-holder-content></section>
-        <template data-tamplate-items>
+    <head>
+        <meta charset="UTF-8">
+        <title>3-async</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Rubik:wght@700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <article class="loader" data-loared>
+            <div class="loader__show"></div>
+        </article>
+        <main class="holder">
+            <header class="holder__header">
+                <h1 class="holder__header__title">BLOG</h1>
+                <select class="holder__header__select holder__header__select--activ" data-header-select>
+                    <option selected value="without-sort">Sort</option>
+                    <option value="sort-A-Z">Sort from A to Z</option>
+                    <option value="sort-Z-A">Sort from Z to A</option>
+                </select>
+                <input class="holder__header__input holder__header__input--activ" type="text" placeholder="Filter" data-header-input>
+            </header>
+            <section class="holder__content" data-holder-content></section>
+            <template data-tamplate-items>
                 <article class="holder__content__article">
                     <h2 class="content__article__title" data-articl-title></h2>
                     <p class="content__article__text" data-articl-text></p>
-                    <button class="content__article__delete content__article__delete--activ"><img  src="../img/remove.png" alt="button remove"></button>
+                    <button class="content__article__delete content__article__delete--activ" type="button">
+                        <img src="../img/remove.png" alt="button remove">
+                    </button>
                 </article>
-        </template>
-    </main>
-    <script src="../js/script.js"></script>
-</body>
+            </template>
+        </main>
+        <script src="../js/script.js"></script>
+    </body>
 </html>
