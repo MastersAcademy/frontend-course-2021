@@ -26,11 +26,8 @@ export class Time {
             if (day.getDay() === 0) array.push(day.getDate());
         }
 
-        const firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDate();
-        const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
-
-        const firstWeek = array[0] - firstDay;
-        const lastWeek = lastDay - array[array.length - 1];
+        const [firstWeek] = array;
+        const lastWeek = totalDays - array[array.length - 1];
 
         return firstWeek > lastWeek ? lastWeek : firstWeek;
     }
