@@ -43,14 +43,14 @@ buttonFullWeeksEl.addEventListener('click', () => {
     resultFullWeeksEl.textContent = fullWeeksNumberInMonth(dateInputEl);
 });
 
-setInterval(function liveClock() {
+setInterval(() => {
     const currentDate = new Date(Date());
     const currentHours = (`0${currentDate.getHours()}`);
     const currentMinutes = (`0${currentDate.getMinutes()}`);
 
     currentTimeEl.textContent = `${currentHours.substr(-2)}:${currentMinutes.substr(-2)}`;
 
-    countryListEl.addEventListener('change', function () {
+    countryListEl.addEventListener('change', () => {
         if (countryListEl.value === 'current') {
             worldTimeEl.textContent = subtractHours(currentDate, 0);
         } else if (countryListEl.value === 'tokyo') {
