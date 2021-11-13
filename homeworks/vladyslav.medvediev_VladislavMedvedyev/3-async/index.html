@@ -7,46 +7,45 @@
     <link rel="stylesheet" href="style.css">
     <title>Blog with filtering and sorting</title>
 </head>
-<body>
-    <div class="preloader" data-preloader>
-        <img src="preloader.gif" alt="preloader">
-    </div>
-    <div class="container">
-        <header class="header">
-            <h1 class="headerName"><span>b</span>log</h1>
-            <form class="headerSort" action="">
-                <select class="headerSort" data-sort>
-                    <option selected disabled>Sort</option>
-                    <option value="initial">initial</option>
-                    <option value="aToZ">A-Z</option>
-                    <option value="zToA">Z-A</option>
-                </select>
-            </form>
-            <form class="headerFilter" action="" type="submit" data-form>
-                <input type="text" placeholder="       Filter" data-input>                        
-            </form>
-        </header>
-        <main class="main" data-main>
-            <article class="article">
-                <h2 class="title" data-title-1></h2>
-                <p class="p" data-p-1></p>
-            </article>
-            <article class="article">
-                <h2 class="title" data-title-2></h2>
-                <p class="p" data-p-2></p>
-            </article>
-            <article class="article">
-                <h2 class="title" data-title-3></h2>
-                <p class="p" data-p-3></p>
-            </article>
-            <article class="article">
-                <h2 class="title" data-title-4></h2>
-                <p class="p" data-p-4></p>
-            </article>
-        </main>
-    </div>
+    <body>
+        <div class="preloader" data-preloader>
+            <img src="preloader.gif" alt="preloader">
+        </div>
+        <div class="container">
+            <header class="header">
+                <h1 class="headerName"><span>b</span>log</h1>
 
-
-    <script type="text/javascript" src="script.js"></script>
-</body>
+                <form class="headerSort" action="">
+                    <select class="headerSort" data-sort>
+                        <option selected disabled>Sort</option>
+                        <option value="initial">initial</option>
+                        <option value="aToZ">A-Z</option>
+                        <option value="zToA">Z-A</option>
+                    </select>
+                </form>
+                <form class="headerFilter" action="" type="submit" data-form>
+                    <input type="text" placeholder="       Filter" data-input>                        
+                </form>
+            </header>
+            <main class="main" data-main>
+                <article class="article">
+                    <h2 class="title" data-title-1></h2>
+                    <p class="p" data-p-1></p>
+                </article>
+                <article class="article">
+                    <h2 class="title" data-title-2></h2>
+                    <p class="p" data-p-2></p>
+                </article>
+                <article class="article">
+                    <h2 class="title" data-title-3></h2>
+                    <p class="p" data-p-3></p>
+                </article>
+                <article class="article">
+                    <h2 class="title" data-title-4></h2>
+                    <p class="p" data-p-4></p>
+                </article>
+            </main>
+        </div>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
 </html>
