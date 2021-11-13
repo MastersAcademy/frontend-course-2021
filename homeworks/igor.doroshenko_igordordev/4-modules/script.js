@@ -1,4 +1,4 @@
-/*jslint es6:true*/
+/* jslint es6:true */
 
 import {
     getFridaysOfMonth,
@@ -43,10 +43,11 @@ buttonFullWeeksEl.addEventListener('click', () => {
 });
 
 setInterval(function liveClock() {
-    const currentHours = ('0' + currentDate.getHours()).substr(-2);
-    const currentMinutes = ('0' + currentDate.getMinutes()).substr(-2);
+    const currentDate = new Date(Date());
+    const currentHours = (`0${currentDate.getHours()}`);
+    const currentMinutes = (`0${currentDate.getMinutes()}`);
 
-    currentTimeEl.textContent = currentHours + ':' + currentMinutes;
+    currentTimeEl.textContent = `${currentHours.substr(-2)}:${currentMinutes.substr(-2)}`;
 
     countryListEl.addEventListener('change', function () {
         if (countryListEl.value === 'current') {
@@ -59,6 +60,4 @@ setInterval(function liveClock() {
             worldTimeEl.textContent = subtractHours(currentDate, 7);
         }
     });
-});
-
-setInterval(liveClock(), 1000);
+}, 1000);

@@ -1,4 +1,4 @@
-/*jslint es6:true*/
+/* jslint es6:true */
 
 function getFridaysOfMonth(date) {
     const inputedDate = new Date(date.value);
@@ -47,7 +47,8 @@ function fullWeeksNumberInMonth(date) {
     const firstDay = new Date(inputedYear, inputedMonth, 1).getDay();
     const lastDay = new Date(inputedYear, inputedMonth + 1, 0).getDay();
     const daysInFirstWeek = (firstDay === 0) ? 1 : 8 - firstDay;
-    const fullWeeks = (daysInFirstWeek < 7) ? (daysInMonth - lastDay - daysInFirstWeek) / 7 : (daysInMonth - lastDay) / 7;
+    const fullWeeks = (daysInFirstWeek < 7) ? (daysInMonth - lastDay - daysInFirstWeek) / 7 :
+        (daysInMonth - lastDay) / 7;
 
     return fullWeeks;
 }
@@ -56,20 +57,20 @@ function subtractHours(date, hours) {
     const originalDate = new Date(date);
     const timeZoneHours = originalDate.getHours() - hours;
     const currentDate = new Date(originalDate.setHours(timeZoneHours));
-    const printHours = ('0' + currentDate.getHours()).substr(-2);
-    const printMinutes = ('0' + currentDate.getMinutes()).substr(-2);
+    const printHours = (`0${currentDate.getHours()}`);
+    const printMinutes = (`0${currentDate.getMinutes()}`);
 
-    return printHours + ':' + printMinutes;
+    return `${printHours.substr(-2)}:${printMinutes.substr(-2)}`;
 }
 
 function addHours(date, hours) {
     const originalDate = new Date(date);
     const timeZoneHours = originalDate.getHours() + hours;
     const currentDate = new Date(originalDate.setHours(timeZoneHours));
-    const printHours = ('0' + currentDate.getHours()).substr(-2);
-    const printMinutes = ('0' + currentDate.getMinutes()).substr(-2);
+    const printHours = (`0${currentDate.getHours()}`);
+    const printMinutes = (`0${currentDate.getMinutes()}`);
 
-    return printHours + ':' + printMinutes;
+    return `${printHours.substr(-2)}:${printMinutes.substr(-2)}`;
 }
 
 export {
@@ -78,5 +79,5 @@ export {
     shortestWeekDaysNumber,
     fullWeeksNumberInMonth,
     subtractHours,
-    addHours
+    addHours,
 };
