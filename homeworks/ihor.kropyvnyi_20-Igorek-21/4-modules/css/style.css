@@ -5,7 +5,7 @@ body {
   font-size: 16px;
 }
 
-.box {
+.main-container {
   background-color: #F3F8FA;
   margin: 140px auto;
   width: 450px;
@@ -28,7 +28,7 @@ body {
   font-size: inherit;
 }
 
-.section {
+.info-block {
   height: 70px;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@ body {
   align-content: center;
 }
 
-.section__button {
+.info-block__button {
   height: 30px;
   border-radius: 7px;
   cursor: pointer;
@@ -45,12 +45,12 @@ body {
   font-size: inherit;
 }
 
-.section__button--active:hover,
-.section__button--active:focus {
+.info-block__button:hover,
+.info-block__button:focus {
   background-color: #AAEAF6;
 }
 
-.input-date--active:focus,
-.input-date--active:hover {
+.input-date:focus,
+.input-date:hover {
   box-shadow: 0 0 12px #17C6E8;
 }
