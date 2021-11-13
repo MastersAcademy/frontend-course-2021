@@ -1,10 +1,13 @@
 export class Time {
     getFridaysOfMonth(date) {
+        const friday = 5;
         const totalDays = new Date(date.getFullYear(), date.getMonth() + 1, 0);
         const arr = [];
         for (let i = 1; i <= totalDays.getDate(); i++) {
             const day = new Date(date.getFullYear(), date.getMonth(), i).getDay();
-            if (day === 5) arr.push(new Date(date.getFullYear(), date.getMonth(), i).getDate());
+            if (day === friday) {
+                arr.push(new Date(date.getFullYear(), date.getMonth(), i).getDate());
+            }
         }
         return String(arr).split(',').join(', ');
     }
@@ -19,17 +22,17 @@ export class Time {
         const array = [];
 
         for (let i = 1; i <= totalDays; i++) {
-            const day = new Date(date.getFullYear(), date.getMonth() + 1, i).getDay();
-
-            if (day === 2) {
-                array.push(i);
-            }
+            const day = new Date(date.getFullYear(), date.getMonth(), i);
+            if (day.getDay() === 0) array.push(day.getDate());
         }
 
-        return array.reduce((prev, curr) => {
-            prev.push(curr - prev);
-            return prev;
-        }, [])[0];
+        const firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDate();
+        const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+
+        const firstWeek = array[0] - firstDay;
+        const lastWeek = lastDay - array[array.length - 1];
+
+        return firstWeek > lastWeek ? lastWeek : firstWeek;
     }
 
     fullWeeksNumberInMonth(date) {
@@ -44,6 +47,7 @@ export class Time {
                 array.push(i);
             }
         }
+
         return array.length;
     }
 }
