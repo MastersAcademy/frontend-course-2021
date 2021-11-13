@@ -1,0 +1,58 @@
+body {
+  box-sizing: border-box;
+}
+
+.all__date {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 500px;
+  height: 400px;
+  padding: 30px;
+  background: #E4E4E4;
+  border: 1px solid rgb(160, 148, 148);
+}
+
+.date_name {
+  margin-top: 10px;
+}
+
+.show_result {
+  height: 10px;
+  padding-top: 10px;
+  text-align: center;
+  width: 112px;
+  padding-left: 17px;
+}
+
+.btn {
+  height: 38px;
+  width: 150px;
+  border-radius: 5px;
+}
+
+.getdate {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  row-gap: 20px
+}
+
+.showtime {
+  width: 200px;
+  border: 1px solid rgb(7, 7, 7);
+  height: 200px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.current__time {
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.local__time {
+  font-size: 17px;
+  border-radius: 5px;
+  background: rgb(252, 250, 250);
+}
