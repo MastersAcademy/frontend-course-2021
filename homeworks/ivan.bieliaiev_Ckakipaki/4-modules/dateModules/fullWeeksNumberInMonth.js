@@ -1,24 +1,9 @@
-function getWeekDay(date) {
-    const days = [7, 1, 2, 3, 4, 5, 6];
-    return days[date.getDay()];
-}
+import { firstWeeDayMonth } from './firstWeekDayMonth.js';
 
 export function fullWeeksNumberInMonth(date) {
-    const monthsNotHight = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    const monthsHight = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    const dateArr = date.split('/');
-    const day = Number(dateArr[0]);
-    const month = Number(dateArr[1]);
-    const year = Number(dateArr[2]);
-    const dateA = new Date(year, month - 1, 1);
-    const firstMonthDay = getWeekDay(dateA);
-    let days = monthsNotHight[month - 1];
-    if ((day <= 0 || day > days) || (month > 12 || month <= 0) || (year <= 0)) {
-        return false;
-    }
-    if (year % 4 === 0) {
-        days = monthsHight[month - 1];
-    }
+    const inputValue = firstWeeDayMonth(date);
+    const firstMonthDay = inputValue.firstWeekDay;
+    const days = inputValue.amountOfDays;
     switch (firstMonthDay) {
         case 1:
             return Math.floor(days / 7);
