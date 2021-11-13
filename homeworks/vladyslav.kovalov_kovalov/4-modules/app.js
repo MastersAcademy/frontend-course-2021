@@ -15,12 +15,10 @@ class App {
         this.datePickerEl.value = now;
     }
 
-    renderTime(date) {
-        return setInterval(() => {
-            const hours = date.getHours() < 10 ? `${0}${String(date.getHours())}` : date.getHours();
-            const minutes = date.getMinutes() < 10 ? `${0}${String(date.getMinutes())}` : date.getMinutes();
-            this.clock.value = `${hours}:${minutes}`;
-        }, 1000);
+    timeClock(date) {
+        const hours = date.getHours() < 10 ? `${0}${String(date.getHours())}` : date.getHours();
+        const minutes = date.getMinutes() < 10 ? `${0}${String(date.getMinutes())}` : date.getMinutes();
+        this.clock.value = `${hours}:${minutes}`;
     }
 
     convertTZ(date, tzString) {
@@ -31,9 +29,8 @@ class App {
 const now = new Date();
 const app = new App(now);
 app.initTodayDate();
-const interval = app.renderTime(new Date());
-
 const time = new Time(now);
+const clock = setInterval(app.timeClock(new Date()), 1000);
 
 app.datePickerEl.addEventListener('change', (e) => {
     e.preventDefault();
@@ -52,7 +49,7 @@ app.pageEl.addEventListener('click', (e) => {
         const currentElement = e.target.previousElementSibling;
         const { card: action } = e.target.closest('[data-card]').dataset;
         time.time = app.time;
-        const result = time[action]();
+        const result = time[action](app.time);
         currentElement.textContent = result;
     }
 });
@@ -60,7 +57,7 @@ app.pageEl.addEventListener('click', (e) => {
 app.timezoneEl.addEventListener('change', (e) => {
     const { value } = e.target;
     const timezone = app.convertTZ(new Date(), value);
-    clearInterval(interval);
+    clearInterval(clock);
     app.clock.value = '';
-    app.renderTime(timezone);
+    setInterval(app.timeClock(timezone, 1000));
 });
