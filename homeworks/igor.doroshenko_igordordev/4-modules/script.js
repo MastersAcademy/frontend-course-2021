@@ -1,4 +1,5 @@
 /* jslint es6:true */
+/* eslint-env es6 */
 
 import {
     getFridaysOfMonth,
@@ -6,7 +7,7 @@ import {
     shortestWeekDaysNumber,
     fullWeeksNumberInMonth,
     subtractHours,
-    addHours
+    addHours,
 } from './time.js';
 
 const dateInputEl = document.querySelector('[month-information__input]');
@@ -21,10 +22,10 @@ const resultFullWeeksEl = document.querySelector('[full-weeks-result]');
 const countryListEl = document.querySelector('[country-list]');
 const currentTimeEl = document.querySelector('[current-time]');
 const worldTimeEl = document.querySelector('[world-time__result]');
-const currentDate = new Date(Date());
+const readyTime = new Date(Date());
 
-currentTimeEl.textContent = subtractHours(currentDate, 0);
-worldTimeEl.textContent = subtractHours(currentDate, 0);
+currentTimeEl.textContent = subtractHours(readyTime, 0);
+worldTimeEl.textContent = subtractHours(readyTime, 0);
 
 buttonFridaysEl.addEventListener('click', () => {
     resultFridaysEl.textContent = getFridaysOfMonth(dateInputEl);

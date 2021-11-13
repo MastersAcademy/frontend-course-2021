@@ -47,8 +47,8 @@ function fullWeeksNumberInMonth(date) {
     const firstDay = new Date(inputedYear, inputedMonth, 1).getDay();
     const lastDay = new Date(inputedYear, inputedMonth + 1, 0).getDay();
     const daysInFirstWeek = (firstDay === 0) ? 1 : 8 - firstDay;
-    const fullWeeks = (daysInFirstWeek < 7) ? (daysInMonth - lastDay - daysInFirstWeek) / 7 :
-        (daysInMonth - lastDay) / 7;
+    const fullWeeks = (daysInFirstWeek < 7) ? (daysInMonth - lastDay - daysInFirstWeek) / 7
+        : (daysInMonth - lastDay) / 7;
 
     return fullWeeks;
 }
