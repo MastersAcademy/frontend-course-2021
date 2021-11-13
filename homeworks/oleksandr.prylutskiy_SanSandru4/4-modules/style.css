@@ -17,7 +17,7 @@ body {
   box-shadow: 0 0 0 5px rgba(0, 0, 0, .2);
 }
 
-.main__form_manipulation_calendar {
+.main__form_manipulation-calendar {
   margin-top: 20px;
   margin-left: 35px;
   display: flex;
@@ -30,16 +30,16 @@ body {
   margin-bottom: 15px;
 }
 
-.calendar_for_take_data {
+.main__input_data {
   margin-bottom: 15px;
 }
 
-.btn__add_event {
+.main__btn_add-event {
   width: 200px;
   height: 30px;
   margin-bottom: 15px;
 }
 
-.out-information {
+.main__div_out-information {
   height: 35px;
 }
