@@ -7,7 +7,7 @@ import {
     fullWeeksNumberInMonth,
     subtractHours,
     addHours
-} from '/time.js';
+} from './time.js';
 
 const dateInputEl = document.querySelector('[month-information__input]');
 const buttonFridaysEl = document.querySelector('[months-fridays-button]');

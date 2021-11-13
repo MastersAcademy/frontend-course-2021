@@ -1,53 +1,53 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #F0FFFF;
-    font-family: sans-serif;
-    font-size: 24px;
+  margin: 0;
+  padding: 0;
+  background-color: #F0FFFF;
+  font-family: sans-serif;
+  font-size: 24px;
 }
 
 .panel {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 600px 400px;
-    grid-auto-rows: 700px;
-    margin: 0 auto;
-    width: 1024px;
-    background-color: #FFF;
-    border: 1px solid #000;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 600px 400px;
+  grid-auto-rows: 700px;
+  margin: 0 auto;
+  width: 1024px;
+  background-color: #FFF;
+  border: 1px solid #000;
 }
 
 .panel__month-information {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
 .panel__world-time {
-    padding: 20px;
-    border: 1px solid #000;
+  padding: 20px;
+  border: 1px solid #000;
 }
 
 .world-time__caption, .month-information__caption {
-    color: #A9A9A9;
+  color: #A9A9A9;
 }
 
 .month-information__input {
-    display: block;
-    margin-bottom: 50px;
-    width: 300px;
-    height: 40px;
-    font-size: 24px;
-    text-align: center;
+  display: block;
+  margin-bottom: 50px;
+  width: 300px;
+  height: 40px;
+  font-size: 24px;
+  text-align: center;
 }
 
 .month-information__button, .world-time__country-list {
-    width: 300px;
-    height: 40px;
-    font-size: 14px;
-    background-color: #FF6347;
-    color: #FFF;
+  width: 300px;
+  height: 40px;
+  font-size: 14px;
+  background-color: #FF6347;
+  color: #FFF;
 }
 
 .world-time__country-list {
-    width: 200px;
-    padding-left: 5px;
+  width: 200px;
+  padding-left: 5px;
 }

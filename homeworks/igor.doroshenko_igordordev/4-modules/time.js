@@ -41,18 +41,14 @@ function shortestWeekDaysNumber(date) {
 
 function fullWeeksNumberInMonth(date) {
     const inputedDate = new Date(date.value);
-    console.log('work! ' + inputedDate);
     const inputedMonth = inputedDate.getMonth();
     const inputedYear = inputedDate.getFullYear();
     const daysInMonth = new Date(inputedYear, inputedMonth + 1, 0).getDate();
     const firstDay = new Date(inputedYear, inputedMonth, 1).getDay();
     const lastDay = new Date(inputedYear, inputedMonth + 1, 0).getDay();
     const daysInFirstWeek = (firstDay === 0) ? 1 : 8 - firstDay;
-    console.log('daysInFirstWeek! ' + daysInFirstWeek);
-    console.log('lastDay! ' + lastDay);
-    console.log('daysInMonth! ' + daysInMonth);
-
     const fullWeeks = (daysInFirstWeek < 7) ? (daysInMonth - lastDay - daysInFirstWeek) / 7 : (daysInMonth - lastDay) / 7;
+
     return fullWeeks;
 }
 
