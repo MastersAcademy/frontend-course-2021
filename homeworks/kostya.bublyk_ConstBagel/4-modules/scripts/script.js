@@ -15,7 +15,7 @@ let date = '';
 /**
  * make all buttons disabled by default (before picking date)
  */
-document.querySelectorAll("button").forEach((button) => {
+document.querySelectorAll('button').forEach((button) => {
     button.disabled = true;
 });
 
@@ -29,25 +29,25 @@ function displayResult(selector, result) {
 /**
  * Event listeners:
  */
-inputDateField.addEventListener("change", (event) => {
+inputDateField.addEventListener('change', (event) => {
     date = event.target.value;
-    document.querySelectorAll("button").forEach((button) => {
+    document.querySelectorAll('button').forEach((button) => {
         button.disabled = false;
     });
 });
 
-getFridaysButton.addEventListener("click", () => {
+getFridaysButton.addEventListener('click', () => {
     displayResult('[data-role="get-fridays-output"]', `[${getFridaysOfMonth(date)}]`);
 });
 
-isMonthLongButton.addEventListener("click", () => {
+isMonthLongButton.addEventListener('click', () => {
     displayResult('[data-role="is-month-long-output"]', isMonthLong(date));
 });
 
-daysShortestWeekButton.addEventListener("click", () => {
+daysShortestWeekButton.addEventListener('click', () => {
     displayResult('[data-role="days-shortest-week-output"]', shortestWeekDaysNumber(date));
 });
 
-fullWeekInMonthButton.addEventListener("click", () => {
+fullWeekInMonthButton.addEventListener('click', () => {
     displayResult('[data-role="full-week-month-output"]', fullWeeksNumberInMonth(date));
 });
