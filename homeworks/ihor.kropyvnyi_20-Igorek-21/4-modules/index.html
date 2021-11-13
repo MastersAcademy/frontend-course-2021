@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-modules</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Rubik:wght@700&display=swap" rel="stylesheet">
+<body>
+    <main class="box">
+        <h2 class="input-title">Date:</h2>
+        <input class="input-date input-date--active" type="date" value="2021-11-11" data-input-date>
+        <article class="section">
+            <button class="section__button section__button--active" data-button-get-mondays>Get month mondays</button>
+            <span data-info-get-mondays></span>
+        </article>
+        <article class="section">
+            <button class="section__button section__button--active" data-button-month-long>Is month long?</button>
+            <span data-info-month-long></span>
+        </article>
+        <article class="section">
+            <button class="section__button section__button--active" data-button-shortest-week>Days of shortest week in month</button>
+            <span data-info-shortest-week></span>
+        </article>
+        <article class="section">
+            <button class="section__button section__button--active" data-button-full-weeks>Full weeks in month</button>
+            <span data-info-full-weeks></span>
+        </article>
+    </main>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+html,
+body {
+  background-color: #FFF;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.box {
+  background-color: #F3F8FA;
+  margin: 140px auto;
+  width: 450px;
+  height: 550px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.input-date {
+  height: 25px;
+  width: 160px;
+  padding-left: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.section {
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.section__button {
+  height: 30px;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: #CFEEF6;
+  font-size: inherit;
+}
+
+.section__button--active:hover,
+.section__button--active:focus {
+  background-color: #AAEAF6;
+}
+
+.input-date--active:focus,
+.input-date--active:hover {
+  box-shadow: 0 0 12px #17C6E8;
+}
