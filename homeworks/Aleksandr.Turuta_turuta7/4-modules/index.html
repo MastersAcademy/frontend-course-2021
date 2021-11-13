@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <title>4-modules</title>
+    </head>
+
+    <body class="body" data-body>
+        <div class="main">
+            <div class="main__container">
+                <div class="main__container-left-column">
+                    <h4 class="main__container-title margin-up-30px">Date:</h4>
+                    <input class="main__container-input-data margin-up-30px" data-time type="date" id="start"
+                        name="trip-start" value="2021-07-22" min="2021-01-01" max="2025-12-31">
+                    <button type="button" class="main__button margin-up-30px" data-button-1>Get month fridays</button>
+                    <p data-function1 class="margin-up-30px">push the button</p>
+                    <button type="button" class="main__button margin-up-30px" data-button-2>Is month long?</button>
+                    <p data-function2 class="margin-up-30px">push the button</p>
+                    <button type="button" class="main__button margin-up-30px" data-button-3>Days of shortest week in
+                        month</button>
+                    <p data-function3 class="margin-up-30px">push the button</p>
+                    <button type="button" class="main__button margin-up-30px" data-button-4>Full weeks in mouth</button>
+                    <p data-function4 class="margin-up-30px">push the button</p>
+                </div>
+                <div class="main__container-right-column">
+                    <p data-p-time class="main__container-right-column-time"></p>
+                    <select class="main__container-right-column-city" data-select-city name="user_profile_color_1">
+                        <option value="1">Current</option>
+                        <option value="2">Tokyo</option>
+                        <option value="3">London</option>
+                        <option value="4">New York</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="script.js"></script>
+    </body>
+
+</html>
