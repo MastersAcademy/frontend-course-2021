@@ -1,4 +1,9 @@
-import * as module from './time.js';
+import {
+    getMondayOfMonth,
+    isMonthLong,
+    shortTestWeekDaysNumber,
+    fullWeeksNumberInMonth,
+} from './time.js';
 
 const inputDateEl = document.querySelector('[data-input-date]');
 const buttonMondaysEl = document.querySelector('[data-button-mondays]');
@@ -17,15 +22,15 @@ inputDateEl.addEventListener('change', () => {
     outFullWeeksEl.innerText = '';
     const inputDate = new Date(inputDateEl.value);
     buttonMondaysEl.addEventListener('click', () => {
-        outMondaysEl.innerText = module.getMondayOfMonth(inputDate);
+        outMondaysEl.innerText = getMondayOfMonth(inputDate);
     });
     buttonMonthLongEl.addEventListener('click', () => {
-        outMonthLongEl.innerText = module.isMonthLong(inputDate);
+        outMonthLongEl.innerText = isMonthLong(inputDate);
     });
     buttonShortWeekEl.addEventListener('click', () => {
-        outShortWeekEl.innerText = module.shortTestWeekDaysNumber(inputDate);
+        outShortWeekEl.innerText = shortTestWeekDaysNumber(inputDate);
     });
     buttonFullWeeksEl.addEventListener('click', () => {
-        outFullWeeksEl.innerText = module.fullWeeksNumberInMonth(inputDate);
+        outFullWeeksEl.innerText = fullWeeksNumberInMonth(inputDate);
     });
 });
