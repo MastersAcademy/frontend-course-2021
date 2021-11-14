@@ -15,10 +15,7 @@ export function getMondayOfMonth(date) {
 export function isMonthLong(date) {
     const lastDayDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
     const lastDayOfMonth = lastDayDate.getDate();
-    if (lastDayOfMonth === 31) {
-        return true;
-    }
-    return false;
+    return lastDayOfMonth === 31;
 }
 
 export function shortTestWeekDaysNumber(date) {
