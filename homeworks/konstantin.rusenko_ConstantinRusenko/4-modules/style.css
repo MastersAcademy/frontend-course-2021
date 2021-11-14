@@ -27,7 +27,7 @@ body {
 }
 
 .data {
-  font-size: 1.6em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .time-block__select {
