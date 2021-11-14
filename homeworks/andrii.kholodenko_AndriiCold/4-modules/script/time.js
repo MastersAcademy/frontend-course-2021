@@ -1,11 +1,12 @@
 export function getMondayOfMonth(date) {
-    const lastDayDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+    const cloneDate = new Date(date);
+    const lastDayDate = new Date(cloneDate.getFullYear(), cloneDate.getMonth() + 1, 0);
     const lastDayOfMonth = lastDayDate.getDate();
     const mondayOfMonthArray = [];
     for (let i = 1; i <= lastDayOfMonth; i++) {
-        date.setDate(i);
-        if (date.getDay() === 1) {
-            mondayOfMonthArray.push(date.getDate());
+        cloneDate.setDate(i);
+        if (cloneDate.getDay() === 1) {
+            mondayOfMonthArray.push(cloneDate.getDate());
         }
     }
     return mondayOfMonthArray;
@@ -15,50 +16,44 @@ export function isMonthLong(date) {
     const lastDayDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
     const lastDayOfMonth = lastDayDate.getDate();
     if (lastDayOfMonth === 31) {
-        return 'True';
+        return true;
     }
-    return 'False';
+    return false;
 }
 
 export function shortTestWeekDaysNumber(date) {
     const firstDayDate = new Date(date.getFullYear(), date.getMonth(), 1);
     const lastDayDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-    let numbersOfDate = '';
-    if (firstDayDate.getDay() === 1) {
-        numbersOfDate = lastDayDate.getDay();
-    } else if (firstDayDate.getDay() === 0) {
-        numbersOfDate = 1;
-    } else if (lastDayDate.getDay() === 0) {
-        numbersOfDate = 8 - firstDayDate.getDay();
-    } else if (8 - firstDayDate.getDay() >= lastDayDate.getDay()) {
-        numbersOfDate = lastDayDate.getDay();
-    } else if (8 - firstDayDate.getDay() < lastDayDate.getDay()) {
-        numbersOfDate = 8 - firstDayDate.getDay();
+    let firstWeekOfDays;
+    let lastWeekOfDays;
+    if (firstDayDate.getDay() === 0) {
+        firstWeekOfDays = 1;
+    } else {
+        firstWeekOfDays = 8 - firstDayDate.getDay();
     }
-    return numbersOfDate;
+    if (lastDayDate.getDay() === 0) {
+        lastWeekOfDays = 7;
+    } else {
+        lastWeekOfDays = lastDayDate.getDay();
+    }
+    if (firstWeekOfDays < lastWeekOfDays) {
+        return firstWeekOfDays;
+    }
+    return lastWeekOfDays;
 }
 
 export function fullWeeksNumberInMonth(date) {
     const lastDayDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
     const lastDayOfMonth = lastDayDate.getDate();
-    const dateArrayStart = [];
-    const dateArrayEnd = [];
-    const arrayFullWeeks = [];
+    let fullWeeks = 0;
     for (let i = 1; i <= lastDayOfMonth; i++) {
-        const fullWeeksDate = new Date(date.getFullYear(), date.getMonth(), i);
-        if (fullWeeksDate.getDay() === 1) {
-            dateArrayStart.push(fullWeeksDate.getDate());
-        }
-        if (fullWeeksDate.getDay() === 0) {
-            dateArrayEnd.push(fullWeeksDate.getDate());
-        }
-    }
-    for (let i = 0; i <= dateArrayStart.length; i++) {
-        if (dateArrayStart[i] < dateArrayEnd[i]) {
-            arrayFullWeeks.push('week');
-        } else if (dateArrayStart[i] < dateArrayEnd[i + 1]) {
-            arrayFullWeeks.push('week');
+        const newDate = new Date(date.getFullYear(), date.getMonth(), i);
+        if (newDate.getDay() === 1) {
+            newDate.setDate(newDate.getDate() + 6);
+            if (newDate.getMonth() === date.getMonth()) {
+                fullWeeks++;
+            }
         }
     }
-    return arrayFullWeeks.length;
+    return fullWeeks;
 }

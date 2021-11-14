@@ -1,31 +1,31 @@
 import * as module from './time.js';
 
 const inputDateEl = document.querySelector('[data-input-date]');
-const buttonMondays = document.querySelector('[data-button-mondays]');
-const outMondays = document.querySelector('[data-out-fridays]');
-const buttonMonthLong = document.querySelector('[data-button-month-long]');
-const outMonthLong = document.querySelector('[data-out-month-long]');
-const buttonShortWeek = document.querySelector('[data-button-short-week]');
-const outShortWeek = document.querySelector('[data-out-short-week]');
-const buttonFullWeeks = document.querySelector('[data-button-full-weeks]');
-const outFullWeeks = document.querySelector('[data-out-full-weeks]');
+const buttonMondaysEl = document.querySelector('[data-button-mondays]');
+const outMondaysEl = document.querySelector('[data-out-mondays]');
+const buttonMonthLongEl = document.querySelector('[data-button-month-long]');
+const outMonthLongEl = document.querySelector('[data-out-month-long]');
+const buttonShortWeekEl = document.querySelector('[data-button-short-week]');
+const outShortWeekEl = document.querySelector('[data-out-short-week]');
+const buttonFullWeeksEl = document.querySelector('[data-button-full-weeks]');
+const outFullWeeksEl = document.querySelector('[data-out-full-weeks]');
 
 inputDateEl.addEventListener('change', () => {
-    outMondays.innerText = '';
-    outMonthLong.innerText = '';
-    outShortWeek.innerText = '';
-    outFullWeeks.innerText = '';
+    outMondaysEl.innerText = '';
+    outMonthLongEl.innerText = '';
+    outShortWeekEl.innerText = '';
+    outFullWeeksEl.innerText = '';
     const inputDate = new Date(inputDateEl.value);
-    buttonMondays.addEventListener('click', () => {
-        outMondays.innerText = module.getMondayOfMonth(inputDate);
+    buttonMondaysEl.addEventListener('click', () => {
+        outMondaysEl.innerText = module.getMondayOfMonth(inputDate);
     });
-    buttonMonthLong.addEventListener('click', () => {
-        outMonthLong.innerText = module.isMonthLong(inputDate);
+    buttonMonthLongEl.addEventListener('click', () => {
+        outMonthLongEl.innerText = module.isMonthLong(inputDate);
     });
-    buttonShortWeek.addEventListener('click', () => {
-        outShortWeek.innerText = module.shortTestWeekDaysNumber(inputDate);
+    buttonShortWeekEl.addEventListener('click', () => {
+        outShortWeekEl.innerText = module.shortTestWeekDaysNumber(inputDate);
     });
-    buttonFullWeeks.addEventListener('click', () => {
-        outFullWeeks.innerText = module.fullWeeksNumberInMonth(inputDate);
+    buttonFullWeeksEl.addEventListener('click', () => {
+        outFullWeeksEl.innerText = module.fullWeeksNumberInMonth(inputDate);
     });
 });
