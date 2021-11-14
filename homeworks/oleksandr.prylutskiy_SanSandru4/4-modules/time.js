@@ -8,10 +8,14 @@ export function getMondaysOfMonth(date) {
         const inputDataArray = inputData.split('-');
         const year = inputDataArray[0];
         const month = +inputDataArray[1];
-        const day = inputDataArray[2];
-        const dateDay = new Date(year, month - 1, day);
+        const dateDay = new Date(year, month - 1, 1);
+        console.log(dateDay);
         while (dateDay.getDay() !== 1) {
-            dateDay.setDate(dateDay.getDay() + 1);
+            dateDay.setDate(dateDay.getDate() + 1);
+            if (dateDay.getDay() === 1) {
+                break;
+            }
+            console.log(dateDay.setDate(dateDay.getDate() + 1));
         }
         while (dateDay.getMonth() + 1 === month) {
             mondays.push(new Date(dateDay.getTime()).getDate());

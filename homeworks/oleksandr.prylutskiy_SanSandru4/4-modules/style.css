@@ -9,7 +9,7 @@ body {
   align-items: center;
 }
 
-.outer_shell {
+.outer-shell {
   margin-top: 15px;
   width: 270px;
   height: 430px;
@@ -17,7 +17,7 @@ body {
   box-shadow: 0 0 0 5px rgba(0, 0, 0, .2);
 }
 
-.main__form_manipulation-calendar {
+.main__form {
   margin-top: 20px;
   margin-left: 35px;
   display: flex;
@@ -25,21 +25,21 @@ body {
   align-items: flex-start;
 }
 
-.name_data {
+.main__data-name {
   font-size: 21px;
   margin-bottom: 15px;
 }
 
-.main__input_data {
+.main__input-data {
   margin-bottom: 15px;
 }
 
-.main__btn_add-event {
+.main__btn {
   width: 200px;
   height: 30px;
   margin-bottom: 15px;
 }
 
-.main__div_out-information {
+.main__div-out {
   height: 35px;
 }
