@@ -30,7 +30,7 @@ function getMatrixOfCurrentMonth(pickedDate) {
 export function getFridaysOfMonth(date) {
     return getMatrixOfCurrentMonth(date).reduce((result, week) => {
         const foundDay = week.find((day) => day.dayOfWeek === 5);
-        return foundDay ? [...result, foundDay.date] : result;
+        return typeof foundDay !== 'undefined' ? [...result, foundDay.date] : result;
     }, []);
 }
 

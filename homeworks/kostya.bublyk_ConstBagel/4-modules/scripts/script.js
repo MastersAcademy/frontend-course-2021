@@ -5,11 +5,11 @@ import {
     fullWeeksNumberInMonth,
 } from './time.js';
 
-const inputDateField = document.querySelector('[ data-role="input-date-field"]');
-const getFridaysButton = document.querySelector('[ data-role="get-fridays-button"]');
-const isMonthLongButton = document.querySelector('[ data-role="is-month-long-button"]');
-const daysShortestWeekButton = document.querySelector('[data-role="days-shortest-week-button"]');
-const fullWeekInMonthButton = document.querySelector('[data-role="full-week-month-button"]');
+const inputDateFieldEl = document.querySelector('[ data-role="input-date-field"]');
+const getFridaysButtonEl = document.querySelector('[ data-role="get-fridays-button"]');
+const isMonthLongButtonEl = document.querySelector('[ data-role="is-month-long-button"]');
+const daysShortestWeekButtonEl = document.querySelector('[data-role="days-shortest-week-button"]');
+const fullWeekInMonthButtonEl = document.querySelector('[data-role="full-week-month-button"]');
 let date = '';
 
 /**
@@ -29,25 +29,25 @@ function displayResult(selector, result) {
 /**
  * Event listeners:
  */
-inputDateField.addEventListener('change', (event) => {
+inputDateFieldEl.addEventListener('change', (event) => {
     date = event.target.value;
     document.querySelectorAll('button').forEach((button) => {
         button.disabled = false;
     });
 });
 
-getFridaysButton.addEventListener('click', () => {
+getFridaysButtonEl.addEventListener('click', () => {
     displayResult('[data-role="get-fridays-output"]', `[${getFridaysOfMonth(date)}]`);
 });
 
-isMonthLongButton.addEventListener('click', () => {
+isMonthLongButtonEl.addEventListener('click', () => {
     displayResult('[data-role="is-month-long-output"]', isMonthLong(date));
 });
 
-daysShortestWeekButton.addEventListener('click', () => {
+daysShortestWeekButtonEl.addEventListener('click', () => {
     displayResult('[data-role="days-shortest-week-output"]', shortestWeekDaysNumber(date));
 });
 
-fullWeekInMonthButton.addEventListener('click', () => {
+fullWeekInMonthButtonEl.addEventListener('click', () => {
     displayResult('[data-role="full-week-month-output"]', fullWeeksNumberInMonth(date));
 });

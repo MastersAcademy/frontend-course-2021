@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.wrapper {
+.page-wrapper {
   width: 80%;
   height: 50%;
   margin: auto;
@@ -24,4 +24,10 @@
 .btn {
   width: 100%;
   min-height: 30px;
+}
+
+.btn:hover {
+  background-color: #3674E8;
+  color: #F4F4F4;
+  cursor: pointer;
 }
