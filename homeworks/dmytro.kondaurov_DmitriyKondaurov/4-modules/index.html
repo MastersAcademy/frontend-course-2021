@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>4-modules</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <fieldset class="wrapper">
+            <label for="date">Date:</label>
+            <input
+                type="date"
+                name="date"
+                id="date"
+                class="date-picker"
+                value="2021-11-10"
+                min="1970-01-01"
+                max="9999-12-31"
+                data-spec-day>
+            <button data-get-spec-day class="action-btn" type="button">Get month Monday</button>
+            <div class="result" data-spec-day-res></div>
+
+            <button data-get-month-long class="action-btn" type="button">Is month long?</button>
+            <div class="result" data-month-long-res></div>
+
+            <button data-get-spec-week-days class="action-btn" type="button">Days of the shortest week in month</button>
+            <div class="result" data-spec-week-days-res></div>
+
+            <button data-get-spec-week class="action-btn" type="button">Full weeks in month</button>
+            <div class="result" data-spec-week-res></div>
+        </fieldset>
+
+        <script type="module" src="main.js"></script>
+    </body>
+</html>

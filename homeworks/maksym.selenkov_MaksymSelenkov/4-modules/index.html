@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>4-modules</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main class="main">
+            <section class="main__section">
+                <p>Date</p>
+                <input type="date" data-input>
+            </section>
+            <section class="main__section">
+                <button type="button" data-mondays>Get month mondays</button>
+                <p data-result-mondays></p>
+            </section>
+            <section class="main__section">
+                <button type="button" data-month>Is month long?</button>
+                <p data-result-month></p>
+            </section>
+            <section class="main__section">
+                <button type="button" data-short-week>Days of shortest week in month</button>
+                <p data-result-short-week></p>
+            </section>
+            <section class="main__section">
+                <button type="button" data-full-weeks>Full weeks in month</button>
+                <p data-result-full-weeks></p>
+            </section>
+        </main>
+        <script type="module" src="app.js"></script>
+    </body>
+</html>
