@@ -29,7 +29,11 @@ export function shortestWeekDaysNumber(date) {
 
     const dayFirstWeek = fullWeekNum - (numfirstDay - 1);
     const dayLastWeek = fullWeekNum - (fullWeekNum - numlastDay);
-    return Math.min(dayFirstWeek, dayLastWeek);
+
+    if (dayFirstWeek && dayLastWeek > 0) {
+        return Math.min(dayFirstWeek, dayLastWeek);
+    }
+    return Math.max(dayFirstWeek, dayLastWeek);
 }
 
 export function fullWeeksNumberInMonth(date) {
