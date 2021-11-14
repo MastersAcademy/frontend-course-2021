@@ -1,8 +1,8 @@
 function getCountDaysOfMonth(date) {
-    return 33 - new Date(date.getFullYear(), date.getMonth(), 33).getDate();
+    return 32 - new Date(date.getFullYear(), date.getMonth(), 32).getDate();
 }
 
-function getCurrentDate(date) {
+function createDate(date) {
     return new Date(date);
 }
 
@@ -13,8 +13,9 @@ function getCurrentDate(date) {
 
 export function getMondaysOfMonth(date) {
     const monday = [];
-    const currentDate = getCurrentDate(date);
-    for (let i = 1; i <= getCountDaysOfMonth(currentDate); i++) {
+    const currentDate = createDate(date);
+    const countDays = getCountDaysOfMonth(currentDate);
+    for (let i = 1; i <= countDays; i++) {
         const item = new Date(currentDate.getFullYear(), currentDate.getMonth(), i);
         if (item.getDay() === 1) monday.push(item.getDate());
     }
@@ -26,7 +27,7 @@ export function getMondaysOfMonth(date) {
  * @returns {boolean} true if month of a date has 31 day, otherwise returns false
  */
 export function isMonthLong(date) {
-    return getCountDaysOfMonth(getCurrentDate(date)) === 31;
+    return getCountDaysOfMonth(createDate(date)) === 31;
 }
 
 /**
@@ -35,7 +36,7 @@ export function isMonthLong(date) {
  */
 
 export function shortestWeekDaysNumber(date) {
-    const currentDate = getCurrentDate(date);
+    const currentDate = createDate(date);
     const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
 
     let firstWeek = 0;
@@ -69,7 +70,7 @@ export function shortestWeekDaysNumber(date) {
 export function fullWeeksNumberInMonth(date) {
     let fullWeeksNumber = 0;
     let currentWeekDays = 0;
-    const currentDate = getCurrentDate(date);
+    const currentDate = createDate(date);
     for (let i = 1; i <= getCountDaysOfMonth(currentDate); i++) {
         const item = new Date(currentDate.getFullYear(), currentDate.getMonth(), i);
         currentWeekDays++;
@@ -81,14 +82,6 @@ export function fullWeeksNumberInMonth(date) {
         }
     }
     return fullWeeksNumber;
-}
-
-export function getTimeWithBind(timeBind) {
-    const currentTime = new Date(Date.now());
-    const timezoneOffset = currentTime.getTimezoneOffset() / 60;
-    currentTime.setHours(currentTime.getHours() + timezoneOffset + Number.parseInt(timeBind, 10));
-
-    return currentTime;
 }
 
 /**
@@ -115,13 +108,6 @@ export function addHours(date, hours) {
     return resultDate;
 }
 
-function correctTime(i) {
-    if (i < 10) {
-        return `0${i}`;
-    }
-    return i;
-}
-
 export function showTime(timezone) {
     let currentDate = new Date();
     switch (timezone) {
@@ -140,9 +126,9 @@ export function showTime(timezone) {
         default:
             break;
     }
-    const hours = correctTime(currentDate.getHours());
-    const minutes = correctTime(currentDate.getMinutes());
-    const seconds = correctTime(currentDate.getSeconds());
+    const hours = String(currentDate.getHours()).padStart(2, '0');
+    const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+    const seconds = String(currentDate.getSeconds()).padStart(2, '0');
 
     return `${hours}:${minutes}:${seconds}`;
 }

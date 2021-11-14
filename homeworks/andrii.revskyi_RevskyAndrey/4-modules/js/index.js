@@ -20,7 +20,7 @@ const textShortWeekEl = document.querySelector('[ data-text-week]');
 const buttonFullWeekEl = document.querySelector('[data-btn-full]');
 const textFullWeekEl = document.querySelector('[data-text-full]');
 
-const timeEl = document.querySelector('[data-time]');
+const timeEl = document.querySelector('[data-datatime]');
 const selectTimezoneEl = document.querySelector('[data-select-timezone]');
 
 let timezone = '';
