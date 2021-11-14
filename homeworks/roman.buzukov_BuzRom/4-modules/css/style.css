@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgba(230, 239, 253, 1);
+}
+
+.container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.container__list {
+  list-style: none;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container__list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.container__list-item:first-child {
+  padding-bottom: 20px;
+}
+
+.item__input,
+.item__button,
+.container__block-select,
+.container__list-select {
+  margin-top: 20px;
+  padding: 15px;
+  font-weight: 500;
+  font-size: 1.3rem;
+  min-width: 200px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container__block-select,
+.container__list-select {
+  appearance: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC");
+  background-repeat: no-repeat;
+  background-position: 95% center;
+}
+
+.item__text {
+  margin-top: 20px;
+}
+
+.container__block {
+  padding: 20px 50px;
+  height: 500px;
+  width: 40%;
+  border: 1px solid rgb(0, 0, 0);
+  position: relative;
+}
+
+.container__block::before {
+  content: "*";
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 50px;
+  color: rgb(230, 48, 48);
+}
+
+
+.container__block-time {
+  min-width: 160px;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+  }
+
+  .container__block {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
