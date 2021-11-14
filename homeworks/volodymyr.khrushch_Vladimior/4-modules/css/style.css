@@ -8,7 +8,7 @@
   padding-top: 45px;
 }
 
-.content_case {
+.items {
   border: 1px solid #000;
   width: 100%;
   max-width: 500px;
@@ -16,21 +16,20 @@
   padding-top: 10px;
 }
 
-.content_button {
+.items__button {
   border-radius: 5px;
-  width: 150px;
+  width: 170px;
   min-height: 40px;
   margin: 12px;
-  outline: none;
   border: 1px solid #000;
 }
 
-.content_text {
+.items__text {
   font-size: 16px;
   padding-left: 25px;
   padding-bottom: 20px;
 }
 
-.content_button:hover {
+.items__button:hover {
   background-color: #C5D7D9;
 }

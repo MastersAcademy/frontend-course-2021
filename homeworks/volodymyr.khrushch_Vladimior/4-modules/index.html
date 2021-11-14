@@ -9,36 +9,38 @@
     </head>
     <body>
         <article class="content">
-            <article class="content_case">
+            <div class="items">
                 <div>
-                    <div for="party">Date:</div>
-                    <input type="date" class="date" data-date value="2021-11-10">
+                    <div>
+                        <h4>Date:</h4>
+                    </div>
+                    <input type="date" data-date value="2021-11-10">
                 </div>
                 <div>
-                    <button type="button" class="content_button" name="button" data-monday>Get month monday</button>
+                    <button type="button" class="items__button" name="button" data-monday>Get month monday</button>
                 </div>
-                <div data-out-monday class="content_text">
+                <div data-out-monday class="items__text">
                     <p>1, 8, 15, 22, 29</p>
                 </div>
                 <div>
-                    <button type="button" class="content_button" name="button" data-fullMonth>Is month long?</button>
+                    <button type="button" class="items__button" name="button" data-fullMonth>Is month long?</button>
                 </div>
-                <div data-out-month class="content_text">
+                <div data-out-month class="items__text">
                     <p>False</p>
                 </div>
                 <div>
-                    <button type="button" class="content_button" name="button" data-shortWeek>Days of shortest week in month</button>
+                    <button type="button" class="items__button" name="button" data-shortWeek>Days of shortest week in month</button>
                 </div>
-                <div data-out-short class="content_text">
+                <div data-out-short class="items__text">
                     <p>2</p>
                 </div>
                 <div>
-                    <button type="button" class="content_button" name="button" data-fullWeek>Full weeks in month</button>
+                    <button type="button" class="items__button" name="button" data-fullWeek>Full weeks in month</button>
                 </div>
-                <div data-out-week class="content_text">
+                <div data-out-week class="items__text">
                     <p>4</p>
                 </div>
-            </article>
+            </div>
         </article>
         <script type="module" src="js/script.js"></script>
     </body>

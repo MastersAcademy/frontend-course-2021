@@ -19,8 +19,8 @@ export function getMondaysOfMonth(mon) {
 
 // long month
 export function isMonthLong(Month, Year) {
-    const x = 33 - new Date(Year, Month, 33).getDate();
-    return (x === 31 ? 'True' : 'False');
+    const long = 33 - new Date(Year, Month, 33).getDate();
+    return (long === 31 ? 'True' : 'False');
 }
 
 // full week in month

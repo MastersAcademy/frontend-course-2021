@@ -4,48 +4,49 @@ import {
 } from './time.js';
 
 // all buttons
-const buttonMonday = document.querySelector('[data-monday]');
-const buttonfullMonth = document.querySelector('[data-fullMonth]');
-const buttonfullWeek = document.querySelector('[data-fullWeek]');
-const buttonShortWeek = document.querySelector('[data-shortWeek]');
+const allMondayButton = document.querySelector('[data-monday]');
+const fullMonthButton = document.querySelector('[data-fullMonth]');
+const fullWeekButton = document.querySelector('[data-fullWeek]');
+const shortsWeekButton = document.querySelector('[data-shortWeek]');
 
 // Get Date
 const time = document.querySelector('[data-date]');
 
 // output data
-const outMonday = document.querySelector('[data-out-monday]');
+const allMonday = document.querySelector('[data-out-monday]');
 const fullMonth = document.querySelector('[data-out-month]');
 const shortWeek = document.querySelector('[data-out-short');
-const weekFull = document.querySelector('[data-out-week]');
+const fullWeek = document.querySelector('[data-out-week]');
 
 // get all monday
-buttonMonday.addEventListener('click', () => {
-    const monday = time.value;
-    const received = new Date(monday);
-    outMonday.textContent = getMondaysOfMonth(received);
+allMondayButton.addEventListener('click', () => {
+    const allMondayVal = time.value;
+    const received = new Date(allMondayVal);
+    allMonday.textContent = getMondaysOfMonth(received);
 });
 
 // get is month long
-buttonfullMonth.addEventListener('click', () => {
-    const inputLongMonth = new Date(time.value);
-    const Year = inputLongMonth.getFullYear();
-    const Mounth = inputLongMonth.getMonth();
-    fullMonth.textContent = isMonthLong(Mounth, Year);
+fullMonthButton.addEventListener('click', () => {
+    const longMonthVal = new Date(time.value);
+    const year = longMonthVal.getFullYear();
+    const mounth = longMonthVal.getMonth();
+    fullMonth.textContent = isMonthLong(mounth, year);
 });
 
 // get full week month
-buttonfullWeek.addEventListener('click', () => {
-    const inputFullWeek = new Date(time.value);
-    const Year = inputFullWeek.getFullYear();
-    const Mounth = inputFullWeek.getMonth() + 1;
-    weekFull.textContent = fullWeeksNumberInMonth(Mounth, Year);
+fullWeekButton.addEventListener('click', () => {
+    const fullWeekVal = new Date(time.value);
+    const year = fullWeekVal.getFullYear();
+    const mounth = fullWeekVal.getMonth() + 1;
+    fullWeek.textContent = fullWeeksNumberInMonth(mounth, year);
 });
 
 // get number short week
-buttonShortWeek.addEventListener('click', () => {
-    const shorts = new Date(time.value);
-    shorts.setDate(1);
-    const firstDayOfMonth = shorts.getDay() || 7;
-    const lastDayOfMonth = new Date(shorts.getFullYear(), shorts.getMonth() + 1, 0).getDay() || 7;
+shortsWeekButton.addEventListener('click', () => {
+    const shortsWeekVal = new Date(time.value);
+    shortsWeekVal.setDate(1);
+    const firstDayOfMonth = shortsWeekVal.getDay() || 7;
+    const lastDayOfMonth = new Date(shortsWeekVal.getFullYear(),
+        shortsWeekVal.getMonth() + 1, 0).getDay() || 7;
     shortWeek.textContent = shortestWeekDaysNumber(firstDayOfMonth, lastDayOfMonth);
 });
