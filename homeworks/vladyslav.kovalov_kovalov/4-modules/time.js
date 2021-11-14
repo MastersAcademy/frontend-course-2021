@@ -28,8 +28,15 @@ export class Time {
 
         const [firstWeek] = array;
         const lastWeek = totalDays - array[array.length - 1];
+        console.log(firstWeek, lastWeek);
 
-        return firstWeek > lastWeek ? lastWeek : firstWeek;
+        let result;
+        if (firstWeek === lastWeek) result = firstWeek;
+        if (firstWeek === 0) result = lastWeek;
+        if (lastWeek === 0) result = firstWeek;
+        if (firstWeek > lastWeek) result = firstWeek;
+        if (lastWeek > firstWeek) result = lastWeek;
+        return result;
     }
 
     fullWeeksNumberInMonth(date) {
