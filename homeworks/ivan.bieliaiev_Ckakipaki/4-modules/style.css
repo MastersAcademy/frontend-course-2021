@@ -42,7 +42,13 @@ body {
   width: 300px;
   padding: 5px;
   font-size: 25px;
-  transition: all .5s linear;
+  transition: all .2s linear;
+}
+
+.main__button:hover {
+  color: #129F45;
+  cursor: pointer;
+  background-color: #E487;
 }
 
 .main__result {
