@@ -32,11 +32,11 @@ export class Time {
 
         let result;
 
-        if (firstWeek === lastWeek) console.log(firstWeek);
-        if (firstWeek === 0 && lastWeek !== 0) console.log(lastWeek);
-        if (lastWeek === 0 && firstWeek !== 0) console.log(firstWeek);
-        if (firstWeek !== 0 && firstWeek < lastWeek) console.log(firstWeek);
-        if (lastWeek !== 0 && lastWeek < firstWeek) console.log(lastWeek);
+        if (firstWeek === lastWeek) result = firstWeek;
+        if (firstWeek === 0 && lastWeek !== 0) result = lastWeek;
+        if (lastWeek === 0 && firstWeek !== 0) result = firstWeek;
+        if (firstWeek !== 0 && firstWeek < lastWeek) result = firstWeek;
+        if (lastWeek !== 0 && lastWeek < firstWeek) result = lastWeek;
 
         return result;
     }
