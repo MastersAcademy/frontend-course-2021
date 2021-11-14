@@ -25,13 +25,13 @@
   margin: 20px;
 }
 
-.main__container-left-column {
+.block-functions {
   padding-left: 30px;
   width: 50%;
   height: 100%;
 }
 
-.main__container-input-data {
+.block-functions__input-data {
   width: 150px;
   height: 30px;
   border: 2px solid #000;
@@ -39,7 +39,7 @@
   border: none;
 }
 
-.main__button {
+.block-functions__button {
   width: 150px;
   min-height: 30px;
   border: 2px solid #000;
@@ -58,7 +58,7 @@
   margin-top: 30px;
 }
 
-.main__container-right-column {
+.time-and-city {
   margin-top: 20px;
   margin-left: 25px;
   width: 200px;
@@ -66,11 +66,11 @@
   border: 2px solid #000;
 }
 
-.main__container-right-column-time {
+.time-and-city__text {
   padding: 20px 0 0 20px;
 }
 
-.main__container-right-column-city {
+.time-and-city__select-city {
   width: 80px;
   height: 30px;
   font-size: 15px;

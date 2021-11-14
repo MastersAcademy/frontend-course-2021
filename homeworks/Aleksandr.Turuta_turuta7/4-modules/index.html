@@ -12,27 +12,27 @@
     <body class="body" data-body>
         <div class="main">
             <div class="main__container">
-                <div class="main__container-left-column">
-                    <h4 class="main__container-title margin-up-30px">Date:</h4>
-                    <input class="main__container-input-data margin-up-30px" data-time type="date" id="start"
+                <div class="block-functions">
+                    <h1 class="block-functions__title margin-up-30px">Date:</h1>
+                    <input class="block-functions__input-data margin-up-30px" data-time type="date" id="start"
                         name="trip-start" value="2021-07-22" min="2021-01-01" max="2025-12-31">
-                    <button type="button" class="main__button margin-up-30px" data-button-1>Get month fridays</button>
-                    <p data-function1 class="margin-up-30px">push the button</p>
-                    <button type="button" class="main__button margin-up-30px" data-button-2>Is month long?</button>
-                    <p data-function2 class="margin-up-30px">push the button</p>
-                    <button type="button" class="main__button margin-up-30px" data-button-3>Days of shortest week in
+                    <button type="button" class="block-functions__button margin-up-30px" data-button-get-mondays-of-month>Get month fridays</button>
+                    <p data-get-mondays-of-month class="margin-up-30px"></p>
+                    <button type="button" class="block-functions__button margin-up-30px" data-button-is-month-long>Is month long?</button>
+                    <p data-is-month-long class="margin-up-30px"></p>
+                    <button type="button" class="block-functions__button margin-up-30px" data-button-shortest-week-days-number>Days of shortest week in
                         month</button>
-                    <p data-function3 class="margin-up-30px">push the button</p>
-                    <button type="button" class="main__button margin-up-30px" data-button-4>Full weeks in mouth</button>
-                    <p data-function4 class="margin-up-30px">push the button</p>
+                    <p data-shortest-week-days-number class="margin-up-30px"></p>
+                    <button type="button" class="block-functions__button margin-up-30px" data-button-full-weeks-number-in-month>Full weeks in mouth</button>
+                    <p data-full-weeks-number-in-month class="margin-up-30px"></p>
                 </div>
-                <div class="main__container-right-column">
-                    <p data-p-time class="main__container-right-column-time"></p>
-                    <select class="main__container-right-column-city" data-select-city name="user_profile_color_1">
-                        <option value="1">Current</option>
-                        <option value="2">Tokyo</option>
-                        <option value="3">London</option>
-                        <option value="4">New York</option>
+                <div class="time-and-city">
+                    <p data-p-time class="time-and-city__text"></p>
+                    <select class="time-and-city__select-city" data-select-city name="user_profile_color_1">
+                        <option value="0">Current</option>
+                        <option value="7">Tokyo</option>
+                        <option value="-2">London</option>
+                        <option value="-7">New York</option>
                     </select>
                 </div>
             </div>

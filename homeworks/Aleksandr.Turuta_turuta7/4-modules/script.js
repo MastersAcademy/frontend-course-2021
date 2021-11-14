@@ -9,15 +9,15 @@ const messageTimeEl = document.querySelector('[data-time]');
 const timePEl = document.querySelector('[data-p-time]');
 const selectCityEl = document.querySelector('[data-select-city]');
 
-const button1El = document.querySelector('[data-button-1]');
-const button2El = document.querySelector('[data-button-2]');
-const button3El = document.querySelector('[data-button-3]');
-const button4El = document.querySelector('[data-button-4]');
+const buttonGetMondaysOfMonthEl = document.querySelector('[data-button-get-mondays-of-month]');
+const buttonIsMonthLongEl = document.querySelector('[data-button-is-month-long]');
+const buttonShortestWeekDaysNumberEl = document.querySelector('[data-button-shortest-week-days-number]');
+const buttonFullWeeksNumberInMonthEl = document.querySelector('[data-button-full-weeks-number-in-month]');
 
-const returnResultFunc1El = document.querySelector('[data-function1]');
-const returnResultFunc2El = document.querySelector('[data-function2]');
-const returnResultFunc3El = document.querySelector('[data-function3]');
-const returnResultFunc4El = document.querySelector('[data-function4]');
+const returnResultGetMondaysOfMonthEl = document.querySelector('[data-get-mondays-of-month]');
+const returnResultIsMonthLongEl = document.querySelector('[data-is-month-long]');
+const returnResultShortestWeekDaysNumberEl = document.querySelector('[data-shortest-week-days-number]');
+const returnResultFullWeeksNumberInMonthEl = document.querySelector('[data-full-weeks-number-in-month]');
 
 let correctHours = 0;
 
@@ -33,69 +33,64 @@ const correctAndUpdateTime = () => {
     const today = new Date();
     today.setHours(today.getHours() + correctHours);
 
-    let H = today.getHours().toString();
-    let M = today.getMinutes().toString();
-    let S = today.getSeconds().toString();
+    let hours = today.getHours().toString();
+    let minutes = today.getMinutes().toString();
+    let seconds = today.getSeconds().toString();
 
-    if (H.length === 1) H = `0${H}`;
-    if (M.length === 1) M = `0${M}`;
-    if (S.length === 1) S = `0${S}`;
-    timePEl.textContent = `${H}:${M}:${S}`;
+    if (hours.length === 1) hours = hours.padStart(2, '0');
+    if (minutes.length === 1) minutes = minutes.padStart(2, '0');
+    if (seconds.length === 1) seconds = seconds.padStart(2, '0');
+    timePEl.textContent = `${hours}:${minutes}:${seconds}`;
 };
+
+const increaseHours = (hours) => {
+    correctHours = hours;
+};
+
+const decreaseHours = (hours) => {
+    correctHours = hours;
+};
+
 correctData();
 correctAndUpdateTime();
 
-setInterval(() => {
-    correctAndUpdateTime();
-}, 1000);
+setInterval(correctAndUpdateTime, 1000);
 
-button1El.addEventListener('click', () => {
+buttonGetMondaysOfMonthEl.addEventListener('click', () => {
     const date = new Date(messageTimeEl.value);
-    returnResultFunc1El.textContent = getMondaysOfMonth(
+    returnResultGetMondaysOfMonthEl.textContent = `[${getMondaysOfMonth(
+        date.getFullYear(),
+        date.getMonth() + 1,
+    )}]`;
+});
+
+buttonIsMonthLongEl.addEventListener('click', () => {
+    const date = new Date(messageTimeEl.value);
+    returnResultIsMonthLongEl.textContent = isMonthLong(
         date.getFullYear(),
         date.getMonth() + 1,
     );
 });
 
-button2El.addEventListener('click', () => {
+buttonShortestWeekDaysNumberEl.addEventListener('click', () => {
     const date = new Date(messageTimeEl.value);
-    returnResultFunc2El.textContent = isMonthLong(
+    returnResultShortestWeekDaysNumberEl.textContent = shortestWeekDaysNumber(
         date.getFullYear(),
         date.getMonth() + 1,
     );
 });
 
-button3El.addEventListener('click', () => {
+buttonFullWeeksNumberInMonthEl.addEventListener('click', () => {
     const date = new Date(messageTimeEl.value);
-    returnResultFunc3El.textContent = shortestWeekDaysNumber(
-        date.getFullYear(),
-        date.getMonth() + 1,
-    );
-});
-
-button4El.addEventListener('click', () => {
-    const date = new Date(messageTimeEl.value);
-    returnResultFunc4El.textContent = fullWeeksNumberInMonth(
+    returnResultFullWeeksNumberInMonthEl.textContent = fullWeeksNumberInMonth(
         date.getFullYear(),
         date.getMonth() + 1,
     );
 });
 
 selectCityEl.addEventListener('change', () => {
-    switch (Number(selectCityEl.value)) {
-        case 1:
-            correctHours = 0;
-            break;
-        case 2:
-            correctHours = 7;
-            break;
-        case 3:
-            correctHours = -2;
-            break;
-        case 4:
-            correctHours = -7;
-            break;
-        default:
-            break;
-    }
+    const valueHours = Number(selectCityEl.value);
+    if (valueHours > 0) increaseHours(valueHours);
+    else if (valueHours < 0) decreaseHours(valueHours);
+    else correctHours = valueHours;
 });
