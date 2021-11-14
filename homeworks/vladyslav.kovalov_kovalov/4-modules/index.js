@@ -9,7 +9,6 @@ const clockEl = document.querySelector('[data-clock]');
 const now = new Date();
 const app = new App(now, datePickerEl, pageEl, timezoneEl, clockEl);
 const time = new Time();
-app.initTodayDate();
 const clock = setInterval(app.timeClock(), 1000);
 
 app.datePickerEl.addEventListener('change', (e) => {

@@ -5,6 +5,7 @@ export class App {
         this.pageEl = pageEl;
         this.timezoneEl = timezoneEl;
         this.clockEl = clockEl;
+        this.initTodayDate();
     }
 
     initTodayDate() {
