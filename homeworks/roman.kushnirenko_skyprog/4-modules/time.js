@@ -1,8 +1,27 @@
 const currentTime = document.querySelector('[data-current-time]');
 const monthLong = document.querySelector('[data-monthlong]');
 const fullWeeksShow = document.querySelector('[data-fullweeks]');
+const mondaysShow = document.querySelector('[data-mondays]');
+const inputDate = document.querySelector('[data-input]');
 
-export function cityTime(city) {
+export function getMondaysOfMonth() {
+    const d = new Date(inputDate.value);
+    const month = d.getMonth();
+    const mondays = [];
+    d.setDate(1);
+    while (d.getDay() !== 1) {
+        d.setDate(d.getDate() + 1);
+    }
+    while (d.getMonth() === month) {
+        mondays.push(new Date(d.getTime()));
+        d.setDate(d.getDate() + 7);
+    }
+    const dateMondays = mondays.map((item) => item.getDate());
+    mondaysShow.textContent = dateMondays;
+    // console.log(d);
+}
+
+export function selectLocalTimeOfCity(city) {
     let localTime = new Date().toLocaleString('en-US', { timeZone: `${city}` });
     localTime = new Date(localTime);
     const showHour = localTime.getHours();
@@ -11,19 +30,19 @@ export function cityTime(city) {
     currentTime.innerHTML = `${showHour.toLocaleString()} : ${showMinut.toLocaleString()} : ${showSeconds.toLocaleString()}`;
 }
 
-export function numberOfDays(iMonth, iYear) {
-    const myDate = new Date(iYear, iMonth + 1, 1);
+export function isMonthLong(month, year) {
+    const myDate = new Date(year, month + 1, 1);
     const newDate = new Date(myDate - 1);
-    let trueOrFalse;
+    let isMonthLongOrNot;
     if (newDate.getDate() === 31) {
-        trueOrFalse = true;
+        isMonthLongOrNot = true;
     } else {
-        trueOrFalse = false;
+        isMonthLongOrNot = false;
     }
-    monthLong.textContent = trueOrFalse;
+    monthLong.textContent = isMonthLongOrNot;
 }
 
-export function getFullWeeksMonth(month, years, _start) {
+export function fullWeeksNumberInMonth(month, years, _start) {
     const weeks = [];
     const firstDate = new Date(years, month, 1);
     const lastDate = new Date(years, month + 1, 0);
