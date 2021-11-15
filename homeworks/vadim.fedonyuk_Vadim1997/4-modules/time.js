@@ -6,8 +6,7 @@ export function getMondaysOfMonth(date) {
     const mondaysArray = [];
     for (let i = 1; i <= numberDaysOfMonth; i++) {
         const daysOfMonth = new Date(year, month, i);
-        if (daysOfMonth.toString()
-            .includes('Mon')) {
+        if (daysOfMonth.getDay() === 1) {
             mondaysArray.push(i);
         }
     }
@@ -21,9 +20,7 @@ export function isMonthLong(date) {
     let numberDaysOfMonth = new Date(year, month + 1, 0).getDate();
     if (numberDaysOfMonth > 30) {
         numberDaysOfMonth = true;
-    } else {
-        numberDaysOfMonth = false;
-    }
+    } else numberDaysOfMonth = (month + 1 === 2) && (numberDaysOfMonth > 28);
     return numberDaysOfMonth;
 }
 
@@ -38,16 +35,14 @@ export function shortestWeekDaysNumber(date) {
     for (let i = 1; i <= numberDaysOfMonth; i++) {
         const daysOfMonth = new Date(year, month, i);
         numberFirstWeek += 1;
-        if (daysOfMonth.toString()
-            .includes('Sat')) {
+        if (daysOfMonth.getDay() === 0) {
             break;
         }
     }
     for (let i = numberDaysOfMonth; i >= 1; i--) {
         const daysOfMonth = new Date(year, month, i);
         numberLastWeek += 1;
-        if (daysOfMonth.toString()
-            .includes('Sun')) {
+        if (daysOfMonth.getDay() === 1) {
             break;
         }
     }
@@ -68,13 +63,11 @@ export function fullWeeksNumberInMonth(date) {
     const numberDaysOfMonth = new Date(year, month + 1, 0).getDate();
     for (let i = 1; i <= numberDaysOfMonth; i++) {
         const daysOfMonthSun = new Date(year, month, i);
-        if (daysOfMonthSun.toString()
-            .includes('Sun')) {
+        if (daysOfMonthSun.getDay() === 1) {
             firstWeekDay = i;
             for (i = firstWeekDay; i <= numberDaysOfMonth; i++) {
                 const daysOfMonthSat = new Date(year, month, i);
-                if (daysOfMonthSat.toString()
-                    .includes('Sat')) {
+                if (daysOfMonthSat.getDay() === 0) {
                     numberWeek += 1;
                 }
             }
