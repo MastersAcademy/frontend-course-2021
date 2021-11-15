@@ -1,7 +1,7 @@
 export function getMondaysOfMonth() {
-    const selectedYear = document.querySelector('[data-date__input]').value.slice(0, 4);
-    const selectedMonth = document.querySelector('[data-date__input]').value.slice(5, 7);
-    const getMondaysOutputEl = document.querySelector('[data-get-mondays__output]');
+    const selectedYear = document.querySelector('[data-date-input]').value.slice(0, 4);
+    const selectedMonth = document.querySelector('[data-date-input]').value.slice(5, 7);
+    const getMondaysOutputEl = document.querySelector('[data-get-mondays-output]');
     const d = new Date(selectedYear, selectedMonth, 0);
     const month = d.getMonth();
     const mondaysArr = [];
@@ -17,10 +17,11 @@ export function getMondaysOfMonth() {
     const mondays = monday.match(/\b\d{2}\b/g);
     getMondaysOutputEl.textContent = `[${mondays}]`;
 }
+
 export function isMonthLong() {
-    const selectedYear = document.querySelector('[data-date__input]').value.slice(0, 4);
-    const selectedMonth = document.querySelector('[data-date__input]').value.slice(5, 7);
-    const monthLongOutputEl = document.querySelector('[data-month-long__output]');
+    const selectedYear = document.querySelector('[data-date-input]').value.slice(0, 4);
+    const selectedMonth = document.querySelector('[data-date-input]').value.slice(5, 7);
+    const monthLongOutputEl = document.querySelector('[data-month-long-output]');
     const numberDaysInMonth = new Date(selectedYear, selectedMonth, 0).getDate();
     function ifNumberDays() {
         if (numberDaysInMonth < 31) {
@@ -30,10 +31,11 @@ export function isMonthLong() {
     }
     monthLongOutputEl.textContent = ifNumberDays();
 }
+
 export function shortestWeekDaysNumber() {
-    const selectedYear = document.querySelector('[data-date__input]').value.slice(0, 4);
-    const selectedMonth = document.querySelector('[data-date__input]').value.slice(5, 7);
-    const shortestWeekDaysOutputEl = document.querySelector('[data-shortest-week-days__output]');
+    const selectedYear = document.querySelector('[data-date-input]').value.slice(0, 4);
+    const selectedMonth = document.querySelector('[data-date-input]').value.slice(5, 7);
+    const shortestWeekDaysOutputEl = document.querySelector('[data-shortest-week-days-output]');
     const firstDayinMonth = new Date(selectedYear, selectedMonth - 1, 1).getDay();
     const lastDayinMonth = new Date(selectedYear, selectedMonth, 0).getDay();
     const daysToFullWeeks = 7 - firstDayinMonth;
@@ -44,14 +46,16 @@ export function shortestWeekDaysNumber() {
         shortestWeekDaysOutputEl.textContent = daysAfterFullWeeks;
     }
 }
+
 export function fullWeeksNumberInMonth() {
-    const selectedYear = document.querySelector('[data-date__input]').value.slice(0, 4);
-    const selectedMonth = document.querySelector('[data-date__input]').value.slice(5, 7);
-    const fullWeeksOutputEl = document.querySelector('[data-full-weeks__output]');
+    const selectedYear = document.querySelector('[data-date-input]').value.slice(0, 4);
+    const selectedMonth = document.querySelector('[data-date-input]').value.slice(5, 7);
+    const fullWeeksOutputEl = document.querySelector('[data-full-weeks-output]');
     const numberDaysInMonth = new Date(selectedYear, selectedMonth, 0).getDate();
     const firstDayinMonth = new Date(selectedYear, selectedMonth - 1, 1).getDay();
     const lastDayinMonth = new Date(selectedYear, selectedMonth, 0).getDay();
     const daysToFullWeeks = 7 - firstDayinMonth;
+    console.log(firstDayinMonth);
     const daysAfterFullWeeks = lastDayinMonth + 1;
     if (lastDayinMonth < 6 && daysToFullWeeks < 7) {
         const fullWeeksNumber = (numberDaysInMonth - (daysToFullWeeks + daysAfterFullWeeks))
