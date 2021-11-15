@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  background: #B6C0C4;
+  font-family: "Roboto", sans-serif;
+}
+
+.main {
+  display: flex;
+  width: 600px;
+  height: 700px;
+  background: #FFF;
+  margin: 0 auto;
+}
+
+.main__container {
+  display: flex;
+  width: 100%;
+  border: 2px solid #000;
+  margin: 20px;
+}
+
+.block-functions {
+  padding-left: 30px;
+  width: 50%;
+  height: 100%;
+}
+
+.block-functions__input-data {
+  width: 150px;
+  height: 30px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  border: none;
+}
+
+.block-functions__button {
+  width: 150px;
+  min-height: 30px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  border: none;
+  background: #D3D9DB;
+  transition: .2s;
+}
+
+.main__button:hover {
+  transform: scale(1.1);
+  background: rgb(100, 100, 100);
+}
+
+.margin-up-30px {
+  margin-top: 30px;
+}
+
+.time-and-city {
+  margin-top: 20px;
+  margin-left: 25px;
+  width: 200px;
+  height: 300px;
+  border: 2px solid #000;
+}
+
+.time-and-city__text {
+  padding: 20px 0 0 20px;
+}
+
+.time-and-city__select-city {
+  width: 80px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-left: 20px;
+  background: #FFF;
+}

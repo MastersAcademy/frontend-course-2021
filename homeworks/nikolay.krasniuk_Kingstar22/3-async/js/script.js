@@ -6,10 +6,10 @@ const postsWindowEl = document.querySelector('[data-publication-block]');
 const selectItemEl = document.querySelectorAll('[data-value]');
 const entryFilterText = document.querySelector('[data-filter-posts]');
 
-const urlPosts = 'https://jsonplaceholder.typicode.com/posts/?_limit=10';
-const arrayPosts = [];
-const defaultArrPosts = [];
-let methodSort = '0';
+const urlPosts = 'https://jsonplaceholder.typicode.com/posts/?_limit=20';
+let arrayPosts = [];
+let defaultArrPosts = [];
+let methodSort = '';
 
 const getData = async (url) => {
     const result = await fetch(url);
@@ -44,6 +44,8 @@ function sortPosts(arrPosts, sortParameter) {
 function filterPosts(arrPosts) {
     let arr = arrPosts;
     arr = arr.filter((item) => item.title.toLowerCase().includes(entryFilterText.value));
+    arrayPosts = arr;
+    defaultArrPosts = arr;
     sortPosts(arr, methodSort);
     entryFilterText.value = '';
 }
@@ -58,6 +60,7 @@ selectItemEl.forEach((item) => {
 
 entryFilterText.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
+        methodSort = '0';
         filterPosts(arrayPosts);
     }
 });
