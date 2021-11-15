@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@200;300&family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <h2 class="main-container__title">Date</h2>
+            <input type="date" class="main-container__time-input " value="2021-11-13" data-input-data>
+            <div class="main-container__time-elements">
+                <button type="button" class="main-container__time-elements__button" data-get-mondays>Get month mondays</button>
+                <output class="main-container__time-elements__text-output" data-output-mondays>0</output>
+            </div>
+            <div class="main-container__time-elements">
+                <button type="button" class="main-container__time-elements__button" data-long-month>Is month long ?</button>
+                <output class="main-container__time-elements__text-output" data-output-long-month>0</output>
+            </div>
+            <div class="main-container__time-elements">
+                <button type="button" class="main-container__time-elements__button" data-shortest-week>Days of shortest week</button>
+                <output class="main-container__time-elements__text-output" data-output-shortest-week>0</output>
+            </div>
+            <div class="main-container__time-elements">
+                <button type="button" class="main-container__time-elements__button" data-full-weeks>Full weeks in month</button>
+                <output class="main-container__time-elements__text-output" data-output-full-weeks>0</output>
+            </div>
+
+        </div>
+        <script type="module" src="app.js"></script>
+    </body>
+</html>

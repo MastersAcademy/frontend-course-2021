@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Modules</title>
+        <link rel="stylesheet" href="css/style.css">
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+    </head>
+    <body>
+        <div class="page-wrapper">
+            <main class="main-block">
+                <h1 class="main-title">Date:</h1>
+                <input
+                    type="date"
+                    class="date-picker"
+                    data-role="input-date-field"
+                >
+                <button type="button" class="btn" data-role="get-fridays-button">
+                    Get month Fridays
+                </button>
+                <p class="result" data-role="get-fridays-output"></p>
+                <button type="button" class="btn" data-role="is-month-long-button">
+                    Is month long?
+                </button>
+                <p class="result" data-role="is-month-long-output"></p>
+                <button type="button" class="btn" data-role="days-shortest-week-button">
+                    Days of shortest weeks in month
+                </button>
+                <p class="result" data-role="days-shortest-week-output"></p>
+                <button type="button" class="btn" data-role="full-week-month-button">
+                    Full weeks in month
+                </button>
+                <p class="result" data-role="full-week-month-output"></p>
+            </main>
+            <aside class="aside-block"></aside>
+        </div>
+        <script type="module" src="./scripts/script.js"></script>
+    </body>
+</html>
