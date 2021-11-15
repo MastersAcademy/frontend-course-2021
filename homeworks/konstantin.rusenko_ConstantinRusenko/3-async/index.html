@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="logo">Blog</h1>
+            <div class="header_controls controls">
+                <select class="controls__sort" data-sort>
+                    <option value="unsorted" selected>Without sorting</option>
+                    <option value="sortedAZ">Sort from A to Z</option>
+                    <option value="sortedZA">Sort from Z to A</option>
+                </select>
+                <input type="text" name="input" placeholder="Filter" class="controls__filter" data-input>
+            </div>
+        </header>
+        <main>
+            <div class="posts" data-posts>
+                <div class="loader" data-loader></div>
+            </div>
+        </main>
+        <script src="index.js"></script>
+    </body>
+</html>

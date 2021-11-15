@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>4-modules</title>
+    </head>
+    <body>
+        <container class="outer-shell">
+            <main class="main" data-main-form>
+                <h3 class="main__data-name">Data:</h3>
+                <input class="main__input-data" type="date" name="calendar" data-take-calendar>
+                <input class="main__btn" type="button" value="Get month monday" data-get-monday>
+                <div class="main__div-out" data-out-monday></div>
+                <input class="main__btn" type="button" value="Is month long?" data-long-month>
+                <div class="main__div-out" data-out-long-month></div>
+                <input class="main__btn" type="button" value="Days of shortest week in month" data-shortest-week>
+                <div class="main__div-out" data-short-week></div>
+                <input class="main__btn" type="button" value="Full weeks in month" data-full-weeks>
+                <div class="main__div-out" data-out-full-weeks></div>
+            </main>
+        </container>
+        <script type="module" src="script.js"></script>
+    </body>
+</html>

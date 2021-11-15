@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <main class="chat">
+            <section class="chat_messages" data-all-messages>
+            </section>
+
+            <template data-template>
+                <div class="container_message" data-container>
+                    <div class="chat_message_content" data-message-content></div>
+                    <button class="close_message" data-close-message type="button">x</button>
+                </div>
+            </template>
+
+            <section class="chat_bottom">
+                <form class="chat_form">
+                    <textarea class="chat-form_input" data-text-input name="post_text"
+                        placeholder="Enter message..."></textarea>
+                    <button type="submit" class="chat-form_submit" data-text-submit>Send</button>
+                </form>
+            </section>
+        </main>
+
+        <script src="js.js"></script>
+    </body>
+
+</html>
