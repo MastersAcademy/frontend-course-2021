@@ -1,5 +1,3 @@
-/* eslint-disable import/named */
-// eslint-disable-next-line import/named
 import { getMondaysOfMonth } from './dateModules/getMondaysOfMonth.js';
 import { isMonthLong } from './dateModules/isMonthLong.js';
 import { shortestWeekDaysNumber } from './dateModules/shortestWeekDaysNumber.js';
