@@ -18,7 +18,6 @@ export function getMondaysOfMonth() {
     }
     const dateMondays = mondays.map((item) => item.getDate());
     mondaysShow.textContent = dateMondays;
-    // console.log(d);
 }
 
 export function selectLocalTimeOfCity(city) {
