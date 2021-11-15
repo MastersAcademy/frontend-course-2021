@@ -22,7 +22,7 @@ calendar.addEventListener('change', () => {
         mondayContainer.innerText = getMondaysOfMonth(monthOnly, yearOnly);
     });
     longButton.addEventListener('click', () => {
-        longContainer.innerText = isMonthLong(monthOnly);
+        longContainer.innerText = isMonthLong(monthOnly, yearOnly);
     });
     shortWeekButton.addEventListener('click', () => {
         shortWeekContainer.innerText = shortestWeekDaysNumber(monthOnly, yearOnly);
