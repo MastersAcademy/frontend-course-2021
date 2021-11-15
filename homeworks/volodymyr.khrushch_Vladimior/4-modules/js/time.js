@@ -11,7 +11,7 @@ export function getMondaysOfMonth(mon) {
 
     while (addDate.getMonth() === month) {
         const pushDate = new Date(addDate.getTime());
-        mondays.push(` ${pushDate.getDate()}`);
+        mondays.push(pushDate.getDate());
         addDate.setDate(addDate.getDate() + 7);
     }
     return mondays;
