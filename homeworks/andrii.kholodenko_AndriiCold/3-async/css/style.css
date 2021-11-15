@@ -1,0 +1,143 @@
+html,
+.page_body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  background-color: #E4EFFE;
+}
+
+.load_content {
+  display: none;
+}
+
+.page_body_wrapper {
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  color: #000;
+  min-width: 1005px;
+  max-width: 1005px;
+  margin: 62px auto;
+  background-color: #F6F5FB;
+  border-radius: 30px;
+}
+
+.main_header {
+  padding: 17px 28px 17px 52px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFF;
+  border-radius: 30px 30px 0 0;
+}
+
+.logo_img {
+  max-width: 115px;
+  max-height: 50px;
+}
+
+.main_form {
+  min-width: 347px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_sorting {
+  min-width: 93px;
+  min-height: 36px;
+  text-align: center;
+  padding-right: 10px;
+  font-size: 24px;
+  line-height: 28px;
+  background-color: #F7F6FB;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+  border-radius: 30px;
+  color: #000;
+}
+
+.main_filter {
+  font-size: 18px;
+  min-width: 230px;
+  min-height: 36px;
+  background-color: #F7F6FB;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .25);
+  border-radius: 30px;
+  text-indent: 15px;
+}
+
+.main_content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0 0 30px;
+}
+
+.content_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 30px 0 0 30px;
+  padding: 44px 20px 28px;
+  width: 416px;
+  box-shadow: 0 1px 50px 0 rgba(0, 0, 0, .06);
+  border-radius: 30px;
+  background-color: #FFF;
+}
+
+.delete_wrapper {
+  width: 400px;
+  padding-right: 16px;
+  display: flex;
+  flex-direction: row-reverse;
+  bottom: 0;
+}
+
+.delete {
+  background-color: inherit;
+  border: none;
+}
+
+.main_sorting:hover,
+.main_filter:hover,
+.delete:hover {
+  background-color: #E2DEE8;
+  cursor: pointer;
+}
+
+.delete:active {
+  background-color: inherit;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.title::first-letter {
+  text-transform: capitalize;
+  color: #FF726C;
+}
+
+.content::first-letter {
+  text-transform: capitalize;
+}
+
+.load {
+  border: 1.6rem solid #C047D2;
+  border-radius: 50%;
+  border-top: 1.6rem solid #5B1F67;
+  width: 12rem;
+  height: 12rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

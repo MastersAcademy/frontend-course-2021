@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="favicon.ico">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <div class="container" data-container>
+            <ul class="container__list">
+                <li class="container__list-item item">
+                    <p class="item__text">Date:</p>
+                    <input class="item__input" type="date" data-userMonth>
+                </li>
+                <li class="container__list-item item">
+                    <select class="container__list-select" data-daySelector>
+                        <option selected value="1">Mondays</option>
+                        <option value="2">Tuesdays</option>
+                        <option value="3">Wednesdays</option>
+                        <option value="4">Thursdays</option>
+                        <option value="5">Fridays</option>
+                        <option value="6">Saturdays</option>
+                        <option value="0">Sundays</option>
+                    </select>
+                    <button type="button" class="item__button" data-dayCount>Get month Mondays</button>
+                    <p class="item__text" data-dayCount-state></p>
+                </li>
+                <li class="container__list-item item">
+                    <button type="button" class="item__button" data-monthLength>Is month long?</button>
+                    <p class="item__text" data-monthLength-state></p>
+                </li>
+                <li class="container__list-item item">
+                    <button type="button" class="item__button" data-shortestWeek>Days of shortest week in month</button>
+                    <p class="item__text" data-shortestWeek-state></p>
+                </li>
+                <li class="container__list-item item">
+                    <button type="button" class="item__button" data-fullWeeks>Full weeks in month</button>
+                    <p class="item__text" data-fullWeeks-state></p>
+                </li>
+            </ul>
+            <div class="container__block">
+                <p class="container__block-time" data-time-state></p>
+                <select class="container__block-select" data-citySelector>
+                    <option selected value="0">Current</option>
+                    <option value="7">Tokyo</option>
+                    <option value="-2">London</option>
+                    <option value="-7">New York</option>
+                </select>
+            </div>
+
+        </div>
+        <script type="module" src="js/script.js"></script>
+    </body>
+
+</html>
