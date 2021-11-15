@@ -3,6 +3,8 @@ import {
     isMonthLong,
     shortestWeekDaysNumber,
     fullWeeksNumberInMonth,
+    subtractHours,
+    addHours,
 } from './time.js';
 
 const messageTimeEl = document.querySelector('[data-time]');
@@ -19,7 +21,7 @@ const returnResultIsMonthLongEl = document.querySelector('[data-is-month-long]')
 const returnResultShortestWeekDaysNumberEl = document.querySelector('[data-shortest-week-days-number]');
 const returnResultFullWeeksNumberInMonthEl = document.querySelector('[data-full-weeks-number-in-month]');
 
-let correctHours = 0;
+let correctHours;
 
 const correctData = () => {
     const today = new Date();
@@ -30,8 +32,11 @@ const correctData = () => {
 };
 
 const correctAndUpdateTime = () => {
-    const today = new Date();
-    today.setHours(today.getHours() + correctHours);
+    let today;
+    const valueHours = Number(selectCityEl.value);
+    if (valueHours > 0) today = addHours(new Date(), correctHours);
+    else if (valueHours < 0) today = subtractHours(new Date(), Math.abs(correctHours));
+    else today = new Date();
 
     let hours = today.getHours().toString();
     let minutes = today.getMinutes().toString();
@@ -41,14 +46,6 @@ const correctAndUpdateTime = () => {
     if (minutes.length === 1) minutes = minutes.padStart(2, '0');
     if (seconds.length === 1) seconds = seconds.padStart(2, '0');
     timePEl.textContent = `${hours}:${minutes}:${seconds}`;
-};
-
-const increaseHours = (hours) => {
-    correctHours = hours;
-};
-
-const decreaseHours = (hours) => {
-    correctHours = hours;
 };
 
 correctData();
@@ -89,8 +86,5 @@ buttonFullWeeksNumberInMonthEl.addEventListener('click', () => {
 });
 
 selectCityEl.addEventListener('change', () => {
-    const valueHours = Number(selectCityEl.value);
-    if (valueHours > 0) increaseHours(valueHours);
-    else if (valueHours < 0) decreaseHours(valueHours);
-    else correctHours = valueHours;
+    correctHours = Number(selectCityEl.value);
 });

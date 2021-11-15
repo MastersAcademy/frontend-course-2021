@@ -49,3 +49,13 @@ export const fullWeeksNumberInMonth = (year, month) => {
     }
     return weeks;
 };
+
+export const subtractHours = (date, hours) => {
+    date.setMilliseconds(-hours * 60 * 60 * 1000);
+    return date;
+};
+
+export const addHours = (date, hours) => {
+    date.setMilliseconds(hours * 60 * 60 * 1000);
+    return date;
+};
