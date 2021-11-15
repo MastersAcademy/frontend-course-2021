@@ -37,13 +37,20 @@ export function shortestWeekDaysNumber() {
     const selectedMonth = document.querySelector('[data-date-input]').value.slice(5, 7);
     const shortestWeekDaysOutputEl = document.querySelector('[data-shortest-week-days-output]');
     const firstDayinMonth = new Date(selectedYear, selectedMonth - 1, 1).getDay();
-    const lastDayinMonth = new Date(selectedYear, selectedMonth, 0).getDay();
-    const daysToFullWeeks = 7 - firstDayinMonth;
-    const daysAfterFullWeeks = lastDayinMonth + 1;
-    if (daysToFullWeeks < daysAfterFullWeeks) {
-        shortestWeekDaysOutputEl.textContent = daysToFullWeeks;
+    const daysToFullWeeks = 8 - firstDayinMonth;
+    const daysAfterFullWeeks = new Date(selectedYear, selectedMonth, 0).getDay();
+    if (daysAfterFullWeeks !== 0) {
+        if (daysToFullWeeks !== 8) {
+            if (daysToFullWeeks < daysAfterFullWeeks) {
+                shortestWeekDaysOutputEl.textContent = daysToFullWeeks;
+            } else {
+                shortestWeekDaysOutputEl.textContent = daysAfterFullWeeks;
+            }
+        } else {
+            shortestWeekDaysOutputEl.textContent = '1';
+        }
     } else {
-        shortestWeekDaysOutputEl.textContent = daysAfterFullWeeks;
+        shortestWeekDaysOutputEl.textContent = daysToFullWeeks;
     }
 }
 
@@ -54,10 +61,9 @@ export function fullWeeksNumberInMonth() {
     const numberDaysInMonth = new Date(selectedYear, selectedMonth, 0).getDate();
     const firstDayinMonth = new Date(selectedYear, selectedMonth - 1, 1).getDay();
     const lastDayinMonth = new Date(selectedYear, selectedMonth, 0).getDay();
-    const daysToFullWeeks = 7 - firstDayinMonth;
-    console.log(firstDayinMonth);
-    const daysAfterFullWeeks = lastDayinMonth + 1;
-    if (lastDayinMonth < 6 && daysToFullWeeks < 7) {
+    const daysToFullWeeks = 8 - firstDayinMonth;
+    const daysAfterFullWeeks = lastDayinMonth;
+    if (lastDayinMonth < 7 && daysToFullWeeks < 7) {
         const fullWeeksNumber = (numberDaysInMonth - (daysToFullWeeks + daysAfterFullWeeks))
             / 7;
         fullWeeksOutputEl.textContent = fullWeeksNumber;
