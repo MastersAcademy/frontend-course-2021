@@ -18,8 +18,8 @@ export function getMondaysOfMonth(mon) {
 }
 
 // long month
-export function isMonthLong(Month, Year) {
-    const long = 33 - new Date(Year, Month, 33).getDate();
+export function isMonthLong(month, year) {
+    const long = 33 - new Date(year, month, 33).getDate();
     return (long === 31 ? 'True' : 'False');
 }
 
