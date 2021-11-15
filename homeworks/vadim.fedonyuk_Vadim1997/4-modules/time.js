@@ -62,12 +62,12 @@ export function fullWeeksNumberInMonth(date) {
     let firstWeekDay;
     const numberDaysOfMonth = new Date(year, month + 1, 0).getDate();
     for (let i = 1; i <= numberDaysOfMonth; i++) {
-        const daysOfMonthSun = new Date(year, month, i);
-        if (daysOfMonthSun.getDay() === 1) {
+        const daysOfMonthMon = new Date(year, month, i);
+        if (daysOfMonthMon.getDay() === 1) {
             firstWeekDay = i;
             for (i = firstWeekDay; i <= numberDaysOfMonth; i++) {
-                const daysOfMonthSat = new Date(year, month, i);
-                if (daysOfMonthSat.getDay() === 0) {
+                const daysOfMonthSun = new Date(year, month, i);
+                if (daysOfMonthSun.getDay() === 0) {
                     numberWeek += 1;
                 }
             }
