@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="page-container" data-page>
+            <section class="card">
+                <form class="card__form">
+                    <input type="time" class="card__control card__control--clock" value="" disabled data-clock>
+                    <select name="" id="" class="card__control card__timezone-selection" data-timezone>
+                        <option value="EET" class="card__timezone" selected>Current</option>
+                        <option value="JST" class="card__timezone">Tokyo</option>
+                        <option value="GMT" class="card__timezone">London</option>
+                        <option value="EST" class="card__timezone">New York</option>
+                    </select>
+                </form>
+            </section>
+            <section class="card">
+                <h2 class="card__title">Date</h2>
+                <form class="card__form">
+                    <input type="date" class="card__control" min="" max="" data-datepicker>
+                </form>
+            </section>
+            <section class="card" data-card="getFridaysOfMonth">
+                <div class="card__results" data-result>&nbsp;</div>
+                <button type="button" class="card__button" data-button>Fridays Of Month</button>
+            </section>
+            <section class="card" data-card="isMonthLong">
+                <div class="card__results" data-result>&nbsp;</div>
+                <button type="button" class="card__button" data-button>Month Long</button>
+            </section>
+            <section class="card" data-card="shortestWeekDaysNumber">
+                <div class="card__results" data-result>&nbsp;</div>
+                <button type="button" class="card__button" data-button>Shortest Week Days Number</button>
+            </section>
+            <section class="card" data-card="fullWeeksNumberInMonth">
+                <div class="card__results" data-result>&nbsp;</div>
+                <button type="button" class="card__button" data-button>Weeks Number In Month</button>
+            </section>
+        </div>
+        <script type="module" defer src="index.js"></script>
+    </body>
+</html>
