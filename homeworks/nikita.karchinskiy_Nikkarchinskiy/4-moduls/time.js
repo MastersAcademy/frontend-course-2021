@@ -7,7 +7,8 @@ const input = document.querySelector('[data-date]');
 function getDate() {
     const month = new Date(input.value).getMonth();
     const year = new Date(input.value).getFullYear();
-    const arrOfDate = [month, year];
+    const day = new Date(input.value).getDay();
+    const arrOfDate = [month, year, day];
     return arrOfDate;
 }
 
@@ -40,15 +41,34 @@ export function mondaysInMonth() {
     mondays.map((current) => monthMondaysEl.insertAdjacentHTML('beforeend', current));
 }
 
+// export function fullWeek() {
+//     const getingData = getDate();
+//     const firstOfMonth = new Date(getingData[1], getingData[0] - 1, 1);
+//     const lastOfMonth = new Date(getingData[1], getingData[0], 0);
+//     let result = 3;
+//     if (firstOfMonth === 1 || lastOfMonth === 0) {
+//         result = 4;
+//     }
+//     fullWeeksEl.innerHTML = result;
+// }
+
 export function fullWeek() {
-    const getingData = getDate();
-    const firstOfMonth = new Date(getingData[1], getingData[0] - 1, 1);
-    const lastOfMonth = new Date(getingData[1], getingData[0], 0);
-    let result = 3;
-    if (firstOfMonth === 1 || lastOfMonth === 0) {
-        result = 4;
+    const date = getDate();
+    const daysInMount = new Date(date[0] + 1, date[1], 0).getDate();
+    let str = '';
+    for (let i = 1; i <= daysInMount; i++) {
+        const indexDay = new Date(date[1], date[0], i).getDay();
+        str += String(indexDay);
     }
-    fullWeeksEl.innerHTML = result;
+
+    const week = str.replace(/1234560/g, ',');
+    let count = 0;
+    for (let i = 0; i < week.length; i++) {
+        if (week[i] === ',') {
+            count += 1;
+        }
+    }
+    fullWeeksEl.innerHTML = `All full weeks in month = ${count}`;
 }
 
 export function incompleteWeeks() {
