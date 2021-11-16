@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <title>4-Modules</title>
+    </head>
+
+    <body>
+        <main class="panel" panel>
+            <div class="panel__month-information month-information" month-information>
+                <p class="month-information__caption">Date:</p>
+                <input type="date" class="month-information__input" value="2021-11-12" month-information__input>
+                <button class="month-information__button" type="button" months-fridays-button>Get month fridays</button>
+                <p class="month-information__result" months-fridays-result>Not calculated</p>
+                <button class="month-information__button" type="button" month-long-button>Is month long?</button>
+                <p class="month-information__result" month-long-result>Not calculated</p>
+                <button class="month-information__button" type="button" shortest-week-button>Days of shortest week in month</button>
+                <p class="month-information__result" shortest-week-result>Not calculated</p>
+                <button class="month-information__button" type="button" full-weeks-button>Full weeks in month</button>
+                <p class="month-information__result" full-weeks-result>Not calculated</p>
+            </div>
+            <div class="panel__world-time world-time" world-time>
+                <p class="world-time__caption">Current Time:</p>
+                <p class="world-time__current-time" current-time>00:00</p>
+                <select class="world-time__country-list country-list" country-list>
+                    <option class="country-list__country" value="current" selected>Current</option>
+                    <option class="country-list__country" value="tokyo">Tokyo</option>
+                    <option class="country-list__country" value="london">London</option>
+                    <option class="country-list__country" value="new-york">New-York</option>
+                </select>
+                <p class="world-time__result" world-time__result>15:22</p>
+            </div>
+        </main>
+        <script type="module" src="script.js"></script>
+    </body>
+
+</html>

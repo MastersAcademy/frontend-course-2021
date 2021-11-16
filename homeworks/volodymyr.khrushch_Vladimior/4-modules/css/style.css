@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  padding-left: 35px;
+  padding-top: 45px;
+}
+
+.items {
+  border: 1px solid #000;
+  width: 100%;
+  max-width: 500px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.items__button {
+  border-radius: 5px;
+  width: 170px;
+  min-height: 40px;
+  margin: 12px;
+  border: 1px solid #000;
+}
+
+.items__text {
+  font-size: 16px;
+  padding-left: 25px;
+  padding-bottom: 20px;
+}
+
+.items__button:hover {
+  background-color: #C5D7D9;
+}

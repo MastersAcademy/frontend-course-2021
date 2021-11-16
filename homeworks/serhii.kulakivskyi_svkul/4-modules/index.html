@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body style="display: flex; justify-content: space-between;">
+        <div>
+            <div style="margin-bottom: 1rem;">
+                <input type="date" data-time-local>
+            </div>
+    
+            <div>
+                <button type="button" data-time-fn="all mondays">Get month mondays</button>
+    
+                <p data-time-output="all mondays"></p>
+            </div>
+    
+            <div>
+                <button type="button" data-time-fn="is month long">Is month long?</button>
+    
+                <p data-time-output="is month long"></p>
+            </div>
+    
+            <div>
+                <button type="button" data-time-fn="shortest week">Days of shortest </br> week in month</button>
+    
+                <p data-time-output="shortest week"></p>
+            </div>
+    
+            <div>
+                <button type="button" data-time-fn="full weeks in month">Full weeks in month</button>
+    
+                <p data-time-output="full weeks in month"></p>
+            </div>
+        </div>
+
+        <div style="min-width: 150px; margin: 0 0 0 1rem;">
+            <p style="margin-top: 0;">Task *</p>
+            <p data-current-time></p>
+
+            <select name="timezone" data-timezone>
+                <option value="current">Current</option>
+                <option value="Asia/Tokyo">Tokyo</option>
+                <option value="Europe/London">London</option>
+                <option value="America/New_York">New York</option>
+            </select>
+        </div>
+        
+        <script type="module" src="./src/js/index.js"></script>
+    </body>
+</html>

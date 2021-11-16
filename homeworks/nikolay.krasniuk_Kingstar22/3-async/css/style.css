@@ -11,8 +11,9 @@ body {
 }
 
 .blog {
+  position: relative;
   margin: 62px auto;
-  width: 992px;
+  max-width: 992px;
   height: 900px;
   background: linear-gradient(180deg, #F6F5FB 14.31%, #FEFEFF 94.46%);
   box-shadow: 0 4px 96px rgba(0, 0, 0, .18);
@@ -64,10 +65,11 @@ body {
   overflow-y: auto;
   width: 100%;
   height: calc(100% - 72px);
+  max-height: calc(100% - 72px);
 }
 
 .blog__preloader {
-  position: fixed;
+  position: absolute;
   visibility: hidden;
   left: 0;
   top: 0;
@@ -82,8 +84,7 @@ body {
   left: 50%;
   width: 70px;
   height: 70px;
-  margin-top: -13px;
-  margin-left: -40px;
+  margin-left: -37px;
   text-align: center;
   animation: blog__preloadere 3s infinite linear;
 }
