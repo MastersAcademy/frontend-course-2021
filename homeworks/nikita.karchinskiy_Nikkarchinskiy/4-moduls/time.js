@@ -44,8 +44,10 @@ export function fullWeek() {
     const getingData = getDate();
     const firstOfMonth = new Date(getingData[1], getingData[0] - 1, 1);
     const lastOfMonth = new Date(getingData[1], getingData[0], 0);
-    const used = firstOfMonth.getDay() + lastOfMonth.getDate();
-    const result = Math.trunc(used / 7);
+    let result = 3;
+    if (firstOfMonth === 1 || lastOfMonth === 0) {
+        result = 4;
+    }
     fullWeeksEl.innerHTML = result;
 }
 
