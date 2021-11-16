@@ -41,17 +41,6 @@ export function mondaysInMonth() {
     mondays.map((current) => monthMondaysEl.insertAdjacentHTML('beforeend', current));
 }
 
-// export function fullWeek() {
-//     const getingData = getDate();
-//     const firstOfMonth = new Date(getingData[1], getingData[0] - 1, 1);
-//     const lastOfMonth = new Date(getingData[1], getingData[0], 0);
-//     let result = 3;
-//     if (firstOfMonth === 1 || lastOfMonth === 0) {
-//         result = 4;
-//     }
-//     fullWeeksEl.innerHTML = result;
-// }
-
 export function fullWeek() {
     const date = getDate();
     const daysInMount = new Date(date[0] + 1, date[1], 0).getDate();
