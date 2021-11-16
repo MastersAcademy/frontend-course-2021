@@ -3,6 +3,17 @@ name: Awesome Linter
 on: pull_request
 
 jobs:
+  lint-html:
+    name: Lint HTML
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.18.1
+      - run: npm install --production
+      - run: npm run lint:html
+
   lint-js:
     name: Lint JS
     runs-on: ubuntu-latest
@@ -23,6 +34,7 @@ jobs:
         with:
           node-version: 14.18.1
       - run: npm install --production
+      - uses: xt0rted/stylelint-problem-matcher@v1.2.0
       - run: npm run lint:css
 
   lint-branch-name:
@@ -33,4 +45,4 @@ jobs:
       - uses: lekterable/branchlint-action@v1.0.0
         with:
           allowed: |
-            /^[0-9]+-(?:[\\d\\w]){5,70}/i
+            /^[0-9]+-(?:[\d\w]){3,70}/i

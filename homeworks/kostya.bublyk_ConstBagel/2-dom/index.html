@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <title>Simple Chat</title>
+        <link rel="stylesheet" href="lib/style.css">
+    </head>
+    <body>
+        <div class="chat-wrapper">
+            <header class="chat-header">
+                <h1>Chat</h1>
+            </header>
+            <main class="chat-main">
+                <section class="chat-story"
+                    data-role="chat-story-section"
+                >
+                </section>
+                <section class="chat-add-message">
+                    <textarea
+                        class="chat-input-field"
+                        data-role="chat-input-message-field"
+                        placeholder="Input your message here"
+                    >
+                    </textarea>
+                    <button class="chat-send-button" data-role="chat-send-message-button" type="button">
+                        Send
+                    </button>
+                </section>
+            </main>
+        </div>
+        <script src="lib/script.js"></script>
+    </body>
+</html>
