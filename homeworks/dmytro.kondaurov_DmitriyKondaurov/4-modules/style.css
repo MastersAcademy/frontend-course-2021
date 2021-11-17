@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: auto;
+  height: 700px;
+  max-width: 800px;
+  padding: 25px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.result {
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  padding: 20px 0;
+}
+
+.action-btn {
+  width: 200px;
+  padding: 10px;
+}
+
+.date-picker {
+  box-sizing: border-box;
+  width: 200px;
+  height: 39px;
+  margin: 20px 0 40px;
+  padding: 5px;
+}
