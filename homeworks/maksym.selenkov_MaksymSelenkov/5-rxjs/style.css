@@ -1,0 +1,13 @@
+.wrapper {
+  overflow: scroll;
+}
+
+.header {
+  max-width: 1024px;
+  background-color: #1D719A;
+  display: flex;
+}
+
+.main {
+  max-width: 1024px;
+}
