@@ -1,0 +1,14 @@
+body {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #F7F6FB;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  transition: visibility 1s, opacity 1s;
+}
