@@ -1,0 +1,171 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+}
+
+.page-container {
+  padding: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.page-button {
+  background-color: transparent;
+  border: 1px solid #CCC;
+  color: #333;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.main-header {
+  background-color: #EEE;
+  position: sticky;
+  top: 0;
+}
+
+.main-header__container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.main-header__logo {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  flex: 1;
+  text-align: left;
+}
+
+.main-header__burger-button {
+  display: block;
+  border: 0;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  margin: .5rem;
+}
+
+.main-header__burger-icon {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 5px;
+  background-color: #333;
+}
+
+.main-header__burger-icon::before {
+  content: "";
+  position: absolute;
+  top: .5rem;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  height: 5px;
+}
+
+.main-header__burger-icon::after {
+  content: "";
+  position: absolute;
+  bottom: .5rem;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  height: 5px;
+}
+
+.main-navigation {
+  width: 100%;
+}
+
+.navigation-list {
+  list-style: none;
+}
+
+.navigation-list__item {
+  font-size: 1.25rem;
+  border-bottom: 1px solid #CCC;
+}
+
+.navigation-list__item:last-of-type {
+  border-bottom: 0;
+}
+
+.navigation-list__link {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+  padding: .5rem;
+}
+
+.page-article {
+  max-width: 480px;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.page-article--accented {
+  background-color: #EEE;
+  padding: 2rem;
+}
+
+.page-article:last-of-type {
+  margin-bottom: 0;
+}
+
+.page-article__header {
+  margin-bottom: 1rem;
+}
+
+.page-article__text {
+  margin-bottom: 1rem;
+}
+
+.page-article__text:last-of-type {
+  margin-bottom: 0;
+}
+
+.page-article__button {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.display-none {
+  display: none;
+}
+
+@media (min-width: 500px) {
+
+  .main-header__burger-button {
+    display: none;
+  }
+
+  .main-navigation {
+    width: auto;
+    display: block;
+  }
+
+  .navigation-list {
+    display: flex;
+  }
+
+  .navigation-list__item {
+    border-bottom: 0;
+  }
+}
