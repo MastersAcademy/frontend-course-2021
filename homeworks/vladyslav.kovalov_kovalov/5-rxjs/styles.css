@@ -37,6 +37,7 @@ body {
   position: sticky;
   top: 0;
   transition: opacity .25s ease-in-out;
+  visibility: visible;
 }
 
 .main-header__container {
@@ -154,6 +155,7 @@ body {
 
 .hidden {
   opacity: 0;
+  visibility: hidden;
 }
 
 @media (min-width: 768px) {
