@@ -4,12 +4,11 @@ const {
 } = window.rxjs.operators;
 
 export class Menu {
-    constructor(header, headerLogo, burgerButton, navigationMenu) {
+    constructor(header, burgerButton, navigationMenu, scrollLimit) {
         this.header = header;
-        this.headerLogo = headerLogo;
         this.burgerButton = burgerButton;
         this.navigationMenu = navigationMenu;
-        this.scrollLimit = 50;
+        this.scrollLimit = scrollLimit;
         this.toggleDropdownMenu();
         this.toggleHeader();
     }
