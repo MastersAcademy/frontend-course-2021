@@ -41,9 +41,9 @@ const scrolling$ = fromEvent(document, 'scroll')
     );
 
 scrolling$.subscribe((posArr) => {
-    if (posArr[posArr.length - 1] <= 2102) {
-        headerAfterBtnEl.style.top = '-300px';
+    if (posArr[posArr.length - 1] <= rect.top) {
         headerEl.style.top = '0';
+        headerAfterBtnEl.style.top = '-300px';
         // if (document.body.hasChildNodes(headerAfterBtnEl)) {
         //     document.body.removeChild(headerAfterBtnEl);
         // }
