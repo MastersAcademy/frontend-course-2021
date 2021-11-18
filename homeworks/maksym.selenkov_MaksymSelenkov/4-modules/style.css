@@ -1,0 +1,9 @@
+.main {
+  border: 1px solid #0E0E0E;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__section {
+  margin: 20px;
+}
