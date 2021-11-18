@@ -4,7 +4,20 @@ const { scan, filter } = window.rxjs.operators;
 const headerEl = document.querySelector(('[data-header-container]'));
 const burgerEl = document.querySelector('[data-burger-icon]');
 const navContainerEl = document.querySelector('[data-navigation]');
-// const mainBtnEl = document.querySelector('[data-main-button]');
+const mainBtnEl = document.querySelector('[data-main-button]');
+
+const headerAfterBtnEl = document.createElement('header');
+const btnEl = document.createElement('button');
+const titleEl = document.createElement('h1');
+titleEl.style.color = '#FFF';
+titleEl.innerHTML = 'GET AN IMAZING DISCOUNT';
+btnEl.classList.add('main__button');
+btnEl.innerHTML = 'Buy Me';
+headerAfterBtnEl.appendChild(titleEl);
+headerAfterBtnEl.appendChild(btnEl);
+headerAfterBtnEl.classList.add('header-afterBtn');
+
+const rect = mainBtnEl.getBoundingClientRect();
 
 let headerHeight = 80;
 
@@ -28,12 +41,25 @@ const scrolling$ = fromEvent(document, 'scroll')
     );
 
 scrolling$.subscribe((posArr) => {
-    if (posArr[posArr.length - 1] - posArr[posArr.length - 2] > 0) {
-        headerEl.classList.add('header-hide');
-    } else if (posArr[posArr.length - 1] - posArr[posArr.length - 2] < 0) {
-        headerEl.classList.remove('header-hide');
-        headerHeight = 80;
-        headerEl.classList.remove('header-responsive');
-        navContainerEl.classList.remove('header__menu-responsive');
+    if (posArr[posArr.length - 1] <= 2102) {
+        headerAfterBtnEl.style.top = '-300px';
+        headerEl.style.top = '0';
+        // if (document.body.hasChildNodes(headerAfterBtnEl)) {
+        //     document.body.removeChild(headerAfterBtnEl);
+        // }
+        if (posArr[posArr.length - 1] - posArr[posArr.length - 2] > 0) {
+            headerEl.classList.add('header-hide');
+        } else if (posArr[posArr.length - 1] - posArr[posArr.length - 2] < 0) {
+            headerEl.classList.remove('header-hide');
+            headerHeight = 80;
+            headerEl.classList.remove('header-responsive');
+            navContainerEl.classList.remove('header__menu-responsive');
+        }
+    }
+    if (posArr[posArr.length - 1] > rect.bottom) {
+        headerEl.style.top = '-300px';
+        headerAfterBtnEl.style.top = '0';
+
+        document.body.prepend(headerAfterBtnEl);
     }
 });
