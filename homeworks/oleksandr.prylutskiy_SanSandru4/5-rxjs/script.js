@@ -1,6 +1,8 @@
 const gambMenuEl = document.querySelector('[data-min-menu]');
-// const { fromEvent } = window.rxjs;
-// const { map } = window.rxjs.operators;
+const headerEl = document.querySelector('[data-attr-header]');
+
+const { fromEvent } = window.rxjs;
+const { map, filter } = window.rxjs.operators;
 
 gambMenuEl.addEventListener('click', () => {
     const x = document.querySelector('[data-nav-menu]');
@@ -10,3 +12,15 @@ gambMenuEl.addEventListener('click', () => {
         x.className = 'header__nav_menu';
     }
 });
+
+fromEvent(window, 'scroll').pipe(
+    map(() => window.pageYOffset),
+    filter((value) => (value > 50)),
+)
+    .subscribe(() => { headerEl.classList.add('header_hidden'); console.log(window.pageYOffset); });
+
+fromEvent(window, 'scroll').pipe(
+    map(() => window.pageYOffset),
+    filter((value) => (value < 50)),
+)
+    .subscribe(() => { headerEl.classList.remove('header_hidden'); console.log(window.pageYOffset); });
