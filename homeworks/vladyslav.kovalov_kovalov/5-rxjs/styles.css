@@ -36,7 +36,7 @@ body {
   background-color: #EEE;
   position: sticky;
   top: 0;
-  transition: opacity .25s ease-in-out;
+  transition: top .25s ease-in-out;
   visibility: visible;
 }
 
@@ -154,8 +154,7 @@ body {
 }
 
 .hidden {
-  opacity: 0;
-  visibility: hidden;
+  top: -77px;
 }
 
 @media (min-width: 768px) {
