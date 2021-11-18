@@ -118,7 +118,8 @@ body {
 }
 
 .page-article {
-  max-width: 480px;
+  font-size: 1.25rem;
+  max-width: 720px;
   margin: 0 auto;
   margin-bottom: 1rem;
 }
