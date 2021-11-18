@@ -1,14 +1,77 @@
 body {
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
+  background-color: #DBE7F5;
 }
 
 .header {
-  background-color: #F7F6FB;
+  background-color: #FFF;
   display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FAF9FD;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.order-Btn {
+  width: 50%;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #DBE7F5;
+  font-size: 1em;
+}
+
+.order-Btn:hover {
+  background-color: #DBE7D7;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+}
+
+.controls {
+  margin: 0 20px;
+}
+
+.control-tab {
+  padding: 20px 15px;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2em;
+}
+
+.control-tab:hover {
+  background-color: #505053F1
+}
+
+.logo {
+  margin-left: 10px;
+}
+
+.visible {
+  transition: visibility .7s, opacity .7s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hidden {
+  transition: visibility .7s, opacity .7s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.discount-header {
+  background-color: #FFF;
+  display: none;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
-  transition: visibility 1s, opacity 1s;
 }

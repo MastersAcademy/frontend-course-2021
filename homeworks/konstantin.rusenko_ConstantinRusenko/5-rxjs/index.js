@@ -1,22 +1,41 @@
 const { fromEvent } = window.rxjs;
-const { throttleTime } = window.rxjs.operators;
+const { throttleTime, pairwise, map } = window.rxjs.operators;
 const headerEl = document.querySelector('[data-header]');
-let prevEl = 0;
+const orderHeadButtonEl = document.querySelector('[data-header-order-button]');
+const orderButtonEl = document.querySelector('[data-order-button]');
+const discountHeaderEl = document.querySelector('[data-discount-header]');
 
-const showLog = () => {
-    const scrY = window.scrollY;
-    const newEl = window.scrollY;
-    if (newEl > prevEl) {
-        headerEl.style.opacity = 0;
-        headerEl.style.visibility = 'hidden';
+const showLog = (scrollDirection) => {
+    const buttonPosition = orderButtonEl.getBoundingClientRect();
+    if (scrollDirection === 1) {
+        headerEl.classList.add('hidden');
     } else {
-        headerEl.style.opacity = 1;
-        headerEl.style.visibility = 'visible';
+        headerEl.classList.remove('hidden');
+        headerEl.classList.add('visible');
     }
-    prevEl = newEl;
-    console.log({ scrY, newEl, prevEl });
+    if (scrollDirection === 1 && buttonPosition.top < 0) {
+        discountHeaderEl.style.display = 'flex';
+        orderHeadButtonEl.classList.remove('visible');
+        orderHeadButtonEl.classList.add('hidden');
+    } else {
+        discountHeaderEl.style.display = 'none';
+        orderHeadButtonEl.classList.remove('hidden');
+        orderHeadButtonEl.classList.add('visible');
+    }
+    if (scrollDirection === 0 && buttonPosition.top < 0) {
+        orderHeadButtonEl.classList.remove('hidden');
+        orderHeadButtonEl.classList.add('visible');
+    } else {
+        orderHeadButtonEl.classList.remove('visible');
+        orderHeadButtonEl.classList.add('hidden');
+    }
 };
 
-const clicks = fromEvent(document, 'scroll');
-const example = clicks.pipe(throttleTime(500));
-example.subscribe(() => showLog());
+const documentScroll$ = fromEvent(document, 'scroll');
+const documentScrollDirection$ = documentScroll$.pipe(
+    map(() => window.scrollY),
+    throttleTime(200),
+    pairwise(),
+    map(([prev, next]) => (next > prev ? 1 : 0)),
+);
+documentScrollDirection$.subscribe((scrollDirection) => showLog(scrollDirection));
