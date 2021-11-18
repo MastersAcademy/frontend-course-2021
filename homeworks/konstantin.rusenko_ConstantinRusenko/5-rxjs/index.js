@@ -4,6 +4,8 @@ const headerEl = document.querySelector('[data-header]');
 const orderHeadButtonEl = document.querySelector('[data-header-order-button]');
 const orderButtonEl = document.querySelector('[data-order-button]');
 const discountHeaderEl = document.querySelector('[data-discount-header]');
+const iconMenuEl = document.querySelector('[data-menu-icon]');
+const controlsEl = document.querySelector('[data-controls]');
 
 const showLog = (scrollDirection) => {
     const buttonPosition = orderButtonEl.getBoundingClientRect();
@@ -39,3 +41,6 @@ const documentScrollDirection$ = documentScroll$.pipe(
     map(([prev, next]) => (next > prev ? 1 : 0)),
 );
 documentScrollDirection$.subscribe((scrollDirection) => showLog(scrollDirection));
+
+const burgerClick$ = fromEvent(iconMenuEl, 'click');
+burgerClick$.subscribe(() => controlsEl.classList.toggle('_active'));

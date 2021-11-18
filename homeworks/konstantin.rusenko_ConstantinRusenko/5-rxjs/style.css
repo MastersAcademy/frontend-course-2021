@@ -22,7 +22,7 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.order-Btn {
+.order-button {
   width: 50%;
   padding: 10px;
   cursor: pointer;
@@ -30,7 +30,7 @@ body {
   font-size: 1em;
 }
 
-.order-Btn:hover {
+.order-button:hover {
   background-color: #DBE7D7;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
 }
@@ -39,20 +39,27 @@ body {
   margin: 0 20px;
 }
 
+.control-list {
+  display: flex;
+  list-style: none;
+}
+
 .control-tab {
   padding: 20px 15px;
   margin: 10px 0;
   text-decoration: none;
   color: #000;
-  font-size: 1.2em;
+  font-size: 1.4em;
+  width: 100%;
 }
 
-.control-tab:hover {
-  background-color: #505053F1
+.control-list > li:hover {
+  text-decoration: underline;
+  opacity: .7;
 }
 
 .logo {
-  margin-left: 10px;
+  margin: 0 5%;
 }
 
 .visible {
@@ -74,4 +81,100 @@ body {
   justify-content: space-between;
   position: sticky;
   top: 0;
+}
+
+.discount-title {
+  margin-left: 5%;
+}
+
+.discount__header-button {
+  margin-right: 5%;
+  padding: 10px;
+  background-color: #DBE7F5;
+  cursor: pointer;
+}
+
+.discount__header-button:hover {
+  background-color: #DBE7D7;
+}
+
+.header__order-button {
+  margin-left: 15%;
+  padding: 10px;
+  background-color: #DBE7F5;
+  cursor: pointer;
+}
+
+.header__order-button:hover {
+  background-color: #DBE7D7;
+}
+
+@media (max-width: 991px) {
+
+  .menu-icon {
+    z-index: 5;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  .menu-icon span,
+  .menu-icon::before,
+  .menu-icon::after {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all .3s ease 0s;
+    background-color: #000;
+  }
+
+  .menu-icon::before,
+  .menu-icon::after {
+    content: "";
+  }
+
+  .menu-icon::before {
+    top: 0;
+  }
+
+  .menu-icon::after {
+    bottom: 0;
+  }
+
+  .menu-icon span {
+    top: 50%;
+    transform: scale(1) translate(0, -50%);
+  }
+
+  .controls {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: left .3s ease 0s;
+  }
+
+  .controls._active {
+    left: 0%;
+  }
+
+  .control-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .list-item {
+    background-color: #FFF;
+    height: 100px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+  }
 }
