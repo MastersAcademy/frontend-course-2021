@@ -12,12 +12,6 @@ body {
   position: relative;
 }
 
-.hidden {
-  height: 0;
-  visibility: hidden;
-  opacity: 0;
-}
-
 /* ============= headers ==============*/
 
 .header,
@@ -106,4 +100,11 @@ body {
 
 .content__text {
   padding-top: 100px;
+}
+
+
+.hidden {
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
 }
