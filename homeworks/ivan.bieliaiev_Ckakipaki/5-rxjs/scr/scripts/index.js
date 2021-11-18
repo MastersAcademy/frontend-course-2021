@@ -32,5 +32,8 @@ scrolling$.subscribe((posArr) => {
         headerEl.classList.add('header-hide');
     } else if (posArr[posArr.length - 1] - posArr[posArr.length - 2] < 0) {
         headerEl.classList.remove('header-hide');
+        headerHeight = 80;
+        headerEl.classList.remove('header-responsive');
+        navContainerEl.classList.remove('header__menu-responsive');
     }
 });
