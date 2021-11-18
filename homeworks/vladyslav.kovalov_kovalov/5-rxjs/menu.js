@@ -9,7 +9,7 @@ export class Menu {
         this.headerLogo = headerLogo;
         this.burgerButton = burgerButton;
         this.navigationMenu = navigationMenu;
-        this.px = 50;
+        this.scrollLimit = 50;
         this.toggleDropdownMenu();
         this.toggleHeader();
     }
@@ -23,7 +23,7 @@ export class Menu {
         const source = fromEvent(window, 'scroll').pipe(
             throttleTime(300),
             map(() => window.scrollY),
-            filter((data) => data > 50),
+            filter((data) => data > this.scrollLimit),
             pairwise(),
             map(([prev, next]) => prev > next),
             distinctUntilChanged(),

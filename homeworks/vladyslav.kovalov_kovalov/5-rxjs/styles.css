@@ -156,7 +156,7 @@ body {
   opacity: 0;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
 
   .main-header__burger-button {
     display: none;
