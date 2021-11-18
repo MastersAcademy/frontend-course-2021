@@ -3,11 +3,19 @@ body {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 35px;
-  margin: auto;
   display: flex;
   justify-content: flex-start;
   background-color: #333;
+  transition: all .5s;
+}
+
+.header_hide {
+  top: -40px;
 }
 
 .logo {
@@ -19,14 +27,17 @@ body {
   line-height: 35px;
 }
 
-.top-nav::after {
+.top-nav__icon {
+  padding: 0 10px;
   display: inline-block;
-  content: "\2630";
   color: #FFF;
+  line-height: 35px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .top-nav__link {
-  display: inline-block;
+  display: none;
   padding: 0 15px;
   color: #FFF;
   text-decoration: none;
@@ -36,6 +47,7 @@ body {
 .top-nav__link:hover {
   color: #333;
   background-color: #FFF;
+  transition: all .5s ease;
 }
 
 .buy-btn {
@@ -54,4 +66,16 @@ body {
   background-color: #FFF;
   color: #333;
   cursor: pointer;
+}
+
+.main-content {
+  height: 150vh;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+  .top-nav__link {
+    display: inline-block;
+  }
 }
