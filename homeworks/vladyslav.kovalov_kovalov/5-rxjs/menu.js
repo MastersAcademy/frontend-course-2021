@@ -1,5 +1,7 @@
 const { fromEvent } = window.rxjs;
-const { map, filter } = window.rxjs.operators;
+const {
+    map, pairwise, distinctUntilChanged, throttleTime, filter,
+} = window.rxjs.operators;
 
 export class Menu {
     constructor(header, headerLogo, burgerButton, navigationMenu) {
@@ -14,15 +16,18 @@ export class Menu {
 
     toggleDropdownMenu() {
         const source = fromEvent(this.burgerButton, 'click');
-        source.subscribe(() => this.navigationMenu.classList.toggle('opened-menu'));
+        source.subscribe(() => this.navigationMenu.classList.toggle('display-none'));
     }
 
     toggleHeader() {
-        const source = fromEvent(window, 'scroll');
-        const header = source.pipe(
+        const source = fromEvent(window, 'scroll').pipe(
+            throttleTime(300),
             map(() => window.scrollY),
-            filter((value) => value < 200),
+            filter((data) => data > 50),
+            pairwise(),
+            map(([prev, next]) => prev > next),
+            distinctUntilChanged(),
         );
-        header.subscribe((value) => { this.header.style.top = `-${value}px`; });
+        source.subscribe(() => this.header.classList.toggle('hidden'));
     }
 }

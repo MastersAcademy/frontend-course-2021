@@ -36,6 +36,7 @@ body {
   background-color: #EEE;
   position: sticky;
   top: 0;
+  transition: opacity .25s ease-in-out;
 }
 
 .main-header__container {
@@ -92,9 +93,6 @@ body {
 
 .main-navigation {
   width: 100%;
-  max-height: 0;
-  overflow: hidden;
-  transition: all .5s ease-in-out;
 }
 
 .navigation-list {
@@ -154,8 +152,8 @@ body {
   display: none;
 }
 
-.opened-menu {
-  max-height: 600px;
+.hidden {
+  opacity: 0;
 }
 
 @media (min-width: 500px) {
@@ -167,7 +165,6 @@ body {
   .main-navigation {
     width: auto;
     display: block;
-    max-height: auto;
   }
 
   .navigation-list {
