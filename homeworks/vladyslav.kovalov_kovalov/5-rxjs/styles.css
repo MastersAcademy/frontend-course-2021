@@ -166,7 +166,7 @@ body {
   .main-navigation {
     width: auto;
     display: block;
-    max-height: 600px;
+    max-height: auto;
   }
 
   .navigation-list {
