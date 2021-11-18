@@ -21,7 +21,7 @@ export class Menu {
 
     toggleHeader() {
         const source = fromEvent(window, 'scroll').pipe(
-            throttleTime(300),
+            throttleTime(50),
             map(() => window.scrollY),
             filter((data) => data > this.scrollLimit),
             pairwise(),
