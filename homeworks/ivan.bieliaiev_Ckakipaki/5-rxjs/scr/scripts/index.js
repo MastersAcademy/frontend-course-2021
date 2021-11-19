@@ -41,25 +41,17 @@ const scrolling$ = fromEvent(document, 'scroll')
     );
 
 scrolling$.subscribe((posArr) => {
-    if (posArr[posArr.length - 1] <= rect.top) {
-        headerEl.style.top = '0';
-        headerAfterBtnEl.style.top = '-300px';
-        // if (document.body.hasChildNodes(headerAfterBtnEl)) {
-        //     document.body.removeChild(headerAfterBtnEl);
-        // }
-        if (posArr[posArr.length - 1] - posArr[posArr.length - 2] > 0) {
-            headerEl.classList.add('header-hide');
-        } else if (posArr[posArr.length - 1] - posArr[posArr.length - 2] < 0) {
-            headerEl.classList.remove('header-hide');
-            headerHeight = 80;
-            headerEl.classList.remove('header-responsive');
-            navContainerEl.classList.remove('header__menu-responsive');
+    if (posArr[posArr.length - 1] - posArr[posArr.length - 2] > 0) {
+        headerEl.classList.add('header-hide');
+        if (posArr[posArr.length - 1] > rect.bottom) {
+            headerAfterBtnEl.style.top = '0';
+            document.body.prepend(headerAfterBtnEl);
         }
-    }
-    if (posArr[posArr.length - 1] > rect.bottom) {
-        headerEl.style.top = '-300px';
-        headerAfterBtnEl.style.top = '0';
-
-        document.body.prepend(headerAfterBtnEl);
+    } else if (posArr[posArr.length - 1] - posArr[posArr.length - 2] < 0) {
+        headerAfterBtnEl.style.top = '-300px';
+        headerEl.classList.remove('header-hide');
+        headerHeight = 80;
+        headerEl.classList.remove('header-responsive');
+        navContainerEl.classList.remove('header__menu-responsive');
     }
 });
