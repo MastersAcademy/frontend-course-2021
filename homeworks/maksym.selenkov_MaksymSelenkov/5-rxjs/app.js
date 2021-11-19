@@ -4,6 +4,9 @@ const {
 } = window.rxjs.operators;
 
 const headerEl = document.querySelector('[data-header]');
+const burgerEl = document.querySelector('[data-burger]');
+const navigationEl = document.querySelector('[data-navigation]');
+const buyEl = document.querySelector('[data-buy]');
 
 fromEvent(window, 'scroll')
     .pipe(
@@ -18,5 +21,16 @@ fromEvent(window, 'scroll')
             headerEl.classList.add('header--hide');
         } else {
             headerEl.classList.remove('header--hide');
+        }
+    });
+
+fromEvent(burgerEl, 'click')
+    .subscribe((v) => {
+        if (v) {
+            buyEl.classList.toggle('header__buy--burger-click');
+            navigationEl.classList.toggle('header__nav');
+            navigationEl.classList.toggle('header__nav--burger-click');
+            headerEl.classList.toggle('header--burger-click');
+            burgerEl.classList.toggle('header__burger');
         }
     });
