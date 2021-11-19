@@ -35,6 +35,15 @@ body {
   font-size: 30px;
   width: 400px;
   height: 50px;
+  transition: all .3s linear;
+  border-radius: 5px;
+}
+
+.afterBtn__btn:hover {
+  background: #F3D2C1;
+  color: #86B086;
+  border-radius: 20px;
+  box-shadow: #435566 3px 3px;
 }
 
 .header {
@@ -79,6 +88,10 @@ body {
 .menu__icon {
   font-size: 35px;
   display: none;
+}
+
+.menu__icon:hover {
+  cursor: pointer;
 }
 
 .header__menu {
@@ -171,13 +184,19 @@ body {
 
 @media screen and (max-width: 768px) {
 
+  .afterBtn__btn, .main__button {
+    width: 200px;
+  }
+
   .header {
     flex-direction: column;
+    padding: 0;
   }
 
   .header__inner {
     height: 80px;
     width: 100%;
+    margin: 0;
   }
 
   .menu__icon {
@@ -185,25 +204,34 @@ body {
   }
 
   .header__menu {
+    padding: 0;
+    margin: 0;
     display: none;
-    height: 300px;
     background: #1D719A;
     width: 100%;
-    align-items: start;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
   .navigation__link {
-    margin: 10px;
-    padding: 5px;
+    line-height: 2;
+    margin: 0;
+    padding: 0;
     text-align: center;
     width: 100%;
     border: 1px solid #0000B8;
     border-radius: 5px;
     transition: color .3s linear;
+    height: 30px;
   }
+}
+
+.header-reponsive {
+  height: 220px;
 }
 
 .header__menu-responsive {
   display: flex;
+  height: 140px;
 }
