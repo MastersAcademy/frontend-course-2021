@@ -15,18 +15,23 @@ export class Menu {
 
     toggleDropdownMenu() {
         const source = fromEvent(this.burgerButton, 'click');
-        source.subscribe(() => this.navigationMenu.classList.toggle('display-none'));
+        source.subscribe(() => {
+            this.navigationMenu.classList.toggle('display-none');
+        });
     }
 
     toggleHeader() {
         const source = fromEvent(window, 'scroll').pipe(
-            throttleTime(50),
+            throttleTime(300),
             map(() => window.scrollY),
             filter((data) => data > this.scrollLimit),
             pairwise(),
             map(([prev, next]) => prev > next),
             distinctUntilChanged(),
         );
-        source.subscribe(() => this.header.classList.toggle('hidden'));
+        source.subscribe(() => {
+            this.header.classList.toggle('hidden');
+            this.navigationMenu.classList.add('display-none');
+        });
     }
 }
