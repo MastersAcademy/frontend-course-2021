@@ -29,9 +29,15 @@ export class Menu {
             map(([prev, next]) => prev < next),
             distinctUntilChanged(),
         );
-        source.subscribe(() => {
-            this.header.classList.toggle('hidden');
+
+        source.subscribe((value) => {
             this.navigationMenu.classList.add('display-none');
+            if (value) {
+                this.header.classList.add('hidden');
+                this.navigationMenu.classList.add('display-none');
+            } else {
+                this.header.classList.remove('hidden');
+            }
         });
     }
 }

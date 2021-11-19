@@ -37,7 +37,6 @@ body {
   position: sticky;
   top: 0;
   transition: top .25s ease-in-out;
-  visibility: visible;
 }
 
 .main-header__container {
