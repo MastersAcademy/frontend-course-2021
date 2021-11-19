@@ -26,7 +26,7 @@ export class Menu {
             map(() => window.scrollY),
             filter((data) => data > this.scrollLimit),
             pairwise(),
-            map(([prev, next]) => prev > next),
+            map(([prev, next]) => prev < next),
             distinctUntilChanged(),
         );
         source.subscribe(() => {
