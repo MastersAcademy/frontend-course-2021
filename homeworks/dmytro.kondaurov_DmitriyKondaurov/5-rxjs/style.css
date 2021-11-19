@@ -123,6 +123,7 @@ body {
   .top-nav {
     position: relative;
     top: 0;
+    left: auto;
     flex-wrap: nowrap;
     flex-direction: row;
     width: auto;
