@@ -44,6 +44,11 @@ body {
   line-height: 35px;
 }
 
+.top-nav__link_active {
+  background-color: #FFF;
+  color: #3FAB67;
+}
+
 .top-nav__link:hover {
   color: #333;
   background-color: #FFF;

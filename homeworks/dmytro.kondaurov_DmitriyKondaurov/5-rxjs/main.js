@@ -38,5 +38,8 @@ clickOnBurger.subscribe((e) => {
 });
 
 clickOnNavItems.subscribe((e) => {
-    console.log('item', e);
+    const curNavItemEl = e.target;
+    const listNavItems = Array.from(document.querySelectorAll('[data-nav-item]'));
+    listNavItems.forEach((item) => item.classList.remove('top-nav__link_active'));
+    curNavItemEl.classList.add('top-nav__link_active');
 });
