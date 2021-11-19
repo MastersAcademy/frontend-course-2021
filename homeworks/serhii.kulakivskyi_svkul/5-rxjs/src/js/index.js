@@ -19,32 +19,50 @@
         const headerEl = document.querySelector('[data-header]');
         const buyNowBtnEl = document.querySelector('[data-buy-now]');
 
-        if (headerWrapperEl && headerEl) {
+        // check if we have all necessary elements on page
+        if (headerWrapperEl && headerEl && buyNowBtnEl) {
             const headerHeight = headerEl.offsetHeight;
             headerWrapperEl.style.height = `${headerHeight}px`;
+
+            const hideHeader = (buyNowBtnTopPosition) => {
+                if (buyNowBtnTopPosition < 0) {
+                    // console.log('hide - near btn: ', buyNowBtnTopPosition);
+
+                    headerEl.classList.remove('slide-out-top');
+                    headerEl.classList.add('slide-in-top');
+                    headerEl.classList.add('header--alternative-view');
+                } else {
+                    // console.log('hide - over btn: ', buyNowBtnTopPosition);
+
+                    headerEl.classList.remove('slide-in-top');
+                    headerEl.classList.add('slide-out-top');
+                }
+            };
+
+            const showHeader = (buyNowBtnTopPosition) => {
+                if (buyNowBtnTopPosition < 0) {
+                    // console.log('show - near btn: ', buyNowBtnTopPosition);
+
+                    headerEl.classList.remove('header--alternative-view');
+                    headerEl.classList.add('slide-in-top');
+                    headerEl.classList.add('header--show-btn');
+                } else {
+                    // console.log('show - over btn: ', buyNowBtnTopPosition);
+
+                    headerEl.classList.remove('slide-out-top');
+                    headerEl.classList.remove('header--show-btn');
+                    headerEl.classList.add('slide-in-top');
+                }
+            };
 
             const handleHeaderVisibility = ([scrollPosition, scrollDirection]) => {
                 const buyNowBtnTopPosition = buyNowBtnEl.getBoundingClientRect().top;
 
                 if (scrollPosition > headerHeight) {
-                    if (scrollDirection === DIRECTIONS.DOWN) {
-                        headerEl.classList.add('slide-in-top');
-                        headerEl.classList.remove('slide-out-top');
-
-                        if (buyNowBtnTopPosition < 0) {
-                            headerEl.classList.remove('header--button');
-                            headerEl.classList.add('header--active-btn');
-                        } else {
-                            headerEl.classList.remove('header--active-btn');
-                        }
-                    } else {
-                        headerEl.classList.remove('slide-in-top');
-                        headerEl.classList.add('slide-out-top');
-
-                        if (buyNowBtnTopPosition < 0) {
-                            headerEl.classList.add('header--button');
-                        }
-                    }
+                    // eslint-disable-next-line no-unused-expressions
+                    scrollDirection === DIRECTIONS.DOWN
+                        ? showHeader(buyNowBtnTopPosition)
+                        : hideHeader(buyNowBtnTopPosition);
                 }
             };
 
@@ -60,7 +78,7 @@
 
             const windowScrollPosition$ = windowScroll$
                 .pipe(
-                    throttleTime(20),
+                    throttleTime(150),
                     map(() => window.pageYOffset),
                 );
 
@@ -74,6 +92,7 @@
         const headerNavBtn = document.querySelector('[data-nav-btn]');
         const headerNavWrapper = document.querySelector('[data-nav]');
 
+        // check if we have all necessary elements on page
         if (headerNavBtn && headerNavWrapper) {
             const headerNavBtn$ = fromEvent(headerNavBtn, 'click');
 

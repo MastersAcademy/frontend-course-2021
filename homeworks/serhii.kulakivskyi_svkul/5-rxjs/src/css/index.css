@@ -47,7 +47,7 @@
 
 body {
   background-color: var(--body-background-color);
-  color: var(--color-black);
+  color: var(--font-color-1);
   font-family: "Roboto", "Rubik", sans-serif;
   font-weight: 400;
 }
@@ -84,7 +84,7 @@ body {
   display: inline-block;
   color: var(--logo-color);
   background-color: var(--logo-background-color);
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 700;
 }
 
@@ -119,6 +119,7 @@ body {
 
 .header__nav-item {
   color: var(--nav-link-color);
+  line-height: 2;
   text-decoration: none;
 }
 
@@ -143,7 +144,7 @@ body {
   top: 100%;
   left: 0;
   right: 0;
-  padding: 1rem;
+  align-items: baseline;
 }
 
 .header__content.active .header__button {
@@ -162,11 +163,32 @@ body {
 }
 
 .header__content.active .header__nav-item {
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
 .header__content.active .header__nav-item:last-child {
   margin-bottom: 0;
+}
+
+.header.header--alternative-view .logo,
+.header.header--alternative-view .header__nav-button,
+.header.header--alternative-view .header__nav {
+  display: none;
+}
+
+.header.header--show-btn .header__button,
+.header.header--alternative-view .header__button,
+.header.header--show-btn .header__content.active .header__button,
+.header.header--alternative-view .header__text {
+  display: block;
+}
+
+.header.header--alternative-view .header__content.active .header__nav {
+  display: none;
+}
+
+.header.header--show-btn .header__nav-button {
+  margin-left: 0;
 }
 
 .main {
@@ -181,48 +203,10 @@ body {
   margin-bottom: 0;
 }
 
-.header.header--button {
-  animation: slide-in-top .5s cubic-bezier(.25, .46, .45, .94) both;
-}
-
-.header.header--button .logo,
-.header.header--button .header__nav-button,
-.header.header--button .header__nav {
-  display: none;
-}
-
-.header.header--button .logo {
-  display: none;
-}
-
-.header.header--button .header__button {
-  display: block;
-}
-
-.header.header--button .header__text {
-  display: block;
-}
-
-.header.header--active-btn .header__button {
-  display: block;
-}
-
-.header.header--active-btn .header__nav-button {
-  margin-left: 0;
-}
-
-.header.header--button .header__content.active .header__button {
-  display: block;
-}
-
 @media screen and (min-width: 768px) {
 
   .header__nav-button {
     display: none;
-  }
-
-  .header__button {
-    margin-left: auto;
   }
 
   .header__content,
@@ -231,12 +215,6 @@ body {
     top: initial;
     left: initial;
     right: initial;
-    padding: .6rem 1rem;
-  }
-
-  .header__content .header__button,
-  .header__content.active .header__button {
-    display: none;
   }
 
   .header__content .header__nav,
@@ -251,31 +229,14 @@ body {
   }
 }
 
-@-webkit-keyframes slide-in-top {
-
-  0% {
-    -webkit-transform: translateY(-1000px);
-    transform: translateY(-1000px);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 @keyframes slide-in-top {
 
   0% {
-    -webkit-transform: translateY(-1000px);
     transform: translateY(-1000px);
     opacity: 0;
   }
 
   100% {
-    -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
   }
