@@ -11,6 +11,7 @@ body {
   align-items: center;
   position: sticky;
   top: 0;
+  height: 50px;
 }
 
 .main {
@@ -92,6 +93,7 @@ body {
   justify-content: space-between;
   position: sticky;
   top: 0;
+  height: 50px;
 }
 
 .discount-header__title {
@@ -103,6 +105,7 @@ body {
   padding: 10px;
   background-color: #DBE7F5;
   cursor: pointer;
+  border: 1px solid #2E3231;
   border-radius: 6px;
   font-size: 1em;
   font-weight: 600;
@@ -110,12 +113,14 @@ body {
 
 .discount__header-button:hover {
   background-color: #DBE7D7;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
 }
 
 .header__order-button {
   padding: 10px;
   background-color: #DBE7F5;
   cursor: pointer;
+  border: 1px solid #2E3231;
   border-radius: 6px;
   font-size: 1em;
   font-weight: 600;
@@ -123,6 +128,7 @@ body {
 
 .header__order-button:hover {
   background-color: #DBE7D7;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
 }
 
 @media (max-width: 768px) {
@@ -171,26 +177,29 @@ body {
   }
 
   .navigation {
-    position: fixed;
+    position: absolute;
     top: 0;
-    left: -100%;
+    display: none;
     transition: left .3s ease 0s;
   }
 
   .navigation._active {
     left: 0%;
+    display: flex;
   }
 
   .navigation__list {
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 45px;
   }
 
   .list__item {
     background-color: #FFF;
-    height: 100px;
-    width: 200px;
+    height: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -198,5 +207,10 @@ body {
     text-align: center;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
     font-size: 1.6em;
+    width: 200%;
+  }
+
+  .header__order-button {
+    margin-left: 15%;
   }
 }
