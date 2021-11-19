@@ -97,6 +97,7 @@ body {
 }
 
 .header__nav-button {
+  margin-left: auto;
   padding: 0;
   display: flex;
   align-items: center;
@@ -134,6 +135,7 @@ body {
 
 .header__button {
   margin-left: auto;
+  display: none;
 }
 
 .header__content.active {
@@ -193,8 +195,20 @@ body {
   display: none;
 }
 
+.header.header--button .header__button {
+  display: block;
+}
+
 .header.header--button .header__text {
   display: block;
+}
+
+.header.header--active-btn .header__button {
+  display: block;
+}
+
+.header.header--active-btn .header__nav-button {
+  margin-left: 0;
 }
 
 .header.header--button .header__content.active .header__button {
@@ -222,7 +236,7 @@ body {
 
   .header__content .header__button,
   .header__content.active .header__button {
-    display: block;
+    display: none;
   }
 
   .header__content .header__nav,

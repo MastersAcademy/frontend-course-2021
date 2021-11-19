@@ -28,17 +28,22 @@
 
                 if (scrollPosition > headerHeight) {
                     if (scrollDirection === DIRECTIONS.DOWN) {
-                        headerEl.classList.remove('slide-out-top');
                         headerEl.classList.add('slide-in-top');
+                        headerEl.classList.remove('slide-out-top');
+
+                        if (buyNowBtnTopPosition < 0) {
+                            headerEl.classList.remove('header--button');
+                            headerEl.classList.add('header--active-btn');
+                        } else {
+                            headerEl.classList.remove('header--active-btn');
+                        }
                     } else {
                         headerEl.classList.remove('slide-in-top');
                         headerEl.classList.add('slide-out-top');
-                    }
 
-                    if (buyNowBtnTopPosition < 0) {
-                        headerEl.classList.add('header--button');
-                    } else {
-                        headerEl.classList.remove('header--button');
+                        if (buyNowBtnTopPosition < 0) {
+                            headerEl.classList.add('header--button');
+                        }
                     }
                 }
             };
