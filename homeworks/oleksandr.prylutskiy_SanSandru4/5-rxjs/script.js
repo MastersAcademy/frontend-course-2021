@@ -6,21 +6,22 @@ const { map, filter } = window.rxjs.operators;
 
 gambMenuEl.addEventListener('click', () => {
     const x = document.querySelector('[data-nav-menu]');
-    if (x.className === 'header__nav_menu') {
+    const bars = document.querySelector('[data-attr-bars]');
+    const times = document.querySelector('[data-attr-times]');
+    if (x.className === 'header__menu') {
         x.className += ' responsive';
+        bars.style.display = 'none';
+        times.style.display = 'block';
     } else {
-        x.className = 'header__nav_menu';
+        x.className = 'header__menu';
+        bars.style.display = 'block';
+        times.style.display = 'none';
     }
 });
 
 fromEvent(window, 'scroll').pipe(
     map(() => window.pageYOffset),
-    filter((value) => (value > 50)),
+    filter((value) => (value > 50) || (value < window.pageYOffset)),
+    // pairwise(window.pageYOffset[0] - window.pageYOffset[1]),
 )
-    .subscribe(() => { headerEl.classList.add('header_hidden'); console.log(window.pageYOffset); });
-
-fromEvent(window, 'scroll').pipe(
-    map(() => window.pageYOffset),
-    filter((value) => (value < 50)),
-)
-    .subscribe(() => { headerEl.classList.remove('header_hidden'); console.log(window.pageYOffset); });
+    .subscribe(() => { headerEl.classList.toggle('header--hidden'); });

@@ -23,10 +23,10 @@ body {
   background-color: #000;
   z-index: 3;
   top: 0;
-  transition: transform .2s linear;
+  transition: transform .5s linear;
 }
 
-.header_hidden {
+.header--hidden {
   transform: translateY(-40px);
 }
 
@@ -37,7 +37,7 @@ body {
   color: #FFF;
 }
 
-.header__nav_logo {
+.header__logo {
   width: 90px;
   height: 40px;
   padding: 0 18px;
@@ -49,7 +49,11 @@ body {
   font-size: 20px;
 }
 
-.header__nav_menu_link {
+.header__menu-list {
+  list-style-type: none;
+}
+
+.header__nav-link {
   padding: 12px 25px;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -57,14 +61,18 @@ body {
   color: #FFF;
 }
 
-.header__nav_menu_link:hover {
+.header__nav-link:hover {
   background-color: #FFF;
   color: #000;
 }
 
-.header__nav_menu_link:active {
+.header__nav-link:active {
   background-color: #FFF;
   color: #20AD70;
+}
+
+.icon {
+  text-decoration: none;
 }
 
 .header__nav .icon {
@@ -74,19 +82,15 @@ body {
 }
 
 @media screen and (max-width: 520px) {
-  .header__nav .header__nav_menu_link { display: none; }
+  .header__nav .header__nav-link { display: none; background-color: #000;}
   .header__nav a.icon { display: block; }
-}
-
-@media screen and (max-width: 520px) {
-  .section { width: 100%; }
-  .header { width: 100%; }
-  .header_hidden { transform: translateY(-160px); }
-  .header__nav { align-items: unset; background-color: #20AD70;}
-  .header__nav_menu_link { background-color: #000; }
-  .header__nav_menu.responsive { position: absolute; left: 0; margin-top: 40px; width: 100%; display: flex; flex-direction: column; z-index: 2; }
-  .header__nav_menu.responsive .icon { position: absolute; right: 0; top: -40px; }
-  .header__nav_menu.responsive .header__nav_menu_link { display: block; text-align: left;}
+  .section, .header { width: 100%; }
+  .header__nav-link:hover { color: #FFF; }
+  .header--hidden { transform: translateY(-160px); }
+  .header__nav { align-items: unset; background-color: #20AD70; }
+  .header__menu.responsive { position: absolute; left: 0; margin-top: 40px; width: 100%; display: flex; flex-direction: column; z-index: 2; }
+  .header__menu.responsive .icon { position: absolute; right: 0; top: -40px; }
+  .header__menu.responsive .header__nav-link { display: block; text-align: left;}
 }
 
 .main {
