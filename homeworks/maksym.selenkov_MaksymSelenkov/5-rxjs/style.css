@@ -1,13 +1,58 @@
-.wrapper {
-  overflow: scroll;
+.container {
+  width: 100%;
+  max-width: 1024px;
+  /*height: 100%;*/
+  /*max-height: 1000px;*/
+  /*overflow-y: auto;*/
+  /*margin: 0 auto;*/
 }
 
 .header {
+  width: 100%;
   max-width: 1024px;
-  background-color: #1D719A;
+  background-color: #476B6B;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header__nav {
   display: flex;
+  align-items: center;
+  font-size: 28px;
+}
+
+.header__link, .header__logo, .header__buy {
+  margin: 10px 20px;
+  background-color: #C2D6D6;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.header__link {
+  text-decoration: none;
+  color: #000;
+}
+
+/*.header__link:hover {*/
+/*!*  text-decoration: #0E0E0E;*!*/
+/*!*  color: e5e5e5;*!*/
+/*!*}*!*/
+
+.header__buy {
+  margin-left: auto;
+  font-size: 28px;
+}
+
+.header--hide {
+  transform: translateY(-100%);
+  transition: all 1s ease;
 }
 
 .main {
-  max-width: 1024px;
+  width: 100%;
 }
+
+/*@media (max-width: 768px) {*/
+
+/*}*/
