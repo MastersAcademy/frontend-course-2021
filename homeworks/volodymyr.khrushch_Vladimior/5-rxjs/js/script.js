@@ -25,9 +25,9 @@ scrolling$.pipe(
     map((pixel) => pixel[1] < pixel[0]),
 ).subscribe((e) => {
     if (e) {
-        headerEl.classList.remove('header__hidden');
+        headerEl.classList.remove('header_hidden');
     } else {
-        headerEl.classList.add('header__hidden');
+        headerEl.classList.add('header_hidden');
     }
 });
 
@@ -36,6 +36,6 @@ menuBurger$.pipe(
     throttleTime(450),
 ).subscribe(() => {
     document.body.classList.toggle('body__lock');
-    iconMenuEl.classList.toggle('menu__icon--active');
-    bodyMenuEl.classList.toggle('menu__body--active');
+    iconMenuEl.classList.toggle('menu__icon_active');
+    bodyMenuEl.classList.toggle('menu__body_active');
 });
