@@ -19,6 +19,7 @@ body {
 }
 
 .logo {
+  z-index: 1;
   margin: 0;
   padding: 0 15px;
   background-color: #3FAB67;
@@ -36,23 +37,18 @@ body {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
+  width: 100%;
   background-color: inherit;
+  transition: all .7s ease;
 }
 
-.top-nav__icon {
-  position: absolute;
-  top: -35px;
-  left: 355px;
-  padding: 0 10px;
-  background-color: #3FAB67;
-  color: #FFF;
-  line-height: 35px;
-  text-decoration: none;
-  cursor: pointer;
+.top-nav_hidden {
+  height: 0;
+  overflow: hidden;
 }
 
 .top-nav__link {
-  width: 360px;
+  width: 100%;
   padding: 0 15px;
   text-decoration: none;
   line-height: 35px;
@@ -68,6 +64,31 @@ body {
   color: #333;
   background-color: #CCC;
   transition: all .7s ease;
+}
+
+.top-nav-resp-btn {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  padding: 0 10px;
+  border: none;
+  background-color: inherit;
+  color: #FFF;
+  line-height: 35px;
+  cursor: pointer;
+  text-align: end;
+}
+
+.top-nav-resp-btn:hover {
+  background-color: #3FAB67;
+  color: #FFF;
+}
+
+.top-nav-resp-btn_active {
+  background-color: #3FAB67;
+  width: 100%;
+  right: 0;
+  left: 0;
 }
 
 .buy-btn {
@@ -101,7 +122,7 @@ body {
     line-height: 35px;
   }
 
-  .top-nav__icon {
+  .top-nav-resp-btn {
     display: none;
   }
 }

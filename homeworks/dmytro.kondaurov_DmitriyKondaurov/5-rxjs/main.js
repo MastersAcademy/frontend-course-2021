@@ -34,7 +34,9 @@ scrollDirection.subscribe(() => {
 });
 
 clickOnBurger.subscribe((e) => {
-    console.log('burger', e);
+    const burgerIconEl = e.target;
+    burgerIconEl.classList.toggle('top-nav-resp-btn_active');
+    document.querySelector('[data-nav-conainer]').classList.toggle('top-nav_hidden');
 });
 
 clickOnNavItems.subscribe((e) => {
