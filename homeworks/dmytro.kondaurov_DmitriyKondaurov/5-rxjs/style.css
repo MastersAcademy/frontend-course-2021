@@ -27,9 +27,24 @@ body {
   line-height: 35px;
 }
 
+.top-nav {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: inherit;
+}
+
 .top-nav__icon {
+  position: absolute;
+  top: -35px;
+  left: 355px;
   padding: 0 10px;
-  display: inline-block;
+  background-color: #3FAB67;
   color: #FFF;
   line-height: 35px;
   text-decoration: none;
@@ -37,22 +52,22 @@ body {
 }
 
 .top-nav__link {
-  display: none;
+  width: 360px;
   padding: 0 15px;
-  color: #FFF;
   text-decoration: none;
   line-height: 35px;
+  color: #FFF;
 }
 
 .top-nav__link_active {
-  background-color: #FFF;
+  font-weight: 900;
   color: #3FAB67;
 }
 
 .top-nav__link:hover {
   color: #333;
-  background-color: #FFF;
-  transition: all .5s ease;
+  background-color: #CCC;
+  transition: all .7s ease;
 }
 
 .buy-btn {
@@ -69,7 +84,7 @@ body {
 
 .buy-btn:hover {
   background-color: #FFF;
-  color: #333;
+  color: #3FAB67;
   cursor: pointer;
 }
 
@@ -82,5 +97,11 @@ body {
 
   .top-nav__link {
     display: inline-block;
+    padding: 0 15px;
+    line-height: 35px;
+  }
+
+  .top-nav__icon {
+    display: none;
   }
 }
