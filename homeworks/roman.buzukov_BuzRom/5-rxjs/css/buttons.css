@@ -2,12 +2,12 @@
 
 .header__button-wrapper {
   right: 0;
-  transition: .5s ease all;
 }
 
-.header__button-wrapper._active {
+.header__button-wrapper--active {
   position: absolute;
   right: -100%;
+  transition: .8s ease all;
 }
 
 .content__button-wrapper {

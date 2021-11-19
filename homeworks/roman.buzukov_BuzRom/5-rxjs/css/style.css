@@ -41,7 +41,7 @@ body {
   transition: all .8s ease-out;
 }
 
-.header__main._active {
+.header__main.header__main--active {
   max-width: 100%;
   background-position: left bottom;
 }

@@ -23,7 +23,7 @@
     transition: .8s ease all;
   }
 
-  .menu._active {
+  .menu--active {
     bottom: calc(100% - 250px);
   }
 
