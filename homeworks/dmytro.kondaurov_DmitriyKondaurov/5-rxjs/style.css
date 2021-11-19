@@ -45,6 +45,7 @@ body {
 .top-nav_hidden {
   height: 0;
   overflow: hidden;
+  transition: all .7s ease;
 }
 
 .top-nav__link {
@@ -113,13 +114,23 @@ body {
   height: 200vh;
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
+
+  .top-nav_hidden {
+    height: auto;
+    overflow: hidden;
+  }
+
+  .top-nav {
+    position: relative;
+    top: 0;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: auto;
+  }
 
   .top-nav__link {
-    display: inline-block;
-    padding: 0 15px;
-    line-height: 35px;
+    width: auto;
   }
 
   .top-nav-resp-btn {

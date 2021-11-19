@@ -30,7 +30,9 @@ const clickOnNavItems = clicks.pipe(
 );
 
 scrollDirection.subscribe(() => {
-    document.querySelector('[data-header-visible]').classList.toggle('header_hide');
+    document.querySelector('[data-header]').classList.toggle('header_hide');
+    document.querySelector('[data-nav-conainer]').classList.add('top-nav_hidden');
+    document.querySelector('[data-nav-burger]').classList.remove('top-nav-resp-btn_active');
 });
 
 clickOnBurger.subscribe((e) => {
@@ -44,4 +46,8 @@ clickOnNavItems.subscribe((e) => {
     const listNavItems = Array.from(document.querySelectorAll('[data-nav-item]'));
     listNavItems.forEach((item) => item.classList.remove('top-nav__link_active'));
     curNavItemEl.classList.add('top-nav__link_active');
+    setTimeout(() => {
+        document.querySelector('[data-nav-conainer]').classList.add('top-nav_hidden');
+        document.querySelector('[data-nav-burger]').classList.remove('top-nav-resp-btn_active');
+    }, 300);
 });
