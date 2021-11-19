@@ -43,8 +43,7 @@ body {
 }
 
 .top-nav_hidden {
-  height: 0;
-  overflow: hidden;
+  left: -1000px;
   transition: all .7s ease;
 }
 
@@ -130,7 +129,8 @@ body {
   }
 
   .top-nav__link {
-    width: auto;
+    width: 80px;
+    text-align: center;
   }
 
   .top-nav-resp-btn {
