@@ -1,0 +1,227 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  background-color: #333;
+  color: #FFF;
+}
+
+.body__lock {
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #912323;
+  transition: all .6s ease;
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  -o-transition: all .6s ease;
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  padding: 0 30px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+}
+
+.header__logo {
+  border-radius: 35px;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  -ms-border-radius: 35px;
+  -o-border-radius: 35px;
+  background-color: #AAA;
+  position: relative;
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+}
+
+.header__hidden {
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transition: all .6s ease;
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  -o-transition: all .6s ease;
+}
+
+.page {
+  padding: 85px 65px 70px;
+}
+
+.page__section {
+  word-spacing: 6px;
+}
+
+.menu__icon {
+  display: none;
+}
+
+.menu__list {
+  position: relative;
+  margin: 0 0 0 20px;
+}
+
+.menu__list__item {
+  list-style: none;
+}
+
+.menu__link {
+  color: #FFF;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.menu__link:hover {
+  text-decoration: underline;
+}
+
+/* style for pc */
+@media (min-width: 767px) {
+
+  .menu__list {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu__list__item {
+    padding: 10px 35px 10px 0;
+  }
+}
+
+/* resolution for mobile */
+@media (max-width: 767px) {
+
+  .menu__icon {
+    z-index: 5;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 10px;
+    cursor: pointer;
+  }
+
+  .menu__icon__line,
+  .menu__icon::before,
+  .menu__icon::after {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all, .3s ease 0s;
+    -webkit-transition: all, .3s ease 0s;
+    -moz-transition: all, .3s ease 0s;
+    -ms-transition: all, .3s ease 0s;
+    -o-transition: all, .3s ease 0s;
+    background-color: #FFF;
+  }
+
+  .menu__icon::before,
+  .menu__icon::after {
+    content: "";
+  }
+
+  .menu__icon::before {
+    top: 0;
+  }
+
+  .menu__icon::after {
+    bottom: 0;
+  }
+
+  .menu__icon__line {
+    top: 50%;
+    transform: scale(1) translate(0, -50%);
+    -webkit-transform: scale(1) translate(0, -50%);
+    -moz-transform: scale(1) translate(0, -50%);
+    -ms-transform: scale(1) translate(0, -50%);
+    -o-transform: scale(1) translate(0, -50%);
+  }
+
+  .menu__icon--active .menu__icon__line {
+    transform: scale(0) translate(0, -50%);
+    -webkit-transform: scale(0) translate(0, -50%);
+    -moz-transform: scale(0) translate(0, -50%);
+    -ms-transform: scale(0) translate(0, -50%);
+    -o-transform: scale(0) translate(0, -50%);
+  }
+
+  .menu__icon--active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+    -webkit-transform: rotate(-45deg) translate(0, -50%);
+    -moz-transform: rotate(-45deg) translate(0, -50%);
+    -ms-transform: rotate(-45deg) translate(0, -50%);
+    -o-transform: rotate(-45deg) translate(0, -50%);
+  }
+
+  .menu__icon--active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+    -webkit-transform: rotate(45deg) translate(0, 50%);
+    -moz-transform: rotate(45deg) translate(0, 50%);
+    -ms-transform: rotate(45deg) translate(0, 50%);
+    -o-transform: rotate(45deg) translate(0, 50%);
+  }
+
+  .menu__body {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    padding: 100px 30px 30px;
+    transition: left .3s ease 0s;
+    -webkit-transition: left .3s ease 0s;
+    -moz-transition: left .3s ease 0s;
+    -ms-transition: left .3s ease 0s;
+    -o-transition: left .3s ease 0s;
+    overflow: auto;
+  }
+
+  .menu__body--active {
+    left: 0;
+  }
+
+  .menu__list__item {
+    margin: 0 0 30px;
+  }
+
+  .menu__link {
+    font-size: 24px;
+  }
+
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 70px;
+    z-index: 2;
+  }
+}
