@@ -34,7 +34,8 @@ body {
 
 .main-header {
   background-color: #EEE;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   transition: top .25s ease-in-out;
 }
@@ -113,6 +114,10 @@ body {
   display: block;
   color: inherit;
   padding: .5rem;
+}
+
+.main-content {
+  margin-top: 4rem;
 }
 
 .page-article {

@@ -23,19 +23,20 @@ export class Menu {
     toggleHeader() {
         const source = fromEvent(window, 'scroll').pipe(
             map(() => window.scrollY),
-            throttleTime(750),
             filter((data) => data > this.scrollLimit),
+            throttleTime(50),
             pairwise(),
-            map(([prev, next]) => prev < next),
+            map(([prev, next]) => (prev > next ? 'up' : 'down')),
             distinctUntilChanged(),
         );
 
         source.subscribe((value) => {
-            this.navigationMenu.classList.add('hidden');
-            if (value) {
+            if (value === 'down') {
                 this.header.classList.add('invisible');
                 this.navigationMenu.classList.add('hidden');
-            } else {
+            }
+
+            if (value === 'up') {
                 this.header.classList.remove('invisible');
             }
         });
