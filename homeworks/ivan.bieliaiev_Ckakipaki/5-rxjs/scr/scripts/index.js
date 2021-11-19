@@ -5,6 +5,7 @@ const headerEl = document.querySelector(('[data-header-container]'));
 const burgerEl = document.querySelector('[data-burger-icon]');
 const navContainerEl = document.querySelector('[data-navigation]');
 const mainBtnEl = document.querySelector('[data-main-button]');
+const headerBtnContainerEl = document.querySelector('[data-header-btn]');
 
 const headerAfterBtnEl = document.createElement('header');
 const btnEl = document.createElement('button');
@@ -16,6 +17,10 @@ btnEl.innerHTML = 'Buy Me';
 headerAfterBtnEl.appendChild(titleEl);
 headerAfterBtnEl.appendChild(btnEl);
 headerAfterBtnEl.classList.add('header-afterBtn');
+
+const btnForHaederEl = document.createElement('button');
+btnForHaederEl.classList.add('button__element');
+btnForHaederEl.textContent = 'Buy me';
 
 const rect = mainBtnEl.getBoundingClientRect();
 
@@ -43,6 +48,9 @@ const scrolling$ = fromEvent(document, 'scroll')
 scrolling$.subscribe((posArr) => {
     if (posArr[posArr.length - 1] - posArr[posArr.length - 2] > 0) {
         headerEl.classList.add('header-hide');
+        headerHeight = 80;
+        headerEl.classList.remove('header-responsive');
+        navContainerEl.classList.remove('header__menu-responsive');
         if (posArr[posArr.length - 1] > rect.bottom) {
             headerAfterBtnEl.style.top = '0';
             document.body.prepend(headerAfterBtnEl);
@@ -50,8 +58,10 @@ scrolling$.subscribe((posArr) => {
     } else if (posArr[posArr.length - 1] - posArr[posArr.length - 2] < 0) {
         headerAfterBtnEl.style.top = '-300px';
         headerEl.classList.remove('header-hide');
-        headerHeight = 80;
-        headerEl.classList.remove('header-responsive');
-        navContainerEl.classList.remove('header__menu-responsive');
+        if (posArr[posArr.length - 1] > rect.bottom) {
+            headerBtnContainerEl.appendChild(btnForHaederEl);
+        } else {
+            headerBtnContainerEl.innerHTML = '';
+        }
     }
 });

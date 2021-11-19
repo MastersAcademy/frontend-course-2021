@@ -30,6 +30,17 @@ body {
   animation-fill-mode: forwards;
 }
 
+.header__logo {
+  width: 300px;
+  font-size: 35px;
+  margin: 0 30px;
+  transition: all .3s linear;
+}
+
+.header__logo:hover {
+  color: #FF6347;
+}
+
 .header-afterBtn {
   background: #59D9EA;
   position: fixed;
@@ -77,18 +88,21 @@ body {
   justify-content: space-between;
 }
 
-.header__logo {
-  margin: 0 40px;
-}
-
 .header__menu {
   margin: 0 40px;
   display: flex;
-  justify-content: right;
   flex-direction: row;
   justify-content: space-between;
   width: 400px;
   max-width: 50%;
+}
+
+.button__element {
+  width: 300px;
+  height: 35px;
+  font-size: 30px;
+  color: #5B1F67;
+  background-color: #0984E3;
 }
 
 .menu__navigation {
