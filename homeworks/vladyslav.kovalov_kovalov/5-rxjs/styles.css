@@ -148,12 +148,13 @@ body {
   width: 100%;
 }
 
-.display-none {
+.hidden {
   display: none;
 }
 
-.hidden {
-  top: -77px;
+.invisible {
+  visibility: hidden;
+  top: -77px
 }
 
 @media (min-width: 768px) {

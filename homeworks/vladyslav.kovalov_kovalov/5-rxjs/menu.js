@@ -16,14 +16,14 @@ export class Menu {
     toggleDropdownMenu() {
         const source = fromEvent(this.burgerButton, 'click');
         source.subscribe(() => {
-            this.navigationMenu.classList.toggle('display-none');
+            this.navigationMenu.classList.toggle('hidden');
         });
     }
 
     toggleHeader() {
         const source = fromEvent(window, 'scroll').pipe(
             map(() => window.scrollY),
-            throttleTime(1000),
+            throttleTime(750),
             filter((data) => data > this.scrollLimit),
             pairwise(),
             map(([prev, next]) => prev < next),
@@ -31,12 +31,12 @@ export class Menu {
         );
 
         source.subscribe((value) => {
-            this.navigationMenu.classList.add('display-none');
+            this.navigationMenu.classList.add('hidden');
             if (value) {
-                this.header.classList.add('hidden');
-                this.navigationMenu.classList.add('display-none');
+                this.header.classList.add('invisible');
+                this.navigationMenu.classList.add('hidden');
             } else {
-                this.header.classList.remove('hidden');
+                this.header.classList.remove('invisible');
             }
         });
     }
