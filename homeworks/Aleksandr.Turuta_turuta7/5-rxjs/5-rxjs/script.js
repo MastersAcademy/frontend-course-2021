@@ -22,21 +22,36 @@ fromEvent(window, 'scroll')
     )
     .subscribe((position) => {
         if (position > 0) {
-            headerEl.classList.remove('ccc');
-            headerEl.classList.add('bbb');
+            setTimeout(() => {
+                headerEl.classList.add('absolute');
+            }, 0);
+            headerEl.classList.remove('visible');
+            headerEl.classList.add('hidden');
         }
         if (position < 0) {
-            headerEl.classList.remove('bbb');
-            headerEl.classList.add('ccc');
+            setTimeout(() => {
+                headerEl.classList.remove('absolute');
+            }, 0);
+            headerEl.classList.remove('mergin_top');
+            headerEl.classList.remove('hidden');
+            headerEl.classList.add('visible');
         }
     });
 
+checkboxEl.checked = true;
+
 checkboxEl.addEventListener('change', function () {
     if (this.checked) {
-        navigationEl.classList.add('ccc');
-        navigationEl.classList.remove('bbb');
+        setTimeout(() => {
+            headerEl.classList.remove('absolute');
+        }, 0);
+        navigationEl.classList.add('visible');
+        navigationEl.classList.remove('hidden');
     } else {
-        navigationEl.classList.remove('ccc');
-        navigationEl.classList.add('bbb');
+        setTimeout(() => {
+            headerEl.classList.add('absolute');
+        }, 0);
+        navigationEl.classList.add('hidden');
+        navigationEl.classList.remove('visible');
     }
 });

@@ -64,39 +64,41 @@
   transform: scale(1.1)
 }
 
-.bbb {
+.absolute {
+  position: absolute;
+}
+
+.hidden {
   opacity: 0;
   transition: .3s;
   visibility: hidden;
-  position: sticky;
 }
 
-.ccc {
+.visible {
   opacity: 1;
   transition: .3s;
   visibility: visible;
   position: sticky;
 }
 
-.nav__label {
+.nav__label-chech {
   margin-left: -500px;
 }
 
-label {
+.nav__label-chech {
   display: flex;
   flex-direction: column;
   width: 70px;
   cursor: pointer;
 }
 
-label span {
+.nav__label-chech  span {
   background: #FFF;
   border-radius: 10px;
   height: 7px;
   margin: 7px 0;
   transition: .4s  cubic-bezier(.68, -.6, .32, 1.6);
 }
-
 
 span:nth-of-type(1) {
   width: 50%;
@@ -106,35 +108,30 @@ span:nth-of-type(2) {
   width: 100%;
 }
 
-
 span:nth-of-type(3) {
   width: 75%;
 }
 
 
-input[type="checkbox"] {
+.nav__label-chech-input[type="checkbox"] {
   display: none;
 }
 
-
-input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+.nav__label-chech-input[type="checkbox"]:checked ~ span:nth-of-type(1) {
   transform-origin: bottom;
   transform: rotateZ(45deg) translate(8px,0)
 }
 
-
-input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+.nav__label-chech-input[type="checkbox"]:checked ~ span:nth-of-type(2) {
   transform-origin: top;
   transform: rotateZ(-45deg)
 }
 
-
-input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+.nav__label-chech-input[type="checkbox"]:checked ~ span:nth-of-type(3) {
   transform-origin: bottom;
   width: 50%;
   transform: translate(30px,-11px) rotateZ(45deg);
 }
-
 
 @media (max-width: 700px) {
 
@@ -172,11 +169,10 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3) {
     justify-content: center;
   }
 
-  .nav__label {
-    margin-left: 500px;
+  .nav__label-chech {
     position: fixed;
-    top: 0;
-    right: 30px;
+    top: 20px;
+    right: 60px;
     z-index: 9999;
   }
 }
