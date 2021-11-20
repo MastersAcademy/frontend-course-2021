@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #F0F0FC;
+}
+
+
+.app {
+  width: 800px;
+  min-height: 500px;
+  margin: 50px auto;
+  border: 2px solid #CCC;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  min-height: 500px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  padding-right: 10px;
+}
+
+.input {
+  padding: 10px;
+  margin-bottom: 45px;
+}
+
+.input:hover {
+  cursor: pointer;
+  border-radius: 5px;
+  background: #00B500;
+  color: #FFF;
+}
+
+.btn {
+  padding: 10px;
+  min-width: 300px;
+  margin-bottom: 15px;
+  background: #EABD9B;
+}
+
+.text {
+  padding-bottom: 15px;
+  font-size: 18px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.1,1.1);
+  border-radius: 5px;
+  background: #00B500;
+  color: #FFF;
+}
+
+.time-box {
+  height: 300px;
+  padding: 15px;
+  border-left: 2px solid #CCC;
+  border-bottom: 2px solid #CCC;
+  position: relative;
+  font-size: 40px;
+}
+
+.time-box::before {
+  color: #F00;
+  content: "*";
+  font-family: "Open Sans", sans-serif;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+
+.time-box__select {
+  padding: 10px;
+  margin: 10px auto;
+  text-align: center;
+  min-width: 100%;
+}
