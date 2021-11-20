@@ -26,8 +26,8 @@ body {
 .header__title {
   float: left;
   height: 35px;
-  color: #fff;
-  background-color: #04aa6d;
+  color: #FFF;
+  background-color: #04AA6D;
   font-size: 20px;
   padding: 5px 10px;
   vertical-align: center;
@@ -55,7 +55,7 @@ body {
   line-height: 35px;
   font-size: 18px;
   padding: 0 20px;
-  color: #fff;
+  color: #FFF;
   text-decoration: none;
 }
 
@@ -71,36 +71,37 @@ body {
   border: none;
 }
 
-.navigation-burger:before,
-.navigation-burger:after,
+.navigation-burger::before,
+.navigation-burger::after,
 .navigation-burger .navigation-burger__decoration {
-  background: #fff;
+  background: #FFF;
   content: "";
   display: block;
   height: 3px;
   border-radius: 2px;
   margin: 4px 0;
-  transition: 0.5s;
+  transition: 1s;
 }
 
-.header__navigation-burger.header__navigation-burger--active:before {
+.header__navigation-burger--active::before {
   transform: translateY(6px) rotate(135deg);
 }
 
-.header__navigation-burger.header__navigation-burger--active:after {
+.header__navigation-burger--active::after {
   transform: translateY(-6px) rotate(-135deg);
 }
 
-.header__navigation-burger.header__navigation-burger--active .navigation-burger__decoration {
+.header__navigation-burger--active .navigation-burger__decoration {
   transform: scale(0);
 }
 
 .main-article {
-  padding: 35px 5px 0px 5px;
+  padding: 35px 5px 0;
 }
 
 @media (max-width: 991px) {
-  header {
+
+  .header {
     padding: 0 20px;
   }
 
@@ -115,7 +116,7 @@ body {
     background: #333;
     top: 35px;
     left: -100%;
-    transition: 0.5s;
+    transition: 1s;
   }
 
   .header__navigation--active {
@@ -128,6 +129,6 @@ body {
   }
 
   .navigation-item__link {
-    border-bottom: 1px solid #b8b8b8;
+    border-bottom: 1px solid #B8B8B8;
   }
 }
