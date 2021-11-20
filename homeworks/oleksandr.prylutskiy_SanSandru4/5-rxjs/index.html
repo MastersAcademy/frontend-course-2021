@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@600&family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.6.3/rxjs.umd.min.js" integrity="sha512-JnZPWAckMDks0CCIeGznqEo7ifmYK7VowHq/NVFlSXGkwxv4OBCJFy7nouOtJZmVldHo7FQLIdeWTI55yyZc4Q==" crossorigin="anonymous"></script>
         <title>Document</title>
     </head>
@@ -15,15 +15,21 @@
             <header class = "header" data-attr-header>
                 <nav class = "header__nav">
                     <div class = "header__logo">LOGO</div>
-                    <div class = "header__menu" data-nav-menu>
-                        <a class = "header__nav-link" href = "#news">News</a>
-                        <a class = "header__nav-link" href = "#contact">Contacts</a>
-                        <a class = "header__nav-link" href = "#about">About</a>
-                        <a class = "icon" href = "javascript:void(0);" data-min-menu>
-                            <i class = "fa fa-bars" data-attr-bars></i>
-                            <i class = "fa fa-times" style="display: none" data-attr-times></i>
+                    <ul class = "header__menu" data-nav-menu>
+                        <li>
+                            <a class = "header__nav-link" href = "#news">News</a>
+                        </li>
+                        <li>
+                            <a class = "header__nav-link" href = "#contact">Contacts</a>
+                        </li>
+                        <li>
+                            <a class = "header__nav-link" href = "#about">About</a>
+                        </li>
+                        <a class = "icon" data-min-menu>
+                            <i class = "fas fa-bars" data-attr-bars></i>
+                            <i class = "fas fa-times" data-attr-times></i>
                         </a>
-                    </div>
+                    </ul>
                 </nav>
             </header>
             <main class = "main">
