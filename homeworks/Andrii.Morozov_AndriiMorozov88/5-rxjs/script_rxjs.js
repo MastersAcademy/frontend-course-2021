@@ -23,3 +23,8 @@ scroll$.pipe(
         scrollUp();
     }
 });
+const burger = document.querySelector('[data-burger]');
+const menu = document.querySelector('[data-menu]');
+burger.addEventListener('click', () => {
+    menu.classList.toggle('header__content-menu-ul-hidden');
+});
