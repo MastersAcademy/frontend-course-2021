@@ -1,0 +1,52 @@
+/* ============= burger ==============*/
+
+.header__main-burger {
+  width: 34px;
+  height: 20px;
+  margin-left: 20px;
+  position: relative;
+}
+
+.header__main-burger::before,
+.header__main-burger::after,
+.header__main-burger .header__main-burger-stick {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  transition: all .4s ease;
+}
+
+.header__main-burger::before,
+.header__main-burger::after {
+  content: "";
+}
+
+.header__main-burger::before {
+  top: 0;
+}
+
+.header__main-burger::after {
+  bottom: 0;
+}
+
+.header__main-burger .header__main-burger-stick {
+  top: 50%;
+  transform: scale(1) translate(0, -50%);
+}
+
+.header__main-burger--active .header__main-burger-stick {
+  transform: scale(0) translate(0, -50%);
+}
+
+.header__main-burger--active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+}
+
+.header__main-burger--active::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+}
