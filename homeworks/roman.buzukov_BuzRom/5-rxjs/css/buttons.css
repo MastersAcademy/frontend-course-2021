@@ -1,0 +1,51 @@
+/* ============= buttons ==============*/
+
+.header__button-wrapper {
+  right: 0;
+}
+
+.header__button-wrapper--active {
+  position: absolute;
+  right: -100%;
+  transition: .8s ease all;
+}
+
+.content__button-wrapper {
+  margin-top: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__button,
+.content__button {
+  padding: 10px 20px;
+  background: rgb(96,	168,	112);
+  color: rgb(255, 255, 255);
+  white-space: nowrap;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-right: 25px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.content__button {
+  margin: 0;
+  padding: 20px 0;
+  width: 70%;
+  font-size: 3rem;
+}
+
+.header__button:hover,
+.content__button:hover {
+  background: rgb(89, 146, 96);
+}
+
+.header__button:active,
+.content__button:active {
+  background: rgb(74, 131, 86);
+}
