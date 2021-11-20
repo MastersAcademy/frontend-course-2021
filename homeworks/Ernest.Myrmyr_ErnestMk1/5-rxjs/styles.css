@@ -1,0 +1,141 @@
+:root {
+  --header-height: 8vh;
+}
+
+body {
+  box-sizing: border-box;
+  height: 200vh;
+  margin: 0;
+  padding: 0;
+  padding-top: var(--header-height);
+}
+
+li {
+  list-style: none;
+}
+
+.button__menu {
+  display: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  gap: 5vh;
+  background-color: #FE0;
+  transition: transform .2s;
+}
+
+.nav_hidden {
+  transform: translateY(calc(-1 * var(--header-height)));
+}
+
+.navigation_phone {
+  display: none;
+}
+
+.nav_itemP {
+  color: #FE0;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: font-size .2s;
+}
+
+.nav_itemP:hover {
+  font-size: 1.5rem;
+  color: #0BFF17;
+}
+
+.nav_itemP:active {
+  color: #00F;
+}
+
+.cross__icon {
+  display: none;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.cross__icon:hover {
+  transform: scale(1.2);
+}
+
+.menu__icon {
+  display: none;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.menu__icon:hover {
+  transform: scale(1.2);
+}
+
+.nav_item {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+  margin-right: 5vh;
+}
+
+.nav_item:hover {
+  color: #0BFF17;
+}
+
+.nav_item:active {
+  color: #00F;
+}
+
+.header__logo {
+  color: #FFF;
+}
+
+.header__logo__wrapper {
+  background-color: #000;
+  width: 10vh;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+
+  .nav_item {
+    display: none;
+  }
+
+  .button__menu {
+    display: block;
+    border: 0;
+    background-color: #FE0;
+  }
+
+  .navigation_phone {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    position: fixed;
+    background-color: #000;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform .3s;
+  }
+
+  .menu__icon {
+    display: block;
+  }
+
+  .show_nav_phone {
+    transform: translateX(0);
+  }
+}
+
+.main__content {
+  font-size: 1.7rem;
+  margin: 3vh;
+}
