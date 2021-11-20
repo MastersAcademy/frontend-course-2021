@@ -1,133 +1,133 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .header {
-    background-color: #333;
-    position: fixed;
-    transition: .55s opacity;
-    opacity: 1;
-    top: 0;
-    left: 0;
-    display: flex;
-    width: 100%;
-    max-height: 35px;
-    box-sizing: border-box;
-    padding: 0 2% 0 0;
+  background-color: #333;
+  position: fixed;
+  transition: .55s opacity;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  max-height: 35px;
+  box-sizing: border-box;
+  padding: 0 2% 0 0;
 }
 
 .header--scrolled {
-    transition: .55s opacity;
-    opacity: 0;
+  transition: .55s opacity;
+  opacity: 0;
 }
 
 .header__title {
-    float: left;
-    height: 35px;
-    color: #fff;
-    background-color: #04aa6d;
-    font-size: 20px;
-    padding: 5px 10px;
-    vertical-align: center;
-    margin: 0 10px 0 0;
-    box-sizing: border-box;
+  float: left;
+  height: 35px;
+  color: #fff;
+  background-color: #04aa6d;
+  font-size: 20px;
+  padding: 5px 10px;
+  vertical-align: center;
+  margin: 0 10px 0 0;
+  box-sizing: border-box;
 }
 
 .navigation {
-    float: left;
+  float: left;
 }
 
 .navigation__list {
-    display: flex;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 .navigation-item {
-    list-style: none;
+  list-style: none;
 }
 
 .navigation-item__link {
-    display: block;
-    height: 35px;
-    line-height: 35px;
-    font-size: 18px;
-    padding: 0 20px;
-    color: #fff;
-    text-decoration: none;
+  display: block;
+  height: 35px;
+  line-height: 35px;
+  font-size: 18px;
+  padding: 0 20px;
+  color: #fff;
+  text-decoration: none;
 }
 
 .navigation-item__link:hover {
-    background-color: #8B0000;
+  background-color: #8B0000;
 }
 
 .navigation-burger {
-    display: none;
-    float: right;
-    background-color: transparent;
-    width: 35px;
-    border: none;
+  display: none;
+  float: right;
+  background-color: transparent;
+  width: 35px;
+  border: none;
 }
 
 .navigation-burger:before,
 .navigation-burger:after,
 .navigation-burger .navigation-burger__decoration {
-    background: #fff;
-    content: "";
-    display: block;
-    height: 3px;
-    border-radius: 2px;
-    margin: 4px 0;
-    transition: 0.5s;
+  background: #fff;
+  content: "";
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+  margin: 4px 0;
+  transition: 0.5s;
 }
 
 .header__navigation-burger.header__navigation-burger--active:before {
-    transform: translateY(6px) rotate(135deg);
+  transform: translateY(6px) rotate(135deg);
 }
 
 .header__navigation-burger.header__navigation-burger--active:after {
-    transform: translateY(-6px) rotate(-135deg);
+  transform: translateY(-6px) rotate(-135deg);
 }
 
 .header__navigation-burger.header__navigation-burger--active .navigation-burger__decoration {
-    transform: scale(0);
+  transform: scale(0);
 }
 
 .main-article {
-    padding: 35px 5px 0px 5px;
+  padding: 35px 5px 0px 5px;
 }
 
 @media (max-width: 991px) {
-    header {
-        padding: 0 20px;
-    }
+  header {
+    padding: 0 20px;
+  }
 
-    .header__navigation-burger {
-        display: block;
-    }
+  .header__navigation-burger {
+    display: block;
+  }
 
-    .header__navigation {
-        position: absolute;
-        width: 100%;
-        height: calc(100vh - 50px);
-        background: #333;
-        top: 35px;
-        left: -100%;
-        transition: 0.5s;
-    }
+  .header__navigation {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background: #333;
+    top: 35px;
+    left: -100%;
+    transition: 0.5s;
+  }
 
-    .header__navigation--active {
-        left: 0;
-    }
+  .header__navigation--active {
+    left: 0;
+  }
 
-    .navigation__list {
-        flex-direction: column;
-        text-align: center;
-    }
+  .navigation__list {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .navigation-item__link {
-        border-bottom: 1px solid #b8b8b8;
-    }
+  .navigation-item__link {
+    border-bottom: 1px solid #b8b8b8;
+  }
 }
