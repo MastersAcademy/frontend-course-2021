@@ -44,6 +44,7 @@ window.addEventListener('resize', () => {
         menuEl.style.display = 'none';
     } else {
         headerHeight = 80;
+        headerEl.style.background = '#111';
         mainEl.style.padding = '80px 0';
         menuEl.style.display = 'flex';
         headerEl.style.height = '80px';

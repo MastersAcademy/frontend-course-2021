@@ -51,7 +51,7 @@ body {
   height: 100%;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .default__titleBurger {
@@ -85,10 +85,11 @@ body {
 }
 
 .header__menu {
-  padding: 0 30px 0 0;
+  padding: 0 30px;
+  height: 100%;
   display: flex;
   font-size: 25px;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .menu__link {
