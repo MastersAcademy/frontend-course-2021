@@ -4,75 +4,123 @@
   box-sizing: border-box;
 }
 
-.page-wrapper {
+.page__wrapper {
   width: 90%;
   min-height: 50%;
   margin: 0 auto;
   border: 1px solid #24292F;
 }
 
-.page-header {
-  position: fixed;
+.page__header {
   width: 100%;
-  height: fit-content;
-  background-color: #24292F;
+  height: auto;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #24292F;
 }
 
-.page-title {
+.header__main {
+  display: flex;
   width: fit-content;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.header__title {
+  width: 80px;
+  padding: 3%;
   height: 100%;
   background-color: #44A047;
   text-align: center;
   color: #FFF;
 }
 
-.page-navigation {
-  width: fit-content;
+.header__burger {
+  display: none;
+  width: 50px;
+  height: 100%;
+}
+
+.header__navigation {
+  width: 60%;
   height: 100%;
   margin-left: 5%;
 }
 
-@media only screen and (max-width: 400px) {
-  .navigation-menu {
-    display: none;
-  }
-}
-
-.navigation-menu {
+.navigation__menu {
   list-style: none;
-  vertical-align: baseline;
 }
 
-.navigation-item {
+.navigation__item {
   display: inline-block;
-  vertical-align: baseline;
+  vertical-align: middle;
+  line-height: normal;
   margin-right: 2%;
 }
 
-.navigation-link {
+.navigation__link {
   color: #FFF;
   text-decoration: none;
 }
 
-.navigation-link:hover {
+.navigation__link:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.header-desappear {
+.page__main {
+  width: fit-content;
+  height: auto;
+}
+
+/* Media queries: */
+
+@media screen and (max-width: 600px) {
+
+  .page__header {
+    flex-direction: column;
+  }
+
+  .header__main {
+    width: 100%;
+  }
+
+  .header__burger {
+    display: block;
+  }
+
+  .header__navigation {
+    width: 100%;
+    height: 100px;
+    display: none;
+  }
+
+  li.navigation__item {
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+/* Classes for JS effects: */
+
+.page__header--hide {
   visibility: hidden;
   opacity: 0;
   transition: opacity 1s, visibility 1s;
 }
 
-.header-appear {
+.page__header--show {
   visibility: visible;
   opacity: 1;
   transition: opacity 1s, visibility 1s;
 }
 
-.page-main {
-  width: fit-content;
-  height: auto;
+.header__navigation--show {
+  display: block;
+}
+
+.header__main--open {
+  background-color: #44A047;
+  justify-content: space-between;
 }

@@ -7,24 +7,34 @@
   </head>
 
   <body>
-    <div class="page-wrapper">
-      <header class="page-header" data-role="page-header-section">
-        <h1 class="page-title">Logo</h1>
-        <nav class="page-navigation" data-role="page-navigation-section">
-          <ul class="navigation-menu">
-            <li class="navigation-item">
-              <a class="navigation-link" href="#">Новости</a>
+    <div class="page__wrapper">
+      <header class="page__header" data-role="page-header-section">
+        <section
+          class="header__main"
+          data-role="header-main-section">
+          <h1 class="header__title">Logo</h1>
+          <button 
+              type="button"
+              class="header__burger"
+              data-role="toggle-menu-button">
+              <img src="./images/burger.svg" alt="burger-menu">
+          </button>
+        </section>
+        <nav class="header__navigation" data-role="page-navigation-section">
+          <ul class="navigation__menu">
+            <li class="navigation__item">
+              <a class="navigation__link" href="#">Новости</a>
             </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="#">Контакты</a>
+            <li class="navigation__item">
+              <a class="navigation__link" href="#">Контакты</a>
             </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="#">Про нас</a>
+            <li class="navigation__item">
+              <a class="navigation__link" href="#">Про нас</a>
             </li>
           </ul>
         </nav>
       </header>
-      <main class="page-main">
+      <main class="page__main">
         <p>
       Lorem ipsum dolor sit amet, quis sonet referrentur cum ad, ex vim duis malorum. Te has recusabo complectitur, vix dolorum qualisque definiebas eu. Nam amet stet ut, ex natum decore delicata mea. Usu maluisset voluptaria suscipiantur id, id cetero imperdiet laboramus has. Sed veritus explicari interesset ad, mea diam velit aliquando ei.
         </p>
