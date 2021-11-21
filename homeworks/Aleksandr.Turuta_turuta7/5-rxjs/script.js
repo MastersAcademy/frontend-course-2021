@@ -1,11 +1,10 @@
 const headerEl = document.querySelector('[data-header]');
 const checkboxEl = document.querySelector('[data-input]');
-const navigationEl = document.querySelector('[data-naigation]');
+const navigationEl = document.querySelector('[data-navigation]');
 
 const { fromEvent } = window.rxjs;
 const {
     map,
-    tap,
     pairwise,
     filter,
     throttleTime,
@@ -13,7 +12,6 @@ const {
 
 fromEvent(window, 'scroll')
     .pipe(
-        tap(() => console.log(window.pageYOffset)),
         map(() => window.pageYOffset),
         throttleTime(100),
         pairwise(),
@@ -22,19 +20,14 @@ fromEvent(window, 'scroll')
     )
     .subscribe((position) => {
         if (position > 0) {
-            setTimeout(() => {
-                headerEl.classList.add('absolute');
-            }, 0);
-            headerEl.classList.remove('visible');
-            headerEl.classList.add('hidden');
+            headerEl.classList.toggle('visible', false);
+            headerEl.classList.toggle('hidden', true);
+            headerEl.classList.toggle('absolute', true);
         }
         if (position < 0) {
-            setTimeout(() => {
-                headerEl.classList.remove('absolute');
-            }, 0);
-            headerEl.classList.remove('mergin_top');
-            headerEl.classList.remove('hidden');
-            headerEl.classList.add('visible');
+            headerEl.classList.toggle('absolute', false);
+            headerEl.classList.toggle('hidden', false);
+            headerEl.classList.toggle('visible', true);
         }
     });
 
@@ -42,16 +35,10 @@ checkboxEl.checked = true;
 
 checkboxEl.addEventListener('change', function () {
     if (this.checked) {
-        setTimeout(() => {
-            headerEl.classList.remove('absolute');
-        }, 0);
-        navigationEl.classList.add('visible');
-        navigationEl.classList.remove('hidden');
+        headerEl.classList.toggle('absolute');
+        navigationEl.classList.toggle('hidden');
     } else {
-        setTimeout(() => {
-            headerEl.classList.add('absolute');
-        }, 0);
-        navigationEl.classList.add('hidden');
-        navigationEl.classList.remove('visible');
+        navigationEl.classList.toggle('hidden');
+        headerEl.classList.toggle('absolute');
     }
 });
