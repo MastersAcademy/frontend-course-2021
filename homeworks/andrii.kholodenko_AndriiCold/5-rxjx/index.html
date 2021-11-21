@@ -11,7 +11,17 @@
         <header class="page-body__header" data-header>
             <div class="header__container">
                 <a href="#" class="header__link__logo">
-                    <img class="logo_image" src="img/Logo.svg" alt="Логотип">
+                    <svg display="none">
+                        <symbol id="logo" viewBox="0 0 256 256">
+                            <g>
+                                <path d="M245 154a36 36 0 0 0-32-61 36 36 0 0 0-20-66c-12 0-23 6-30 16a36 36 0 0 0-61-32c-8 8-12 21-9 32a36 36 0 0 0-66 20c0 12 6 23 16 30a36 36 0 0 0-32 10 36 36 0 0 0 0 51 36 36 0 0 0 32 9 36 36 0 0 0 20 66c12 0 23-6 30-16a36 36 0 0 0 60 32c9-8 12-20 10-32a36 36 0 0 0 66-20c0-12-6-23-16-30a36 36 0 0 0 32-9"></path>
+                                <path d="M234 114c-8-9-21-9-29 0h-42l30-30a21 21 0 1 0-21-21l-30 30V51a21 21 0 1 0-29 0v42L83 63a21 21 0 1 0-20 21l30 30H51a21 21 0 1 0 0 29h42l-30 30a21 21 0 1 0 20 20l30-30v42a21 21 0 1 0 29 0v-42l30 30a21 21 0 1 0 21-20l-30-30h42a21 21 0 1 0 29-29" fill="#FFB13B"></path>
+                            </g>
+                        </symbol>
+                    </svg>
+                    <svg class="logo_image">
+                        <use xlink:href="#logo"></use>
+                    </svg>
                 </a>
                 <div class="header__container__aside" data-navigation-wrapper>
                     <div class="aside__burger" data-header-burger>
