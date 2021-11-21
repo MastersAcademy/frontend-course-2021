@@ -15,19 +15,19 @@ fromEvent(window, 'scroll')
         map(() => window.pageYOffset),
         throttleTime(100),
         pairwise(),
-        map((data) => data[1] - data[0]),
-        filter((data) => data > 50 || data < -50),
+        map((positionScroll) => positionScroll[1] - positionScroll[0]),
+        filter((positionScroll) => positionScroll > 50 || positionScroll < -50),
     )
     .subscribe((position) => {
         if (position > 0) {
-            headerEl.classList.toggle('visible', false);
-            headerEl.classList.toggle('hidden', true);
-            headerEl.classList.toggle('absolute', true);
+            headerEl.classList.add('visible');
+            headerEl.classList.remove('hidden');
+            headerEl.classList.remove('sticky');
         }
         if (position < 0) {
-            headerEl.classList.toggle('absolute', false);
-            headerEl.classList.toggle('hidden', false);
-            headerEl.classList.toggle('visible', true);
+            headerEl.classList.add('hidden');
+            headerEl.classList.remove('visible');
+            headerEl.classList.add('sticky');
         }
     });
 
@@ -35,10 +35,12 @@ checkboxEl.checked = true;
 
 checkboxEl.addEventListener('change', function () {
     if (this.checked) {
-        headerEl.classList.toggle('absolute');
-        navigationEl.classList.toggle('hidden');
+        navigationEl.classList.add('visible');
+        navigationEl.classList.remove('hidden');
+        headerEl.classList.remove('sticky');
     } else {
-        navigationEl.classList.toggle('hidden');
-        headerEl.classList.toggle('absolute');
+        navigationEl.classList.remove('visible');
+        navigationEl.classList.add('hidden');
+        headerEl.classList.add('sticky');
     }
 });
