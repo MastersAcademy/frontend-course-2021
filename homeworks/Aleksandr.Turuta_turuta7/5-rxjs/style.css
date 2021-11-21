@@ -26,9 +26,7 @@
   background: #44AB6D;
   display: flex;
   align-items: center;
-  justify-content: center;}
-
-.header__logo {
+  justify-content: center;
   color: #FFF;
 }
 
@@ -46,6 +44,7 @@
 
 .nav__list-item {
   margin-right: 50px;
+  list-style-type: none;
 }
 
 .nav__list-item-link {
@@ -65,35 +64,29 @@
 }
 
 .sticky {
-  position: sticky;
+  display: flex;
 }
 
 .hidden {
   opacity: 0;
   transition: .3s;
   visibility: hidden;
-  position: sticky;
 }
 
 .visible {
   opacity: 1;
   transition: .3s;
   visibility: visible;
-  position: sticky;
 }
 
-.nav__label-chech {
-  margin-left: -500px;
-}
-
-.nav__label-chech {
-  display: flex;
+.label-checkbox {
+  display: none;
   flex-direction: column;
   width: 70px;
   cursor: pointer;
 }
 
-.nav__label-chech .nav__label-chech-span {
+.label-checkbox .label-checkbox-span {
   background: #FFF;
   border-radius: 10px;
   height: 7px;
@@ -101,33 +94,33 @@
   transition: .4s  cubic-bezier(.68, -.6, .32, 1.6);
 }
 
-.nav__label-chech-span_one {
+.label-checkbox-span--one {
   width: 50%;
 }
 
-.nav__label-chech-span_two {
+.label-checkbox-span--two {
   width: 100%;
 }
 
-.nav__label-chech-span_three {
+.label-checkbox-span--three {
   width: 75%;
 }
 
-.nav__label-chech-input {
+.label-checkbox-input {
   display: none;
 }
 
-.nav__label-chech-input[type="checkbox"]:checked ~ .nav__label-chech-span_one {
+.label-checkbox-input[type="checkbox"]:checked ~ .label-checkbox-span--one {
   transform-origin: bottom;
   transform: rotateZ(45deg) translate(8px,0)
 }
 
-.nav__label-chech-input[type="checkbox"]:checked ~ .nav__label-chech-span_two {
+.label-checkbox-input[type="checkbox"]:checked ~ .label-checkbox-span--two {
   transform-origin: top;
   transform: rotateZ(-45deg)
 }
 
-.nav__label-chech-input[type="checkbox"]:checked ~ .nav__label-chech-span_three {
+.label-checkbox-input:checked ~ .label-checkbox-span--three {
   transform-origin: bottom;
   width: 50%;
   transform: translate(30px,-11px) rotateZ(45deg);
@@ -135,8 +128,15 @@
 
 .main__button {
   width: 100%;
-  height: 120px;
-  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.main__button-buy-now {
+  width: 180px;
+  height: 80px;
+  font-size: 25px;
+  margin: 0 auto;
 }
 
 @media (max-width: 650px) {
@@ -146,7 +146,6 @@
     font-size: 20px;
   }
 }
-
 
 @media (max-device-width: 420px) {
 
@@ -162,7 +161,8 @@
 
   .header__logo {
     width: 100%;
-    justify-content: flex-start;
+    font-size: 30px;
+    justify-content: space-between;
   }
 
   .nav__list {
@@ -174,6 +174,7 @@
   .nav__list-item-link {
     display: flex;
     justify-content: flex-start;
+    padding: 50px 40px;
   }
 
   .nav__list-item {
@@ -182,17 +183,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 20px;
+    font-size: 40px;
   }
 
-  .nav__label-chech {
-    position: fixed;
-    top: 20px;
-    right: 60px;
-    z-index: 9999;
+  .label-checkbox {
+    display: flex;
   }
 
-  .nav__list-item {
-    margin-right: 10px;
-    font-size: 30px;
+  .sticky {
+    display: none;
   }
 }

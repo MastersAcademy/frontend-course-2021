@@ -1,6 +1,13 @@
 const headerEl = document.querySelector('[data-header]');
 const checkboxEl = document.querySelector('[data-input]');
 const navigationEl = document.querySelector('[data-navigation]');
+const mediaQueryList = window.matchMedia('(max-width: 421px)');
+
+const screenTest = (e) => {
+    if (e.matches) navigationEl.classList.remove('hidden');
+};
+
+mediaQueryList.addListener(screenTest);
 
 const { fromEvent } = window.rxjs;
 const {
@@ -20,27 +27,31 @@ fromEvent(window, 'scroll')
     )
     .subscribe((position) => {
         if (position > 0) {
-            headerEl.classList.add('visible');
-            headerEl.classList.remove('hidden');
-            headerEl.classList.remove('sticky');
-        }
-        if (position < 0) {
             headerEl.classList.add('hidden');
             headerEl.classList.remove('visible');
-            headerEl.classList.add('sticky');
+        }
+        if (position < 0) {
+            headerEl.classList.remove('hidden');
+            headerEl.classList.add('visible');
         }
     });
 
-checkboxEl.checked = true;
+checkboxEl.checked = false;
 
 checkboxEl.addEventListener('change', function () {
     if (this.checked) {
-        navigationEl.classList.add('visible');
-        navigationEl.classList.remove('hidden');
-        headerEl.classList.remove('sticky');
+        navigationEl.classList.remove('sticky');
+        // headerEl.classList.remove('hidden');
+        setTimeout(() => {
+            navigationEl.classList.remove('hidden');
+            headerEl.classList.remove('hidden');
+        }, 100);
     } else {
         navigationEl.classList.remove('visible');
         navigationEl.classList.add('hidden');
-        headerEl.classList.add('sticky');
+
+        setTimeout(() => {
+            navigationEl.classList.add('sticky');
+        }, 300);
     }
 });
