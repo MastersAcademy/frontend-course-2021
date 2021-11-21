@@ -1,0 +1,35 @@
+/* ============= links ==============*/
+
+.menu__list-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  position: relative;
+}
+
+.menu__list-link::before {
+  content: "";
+  position: absolute;
+  width: 106%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -3px;
+  left: -3%;
+  background-color: rgb(255, 255, 255);
+  transform-origin: bottom right;
+  transition: transform .3s ease-out;
+}
+
+.menu__list-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.menu__list-link:active {
+  color: rgb(202, 117, 117);
+}
+
+.menu__list-link:active::before {
+  background-color: rgb(202, 117, 117);
+}
