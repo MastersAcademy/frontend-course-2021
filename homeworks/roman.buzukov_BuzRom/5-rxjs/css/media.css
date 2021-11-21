@@ -1,0 +1,53 @@
+/* ============= media ==============*/
+
+@media screen and (max-width: 768px) {
+
+  .header__main {
+    max-width: 210px;
+  }
+
+  .header__main-burger {
+    display: block;
+    visibility: visible;
+  }
+
+  .menu {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    height: 250px;
+    min-width: 100%;
+    margin: 0;
+    background: rgb(54,	54,	54);
+    z-index: -1;
+    transition: .8s ease all;
+  }
+
+  .menu--active {
+    bottom: calc(100% - 250px);
+  }
+
+  .menu__list {
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 95px 20px 20px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+
+  .header__main {
+    max-width: 80px;
+  }
+
+  .header__main-logo {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .main__container-button {
+    width: 100%;
+  }
+}
