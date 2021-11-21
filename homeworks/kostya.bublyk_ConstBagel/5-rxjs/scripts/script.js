@@ -13,11 +13,9 @@ const changeHeaderClasses = (addedStyle, removedStyle) => {
 
 fromEvent(window, 'scroll').pipe(
     map(() => this.scrollY),
-).subscribe(function(position) {
-    position > 50
-        ? changeHeaderClasses('page__header--hide', 'page__header--show')
-        : changeHeaderClasses('page__header--show', 'page__header--hide');
-});
+).subscribe((position) => position > 50 ? changeHeaderClasses('page__header--hide', 'page__header--show')
+    : changeHeaderClasses('page__header--show', 'page__header--hide'),
+);
 
 toggleMenuButtonEl.addEventListener('click', () => {
     headerMainEl.classList.toggle('header__main--open');
