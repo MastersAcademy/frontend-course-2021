@@ -13,24 +13,22 @@ fromEvent(window, 'scroll')
         throttleTime(150),
         map((e) => e.currentTarget.scrollY),
         pairwise(),
-        filter((v) => Math.abs(v[1] - v[0]) > 50),
-        map((v) => v[0] < v[1]),
+        filter(([previousScroll, currentScroll]) => Math.abs(currentScroll - previousScroll) > 50),
+        map(([previousScroll, currentScroll]) => previousScroll < currentScroll),
     )
-    .subscribe((v) => {
-        if (v) {
-            headerEl.classList.add('header--hide');
+    .subscribe((headerHidden) => {
+        if (headerHidden) {
+            headerEl.classList.add('header--hidden');
         } else {
-            headerEl.classList.remove('header--hide');
+            headerEl.classList.remove('header--hidden');
         }
     });
 
 fromEvent(burgerEl, 'click')
-    .subscribe((v) => {
-        if (v) {
-            buyEl.classList.toggle('header__buy--burger-click');
-            navigationEl.classList.toggle('header__nav');
-            navigationEl.classList.toggle('header__nav--burger-click');
-            headerEl.classList.toggle('header--burger-click');
-            burgerEl.classList.toggle('header__burger');
-        }
+    .subscribe(() => {
+        buyEl.classList.toggle('header__buy--burger-click');
+        navigationEl.classList.toggle('header__nav');
+        navigationEl.classList.toggle('header__nav--burger-click');
+        headerEl.classList.toggle('header--burger-click');
+        burgerEl.classList.toggle('header__burger');
     });

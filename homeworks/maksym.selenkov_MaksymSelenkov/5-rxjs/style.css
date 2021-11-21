@@ -30,6 +30,8 @@ body {
   cursor: pointer;
   border-radius: 5px;
   margin: 0 20px;
+  text-decoration: none;
+  color: #000;
 }
 
 .header__link {
@@ -44,15 +46,15 @@ body {
   font-size: 28px;
 }
 
-.header__link:hover, .header__buy:hover {
+.header__link:hover, .header__buy:hover, .header__logo:hover {
   background-color: #E5E5E5;
 }
 
-.header__link:active, .header__buy:active {
+.header__link:active, .header__buy:active, .header__logo:active {
   background-color: #03CC90;
 }
 
-.header--hide {
+.header--hidden {
   transform: translateY(-100%);
   transition: all 1s ease;
 }
