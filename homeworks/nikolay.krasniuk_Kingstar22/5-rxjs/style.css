@@ -34,12 +34,24 @@ body {
   justify-content: space-between;
 }
 
-.main__header-logo {
+.main__header-logo, .main__header-logo-scroll {
   margin: 0;
   font-size: 30px;
   color: #F3F7FE;
   cursor: pointer;
   padding-left: 15px;
+}
+
+.logo-active {
+  display: none;
+}
+
+.main__header-logo-scroll {
+  display: none;
+}
+
+.logo-scroll-active {
+  display: block;
 }
 
 .main__header-burger {
@@ -64,6 +76,7 @@ body {
 }
 
 .main__header-btn, .main__content-btn {
+  visibility: hidden;
   border-radius: 5px;
   border: 1px solid #FFD8CC;
   font-size: 18px;
@@ -71,6 +84,14 @@ body {
   background-color: #FFD8CC;
   color: #5E4040;
   cursor: pointer;
+}
+
+.btn-active {
+  visibility: visible;
+}
+
+.main__content-btn {
+  visibility: visible;
 }
 
 .main__content {
@@ -154,7 +175,7 @@ body {
     transition: all .3s cubic-bezier(.76,.015,.41,1);
   }
 
-  .main__header-burger-active span {
+  .main__header-burger-active .main__header-burger-line {
     transform: scale(0);
   }
 
