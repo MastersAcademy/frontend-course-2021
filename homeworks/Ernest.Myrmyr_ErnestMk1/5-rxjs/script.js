@@ -1,4 +1,5 @@
 const { fromEvent } = window.rxjs;
+const { map } = window.rxjs.operators;
 
 const source = fromEvent(document, 'scroll');
 const headerEl = document.querySelector('[data-header]');
@@ -6,7 +7,6 @@ const menuBtn = document.querySelector('[data-menuBtn]');
 const crossBtn = document.querySelector('[data-crossBtn]');
 const phoneNav = document.querySelector('[data-phoneNav]');
 const burgerBtn = document.querySelector('[data-burgerBtn]');
-let lastScroll = window.scrollY;
 
 const toggleMenu = () => {
     if (phoneNav.classList.contains('show_nav_phone')) {
@@ -22,12 +22,17 @@ const toggleMenu = () => {
 
 burgerBtn.addEventListener('click', toggleMenu);
 
-source.subscribe(() => {
-    if (lastScroll < window.scrollY) {
-        headerEl.classList.add('nav_hidden');
-    } else {
-        headerEl.classList.remove('nav_hidden');
-    }
+const classChaning = (classNameA, classNameR) => {
+    headerEl.classList.remove(classNameR);
+    headerEl.classList.add(classNameA);
+};
 
-    lastScroll = window.scrollY;
+source.pipe(
+    map(() => window.scrollY),
+).subscribe((curr) => {
+    if (curr >= 50) {
+        classChaning('nav_hidden', 'nav_show');
+    } else {
+        classChaning('nav_show', 'nav_hidden');
+    }
 });
