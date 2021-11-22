@@ -24,8 +24,10 @@ fromEvent(window, 'scroll').pipe(
     map(() => window.pageYOffset),
     filter((currentPosition) => comparePoints(previousPosition, currentPosition)),
 ).subscribe((position) => {
-    if (!position) { changeHeaderClasses('page__header--show', 'page__header--hide');
-    } else if (!previousPosition) { changeHeaderClasses('page__header--hide', 'page__header--show');
+    if (!position) {
+        changeHeaderClasses('page__header--show', 'page__header--hide');
+    } else if (!previousPosition) {
+        changeHeaderClasses('page__header--hide', 'page__header--show');
     } else {
         pageHeaderEl.classList.toggle('page__header--hide');
         pageHeaderEl.classList.toggle('page__header--show');
