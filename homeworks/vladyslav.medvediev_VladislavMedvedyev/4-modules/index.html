@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">               
+        <title>Document</title>
+    </head>
+    <body>
+        <main class="main">
+            <section class="section">
+                <p data-date>Date:</p>
+                <input type="date" value="2021-11-12" class="date-input" data-date-input></input>
+            </section>
+            <section class="section" data-get-mondays>
+                <button type="button" class="get-mondays-button" data-get-mondays-button>Get month mondays</button>
+                <p class="get-mondays-output" data-get-mondays-output></p>
+            </section>
+            <section class="section" data-month-long>
+                <button type="button" class="month-long-button" data-month-long-button>Is month long?</button>
+                <p class="month-long-output" data-month-long-output></p>
+            </section>
+            <section class="section" data-shortest-week-day>
+                <button type="button" class="shortest-week-days-button" data-shortest-week-days-button>Days of shortest week in month</button>
+                <p class="shortest-week-days-output" data-shortest-week-days-output></p>
+            </section>
+            <section class="section" data-full-weeks>
+                <button type="button" class="full-weeks-button" data-full-weeks-button>Full weeks in month</button>
+                <p class="full-weeks-output" data-full-weeks-output></p>
+            </section>
+        </main>
+
+        <script type="module" src="./script.js"></script>
+    </body>
+</html>
