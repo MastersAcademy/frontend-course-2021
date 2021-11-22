@@ -6,12 +6,12 @@ const navigationWrapperEl = document.querySelector('[data-navigation-wrapper]');
 const headerEl = document.querySelector('[data-header]');
 const headerBurgerLineEl = document.querySelector('[data-burger-line]');
 headerBurgerEl.addEventListener('click', () => {
-    headerBurgerEl.classList.toggle('aside__burger--active');
-    headerNavigationEl.classList.toggle('aside__navigation--active');
+    headerBurgerEl.classList.toggle('burger--active');
+    headerNavigationEl.classList.toggle('navigation--active');
     bodyEl.classList.toggle('page-body--lock');
-    buttonBuyEl.classList.toggle('aside__button-buy--active');
-    navigationWrapperEl.classList.toggle('header__container__aside--active');
-    headerEl.classList.toggle('page-body__header--active');
+    buttonBuyEl.classList.toggle('button-buy--active');
+    navigationWrapperEl.classList.toggle('main-header-bar--active');
+    headerEl.classList.toggle('header--active');
     headerBurgerLineEl.classList.toggle('burger__line--active');
 });
 
@@ -33,5 +33,5 @@ scrollEvent.pipe(
     distinctUntilChanged(),
 )
     .subscribe((scrollDirection) => {
-        headerEl.classList.toggle('page-body__header--hidden', scrollDirection);
+        headerEl.classList.toggle('header--hidden', scrollDirection);
     });
