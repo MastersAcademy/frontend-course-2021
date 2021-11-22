@@ -1,27 +1,6 @@
 const headerEl = document.querySelector('[data-header]');
-const headerButtonEl = document.querySelector('[data-header-button]');
+const menuIconEl = document.querySelector('[data-burger-menu-icon]');
 const burgerMenuEl = document.querySelector('[data-burger-menu]');
-const burgerMenuButtonEl = document.querySelector('[data-burger-menu-button]');
-
-headerButtonEl.addEventListener('touchstart', () => {
-    burgerMenuEl.style.transform = 'scale(1)';
-    headerEl.style.transform = 'scale(0)';
-});
-
-headerButtonEl.addEventListener('click', () => {
-    burgerMenuEl.style.transform = 'scale(1)';
-    headerEl.style.transform = 'scale(0)';
-});
-
-burgerMenuButtonEl.addEventListener('touchstart', () => {
-    burgerMenuEl.style.transform = 'scale(0)';
-    headerEl.style.transform = 'scale(1)';
-});
-
-burgerMenuButtonEl.addEventListener('click', () => {
-    burgerMenuEl.style.transform = 'scale(0)';
-    headerEl.style.transform = 'scale(1)';
-});
 
 const { fromEvent } = window.rxjs;
 const {
@@ -39,9 +18,16 @@ const scroll$ = fromEvent(window, 'scroll').pipe(
 scroll$.subscribe((px) => {
     console.log(px);
     if (px) {
-        headerEl.style.transform = 'scale(0)';
-        burgerMenuEl.transform = 'scale(0)';
+        headerEl.classList.add('hidden');
     } else {
-        headerEl.style.transform = 'scale(1)';
+        headerEl.classList.toggle('hidden', false);
     }
+});
+
+const click$ = fromEvent(document, 'click').pipe(
+    filter((ev) => ev.target.tagName === 'DIV'),
+);
+click$.subscribe(() => {
+    menuIconEl.classList.toggle('active');
+    burgerMenuEl.parentElement.classList.toggle('active');
 });

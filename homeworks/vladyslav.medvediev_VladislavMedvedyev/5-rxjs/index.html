@@ -11,29 +11,42 @@
     <body>
 
         <div class="container">
+
             <header class="header" data-header>
-                <p class="header__logo">Logo</p>
-                <section class="header__navigation-menu">
-                    <p>News</p>
-                    <p>Contacts</p>
-                    <p>About Us</p>
-                </section>
-                <button class="header-button" data-header-button type="button">&#9776</button>
-                <section class="header-buy">BUY NOW</section>
-            </header>
-            
-            <section class="burger-menu" data-burger-menu>
-                <div class="burger-menu__logo-container logo-container">
-                    <p class="logo-container__logo">Logo</p>
-                    <button class="logo-container__button" data-burger-menu-button type="button">&#9776</button>
+                <a href="" class="header__logo">Logo</a>
+                <nav class="header__navigation-menu navigation-menu">
+                    <ul>
+                        <li class="navigation-menu__news">
+                            <a href="">News</a>
+                        </li>
+                        <li class="navigation-menu__contacts">
+                            <a href="">Contacts</a>
+                        </li>
+                        <li class="navigation-menu__about-us">
+                            <a href="">About Us</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__burger-menu-icon" data-burger-menu-icon>
+                    <span></span>
                 </div>
-                <p>News</p>
-                <p>Contacts</p>
-                <p>About Us</p>
-            </section>
+                <nav class="header__burger-menu" data-burger-menu>
+                    <ul>
+                        <li class="burger-menu__news">
+                            <a href="">News</a>
+                        </li>
+                        <li class="burger-menu__contacts">
+                            <a href="">Contacts</a>
+                        </li>
+                        <li class="burger-menu__about-us">
+                            <a href="">About Us</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
 
             <main class="main">
-                <article>
+                <article class="main__article">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis vulputate diam, placerat tincidunt turpis. Quisque ultricies et lorem in pretium. In eleifend libero consectetur felis elementum lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum placerat laoreet leo eu suscipit. Mauris ut ligula non lectus suscipit lacinia in in elit. Duis nec sodales erat. Suspendisse efficitur rutrum tortor sit amet porttitor.
 
                     Donec at luctus sem, sed pulvinar nulla. Curabitur vitae lacus molestie, eleifend ex a, sodales nisi. Sed tempus sed sem quis efficitur. Mauris congue finibus scelerisque. Nam at purus nisl. Nullam pharetra, massa eu rutrum vulputate, purus neque porttitor velit, eu venenatis dui urna vel diam. Aenean porttitor vulputate massa sed varius. Aliquam erat volutpat. Fusce consectetur, tortor quis laoreet rhoncus, lacus tortor posuere quam, ut rhoncus tellus urna fringilla risus. Duis in ipsum lobortis, luctus mi id, mattis tortor. Nam et lacus odio. Donec bibendum dui porta placerat sodales. Mauris sit amet tempor nisl, at tincidunt purus. Maecenas sem felis, auctor eget tincidunt vel, gravida vitae odio. Cras sapien quam, eleifend non aliquam sed, interdum vitae urna.
@@ -112,8 +125,10 @@
                     Aliquam facilisis, est pellentesque iaculis viverra, magna dui tempus diam, pulvinar rutrum lorem diam nec neque. Fusce fermentum massa quis elit faucibus, ut porta turpis laoreet. Nam varius, mi sit amet aliquam aliquet, tellus leo dignissim ante, a tincidunt leo eros quis dolor. Nullam ut massa sed velit luctus dapibus et ac mauris. Nunc hendrerit at sem non molestie. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur tortor dictum condimentum feugiat. Proin vulputate vel enim non consequat. Fusce risus eros, molestie eu lorem vel, feugiat suscipit dolor. Proin eget nisl blandit, vulputate ipsum eu, interdum magna. Nam eget erat nec risus dictum pulvinar.
                 </article>
             </main>
-        </div>
 
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.6.3/rxjs.umd.min.js" integrity="sha512-JnZPWAckMDks0CCIeGznqEo7ifmYK7VowHq/NVFlSXGkwxv4OBCJFy7nouOtJZmVldHo7FQLIdeWTI55yyZc4Q==" crossorigin="anonymous"></script>
         <script src="./script.js"></script>
     </body>
 </html>
