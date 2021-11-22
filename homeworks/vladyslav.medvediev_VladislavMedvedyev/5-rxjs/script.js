@@ -16,7 +16,6 @@ const scroll$ = fromEvent(window, 'scroll').pipe(
 );
 
 scroll$.subscribe((px) => {
-    console.log(px);
     if (px) {
         headerEl.classList.add('hidden');
     } else {
