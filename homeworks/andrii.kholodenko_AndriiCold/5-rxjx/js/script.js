@@ -2,7 +2,7 @@ const headerBurgerEl = document.querySelector('[data-header-burger]');
 const headerNavigationEl = document.querySelector('[data-header-navigation]');
 const bodyEl = document.querySelector('[data-body]');
 const buttonBuyEl = document.querySelector('[data-button-buy]');
-const navigationWrapperEl = document.querySelector('[data-navigation-wrapper]');
+const mainHeaderBarEl = document.querySelector('[data-main-header-bar]');
 const headerEl = document.querySelector('[data-header]');
 const headerBurgerLineEl = document.querySelector('[data-burger-line]');
 headerBurgerEl.addEventListener('click', () => {
@@ -10,7 +10,7 @@ headerBurgerEl.addEventListener('click', () => {
     headerNavigationEl.classList.toggle('navigation--active');
     bodyEl.classList.toggle('page-body--lock');
     buttonBuyEl.classList.toggle('button-buy--active');
-    navigationWrapperEl.classList.toggle('main-header-bar--active');
+    mainHeaderBarEl.classList.toggle('main-header-bar--active');
     headerEl.classList.toggle('header--active');
     headerBurgerLineEl.classList.toggle('burger__line--active');
 });
