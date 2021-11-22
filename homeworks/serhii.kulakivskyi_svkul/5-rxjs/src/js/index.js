@@ -19,21 +19,16 @@
         const headerEl = document.querySelector('[data-header]');
         const buyNowBtnEl = document.querySelector('[data-buy-now]');
 
-        // check if we have all necessary elements on page
         if (headerWrapperEl && headerEl && buyNowBtnEl) {
             const headerHeight = headerEl.offsetHeight;
             headerWrapperEl.style.height = `${headerHeight}px`;
 
             const hideHeader = (buyNowBtnTopPosition) => {
                 if (buyNowBtnTopPosition < 0) {
-                    // console.log('hide - near btn: ', buyNowBtnTopPosition);
-
                     headerEl.classList.remove('slide-out-top');
                     headerEl.classList.add('slide-in-top');
                     headerEl.classList.add('header--alternative-view');
                 } else {
-                    // console.log('hide - over btn: ', buyNowBtnTopPosition);
-
                     headerEl.classList.remove('slide-in-top');
                     headerEl.classList.add('slide-out-top');
                 }
@@ -41,14 +36,10 @@
 
             const showHeader = (buyNowBtnTopPosition) => {
                 if (buyNowBtnTopPosition < 0) {
-                    // console.log('show - near btn: ', buyNowBtnTopPosition);
-
                     headerEl.classList.remove('header--alternative-view');
                     headerEl.classList.add('slide-in-top');
                     headerEl.classList.add('header--show-btn');
                 } else {
-                    // console.log('show - over btn: ', buyNowBtnTopPosition);
-
                     headerEl.classList.remove('slide-out-top');
                     headerEl.classList.remove('header--show-btn');
                     headerEl.classList.add('slide-in-top');
@@ -57,12 +48,14 @@
 
             const handleHeaderVisibility = ([scrollPosition, scrollDirection]) => {
                 const buyNowBtnTopPosition = buyNowBtnEl.getBoundingClientRect().top;
+                if (scrollPosition < headerHeight) {
+                    return;
+                }
 
-                if (scrollPosition > headerHeight) {
-                    // eslint-disable-next-line no-unused-expressions
-                    scrollDirection === DIRECTIONS.DOWN
-                        ? showHeader(buyNowBtnTopPosition)
-                        : hideHeader(buyNowBtnTopPosition);
+                if (scrollDirection === DIRECTIONS.DOWN) {
+                    showHeader(buyNowBtnTopPosition);
+                } else {
+                    hideHeader(buyNowBtnTopPosition);
                 }
             };
 
@@ -92,7 +85,6 @@
         const headerNavBtn = document.querySelector('[data-nav-btn]');
         const headerNavWrapper = document.querySelector('[data-nav]');
 
-        // check if we have all necessary elements on page
         if (headerNavBtn && headerNavWrapper) {
             const headerNavBtn$ = fromEvent(headerNavBtn, 'click');
 

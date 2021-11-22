@@ -118,8 +118,8 @@ body {
 }
 
 .header__nav-item {
+  padding: .4rem 0;
   color: var(--nav-link-color);
-  line-height: 2;
   text-decoration: none;
 }
 
