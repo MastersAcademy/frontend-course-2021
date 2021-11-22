@@ -8,13 +8,13 @@ scroll$.pipe(
     map(() => window.scrollY),
     throttleTime(200),
     pairwise(),
-    map((pairDifference) => pairDifference[1] - pairDifference[0]),
+    map(([previous, current]) => previous - current),
 ).subscribe((pairDifference) => {
     if (pairDifference > 50) {
-        logo.className = 'header-hidden';
+        logo.classList = 'header-hidden';
     }
     if (pairDifference < -50) {
-        logo.className = 'header';
+        logo.classList = 'header';
     }
 });
 const burgerEl = document.querySelector('[data-burger]');
