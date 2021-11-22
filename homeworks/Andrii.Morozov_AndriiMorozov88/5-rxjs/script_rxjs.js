@@ -8,23 +8,17 @@ scroll$.pipe(
     map(() => window.scrollY),
     throttleTime(200),
     pairwise(),
-).subscribe((pair) => {
-    const scrollWay = pair[1] - pair[0];
-    function scrollUp() {
-        logo.style.position = 'fixed';
+    map((pairDifference) => pairDifference[1] - pairDifference[0]),
+).subscribe((pairDifference) => {
+    if (pairDifference > 50) {
+        logo.className = 'header-hidden';
     }
-    function scrollDown() {
-        logo.style.position = 'absolute';
-    }
-    if (scrollWay > 50) {
-        scrollDown();
-    }
-    if (scrollWay < -50) {
-        scrollUp();
+    if (pairDifference < -50) {
+        logo.className = 'header';
     }
 });
-const burger = document.querySelector('[data-burger]');
-const menu = document.querySelector('[data-menu]');
-burger.addEventListener('click', () => {
-    menu.classList.toggle('header__content-menu-ul-hidden');
+const burgerEl = document.querySelector('[data-burger]');
+const menuEl = document.querySelector('[data-menu]');
+burgerEl.addEventListener('click', () => {
+    menuEl.classList.toggle('header__menu__hidden');
 });
