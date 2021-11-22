@@ -12,26 +12,37 @@ a, button, a:hover, button:hover {
 
 body {
   width: 100%;
+  position: relative;
 }
 
 .header {
+  display: block;
   position: fixed;
   top: 0;
   background: #000;
   width: 100%;
   height: 80px;
   color: #FFF;
-  animation: showHeader .8s 1 linear forwards;
+}
+
+.header-hide {
+  top: -220px;
+  animation: hideHeader .5s 1 linear;
+}
+
+.header-show {
+  top: 0;
+  animation: showHeader .5s 1 linear;
 }
 
 @keyframes showHeader {
 
   0% {
-    top: -220px;
+    height: 0;
   }
 
   100% {
-    top: 0;
+    height: 80px;
   }
 }
 
@@ -52,6 +63,10 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+.header__inner-default-hide {
+  display: none;
 }
 
 .default__titleBurger {
@@ -157,6 +172,10 @@ body {
   height: 100%;
 }
 
+.header__inner-afterBtn-show {
+  display: flex;
+}
+
 .titleButton__title {
   cursor: pointer;
   width: 50%;
@@ -164,6 +183,7 @@ body {
 
 .header__button {
   display: none;
+  margin: 0 20px;
   width: 350px;
   max-width: 50%;
   height: 40px;
@@ -172,7 +192,25 @@ body {
   border: 0;
   border-radius: 10px;
   transition: all .3s linear;
+  animation: hideButton .8s 1 linear forwards;
+}
+
+.header__button-show {
+  display: block;
   animation: showButton .8s 1 linear forwards;
+}
+
+.header__button-afterBtn {
+  display: block;
+  margin: 0 20px;
+  width: 350px;
+  max-width: 50%;
+  height: 40px;
+  font-size: 25px;
+  background: #66A459;
+  border: 0;
+  border-radius: 10px;
+  transition: all .3s linear;
 }
 
 @keyframes showButton {
