@@ -11,8 +11,8 @@ const scroll$ = fromEvent(window, 'scroll').pipe(
     map(() => window.scrollY),
     throttleTime(200),
     pairwise(),
-    filter((px) => (px[1] - px[0]) > 50 || (px[0] - px[1]) > 50),
-    map((px) => px[0] < px[1]),
+    filter(([prev, next]) => (next - prev) > 50 || (prev - next) > 50),
+    map(([prev, next]) => prev < next),
 );
 
 scroll$.subscribe((px) => {
