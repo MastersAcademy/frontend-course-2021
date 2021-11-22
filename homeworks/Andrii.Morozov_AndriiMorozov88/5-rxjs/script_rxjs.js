@@ -11,10 +11,10 @@ scroll$.pipe(
     map(([previous, current]) => previous - current),
 ).subscribe((pairDifference) => {
     if (pairDifference > 50) {
-        header.classList = 'header';
+        header.classList.replace('header-hidden', 'header');
     }
     if (pairDifference < -50) {
-        header.classList = 'header-hidden';
+        header.classList.replace('header', 'header-hidden');
     }
 });
 const burgerEl = document.querySelector('[data-burger]');
