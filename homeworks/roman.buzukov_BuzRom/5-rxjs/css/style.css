@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgba(230, 239, 253, 1);
+  position: relative;
+}
+
+/* ============= headers ==============*/
+
+.header,
+.subheader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 79px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(54,	54,	54);
+  transition: .3s all ease;
+}
+
+.header__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
+  padding-right: 25px;
+  background: linear-gradient(to right, rgb(96,	168,	112) 50%, rgb(54,	54,	54) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .8s ease-out;
+}
+
+.header__main.header__main--active {
+  max-width: 100%;
+  background-position: left bottom;
+}
+
+.header__main-logo,
+.subheader__logo {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: rgb(96,	168,	112);
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  height: 100%;
+  cursor: pointer;
+}
+
+.header__main-burger {
+  display: none;
+  visibility: hidden;
+}
+
+.menu {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 25px;
+}
+
+.menu__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.subheader {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subheader__logo {
+  text-align: center;
+  margin-right: 25px;
+  font-size: calc(18px + (18 + 18 * .9) * ((100vw - 320px) / 1200));
+  line-height: calc(16px + (20 + 20 * .9) * ((100vw - 320px) / 1200));
+}
+
+/* ============= content ==============*/
+
+.main__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  font-size: 1.5rem;
+}
+
+.content__text {
+  padding-top: 100px;
+}
+
+
+.hidden {
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+}
