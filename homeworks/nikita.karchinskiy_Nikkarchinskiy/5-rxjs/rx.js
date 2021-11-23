@@ -17,7 +17,7 @@ scrolling$.pipe(
     map(() => window.scrollY),
     throttleTime(190),
     pairwise(),
-    filter((pixel) => (pixel[0] - pixel[1]) > 25 || (pixel[1] - pixel[0]) > 25),
+    filter((pixel) => (pixel[0] - pixel[1]) > 50 || (pixel[1] - pixel[0]) > 50),
     map((pixel) => pixel[1] < pixel[0]),
 ).subscribe((e) => {
     if (e) {

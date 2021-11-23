@@ -2,7 +2,7 @@ body {
   height: 100%;
   line-height: 1;
   font-size: 16px;
-  background-color: #240000;
+  background-color: rgb(43, 0, 0);
   color: #FFF;
 }
 
@@ -17,8 +17,12 @@ body {
   left: 0;
   width: 100%;
   z-index: 10;
-  background-color: #363636;
+  background-color: #333;
   transition: all .6s ease;
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  -o-transition: all .6s ease;
 }
 
 .header-container {
@@ -32,10 +36,15 @@ body {
 }
 
 .header-logo {
-  text-decoration: none;
-  color: #FF9100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 5;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+  color: #FF9100;
   transition: .3s;
 }
 
@@ -45,24 +54,36 @@ body {
 
 .header_hidden {
   transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
   transition: all .6s ease;
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  -o-transition: all .6s ease;
 }
 
-.page-text {
-  padding: 75px 65px;
+.page {
+  padding: 85px 65px 70px;
 }
 
 .page-section {
   word-spacing: 6px;
 }
 
+.menu-icon {
+  display: none;
+}
+
 .menu-list {
   position: relative;
+  margin: 0 0 0 20px;
 }
 
 .menu-list-item {
   list-style: none;
-  max-width: 80%;
 }
 
 .menu-link {
@@ -76,7 +97,8 @@ body {
   color: #FF9100;
 }
 
-@media (min-width: 750px) {
+/* pc */
+@media (min-width: 767px) {
 
   .menu-list {
     display: flex;
@@ -84,11 +106,12 @@ body {
   }
 
   .menu-list-item {
-    padding: 10px 15px;
+    padding: 10px 35px 10px 0;
   }
 }
 
-@media (max-width: 750px) {
+/* mobile */
+@media (max-width: 767px) {
 
   .menu-icon {
     z-index: 5;
@@ -99,7 +122,7 @@ body {
     cursor: pointer;
   }
 
-  .menu-icon-line,
+  .menu-icon__line,
   .menu-icon::before,
   .menu-icon::after {
     left: 0;
@@ -107,38 +130,75 @@ body {
     height: 10%;
     width: 100%;
     transition: all, .3s ease 0s;
+    -webkit-transition: all, .3s ease 0s;
+    -moz-transition: all, .3s ease 0s;
+    -ms-transition: all, .3s ease 0s;
+    -o-transition: all, .3s ease 0s;
     background-color: #FFF;
+  }
+
+  .menu-icon::before,
+  .menu-icon::after {
+    content: "";
+  }
+
+  .menu-icon::before {
+    top: 0;
+  }
+
+  .menu-icon::after {
+    bottom: 0;
   }
 
   .menu-icon-line {
     top: 50%;
     transform: scale(1) translate(0, -50%);
+    -webkit-transform: scale(1) translate(0, -50%);
+    -moz-transform: scale(1) translate(0, -50%);
+    -ms-transform: scale(1) translate(0, -50%);
+    -o-transform: scale(1) translate(0, -50%);
   }
 
-  .menu__icon_active {
+  .menu__icon_active .menu-icon-line {
     transform: scale(0) translate(0, -50%);
+    -webkit-transform: scale(0) translate(0, -50%);
+    -moz-transform: scale(0) translate(0, -50%);
+    -ms-transform: scale(0) translate(0, -50%);
+    -o-transform: scale(0) translate(0, -50%);
   }
 
   .menu__icon_active::before {
     top: 50%;
     transform: rotate(-45deg) translate(0, -50%);
+    -webkit-transform: rotate(-45deg) translate(0, -50%);
+    -moz-transform: rotate(-45deg) translate(0, -50%);
+    -ms-transform: rotate(-45deg) translate(0, -50%);
+    -o-transform: rotate(-45deg) translate(0, -50%);
   }
 
   .menu__icon_active::after {
     bottom: 50%;
     transform: rotate(45deg) translate(0, 50%);
+    -webkit-transform: rotate(45deg) translate(0, 50%);
+    -moz-transform: rotate(45deg) translate(0, 50%);
+    -ms-transform: rotate(45deg) translate(0, 50%);
+    -o-transform: rotate(45deg) translate(0, 50%);
   }
 
   .menu-body {
+    overflow: auto;
     position: fixed;
     top: 0;
-    left: -100%;
+    left: -200%;
     width: 100%;
     height: 100%;
     background-color: #000;
     padding: 100px 30px 30px;
     transition: left .3s ease 0s;
-    overflow: auto;
+    -webkit-transition: left .3s ease 0s;
+    -moz-transition: left .3s ease 0s;
+    -ms-transition: left .3s ease 0s;
+    -o-transition: left .3s ease 0s;
   }
 
   .menu__body_active {
