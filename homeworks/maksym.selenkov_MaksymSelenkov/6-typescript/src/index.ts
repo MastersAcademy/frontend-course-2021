@@ -3,19 +3,10 @@ const pointsEl = document.querySelector('[data-points]');
 const bubbleEl: any = document.querySelector('[data-bubble]');
 let points: number = 100;
 
-
-function generateKey(): void {
-    const alphabet: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    keyEl.textContent = alphabet[Math.floor(Math.random() * alphabet.length)];
-    keyEl.classList.add('key__symbol');
-}
-
-setInterval(generateKey, 2000);
-
-function changeBubble(points: number): void {
-    bubbleEl.style.width = points + 100 + 'px';
-    bubbleEl.style.height = points + 100 + 'px';
-}
+setInterval(() => {
+    generateKey();
+    moveBar();
+}, 2000);
 
 document.addEventListener('keydown', (e) => {
     console.log(e);
@@ -39,6 +30,9 @@ document.addEventListener('keydown', (e) => {
         }
         return pointsEl.textContent = points.toString();
     }
+})
+
+
     // if(e.key == undefined) {
     //     points -= Math.floor(Math.random() * (15 - 10 + 1)) + 10;
     //     changeBubble(points)
@@ -54,6 +48,33 @@ document.addEventListener('keydown', (e) => {
     //     }
     //     return pointsEl.textContent = points.toString();
     // }
-})
 
+function generateKey(): void {
+    const alphabet: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    keyEl.textContent = alphabet[Math.floor(Math.random() * alphabet.length)];
+    keyEl.classList.add('key__symbol');
+}
 
+function changeBubble(points: number): void {
+    bubbleEl.style.width = points + 100 + 'px';
+    bubbleEl.style.height = points + 100 + 'px';
+}
+
+function moveBar(): void {
+    let i: number = 0;
+    if (i == 0) {
+        i = 1;
+        const barEl: any = document.querySelector('[data-bar]');
+        let width: number = 1;
+        let id = setInterval(frame, 10);
+        function frame(): void {
+            if (width >= 100) {
+                clearInterval(id);
+                i = 0;
+            } else {
+                width++;
+                barEl.style.width = width + "%";
+            }
+        }
+    }
+}
