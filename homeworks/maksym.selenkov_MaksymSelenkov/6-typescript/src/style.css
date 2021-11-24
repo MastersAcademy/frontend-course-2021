@@ -20,3 +20,8 @@ body {
   height: 80px;
   background-color: #6E6E6E;
 }
+
+.key__symbol {
+  text-align: center;
+  font-size: 70px;
+}
