@@ -17,10 +17,10 @@ scrolling$.pipe(
     map(() => window.scrollY),
     throttleTime(190),
     pairwise(),
-    filter((pixel) => (pixel[0] - pixel[1]) > 50 || (pixel[1] - pixel[0]) > 50),
-    map((pixel) => pixel[1] < pixel[0]),
-).subscribe((e) => {
-    if (e) {
+    filter(([lastPixel, nowPixel]) => (lastPixel - nowPixel) > 50 || (nowPixel - lastPixel) > 50),
+    map(([lastPixel, nowPixel]) => nowPixel < lastPixel),
+).subscribe((event) => {
+    if (event) {
         headerEl.classList.remove('header_hidden');
     } else {
         headerEl.classList.add('header_hidden');
