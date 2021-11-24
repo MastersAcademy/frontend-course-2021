@@ -4,9 +4,25 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
 	<title>Document</title>
 </head>
 <body>
-	<script src="bundle.js"></script>
+    <main class="page-container">
+        <section class="score-section">
+            <div class="score-section__current" data-total-score>100</div>
+            <div class="score-section__round" data-round-score>&nbsp;</div>
+        </section>
+        <section class="balloon-section">
+            <div class="balloon-section__item" data-balloon-item></div>
+        </section>
+        <section class="action-section">
+            <div class="action-section__key">
+                <span class="action-section__current-key" data-current-key>&nbsp;</span>
+                <div class="action-section__progress" data-progress></div>
+            </div>
+        </section>
+    </main>
+	<script defer src="bundle.js"></script>
 </body>
 </html>

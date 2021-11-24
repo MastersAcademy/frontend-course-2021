@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
 	mode: 'development',
-	devtool: 'eval-source-map',
+	devtool: 'inline-source-map',
 	entry: {
 		app: './src/index.ts',
 	},
@@ -24,8 +24,8 @@ module.exports = {
     },
     compress: true,
     port: 9000,
-		liveReload: true,
-		hot: true,
+    liveReload: true,
+    hot : true
   },
 	resolve: {
 		extensions: ['.ts', '.js']
