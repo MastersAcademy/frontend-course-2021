@@ -62,21 +62,28 @@ class Game {
     private reset() {
         clearInterval(this.timer);
         this.timer = '';
-        this.progressElement.style.display = 'none';
-        this.progressElement.style.width = '0';
+        this.progressElement.style.width = '100%';
         this.paused = true;
     }
 
-    private addScore(): void {
-        if (this.score >= this.FINAL_SCORE) {
+    checkScore(): void {
+        if(this.score <= 0) {
+            clearInterval(this.timer);
+            console.log('You lose!');
+            this.totalScoreElement.textContent = 'You lose!';
+            this.roundScoreElement.innerHTML = '&nbsp;';
+            this.reset();
+        }
+        if(this.score >= 200) {
             clearInterval(this.timer);
             console.log('You win!');
             this.totalScoreElement.textContent = 'You win!';
             this.roundScoreElement.innerHTML = '&nbsp;';
             this.reset();
         }
+    }
 
-        if (this.score < this.FINAL_SCORE) {
+    private addScore(): void {
             const min: number = 5;
             const max: number = 10;
 
@@ -84,28 +91,18 @@ class Game {
             this.score += currentScore;
             this.setRoundScore(currentScore, '+');
             this.updateTotalScore();
-        }
+            this.increaseBalloon()
     }
 
     private removeScore(): void {
-        if (this.score <= 0) {
-            clearInterval(this.timer);
-            console.log('You lose!');
-            this.totalScoreElement.textContent = 'You lose!';
-            this.roundScoreElement.innerHTML = '&nbsp;';
-            this.reset();
-        }
+        const min: number = 20;
+        const max: number = 25;
 
-        if (this.score > 0) {
-            const min: number = 20;
-            const max: number = 25;
-
-            const currentScore: number = this.getRandomScore(min, max);
-            this.score -= currentScore;
-            this.setRoundScore(currentScore, '-');
-            this.updateTotalScore();
-            this.decreaseBaloon()
-        }
+        const currentScore: number = this.getRandomScore(min, max);
+        this.score -= currentScore;
+        this.setRoundScore(currentScore, '-');
+        this.updateTotalScore();
+        this.decreaseBaloon()
     }
 
     checkPressedKey(key: string): void {
@@ -136,18 +133,20 @@ class Game {
 
             clearInterval(this.timer);
 
-            const min: number = 20;
-            const max: number = 25;
+            const min: number = 10;
+            const max: number = 15;
             const currentScore: number = this.getRandomScore(min, max);
             this.score -= currentScore;
             this.setRoundScore(currentScore, '-');
             this.updateTotalScore();
             this.decreaseBaloon()
 
-            if(this.score > 0) {
-                game.setRandomKey();
-                this.setTimer();
-            }
+        if(this.score > 0) {
+            game.setRandomKey();
+            this.setTimer();
+        }
+
+        game.checkScore();
         }, this.INTERVAL / 10);
     }
 }
@@ -164,6 +163,7 @@ game.start();
 
 document.addEventListener('keydown', e => {
     const pressedKey: string = e.key.toUpperCase();
+    game.checkScore();
     if(!game.paused) {
         game.checkPressedKey(pressedKey);
         game.setRandomKey();
