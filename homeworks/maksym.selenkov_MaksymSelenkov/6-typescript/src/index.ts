@@ -12,7 +12,6 @@ document.addEventListener('keydown', playGame);
 
 function playGame(e: KeyboardEvent): string {
     const correctKey: boolean = e.key.toUpperCase() === keyEl.textContent;
-
     if(correctKey) {
         points += Math.floor(Math.random() * (10 - 5 + 1)) + 5;
         changeBubble(points);
@@ -39,7 +38,7 @@ function changeBubble(points: number): void {
 }
 
 function finishGame (text: string): void {
-    const finishEl = document.createTextNode(text);
+    const finishEl: Text = document.createTextNode(text);
     document.body.append(finishEl);
     document.removeEventListener('keydown', playGame);
     clearInterval(refreshInterval);
@@ -49,7 +48,7 @@ function moveBar(): void {
     let i: number = 0;
     if (i == 0) {
         i = 1;
-        const barEl: any = document.querySelector('[data-bar]');
+        const barEl: HTMLDivElement = document.querySelector('[data-bar]');
         let width: number = 1;
         let id = setInterval(frame, 10);
         function frame(): void {
