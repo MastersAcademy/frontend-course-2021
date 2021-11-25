@@ -1,3 +1,10 @@
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!**********************!*\
+  !*** ./src/index.ts ***!
+  \**********************/
+
 class Game {
     constructor(currentKeyElement, totalScoreElement, roundScoreElement, balloonElement, progressElement) {
         this.currentKeyElement = currentKeyElement;
