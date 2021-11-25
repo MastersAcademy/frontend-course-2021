@@ -1,7 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+html {
+  background: #868686;
+}
+
 .main {
+  font-family: "Permanent Marker", cursive;
   width: 500px;
-  height: 800px;
-  background: #FFF;
+  height: 900px;
+  background: #F8F4C2;
   margin: 0 auto;
   padding: 20px;
   display: flex;
@@ -9,6 +16,7 @@
   flex-direction: column;
   border: solid 2px #000;
   border-radius: 20px;
+  transition: 4s;
 }
 
 .main__title {
@@ -21,6 +29,7 @@
   border-radius: 20px;
   color: rgb(17, 28, 124);
   animation: animate_grow 2s infinite;
+  box-shadow: 10px 5px 5px #A7A7A7;
 }
 
 .main__information {
@@ -47,6 +56,7 @@
 }
 
 .main__box-from-letter {
+  margin-top: 50px;
   width: 100px;
   height: 100px;
   background: #AAA;
@@ -55,6 +65,8 @@
   justify-content: center;
   color: #000;
   font-size: 30px;
+  box-shadow: 10px 5px 5px #A7A7A7;
+  border: solid 4px #000;
 }
 
 @keyframes animate_grow {
@@ -70,4 +82,25 @@
   100% {
     transform: scale3d(1, 1, 1);
   }
+}
+
+.button___new-game,
+.button__stop-game {
+  width: 120px;
+  height: 60px;
+  transition: .3s;
+  box-shadow: 10px 5px 5px #A7A7A7;
+}
+
+.button___new-game:hover,
+.button__stop-game:hover {
+  transform: scale(1,1);
+}
+
+.button___new-game:hover {
+  background: #5DFF48;
+}
+
+.button__stop-game:hover {
+  background: #FF4848;
 }
