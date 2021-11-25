@@ -1,53 +1,31 @@
-const keyEl = document.querySelector('[data-key]');
-const pointsEl = document.querySelector('[data-points]');
-const bubbleEl: any = document.querySelector('[data-bubble]');
+const keyEl: HTMLDivElement = document.querySelector('[data-key]');
+const pointsEl: HTMLHeadingElement = document.querySelector('[data-points]');
+const bubbleEl: HTMLDivElement = document.querySelector('[data-bubble]');
 let points: number = 100;
 
-setInterval(() => {
+const refreshInterval = setInterval(() => {
     generateKey();
     moveBar();
 }, 2000);
 
-document.addEventListener('keydown', (e) => {
-    console.log(e);
-    if(e.key.toUpperCase() === keyEl.textContent) {
+document.addEventListener('keydown', playGame);
+
+function playGame(e: KeyboardEvent): string {
+    const correctKey: boolean = e.key.toUpperCase() === keyEl.textContent;
+
+    if(correctKey) {
         points += Math.floor(Math.random() * (10 - 5 + 1)) + 5;
         changeBubble(points);
-        if(points >= 200) {
-            const winEl = document.createTextNode('You win !!!');
-            document.body.append(winEl);
-            // e.preventDefault();
-        }
+        if(points >= 200) finishGame('You win !!!');
         return pointsEl.textContent = points.toString();
     }
-    if(e.key.toUpperCase() !== keyEl.textContent) {
+    if(!correctKey) {
         points -= Math.floor(Math.random() * (25 - 20 + 1)) + 20;
         changeBubble(points)
-        if(points <= 0) {
-            const looseEl = document.createTextNode('You loose :(');
-            document.body.append(looseEl);
-            // e.preventDefault();
-        }
+        if(points <= 0) finishGame('You loose :(');
         return pointsEl.textContent = points.toString();
     }
-})
-
-
-    // if(e.key == undefined) {
-    //     points -= Math.floor(Math.random() * (15 - 10 + 1)) + 10;
-    //     changeBubble(points)
-        // if(points >= 200) {
-        //     const winEl = document.createTextNode('You win !!!');
-        //     document.body.append(winEl);
-        //     e.preventDefault();
-        // }
-    //     if(points <= 0) {
-    //         const looseEl = document.createTextNode('You loose :(');
-    //         document.body.append(looseEl);
-    //             e.preventDefault();
-    //     }
-    //     return pointsEl.textContent = points.toString();
-    // }
+}
 
 function generateKey(): void {
     const alphabet: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -58,6 +36,13 @@ function generateKey(): void {
 function changeBubble(points: number): void {
     bubbleEl.style.width = points + 100 + 'px';
     bubbleEl.style.height = points + 100 + 'px';
+}
+
+function finishGame (text: string): void {
+    const finishEl = document.createTextNode(text);
+    document.body.append(finishEl);
+    document.removeEventListener('keydown', playGame);
+    clearInterval(refreshInterval);
 }
 
 function moveBar(): void {
