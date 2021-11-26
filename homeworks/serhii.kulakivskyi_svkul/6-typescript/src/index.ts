@@ -1,4 +1,5 @@
-import { timer, fromEvent, Subscription } from 'rxjs';
+import { fromEvent, Subscription, interval } from 'rxjs';
+import { take, map, tap } from 'rxjs/operators';
 
 import { getRandomCharacter, getRandomArbitrary } from './js/utils';
 
@@ -19,34 +20,51 @@ import "./css/index.css";
         balloonEl: HTMLElement
         scoreEl: HTMLElement
         charEl: HTMLElement
+        currentChar: string
+        progressBarEl: HTMLElement
+        progressBarWrapperEl: HTMLElement
+        scoresListEl: HTMLElement
         score: number | null
         keyHandlerSourse$: Subscription | null
         timer$: Subscription | null
-        currentChar: string
+        gameTimer$: Subscription | null
+        gameTime: number
+        scoresList: number[]
 
         constructor(
             buttonInitEl: HTMLButtonElement,
             balloonContentEl: HTMLElement,
             balloonEl: HTMLElement,
             scoreEl: HTMLElement,
-            charEl: HTMLElement
+            charEl: HTMLElement,
+            progressBarEl: HTMLElement,
+            progressBarWrapperEl: HTMLElement,
+            scoresListEl: HTMLElement
         ) {
             this.buttonInitEl = buttonInitEl;
             this.balloonContentEl = balloonContentEl;
             this.balloonEl = balloonEl;
             this.scoreEl = scoreEl;
             this.charEl = charEl;
+            this.progressBarEl = progressBarEl;
+            this.progressBarWrapperEl = progressBarWrapperEl;
+            this.scoresListEl = scoresListEl;
             this.score = 100;
             this.currentChar = '';
             this.keyHandlerSourse$ = null;
             this.timer$ = null;
+            this.gameTimer$ = null;
+            this.gameTime = 0;
+            this.scoresList = [];
         }
 
         resetData() {
+            this.progressBarWrapperEl.classList.add('progress-bar--active');
             this.balloonContentEl.className = 'content';
             this.setBallonSize(100);
             this.scoreEl.innerText = 'Your score: 100';
             this.score = 100;
+            this.gameTime = 0;
             this.buttonInitEl.innerText = GameStatus.END;
         }
 
@@ -54,6 +72,14 @@ import "./css/index.css";
             this.resetData();
             this.setCurrentChar();
             this.addHandlers();
+
+            this.gameTimer$ = interval(1000)
+            .pipe(
+                map(step => step + 1),
+                tap(() => {
+                    this.gameTime += 1;
+                })
+            ).subscribe();
         }
 
         endInterval() {
@@ -68,7 +94,8 @@ import "./css/index.css";
         endGame() {
             this.removeHandlers();
             this.setBallonSize(0);
-            this.setResult(GameStatus.LOSE);
+            this.progressBarWrapperEl.classList.remove('progress-bar--active');
+            this.gameTimer$.unsubscribe();
         }
 
         addHandlers() {
@@ -88,12 +115,23 @@ import "./css/index.css";
                 }
             );
 
-            this.timer$ = timer(2000).subscribe(() => {
-                const scoreDecrease = getRandomArbitrary(10, 15);
-                this.updateScore(-scoreDecrease);
 
-                this.endInterval();
-            });
+            this.timer$ = interval(2000 / 100)
+                .pipe(
+                    take(100),
+                    map(step => step + 1),
+                    tap(step => {
+                        const progressPercent = step / 100 * 100;
+                        this.progressBarEl.style.width = `${progressPercent}%`;
+
+                        if(progressPercent === 100) {
+                            const scoreDecrease = getRandomArbitrary(10, 15);
+                            this.updateScore(-scoreDecrease);
+
+                            this.endInterval();
+                        }
+                    })
+                ).subscribe();
         }
 
         removeHandlers() {
@@ -157,6 +195,8 @@ import "./css/index.css";
                 this.scoreEl.innerText = 'You win';
                 this.buttonInitEl.innerText = GameStatus.START;
                 this.charEl.innerText = '🧠🦾🏆👏🏻';
+                this.scoresList.push(this.gameTime)
+                this.updateScoresList();
                 return;
             }
 
@@ -167,6 +207,25 @@ import "./css/index.css";
                 this.charEl.innerText = '🥲👨🏼‍🦯🤦🏼‍♂️🫂';
             }
         }
+
+        updateScoresList() {
+            const bestScores: number[] = this.scoresList.sort((a, b) => a - b).slice(0, 10);
+
+            if(bestScores.length) {
+                const fragment = document.createDocumentFragment();
+
+                bestScores.forEach(el => {
+                    const listItem: HTMLElement = document.createElement('li');
+                    listItem.className = 'scores__item';
+                    listItem.innerText = el + 's';
+
+                    fragment.appendChild(listItem)
+                })
+
+                this.scoresListEl.innerHTML = '';
+                this.scoresListEl.appendChild(fragment);
+            }
+        }
     }
 
     const balloonContentEl: HTMLElement = document.querySelector('[data-content]');
@@ -175,9 +234,30 @@ import "./css/index.css";
     const charEl: HTMLElement = document.querySelector('[data-char]');
     const buttonInitEl: HTMLButtonElement = document.querySelector('[data-init]');
     const buttonRestartEl: HTMLButtonElement = document.querySelector('[data-restart]');
+    const progressBarEl: HTMLElement = document.querySelector('[data-progress-bar]');
+    const progressBarWrapperEl: HTMLElement = document.querySelector('[data-progress-wrapper]');
+    const scoresListEl: HTMLElement = document.querySelector('[data-scores-list]');
 
-    if(balloonContentEl && balloonEl && scoreEl && charEl && buttonInitEl && buttonRestartEl) {
-        const charGame = new CharGame(buttonInitEl, balloonContentEl, balloonEl, scoreEl, charEl);
+    if(balloonContentEl
+        && balloonEl
+        && scoreEl
+        && charEl
+        && buttonInitEl
+        && buttonRestartEl
+        && progressBarEl
+        && progressBarWrapperEl
+        && scoresListEl
+    ) {
+        const charGame = new CharGame(
+            buttonInitEl,
+            balloonContentEl,
+            balloonEl,
+            scoreEl,
+            charEl,
+            progressBarEl,
+            progressBarWrapperEl,
+            scoresListEl
+        );
 
         fromEvent(buttonInitEl, 'click')
             .subscribe(() => {
@@ -191,6 +271,7 @@ import "./css/index.css";
 
                 if(currentStatus === GameStatus.END) {
                     charGame.endGame();
+                    charGame.setResult(GameStatus.LOSE);
                     buttonInitEl.innerText = GameStatus.START;
                 }
             }
