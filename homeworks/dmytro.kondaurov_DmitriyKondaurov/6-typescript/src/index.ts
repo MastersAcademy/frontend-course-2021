@@ -37,17 +37,24 @@ const randomLetterGen = (): string | letterT => {
     return alphabet[Math.floor(Math.random() * alphabet.length)];
 }
 
+const randomNumberGen = (from: number, to: number): number => {
+    return Math.floor(Math.random() * (to - from)) + from;
+}
+
+const savePoints = (points: number, ): void => {
+    curPointsEl.textContent = points.toString();
+    totalScoreEl.textContent = (Number(totalScoreEl.textContent) + points).toString();
+}
+
 const checkKeyValue = (key: KeyboardEvent): void => {
     document.removeEventListener('keydown', checkKeyValue, false);
     keyPressedFlag = true;
     if (key.key.toUpperCase() === conditionEl.textContent) {
-        curPoints = Math.floor(Math.random() * 5) + 5;
-        curPointsEl.textContent = curPoints.toString();
-        totalScoreEl.textContent = (Number(totalScoreEl.textContent) + curPoints).toString();
+        curPoints = randomNumberGen(5, 10);
+        savePoints(curPoints);
     } else {
-        curPoints = Math.floor(Math.random() * - 20) - 5;
-        curPointsEl.textContent = curPoints.toString();
-        totalScoreEl.textContent = (Number(totalScoreEl.textContent) + curPoints).toString();
+        curPoints = randomNumberGen(-20, -25);
+        savePoints(curPoints);
     }
 }
 
@@ -59,16 +66,14 @@ const gameFlow = async (): Promise<void> => {
         moveProgressBar();
         await setTimeout(() => {
             if (!keyPressedFlag) {
-                curPoints = Math.floor(Math.random() * - 5) - 10;
-                curPointsEl.textContent = curPoints.toString();
-                totalScoreEl.textContent = (Number(totalScoreEl.textContent) + curPoints).toString();
+                curPoints = randomNumberGen(-10, -15);
+                savePoints(curPoints);
             }
         }, 1990);
     } else {
         stopGame();
     }
 }
-
 
 const moveProgressBar = (): void => {
     let i: number = 0;
