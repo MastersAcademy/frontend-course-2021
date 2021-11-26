@@ -7,6 +7,7 @@ const conditionEl: HTMLElement = document.querySelector('[data-condition-contain
 const progressBarEl: HTMLProgressElement = document.querySelector('[data-progress-bar]');
 const totalScoreEl: HTMLElement = document.querySelector('[data-total-score]');
 const curPointsEl: HTMLElement = document.querySelector('[data-cur-points]');
+const circleEl: HTMLCanvasElement = document.querySelector('[data-circle]');
 let curPoints: number;
 let intervalId: NodeJS.Timer;
 type letterT = 'A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'|'L'|'M'|'N'|'O'|'P'|'Q'|'R'|'S'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z';
@@ -41,9 +42,24 @@ const randomNumberGen = (from: number, to: number): number => {
     return Math.floor(Math.random() * (to - from)) + from;
 }
 
-const savePoints = (points: number, ): void => {
+const savePoints = (points: number): void => {
     curPointsEl.textContent = points.toString();
     totalScoreEl.textContent = (Number(totalScoreEl.textContent) + points).toString();
+}
+
+const blowBubble = (points: number): void => {
+    let circleRadius: number = Number(circleEl.getAttribute('r'));
+    circleRadius = circleRadius + points/4;
+    circleEl.setAttribute('r', circleRadius.toString());
+    if (circleRadius < 10) {
+        circleEl.setAttribute('fill', 'red');
+    } else {
+        if (circleRadius > 40) {
+            circleEl.setAttribute('fill', 'green');
+        } else  {
+            circleEl.setAttribute('fill', 'orange');
+        }
+    }
 }
 
 const checkKeyValue = (key: KeyboardEvent): void => {
@@ -52,9 +68,11 @@ const checkKeyValue = (key: KeyboardEvent): void => {
     if (key.key.toUpperCase() === conditionEl.textContent) {
         curPoints = randomNumberGen(5, 10);
         savePoints(curPoints);
+        blowBubble(curPoints);
     } else {
         curPoints = randomNumberGen(-20, -25);
         savePoints(curPoints);
+        blowBubble(curPoints);
     }
 }
 
@@ -68,6 +86,7 @@ const gameFlow = async (): Promise<void> => {
             if (!keyPressedFlag) {
                 curPoints = randomNumberGen(-10, -15);
                 savePoints(curPoints);
+                blowBubble(curPoints);
             }
         }, 1990);
     } else {
