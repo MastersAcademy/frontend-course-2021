@@ -1,0 +1,140 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35px;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #333;
+  transition: all .5s;
+}
+
+.header_hide {
+  top: -40px;
+}
+
+.logo {
+  z-index: 1;
+  margin: 0;
+  padding: 0 15px;
+  background-color: #3FAB67;
+  color: #FFF;
+  font-size: 18px;
+  line-height: 35px;
+}
+
+.top-nav {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  background-color: inherit;
+  transition: all .7s ease;
+}
+
+.top-nav_hidden {
+  left: -1000px;
+  transition: all .7s ease;
+}
+
+.top-nav__link {
+  width: 100%;
+  padding: 0 15px;
+  text-decoration: none;
+  line-height: 35px;
+  color: #FFF;
+}
+
+.top-nav__link_active {
+  font-weight: 900;
+  color: #3FAB67;
+}
+
+.top-nav__link:hover {
+  color: #333;
+  background-color: #CCC;
+  transition: all .7s ease;
+}
+
+.top-nav-resp-btn {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  padding: 0 10px;
+  border: none;
+  background-color: inherit;
+  color: #FFF;
+  line-height: 35px;
+  cursor: pointer;
+  text-align: end;
+}
+
+.top-nav-resp-btn:hover {
+  background-color: #3FAB67;
+  color: #FFF;
+}
+
+.top-nav-resp-btn_active {
+  background-color: #3FAB67;
+  width: 100%;
+  right: 0;
+  left: 0;
+}
+
+.buy-btn {
+  align-self: center;
+  height: 30px;
+  margin: 0 30px 0 auto;
+  padding: 0 10px;
+  border: none;
+  border-radius: 7px;
+  background-color: #3FAB67;
+  color: #FFF;
+  font-size: 16px;
+}
+
+.buy-btn:hover {
+  background-color: #FFF;
+  color: #3FAB67;
+  cursor: pointer;
+}
+
+.main-content {
+  height: 200vh;
+}
+
+@media only screen and (min-width: 600px) {
+
+  .top-nav_hidden {
+    height: auto;
+    overflow: hidden;
+  }
+
+  .top-nav {
+    position: relative;
+    top: 0;
+    left: auto;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: auto;
+  }
+
+  .top-nav__link {
+    width: 80px;
+    text-align: center;
+  }
+
+  .top-nav-resp-btn {
+    display: none;
+  }
+}
