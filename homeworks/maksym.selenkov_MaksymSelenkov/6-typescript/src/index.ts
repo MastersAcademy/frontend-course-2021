@@ -37,7 +37,7 @@ function changeBubble(points: number): void {
     bubbleEl.style.height = points + 100 + 'px';
 }
 
-function finishGame (text: string): void {
+function finishGame(text: string): void {
     const finishEl: Text = document.createTextNode(text);
     document.body.append(finishEl);
     document.removeEventListener('keydown', playGame);
@@ -45,20 +45,16 @@ function finishGame (text: string): void {
 }
 
 function moveBar(): void {
-    let i: number = 0;
-    if (i == 0) {
-        i = 1;
-        const barEl: HTMLDivElement = document.querySelector('[data-bar]');
-        let width: number = 1;
-        let id = setInterval(frame, 10);
-        function frame(): void {
-            if (width >= 100) {
-                clearInterval(id);
-                i = 0;
-            } else {
-                width++;
-                barEl.style.width = width + "%";
-            }
+    const barEl: HTMLDivElement = document.querySelector('[data-bar]');
+    let width: number = 1;
+    let id = setInterval(frame, 20);
+    function frame(): void {
+        if (width >= 100) {
+            clearInterval(id);
+            width = 0;
+        } else {
+            width++;
+            barEl.style.width = width + "%";
         }
     }
 }

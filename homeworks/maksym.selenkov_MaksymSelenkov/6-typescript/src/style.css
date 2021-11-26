@@ -5,14 +5,11 @@ body {
 }
 
 .bubble {
-  margin: 80px;
-}
-
-.bubble {
   width: 200px;
   height: 200px;
   background-color: #0BFF17;
   border-radius: 50%;
+  margin: 80px;
 }
 
 .key {
