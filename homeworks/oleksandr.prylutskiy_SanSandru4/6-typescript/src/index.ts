@@ -49,32 +49,29 @@ function changesIncSphere(randomP: number): void {
 function changesDecSphere(randomP: number): void {
     sphereBlockEl.style.width = points - randomP + 'px';
     sphereBlockEl.style.height = points - randomP + 'px';
-    points = points - randomP;
+    points -= randomP;
 }
 
-let symbolTimer: NodeJS.Timer = setInterval(() => {
+let symbolTimer = setInterval(() => {
     symbolValue = randomSymbol(symbols);
     symbolBlockEl.textContent = symbolValue;
-
-    if (pressKey === false) {
-        randomPoints = randomNum(10, 15);
-        changesDecSphere(randomPoints);
-        outPoints(points);
-    }
 }, 2000);
 
-document.addEventListener('keydown', (event) => {
-    if (event.key.toUpperCase() === symbolValue) {
-        randomPoints = randomNum(5, 10);
-        changesIncSphere(randomPoints);
-        outPoints(points);
-    } else if (event.key.toUpperCase() !== symbolValue) {
-        randomPoints = randomNum(20, 25);
-        changesDecSphere(randomPoints);
-        outPoints(points);
-    } else {
-        pressKey = false;
-    };
-    winOrLoser(points);
-    pressKey = true;
-});
+function gameProcess(): void {
+    document.addEventListener('keydown', (event) => {
+        pressKey = true;
+        if (event.key.toUpperCase() === symbolValue) {
+            randomPoints = randomNum(5, 10);
+            changesIncSphere(randomPoints);
+            outPoints(points);
+        }
+        if (event.key.toUpperCase() !== symbolValue) {
+            randomPoints = randomNum(20, 25);
+            changesDecSphere(randomPoints);
+            outPoints(points);
+        }
+        winOrLoser(points);
+    });
+}
+
+gameProcess();

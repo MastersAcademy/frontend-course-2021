@@ -12,7 +12,7 @@ body, .header, .main__position, .main__position {
 .base {
   margin-top: 20px;
   width: 300px;
-  height: 520px;
+  height: 530px;
   display: flex;
   flex-direction: column;
   border-radius: 15px;
