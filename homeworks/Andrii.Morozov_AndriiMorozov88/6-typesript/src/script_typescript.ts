@@ -1,12 +1,12 @@
 const letterBox = <HTMLDivElement>document.querySelector('[data-random-letter]');
 const scoreBox = <HTMLDivElement>document.querySelector('[data-score]');
 const scoreDif = <HTMLDivElement>document.querySelector('[data-score-different]');
-let score: any = 100;
 let letter: string;
+let score: any;
 let randomEmpty: number;
 let randomMinus: number;
 let randomPlus: number;
-let timer: any;
+let timer: number;
 scoreBox.innerText = '100';
 function getRandom(min: number, max: number) {
     min = Math.ceil(min);
@@ -28,10 +28,10 @@ function getWin() {
 function showLetter() {
     letter = String.fromCharCode(getRandom(65, 90));
     letterBox.innerText = letter;
-        timer = setTimeout(() => {
+        timer = window.setTimeout(() => {
         randomEmpty = getRandom(10, 15);
         score = score - randomEmpty;
-        scoreBox.innerHTML = score;
+        scoreBox.innerText = score;
         scoreDif.innerText = '-' + randomEmpty;
         if (score > 0) {
         showLetter();
@@ -62,3 +62,4 @@ document.addEventListener('keydown', (e: KeyboardEvent) => {
     } else
     showLetter();
 });
+
