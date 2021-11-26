@@ -6,6 +6,7 @@ class Game {
     private currentKey: string = '';
     private score: number = 100;
     private timer: any = '';
+    private gameSessionTotalScore: number = 0;
 
     constructor(
         private currentKeyElement: HTMLSpanElement,
@@ -25,6 +26,10 @@ class Game {
     //     if(localStorage.getItem('score')) data = JSON.parse(localStorage.getItem('score');
     //     return data;
     // }
+
+    private saveGameSessionTotalScore(currentScore: number): void {
+        this.gameSessionTotalScore += currentScore;
+    }
 
     private getRandomLetterPosition(letterString: string): number {
         return Math.floor(Math.random() * letterString.length);
@@ -87,6 +92,8 @@ class Game {
             this.reset();
             this.totalScoreElement.textContent = 'You won!';
             this.roundScoreElement.innerHTML = '&nbsp;';
+            this.saveGameSessionTotalScore(this.score);
+            console.log(this.gameSessionTotalScore)
         }
     }
 
@@ -167,9 +174,12 @@ class Game {
         console.log('End')
         this.paused = true;
         this.reset();
+        this.gameSessionTotalScore = 0;
         this.currentKey = '';
-        this.totalScoreElement.textContent = 'You lose!';
-        this.roundScoreElement.innerHTML = '&nbsp;';
+        if(this.score !== 100) {
+            this.totalScoreElement.textContent = 'You lose!';
+            this.roundScoreElement.innerHTML = '&nbsp;';
+        }
     }
 
     public buttonRestart(): void {
@@ -177,8 +187,8 @@ class Game {
         this.roundScoreElement.innerHTML = '&nbsp;';
         this.currentKey = '';
         this.score = 100;
+        this.gameSessionTotalScore = 0;
         this.totalScoreElement.textContent = `${this.score}`;
-        this.paused = false;
     }
 }
 
