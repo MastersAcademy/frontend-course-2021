@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Typescript</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Rubik:wght@700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <section class="game__wrapper">
+            <header class="info-wrapper">
+                <div class="controls">
+                    <button class="button button--main" data-init type="button">Start</button>
+                    <button class="button button--main" data-restart type="button">Restart</button>
+                </div>
+
+                <p class="score" data-score>Are you ready?</p>
+            </header>
+
+            <main class="content" data-content>
+                <div class="balloon">
+                    <div class="balloon__item" data-balloon style="width: 100px; height: 100px;"></div>
+                </div>
+            </main>
+
+            <footer>
+                <div>
+                    <p class="char" data-char></p>
+                </div>
+            </footer>
+        </section>
+    </body>
+</html>

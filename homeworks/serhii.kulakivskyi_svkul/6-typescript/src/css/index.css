@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* consts */
+  --color-transparent: transparent;
+  --color-black: #000;
+  --color-white: #FFF7F7;
+  --color-blue-10: #E4EFFE;
+  --color-red-10: #FF726C;
+  --color-red-15: #B53F3F;
+  --color-green-10: #6DE592;
+  --color-green-15: #00A03E;
+  --color-grey-10: #F6F5FB;
+  --color-grey-15: #FEFEFF;
+  --color-grey-16: #F7F6FB;
+  --color-grey-25: #C9BDBD;
+  --color-grey-90: #313131;
+  --color-black-rgb-025: rgb(0 0 0 / 025%);
+  --color-black-rgb-18: rgb(0 0 0 / 18%);
+  --color-black-rgb-05: rgb(0 0 0 / 05%);
+  --color-black-rgb-0_06: rgb(0 0 0 / .06%);
+
+  /* font */
+  --font-color-1: var(--color-black);
+
+  /* body */
+  --body-background-color: var(--color-white);
+
+  /* button--main */
+  --button-main-background-color: var(--color-green-15);
+  --button-main-disabled-background-color: var(--color-grey-25);
+  --button-main-color: var(--color-white);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--body-background-color);
+  color: var(--font-color-1);
+  font-family: "Roboto", "Rubik", sans-serif;
+  font-weight: 400;
+}
+
+.game__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-wrapper {
+  padding: 1rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.balloon {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content.content--win .balloon {
+  background-image: url("../assets/images/win.png");
+  background-size: cover;
+}
+
+.content.content--lose .balloon {
+  background-image: url("../assets/images/lose.png");
+  background-size: cover;
+}
+
+.balloon__item {
+  background: radial-gradient(#E66465, #9198E5);
+  border-radius: 50%;
+  transition: width .3s, height .3s;
+}
+
+.char {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.score {
+  margin-bottom: 0;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.button {
+  min-width: 150px;
+  padding: .5rem 1rem;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: opacity .3s;
+}
+
+.button:hover {
+  opacity: .7;
+}
+
+.button--main {
+  color: var(--button-main-color);
+  background-color: var(--button-main-background-color);
+}
+
+.button:disabled {
+  color: var(--button-main-color);
+  background-color: var(--button-main-disabled-background-color);
+  cursor: not-allowed;
+}
