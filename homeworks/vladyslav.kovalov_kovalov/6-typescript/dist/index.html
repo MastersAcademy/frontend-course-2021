@@ -9,6 +9,25 @@
 </head>
 <body>
     <main class="page-container">
+        <section class="buttons-section" data-buttons-container>
+            <button class="buttons-section__button" data-action="start">Start</button>
+            <button class="buttons-section__button" data-action="end">End</button>
+            <button class="buttons-section__button" data-action="restart">Restart</button>
+        </section>
+        <!-- <section class="records-section">
+            <table class="records-section__records-table records-table" data-records-table>
+                <tr class="records-table__row">
+                    <td class="records-table__data">Letter</td>
+                    <td class="records-table__data">Score</td>
+                </tr>
+                <template data-records-table-template>
+                    <tr class="records-table__row" data-records-table-template-row>
+                        <td class="records-table__data" data-records-table-template-letter></td>
+                        <td class="records-table__data" data-records-table-template-score></td>
+                    </tr>
+                </template>
+            </table>
+        </section> -->
         <section class="score-section">
             <div class="score-section__current" data-total-score>100</div>
             <div class="score-section__round" data-round-score>&nbsp;</div>
@@ -23,6 +42,6 @@
             </div>
         </section>
     </main>
-	<script defer src="bundle.js"></script>
+	<script type="module" defer src="bundle.js"></script>
 </body>
 </html>

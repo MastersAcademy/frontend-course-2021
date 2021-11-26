@@ -9,14 +9,14 @@ module.exports = {
 	module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts?$/,
         use: 'ts-loader',
 				include: [path.resolve(__dirname, 'src')],
       },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.ts', '.js'],
   },
 	devServer: {
     static: {
