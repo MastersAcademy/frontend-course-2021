@@ -8,19 +8,28 @@ const refreshInterval = setInterval(() => {
     moveBar();
 }, 2000);
 
+const absentUser = setInterval(()=> {
+    points -= getRandom(10, 15);
+    changeBubble(points);
+    if(points >= 200) finishGame('You win !!!');
+    if(points <= 0) finishGame('You loose :(');
+}, 1998);
+
 document.addEventListener('keydown', playGame);
 
 function playGame(e: KeyboardEvent): string {
     const correctKey: boolean = e.key.toUpperCase() === keyEl.textContent;
     if(correctKey) {
-        points += Math.floor(Math.random() * (10 - 5 + 1)) + 5;
+        clearInterval(absentUser);
+        points += getRandom(5, 10);
         changeBubble(points);
         if(points >= 200) finishGame('You win !!!');
         return pointsEl.textContent = points.toString();
     }
     if(!correctKey) {
-        points -= Math.floor(Math.random() * (25 - 20 + 1)) + 20;
-        changeBubble(points)
+        clearInterval(absentUser);
+        points -= getRandom(20, 25);
+        changeBubble(points);
         if(points <= 0) finishGame('You loose :(');
         return pointsEl.textContent = points.toString();
     }
@@ -57,4 +66,8 @@ function moveBar(): void {
             barEl.style.width = width + "%";
         }
     }
+}
+
+function getRandom(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
