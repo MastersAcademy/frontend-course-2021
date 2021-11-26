@@ -1,4 +1,32 @@
 body {
-  background-color: #D3D3FF;
+  background-color: #FFF7ED;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.total-score {
+  font-size: 28px;
+}
+
+.cur-points {
+  font-size: 24px;
+}
+
+.alphabet-letter {
+  padding: 25px;
+  font-size: 44px;
+  border-radius: 10px;
+  background-color: #F3C868;
+}

@@ -5,17 +5,19 @@
         <title>6-typescript</title>
     </head>
     <body>
-        <header>
+        <header class="header">
             <button type="button">Start</button>
             <button type="button">Stop</button>
             <button type="button">Restart</button>
         </header>
-        <main>
-            <div class="total-score"></div>
-            <div class="bubble"></div>
-            <div class="cur-points"></div>
-            <div class="alphabet-letter"></div>
-            <div class="progress-bar"></div>
+        <main class="main-content">
+            <div class="total-score">128</div>
+            <svg height="100" width="100" class="bubble">
+                <circle cx="50" cy="50" r="40" fill="red"></circle>
+            </svg>
+            <div class="cur-points">-10</div>
+            <div class="alphabet-letter">U</div>
+            <progress class="progress-bar" max="100" value="70">70%</progress>
         </main>
     </body>
 </html>
