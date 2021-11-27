@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(228, 228, 228);
+  font-size: 20px;
+  color: rgba(57, 50, 47);
+}
+
+.total-score {
+  border-radius: 100px;
+  text-align: center;
+  background-color: #859FA9;
+  padding: 30px;
+  margin: 20px;
+}
+
+.current-score {
+  text-align: center;
+  background-color: #859FA9;
+  padding: 30px;
+  margin: 20px;
+}
+
+.letters-container {
+  text-align: center;
+  background-color: #859FA9;
+  padding: 30px;
+  margin: 20px;
+}
