@@ -4,13 +4,15 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack watch"
+    "start": "webpack watch",
+    "tscompile": "node_modules/typescript/tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "webpack": "^5.64.2",
-    "webpack-cli": "^4.9.1"
+    "webpack-cli": "^4.9.1",
+    "typescript": "4.5.2"
   }
 }
