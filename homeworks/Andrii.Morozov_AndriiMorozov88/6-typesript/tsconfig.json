@@ -8,8 +8,5 @@
     /* Strict Type-Checking Options */
     "strict": true,
     "noImplicitAny": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
   }
 }
