@@ -1,0 +1,273 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: inherit;
+}
+
+a, button, a:hover, button:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  position: relative;
+}
+
+.header {
+  display: block;
+  position: fixed;
+  top: 0;
+  background: #000;
+  width: 100%;
+  height: 80px;
+  color: #FFF;
+}
+
+.header-hide {
+  top: -220px;
+  animation: hideHeader .5s 1 linear;
+}
+
+.header-show {
+  top: 0;
+  animation: showHeader .5s 1 linear;
+}
+
+@keyframes showHeader {
+
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 80px;
+  }
+}
+
+@keyframes hideHeader {
+
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: -220px;
+  }
+}
+
+.header__inner-default {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header__inner-default-hide {
+  display: none;
+}
+
+.default__titleBurger {
+  height: 80px;
+  text-transform: uppercase;
+  font-size: 34px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.header__logo {
+  border-radius: 0 15px 15px 0;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 30px;
+  width: 250px;
+  max-width: 40%;
+  height: 100%;
+  background: #66A459;
+  transition: all .3s linear;
+}
+
+.menu__icon {
+  padding: 0 30px 0 0;
+  display: none;
+  cursor: pointer;
+  transition: all .3s linear;
+}
+
+.header__menu {
+  padding: 0 30px;
+  height: 100%;
+  display: flex;
+  font-size: 25px;
+  align-items: center;
+}
+
+.menu__link {
+  margin: 0 0 0 30px;
+  transition: all .3s linear;
+}
+
+.menu__link:hover {
+  color: #0076FF;
+}
+
+@media screen and (max-width: 768px) {
+
+  .header {
+    height: 80px;
+    transition: all .3s linear;
+  }
+
+  .header__inner-default {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .default__titleBurger {
+    width: 100%;
+  }
+
+  .menu__icon {
+    display: block;
+  }
+
+  .header__menu {
+    width: 100%;
+    align-items: start;
+    display: none;
+    height: 140px;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: showMenu .5s  1 ease-out forwards;
+  }
+
+  @keyframes showMenu {
+
+    0% {
+      height: 0;
+    }
+
+    100% {
+      height: 140px;
+    }
+  }
+
+  .menu__link {
+    margin: 5px 0;
+  }
+}
+
+.header__inner-afterBtn {
+  top: 0;
+  display: none;
+  padding: 0 30px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header__inner-afterBtn-show {
+  display: flex;
+}
+
+.titleButton__title {
+  cursor: pointer;
+  width: 50%;
+}
+
+.header__button {
+  display: none;
+  margin: 0 20px;
+  width: 350px;
+  max-width: 50%;
+  height: 40px;
+  font-size: 25px;
+  background: #66A459;
+  border: 0;
+  border-radius: 10px;
+  transition: all .3s linear;
+  animation: hideButton .8s 1 linear forwards;
+}
+
+.header__button-show {
+  display: block;
+  animation: showButton .8s 1 linear forwards;
+}
+
+.header__button-afterBtn {
+  display: block;
+  margin: 0 20px;
+  width: 350px;
+  max-width: 50%;
+  height: 40px;
+  font-size: 25px;
+  background: #66A459;
+  border: 0;
+  border-radius: 10px;
+  transition: all .3s linear;
+}
+
+@keyframes showButton {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideButton {
+
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.main {
+  margin: 0 auto;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+}
+
+.main__text {
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.main__button {
+  color: #FFF;
+  margin: 30px 0;
+  width: 350px;
+  max-width: 50%;
+  height: 40px;
+  font-size: 25px;
+  background: #66A459;
+  border: 0;
+  border-radius: 10px;
+  transition: all .3s linear;
+}
+
+.header__logo:hover, .menu__icon:hover, .titleButton__title:hover {
+  color: #FFF700E2;
+}
+
+.header__button:hover, .main__button:hover {
+  color: #0076FF;
+  border-radius: 15px;
+  box-shadow: 8px 8px #335;
+}
