@@ -24,11 +24,11 @@ class Game {
         return bestTenGames;
     }
 
-    private addListElement(element: HTMLElement, container: HTMLElement) {
+    private addListElement(element: HTMLElement, container: HTMLElement): void {
         container.append(element);
     }
 
-    private generateListElement(scoreValue: number) {
+    private generateListElement(scoreValue: number): HTMLElement {
         const content = this.recordsTemplate.content.cloneNode(true);
         const listElement: any = (<HTMLElement>content).querySelector('[data-template-records-item]');
         listElement.textContent = scoreValue;
@@ -77,7 +77,7 @@ class Game {
         this.balloonElement.style.width = `${width + 5}px`;
     }
 
-    private decreaseBaloon() {
+    private decreaseBaloon(): void {
         let width: number = this.balloonElement.offsetWidth;
         let height: number = this.balloonElement.offsetWidth;
 
@@ -85,13 +85,13 @@ class Game {
         this.balloonElement.style.width = `${width - 5}px`;
     }
 
-    private reset() {
+    private reset(): void {
         clearInterval(this.timer);
         this.timer = '';
         this.progressElement.style.width = '100%';
     }
 
-    private renderEndGame(message: string) {
+    private renderEndGame(message: string): void{
         clearInterval(this.timer);
         this.reset();
         this.totalScoreElement.textContent = message;
@@ -106,7 +106,7 @@ class Game {
 
         if(this.score >= 200) {
             this.renderEndGame('You won!');
-            // this.sessionScores.push(this.score);
+            this.sessionScores.push(this.score);
         }
     }
 
