@@ -14,30 +14,24 @@
             <button class="buttons-section__button" data-action="end">End</button>
             <button class="buttons-section__button" data-action="restart">Restart</button>
         </section>
-        <!-- <section class="records-section">
-            <table class="records-section__records-table records-table" data-records-table>
-                <tr class="records-table__row">
-                    <td class="records-table__data">Letter</td>
-                    <td class="records-table__data">Score</td>
-                </tr>
-                <template data-records-table-template>
-                    <tr class="records-table__row" data-records-table-template-row>
-                        <td class="records-table__data" data-records-table-template-letter></td>
-                        <td class="records-table__data" data-records-table-template-score></td>
-                    </tr>
-                </template>
-            </table>
-        </section> -->
+        <section class="records-section" data-records>
+          <ol class="records-section__best-scores" data-records-list>
+              <!-- <li class="records-section__item"></li> -->
+          </ol>
+        <template data-templace-records>
+            <li class="records-section__item" data-template-records-item></li>
+        </template>
+        </section>
         <section class="score-section">
             <div class="score-section__current" data-total-score>100</div>
-            <div class="score-section__round" data-round-score>&nbsp;</div>
+            <div class="score-section__round" data-round-score>0</div>
         </section>
         <section class="balloon-section">
             <div class="balloon-section__item" data-balloon-item></div>
         </section>
         <section class="action-section">
             <div class="action-section__key">
-                <span class="action-section__current-key" data-current-key>&nbsp;</span>
+                <span class="action-section__current-key" data-current-key></span>
                 <div class="action-section__progress" data-progress></div>
             </div>
         </section>

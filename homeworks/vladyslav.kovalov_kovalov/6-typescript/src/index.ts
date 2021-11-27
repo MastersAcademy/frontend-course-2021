@@ -6,7 +6,7 @@ class Game {
     private currentKey: string = '';
     private score: number = 100;
     private timer: any = '';
-    private gameSessionTotalScore: number = 0;
+    public sessionScores: number[] = [];
 
     constructor(
         private currentKeyElement: HTMLSpanElement,
@@ -14,21 +14,33 @@ class Game {
         private roundScoreElement: HTMLDivElement,
         private balloonElement: HTMLDivElement,
         private progressElement: HTMLDivElement,
+        private recordsTemplate: HTMLTemplateElement,
+        private recordsList: HTMLDListElement,
     ) { }
 
-    // private saveGameScore(data: []): string | void {
+    private getBestGameScores(): number[] {
+        const sorted: number[] = this.sessionScores.sort((x, y) => y - x);
+        const bestTenGames: number[] = sorted.slice(0, 10);
+        return bestTenGames;
+    }
 
-    // }
+    private addListElement(element: HTMLElement, container: HTMLElement) {
+        container.append(element);
+    }
 
-    // private getLocalStorage(): string | void {
-    //     let data: any;
-    //     if(localStorage.getItem('score') === null) localStorage.setItem('score', JSON.stringify([]));;
-    //     if(localStorage.getItem('score')) data = JSON.parse(localStorage.getItem('score');
-    //     return data;
-    // }
+    private generateListElement(scoreValue: number) {
+        const content = this.recordsTemplate.content.cloneNode(true);
+        const listElement: any = (<HTMLElement>content).querySelector('[data-template-records-item]');
+        listElement.textContent = scoreValue;
+        return listElement;
+    }
 
-    private saveGameSessionTotalScore(currentScore: number): void {
-        this.gameSessionTotalScore += currentScore;
+    public renderScores() {
+        const scores = this.getBestGameScores();
+        scores.forEach(score => {
+            const listElement = this.generateListElement(score);
+            this.addListElement(listElement, this.recordsList);
+        });
     }
 
     private getRandomLetterPosition(letterString: string): number {
@@ -77,23 +89,24 @@ class Game {
         clearInterval(this.timer);
         this.timer = '';
         this.progressElement.style.width = '100%';
+    }
+
+    private renderEndGame(message: string) {
+        clearInterval(this.timer);
+        this.reset();
+        this.totalScoreElement.textContent = message;
+        this.roundScoreElement.innerHTML = '0';
         this.paused = true;
     }
 
-    checkScore(): void {
+    public checkScore(): void {
         if(this.score <= 0) {
-            clearInterval(this.timer);
-            this.reset();
-            this.totalScoreElement.textContent = 'You lose!';
-            this.roundScoreElement.innerHTML = '&nbsp;';
+            this.renderEndGame('You lose!');
         }
+
         if(this.score >= 200) {
-            clearInterval(this.timer);
-            this.reset();
-            this.totalScoreElement.textContent = 'You won!';
-            this.roundScoreElement.innerHTML = '&nbsp;';
-            this.saveGameSessionTotalScore(this.score);
-            console.log(this.gameSessionTotalScore)
+            this.renderEndGame('You won!');
+            // this.sessionScores.push(this.score);
         }
     }
 
@@ -164,30 +177,31 @@ class Game {
     }
 
     public buttonStart(): void {
-        console.log('Start')
         this.paused = false;
+        this.reset();
+        this.roundScoreElement.innerHTML = '0';
+        this.currentKey = '';
+        this.score = 100;
+        this.totalScoreElement.textContent = `${this.score}`;
         this.start();
         this.setTimer();
+        this.setRandomKey();
+        this.renderScores();
     }
 
     public buttonEnd(): void {
-        console.log('End')
         this.paused = true;
         this.reset();
-        this.gameSessionTotalScore = 0;
         this.currentKey = '';
-        if(this.score !== 100) {
-            this.totalScoreElement.textContent = 'You lose!';
-            this.roundScoreElement.innerHTML = '&nbsp;';
-        }
+        this.totalScoreElement.textContent = 'You lose!';
+        this.roundScoreElement.innerHTML = '0';
     }
 
     public buttonRestart(): void {
         this.reset();
-        this.roundScoreElement.innerHTML = '&nbsp;';
+        this.roundScoreElement.innerHTML = '0';
         this.currentKey = '';
         this.score = 100;
-        this.gameSessionTotalScore = 0;
         this.totalScoreElement.textContent = `${this.score}`;
     }
 }
@@ -198,8 +212,11 @@ const roundScoreElement = document.querySelector('[data-round-score]') as HTMLDi
 const balloonElement = document.querySelector('[data-balloon-item]') as HTMLDivElement;
 const progressElement = document.querySelector('[data-progress]') as HTMLDivElement;
 const buttonsContainerElement = document.querySelector('[data-buttons-container]') as HTMLDivElement;
+const recordsTemplate = document.querySelector('[data-templace-records]') as HTMLTemplateElement;
+const recordsList = document.querySelector('[data-records-list]') as HTMLDListElement;
 
-const game = new Game(currentKeyElement, totalScoreElement, roundScoreElement, balloonElement, progressElement);
+
+const game = new Game(currentKeyElement, totalScoreElement, roundScoreElement, balloonElement, progressElement, recordsTemplate, recordsList);
 game.start();
 
 
