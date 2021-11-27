@@ -17,7 +17,6 @@ function getLost() {
     scoreBox.innerText = 'Lost';
     letterBox.innerText = '';
     letterBox.classList.add('container__letter-lost');
-    return
 }
 function getWin() {
     scoreBox.innerText = 'WIN';
