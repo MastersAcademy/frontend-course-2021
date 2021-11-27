@@ -29,12 +29,12 @@ function getLetter() {
         if (score > 0) {
             getLetter();
         } else {
-            alert('You lose');
+            clearTimeout(time);
+            currentScoreEl.innerText = 'Lose';
+            totalScoreEl.innerText = '0';
         }
     }, 2000)
 }
-
-getLetter()
 
 document.addEventListener('keypress', (e) => {
     clearTimeout(time);
@@ -51,9 +51,20 @@ document.addEventListener('keypress', (e) => {
         currentScoreEl.innerText = '-' + points;
     }
     if (score >= 200) {
-        alert('You Win');
+        clearTimeout(time);
+        currentScoreEl.innerText = 'Win';
+        totalScoreEl.innerText = '200';
     }
     if (score <= 0) {
-        alert('You Lose');
-    } else getLetter()
+        clearTimeout(time);
+        currentScoreEl.innerText = 'Lose';
+        totalScoreEl.innerText = '0';
+    }
+    if ((score < 200) && (score > 0)) {
+        getLetter()
+    }
 })
+
+getLetter()
+
+

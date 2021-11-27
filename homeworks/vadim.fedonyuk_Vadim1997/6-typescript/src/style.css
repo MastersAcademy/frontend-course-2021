@@ -8,8 +8,9 @@ body {
 
 .game-section {
   margin-top: 20px;
+  max-width: 125px;
   background-color: inherit;
-  padding: 15px;
+  padding: 35px;
   border-radius: 10px;
   justify-content: space-around;
   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
@@ -17,22 +18,24 @@ body {
 
 .game-section__total-score {
   border-radius: 100px;
+  max-width: 25px;
+  min-width: 25px;
   text-align: center;
   background-color: #859FA9;
   padding: 30px;
-  margin: 20px;
+  margin-bottom: 30px;
 }
 
 .game-section__current-score {
   text-align: center;
-  padding: 30px;
-  margin: 20px;
+  margin-bottom: 30px;
 }
 
 .game-section__letters-container {
   text-align: center;
+  max-width: 25px;
+  min-width: 25px;
   border-radius: 10px;
   background-color: #859FA9;
   padding: 30px;
-  margin: 20px;
 }
