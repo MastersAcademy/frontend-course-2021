@@ -1,15 +1,16 @@
 import './style.css';
 
-const totalScore = document.querySelector<HTMLElement>('[data-tottal-score]');
-const currentScore = document.querySelector<HTMLElement>('[data-current-score]');
-const currentLetter = document.querySelector<HTMLElement>('[data-letters-container]');
+const totalScoreEl = document.querySelector<HTMLElement>('[data-tottal-score]');
+const currentScoreEl = document.querySelector<HTMLElement>('[data-current-score]');
+const currentLetterEl = document.querySelector<HTMLElement>('[data-letters-container]');
 
 let someLetter: string;
 let points: number;
 let score: number = 100;
 let time: number;
 
-totalScore.textContent = '100';
+totalScoreEl.textContent = '100';
+currentScoreEl.textContent = '0';
 
 function getRandom(min: number, max: number) {
     min = Math.ceil(min);
@@ -19,12 +20,12 @@ function getRandom(min: number, max: number) {
 
 function getLetter() {
     someLetter = String.fromCharCode(getRandom(65, 90));
-    currentLetter.innerText = someLetter;
+    currentLetterEl.innerText = someLetter;
     time = window.setTimeout(() => {
         points = getRandom(10, 15);
-        currentScore.innerText = '-' + points;
+        currentScoreEl.innerText = '-' + points;
         score = score - points;
-        totalScore.innerText = `${score}`;
+        totalScoreEl.innerText = `${score}`;
         if (score > 0) {
             getLetter();
         } else {
@@ -40,14 +41,14 @@ document.addEventListener('keypress', (e) => {
     if (e.key.toUpperCase() === someLetter) {
         points = getRandom(5, 10);
         score = score + points;
-        totalScore.innerText = `${score}`;
-        currentScore.innerText = '+' + points;
+        totalScoreEl.innerText = `${score}`;
+        currentScoreEl.innerText = '+' + points;
     }
     if (e.key.toUpperCase() !== someLetter) {
         points = getRandom(20, 25);
         score = score - points;
-        totalScore.innerText = `${score}`;
-        currentScore.innerText = '-' + points;
+        totalScoreEl.innerText = `${score}`;
+        currentScoreEl.innerText = '-' + points;
     }
     if (score >= 200) {
         alert('You Win');

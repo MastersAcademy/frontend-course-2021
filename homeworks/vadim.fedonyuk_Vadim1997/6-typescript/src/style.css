@@ -6,7 +6,16 @@ body {
   color: rgba(57, 50, 47);
 }
 
-.total-score {
+.game-section {
+  margin-top: 20px;
+  background-color: inherit;
+  padding: 15px;
+  border-radius: 10px;
+  justify-content: space-around;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.game-section__total-score {
   border-radius: 100px;
   text-align: center;
   background-color: #859FA9;
@@ -14,15 +23,15 @@ body {
   margin: 20px;
 }
 
-.current-score {
+.game-section__current-score {
   text-align: center;
-  background-color: #859FA9;
   padding: 30px;
   margin: 20px;
 }
 
-.letters-container {
+.game-section__letters-container {
   text-align: center;
+  border-radius: 10px;
   background-color: #859FA9;
   padding: 30px;
   margin: 20px;
