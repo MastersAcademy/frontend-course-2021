@@ -1,6 +1,6 @@
-const letterBox = <HTMLElement>document.querySelector('[data-random-letter]');
-const scoreBox = <HTMLElement>document.querySelector('[data-score]');
-const scoreDif = <HTMLElement>document.querySelector('[data-score-different]');
+const letterBox = document.querySelector<HTMLDivElement>('[data-random-letter]')!;
+const scoreBox = document.querySelector<HTMLDivElement>('[data-score]')!;
+const scoreDif = document.querySelector<HTMLDivElement>('[data-score-different]')!;
 let score: number = 100;
 let randomMinus: number;
 let randomPlus: number;
@@ -13,12 +13,12 @@ function getRandom(min: number, max: number) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function getLost() {
+function lostCase() {
     scoreBox.innerText = 'Lost';
     letterBox.innerText = '';
     letterBox.classList.add('container__letter-lost');
 }
-function getWin() {
+function winCase() {
     scoreBox.innerText = 'WIN';
     letterBox.innerText = '';
     letterBox.classList.add('container__letter-win');
@@ -35,7 +35,7 @@ function showLetter() {
         if (score > 0) {
         showLetter();
     } else
-        getLost();
+        lostCase();
         return
     }, 2000);
 }
@@ -55,9 +55,9 @@ document.addEventListener('keydown', (e) => {
         scoreDif.innerText = '-' + String(randomMinus);
     }
     if ( score <= 0 ) {
-        getLost();
+        lostCase();
     } else if (score >= 200 )  {
-        getWin();
+        winCase();
     } else
     showLetter();
 });
