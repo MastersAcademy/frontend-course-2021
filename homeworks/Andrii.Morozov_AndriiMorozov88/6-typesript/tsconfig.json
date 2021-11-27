@@ -1,9 +1,7 @@
 {
     "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "es6",
-    "allowJs": true,
-    "jsx": "react",
     "outDir": "./dist",
     /* Strict Type-Checking Options */
     "strict": true,
