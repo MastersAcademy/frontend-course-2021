@@ -1,15 +1,15 @@
 const ALPHABET: string = "abcdefghijklmnopqrstuvwxyz";
+const BIGBALL = 50;
 
-const INCREMENT_NOT_PRESS_KEY_POINTS = (min: number = 20, max: number = 25): number => Math.round(Math.random() * (max - min) + min);
-const INCREMENT_POINTS = (min: number = 20, max: number = 25): number => Math.round(Math.random() * (max - min) + min);
-const DECREMENT_POINTS = (min: number = 5, max: number = 10): number => Math.round(Math.random() * (max - min) + min);
+const decrement_not_press_key_points = (min: number = 20, max: number = 25): number => Math.round(Math.random() * (max - min) + min);
+const decrement_points = (min: number = 20, max: number = 25): number => Math.round(Math.random() * (max - min) + min);
+const increment_points = (min: number = 5, max: number = 10): number => Math.round(Math.random() * (max - min) + min);
 
 let speedTimeGame: number = 2000;
-let POINTS: number = 100;
+let points: number = 100;
 let letterForCheck: string = '';
-let triger: boolean = false
-let interval: NodeJS.Timeout;;
-const BIGBALL = 50;
+let keystrokeLock: boolean = true
+let interval: NodeJS.Timeout;
 
 const latterValueEl = document.querySelector<HTMLElement>('[data-box-letter]');
 const ballEl = document.querySelector<HTMLElement>('[data-ball]');
@@ -24,71 +24,70 @@ const newLetter = (str: string): string => {
     return randomLetter
 }
 
-
 const start = (): void => {
-    textInfoEl.textContent = `${POINTS} points`
+    textInfoEl.textContent = `${points} points`
     letterForCheck = newLetter(ALPHABET)
     latterValueEl.textContent = letterForCheck
+
     interval = setInterval(() => {
         ballBoxEl.style.background = '#AAA'
         letterForCheck = newLetter(ALPHABET)
         latterValueEl.textContent = letterForCheck
-        if (triger && POINTS > 0 && POINTS < 200) {
-            const increment = INCREMENT_NOT_PRESS_KEY_POINTS()
-            POINTS -= increment
-            latterValueEl.textContent = `-${increment}`
-            ballEl.style.width = `${POINTS + BIGBALL}px`
-            ballEl.style.height = `${POINTS + BIGBALL}px`
-        } else if (POINTS > 0 && POINTS < 200) {
-            triger = true
+        if (!keystrokeLock && points > 0 && points < 200) {
+            const decrement = decrement_not_press_key_points()
+            points -= decrement
+            latterValueEl.textContent = `-${decrement}`
+            ballEl.style.width = `${points + BIGBALL}px`
+            ballEl.style.height = `${points + BIGBALL}px`
+        } else if (points > 0 && points < 200) {
+            keystrokeLock = false
         }
-        textInfoEl.textContent = `${POINTS} points`;
+        textInfoEl.textContent = `${points} points`;
         setTimeout(() => {
             latterValueEl.textContent = letterForCheck
         }, 200)
 
-        if (POINTS >= 200) {
-            triger = false
+        if (points >= 200) {
+            keystrokeLock = true
             maingameEl.style.background = '#b6f3b6'
             textInfoEl.textContent = 'You win Game!'
             clearInterval(interval)
         }
-        else if (POINTS <= 0) {
-            triger = false
+        else if (points <= 0) {
+            keystrokeLock = true
             maingameEl.style.background = '#f5adad'
             textInfoEl.textContent = 'You lost Game!'
             clearInterval(interval)
         }
-
     }, speedTimeGame);
 }
 
 document.addEventListener('keyup', (letter) => {
-    if (letter.key.toLocaleUpperCase() == letterForCheck && triger && POINTS) {
-        let decrement = DECREMENT_POINTS()
-        latterValueEl.textContent = `+${decrement}`
-        POINTS += decrement
-        textInfoEl.textContent = `${POINTS} points`
+    if (letter.key.toLocaleUpperCase() == letterForCheck && !keystrokeLock && points) {
+        let increment = increment_points()
+        latterValueEl.textContent = `+${increment}`
+        points += increment
+        textInfoEl.textContent = `${points} points`
         ballBoxEl.style.background = '#07ac15'
-        triger = false
+        keystrokeLock = true
     }
-    else if (triger && POINTS) {
-        let increment = INCREMENT_POINTS()
-        latterValueEl.textContent = `-${increment}`
-        POINTS -= increment
-        textInfoEl.textContent = `${POINTS} points`
+    else if (!keystrokeLock && points) {
+        let decrement = decrement_points()
+        latterValueEl.textContent = `-${decrement}`
+        points -= decrement
+        textInfoEl.textContent = `${points} points`
         ballBoxEl.style.background = '#8f0f0f'
-        triger = false
+        keystrokeLock = true
     }
-    ballEl.style.width = `${POINTS + BIGBALL}px`
-    ballEl.style.height = `${POINTS + BIGBALL}px`
+    ballEl.style.width = `${points + BIGBALL}px`
+    ballEl.style.height = `${points + BIGBALL}px`
 });
 
 
 buttonNewGameEl.addEventListener('click', () => {
-    triger = true
+    keystrokeLock = false
     clearInterval(interval)
-    POINTS = 100;
+    points = 100;
     maingameEl.style.background = '#F8F4C2'
     start()
 })
@@ -96,7 +95,7 @@ buttonNewGameEl.addEventListener('click', () => {
 buttonStopGameEl.addEventListener('click', () => {
     clearInterval(interval)
     textInfoEl.textContent = 'You lost Game!'
-    triger = false
+    keystrokeLock = true
     maingameEl.style.background = '#f5adad'
 })
 
