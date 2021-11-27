@@ -1,0 +1,80 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 36px;
+  line-height: 38px;
+}
+
+.main-container {
+  margin: 100px auto;
+  width: 600px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #E5E1FC;
+  border: 3px solid #3C2FC0;
+  border-radius: 45px;
+}
+
+.game-account {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.account {
+  width: 140px;
+  height: 80px;
+  margin: 20px;
+  background-color: #FFF;
+  border: 3px solid #3C2FC0;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-circle {
+  width: 150px;
+  height: 150px;
+  background-color: #FC3E3E;
+  border-radius: 50%;
+}
+
+.game-circle--end {
+  display: none;
+}
+
+.game-key {
+  width: 140px;
+  height: 140px;
+  font-size: 50px;
+  margin-bottom: 30px;
+  background-color: #FFF;
+  border: 3px solid #3C2FC0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-loader {
+  position: absolute;
+  top: 707px;
+  width: 160px;
+  height: 160px;
+  border: 12px solid #C392F1;
+  border-radius: 50%;
+  border-left-color: #5103A2;
+  animation: loader 1.9s linear infinite;
+}
+
+@keyframes loader {
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
