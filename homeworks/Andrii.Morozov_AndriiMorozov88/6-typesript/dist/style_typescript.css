@@ -46,26 +46,10 @@
   align-items: center;
 }
 
-.container__letter-red {
-  display: flex;
-  width: 200px;
-  height: 200px;
-  font-size: 100px;
-  border: #5A1212 1px solid;
+.container__letter-lost {
   background: #5A0A05;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
 }
 
-.container__letter-green {
-  display: flex;
-  width: 200px;
-  height: 200px;
-  font-size: 100px;
-  border: #5A1212 1px solid;
+.container__letter-win {
   background: #05D845;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
 }
