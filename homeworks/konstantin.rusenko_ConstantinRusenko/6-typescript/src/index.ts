@@ -114,13 +114,13 @@ const gameLogic = (event: Event): void => {
 
 const checkScore = (): void => {
     if (score >= 200) {
-        scoreFieldEl.innerHTML = 'YOU WIN!'
+        scoreFieldEl.innerHTML = `YOU WIN! YOUR SCORE: ${score}`;
         progressBar.classList.add('hidden');
         endGame();
         return;
     }
     if (score <= 0) {
-        scoreFieldEl.innerHTML = 'YOU LOSE!'
+        scoreFieldEl.innerHTML = `YOU LOSE! YOUR SCORE: ${score}`;
         progressBar.classList.add('hidden');
         endGame();
         return;
