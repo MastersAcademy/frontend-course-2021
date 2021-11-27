@@ -1,6 +1,11 @@
 const path = require('path');
 
 module.exports = {
+    watch: true,
+    watchOptions: {
+        aggregateTimeout: 200,
+        poll: 1000,
+      },
     entry: './src/script_typescript.ts',
     module: {
         rules: [
