@@ -6,6 +6,7 @@ const circleEl: HTMLDivElement = document.querySelector('[data-game-circle]');
 const accountPlusNumberEl: HTMLDivElement = document.querySelector('[data-account-plus-number]');
 const keyEl: HTMLDivElement = document.querySelector('[data-game-key]');
 const accountMinusNumber: HTMLDivElement = document.querySelector('[data-account-minus-number]');
+const gamePopup: HTMLDivElement = document.querySelector('[data-game-popup]');
 
 let points: number = 100;
 let layer: number = 150;
@@ -51,28 +52,25 @@ const setKey = (key: string) => {
     }
 }
 
-function stopGame() {
+function randomNumber(min: number, max: number): number {
+    return Math.floor(min + Math.random() * (max + 1 - min));
+}
+
+function stopGame() :void {
     if (points >= 200) {
-        clearInterval(randomLetters);
-        loaderEl.classList.remove('game-loader');
-        circleEl.classList.add('game-circle--end');
-        accountCurrentEl.innerText = '';
-        accountPlusNumberEl.innerText = '';
-        accountMinusNumber.innerText = '';
-        keyEl.innerText = '';
-        window.alert('YOU WIN!!!')
+        elementsStopGame ();
+        gamePopup.innerText = 'YOU WIN!!!';
     } else if (points <= 0) {
-        clearInterval(randomLetters);
-        loaderEl.classList.remove('game-loader')
-        circleEl.classList.add('game-circle--end');
-        accountCurrentEl.innerText = '';
-        accountPlusNumberEl.innerText = '';
-        accountMinusNumber.innerText = '';
-        keyEl.innerText = '';
-        window.alert('GAME OVER');
+        elementsStopGame ();
+        gamePopup.innerText = 'GAME OVER';
     }
 }
 
-function randomNumber(min: number, max: number): number {
-    return Math.floor(min + Math.random() * (max + 1 - min));
+function elementsStopGame (): void {
+    clearInterval(randomLetters);
+    loaderEl.classList.remove('game-loader');
+    circleEl.classList.add('game-circle--end');
+    accountPlusNumberEl.innerText = '';
+    accountMinusNumber.innerText = '';
+    keyEl.innerText = '';
 }

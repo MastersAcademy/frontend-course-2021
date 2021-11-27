@@ -2,8 +2,7 @@
   !*** css ../node_modules/css-loader/dist/cjs.js!./style.css ***!
   \**************************************************************/
 html,
-body
-{
+body {
   margin: 0;
   padding: 0;
   font-size: 36px;
@@ -44,7 +43,7 @@ body
 .game-circle {
   width: 150px;
   height: 150px;
-  background-color: #fc3e3e;
+  background-color: #FC3E3E;
   border-radius: 50%;
 }
 
@@ -64,10 +63,15 @@ body
   justify-content: center;
   align-items: center;
 }
+.game-popup {
+  position: absolute;
+  top: 370px;
+  font-size: 50px;
+}
 
 .game-loader {
   position: absolute;
-  top:707px;
+  top: 707px;
   width: 160px;
   height: 160px;
   border: 12px solid #C392F1;

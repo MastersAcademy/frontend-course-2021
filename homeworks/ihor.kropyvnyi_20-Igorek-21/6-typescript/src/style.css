@@ -61,6 +61,12 @@ body {
   align-items: center;
 }
 
+.game-popup {
+  position: absolute;
+  top: 370px;
+  font-size: 50px;
+}
+
 .game-loader {
   position: absolute;
   top: 707px;
