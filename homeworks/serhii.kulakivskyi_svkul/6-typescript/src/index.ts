@@ -75,7 +75,7 @@ import "./css/index.css";
 
             this.gameTimer$ = interval(1000)
             .pipe(
-                map(step => step + 1),
+                map((step: number) => step + 1),
                 tap(() => {
                     this.gameTime += 1;
                 })
@@ -119,8 +119,8 @@ import "./css/index.css";
             this.timer$ = interval(2000 / 100)
                 .pipe(
                     take(100),
-                    map(step => step + 1),
-                    tap(step => {
+                    map((step: number) => step + 1),
+                    tap((step: number) => {
                         const progressPercent = step / 100 * 100;
                         this.progressBarEl.style.width = `${progressPercent}%`;
 
