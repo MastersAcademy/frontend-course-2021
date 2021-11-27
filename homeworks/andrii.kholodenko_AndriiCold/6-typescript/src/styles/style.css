@@ -5,7 +5,7 @@
   flex-direction: column;
 }
 
-.bubble {
+.game__bubble {
   margin: 0 auto;
   width: 150px;
   height: 150px;
@@ -13,7 +13,7 @@
   background-color: #F00;
 }
 
-.key {
+.game__key {
   width: 150px;
   height: 150px;
   background-color: #A2AFA3;
@@ -23,13 +23,13 @@
   line-height: 145px;
 }
 
-.dynamic-score {
+.game__dynamic-score {
   text-align: center;
   font-size: 30px;
   margin: 40% auto;
 }
 
-.total-score {
+.game__total-score {
   height: 50px;
   text-align: center;
   font-size: 30px;
