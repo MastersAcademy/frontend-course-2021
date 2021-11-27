@@ -40,45 +40,34 @@ const refreshInterval = setInterval(() => {
         clearInterval(refreshInterval);
     }
 
-}, 2000);
+    function generateKey(): void {
+        const alphabet: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        keyEl.textContent = alphabet[Math.floor(Math.random() * alphabet.length)];
+        keyEl.classList.add('key__symbol');
+    }
 
-function generateKey(): void {
-    const alphabet: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    keyEl.textContent = alphabet[Math.floor(Math.random() * alphabet.length)];
-    keyEl.classList.add('key__symbol');
-}
+    function changeBubble(points: number): void {
+        bubbleEl.style.width = points + 100 + 'px';
+        bubbleEl.style.height = points + 100 + 'px';
+    }
 
-function changeBubble(points: number): void {
-    bubbleEl.style.width = points + 100 + 'px';
-    bubbleEl.style.height = points + 100 + 'px';
-}
-
-function moveBar(): void {
-    const barEl: HTMLDivElement = document.querySelector('[data-bar]');
-    let width: number = 1;
-    let id = setInterval(frame, 20);
-    function frame(): void {
-        if (width >= 100) {
-            clearInterval(id);
-            width = 0;
-        } else {
-            width++;
-            barEl.style.width = width + "%";
+    function moveBar(): void {
+        const barEl: HTMLDivElement = document.querySelector('[data-bar]');
+        let width: number = 1;
+        let id = setInterval(frame, 20);
+        function frame(): void {
+            if (width >= 100) {
+                clearInterval(id);
+                width = 0;
+            } else {
+                width++;
+                barEl.style.width = width + "%";
+            }
         }
     }
-}
 
-function getRandom(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+    function getRandom(min: number, max: number): number {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
-
-
-
-
-
-
-
-
-
-
+}, 2000);
