@@ -5,23 +5,22 @@ let score: number = 100;
 let letter: string;
 let timer: number;
 scoreBox.innerText = '100';
-function getRandom(min: number, max: number) {
+function getRandom(min: number, max: number): number {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function lostCase() {
+function lostCase(): void {
     scoreBox.innerText = 'Lost';
     letterBox.innerText = '';
     letterBox.classList.add('container__letter-lost');
 }
-function winCase() {
+function winCase(): void {
     scoreBox.innerText = 'WIN';
     letterBox.innerText = '';
     letterBox.classList.add('container__letter-win');
-    return
 }
-function showLetter() {
+function showLetter(): void {
     letter = String.fromCharCode(getRandom(65, 90));
     letterBox.innerText = letter;
     timer = window.setTimeout(() => {
