@@ -89,13 +89,22 @@ body {
 .close-button {
   position: absolute;
   display: none;
-  top: 10%;
-  left: 25%;
+  align-items: center;
+  justify-content: center;
+  top: 13%;
+  right: 27%;
+  border-radius: 50%;
+  border: 1px solid #000;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  font-size: 1.5em;
+  cursor: pointer;
 }
 
 .new-score {
   font-size: 2em;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .hidden {

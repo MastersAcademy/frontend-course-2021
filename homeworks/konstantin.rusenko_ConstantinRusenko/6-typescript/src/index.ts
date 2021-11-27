@@ -131,10 +131,9 @@ const showScoreList = (): void => {
     scoreListEl.classList.add('visible');
     closeButtonEl.classList.add('visible');
     scoreListEl.innerHTML = '';
-    scoreTable.sort();
-    scoreTable.map((number) => {
+    scoreTable.map((number, index) => {
         const newScore = document.createElement('div');
-        newScore.innerHTML = number.toString();
+        newScore.innerHTML = `${index+1}: ${number}`;
         newScore.classList.add('new-score');
         scoreListEl.appendChild(newScore);
     });
@@ -145,21 +144,25 @@ const hideScoreList = (): void => {
     closeButtonEl.classList.toggle('visible');
 };
 
+const stopGame = (): void => {
+    startButtonEl.removeAttribute("disabled");
+    gameOver = true;
+    document.removeEventListener('keydown', gameLogic);
+    clearIntervals();
+};
+
 startButtonEl.addEventListener('click', () => {
     gameOver = false;
     startButtonEl.setAttribute("disabled", "true");
     progressBar.classList.add('visible');
+    scoreListEl.classList.remove('visible');
+    closeButtonEl.classList.remove('visible');
     startGameInterval();
     startProgressBar();
     document.addEventListener('keydown', gameLogic);
 });
 
-stopButtonEl.addEventListener('click', () => {
-    startButtonEl.removeAttribute("disabled");
-    gameOver = true;
-    document.removeEventListener('keydown', gameLogic);
-    clearIntervals();
-});
+stopButtonEl.addEventListener('click', () => stopGame());
 
 resetButtonEl.addEventListener('click', () => {
     startButtonEl.removeAttribute("disabled");
@@ -173,6 +176,9 @@ resetButtonEl.addEventListener('click', () => {
     document.removeEventListener('keydown', gameLogic);
 });
 
-scoreButtonEl.addEventListener('click', () => showScoreList());
+scoreButtonEl.addEventListener('click', () => {
+    showScoreList();
+    stopGame();
+});
 
 closeButtonEl.addEventListener('click', () => hideScoreList());
