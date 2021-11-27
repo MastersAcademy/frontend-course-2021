@@ -1,0 +1,36 @@
+.game {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.bubble {
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #F00;
+}
+
+.key {
+  width: 150px;
+  height: 150px;
+  background-color: #A2AFA3;
+  font-size: 50px;
+  text-align: center;
+  margin: 100px auto;
+  line-height: 145px;
+}
+
+.dynamic-score {
+  text-align: center;
+  font-size: 30px;
+  margin: 40% auto;
+}
+
+.total-score {
+  height: 50px;
+  text-align: center;
+  font-size: 30px;
+}
