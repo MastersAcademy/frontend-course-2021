@@ -16,11 +16,14 @@ class Helper {
         letterFieldEl.textContent = letter;  
     }
   
-    static displayGameResult(isWin: boolean): void {
+    static displayGameResult(isWin: boolean, totalScore: number): void {
         document.body.innerHTML = `
             <div class="page__popup">
-                <p class="${isWin ? 'popup__message--win' :  'popup__message--lose'}">
+                <p class="popup__message ${isWin ? 'popup__message--win' :  'popup__message--lose'}">
                     ${isWin ? 'Congrats!' : 'Game over'}
+                </p>
+                <p class="popup__score ${isWin ? 'popup__score--win' :  'popup__score--lose'}">
+                    Total score: ${totalScore}
                 </p>
             </div>`;
     }
@@ -64,6 +67,10 @@ class Game {
         return this._wrongKeyScores.slice();
     }
 
+    get totalScore(): number {
+        return this._totalScore;
+    }
+
     get isPlayerWin(): boolean {
         return this._isPlayerWin;
     }
@@ -80,14 +87,14 @@ class Game {
   
   
 ((game) => {
-    function playGame() {
+    function playGame(): void {
         const scores = game.isAllowPressAction ?
             Helper.getRandomItem(game.passKeyScores) :
             game.gainedPoints;
         Helper.displayScores(scores);
         game.addToTotalScore(scores);
         if (game.isGameOver()) {
-          Helper.displayGameResult(game.isPlayerWin);
+          Helper.displayGameResult(game.isPlayerWin, game.totalScore);
           return;
         }
         game.randomLetter = Helper.getRandomItem(game.letters);
