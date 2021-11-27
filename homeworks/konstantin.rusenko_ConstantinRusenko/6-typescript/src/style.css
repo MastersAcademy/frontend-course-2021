@@ -17,10 +17,10 @@ body {
   border: none;
   border-radius: 9px;
   font-size: 1.6em;
-  cursor: pointer;
 }
 
-.button:hover {
+.button:hover:enabled {
+  cursor: pointer;
   border: none;
   color: #DBE7F5;
   background-color: #2E3231;
@@ -69,4 +69,39 @@ body {
   width: 100%;
   height: 30px;
   background-color: #F00;
+}
+
+.main__score-list {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 50%;
+  min-height: 50%;
+  width: 50%;
+  height: 50%;
+  background-color: #DBE7D7;
+  position: absolute;
+  border-radius: 6px;
+  overflow-y: scroll;
+}
+
+.close-button {
+  position: absolute;
+  display: none;
+  top: 10%;
+  left: 25%;
+}
+
+.new-score {
+  font-size: 2em;
+  margin: 20px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: flex;
 }
