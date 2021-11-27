@@ -1,6 +1,3 @@
-import * as _ from 'lodash';
-import { fromEvent } from 'rxjs';
-
 const ALPHABET: string = "abcdefghijklmnopqrstuvwxyz";
 
 const INCREMENT_NOT_PRESS_KEY_POINTS = (min: number = 20, max: number = 25): number => Math.round(Math.random() * (max - min) + min);
@@ -52,13 +49,13 @@ const start = (): void => {
 
         if (POINTS >= 200) {
             triger = false
-            maingameEl.style.background='#b6f3b6'
+            maingameEl.style.background = '#b6f3b6'
             textInfoEl.textContent = 'You win Game!'
             clearInterval(interval)
         }
         else if (POINTS <= 0) {
             triger = false
-            maingameEl.style.background='#f5adad'
+            maingameEl.style.background = '#f5adad'
             textInfoEl.textContent = 'You lost Game!'
             clearInterval(interval)
         }
@@ -66,34 +63,33 @@ const start = (): void => {
     }, speedTimeGame);
 }
 
-fromEvent<KeyboardEvent>(document, 'keydown')
-    .subscribe((letter) => {
-        if (letter.key.toLocaleUpperCase() == letterForCheck && triger && POINTS) {
-            let decrement = DECREMENT_POINTS()
-            latterValueEl.textContent = `+${decrement}`
-            POINTS += decrement
-            textInfoEl.textContent = `${POINTS} points`
-            ballBoxEl.style.background = '#07ac15'
-            triger = false
-        }
-        else if (triger && POINTS) {
-            let increment = INCREMENT_POINTS()
-            latterValueEl.textContent = `-${increment}`
-            POINTS -= increment
-            textInfoEl.textContent = `${POINTS} points`
-            ballBoxEl.style.background = '#8f0f0f'
-            triger = false
-        }
-        ballEl.style.width = `${POINTS + BIGBALL}px`
-        ballEl.style.height = `${POINTS + BIGBALL}px`
-    });
+document.addEventListener('keyup', (letter) => {
+    if (letter.key.toLocaleUpperCase() == letterForCheck && triger && POINTS) {
+        let decrement = DECREMENT_POINTS()
+        latterValueEl.textContent = `+${decrement}`
+        POINTS += decrement
+        textInfoEl.textContent = `${POINTS} points`
+        ballBoxEl.style.background = '#07ac15'
+        triger = false
+    }
+    else if (triger && POINTS) {
+        let increment = INCREMENT_POINTS()
+        latterValueEl.textContent = `-${increment}`
+        POINTS -= increment
+        textInfoEl.textContent = `${POINTS} points`
+        ballBoxEl.style.background = '#8f0f0f'
+        triger = false
+    }
+    ballEl.style.width = `${POINTS + BIGBALL}px`
+    ballEl.style.height = `${POINTS + BIGBALL}px`
+});
 
 
 buttonNewGameEl.addEventListener('click', () => {
-      triger = true
+    triger = true
     clearInterval(interval)
     POINTS = 100;
-    maingameEl.style.background='#F8F4C2'
+    maingameEl.style.background = '#F8F4C2'
     start()
 })
 
@@ -101,7 +97,7 @@ buttonStopGameEl.addEventListener('click', () => {
     clearInterval(interval)
     textInfoEl.textContent = 'You lost Game!'
     triger = false
-    maingameEl.style.background='#f5adad'
+    maingameEl.style.background = '#f5adad'
 })
 
 
