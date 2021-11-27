@@ -5,7 +5,7 @@ class Game {
     private FINAL_SCORE: number = 200;
     private currentKey: string = '';
     private score: number = 100;
-    private timer: any = '';
+    private timer: number = 0;
     public sessionScores: number[] = [];
 
     constructor(
@@ -87,7 +87,7 @@ class Game {
 
     private reset(): void {
         clearInterval(this.timer);
-        this.timer = '';
+        this.timer = 0;
         this.progressElement.style.width = '100%';
     }
 
@@ -150,7 +150,7 @@ class Game {
     setTimer(): void {
         let step = 10;
         let counter = 100;
-        this.timer = setInterval(() => {
+        this.timer = window.setInterval(() => {
             if (counter >= 0) {
                 this.progressElement.style.width = counter + '%';
                 counter -= step;
