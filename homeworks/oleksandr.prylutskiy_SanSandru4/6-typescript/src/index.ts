@@ -6,16 +6,19 @@ const headerBlockEl: HTMLElement = document.querySelector('[data-attr-header]');
 const headerTextEl: HTMLElement = document.querySelector('[data-attr-header-text]');
 const changePointsBlockEl: HTMLElement = document.querySelector('[data-attr-change]');
 const progressBarBlockEl: HTMLElement = document.querySelector('[data-attr-progress]');
+const numForWin: number = 200;
+const numForLose: number = 0;
 let symbols: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 let symbolValue: string = '';
 let randomPoints: number;
 let interval: number = 2000;
+let symbolTimer: NodeJS.Timer;
 
 function renderPoints(num: number): void {
     pointsBlockEl.textContent = `${num}`;
 }
 
-function randomGetSymbol(symbolArray: string[]): string {
+function getRandomSymbol(symbolArray: string[]): string {
     let symbolIndex = Math.floor(Math.random() * symbolArray.length);
     return symbolArray[symbolIndex];
 }
@@ -30,61 +33,65 @@ function renderChangePoints(symbol: string, num: number): void {
 }
 
 function winnerOrLoser(pointsNum: number): void {
-    if (pointsNum >= 200) {
+    if (pointsNum >= numForWin) {
         clearInterval(symbolTimer);
         renderResultGame('green', 'You win!!! :)');
     }
-    if (pointsNum <= 0) {
+    if (pointsNum <= numForLose) {
         clearInterval(symbolTimer);
         renderResultGame('red', 'You lose :(');
     }
 }
 
-function randomNum(min: number, max: number): number {
+function getRandomNumber(min: number, max: number): number {
     let ranNum = Math.floor(Math.random() * (max - min + 1)) + min;
     return ranNum;
 };
 
 function changesUpSphere(randomP: number): void {
-    sphereBlockEl.style.width = points + randomP + 'px';
-    sphereBlockEl.style.height = points + randomP + 'px';
     points += randomP;
+    sphereBlockEl.style.width = points + 'px';
+    sphereBlockEl.style.height = points + 'px';
 }
 
 function changesDownSphere(randomP: number): void {
-    sphereBlockEl.style.width = points - randomP + 'px';
-    sphereBlockEl.style.height = points - randomP + 'px';
     points -= randomP;
+    sphereBlockEl.style.width = points + 'px';
+    sphereBlockEl.style.height = points + 'px';
 }
 
 function renderProgressLine(): void {
     let stepProgress: number = 10;
     let allProgress: number = 100;
+    let processLineInterval: number = 200;
     setInterval(() => {
         if (allProgress >= 0) {
             progressBarBlockEl.style.width = allProgress + '%';
             allProgress -= stepProgress;
             return;
         }
-    }, 200);
+    }, processLineInterval);
 }
 
-let symbolTimer = setInterval(() => {
-    symbolValue = randomGetSymbol(symbols);
-    symbolBlockEl.textContent = symbolValue;
-    renderProgressLine();
-}, interval);
+function timerGame() {
+    symbolTimer = setInterval(() => {
+        symbolValue = getRandomSymbol(symbols);
+        symbolBlockEl.textContent = symbolValue;
+        renderProgressLine();
+
+    }, interval);
+}
 
 function gameProcess(): void {
     document.addEventListener('keydown', (event) => {
         if (event.key.toUpperCase() === symbolValue) {
-            randomPoints = randomNum(5, 10);
+            randomPoints = getRandomNumber(5, 10);
             renderChangePoints('',randomPoints);
             changesUpSphere(randomPoints);
             renderPoints(points);
         }
         if (event.key.toUpperCase() !== symbolValue && !event.shiftKey) {
-            randomPoints = randomNum(20, 25);
+            randomPoints = getRandomNumber(20, 25);
             renderChangePoints('-', randomPoints);
             changesDownSphere(randomPoints);
             renderPoints(points);
@@ -93,6 +100,6 @@ function gameProcess(): void {
     });
 }
 
-
+timerGame();
 renderPoints(points);
 gameProcess();
