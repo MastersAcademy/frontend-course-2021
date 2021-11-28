@@ -1,0 +1,65 @@
+body {
+  overflow-y: scroll;
+}
+
+.page {
+  display: flex;
+  width: 1240px;
+}
+
+.page__top {
+  display: flex;
+  width: 1240px;
+  height: 743px;
+  background-color: #E72B2B;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.page__top_textfield {
+  display: block;
+  margin-right: 500px;
+}
+
+.page__top_textfield-text-big {
+  font-size: 55px;
+  color: #EFF3F3;
+}
+
+.page__top_textfield-text-small {
+  font-size: 20px;
+  color: #EFF3F3;
+}
+
+.page__top-bonik {
+  display: flex;
+  position: absolute;
+  width: 620px;
+  height: 500px;
+}
+
+.page__top_inputfield {
+  display: flex;
+}
+
+.page__top_inputfield-input {
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+  padding-left: 20px;
+  border: #000 2px solid;
+  border-right: none;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.page__top_inputfield-button {
+  width: 150px;
+  height: 56px;
+  font-size: 20px;
+  background-color: #FF9100;
+  border: #000 2px solid;
+  border-left: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
