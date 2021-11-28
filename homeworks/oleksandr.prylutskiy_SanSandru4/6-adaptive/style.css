@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Pragmatica-Bold";
+  font-style: bold;
+  font-weight: 700;
+  src: local("Pragmatica-Bold"),
+    url("/fonts/Pragmatica-Bold.woff2") format("woff2"),
+    url("/fonts/Pragmatica-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pragmatica-Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Pragmatica-Medium"),
+    url("/fonts/Pragmatica-Medium.woff2") format("woff2"),
+    url("/fonts/Pragmatica-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pragmatica-Light";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Pragmatica-Light"),
+    url("/fonts/Pragmatica-Light.woff2") format("woff2"),
+    url("/fonts/Pragmatica-Light.woff") format("woff");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section {
+  width: 1440px;
+  height: auto;
+  border: 1px solid #000;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header__logo {
+  padding-left: 143px;
+  padding-right: 485px;
+}
+
+.header__info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Pragmatica-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #444B51;
+}
+
+.header__info-number-phone {
+  padding-left: 10px;
+}
+
+.header__info_btn {
+  width: 107px;
+  height: 40px;
+  margin-left: 47px;
+  background-color: #E24329;
+  border-radius: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+}
+
+.header__info-language {
+  padding-left: 42px;
+  color: #828282;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+}
+
+.header__info-language-change {
+  padding-left: 10px;
+}
+
+.main {
+  width: 1440px;
+  height: 743px;
+  background-color: #E24329;
+  color: #FFF;
+  font-family: "Pragmatica-Medium", sans-serif;
+  display: flex;
+  flex-direction: row;
+}
+
+.main__process {
+  padding-top: 100px;
+  padding-left: 135px;
+  color: #FFF;
+}
+
+.main__process-head {
+  padding-top: 36px;
+  width: 731px;
+  font-family: "Pragmatica-Bold", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 68px;
+}
+
+.main__process-text {
+  padding-top: 30px;
+  width: 615px;
+  font-family: "Pragmatica-Light";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.main__track-percel_input, .main__track-percel_btn {
+  height: 60px;
+}
+
+.main__track-percel_input {
+  margin-top: 58px;
+  margin-right: -4px;
+  padding-left: 39px;
+  padding-right: 5px;
+  width: 400px;
+  background: #FAFAFA;
+  border: 1px solid #BDBDBD;
+  box-sizing: border-box;
+  border-radius: 30px 0 0 30px;
+  font-size: 18px;
+  color: #BABABA;
+}
+
+.main__track-percel_btn {
+  margin-top: 56px;
+  width: 170px;
+  background: #FF6A00;
+  border: none;
+  border-radius: 0 30px 30px 0;
+  font-family: "Pragmatica-Bold", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  color: #FFF;
+}
+
+.main__process-img {
+  position: relative;
+}
+
+.main__delivery-foto {
+  position: absolute;
+  width: 620px;
+  height: 500px;
+}
