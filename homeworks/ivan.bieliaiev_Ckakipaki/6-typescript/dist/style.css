@@ -1,7 +1,7 @@
 .wrapper {
   border: 1px solid black;
   width: 60%;
-  height: 900px;
+  height: 90vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -14,8 +14,8 @@
 }
 
 .ball {
-  width: 300px;
-  height: 300px;
+  width: 220px;
+  height: 220px;
   background: #345;
   border-radius: 50%;
 }

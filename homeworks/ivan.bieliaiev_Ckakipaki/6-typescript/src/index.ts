@@ -126,6 +126,13 @@ const interval = ():void => {
         changeBallSize('remove')
         renderNewLetter()
         changeScore('not')
+        if (score.currentScore >= 200) {
+            stopGame('win');
+            return true
+        } else if (score.currentScore <= 0) {
+            stopGame('lose');
+            return true
+        }
     }, 2000)
 }
 
