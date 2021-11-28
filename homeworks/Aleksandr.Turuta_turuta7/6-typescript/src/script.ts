@@ -20,8 +20,41 @@ const buttonStopGameEl = document.querySelector<HTMLElement>('[data-button-stop-
 const maingameEl = document.querySelector<HTMLElement>('[data-main]');
 
 const newLetter = (str: string): string => {
-    let randomLetter = (str[Math.floor(Math.random() * str.length)]).toLocaleUpperCase();
-    return randomLetter
+    return (str[Math.floor(Math.random() * str.length)]).toLocaleUpperCase();
+}
+
+const resetCssBackground = () => {
+    maingameEl.classList.remove('background-AAA');
+    maingameEl.classList.remove('background-F5ADAD');
+    maingameEl.classList.remove('background-F8F4C2');
+    maingameEl.classList.remove('background-F8F4C2');
+}
+const ballSizeUpdate = (point: number) => {
+    ballEl.style.width = `${point + BIGBALL}px`
+    ballEl.style.height = `${point + BIGBALL}px`
+}
+
+const decrementNotPressKeyPoints = () => {
+    const decrement = decrement_not_press_key_points()
+    points -= decrement
+    latterValueEl.textContent = `-${decrement}`
+    ballSizeUpdate(points);
+}
+
+const winGame = () => {
+    keystrokeLock = true
+    resetCssBackground();
+    maingameEl.classList.add('background-B6F3B6');
+    textInfoEl.textContent = 'You win Game!'
+    clearInterval(interval)
+}
+
+const lostGame = () => {
+    keystrokeLock = true
+    resetCssBackground();
+    maingameEl.classList.add('background-F5ADAD');
+    textInfoEl.textContent = 'You lost Game!'
+    clearInterval(interval)
 }
 
 const start = (): void => {
@@ -30,16 +63,11 @@ const start = (): void => {
     latterValueEl.textContent = letterForCheck
 
     interval = setInterval(() => {
-        ballBoxEl.style.background = '#AAA'
+        ballBoxEl.classList.add('background-AAA');
         letterForCheck = newLetter(ALPHABET)
         latterValueEl.textContent = letterForCheck
-        if (!keystrokeLock && points > 0 && points < 200) {
-            const decrement = decrement_not_press_key_points()
-            points -= decrement
-            latterValueEl.textContent = `-${decrement}`
-            ballEl.style.width = `${points + BIGBALL}px`
-            ballEl.style.height = `${points + BIGBALL}px`
-        } else if (points > 0 && points < 200) {
+        if (!keystrokeLock && points > 0 && points < 200) decrementNotPressKeyPoints()
+        else if (points > 0 && points < 200) {
             keystrokeLock = false
         }
         textInfoEl.textContent = `${points} points`;
@@ -47,48 +75,43 @@ const start = (): void => {
             latterValueEl.textContent = letterForCheck
         }, 200)
 
-        if (points >= 200) {
-            keystrokeLock = true
-            maingameEl.style.background = '#b6f3b6'
-            textInfoEl.textContent = 'You win Game!'
-            clearInterval(interval)
-        }
-        else if (points <= 0) {
-            keystrokeLock = true
-            maingameEl.style.background = '#f5adad'
-            textInfoEl.textContent = 'You lost Game!'
-            clearInterval(interval)
-        }
+        if (points >= 200) winGame()
+        else if (points <= 0) lostGame()
     }, speedTimeGame);
 }
 
-document.addEventListener('keyup', (letter) => {
-    if (letter.key.toLocaleUpperCase() == letterForCheck && !keystrokeLock && points) {
-        let increment = increment_points()
-        latterValueEl.textContent = `+${increment}`
-        points += increment
-        textInfoEl.textContent = `${points} points`
-        ballBoxEl.style.background = '#07ac15'
-        keystrokeLock = true
-    }
-    else if (!keystrokeLock && points) {
-        let decrement = decrement_points()
-        latterValueEl.textContent = `-${decrement}`
-        points -= decrement
-        textInfoEl.textContent = `${points} points`
-        ballBoxEl.style.background = '#8f0f0f'
-        keystrokeLock = true
-    }
-    ballEl.style.width = `${points + BIGBALL}px`
-    ballEl.style.height = `${points + BIGBALL}px`
-});
+const correctKeyPressed = () => {
+    let increment = increment_points()
+    latterValueEl.textContent = `+${increment}`
+    points += increment
+    textInfoEl.textContent = `${points} points`
+    ballBoxEl.classList.remove('background-box-8F0F0F');
+    ballBoxEl.classList.add('background-box-07AC15');
+    keystrokeLock = true
+}
 
+const errorKeyPressed = () => {
+    let decrement = decrement_points()
+    latterValueEl.textContent = `-${decrement}`
+    points -= decrement
+    textInfoEl.textContent = `${points} points`
+    ballBoxEl.classList.remove('background-box-07AC15');
+    ballBoxEl.classList.add('background-box-8F0F0F');
+    keystrokeLock = true
+}
+
+document.addEventListener('keyup', (letter) => {
+    if (letter.key.toLocaleUpperCase() == letterForCheck && !keystrokeLock && points) correctKeyPressed()
+    else if (!keystrokeLock && points) errorKeyPressed()
+    ballSizeUpdate(points);
+});
 
 buttonNewGameEl.addEventListener('click', () => {
     keystrokeLock = false
     clearInterval(interval)
     points = 100;
-    maingameEl.style.background = '#F8F4C2'
+    resetCssBackground();
+    maingameEl.classList.add('background-F8F4C2');
     start()
 })
 
@@ -96,8 +119,6 @@ buttonStopGameEl.addEventListener('click', () => {
     clearInterval(interval)
     textInfoEl.textContent = 'You lost Game!'
     keystrokeLock = true
-    maingameEl.style.background = '#f5adad'
+    resetCssBackground();
+    maingameEl.classList.add('background-F5ADAD');
 })
-
-
-
