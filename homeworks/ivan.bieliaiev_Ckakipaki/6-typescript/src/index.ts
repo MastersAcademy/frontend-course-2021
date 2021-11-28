@@ -1,170 +1,155 @@
-// const startButtonEl = document.querySelector('[data-start-game]') as HTMLButtonElement
-// const stopButtonEl = document.querySelector('[data-stop-game]') as HTMLButtonElement
-// const restartButtonEl = document.querySelector('[data-restart-game]') as HTMLButtonElement
-const currentScoreEl = document.querySelector('[data-current-score]') as HTMLDivElement
-const bollEl = document.querySelector('[data-boll]') as HTMLDivElement
-const scoreChangerEl = document.querySelector('[data-change-points]') as HTMLDivElement
-// const loaderEl = document.querySelector('[data-loader]') as HTMLDivElement
-const letterEl = document.querySelector('[data-enter-letter]') as HTMLParagraphElement
+let timeOut : ReturnType<typeof setInterval>
 
 interface ICurrentLetter {
     letter: string
-    charCode: number
+    keyCode: number
 }
 
-interface IActionButtons {
-    start: boolean
-    stop: boolean
-    restart: boolean
+interface ICurrentScore {
+    currentScore: number
+    changing: number
 }
 
-interface IBoll {
+interface IBallSize {
     width: number
     height: number
 }
 
-interface IPoints {
-    current: number
-    changePoints: number
+interface IGameStatus {
+    start: boolean
+    stop: boolean
 }
 
-interface IIsKeyDown {
-    keyDown: boolean
+const currentScoreEl = document.querySelector('[data-current-score]') as HTMLDivElement
+const bollEl = document.querySelector('[data-ball]') as HTMLDivElement
+const changinScoreEl = document.querySelector('[data-changing]') as HTMLDivElement
+const currentLetterEl = document.querySelector('[data-current-letter]') as HTMLDivElement
+
+const score: ICurrentScore = {
+    currentScore: 100,
+    changing: 0
 }
 
-const isKeyDownStatus: IIsKeyDown = {
-    keyDown: false
-}
-
-const gameStatus: IActionButtons = {
-    start: false,
-    stop: false,
-    restart: false,
-}
-
-const bollStatus: IBoll = {
-    width: bollEl.offsetWidth,
-    height: bollEl.offsetHeight
-}
-
-const gameScore: IPoints = {
-    current: 100,
-    changePoints: 0,
-}
-
-const currentLetter: ICurrentLetter = {
+const letter: ICurrentLetter = {
     letter: '',
-    charCode: 0
+    keyCode: 0
 }
 
-function correctKeyUp():void {
-    const addPoints: number = Math.floor(Math.random() * (11 - 5) + 5)
-    gameScore.changePoints = addPoints
-    gameScore.current += addPoints
-    currentScoreEl.innerText = String(gameScore.current)
-    scoreChangerEl.innerText = String(`+${gameScore.changePoints}`)
+const bollSize: IBallSize = {
+    width: 300,
+    height:300
 }
 
-function wrongKeyUp(): void {
-    const addPoints: number = Math.floor(Math.random() * (26 - 20) + 20)
-    gameScore.changePoints = -addPoints
-    gameScore.current -= addPoints
-    currentScoreEl.innerText = String(gameScore.current)
-    scoreChangerEl.innerText = String(gameScore.changePoints)
+const gameStatus: IGameStatus = {
+    start: false,
+    stop: false
 }
 
-function notKeyUp():void {
-    const addPoints: number = Math.floor(Math.random() * (16 - 10) + 10)
-    gameScore.changePoints = -addPoints
-    gameScore.current -= addPoints
-    currentScoreEl.innerText = String(gameScore.current)
-    scoreChangerEl.innerText = String(gameScore.changePoints)
+let isKeyUp: boolean = false
+
+const renderNewLetter = (): void =>  {
+    const charCode = Math.floor(Math.random() * (91 - 65) + 65)
+    letter.letter = String.fromCharCode(charCode)
+    letter.keyCode = charCode
+    currentLetterEl.innerText = letter.letter
+    isKeyUp = false
 }
 
-function createNewScore(type: string): void {
+const changeBallSize = (type: string): void => {
+    switch (type) {
+        case 'add':
+            bollSize.width += 20
+            bollSize.height += 20
+            break
+        case 'remove':
+            bollSize.width -= 20
+            bollSize.height -= 20
+            break
+    }
+    bollEl.style.width = `${bollSize.width}px`
+    bollEl.style.height = `${bollSize.height}px`
+    bollEl.style.borderRadius = `50%`
+}
+
+const changeScore = (type: string): void => {
     switch (type) {
         case 'correct':
-            correctKeyUp()
+            changeBallSize('add')
+            let scorePlus: number = Math.floor(Math.random() * (10 - 5) + 5)
+            score.changing = scorePlus
+            score.currentScore += scorePlus
+            changinScoreEl.innerText = `+ ${score.changing}`
+            currentScoreEl.innerText = `${score.currentScore}`
             break
         case 'wrong':
-            wrongKeyUp()
+            changeBallSize('remove')
+            let scoreMinus: number = Math.floor(Math.random() * (25 - 20) + 20)
+            score.changing = scoreMinus
+            score.currentScore -= scoreMinus
+            changinScoreEl.innerText = `- ${score.changing}`
+            currentScoreEl.innerText = `${score.currentScore}`
             break
-        default:
-            notKeyUp()
+        case 'not':
+            let scoreMinusNot: number = Math.floor(Math.random() * (15 - 10) + 10)
+            score.changing = scoreMinusNot
+            score.currentScore -= scoreMinusNot
+            changinScoreEl.innerText = `- ${score.changing}`
+            currentScoreEl.innerText = `${score.currentScore}`
     }
-    if (gameScore.current > 200) {
-        stopGame('win')
-    } else if (gameScore.current <= 0) {
-        stopGame('lose')
-    }
 }
 
-function createNewLetter (): void {
-    const charCodeLetter: number = Math.floor(Math.random() * (91 - 65) + 65)
-    currentLetter.letter = String.fromCharCode(charCodeLetter)
-    currentLetter.charCode = +charCodeLetter
-}
-
-function renderLetter(): void {
-    createNewLetter()
-    isKeyDownStatus.keyDown = false
-    letterEl.innerText = currentLetter.letter
-}
-
-function startGame (): void {
-    gameStatus.start = true
-    currentScoreEl.innerText = String(gameScore.current)
-    currentScoreEl.classList.remove('current__score-win')
-    currentScoreEl.classList.remove('current__score-lose')
-    renderLetter()
-}
-
-function stopGame (type: string): void {
-    gameStatus.start = false
-    gameStatus.stop = true
-    gameStatus.restart = false
-    switch (type){
-        case 'win':
-            currentScoreEl.classList.add('current__score-win')
-            currentScoreEl.classList.remove('current__score-lose')
-            currentScoreEl.innerText = `You won ${gameScore.current} points`
-            break
-        case 'lose':
-            currentScoreEl.classList.remove('current__score-win')
-            currentScoreEl.classList.add('current__score-lose')
-            currentScoreEl.innerText = `You lose`
-            break
-    }
-    letterEl.innerText = ''
-    scoreChangerEl.innerText = ''
-    gameScore.current = 100
-    gameScore.changePoints = 0
-}
-
-document.addEventListener('keydown', (e) => {
-    if(gameStatus.start) {
-        if (e.keyCode === currentLetter.charCode) {
-            scoreChangerEl.classList.add('changer__points-wrong')
-            scoreChangerEl.classList.add('changer__points-correct')
-            createNewScore('correct')
+addEventListener('keydown', (e) => {
+    if (gameStatus.start) {
+        isKeyUp = true
+        e.preventDefault()
+        if (letter.keyCode === e.keyCode) {
+            console.log('correct')
+            changeScore('correct')
         } else {
-            scoreChangerEl.classList.add('changer__points-wrong')
-            scoreChangerEl.classList.remove('changer__points-correct')
-            createNewScore('wrong')
+            changeScore('wrong')
         }
-        renderLetter()
+        renderNewLetter()
+        clearTimeout(timeOut)
+        if (score.currentScore >= 200) {
+            stopGame('win');
+            return true
+        } else if (score.currentScore <= 0) {
+            stopGame('lose');
+            return true
+        }
+        interval()
     }
 })
 
-function init():void {
-    startGame()
+const interval = ():void => {
+    timeOut = setInterval(() => {
+        changeBallSize('remove')
+        renderNewLetter()
+        changeScore('not')
+    }, 2000)
 }
 
-init()
+const startGame =  (): void => {
+    gameStatus.start = true
+    gameStatus.stop = false
+    renderNewLetter()
+    interval()
+}
 
-// startButtonEl.addEventListener('click', () => {
-//     if (!gameStatus.start) {
-//         startGame()
-//     }
-// })
+startGame()
 
+const stopGame = (type: string): void => {
+    gameStatus.start = false
+    gameStatus.stop = true
+    clearTimeout(timeOut)
+    changinScoreEl.innerText = ''
+    switch (type) {
+        case 'win':
+            currentScoreEl.innerText = `You win ${score.currentScore} points`
+            score.currentScore = 100
+            break
+        case 'lose':
+            currentScoreEl.innerText = 'You lose'
+            break
+    }
+}
