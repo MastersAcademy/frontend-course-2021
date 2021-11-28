@@ -6,7 +6,6 @@ class Game {
     private currentKey: string = '';
     private score: number = 100;
     private timer: number = 0;
-    public sessionScores: number[] = [];
 
     constructor(
         private currentKeyElement: HTMLSpanElement,
@@ -14,34 +13,7 @@ class Game {
         private roundScoreElement: HTMLDivElement,
         private balloonElement: HTMLDivElement,
         private progressElement: HTMLDivElement,
-        private recordsTemplate: HTMLTemplateElement,
-        private recordsList: HTMLDListElement,
     ) { }
-
-    private getBestGameScores(): number[] {
-        const sorted: number[] = this.sessionScores.sort((x, y) => y - x);
-        const bestTenGames: number[] = sorted.slice(0, 10);
-        return bestTenGames;
-    }
-
-    private addListElement(element: HTMLElement, container: HTMLElement): void {
-        container.append(element);
-    }
-
-    private generateListElement(scoreValue: number): HTMLElement {
-        const content = this.recordsTemplate.content.cloneNode(true);
-        const listElement: any = (<HTMLElement>content).querySelector('[data-template-records-item]');
-        listElement.textContent = scoreValue;
-        return listElement;
-    }
-
-    public renderScores() {
-        const scores = this.getBestGameScores();
-        scores.forEach(score => {
-            const listElement = this.generateListElement(score);
-            this.addListElement(listElement, this.recordsList);
-        });
-    }
 
     private getRandomLetterPosition(letterString: string): number {
         return Math.floor(Math.random() * letterString.length);
@@ -106,7 +78,6 @@ class Game {
 
         if(this.score >= 200) {
             this.renderEndGame('You won!');
-            this.sessionScores.push(this.score);
         }
     }
 
@@ -186,7 +157,6 @@ class Game {
         this.start();
         this.setTimer();
         this.setRandomKey();
-        this.renderScores();
     }
 
     public buttonEnd(): void {
@@ -212,11 +182,8 @@ const roundScoreElement = document.querySelector('[data-round-score]') as HTMLDi
 const balloonElement = document.querySelector('[data-balloon-item]') as HTMLDivElement;
 const progressElement = document.querySelector('[data-progress]') as HTMLDivElement;
 const buttonsContainerElement = document.querySelector('[data-buttons-container]') as HTMLDivElement;
-const recordsTemplate = document.querySelector('[data-templace-records]') as HTMLTemplateElement;
-const recordsList = document.querySelector('[data-records-list]') as HTMLDListElement;
 
-
-const game = new Game(currentKeyElement, totalScoreElement, roundScoreElement, balloonElement, progressElement, recordsTemplate, recordsList);
+const game = new Game(currentKeyElement, totalScoreElement, roundScoreElement, balloonElement, progressElement);
 game.start();
 
 
