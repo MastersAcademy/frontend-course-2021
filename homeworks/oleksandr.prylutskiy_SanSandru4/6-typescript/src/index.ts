@@ -6,13 +6,14 @@ const headerBlockEl: HTMLElement = document.querySelector('[data-attr-header]');
 const headerTextEl: HTMLElement = document.querySelector('[data-attr-header-text]');
 const changePointsBlockEl: HTMLElement = document.querySelector('[data-attr-change]');
 const progressBarBlockEl: HTMLElement = document.querySelector('[data-attr-progress]');
-const numForWin: number = 200;
-const numForLose: number = 0;
+const WIN_NUMBER: number = 200;
+const LOSE_NUMBER: number = 0;
 let symbols: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 let symbolValue: string = '';
 let randomPoints: number;
-let interval: number = 2000;
 let symbolTimer: NodeJS.Timer;
+let processBar: NodeJS.Timer;
+let push: boolean = false;
 
 function renderPoints(num: number): void {
     pointsBlockEl.textContent = `${num}`;
@@ -33,11 +34,11 @@ function renderChangePoints(symbol: string, num: number): void {
 }
 
 function winnerOrLoser(pointsNum: number): void {
-    if (pointsNum >= numForWin) {
+    if (pointsNum >= WIN_NUMBER) {
         clearInterval(symbolTimer);
         renderResultGame('green', 'You win!!! :)');
     }
-    if (pointsNum <= numForLose) {
+    if (pointsNum <= LOSE_NUMBER) {
         clearInterval(symbolTimer);
         renderResultGame('red', 'You lose :(');
     }
@@ -48,14 +49,7 @@ function getRandomNumber(min: number, max: number): number {
     return ranNum;
 };
 
-function changesUpSphere(randomP: number): void {
-    points += randomP;
-    sphereBlockEl.style.width = points + 'px';
-    sphereBlockEl.style.height = points + 'px';
-}
-
-function changesDownSphere(randomP: number): void {
-    points -= randomP;
+function changesSphere(): void {
     sphereBlockEl.style.width = points + 'px';
     sphereBlockEl.style.height = points + 'px';
 }
@@ -64,7 +58,7 @@ function renderProgressLine(): void {
     let stepProgress: number = 10;
     let allProgress: number = 100;
     let processLineInterval: number = 200;
-    setInterval(() => {
+    processBar = setInterval(() => {
         if (allProgress >= 0) {
             progressBarBlockEl.style.width = allProgress + '%';
             allProgress -= stepProgress;
@@ -73,31 +67,54 @@ function renderProgressLine(): void {
     }, processLineInterval);
 }
 
-function timerGame() {
-    symbolTimer = setInterval(() => {
-        symbolValue = getRandomSymbol(symbols);
-        symbolBlockEl.textContent = symbolValue;
-        renderProgressLine();
+function resetInterval() {
+    clearInterval(symbolTimer);
+    timerGame();
+}
 
-    }, interval);
+function noPushButton(): void {
+    randomPoints = getRandomNumber(15, 20);
+    renderChangePoints('-', randomPoints);
+    points -= randomPoints;
+    changesSphere();
+    renderPoints(points);
+    winnerOrLoser(points);
+    resetInterval();
 }
 
 function gameProcess(): void {
     document.addEventListener('keydown', (event) => {
+        push = true;
         if (event.key.toUpperCase() === symbolValue) {
             randomPoints = getRandomNumber(5, 10);
-            renderChangePoints('',randomPoints);
-            changesUpSphere(randomPoints);
+            renderChangePoints('+', randomPoints);
+            points += randomPoints;
+            changesSphere();
             renderPoints(points);
         }
         if (event.key.toUpperCase() !== symbolValue && !event.shiftKey) {
             randomPoints = getRandomNumber(20, 25);
             renderChangePoints('-', randomPoints);
-            changesDownSphere(randomPoints);
+            points -= randomPoints;
+            changesSphere();
             renderPoints(points);
         }
         winnerOrLoser(points);
     });
+    if (push === true) {
+        resetInterval();
+    }
+}
+
+function timerGame() {
+    symbolTimer = setInterval(() => {
+        symbolValue = getRandomSymbol(symbols);
+        symbolBlockEl.textContent = symbolValue;
+        renderProgressLine();
+        if (push !== true) {
+            noPushButton();
+        }
+    }, 2000);
 }
 
 timerGame();
