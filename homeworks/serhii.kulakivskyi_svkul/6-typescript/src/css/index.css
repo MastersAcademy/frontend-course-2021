@@ -58,88 +58,6 @@ body {
   font-weight: 400;
 }
 
-.header {
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 3px solid;
-}
-
-.header__title {
-  margin: 0;
-}
-
-.header__title::first-letter {
-  color: var(--logo-color);
-}
-
-.game__wrapper {
-  padding-top: 1rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--game-background-color);
-  border-bottom-right-radius: 45px;
-  border-bottom-left-radius: 45px;
-  box-shadow: 0 2px 6px var(--game-box-shadow-color);
-}
-
-.info-wrapper {
-  padding: 1rem;
-}
-
-.controls {
-  display: flex;
-  justify-content: center;
-  gap: 1rem
-}
-
-.content {
-  display: flex;
-  justify-content: center;
-}
-
-.balloon {
-  width: 200px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.content.content--win .balloon {
-  background-image: url("../assets/images/win.png");
-  background-size: cover;
-}
-
-.content.content--lose .balloon {
-  background-image: url("../assets/images/lose.png");
-  background-size: cover;
-}
-
-.balloon__item {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(#E66465, #9198E5);
-  border-radius: 50%;
-  font-weight: 700;
-  transition: width .3s, height .3s;
-}
-
-.char {
-  font-size: 2rem;
-  text-align: center;
-}
-
-.score {
-  margin: 0;
-  font-size: 3rem;
-  text-align: center;
-}
-
 .button {
   min-width: 150px;
   padding: .5rem 1rem;
@@ -165,11 +83,93 @@ body {
   cursor: not-allowed;
 }
 
+.header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid;
+}
+
+.header__title {
+  margin: 0;
+}
+
+.header__title::first-letter {
+  color: var(--logo-color);
+}
+
+.header__controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem
+}
+
+.game__wrapper {
+  padding-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--game-background-color);
+  border-bottom-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  box-shadow: 0 2px 6px var(--game-box-shadow-color);
+}
+
+.game__info {
+  padding: 1rem;
+}
+
+.js-game__content {
+  display: flex;
+  justify-content: center;
+}
+
+.game__balloon {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game__balloon-item {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(#E66465, #9198E5);
+  border-radius: 50%;
+  font-weight: 700;
+  transition: width .3s, height .3s;
+}
+
+.js-game__content.js-game__content--win .game__balloon {
+  background-image: url("../assets/images/win.png");
+  background-size: cover;
+}
+
+.js-game__content.js-game__content--lose .game__balloon {
+  background-image: url("../assets/images/lose.png");
+  background-size: cover;
+}
+
+.game__char {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.game__info-score {
+  margin: 0;
+  font-size: 3rem;
+  text-align: center;
+}
+
 .footer {
   padding: 0 1rem 1rem;
 }
 
-.progress-bar {
+.js-game__progress-bar {
   height: 20px;
   width: 100%;
   margin-bottom: 1rem;
@@ -179,11 +179,11 @@ body {
   background-color: var(--progress-bar-background-color);
 }
 
-.progress-bar.progress-bar--active {
+.js-game__progress-bar.js-game__progress-bar--active {
   display: block;
 }
 
-.progress-bar__line {
+.js-game__progress-bar-line {
   width: 100%;
   height: 20px;
   background-color: var(--progress-bar-line-background-color);
@@ -202,12 +202,12 @@ body {
   overflow-y: auto;
 }
 
-.scores__item {
+.js-scores__item {
   margin-bottom: .5rem;
   padding: 1rem;
   background-color: var(--scores-background-color);
 }
 
-.scores__item:last-child {
+.js-scores__item:last-child {
   margin-bottom: 0;
 }

@@ -14,36 +14,34 @@
         <header class="header">
             <h1 class="header__title">TypIngGaMe</h1>
 
-            <div class="controls">
+            <div class="header__controls">
                 <button class="button button--main" data-init type="button">Start</button>
                 <button class="button button--main" data-restart type="button">Restart</button>
             </div>
         </header>
 
         <section class="game__wrapper">
-            <header class="info-wrapper">
-                <p class="score" data-score>Are you ready?</p>
+            <header class="game__info">
+                <p class="game__info-score" data-score>Are you ready?</p>
             </header>
 
-            <main class="content" data-content>
-                <div class="balloon">
-                    <div class="balloon__item" data-balloon></div>
+            <main class="js-game__content" data-content>
+                <div class="game__balloon">
+                    <div class="game__balloon-item" data-balloon></div>
                 </div>
             </main>
 
             <footer class="footer">
-                <div>
-                    <p class="char" data-char></p>
-                </div>
+                <p class="game__char" data-char></p>
 
-                <div class="progress-bar" data-progress-wrapper>
-                    <div class="progress-bar__line" data-progress-bar></div>
+                <div class="js-game__progress-bar" data-progress-wrapper>
+                    <div class="js-game__progress-bar-line" data-progress-bar></div>
                 </div>
             </footer>
         </section>
 
         <section class="scores__wrapper">
-            <h2>Top 10 best game scores:</h2>
+            <h2 class="scores__title">Top 10 best game scores:</h2>
 
             <ul class="scores__list" data-scores-list>
                 <li class="scores__item">Empty...</li>

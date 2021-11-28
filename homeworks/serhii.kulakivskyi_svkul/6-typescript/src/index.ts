@@ -71,8 +71,8 @@ import "./css/index.css";
                 this.removeScoreTimer();
             }
 
-            this.progressBarWrapperEl.classList.add('progress-bar--active');
-            this.balloonContentEl.className = 'content';
+            this.progressBarWrapperEl.classList.add('js-game__progress-bar--active');
+            this.balloonContentEl.className = 'js-game__content';
             this.setBallonSize(GameSettings.SCORE);
             this.scoreEl.innerText = `Your score: ${GameSettings.SCORE}`;
             this.score = GameSettings.SCORE;
@@ -101,7 +101,7 @@ import "./css/index.css";
             this.removeHandlers();
             this.setBallonSize(0);
             this.balloonEl.innerText = '';
-            this.progressBarWrapperEl.classList.remove('progress-bar--active');
+            this.progressBarWrapperEl.classList.remove('js-game__progress-bar--active');
             this.removeScoreTimer();
         }
 
@@ -210,7 +210,7 @@ import "./css/index.css";
 
         setResult(status: GameStatus.LOSE | GameStatus.WIN) {
             if (status === GameStatus.WIN) {
-                this.balloonContentEl.className = 'content content--win';
+                this.balloonContentEl.className = 'js-game__content js-game__content--win';
                 this.scoreEl.innerText = 'You win';
                 this.buttonInitEl.innerText = GameStatus.START;
                 this.charEl.innerText = '🧠🦾🏆👏🏻';
@@ -220,7 +220,7 @@ import "./css/index.css";
             }
 
             if (status === GameStatus.LOSE) {
-                this.balloonContentEl.className = 'content content--lose';
+                this.balloonContentEl.className = 'js-game__content js-game__content--lose';
                 this.scoreEl.innerText = 'You lose';
                 this.buttonInitEl.innerText = GameStatus.START;
                 this.charEl.innerText = '🥲👨🏼‍🦯🤦🏼‍♂️🫂';
@@ -235,7 +235,7 @@ import "./css/index.css";
 
                 bestScores.forEach(el => {
                     const listItem: HTMLElement = document.createElement('li');
-                    listItem.className = 'scores__item';
+                    listItem.className = 'js-scores__item';
                     listItem.innerText = el + 's';
 
                     fragment.appendChild(listItem)
