@@ -11,7 +11,7 @@ const LOSE_NUMBER: number = 0;
 let symbols: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 let symbolValue: string = '';
 let randomPoints: number;
-let symbolTimer: NodeJS.Timer;
+let timer: number;
 let processBar: NodeJS.Timer;
 let push: boolean = false;
 
@@ -35,12 +35,15 @@ function renderChangePoints(symbol: string, num: number): void {
 
 function winnerOrLoser(pointsNum: number): void {
     if (pointsNum >= WIN_NUMBER) {
-        clearInterval(symbolTimer);
+        resetTimer();
         renderResultGame('green', 'You win!!! :)');
     }
     if (pointsNum <= LOSE_NUMBER) {
-        clearInterval(symbolTimer);
+        resetTimer();
         renderResultGame('red', 'You lose :(');
+    }
+    if (pointsNum < WIN_NUMBER && pointsNum > LOSE_NUMBER) {
+        timerGame();
     }
 }
 
@@ -57,19 +60,17 @@ function changesSphere(): void {
 function renderProgressLine(): void {
     let stepProgress: number = 10;
     let allProgress: number = 100;
-    let processLineInterval: number = 200;
     processBar = setInterval(() => {
         if (allProgress >= 0) {
             progressBarBlockEl.style.width = allProgress + '%';
             allProgress -= stepProgress;
             return;
         }
-    }, processLineInterval);
+    }, 180);
 }
 
-function resetInterval() {
-    clearInterval(symbolTimer);
-    timerGame();
+function resetTimer() {
+    clearTimeout(timer);
 }
 
 function noPushButton(): void {
@@ -79,44 +80,35 @@ function noPushButton(): void {
     changesSphere();
     renderPoints(points);
     winnerOrLoser(points);
-    resetInterval();
 }
 
-function gameProcess(): void {
-    document.addEventListener('keydown', (event) => {
-        push = true;
-        if (event.key.toUpperCase() === symbolValue) {
-            randomPoints = getRandomNumber(5, 10);
-            renderChangePoints('+', randomPoints);
-            points += randomPoints;
-            changesSphere();
-            renderPoints(points);
-        }
-        if (event.key.toUpperCase() !== symbolValue && !event.shiftKey) {
-            randomPoints = getRandomNumber(20, 25);
-            renderChangePoints('-', randomPoints);
-            points -= randomPoints;
-            changesSphere();
-            renderPoints(points);
-        }
-        winnerOrLoser(points);
-    });
-    if (push === true) {
-        resetInterval();
-    }
-}
-
-function timerGame() {
-    symbolTimer = setInterval(() => {
-        symbolValue = getRandomSymbol(symbols);
-        symbolBlockEl.textContent = symbolValue;
-        renderProgressLine();
-        if (push !== true) {
-            noPushButton();
-        }
+function timerGame(): void {
+    symbolValue = getRandomSymbol(symbols);
+    symbolBlockEl.textContent = symbolValue;
+    renderProgressLine();
+    timer = window.setTimeout(() => {
+        noPushButton();
     }, 2000);
 }
 
+document.addEventListener('keydown', (event) => {
+    resetTimer();
+    if (event.key.toUpperCase() === symbolValue) {
+        randomPoints = getRandomNumber(5, 10);
+        renderChangePoints('+', randomPoints);
+        points += randomPoints;
+        changesSphere();
+        renderPoints(points);
+    }
+    if (event.key.toUpperCase() !== symbolValue && !event.shiftKey) {
+        randomPoints = getRandomNumber(20, 25);
+        renderChangePoints('-', randomPoints);
+        points -= randomPoints;
+        changesSphere();
+        renderPoints(points);
+    }
+    winnerOrLoser(points);
+});
+
 timerGame();
 renderPoints(points);
-gameProcess();
