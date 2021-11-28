@@ -105,26 +105,26 @@ html {
   background: #FF4848;
 }
 
-.background-AAA {
+.background__box-letter {
   background: #AAA;
 }
 
-.background-B6F3B6 {
+.background__win-menu {
   background: #B6F3B6;
 }
 
-.background-F5ADAD {
+.background__lost-menu {
   background: #F5ADAD;
 }
 
-.background-F8F4C2 {
+.background__start-menu {
   background: #F8F4C2;
 }
 
-.background-box-07AC15 {
+.background__box-letter-win {
   background: #07AC15;
 }
 
-.background-box-8F0F0F {
+.background-box-letter-lost {
   background: #8F0F0F;
 }

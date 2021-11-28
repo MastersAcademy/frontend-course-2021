@@ -1,9 +1,7 @@
 const ALPHABET: string = "abcdefghijklmnopqrstuvwxyz";
-const BIGBALL = 50;
+const BIGBALLSIZE = 50;
 
-const decrement_not_press_key_points = (min: number = 20, max: number = 25): number => Math.round(Math.random() * (max - min) + min);
-const decrement_points = (min: number = 20, max: number = 25): number => Math.round(Math.random() * (max - min) + min);
-const increment_points = (min: number = 5, max: number = 10): number => Math.round(Math.random() * (max - min) + min);
+const ramdomPoint = (min: number = 1, max: number = 2): number => Math.round(Math.random() * (max - min) + min);
 
 let speedTimeGame: number = 2000;
 let points: number = 100;
@@ -24,36 +22,28 @@ const newLetter = (str: string): string => {
 }
 
 const resetCssBackground = () => {
-    maingameEl.classList.remove('background-AAA');
-    maingameEl.classList.remove('background-F5ADAD');
-    maingameEl.classList.remove('background-F8F4C2');
-    maingameEl.classList.remove('background-F8F4C2');
+    maingameEl.classList.remove('background__box-letter');
+    maingameEl.classList.remove('background__lost-menu');
+    maingameEl.classList.remove('background__start-menu');
+    maingameEl.classList.remove('background__win-menu');
 }
 const ballSizeUpdate = (point: number) => {
-    ballEl.style.width = `${point + BIGBALL}px`
-    ballEl.style.height = `${point + BIGBALL}px`
+    ballEl.style.width = `${point + BIGBALLSIZE}px`
+    ballEl.style.height = `${point + BIGBALLSIZE}px`
 }
 
 const decrementNotPressKeyPoints = () => {
-    const decrement = decrement_not_press_key_points()
+    const decrement = ramdomPoint(10, 15)
     points -= decrement
     latterValueEl.textContent = `-${decrement}`
     ballSizeUpdate(points);
 }
 
-const winGame = () => {
+const endGameStatus = (textStatus: string, classBackground: string) => {
     keystrokeLock = true
     resetCssBackground();
-    maingameEl.classList.add('background-B6F3B6');
-    textInfoEl.textContent = 'You win Game!'
-    clearInterval(interval)
-}
-
-const lostGame = () => {
-    keystrokeLock = true
-    resetCssBackground();
-    maingameEl.classList.add('background-F5ADAD');
-    textInfoEl.textContent = 'You lost Game!'
+    maingameEl.classList.add(classBackground);
+    textInfoEl.textContent = textStatus
     clearInterval(interval)
 }
 
@@ -61,9 +51,9 @@ const start = (): void => {
     textInfoEl.textContent = `${points} points`
     letterForCheck = newLetter(ALPHABET)
     latterValueEl.textContent = letterForCheck
+    ballBoxEl.classList.add('background__box-letter');
 
     interval = setInterval(() => {
-        ballBoxEl.classList.add('background-AAA');
         letterForCheck = newLetter(ALPHABET)
         latterValueEl.textContent = letterForCheck
         if (!keystrokeLock && points > 0 && points < 200) decrementNotPressKeyPoints()
@@ -75,28 +65,28 @@ const start = (): void => {
             latterValueEl.textContent = letterForCheck
         }, 200)
 
-        if (points >= 200) winGame()
-        else if (points <= 0) lostGame()
+        if (points >= 200) endGameStatus('You win Game!', 'background__win-menu')
+        else if (points <= 0) endGameStatus('You lost Game!', 'background__lost-menu')
     }, speedTimeGame);
 }
 
 const correctKeyPressed = () => {
-    let increment = increment_points()
+    let increment = ramdomPoint(5, 10)
     latterValueEl.textContent = `+${increment}`
     points += increment
     textInfoEl.textContent = `${points} points`
-    ballBoxEl.classList.remove('background-box-8F0F0F');
-    ballBoxEl.classList.add('background-box-07AC15');
+    ballBoxEl.classList.remove('background-box-letter-lost');
+    ballBoxEl.classList.add('background__box-letter-win');
     keystrokeLock = true
 }
 
 const errorKeyPressed = () => {
-    let decrement = decrement_points()
+    let decrement = ramdomPoint(20, 25)
     latterValueEl.textContent = `-${decrement}`
     points -= decrement
     textInfoEl.textContent = `${points} points`
-    ballBoxEl.classList.remove('background-box-07AC15');
-    ballBoxEl.classList.add('background-box-8F0F0F');
+    ballBoxEl.classList.remove('background__box-letter');
+    ballBoxEl.classList.add('background-box-letter-lost');
     keystrokeLock = true
 }
 
@@ -111,7 +101,7 @@ buttonNewGameEl.addEventListener('click', () => {
     clearInterval(interval)
     points = 100;
     resetCssBackground();
-    maingameEl.classList.add('background-F8F4C2');
+    maingameEl.classList.add('background__start-menu');
     start()
 })
 
@@ -120,5 +110,5 @@ buttonStopGameEl.addEventListener('click', () => {
     textInfoEl.textContent = 'You lost Game!'
     keystrokeLock = true
     resetCssBackground();
-    maingameEl.classList.add('background-F5ADAD');
+    maingameEl.classList.add('background__lost-menu');
 })
