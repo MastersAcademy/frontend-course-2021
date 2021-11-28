@@ -12,13 +12,13 @@ let time: number;
 totalScoreEl.textContent = '100';
 currentScoreEl.textContent = '0';
 
-function getRandom(min: number, max: number) {
+function getRandom(min: number, max: number): number {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function getLetter() {
+function getLetter(): void {
     someLetter = String.fromCharCode(getRandom(65, 90));
     currentLetterEl.innerText = someLetter;
     time = window.setTimeout(() => {
@@ -26,14 +26,24 @@ function getLetter() {
         currentScoreEl.innerText = '-' + points;
         score = score - points;
         totalScoreEl.innerText = `${score}`;
-        if (score > 0) {
-            getLetter();
-        } else {
-            clearTimeout(time);
-            currentScoreEl.innerText = 'Lose';
-            totalScoreEl.innerText = '0';
-        }
+        checkStatusGame();
     }, 2000)
+}
+
+function checkStatusGame(): void {
+    if (score >= 200) {
+        clearTimeout(time);
+        currentScoreEl.innerText = 'Win';
+        totalScoreEl.innerText = '200';
+    }
+    if (score <= 0) {
+        clearTimeout(time);
+        currentScoreEl.innerText = 'Lose';
+        totalScoreEl.innerText = '0';
+    }
+    if ((score < 200) && (score > 0)) {
+        getLetter()
+    }
 }
 
 document.addEventListener('keypress', (e) => {
@@ -50,21 +60,7 @@ document.addEventListener('keypress', (e) => {
         totalScoreEl.innerText = `${score}`;
         currentScoreEl.innerText = '-' + points;
     }
-    if (score >= 200) {
-        clearTimeout(time);
-        currentScoreEl.innerText = 'Win';
-        totalScoreEl.innerText = '200';
-    }
-    if (score <= 0) {
-        clearTimeout(time);
-        currentScoreEl.innerText = 'Lose';
-        totalScoreEl.innerText = '0';
-    }
-    if ((score < 200) && (score > 0)) {
-        getLetter()
-    }
+    checkStatusGame();
 })
 
 getLetter()
-
-
