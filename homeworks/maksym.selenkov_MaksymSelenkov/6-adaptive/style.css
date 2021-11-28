@@ -162,7 +162,148 @@
   top: 160px;
 }
 
+.section__heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__title {
+  max-width: 358px;
+  max-height: 48px;
+  font-family: Pragmatica, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  text-align: center;
+  color: #444B51;
+}
+
+.section__text {
+  max-width: 615px;
+  max-height: 52px;
+  font-family: Pragmatica, serif;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 144%;
+  text-align: center;
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 135px;
+}
+
+.card {
+  max-width: 330px;
+  max-height: 260px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.card01 {
+  background-color: #FFF3EB;
+}
+
+.card02 {
+  background-color: #ECEDFF;
+}
+
+.card03 {
+  background-color: #FFECF1;
+}
+
+.card04 {
+  background-color: #F6F6F6;
+}
+
+.card05 {
+  background-color: #FFFAEC;
+}
+
+.card06 {
+  background-color: #FFF3EB;
+}
+
+.card07 {
+  background-color: #EEFFF3;
+}
+
+.card08 {
+  background-color: #FFECF1;
+}
+
+.card09 {
+  background-color: #ECEDFF;
+}
+
+.apply {
+  max-width: 1170px;
+  max-height: 520px;
+  margin: 0 135px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.apply__picture {
+  position: absolute;
+  max-width: 645px;
+  width: 100%;
+  max-height: 520px;
+  height: 100%;
+  left: 22px;
+  top: 60px;
+}
+
+.apply__heading {
+  max-width: 475px;
+}
+
+.news {
+  margin: 400px 135px 250px;
+}
+
+.news__heading {
+  margin-bottom: 150px;
+}
+
+.news__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.article {
+  width: 100%;
+  max-width: 370px;
+  height: 100%;
+  max-height: 300px;
+}
+
+.under-picture {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.clients {
+  margin: 0 135px;
+}
+
+.clients__logo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
