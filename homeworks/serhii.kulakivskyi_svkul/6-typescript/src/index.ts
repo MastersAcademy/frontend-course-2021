@@ -14,6 +14,10 @@ import "./css/index.css";
         LOSE = 'Lose'
     }
 
+    enum GameSettings {
+        SCORE = 100
+    }
+
     class CharGame {
         buttonInitEl: HTMLButtonElement
         balloonContentEl: HTMLElement
@@ -49,7 +53,7 @@ import "./css/index.css";
             this.progressBarEl = progressBarEl;
             this.progressBarWrapperEl = progressBarWrapperEl;
             this.scoresListEl = scoresListEl;
-            this.score = 100;
+            this.score = GameSettings.SCORE;
             this.currentChar = '';
             this.keyHandlerSourse$ = null;
             this.timer$ = null;
@@ -59,12 +63,21 @@ import "./css/index.css";
         }
 
         resetData() {
+            if(this.keyHandlerSourse$ || this.timer$) {
+                this.removeHandlers();
+            }
+
+            if(this.gameTimer$) {
+                this.removeScoreTimer();
+            }
+
             this.progressBarWrapperEl.classList.add('progress-bar--active');
             this.balloonContentEl.className = 'content';
-            this.setBallonSize(100);
-            this.scoreEl.innerText = 'Your score: 100';
-            this.score = 100;
+            this.setBallonSize(GameSettings.SCORE);
+            this.scoreEl.innerText = `Your score: ${GameSettings.SCORE}`;
+            this.score = GameSettings.SCORE;
             this.gameTime = 0;
+            this.balloonEl.innerText = '';
             this.buttonInitEl.innerText = GameStatus.END;
         }
 
@@ -72,14 +85,7 @@ import "./css/index.css";
             this.resetData();
             this.setCurrentChar();
             this.addHandlers();
-
-            this.gameTimer$ = interval(1000)
-            .pipe(
-                map((step: number) => step + 1),
-                tap(() => {
-                    this.gameTime += 1;
-                })
-            ).subscribe();
+            this.addScoreTimer();
         }
 
         endInterval() {
@@ -94,8 +100,9 @@ import "./css/index.css";
         endGame() {
             this.removeHandlers();
             this.setBallonSize(0);
+            this.balloonEl.innerText = '';
             this.progressBarWrapperEl.classList.remove('progress-bar--active');
-            this.gameTimer$.unsubscribe();
+            this.removeScoreTimer();
         }
 
         addHandlers() {
@@ -134,6 +141,20 @@ import "./css/index.css";
                 ).subscribe();
         }
 
+        addScoreTimer() {
+            this.gameTimer$ = interval(1000)
+            .pipe(
+                map((step: number) => step + 1),
+                tap(() => {
+                    this.gameTime += 1;
+                })
+            ).subscribe();
+        }
+
+        removeScoreTimer() {
+            this.gameTimer$.unsubscribe();
+        }
+
         removeHandlers() {
             this.keyHandlerSourse$.unsubscribe();
             this.timer$.unsubscribe();
@@ -159,18 +180,16 @@ import "./css/index.css";
         }
 
         updateBallonEl(val: number) {
+            const scoreType = val > 0 ? '+' : '';
             const currentWidth = parseInt(this.balloonEl.style.width);
 
-            if (this.score >= 200) {
-                this.setBallonSize(0)
+            if (this.score >= 200 || this.score <= 0) {
+                this.setBallonSize(0);
+                this.balloonEl.innerText = '';
                 return;
             }
 
-            if ( this.score <= 0) {
-                this.setBallonSize(0)
-                return;
-            }
-
+            this.balloonEl.innerText = `${scoreType} ${val}`;
             this.setBallonSize(val, currentWidth);
         }
 
