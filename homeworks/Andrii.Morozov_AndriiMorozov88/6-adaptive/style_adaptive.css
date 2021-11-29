@@ -12,17 +12,17 @@ body {
   width: 1240px;
   height: 700px;
   background-color: #E72B2B;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .page__track_textfield {
   display: block;
-  margin-right: 500px;
+  margin-left: 100px;
 }
 
 .page__track_textfield-text-big {
-  font-size: 55px;
+  font-size: 45px;
   color: #EFF3F3;
 }
 
@@ -32,7 +32,6 @@ body {
 }
 
 .page__bonik {
-  position: absolute;
   width: 620px;
   height: 500px;
 }
@@ -107,13 +106,12 @@ body {
   width: 1240px;
   height: 600px;
   margin-top: 300px;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .page__apply-aside {
   display: block;
-  margin-left: 650px;
 }
 
 .page__apply-aside-lines {
