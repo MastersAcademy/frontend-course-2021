@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.button {
+  border: 0;
+  background: 0;
+  font-size: 1rem;
+}
+
+.button--action {
+  background-color: rgba(226, 67, 41, 1);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  padding: .5rem 1.25rem;
+  border-radius: 25px;
+}
+
+.main-header {
+  padding: 1rem;
+}
+
+.main-header__container {
+  display: flex;
+  align-items: center;
+}
+
+.main-header__tel {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.main-header__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-header__icon {
+  margin-right: .5rem;
+}
+
+.button--sign-in {
+  margin-right: 2rem;
+}
+
+.button--language-switcher {
+  display: flex;
+  align-items: center;
+}
+
+.button__icon {
+  margin-right: .5rem;
+}
