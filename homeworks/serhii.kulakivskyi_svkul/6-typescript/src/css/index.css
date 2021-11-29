@@ -1,0 +1,213 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* consts */
+  --color-transparent: transparent;
+  --color-black: #000;
+  --color-white: #FFF;
+  --color-white-10: #FFF7F7;
+  --color-blue-10: #E4EFFE;
+  --color-red-10: #FF726C;
+  --color-red-15: #B53F3F;
+  --color-green-10: #6DE592;
+  --color-green-15: #00A03E;
+  --color-grey-10: #F6F5FB;
+  --color-grey-15: #FEFEFF;
+  --color-grey-16: #F7F6FB;
+  --color-grey-25: #C9BDBD;
+  --color-grey-90: #313131;
+  --color-black-rgb-025: rgb(0 0 0 / 025%);
+  --color-black-rgb-18: rgb(0 0 0 / 18%);
+  --color-black-rgb-05: rgb(0 0 0 / 05%);
+  --color-black-rgb-0_06: rgb(0 0 0 / .06%);
+
+  /* font */
+  --font-color-1: var(--color-grey-90);
+
+  /* body */
+  --body-background-color: var(--color-white-10);
+
+  /* logo */
+  --logo-color: var(--color-green-15);
+
+  /* button--main */
+  --button-main-background-color: var(--color-green-15);
+  --button-main-disabled-background-color: var(--color-grey-25);
+  --button-main-color: var(--color-white-10);
+
+  /* progress-bar */
+  --progress-bar-background-color: var(--color-green-15);
+  --progress-bar-line-background-color: var(--color-white-10);
+
+  /* game */
+  --game-background-color: var(--color-white);
+  --game-box-shadow-color: var(--color-grey-25);
+
+  /* scores */
+  --scores-background-color: var(--color-white);
+  --scores-box-shadow-color: var(--color-grey-25);
+}
+
+body {
+  height: 100vh;
+  background-color: var(--body-background-color);
+  color: var(--font-color-1);
+  font-family: "Roboto", "Rubik", sans-serif;
+  font-weight: 400;
+}
+
+.button {
+  min-width: 150px;
+  padding: .5rem 1rem;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: opacity .3s;
+}
+
+.button:hover {
+  opacity: .7;
+}
+
+.button--main {
+  color: var(--button-main-color);
+  background-color: var(--button-main-background-color);
+}
+
+.button:disabled {
+  color: var(--button-main-color);
+  background-color: var(--button-main-disabled-background-color);
+  cursor: not-allowed;
+}
+
+.header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid;
+}
+
+.header__title {
+  margin: 0;
+}
+
+.header__title::first-letter {
+  color: var(--logo-color);
+}
+
+.header__controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem
+}
+
+.game__wrapper {
+  padding-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--game-background-color);
+  border-bottom-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  box-shadow: 0 2px 6px var(--game-box-shadow-color);
+}
+
+.game__info {
+  padding: 1rem;
+}
+
+.js-game__content {
+  display: flex;
+  justify-content: center;
+}
+
+.game__balloon {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game__balloon-item {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(#E66465, #9198E5);
+  border-radius: 50%;
+  font-weight: 700;
+  transition: width .3s, height .3s;
+}
+
+.js-game__content.js-game__content--win .game__balloon {
+  background-image: url("../assets/images/win.png");
+  background-size: cover;
+}
+
+.js-game__content.js-game__content--lose .game__balloon {
+  background-image: url("../assets/images/lose.png");
+  background-size: cover;
+}
+
+.game__char {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.game__info-score {
+  margin: 0;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.footer {
+  padding: 0 1rem 1rem;
+}
+
+.js-game__progress-bar {
+  height: 20px;
+  width: 100%;
+  margin-bottom: 1rem;
+  display: none;
+  box-shadow: 0 0 8px #CCC;
+  transform: rotate(180deg);
+  background-color: var(--progress-bar-background-color);
+}
+
+.js-game__progress-bar.js-game__progress-bar--active {
+  display: block;
+}
+
+.js-game__progress-bar-line {
+  width: 100%;
+  height: 20px;
+  background-color: var(--progress-bar-line-background-color);
+}
+
+.scores__wrapper {
+  width: 100%;
+  padding: 1rem;
+}
+
+.scores__list {
+  max-height: 343px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.js-scores__item {
+  margin-bottom: .5rem;
+  padding: 1rem;
+  background-color: var(--scores-background-color);
+}
+
+.js-scores__item:last-child {
+  margin-bottom: 0;
+}
