@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../src/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <button class="button" data-start-button type="button">START</button>
+            <button class="button" data-stop-button type="button">STOP</button>
+            <button class="button" data-reset-button type="button">RESET</button>
+            <button class="button" data-score-button type="button">SCORES</button>
+        </header>
+        <main class="main">
+            <div class="main__score" data-score>100</div>
+            <div class="main__ball-block">
+                <div class="ball" data-ball></div>
+            </div>
+            <div class="main__character-block" data-character-block></div>
+            <div class="main__progress-bar">
+                <div class="sub__progress-bar" data-progress-bar></div>
+            </div>
+            <div class="main__score-list" data-score-list></div>
+            <button class="close-button" data-close-button type="button">X</button>
+        </main>
+        <script src="bundle.js"></script>
+    </body>
+</html>

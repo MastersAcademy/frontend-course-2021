@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+	<title>Document</title>
+</head>
+<body>
+    <main class="page-container">
+        <section class="buttons-section" data-buttons-container>
+            <button class="buttons-section__button" data-action="start">Start</button>
+            <button class="buttons-section__button" data-action="end">End</button>
+            <button class="buttons-section__button" data-action="restart">Restart</button>
+        </section>
+        <section class="score-section">
+            <div class="score-section__current" data-total-score>100</div>
+            <div class="score-section__round" data-round-score>0</div>
+        </section>
+        <section class="balloon-section">
+            <div class="balloon-section__item" data-balloon-item></div>
+        </section>
+        <section class="action-section">
+            <div class="action-section__key">
+                <span class="action-section__current-key" data-current-key></span>
+                <div class="action-section__progress" data-progress></div>
+            </div>
+        </section>
+    </main>
+	<script type="module" defer src="bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "6-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "author": "AndriiCold",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2",
+    "webpack": "4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "3.5.1"
+  },
+  "dependencies": {},
+  "description": ""
+}
