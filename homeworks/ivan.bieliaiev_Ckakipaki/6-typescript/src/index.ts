@@ -1,5 +1,3 @@
-let timeOut : ReturnType<typeof setInterval>
-
 interface ICurrentLetter {
     letter: string
     keyCode: number
@@ -29,23 +27,21 @@ const score: ICurrentScore = {
     currentScore: 100,
     changing: 0
 }
-
 const letter: ICurrentLetter = {
     letter: '',
     keyCode: 0
 }
-
 const bollSize: IBallSize = {
     width: 300,
     height:300
 }
-
 const gameStatus: IGameStatus = {
     start: false,
     stop: false
 }
 
 let isKeyUp: boolean = false
+let timeOut : ReturnType<typeof setInterval>
 
 const renderNewLetter = (): void =>  {
     const charCode = Math.floor(Math.random() * (91 - 65) + 65)
@@ -58,12 +54,12 @@ const renderNewLetter = (): void =>  {
 const changeBallSize = (type: string): void => {
     switch (type) {
         case 'add':
-            bollSize.width += 20
-            bollSize.height += 20
+            bollSize.width += 10
+            bollSize.height += 10
             break
         case 'remove':
-            bollSize.width -= 20
-            bollSize.height -= 20
+            bollSize.width -= 10
+            bollSize.height -= 10
             break
     }
     bollEl.style.width = `${bollSize.width}px`
@@ -71,31 +67,26 @@ const changeBallSize = (type: string): void => {
     bollEl.style.borderRadius = `50%`
 }
 
-const changeScore = (type: string): void => {
+const changeScore = (type: string, min:number, max:number): void => {
+    const scoreChange: number = Math.floor(Math.random() * (max - min) + min)
     switch (type) {
         case 'correct':
             changeBallSize('add')
-            let scorePlus: number = Math.floor(Math.random() * (10 - 5) + 5)
-            score.changing = scorePlus
-            score.currentScore += scorePlus
+            score.currentScore += scoreChange
             changinScoreEl.innerText = `+ ${score.changing}`
-            currentScoreEl.innerText = `${score.currentScore}`
             break
         case 'wrong':
             changeBallSize('remove')
-            let scoreMinus: number = Math.floor(Math.random() * (25 - 20) + 20)
-            score.changing = scoreMinus
-            score.currentScore -= scoreMinus
+            score.currentScore -= scoreChange
             changinScoreEl.innerText = `- ${score.changing}`
-            currentScoreEl.innerText = `${score.currentScore}`
             break
         case 'not':
-            let scoreMinusNot: number = Math.floor(Math.random() * (15 - 10) + 10)
-            score.changing = scoreMinusNot
-            score.currentScore -= scoreMinusNot
+            score.currentScore -= scoreChange
             changinScoreEl.innerText = `- ${score.changing}`
-            currentScoreEl.innerText = `${score.currentScore}`
+            break
     }
+    score.changing = scoreChange
+    currentScoreEl.innerText = `${score.currentScore}`
 }
 
 addEventListener('keydown', (e) => {
@@ -103,13 +94,12 @@ addEventListener('keydown', (e) => {
         isKeyUp = true
         e.preventDefault()
         if (letter.keyCode === e.keyCode) {
-            console.log('correct')
-            changeScore('correct')
+            changeScore('correct', 5, 10)
         } else {
-            changeScore('wrong')
+            changeScore('wrong', 20, 25)
         }
         renderNewLetter()
-        clearTimeout(timeOut)
+        clearInterval(timeOut)
         if (score.currentScore >= 200) {
             stopGame('win');
             return true
@@ -125,7 +115,7 @@ const interval = ():void => {
     timeOut = setInterval(() => {
         changeBallSize('remove')
         renderNewLetter()
-        changeScore('not')
+        changeScore('not', 10, 15)
         if (score.currentScore >= 200) {
             stopGame('win');
             return true

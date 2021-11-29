@@ -1,5 +1,4 @@
-.wrapper {
-  border: 1px solid black;
+.game__container {
   width: 60%;
   height: 90vh;
   margin: 0 auto;
@@ -9,27 +8,19 @@
   align-items: center;
 }
 
-.current-score {
+.game-score {
   font-size: 60px;
 }
 
-.ball {
+.game-ball {
   width: 220px;
   height: 220px;
   background: #345;
   border-radius: 50%;
 }
 
-.changing {
+.game-changing-score {
   font-size: 30px;
-}
-
-.changing-correct {
-  color: #04AA6D;
-}
-
-.changing-wrong {
-  color: #CC0000;
 }
 
 .letter-container {
