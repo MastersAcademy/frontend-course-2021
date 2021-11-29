@@ -12,7 +12,7 @@ body {
   padding-top: 20px;
 }
 
-.circle-plus-wrapper {
+.circle-wrapper {
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -39,19 +39,13 @@ body {
   background-color: #009;
   width: 100px;
   height: 100px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border: 5px;
 }
 
-.all-time {
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  background-color: #444;
+.main-wrapper__win {
+  background: #63f18e;
 }
 
-.progress {
-  width: 0%;
-  height: 8px;
-  background-color: #090;
+.main-wrapper__lost {
+  background: #d45a52;
 }

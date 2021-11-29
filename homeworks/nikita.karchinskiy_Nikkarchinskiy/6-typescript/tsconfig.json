@@ -1,12 +1,10 @@
 {
-    "compilerOptions": {
-      "outDir": "./dist/",
-      "sourceMap": true,
-      "noImplicitAny": true,
-      "module": "es6",
-      "target": "es5",
-      "jsx": "react",
-      "allowJs": true,
-      "moduleResolution": "node"
-    }
-  }
+  "compilerOptions": {
+  "target": "es6",
+  "module": "es6",
+  "outDir": "./dist",
+  /* Strict Type-Checking Options */
+  "strict": true,
+  "noImplicitAny": true,
+}
+}
