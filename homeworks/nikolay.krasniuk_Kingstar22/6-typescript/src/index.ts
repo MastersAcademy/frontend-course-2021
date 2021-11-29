@@ -81,4 +81,3 @@ function resultCount(): void {
         fieldCounterEL.textContent = `You win: ${counter}`;
     }
 }
-
