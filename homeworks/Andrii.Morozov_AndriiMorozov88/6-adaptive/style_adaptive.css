@@ -83,11 +83,11 @@ body {
 
 .page__offers-block {
   width: 370px;
-  height: 260px;
+  height: 200px;
   margin-top: 30px;
   display: block;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .page__offers-block-color-a {
@@ -106,7 +106,7 @@ body {
   display: flex;
   width: 1240px;
   height: 600px;
-  margin-top: 500px;
+  margin-top: 300px;
   justify-content: flex-start;
   align-items: center;
 }
@@ -136,6 +136,11 @@ body {
   width: 1240px;
   height: 550px;
   justify-content: space-around;
+}
+
+.page__news-block-img {
+  width: 370px;
+  height: 300px;
 }
 
 .page__news-block-big {
