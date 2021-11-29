@@ -3,46 +3,46 @@ body {
 }
 
 .page {
-  display: flex;
+  display: block;
   width: 1240px;
 }
 
-.page__top {
+.page__track {
   display: flex;
   width: 1240px;
-  height: 743px;
+  height: 700px;
   background-color: #E72B2B;
   justify-content: flex-end;
   align-items: center;
 }
 
-.page__top_textfield {
+.page__track_textfield {
   display: block;
   margin-right: 500px;
 }
 
-.page__top_textfield-text-big {
+.page__track_textfield-text-big {
   font-size: 55px;
   color: #EFF3F3;
 }
 
-.page__top_textfield-text-small {
+.page__track_textfield-text-small {
   font-size: 20px;
   color: #EFF3F3;
 }
 
-.page__top-bonik {
+.page__track-bonik {
   display: flex;
   position: absolute;
   width: 620px;
   height: 500px;
 }
 
-.page__top_inputfield {
+.page__track_inputfield {
   display: flex;
 }
 
-.page__top_inputfield-input {
+.page__track_inputfield-input {
   width: 250px;
   height: 50px;
   font-size: 20px;
@@ -53,7 +53,7 @@ body {
   border-bottom-left-radius: 15px;
 }
 
-.page__top_inputfield-button {
+.page__track_inputfield-button {
   width: 150px;
   height: 56px;
   font-size: 20px;
@@ -62,4 +62,41 @@ body {
   border-left: none;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+
+.page__title {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 50px;
+}
+
+.page__text {
+  text-align: center;
+  font-size: 25px;
+}
+
+.page__offers {
+  display: flex;
+  width: 1240px;
+  height: 500px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.page__offers-block {
+  width: 370px;
+  height: 260px;
+  margin-top: 30px;
+}
+
+.page__offers-block-color-a {
+  background-color: #FFE4C4;
+}
+
+.page__offers-block-color-b {
+  background-color: #E28E6F;
+}
+
+.page__offers-block-color-c {
+  background-color: #90CFCF;
 }
