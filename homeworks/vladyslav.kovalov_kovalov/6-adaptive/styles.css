@@ -331,6 +331,7 @@ body {
 .main-footer__list-item-link {
   text-decoration: none;
   color: inherit;
+  display: flex;
 }
 
 .main-footer__copyright-text {
@@ -470,5 +471,15 @@ body {
 
   .main-footer__company-info {
     margin-right: 0;
+  }
+
+  .main-footer__social-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .main-footer__social-link {
+    display: block;
+    margin-right: 1rem;
   }
 }
