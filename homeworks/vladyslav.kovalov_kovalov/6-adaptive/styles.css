@@ -461,12 +461,22 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .clients-section {
+    padding: 2rem 0;
+  }
+
+  .clients-section__title {
+    margin-bottom: 2rem;
+  }
+
   .clients-section__row {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .main-footer__container {
     grid-template-columns: 1fr;
+    padding: 2rem;
   }
 
   .main-footer__company-info {
@@ -476,6 +486,16 @@ body {
   .main-footer__social-links {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .main-footer__subtitle {
+    text-align: center;
+  }
+
+  .main-footer__list-item-link {
+    text-align: center;
+    display: block;
   }
 
   .main-footer__social-link {
