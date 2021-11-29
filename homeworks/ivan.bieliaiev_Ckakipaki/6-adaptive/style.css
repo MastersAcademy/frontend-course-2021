@@ -1,4 +1,87 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  padding: 17px 135px;
+  justify-content: space-between;
+  height: 100%;
+  background: #FFF;
+  width: 100%;
+}
+
+.company__logo {
+  margin: 0;
+}
+
+.header__actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.action__phone {
+  display: flex;
+  flex-direction: row;
+}
+
+.phone__img {
+  margin: 0 10px;
+}
+
+.phone__number {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #444B51;
+}
+
+.action__sign-in {
+  margin: 0 42px 0 47px;
+  border: 0;
+  height: 40px;
+  width: 107px;
+  border-radius: 21px;
+  padding: 12px 24px;
+  background: #E24329;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFF;
+}
+
+.action__language {
+  display: flex;
+  flex-direction: row;
+}
+
+.language__globus {
+  margin: 0 8px 0 0;
+}
+
+.language__text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  color: #828282;
+}
+
+.about-us {
+  padding: 136px 98px 203px 135px;
+  background: #E24329;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.about-us__content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
