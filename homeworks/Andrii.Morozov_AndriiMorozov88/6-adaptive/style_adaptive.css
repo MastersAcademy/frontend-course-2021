@@ -31,8 +31,7 @@ body {
   color: #EFF3F3;
 }
 
-.page__track-bonik {
-  display: flex;
+.page__bonik {
   position: absolute;
   width: 620px;
   height: 500px;
@@ -99,4 +98,33 @@ body {
 
 .page__offers-block-color-c {
   background-color: #90CFCF;
+}
+
+.page__apply {
+  display: flex;
+  width: 1240px;
+  height: 700px;
+  margin-top: 400px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.page__apply-aside {
+  display: block;
+  margin-left: 650px;
+}
+
+.page__apply-aside-lines {
+  font-size: 25px;
+}
+
+.page__apply-aside-button {
+  width: 350px;
+  height: 60px;
+  margin-top: 20px;
+  margin-left: 100px;
+  font-size: 30px;
+  background-color: #B41111;
+  border-radius: 50%;
+  color: #F0F8FF;
 }
