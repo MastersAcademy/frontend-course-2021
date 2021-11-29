@@ -66,7 +66,6 @@ body {
 .page__title {
   text-align: center;
   font-size: 40px;
-  margin-top: 50px;
 }
 
 .page__text {
@@ -103,7 +102,7 @@ body {
 .page__apply {
   display: flex;
   width: 1240px;
-  height: 700px;
+  height: 600px;
   margin-top: 400px;
   justify-content: flex-start;
   align-items: center;
@@ -127,4 +126,24 @@ body {
   background-color: #B41111;
   border-radius: 50%;
   color: #F0F8FF;
+}
+
+.page__news {
+  display: flex;
+  width: 1240px;
+  height: 550px;
+  justify-content: space-around;
+}
+
+.page__news-block-big {
+  font-size: 23px;
+}
+
+.page__news-block-text {
+  width: 350px;
+  margin-top: 10px;
+}
+
+.page__clients {
+  margin-left: 30px;
 }
