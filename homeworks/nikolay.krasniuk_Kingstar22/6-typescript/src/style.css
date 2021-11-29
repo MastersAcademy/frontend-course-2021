@@ -64,15 +64,3 @@ body {
   text-align: center;
 }
 
-.game__footer-loader {
-  width: 70px;
-  height: 15px;
-  border-radius: 20px;
-  background: linear-gradient(rgb(245, 172, 36) 0 0) left/0% 100% no-repeat rgb(173, 216, 230);
-  /* animation: p2 2s infinite steps(10); */
-}
-
-/* @keyframes p2 {
-  100% { background-size: 110% 100%}
-} */
-
