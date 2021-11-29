@@ -147,3 +147,42 @@ body {
 .page__clients {
   margin-left: 30px;
 }
+
+.page__bottom {
+  display: flex;
+  width: 1240px;
+  height: 300px;
+  background-color: #C47676;
+  align-items: center;
+  margin-top: 30px;
+  justify-content: space-around;
+}
+
+.page__bottom-image {
+  width: 370px;
+  height: 200px;
+}
+
+.page__bottom-list {
+  font-size: 25px;
+}
+
+.page__bottom-list-items {
+  list-style-type: none;
+  margin-bottom: 10px;
+  margin-left: 40px;
+}
+
+.page__bottom-list-links {
+  text-decoration: none;
+  color: #E3F3F3;
+}
+
+.page-copyright {
+  width: 1240px;
+  height: 50px;
+  background-color: #B41111;
+  color: #F0F8FF;
+  text-align: center;
+  padding-top: 25px;
+}
