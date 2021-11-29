@@ -85,6 +85,9 @@ body {
   width: 370px;
   height: 260px;
   margin-top: 30px;
+  display: block;
+  text-align: center;
+  padding-top: 50px;
 }
 
 .page__offers-block-color-a {
@@ -103,7 +106,7 @@ body {
   display: flex;
   width: 1240px;
   height: 600px;
-  margin-top: 400px;
+  margin-top: 500px;
   justify-content: flex-start;
   align-items: center;
 }
