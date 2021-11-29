@@ -22,7 +22,7 @@ body {
 }
 
 .page__track_textfield-text-big {
-  font-size: 45px;
+  font-size: 40px;
   color: #EFF3F3;
 }
 
@@ -68,8 +68,11 @@ body {
 }
 
 .page__text {
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   font-size: 25px;
+  width: 700px;
 }
 
 .page__offers {
