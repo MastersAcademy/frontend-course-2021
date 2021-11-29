@@ -147,6 +147,21 @@ body {
   margin-top: 10px;
 }
 
+.page__news-block-signature {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.page__news-block-signature-right {
+  display: flex;
+}
+
+.page__news-block-signature-img {
+  width: 30px;
+  height: 15px;
+}
+
 .page__clients {
   margin-left: 30px;
 }
