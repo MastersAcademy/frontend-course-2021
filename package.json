@@ -40,11 +40,8 @@
     },
     "homepage": "https://github.com/MastersAcademy/frontend-course-2021",
     "lint-staged": {
-        "*.{js,html}": [
+        "*.{js,html,ts}": [
             "eslint --config .eslintrc.js"
-        ],
-        "*.{ts}": [
-            "eslint --config .eslintrc-ts.js"
         ],
         "*.{css,scss}": [
             "stylelint --config .stylelintrc"
