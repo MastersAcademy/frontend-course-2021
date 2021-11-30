@@ -4,8 +4,9 @@
     "description": "Репозиторій з курсу «Advanced Front-end» проекту Masters Academy",
     "scripts": {
         "lint": "lint-staged",
-        "lint:all": "npm run lint:branch-name && npm run lint:css && npm run lint:js && npm run lint:html",
+        "lint:all": "npm run lint:branch-name && npm run lint:css && npm run lint:js && npm run lint:js && npm run lint:html",
         "lint:js": "npx eslint --config .eslintrc.js ./homeworks/**/*.js",
+        "lint:ts": "npx eslint --config .eslintrc-ts.js ./homeworks/**/*.ts",
         "lint:css": "npx stylelint --config .stylelintrc ./homeworks/**/*.{css,scss}",
         "lint:html": "npx eslint --config .eslintrc.js ./homeworks/**/*.html",
         "lint:branch-name": "npx branch-name-lint ./.branchlintrc.json",
@@ -22,6 +23,8 @@
         "stylelint": "^13.13.1"
     },
     "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.5.0",
+        "@typescript-eslint/parser": "^5.5.0",
         "husky": "^7.0.2",
         "lint-staged": "^11.1.2",
         "typescript": "^4.5.2"
