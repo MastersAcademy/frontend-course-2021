@@ -116,7 +116,6 @@ button:hover {
 .page__heading {
   display: flex;
   flex-wrap: wrap;
-  /*flex-direction: column;*/
 }
 
 .heading__title {
@@ -449,6 +448,20 @@ button:hover {
 
 @media (max-width: 768px) {
 
+  .header {
+    margin: 0 50px;
+  }
+
+  .header__menu {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .header__logo {
+    margin-right: 0;
+    flex: 1 1 100%;
+  }
+
   .page__picture {
     display: none;
   }
@@ -465,9 +478,30 @@ button:hover {
   .clients__logo * {
     max-width: 30%;
   }
+
+  .heading__title {
+    width: 100%;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 142%;
+    color: #FFF;
+    margin-bottom: 30px;
+  }
+
+  .heading__text {
+    width: 100%;
+    font-size: 11px;
+    line-height: 144%;
+    color: #FFF;
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 320px) {
+
+  .header {
+    margin: 0 20px;
+  }
 
   .page__picture {
     display: none;
