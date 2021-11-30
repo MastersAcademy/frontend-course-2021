@@ -1,9 +1,9 @@
 @font-face {
   font-family: "Pragmatica";
   src: local("Pragmatica Book"), local("Pragmatica Book"),
-    url("../fonts/Pragmatica-Book.woff2") format("woff2"),
-    url("../fonts/Pragmatica-Book.woff") format("woff"),
-    url("../fonts/Pragmatica-Book.ttf") format("truetype");
+    url("fonts/Pragmatica-Book.woff2") format("woff2"),
+    url("fonts/Pragmatica-Book.woff") format("woff"),
+    url("fonts/Pragmatica-Book.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -11,9 +11,9 @@
 @font-face {
   font-family: "Pragmatica";
   src: local("Pragmatica Bold"), local("Pragmatica-Bold"),
-    url("../fonts/Pragmatica-Bold.woff2") format("woff2"),
-    url("../fonts/Pragmatica-Bold.woff") format("woff"),
-    url("../fonts/Pragmatica-Bold.ttf") format("truetype");
+    url("fonts/Pragmatica-Bold.woff2") format("woff2"),
+    url("fonts/Pragmatica-Bold.woff") format("woff"),
+    url("fonts/Pragmatica-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -21,9 +21,9 @@
 @font-face {
   font-family: "Pragmatica";
   src: local("Pragmatica Medium"), local("Pragmatica-Medium"),
-    url("../fonts/Pragmatica-Medium.woff2") format("woff2"),
-    url("../fonts/Pragmatica-Medium.woff") format("woff"),
-    url("../fonts/Pragmatica-Medium.ttf") format("truetype");
+    url("fonts/Pragmatica-Medium.woff2") format("woff2"),
+    url("fonts/Pragmatica-Medium.woff") format("woff"),
+    url("fonts/Pragmatica-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
@@ -32,8 +32,8 @@
   font-family: "Segoe UI";
   src: url("SegoeUI-Bold.eot");
   src: url("SegoeUI-Bold.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/SegoeUI-Bold.woff") format("woff"),
-    url("../fonts/SegoeUI-Bold.ttf") format("truetype");
+    url("fonts/SegoeUI-Bold.woff") format("woff"),
+    url("fonts/SegoeUI-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -42,8 +42,8 @@
   font-family: "Segoe UI";
   src: url("SegoeUI.eot");
   src: url("SegoeUI.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/SegoeUI.woff") format("woff"),
-    url("../fonts/SegoeUI.ttf") format("truetype");
+    url("fonts/SegoeUI.woff") format("woff"),
+    url("fonts/SegoeUI.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
