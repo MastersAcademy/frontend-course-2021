@@ -6,7 +6,7 @@
         "lint": "lint-staged",
         "lint:all": "npm run lint:branch-name && npm run lint:css && npm run lint:js && npm run lint:js && npm run lint:html",
         "lint:js": "npx eslint --config .eslintrc.js ./homeworks/**/*.js",
-        "lint:ts": "npx eslint --config .eslintrc-ts.js ./homeworks/**/*.ts",
+        "lint:ts": "npx eslint --config .eslintrc-ts.js ./homeworks/**/*.ts --no-error-on-unmatched-pattern",
         "lint:css": "npx stylelint --config .stylelintrc ./homeworks/**/*.{css,scss}",
         "lint:html": "npx eslint --config .eslintrc.js ./homeworks/**/*.html",
         "lint:branch-name": "npx branch-name-lint ./.branchlintrc.json",
@@ -48,6 +48,9 @@
     "lint-staged": {
         "*.{js,html}": [
             "eslint --config .eslintrc.js"
+        ],
+        "*.{ts}": [
+            "eslint --config .eslintrc-ts.js"
         ],
         "*.{css,scss}": [
             "stylelint --config .stylelintrc"
