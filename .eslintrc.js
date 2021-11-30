@@ -125,5 +125,24 @@ module.exports = {
                 '@html-eslint/element-newline': 'error',
             },
         },
+        {
+            files: ['*.ts'],
+            plugins: ['@typescript-eslint'],
+            parser: '@typescript-eslint/parser',
+            extends: ['plugin:@typescript-eslint/recommended'],
+            rules: {
+                quotes: ['error', 'single'],
+                indent: [
+                    'error',
+                    4,
+                    { SwitchCase: 1 },
+                ],
+                'no-cond-assign': ['error', 'always'],
+                'no-console': 'off',
+                'no-alert': 'off',
+                'func-names': 'off',
+            },
+
+        },
     ],
 };
