@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <title>6-adaptive</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -15,7 +15,7 @@
                 </a>
                 <ul>
                     <li class="list__item">
-                        <a class="phone__link ">
+                        <a class="phone__link">
                             <svg class="call__image" width="12" height="16">
                                 <use xlink:href="../svg/sprites.svg#call-icon"></use>
                             </svg>
@@ -23,27 +23,23 @@
                         </a>
                     </li>
                 </ul>
-
                 <button class="header__button-login" type="button">Sign In</button>
-                <div class="header__switch-language">
-                    <svg class="switch-language__earth-image" width="54" height="24">
+                <button class="header__button-language" type="button">
+                    <svg class="language__earth-image" width="54" height="24">
                         <use xlink:href="../svg/sprites.svg#earth-icon"></use>
                     </svg>
-                    <select class="header__select-language">
-                        <option selected>EN</option>
-                    </select>
-                </div>
+                </button>
             </header>
             <main class="main-container">
                 <h1 class="visually-hidden">bonik delivery</h1>
                 <section class="content-row content-row__features">
-                    <article class="content-columns content-columns__features">
-                        <h2 class="features__slogan-title">
+                    <article class="content-columns content-columns__features-desc">
+                        <h2 class="features-desc__slogan-title">
                             Delivery is Process<br>Going From Source Point to Predefined Destination.
                         </h2>
-                        <p class="features__slogan-text">Need to send something on time? Delivery is process of transporting goods from a
+                        <p class="features-desc__slogan-text">Need to send something on time? Delivery is process of transporting goods from a
                             source location to a predefined destination.</p>
-                        <form class="search-parcel" action="#">
+                        <form class="features-desc__search-parcel" action="#">
                             <label>
                                 <input class="search-parcel__input" type="text" placeholder="Type your tracking number">
                             </label>
@@ -141,11 +137,11 @@
                         <source srcset="../png/bonik delivery img 2_2.png 2x">
                         <img src="../png/bonik%20delivery%20img%202%20.png" alt="bonik delivery photo 2">
                     </picture>
-                    <article class="content-columns content-columns__ordering">
-                        <h2 class="ordering__slogan-title">
+                    <article class="content-columns content-columns__ordering-desc">
+                        <h2 class="ordering-desc__slogan-title">
                             Apply for Ambassador</h2>
-                        <p class="ordering__slogan-text">Need to send something on time? Delivery is process of transporting goods from a source location to a predefined destination.</p>
-                        <button class="ordering__button-apply-now" type="button">Apply Now</button>
+                        <p class="ordering-desc__slogan-text">Need to send something on time? Delivery is process of transporting goods from a source location to a predefined destination.</p>
+                        <button class="ordering-desc__button-apply-now" type="button">Apply Now</button>
                     </article>
                 </section>
                 <section class="section__news">
@@ -170,7 +166,9 @@
                             <h3 class="news__title">Our UX studio digitally transforms business through design</h3>
                             <p class="news__text">All of these problems are addressable through UX and gamification in particular. That’s not to say that it’s a cure-all.</p>
                             <a class="news__link" href="#">
-                                <span>Learn More</span>
+                                <svg width="126" height="28">
+                                    <use xlink:href="../svg/sprites.svg#line-icon"></use>
+                                </svg>
                             </a>
                         </article>
                         <article class="content-columns content-columns__news">
@@ -190,7 +188,9 @@
                             <h3 class="news__title">Your customer do need comprehensive course to learn how to use your app.</h3>
                             <p class="news__text">Let’s be honest. Finance isn’t exactly pinnacle fun.Online companies introduced gamification elements to their products reach up to a 700% increase in conversion rates.</p>
                             <a class="news__link" href="#">
-                                <span>Learn More</span>
+                                <svg width="126" height="28">
+                                    <use xlink:href="../svg/sprites.svg#line-icon"></use>
+                                </svg>
                             </a>
                         </article>
                         <article class="content-columns content-columns__news">
@@ -210,16 +210,93 @@
                             <h3 class="news__title">Scale your startup through exceptional product experience</h3>
                             <p class="news__text">Our UX design agency creates solutions to address product usability conversion rates an the ever-present challenges of user-retention & engagement.</p>
                             <a class="news__link" href="#">
-                                <span>Learn More</span>
+                                <svg width="126" height="28">
+                                    <use xlink:href="../svg/sprites.svg#line-icon"></use>
+                                </svg>
                             </a>
                         </article>
                     </div>
                 </section>
-                <section>
-
+                <section class="section-clients">
+                    <h2 class="client__headline">Our Clients</h2>
+                    <section class="content-row content-row__clients-logo">
+                        <svg width="120" height="40">
+                            <use xlink:href="../svg/sprites.svg#google-icon"></use>
+                        </svg>
+                        <svg width="141" height="30">
+                            <use xlink:href="../svg/sprites.svg#microsoft-icon"></use>
+                        </svg>
+                        <svg width="100" height="30">
+                            <use xlink:href="../svg/sprites.svg#flickr-icon"></use>
+                        </svg>
+                        <svg width="119" height="30">
+                            <use xlink:href="../svg/sprites.svg#slack-icon"></use>
+                        </svg>
+                        <svg width="134" height="40">
+                            <use xlink:href="../svg/sprites.svg#syngenta-icon"></use>
+                        </svg>
+                        <svg width="138" height="40">
+                            <use xlink:href="../svg/sprites.svg#merck-icon"></use>
+                        </svg>
+                    </section>
                 </section>
             </main>
+            <footer class="main-footer">
+                <section class="footer__information">
+                    <div class="footer__contact">
+                        <svg class="logo__image">
+                            <use xlink:href="../svg/sprites.svg#logo"></use>
+                        </svg>
+                        <span class="contact__text">10/B, House# 32, Dhaka Uddan Mohammadpur, Dhaka, Bangladesh</span>
+                        <div class="contact__socials">
+                            <a class="social__link" href="#">
+                                <svg width="32" height="33">
+                                    <use xlink:href="../svg/sprites.svg#facebook-icon"></use>
+                                </svg>
+                            </a>
+                            <a class="social__link" href="#">
+                                <svg width="33" height="33">
+                                    <use xlink:href="../svg/sprites.svg#in-icon"></use>
+                                </svg>
+                            </a>
+                            <a class="social__link" href="#">
+                                <svg width="33" height="33">
+                                    <use xlink:href="../svg/sprites.svg#mess-icon"></use>
+                                </svg>
+                            </a>
+                            <a class="social__link" href="#">
+                                <svg width="33" height="33">
+                                    <use xlink:href="../svg/sprites.svg#p-icon"></use>
+                                </svg>
+                            </a>
+                            <a class="social__link" href="#">
+                                <svg width="33" height="33">
+                                    <use xlink:href="../svg/sprites.svg#inst-icon"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="content-row content-row__footer-links">
+                        <nav class="content-columns content-columns__list">
+                            <h3 class="list__title">Important links</h3>
+                            <a class="footer__link" href="">FAQs</a>
+                            <a class="footer__link" href="">Blogs</a>
+                            <a class="footer__link" href="">Privacy Policy</a>
+                            <a class="footer__link" href="">Trims & Conditions</a>
+                        </nav>
+                        <nav class="content-columns content-columns__list">
+                            <h3 class="list__title">Policy</h3>
+                            <a class="footer__link" href="">Learner</a>
+                            <a class="footer__link" href="">Partners</a>
+                            <a class="footer__link" href="">Developers</a>
+                            <a class="footer__link" href="">Teaching Centre</a>
+                        </nav>
+                    </div>
+                </section>
+                <section class="copyright">
+                    <span class="copyright__text">Copyright @2021 Bonik Delivery</span>
+                </section>
+            </footer>
         </div>
-
     </body>
 </html>
