@@ -1,6 +1,13 @@
 @font-face {
-  font-family: "Pragmatica";
-  src: url("fonts/Pragmatica-Book.ttf");
+  font-family: "Pragmatica-Bold";
+  src: url("./fonts/Pragmatica-Bold.woff2") format("woff2"),
+    url("./fonts/Pragmatica-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pragmatica-Book";
+  src: url("./fonts/Pragmatica-Book.woff2") format("woff2"),
+    url("./fonts/Pragmatica-Book.woff") format("woff");
 }
 
 *,
@@ -12,7 +19,7 @@
 }
 
 body {
-  font-family: "Pragmatica", Arial, Helvetica, sans-serif;
+  font-family: "Pragmatica-Book", Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
 }
 
@@ -29,6 +36,7 @@ body {
 }
 
 .button--action {
+  font-family: "Pragmatica-Bold", Arial, sans-serif;
   background-color: rgba(226, 67, 41, 1);
   font-weight: 600;
   color: rgba(255, 255, 255, 1);
@@ -118,12 +126,14 @@ body {
 
 .hero-section__tracking-form-input::placeholder {
   color: rgba(186, 186, 186, 1);
+  font-family: "Pragmatica-Bold", Arial, sans-serif;
   font-weight: 600;
 }
 
 .hero-section__tracking-form-button {
   background-color: rgba(255, 106, 0, 1);
   color: rgba(255, 255, 255, 1);
+  font-family: "Pragmatica-Bold", Arial, sans-serif;
   font-weight: 600;
   padding: 1.25rem 1.5rem;
 }
@@ -343,6 +353,7 @@ body {
 .main-footer__copyright-text {
   background-color: rgba(226, 67, 41, 1);
   color: rgba(255, 255, 255, 1);
+  font-family: "Pragmatica-Bold", Arial, sans-serif;
   font-weight: 500;
   text-align: center;
   padding: 1rem;
