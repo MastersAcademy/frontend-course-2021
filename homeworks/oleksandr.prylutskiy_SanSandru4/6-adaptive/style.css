@@ -104,7 +104,7 @@ body {
   flex-direction: column;
 }
 
-.main__process {
+.process {
   height: auto;
   color: #FFF;
   font-family: "Pragmatica-Medium, Merriweather", sans-serif;
@@ -112,7 +112,7 @@ body {
   flex-direction: column;
 }
 
-.main__process-head {
+.process__head {
   margin-top: 36px;
   width: auto;
   font-family: "Pragmatica-Bold, Merriweather", sans-serif;
@@ -121,7 +121,7 @@ body {
   line-height: 68px;
 }
 
-.main__process-text {
+.process__text {
   margin-top: 30px;
   width: auto;
   font-family: "Pragmatica-Light, Merriweather", sans-serif;
@@ -130,16 +130,16 @@ body {
   line-height: 26px;
 }
 
-.main__process-track-percel {
+.process__track-percel {
   display: flex;
   align-items: center;
 }
 
-.main__track-percel_input, .main__track-percel_btn {
+.process__track-percel_input, .process__track-percel_btn {
   height: 60px;
 }
 
-.main__track-percel_input {
+.process__track-percel_input {
   margin-top: 57px;
   padding-left: 39px;
   width: 400px;
@@ -151,7 +151,7 @@ body {
   color: #BABABA;
 }
 
-.main__track-percel_btn {
+.process__track-percel_btn {
   margin-top: 56px;
   width: 170px;
   background: #FF6A00;
@@ -164,11 +164,11 @@ body {
   color: #FFF;
 }
 
-.main__track-percel_btn:hover {
+.process__track-percel_btn:hover {
   background: #F79148;
 }
 
-.main__process_section {
+.process__section {
   height: 720px;
   color: #FFF;
   background-color: #E24329;
@@ -177,7 +177,7 @@ body {
   justify-content: left;
 }
 
-.main__process_information {
+.process__information {
   margin-top: 100px;
   margin-left: 135px;
   display: flex;
@@ -186,7 +186,7 @@ body {
   z-index: 1;
 }
 
-.main__process-img {
+.process__img {
   margin-top: 100px;
   margin-left: -40px;
   margin-right: 60px;
@@ -194,11 +194,11 @@ body {
   z-index: 2;
 }
 
-.main__delivery-photo {
+.process__delivery-photo {
   width: 620px;
 }
 
-.main__choose-us {
+.choose-us {
   width: 100%;
   height: auto;
   display: flex;
@@ -207,7 +207,7 @@ body {
   align-items: center;
 }
 
-.main__choose-us_text {
+.choose-us__text {
   width: 1440px;
   display: flex;
   flex-direction: column;
@@ -218,35 +218,41 @@ body {
 
 .main__text-head {
   padding-top: 100px;
-  font-family: "Pragmatica-Bold", sans-serif;
+  font-family: "Pragmatica-Bold, Merriweather", sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 120%;
   color: #444B51;
 }
 
-.position-head {
+.main__text-head--position-head {
   text-align: center;
 }
 
-.main__choose-us_text-paragraph {
+.main__text-head--news-head {
+  width: 690px;
+  text-align: center;
+}
+
+.choose-us__text-paragraph {
   margin-top: 16px;
   width: 615px;
   text-align: center;
-  font-family: "Pragmatica-Medium", sans-serif;
+  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 26px;
   color: #444B51;
 }
 
-.main__choose-us_list {
+.choose-us__list {
   margin-top: 39px;
   width: 1314px;
   height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .card-pink {
@@ -273,13 +279,9 @@ body {
   background: #ECEDFF;
 }
 
-.svg-blue-dark {
-  fill: #2F80ED;
-}
-
 .card-head {
   margin-top: 34px;
-  font-family: "Pragmatica-Bold", sans-serif;
+  font-family: "Pragmatica-Bold, Merriweather", sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
@@ -287,14 +289,14 @@ body {
 
 .card-text {
   margin-top: 16px;
-  font-family: "Pragmatica-Medium", sans-serif;
+  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   text-align: center;
 }
 
-.main__choose-us_list-card {
+.choose-us__list-card {
   width: 370px;
   min-height: 260px;
   margin-bottom: 30px;
@@ -308,50 +310,50 @@ body {
   color: #444B51;
 }
 
-.main__apply {
+.apply {
   display: flex;
   flex-direction: row;
 }
 
-.main__apply-img {
+.apply__img {
   margin-top: 70px;
   margin-left: 153px;
 }
 
-.main__apply_delivery-photo {
+.apply__delivery-photo {
   width: 647px;
   height: 520px;
 }
 
-.main__apply-for-ambassador {
+.apply__for-ambassador {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.main__apply-for-ambassador-text {
+.apply__for-ambassador_text {
   margin-top: 20px;
   width: 459px;
-  font-family: "Pragmatica-Medium", sans-serif;
+  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 26px;
   color: #444B51;
 }
 
-.main__apply-for-ambassador-btn {
+.apply__for-ambassador_btn {
   margin-top: 28px;
   width: 200px;
   height: 50px;
   background-color: #E24329;
-  font-family: "Pragmatica-Bold", sans-serif;
+  font-family: "Pragmatica-Bold, Merriweather", sans-serif;
   font-size: 18px;
   border: none;
   border-radius: 25px;
   color: #FFF;
 }
 
-.main__news {
+.news {
   width: 1440px;
   display: flex;
   align-items: center;
@@ -359,12 +361,7 @@ body {
   flex-direction: column;
 }
 
-.news-head {
-  width: 690px;
-  text-align: center;
-}
-
-.main__news_list {
+.news__list {
   margin-top: 40px;
   width: 1190px;
   display: flex;
@@ -372,13 +369,13 @@ body {
   justify-content: space-between;
 }
 
-.main__news_list-card {
+.news__list_card {
   margin-right: 30px;
   width: 372px;
   height: 595px;
 }
 
-.main__news_list-card-img {
+.news__list_img {
   width: 370px;
   height: 300px;
 }
@@ -404,19 +401,19 @@ body {
   justify-content: space-between;
 }
 
-.card__text-head {
+.card__head {
   margin-top: 25px;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Segoe UI, Roboto", sans-serif;
   font-weight: 900;
   font-size: 19px;
   line-height: 28px;
   color: #474747;
 }
 
-.card__text-paragraph {
+.card__paragraph {
   margin-top: 25px;
   height: 103px;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Segoe UI, Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -431,13 +428,13 @@ body {
 
 .card__learn-more_link {
   padding-right: 8px;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Segoe UI, Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: #29DBCC;
 }
 
-.main__our-clients_logos {
+.our-clients__logos {
   margin-top: 55px;
   padding-left: 177px;
   padding-right: 177px;
@@ -462,7 +459,7 @@ body {
 .footer__logo_text {
   margin-top: 30px;
   width: 340px;
-  font-family: "Pragmatica-Medium", sans-serif;
+  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 26px;
@@ -481,7 +478,8 @@ body {
 }
 
 .footer__head {
-  font-family: "Pragmatica-Bold", sans-serif;
+  font-family: "Pragmatica-Bold, Merriweather", sans-serif;
+  font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   color: #444B51;
@@ -489,7 +487,7 @@ body {
 
 .footer__list {
   margin-top: 36px;
-  font-family: "Pragmatica-Medium", sans-serif;
+  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
@@ -501,7 +499,7 @@ body {
   margin-top: 16px;
 }
 
-.footer__copiright {
+.footer__copyright {
   width: 1440px;
   height: 50px;
   background: #E24329;
@@ -511,7 +509,8 @@ body {
 }
 
 .footer__copyright_text {
-  font-family: "Pragmatica-Medium", sans-serif;
+  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
+  font-weight: 500;
   font-size: 16px;
   color: #FFF;
 }
