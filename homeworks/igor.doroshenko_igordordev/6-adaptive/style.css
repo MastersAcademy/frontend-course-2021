@@ -41,7 +41,7 @@ body {
 
 .informarion__phone::before {
   content: "";
-  background-image: url('img/icon-phone.svg');
+  background-image: url("img/icon-phone.svg");
   background-size: cover;
   height: 16px;
   width: 12px;
@@ -75,7 +75,7 @@ body {
 
 .information__language-block::before {
   content: "";
-  background-image: url('img/icon-planet.svg');
+  background-image: url("img/icon-planet.svg");
   background-size: cover;
   height: 18px;
   width: 19px;
@@ -349,7 +349,7 @@ body {
 
 .article-attributes__view-count::before {
   content: "";
-  background-image: url('img/icon-view.svg');
+  background-image: url("img/icon-view.svg");
   background-size: cover;
   height: 13px;
   width: 19px;
@@ -390,7 +390,7 @@ body {
 
 .article-short__full-link::after {
   content: "";
-  background-image: url('img/icon-arrow.svg');
+  background-image: url("img/icon-arrow.svg");
   background-size: cover;
   height: 18px;
   width: 18px;
