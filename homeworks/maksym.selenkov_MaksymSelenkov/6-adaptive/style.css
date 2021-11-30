@@ -115,7 +115,8 @@ button:hover {
 
 .page__heading {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  /*flex-direction: column;*/
 }
 
 .heading__title {
@@ -144,7 +145,6 @@ button:hover {
 .heading__form {
   width: 100%;
   max-width: 570px;
-  height: 100%;
   height: 60px;
   display: flex;
 }
@@ -221,10 +221,9 @@ button:hover {
 }
 
 .card {
-  max-width: 330px;
-  max-height: 260px;
+  flex: 1 1 25%;
   border-radius: 16px;
-  margin-bottom: 20px;
+  margin: 0 20px 20px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -343,13 +342,15 @@ button:hover {
 }
 
 .article {
-  width: 100%;
-  max-width: 370px;
-  height: 100%;
-  max-height: 300px;
+  flex: 1 1 20%;
+}
+
+.article__picture {
+  max-width: 100%;
 }
 
 .under-picture {
+  max-width: 96%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -457,7 +458,8 @@ button:hover {
   }
 
   .card {
-    width: 35%;
+    flex: 1 1 35%;
+    margin-right: 20px;
   }
 
   .clients__logo * {
