@@ -445,3 +445,37 @@ button:hover {
   line-height: 150%;
   margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+
+  .page__picture {
+    display: none;
+  }
+
+  .apply__picture {
+    display: none;
+  }
+
+  .card {
+    width: 35%;
+  }
+
+  .clients__logo * {
+    max-width: 30%;
+  }
+}
+
+@media (max-width: 320px) {
+
+  .page__picture {
+    display: none;
+  }
+
+  .apply__picture {
+    display: none;
+  }
+
+  .clients__logo * {
+    max-width: 100%;
+  }
+}
