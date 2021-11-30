@@ -478,6 +478,14 @@ body {
   }
 }
 
+@media (max-width: 1000px) {
+
+  .clients-section__row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
 
   .hero-section {
@@ -500,11 +508,6 @@ body {
 
   .news-section__articles-container {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .clients-section__row {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
   }
 
   .main-footer__company-info {
