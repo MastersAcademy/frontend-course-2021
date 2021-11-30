@@ -19,13 +19,14 @@
 }
 
 body {
-  font-family: "Pragmatica-Book", Arial, Helvetica, sans-serif;
+  font-family: "Pragmatica-Book", sans-serif;
   letter-spacing: 1px;
 }
 
 .page-container {
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .button {
@@ -36,7 +37,7 @@ body {
 }
 
 .button--action {
-  font-family: "Pragmatica-Bold", Arial, sans-serif;
+  font-family: "Pragmatica-Bold", sans-serif;
   background-color: rgba(226, 67, 41, 1);
   font-weight: 600;
   color: rgba(255, 255, 255, 1);
@@ -50,7 +51,7 @@ body {
 }
 
 .main-header {
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .main-header__container {
@@ -72,10 +73,38 @@ body {
 
 .main-header__icon {
   margin-right: .5rem;
+  height: 15px;
+  width: 15px;
 }
 
 .button--sign-in {
   margin-right: 2rem;
+}
+
+.language-dropdown {
+  position: relative;
+  position: inline-block;
+}
+
+.language-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFF;
+  padding: 1rem;
+}
+
+.language-dropdown-content:hover {
+  display: block;
+}
+
+.main-header__button--language-switcher:hover ~ .language-dropdown-content {
+  display: block;
+}
+
+.language-dropdown-content__link {
+  text-align: right;
+  display: block;
+  text-decoration: none;
 }
 
 .button--language-switcher {
@@ -85,6 +114,8 @@ body {
 
 .button__icon {
   margin-right: .5rem;
+  height: 20px;
+  width: 20px;
 }
 
 .hero-section {
@@ -94,6 +125,7 @@ body {
 
 .hero-section__container {
   display: flex;
+  padding: 2rem 1rem;
 }
 
 .hero-section__title {
@@ -116,6 +148,7 @@ body {
   border-radius: 50px;
 }
 
+
 .hero-section__tracking-form-input {
   flex: 1;
   outline: none;
@@ -126,16 +159,21 @@ body {
 
 .hero-section__tracking-form-input::placeholder {
   color: rgba(186, 186, 186, 1);
-  font-family: "Pragmatica-Bold", Arial, sans-serif;
+  font-family: "Pragmatica-Bold", sans-serif;
   font-weight: 600;
 }
 
 .hero-section__tracking-form-button {
   background-color: rgba(255, 106, 0, 1);
   color: rgba(255, 255, 255, 1);
-  font-family: "Pragmatica-Bold", Arial, sans-serif;
+  font-family: "Pragmatica-Bold", sans-serif;
   font-weight: 600;
   padding: 1.25rem 1.5rem;
+}
+
+.hero-section__image-container {
+  width: 100%;
+  height: auto;
 }
 
 .features-section {
@@ -155,7 +193,7 @@ body {
   font-size: 1.125rem;
   margin: 0 auto;
   margin-bottom: 3rem;
-  width: 600px;
+  max-width: 600px;
 }
 
 .features-section__cards-container {
@@ -238,6 +276,11 @@ body {
   padding: 1rem 3rem;
 }
 
+.apply-section__image-container {
+  width: 100%;
+  height: auto;
+}
+
 .news-section__title {
   text-align: center;
   font-size: 2.5rem;
@@ -255,10 +298,15 @@ body {
   flex-direction: column;
 }
 
-.article-card__image {
+.article-card__image-container {
   width: 100%;
   height: auto;
   margin-bottom: 1.5rem;
+}
+
+.article-card__image {
+  width: 100%;
+  height: auto;
 }
 
 .article-card__category {
@@ -269,6 +317,14 @@ body {
 
 .article-card__views {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.article-card__icon {
+  height: 20px;
+  width: 20px;
+  margin-right: .5rem;
 }
 
 .article-card__title {
@@ -291,6 +347,8 @@ body {
 
 .article-card__arrow-icon {
   margin-left: 1rem;
+  height: 20px;
+  width: 20px;
 }
 
 .clients-section {
@@ -306,6 +364,7 @@ body {
 .clients-section__row {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  align-items: center;
   justify-items: center;
 }
 
@@ -314,9 +373,10 @@ body {
 }
 
 .main-footer__container {
-  padding: 4rem 0;
+  padding: 4rem 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
 .main-footer__logo {
@@ -348,15 +408,53 @@ body {
   text-decoration: none;
   color: inherit;
   display: flex;
+  transition: color .25s ease-in-out;
+}
+
+.main-footer__list-item-link:hover {
+  color: rgba(226, 67, 41, .85);
 }
 
 .main-footer__copyright-text {
   background-color: rgba(226, 67, 41, 1);
   color: rgba(255, 255, 255, 1);
-  font-family: "Pragmatica-Bold", Arial, sans-serif;
+  font-family: "Pragmatica-Bold", sans-serif;
   font-weight: 500;
   text-align: center;
   padding: 1rem;
+}
+
+@media (max-width: 1100px) {
+
+  .hero-section {
+    padding: 0 2rem;
+  }
+
+  .hero-section__container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .hero-section__image-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .apply-section {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .apply-section__container {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  .apply-section__image-container {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -368,20 +466,11 @@ body {
 
   .features-section__cards-container {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .page-container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    gap: 1rem;
   }
 
   .hero-section__image {
     display: none;
-  }
-
-  .apply-section {
-    padding: 4rem 0;
-    text-align: center;
   }
 
   .apply-section__image {
@@ -402,7 +491,7 @@ body {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 700px) {
 
   .main-header__container {
     display: flex;
@@ -420,13 +509,37 @@ body {
   }
 
   .main-header__button {
-    width: 100%;
     margin: 0;
     margin-bottom: 1rem;
   }
 
   .main-header__button--language-switcher {
     margin-bottom: 0;
+  }
+
+  .main-footer__container {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .clients-section {
+    padding: 2rem 0;
+  }
+
+  .clients-section__title {
+    margin-bottom: 2rem;
+  }
+
+  .clients-section__row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 320px) {
+
+  .main-header__button {
+    width: 100%;
   }
 
   .hero-section {
@@ -476,19 +589,6 @@ body {
 
   .news-section__articles-container {
     grid-template-columns: 1fr;
-  }
-
-  .clients-section {
-    padding: 2rem 0;
-  }
-
-  .clients-section__title {
-    margin-bottom: 2rem;
-  }
-
-  .clients-section__row {
-    grid-template-columns: 1fr;
-    gap: 2rem;
   }
 
   .main-footer__container {
