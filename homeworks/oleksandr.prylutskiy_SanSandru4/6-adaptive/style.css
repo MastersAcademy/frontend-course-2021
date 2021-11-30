@@ -38,20 +38,20 @@ body {
 }
 
 .header {
-  width: 100%;
+  width: 1440px;
   height: 70px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .header__logo {
-  padding-left: 143px;
-  padding-right: 485px;
+  margin-left: 135px;
 }
 
 .header__info {
+  margin-right: 136px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -62,7 +62,12 @@ body {
 }
 
 .header__info-number-phone {
-  padding-left: 10px;
+  margin-left: 10px;
+}
+
+.header__info-number-phone_input {
+  margin-left: 5px;
+  height: 25px;
 }
 
 .header__info_btn {
@@ -77,8 +82,12 @@ body {
   color: #FFF;
 }
 
+.header__info_btn:hover {
+  background-color: #DD5A45;
+}
+
 .header__info-language {
-  padding-left: 42px;
+  margin-left: 42px;
   color: #828282;
   font-size: 16px;
   display: flex;
@@ -86,7 +95,7 @@ body {
 }
 
 .header__info-language-change {
-  padding-left: 10px;
+  margin-left: 10px;
 }
 
 .main {
@@ -98,35 +107,32 @@ body {
 .main__process {
   height: auto;
   color: #FFF;
-  font-family: "Pragmatica-Medium", sans-serif;
+  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
   display: flex;
   flex-direction: column;
 }
 
-.main__process_section {
-  height: 642px;
-  padding-top: 100px;
-  padding-left: 135px;
-  color: #FFF;
-  background-color: #E24329;
-}
-
 .main__process-head {
-  padding-top: 36px;
-  width: 731px;
-  font-family: "Pragmatica-Bold", sans-serif;
+  margin-top: 36px;
+  width: auto;
+  font-family: "Pragmatica-Bold, Merriweather", sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 68px;
 }
 
 .main__process-text {
-  padding-top: 30px;
-  width: 615px;
-  font-family: "Pragmatica-Light";
+  margin-top: 30px;
+  width: auto;
+  font-family: "Pragmatica-Light, Merriweather", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 26px;
+}
+
+.main__process-track-percel {
+  display: flex;
+  align-items: center;
 }
 
 .main__track-percel_input, .main__track-percel_btn {
@@ -134,10 +140,8 @@ body {
 }
 
 .main__track-percel_input {
-  margin-top: 58px;
-  margin-right: -4px;
+  margin-top: 57px;
   padding-left: 39px;
-  padding-right: 5px;
   width: 400px;
   background: #FAFAFA;
   border: 1px solid #BDBDBD;
@@ -160,25 +164,42 @@ body {
   color: #FFF;
 }
 
+.main__track-percel_btn:hover {
+  background: #F79148;
+}
+
+.main__process_section {
+  height: 720px;
+  color: #FFF;
+  background-color: #E24329;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
 .main__process_information {
+  margin-top: 100px;
+  margin-left: 135px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
   z-index: 1;
 }
 
 .main__process-img {
-  position: relative;
-  width: 622px;
+  margin-top: 100px;
+  margin-left: -40px;
+  margin-right: 60px;
+  width: 620px;
   z-index: 2;
-  top: -442px;
-  left: 560px;
 }
 
 .main__delivery-photo {
   width: 620px;
-  height: 500px;
 }
 
 .main__choose-us {
-  width: 1440px;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -275,7 +296,7 @@ body {
 
 .main__choose-us_list-card {
   width: 370px;
-  height: 260px;
+  min-height: 260px;
   margin-bottom: 30px;
   padding-left: 24px;
   padding-right: 24px;
