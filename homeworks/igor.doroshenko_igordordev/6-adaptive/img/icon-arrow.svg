@@ -1,8 +1,8 @@
 <svg width="28" height="24.000000000000004" xmlns="http://www.w3.org/2000/svg" fill="none">
-
  <g>
   <title>Layer 1</title>
-  <path id="svg_2" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#29DBCC" d="m5.24686,11.99582l16,0"/>
-  <path id="svg_3" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#29DBCC" d="m14.33054,4.99582l7,7l-7,7"/>
+  <path d="m5.24686,11.67709l16,0" stroke="#29DBCC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="svg_2"/>
+  <path d="m14.33054,4.67709l7,7l-7,7" stroke="#29DBCC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="svg_3"/>
  </g>
+
 </svg>
