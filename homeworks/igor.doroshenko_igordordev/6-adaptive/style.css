@@ -39,8 +39,6 @@ body {
   display: flex;
 }
 
-
-
 .informarion__phone::before {
   content: "";
   background-image: url(img/icon-phone.svg);
@@ -69,6 +67,10 @@ body {
   color: #FFF;
   font-size: 16px;
   font-weight: 700;
+}
+
+.informaion__login:hover {
+  background-color: #FF6A00;
 }
 
 .information__language-block::before {
@@ -153,6 +155,10 @@ body {
   color: #FFF;
   font-size: 16px;
   font-weight: 700;
+}
+
+.tracking-form__apply-button:hover {
+  background-color: #ffc400;
 }
 
 .track-section__delivery-img {
@@ -297,6 +303,10 @@ body {
   border-radius: 25px;
 }
 
+.apply-section__apply-button:hover {
+  background-color: #FF6A00;
+}
+
 .main__articles-section-block {
   min-height: 747px;
   margin-bottom: 100px;
@@ -374,6 +384,10 @@ body {
   text-decoration: none;
 }
 
+.article-short__full-link:hover {
+  border: 1px solid #29DBCC;
+}
+
 .article-short__full-link::after {
   content: "";
   background-image: url(img/icon-arrow2.svg);
@@ -381,6 +395,7 @@ body {
   height: 18px;
   width: 18px;
   margin-left: 7px;
+  padding-right: 2px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -405,6 +420,10 @@ body {
   list-style: none;
 }
 
+.clients-list__client:hover {
+  scale: 90%;
+}
+
 .footer-block {
   padding-top: 95px;
   background-color: #FFF2EF;
@@ -412,6 +431,10 @@ body {
 
 .contacts__logo {
   margin-bottom: 40px;
+}
+
+.contacts__logo:hover {
+  scale: 90%;
 }
 
 .contacts__adress {
@@ -436,6 +459,10 @@ body {
 
 .social__element {
   margin-right: 27px;
+}
+
+.social__element:hover {
+  scale: 90%;
 }
 
 .footer-information__contacts {
@@ -472,6 +499,10 @@ body {
   text-decoration: none;
 }
 
+.faq-list__link:hover {
+  color: #FF6A00;
+}
+
 .policy__header {
   margin-bottom: 37px;
   font-size: 24px;
@@ -494,6 +525,10 @@ body {
   line-height: 24px;
   color: #444B51;
   text-decoration: none;
+}
+
+.policy-list__link:hover {
+  color: #FF6A00;
 }
 
 
