@@ -71,6 +71,10 @@ body {
   color: inherit;
 }
 
+.main-header__link:hover {
+  color: rgba(226, 67, 41, .85);
+}
+
 .main-header__icon {
   margin-right: .5rem;
   height: 15px;
@@ -107,9 +111,17 @@ body {
   text-decoration: none;
 }
 
+.language-dropdown-content__link:hover {
+  color: rgba(226, 67, 41, .85);
+}
+
 .button--language-switcher {
   display: flex;
   align-items: center;
+}
+
+.button--language-switcher:hover {
+  color: rgba(226, 67, 41, .85);
 }
 
 .button__icon {
@@ -169,6 +181,10 @@ body {
   font-family: "Pragmatica-Bold", sans-serif;
   font-weight: 600;
   padding: 1.25rem 1.5rem;
+}
+
+.hero-section__tracking-form-button:hover {
+  background-color: rgba(255, 106, 0, .75);
 }
 
 .hero-section__image-container {
@@ -343,6 +359,11 @@ body {
   color: rgba(41, 219, 204, 1);
   display: flex;
   align-items: center;
+}
+
+.article-card__link:hover {
+  color: rgba(41, 219, 204, .75);
+  transform: translateY(2px);
 }
 
 .article-card__arrow-icon {
@@ -534,6 +555,22 @@ body {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+
+  .hero-section__tracking-form-input {
+    padding: .25rem;
+  }
+
+  .hero-section__tracking-form-button {
+    padding: .5rem .75rem;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .features-section__cards-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 320px) {
@@ -560,14 +597,6 @@ body {
     display: flex;
     overflow: hidden;
     border-radius: 50px;
-  }
-
-  .hero-section__tracking-form-input {
-    padding: .25rem;
-  }
-
-  .hero-section__tracking-form-button {
-    padding: .5rem .75rem;
   }
 
   .features-section {
