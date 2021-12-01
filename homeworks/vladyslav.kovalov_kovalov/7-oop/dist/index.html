@@ -40,15 +40,19 @@
     </header>
     <main class="main-section">
         <div class="main-section__container page-container">
-            <div class="photo-grid">
-                <img src="img/img-1.jpg" alt="" class="photo-grid__item">
-                <img src="img/img-2.jpg" alt="" class="photo-grid__item">
-                <img src="img/img-3.jpg" alt="" class="photo-grid__item">
-                <img src="img/img-4.jpg" alt="" class="photo-grid__item">
-                <img src="img/img-5.jpg" alt="" class="photo-grid__item">
+            <div class="photo-grid" data-gallery>
+                <img data-image="1" class="photo-grid__item" src="img/img-1.jpg" alt="Photo of architecture" >
+                <img data-image="2" class="photo-grid__item" src="img/img-2.jpg" alt="Photo of architecture" >
+                <img data-image="3" class="photo-grid__item" src="img/img-3.jpg" alt="Photo of architecture" >
+                <img data-image="4" class="photo-grid__item" src="img/img-4.jpg" alt="Photo of architecture" >
+                <img data-image="5" class="photo-grid__item" src="img/img-5.jpg" alt="Photo of architecture" >
             </div>
         </div>
     </main>
+    <div data-full-screen class="full-screen hidden"></div>
+    <template data-full-screen-template>
+        <img data-full-screen-image class="full-screen__image" src="">
+    </template>
 	<script src="bundle.js"></script>
 </body>
 </html>

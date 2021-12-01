@@ -73,10 +73,32 @@ body {
   gap: 1rem;
 }
 
+
 .photo-grid__item {
   flex: 1 0 auto;
   width: 100%;
   height: auto;
   max-width: 400px;
   max-height: 400px;
+}
+
+.full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, .85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-screen__image {
+  height: 800px;
+  width: 800px;
+}
+
+.hidden {
+  display: none;
 }
