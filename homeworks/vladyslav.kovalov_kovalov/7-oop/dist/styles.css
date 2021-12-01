@@ -18,7 +18,7 @@ body {
 }
 
 .button--add-photo {
-  position: absolute;
+  position: fixed;
   bottom: 2rem;
   right: 2rem;
   padding: 1rem;
@@ -39,11 +39,10 @@ body {
   height: 15px;
 }
 
-
-
 .page-container {
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .main-header {
@@ -67,3 +66,17 @@ body {
   color: #FFF;
 }
 
+.photo-grid {
+  padding: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.photo-grid__item {
+  flex: 1 0 auto;
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  max-height: 400px;
+}
