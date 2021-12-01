@@ -12,22 +12,23 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1170px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .header {
-  height: 100%;
   background: #FFF;
   width: 100%;
+  height: 70px;
 }
 
 .header__container {
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
 }
 
 .header__actions {
@@ -50,6 +51,14 @@ body {
   font-size: 16px;
   line-height: 21px;
   color: #444B51;
+  text-decoration: none;
+  transition: all .3s linear;
+}
+
+.phone__number:hover {
+  color: #123;
+  border: 1px solid #345;
+  border-radius: 10px;
 }
 
 .action__sign-in {
@@ -85,18 +94,22 @@ body {
   font-weight: 500;
   line-height: 21px;
   color: #828282;
+  transition: .3s linear;
+  text-decoration: none;
+}
+
+.language__text:hover {
+  color: #123;
 }
 
 .about-us {
-  height: 100%;
   width: 100%;
   background: #E24329;
+  padding: 100px 0;
 }
 
 .about-us__container {
-  padding: 100px 0;
-  height: 100%;
-  max-width: 1207px;
+  max-width: 1237px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -104,7 +117,7 @@ body {
 }
 
 .about-us__content {
-  width: 730px;
+  width: 732px;
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -112,6 +125,8 @@ body {
 }
 
 .about-us__title {
+  width: 732px;
+  max-width: 100%;
   font-weight: 700;
   font-size: 48px;
   line-height: 68px;
@@ -131,14 +146,15 @@ body {
   flex-direction: row;
   align-items: center;
   width: 570px;
+  max-width: 100%;
   height: 60px;
   border-radius: 30px;
   overflow: hidden;
 }
 
 .search__input {
-  width: 400px;
-  max-width: 70%;
+  max-width: 400px;
+  width: 70%;
   height: 100%;
   font-weight: 500;
   font-size: 18px;
@@ -155,8 +171,8 @@ body {
 
 .search__button {
   height: 100%;
-  width: 173px;
-  max-width: 30%;
+  width: 31%;
+  max-width: 173px;
   border: 0;
   background: #FF6A00;
   font-weight: 700;
@@ -171,8 +187,15 @@ body {
   background: #123;
 }
 
-.advantages__container {
+.bike-deliver {
+  margin: 0 0 0 -45px;
+}
+
+.advantages {
   padding: 100px 0;
+}
+
+.advantages__container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -315,11 +338,14 @@ body {
   background: #123;
 }
 
+.news-tips {
+  padding: 0 0 100px;
+}
+
 .news-tips__container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 0 100px;
 }
 
 .news-tips__title {
@@ -336,6 +362,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .news-tips__item {
@@ -391,10 +418,10 @@ body {
 
 .clients {
   width: 100%;
+  padding: 0 0 100px;
 }
 
 .clients__container {
-  padding: 0 0 100px;
   max-width: 1127px;
   display: flex;
   flex-direction: column;
@@ -414,6 +441,12 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.clients__item {
+  margin: 0 20px 20px 0;
 }
 
 .footer {
@@ -509,4 +542,27 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .bike-deliver {
+    margin: 0;
+  }
+
+  .advantages__list {
+    justify-content: space-around;
+  }
+
+  .bike-deliver {
+    width: 480px;
+  }
+
+  .news-tips__list {
+    justify-content: space-around;
+  }
+
+  .news-tips__item {
+    margin: 40px 0 0;
+  }
 }
