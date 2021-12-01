@@ -3,7 +3,8 @@ class Gallery {
         private galleryElement:HTMLDivElement,
         private fullScreenElement: HTMLDivElement,
         private imageUploaderElement: HTMLInputElement,
-        private fullScreenTemplate: HTMLTemplateElement
+        private fullScreenTemplate: HTMLTemplateElement,
+        private fullScreenLoader: HTMLDivElement
     ){
         this.listenEvents();
     }
@@ -19,7 +20,8 @@ class Gallery {
             const currentImage = (event.target as HTMLButtonElement).dataset;
             if(currentImage.fullScreenImage !== '') {
                 this.fullScreenElement?.classList.add('hidden');
-                this.fullScreenElement.innerHTML = '';
+                const childElement = this.fullScreenElement.querySelector('[data-full-screen-image]') as HTMLImageElement;
+                this.fullScreenElement.removeChild(childElement);
             }
         });
 
@@ -36,8 +38,12 @@ class Gallery {
     private toggleFullSizeImage(imageSource: any, container: any): void {
         const imagePath = imageSource;
         const image = this.createFullSizeImage(imagePath);
-        container.append(image);
-        fullScreenElement?.classList.remove('hidden');
+        this.fullScreenElement?.classList.remove('hidden');
+        this.fullScreenLoader.classList.remove('hidden');
+        setTimeout(() => {
+            container.append(image);
+            this.fullScreenLoader.classList.add('hidden');
+        }, 1000);
     }
 
     private createFullSizeImage(src: any) {
@@ -71,6 +77,7 @@ const galleryElement = document.querySelector('[data-gallery]')! as HTMLDivEleme
 const fullScreenElement = document.querySelector('[data-full-screen]') as HTMLDivElement;
 const imageUploaderElement = document.querySelector('[data-image-upload]') as HTMLInputElement;
 const fullScreenTemplate = document.querySelector('[data-full-screen-template]') as HTMLTemplateElement;
+const fullScreenLoader = document.querySelector('[data-full-screen-loader]') as HTMLDivElement;
 
-new Gallery(galleryElement, fullScreenElement, imageUploaderElement, fullScreenTemplate);
+new Gallery(galleryElement, fullScreenElement, imageUploaderElement, fullScreenTemplate, fullScreenLoader);
 
