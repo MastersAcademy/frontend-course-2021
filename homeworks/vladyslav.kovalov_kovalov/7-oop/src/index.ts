@@ -54,13 +54,6 @@ function addImage(imageSrc: any, container: any) {
     const content = template.content.cloneNode(true);
     const element = (content as HTMLImageElement).querySelector('[data-new-image-template-element]');
     element?.setAttribute('src', imageSrc);
-    let lastId = galleryElement.children[galleryElement.children.length - 1].getAttribute('data-image');
-    element?.setAttribute('data-image', `${Number(lastId) + 1}`);
     element?.removeAttribute('data-new-image-template-element');
     container.append(element);
 }
-
-// window.addEventListener('keydown', event => {
-//     const element = (event.target instanceof HTMLElement);
-//     console.log(element);
-// });
