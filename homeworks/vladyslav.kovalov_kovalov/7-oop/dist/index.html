@@ -11,20 +11,36 @@
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none !important;">
         <symbol id="gallery-logo">
             <title>Gallery Logo</title>
-            <svg viewBox="0 0 32 32">
+            <svg viewBox="0 0 32 32" fill="none">
                 <path d="M2.66665 24L9.33331 16L13.3333 20L18.6666 13.3333L25.3333 21.3333M1.33331 1.33334H25.3333V25.3333H1.33331V1.33334ZM6.66665 25.3333V30.6667H30.6666V7.96001H25.3333L6.66665 25.3333ZM7.99998 10.6667C8.3536 10.6667 8.69274 10.5262 8.94279 10.2762C9.19284 10.0261 9.33331 9.68697 9.33331 9.33334C9.33331 8.97972 9.19284 8.64058 8.94279 8.39053C8.69274 8.14049 8.3536 8.00001 7.99998 8.00001C7.64636 8.00001 7.30722 8.14049 7.05717 8.39053C6.80712 8.64058 6.66665 8.97972 6.66665 9.33334C6.66665 9.68697 6.80712 10.0261 7.05717 10.2762C7.30722 10.5262 7.64636 10.6667 7.99998 10.6667Z" stroke="white" stroke-width="2"/>
-            </svg>
         </symbol>
         <symbol id="add-icon">
             <title>Add Icon</title>
-            <svg width="14" height="14" viewBox="0 0 14 14">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="black" fill-opacity="0.87"/>
+            <svg viewBox="0 0 14 14">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"/>
             </svg>
         </symbol>
     </svg>
-    <!-- <svg class="header__logo-icon">
-        <use xlink:href="#gallery-logo"></use>
-    </svg> -->
+    <button class="button button--add-photo">
+        <svg class="button__icon">
+            <use xlink:href="#add-icon"></use>
+        </svg>
+    </button>
+    <header class="main-header">
+        <div class="main-header__container page-container">
+            <span class="main-header__logo">
+                <svg class="main-header__logo-icon">
+                    <use xlink:href="#gallery-logo"></use>
+                </svg>
+                <span class="main-header__text">
+                    MyLibrary
+                </span>
+            </span>
+        </div>
+    </header>
+    <main class="photo-grid">
+        <div class="photo-grid page-container"></div>
+    </main>
 	<script src="bundle.js"></script>
 </body>
 </html>

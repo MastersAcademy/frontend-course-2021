@@ -11,3 +11,59 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+.button {
+  border: 0;
+  background-color: transparent;
+}
+
+.button--add-photo {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem;
+  background-color: #03DAC5;
+  border-radius: 50%;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, .14), 0px 1px 10px rgba(0, 0, 0, .12), 0px 2px 4px rgba(0, 0, 0, .2);
+  cursor: pointer;
+  transition: transform .1s ease-in-out, box-shadow .1s ease-in-out;
+}
+
+.button--add-photo:hover {
+  box-shadow: 0px 2px 2.5px rgba(0, 0, 0, .14), 0px 0px 5px rgba(0, 0, 0, .12), 0px 1px 2px rgba(0, 0, 0, .2);
+  transform: translateY(2px);
+}
+
+.button__icon {
+  width: 15px;
+  height: 15px;
+}
+
+
+
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.main-header {
+  background-color: #6200EE;
+  padding: 1rem 0;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, .14), 0px 1px 10px rgba(0, 0, 0, .12), 0px 2px 4px rgba(0, 0, 0, .2);
+}
+
+.main-header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.main-header__logo-icon {
+  height: 32px;
+  width: 32px;
+  margin-right: 1rem;
+}
+
+.main-header__text {
+  color: #FFF;
+}
+
