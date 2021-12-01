@@ -55,7 +55,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-family: "Pragmatica-Medium", sans-serif;
+  font-family: Pragmatica-Medium, Merriweather, sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: #444B51;
@@ -80,6 +80,7 @@ body {
   align-items: center;
   justify-content: center;
   color: #FFF;
+  cursor: pointer;
 }
 
 .header__info_btn:hover {
@@ -107,7 +108,7 @@ body {
 .process {
   height: auto;
   color: #FFF;
-  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
+  font-family: Pragmatica-Medium, Merriweather, sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -115,7 +116,7 @@ body {
 .process__head {
   margin-top: 36px;
   width: auto;
-  font-family: "Pragmatica-Bold, Merriweather", sans-serif;
+  font-family: Pragmatica-Bold, Merriweather, sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 68px;
@@ -124,7 +125,7 @@ body {
 .process__text {
   margin-top: 30px;
   width: auto;
-  font-family: "Pragmatica-Light, Merriweather", sans-serif;
+  font-family: Pragmatica-Light, Merriweather, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 26px;
@@ -157,11 +158,12 @@ body {
   background: #FF6A00;
   border: none;
   border-radius: 0 30px 30px 0;
-  font-family: "Pragmatica-Bold", sans-serif;
+  font-family: Pragmatica-Bold, Merriweather, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 16px;
   color: #FFF;
+  cursor: pointer;
 }
 
 .process__track-percel_btn:hover {
@@ -218,7 +220,7 @@ body {
 
 .main__text-head {
   padding-top: 100px;
-  font-family: "Pragmatica-Bold, Merriweather", sans-serif;
+  font-family: Pragmatica-Bold, Merriweather, sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 120%;
@@ -238,7 +240,7 @@ body {
   margin-top: 16px;
   width: 615px;
   text-align: center;
-  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
+  font-family: Pragmatica-Medium, Merriweather, sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 26px;
@@ -255,41 +257,41 @@ body {
   box-sizing: border-box;
 }
 
-.card-pink {
+.choose-us__list-card--card-pink {
   background: #FFF3EB;
 }
 
-.card-pink-light {
+.choose-us__list-card--card-pink-light {
   background: #FFFAEC;
 }
 
-.card-pink-dark {
+.choose-us__list-card--card-pink-dark {
   background: #FFECF1;
 }
 
-.card-blue {
+.choose-us__list-card--card-blue {
   background: #EEFFF3;
 }
 
-.card-blue-light {
+.choose-us__list-card--card-blue-light {
   background: #F7F7F7;
 }
 
-.card-blue-dark {
+.choose-us__list-card--card-blue-dark {
   background: #ECEDFF;
 }
 
 .card-head {
   margin-top: 34px;
-  font-family: "Pragmatica-Bold, Merriweather", sans-serif;
+  font-family: Pragmatica-Bold, Merriweather, sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
 }
 
-.card-text {
+.card__text {
   margin-top: 16px;
-  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
+  font-family: Pragmatica-Medium, Merriweather, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
@@ -334,7 +336,7 @@ body {
 .apply__for-ambassador_text {
   margin-top: 20px;
   width: 459px;
-  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
+  font-family: Pragmatica-Medium, Merriweather, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 26px;
@@ -346,11 +348,16 @@ body {
   width: 200px;
   height: 50px;
   background-color: #E24329;
-  font-family: "Pragmatica-Bold, Merriweather", sans-serif;
+  font-family: Pragmatica-Bold, Merriweather, sans-serif;
   font-size: 18px;
   border: none;
   border-radius: 25px;
   color: #FFF;
+  cursor: pointer;
+}
+
+.apply__for-ambassador_btn:hover {
+  background: #DD5A45;
 }
 
 .news {
@@ -388,7 +395,7 @@ body {
 }
 
 .card__product_text {
-  font-family: "Segoe UI", sans-serif;
+  font-family: Segoe UI, Roboto, sans-serif;
   font-size: 16px;
   color: #666;
 }
@@ -403,7 +410,7 @@ body {
 
 .card__head {
   margin-top: 25px;
-  font-family: "Segoe UI, Roboto", sans-serif;
+  font-family: Segoe UI, Roboto, sans-serif;
   font-weight: 900;
   font-size: 19px;
   line-height: 28px;
@@ -413,7 +420,7 @@ body {
 .card__paragraph {
   margin-top: 25px;
   height: 103px;
-  font-family: "Segoe UI, Roboto", sans-serif;
+  font-family: Segoe UI, Roboto, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -428,10 +435,11 @@ body {
 
 .card__learn-more_link {
   padding-right: 8px;
-  font-family: "Segoe UI, Roboto", sans-serif;
+  font-family: Segoe UI, Roboto, sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: #29DBCC;
+  cursor: pointer;
 }
 
 .our-clients__logos {
@@ -443,9 +451,9 @@ body {
 }
 
 .footer {
-  margin-top: 100px;
+  padding-top: 75px;
   width: 1440px;
-  height: 346px;
+  height: auto;
   background-color: #FFF2EF;
   display: flex;
   align-items: center;
@@ -459,7 +467,7 @@ body {
 .footer__logo_text {
   margin-top: 30px;
   width: 340px;
-  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
+  font-family: Pragmatica-Medium, Merriweather, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 26px;
@@ -468,7 +476,7 @@ body {
 
 .footer__logo_social-link {
   margin-top: 40px;
-  width: 340px;
+  width: 260px;
   display: flex;
   justify-content: space-between;
 }
@@ -478,7 +486,7 @@ body {
 }
 
 .footer__head {
-  font-family: "Pragmatica-Bold, Merriweather", sans-serif;
+  font-family: Pragmatica-Bold, Merriweather, sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -487,12 +495,31 @@ body {
 
 .footer__list {
   margin-top: 36px;
-  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
+  list-style-type: none;
+}
+
+.footer__list_link {
+  font-family: Pragmatica-Medium, Merriweather, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   color: #444B51;
-  list-style-type: none;
+  text-decoration: none;
+}
+
+.footer__list_link:hover {
+  font-family: Pragmatica-Bold, Merriweather, sans-serif;
+  font-weight: 700;
+}
+
+.footer__social-icon {
+  width: 32px;
+  height: 33px;
+  fill: #444B51;
+}
+
+.footer__social-icon:hover {
+  fill: #E24329;
 }
 
 .footer__list_unit {
@@ -500,6 +527,7 @@ body {
 }
 
 .footer__copyright {
+  margin-top: 30px;
   width: 1440px;
   height: 50px;
   background: #E24329;
@@ -509,7 +537,7 @@ body {
 }
 
 .footer__copyright_text {
-  font-family: "Pragmatica-Medium, Merriweather", sans-serif;
+  font-family: Pragmatica-Medium, Merriweather, sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: #FFF;
