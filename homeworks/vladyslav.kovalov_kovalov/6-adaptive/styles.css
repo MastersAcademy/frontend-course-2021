@@ -425,6 +425,19 @@ body {
   margin-bottom: 1.25rem;
 }
 
+.main-footer__social-links {
+  display: flex;
+}
+
+.main-footer__social-link-icon {
+  height: 30px;
+  width: 30px;
+}
+
+.main-footer__social-link-icon:hover {
+  fill: rgba(226, 67, 41, .85);
+}
+
 .main-footer__list-item-link {
   text-decoration: none;
   color: inherit;
