@@ -1,10 +1,11 @@
-const galleryElement = document.querySelector('[data-gallery]');
+const galleryElement = document.querySelector('[data-gallery]')!;
 const fullScreenElement = document.querySelector('[data-full-screen]');
-const imageSelectorElement = document.querySelector
+const imageUploaderElement = document.querySelector('[data-image-upload]');
 
 galleryElement?.addEventListener('click', event => {
-    const {image: currentImage} = (event.target as HTMLButtonElement).dataset;
-    if(currentImage !== undefined) toggleFullSizeImage(currentImage, fullScreenElement);
+    const image = (event.target as HTMLButtonElement);
+    const imageSource = image.getAttribute('src');
+    if(imageSource !== null) toggleFullSizeImage(imageSource, fullScreenElement);
 });
 
 fullScreenElement?.addEventListener('click', event => {
@@ -15,10 +16,6 @@ fullScreenElement?.addEventListener('click', event => {
     }
 })
 
-// window.addEventListener('keydown', event => {
-//     console.log((event.target as EventTarget));
-// })
-
 function createFullSizeImage(src: any) {
     const template = document.querySelector('[data-full-screen-template]') as HTMLTemplateElement;
     const content = template.content.cloneNode(true);
@@ -27,9 +24,43 @@ function createFullSizeImage(src: any) {
     return element;
 }
 
-function toggleFullSizeImage(currentImage: any, container: any) {
-    const imagePath = `img/img-${currentImage}.jpg`;
+function toggleFullSizeImage(imageSource: any, container: any) {
+    const imagePath = imageSource;
     const image = createFullSizeImage(imagePath);
     container.append(image);
     fullScreenElement?.classList.remove('hidden');
 }
+
+imageUploaderElement?.addEventListener('change', event => {
+    const element = (event.target as HTMLInputElement);
+    const file = (element.files as FileList)[0];
+
+    getBase64(file).then(imageSrc => {
+        addImage(imageSrc, galleryElement);
+    });
+})
+
+function getBase64(file: any) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+}
+
+function addImage(imageSrc: any, container: any) {
+    const template = document.querySelector('[data-new-image-template]') as HTMLTemplateElement;
+    const content = template.content.cloneNode(true);
+    const element = (content as HTMLImageElement).querySelector('[data-new-image-template-element]');
+    element?.setAttribute('src', imageSrc);
+    let lastId = galleryElement.children[galleryElement.children.length - 1].getAttribute('data-image');
+    element?.setAttribute('data-image', `${Number(lastId) + 1}`);
+    element?.removeAttribute('data-new-image-template-element');
+    container.append(element);
+}
+
+// window.addEventListener('keydown', event => {
+//     const element = (event.target instanceof HTMLElement);
+//     console.log(element);
+// });
