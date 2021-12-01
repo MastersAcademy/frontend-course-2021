@@ -21,11 +21,6 @@
             </svg>
         </symbol>
     </svg>
-    <button class="button button--add-photo">
-        <svg class="button__icon">
-            <use xlink:href="#add-icon"></use>
-        </svg>
-    </button>
     <header class="main-header">
         <div class="main-header__container page-container">
             <span class="main-header__logo">
@@ -49,6 +44,14 @@
             </div>
         </div>
     </main>
+    <div class="image-upload">
+        <label for="image-upload" class="image-upload__label">
+            <svg class="image-upload__icon">
+                <use xlink:href="#add-icon"></use>
+            </svg>
+        </label>
+        <input class="image-upload__input" id="image-upload" type="file"/>
+    </div>
     <div data-full-screen class="full-screen hidden"></div>
     <template data-full-screen-template>
         <img data-full-screen-image class="full-screen__image" src="">

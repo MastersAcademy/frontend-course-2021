@@ -1,15 +1,14 @@
 const galleryElement = document.querySelector('[data-gallery]');
 const fullScreenElement = document.querySelector('[data-full-screen]');
-const imageSelectorElement =
+const imageSelectorElement = document.querySelector
 
 galleryElement?.addEventListener('click', event => {
     const {image: currentImage} = (event.target as HTMLButtonElement).dataset;
-    toggleFullSizeImage(currentImage, fullScreenElement);
+    if(currentImage !== undefined) toggleFullSizeImage(currentImage, fullScreenElement);
 });
 
 fullScreenElement?.addEventListener('click', event => {
     const currentImage = (event.target as HTMLButtonElement).dataset;
-    console.log(currentImage);
     if(currentImage.fullScreenImage !== '') {
         fullScreenElement?.classList.add('hidden');
         fullScreenElement.innerHTML = '';
