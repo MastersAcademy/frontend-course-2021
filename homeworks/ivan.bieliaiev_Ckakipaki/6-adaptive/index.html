@@ -12,18 +12,26 @@
     <body>
         <header class="header">
             <div class="container header__container">
-                <img src="img/header/logo.svg" alt="logo">
+                <a href="#" class="header__logo">
+                    <object data="logo.svg" type="image/svg+xml">
+                        <img src="img/logo/logo.svg" alt="">
+                    </object>
+                </a>
                 <div class="header__actions">
                     <div class="action__phone">
-                        <img src="img/header/phone.svg" alt="phone" class="phone__img">
+                        <svg class="phone__img" width="12" height="16" xmlns="http://www.w3.org/2000/svg">
+                            <use href="./img/header/header__sprite.svg#phone"></use>
+                        </svg>
                         <a type="tel" href="#" class="phone__number">+088 01877576457</a>
                     </div>
                     <button type="button" class="action__sign-in">
                         Sign In
                     </button>
                     <div class="action__language">
-                        <img src="img/header/lang.svg" alt="globus" class="language__globus">
-                        <a href="#" class="language__text">EN</a>
+                        <svg width="21" height="20" class="language__globus" xmlns="http://www.w3.org/2000/svg">
+                            <use href="./img/header/header__sprite.svg#lang"></use>
+                        </svg>
+                        <button type="button" class="language__text">EN</button>
                     </div>
                 </div>
             </div>
@@ -236,18 +244,41 @@
                     </div>
                 </div>
             </div>
-
         </section>
         <section class="clients">
             <div class="container clients__container">
                 <p class="clients__title">Our Clients</p>
                 <div class="clients__list">
-                    <img class="clients__item" src="img/clients/google.svg" alt="google">
-                    <img class="clients__item" src="img/clients/microsoft.svg" alt="microsoft">
-                    <img class="clients__item" src="img/clients/flickr.svg" alt="flickr">
-                    <img class="clients__item" src="img/clients/slack.svg" alt="slack">
-                    <img class="clients__item" src="img/clients/syngenta.svg" alt="syngenta">
-                    <img class="clients__item" src="img/clients/merck.svg" alt="merck">
+                    <a href="https://www.google.com" class="clients__item">
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use href="./img/clients/clients__sprite.svg#google"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.microsoft.com" class="clients__item">
+                        <svg width="141" height="30" viewBox="0 0 141 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use href="./img/clients/clients__sprite.svg#microsoft"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.flickr.com" class="clients__item">
+                        <svg width="100" height="30" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use href="./img/clients/clients__sprite.svg#flickr"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.slack.com" class="clients__item">
+                        <svg width="119" height="30" viewBox="0 0 119 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use href="./img/clients/clients__sprite.svg#slack"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.syngenta.com" class="clients__item">
+                        <svg width="134" height="40" viewBox="0 0 134 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use href="./img/clients/clients__sprite.svg#syngenta"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.merck.com" class="clients__item">
+                        <svg width="138" height="40" viewBox="0 0 138 40" xmlns="http://www.w3.org/2000/svg">
+                            <use href="./img/clients/clients__sprite.svg#merck"></use>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
@@ -255,35 +286,60 @@
             <div class="footer__content">
                 <div class="container footer__content__container">
                     <div class="footer__communication">
-                        <img class="company__logo footer__logo" src="img/header/logo.svg" alt="">
+                        <object data="logo.svg" type="image/svg+xml">
+                            <img src="img/logo/logo.svg" alt="">
+                        </object>
                         <p class="communication__address">
                             10/B, House# 32, Dhaka Uddan
                             Mohammadpur, Dhaka, Bangladesh
                         </p>
                         <div class="communication__social-networks">
-                            <img src="img/social__networks/facebook.svg" alt="facebook">
-                            <img src="img/social__networks/in.svg" alt="linkedin">
-                            <img src="img/social__networks/twitter.svg" alt="twitter">
-                            <img src="img/social__networks/pin.svg" alt="pincerest">
-                            <img src="img/social__networks/instagram.svg" alt="instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <use href="./img/social__networks/socials__sprite.svg#facebook"></use>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <use href="./img/social__networks/socials__sprite.svg#twitter"></use>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <use href="./img/social__networks/socials__sprite.svg#pincerest"></use>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <use href="./img/social__networks/socials__sprite.svg#instagram"></use>
+                            </svg>
                         </div>
                     </div>
                     <div class="footer__important-links">
                         <div class="important-links__title">Important links</div>
                         <ul class="important-links__list">
-                            <li class="important-links__item">FAQs</li>
-                            <li class="important-links__item">Blogs</li>
-                            <li class="important-links__item">Privacy Policy</li>
-                            <li class="important-links__item">Trims & Conditions</li>
+                            <li class="important-links__item">
+                                <a href="">FAQs</a>
+                            </li>
+                            <li class="important-links__item">
+                                <a href=""></a>
+                            </li>
+                            <li class="important-links__item">
+                                <a href="">Privacy Policy</a>
+                            </li>
+                            <li class="important-links__item">
+                                <a href="">Trims & Conditions</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="footer__policy">
                         <div class="policy__title">Policy</div>
                         <ul class="policy__list">
-                            <li class="policy__item">Learner</li>
-                            <li class="policy__item">Partners</li>
-                            <li class="policy__item">Developers</li>
-                            <li class="policy__item">Teaching Centre</li>
+                            <li class="policy__item">
+                                <a href="#">Learner</a>
+                            </li>
+                            <li class="policy__item">
+                                <a href="#">Partners</a>
+                            </li>
+                            <li class="policy__item">
+                                <a href="#">Developers</a>
+                            </li>
+                            <li class="policy__item">
+                                <a href="#">Teaching Centre</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

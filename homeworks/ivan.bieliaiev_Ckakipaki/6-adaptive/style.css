@@ -57,8 +57,7 @@ body {
 
 .phone__number:hover {
   color: #123;
-  border: 1px solid #345;
-  border-radius: 10px;
+  font-size: 20px;
 }
 
 .action__sign-in {
@@ -97,6 +96,8 @@ body {
   color: #828282;
   transition: .3s linear;
   text-decoration: none;
+  border: 0;
+  background: inherit;
 }
 
 .language__text:hover {
@@ -491,6 +492,7 @@ body {
 }
 
 .communication__social-networks {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
