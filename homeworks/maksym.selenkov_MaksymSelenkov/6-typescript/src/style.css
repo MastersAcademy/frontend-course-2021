@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bubble {
+  width: 200px;
+  height: 200px;
+  background-color: #0BFF17;
+  border-radius: 50%;
+  margin: 80px;
+}
+
+.key {
+  width: 80px;
+  height: 80px;
+  background-color: #6E6E6E;
+}
+
+.key__symbol {
+  text-align: center;
+  font-size: 70px;
+}
+
+.progress {
+  width: 100%;
+  background-color: #435566;
+}
+
+.bar {
+  width: 1%;
+  height: 10px;
+  background-color: #00F;
+}
