@@ -3,8 +3,8 @@
   font-style: bold;
   font-weight: 700;
   src: local("Pragmatica-Bold"),
-    url("/frontend-course-2021/homeworks/oleksandr.prylutskiy_SanSandru4/6-adaptive/fonts/Pragmatica-Bold.woff2") format("woff2"),
-    url("/frontend-course-2021/homeworks/oleksandr.prylutskiy_SanSandru4/6-adaptive/fonts/Pragmatica-Bold.woff") format("woff");
+    url("./fonts/Pragmatica-Bold.woff2") format("woff2"),
+    url("./fonts/Pragmatica-Bold.woff") format("woff");
 }
 
 @font-face {
@@ -12,8 +12,8 @@
   font-style: normal;
   font-weight: 500;
   src: local("Pragmatica-Medium"),
-    url("/frontend-course-2021/homeworks/oleksandr.prylutskiy_SanSandru4/6-adaptive/fonts/Pragmatica-Medium.woff2") format("woff2"),
-    url("/frontend-course-2021/homeworks/oleksandr.prylutskiy_SanSandru4/6-adaptive/fonts/Pragmatica-Medium.woff") format("woff");
+    url("./fonts/Pragmatica-Medium.woff2") format("woff2"),
+    url("./fonts/Pragmatica-Medium.woff") format("woff");
 }
 
 @font-face {
@@ -21,8 +21,8 @@
   font-style: normal;
   font-weight: 400;
   src: local("Pragmatica-Light"),
-    url("/frontend-course-2021/homeworks/oleksandr.prylutskiy_SanSandru4/6-adaptive/fonts/Pragmatica-Light.woff2") format("woff2"),
-    url("/frontend-course-2021/homeworks/oleksandr.prylutskiy_SanSandru4/6-adaptive/fonts/Pragmatica-Light.woff") format("woff");
+    url("./fonts/Pragmatica-Light.woff2") format("woff2"),
+    url("./fonts/Pragmatica-Light.woff") format("woff");
 }
 
 @font-face {
@@ -104,11 +104,7 @@ body {
 }
 
 .header__info-number-phone_input:hover {
-  color: #E24329;
-}
-
-.phone:hover {
-  fill: #E24329;
+  filter: drop-shadow(0 0 5px #76828B);
 }
 
 .header__info_btn {
@@ -392,7 +388,7 @@ body {
   justify-content: center;
 }
 
-.apply__for-ambassador_text {
+.apply__for-ambassador-text {
   margin-top: 20px;
   width: 459px;
   font-family: Pragmatica-Medium, Merriweather, sans-serif;
@@ -435,13 +431,13 @@ body {
   justify-content: space-between;
 }
 
-.news__list_card {
+.news__list-card {
   margin-right: 30px;
   width: 372px;
   height: 595px;
 }
 
-.news__list_img {
+.news__list-img {
   width: 370px;
   height: 300px;
 }
@@ -453,13 +449,13 @@ body {
   justify-content: space-between;
 }
 
-.card__product_text {
+.card__product-text {
   font-family: "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
   color: #666;
 }
 
-.card__product_views {
+.card__product-views {
   width: 72px;
   display: flex;
   flex-direction: row;
@@ -509,7 +505,7 @@ body {
 }
 
 .card__learn-more_link:hover {
-  color: #E24329;
+  filter: drop-shadow(0 0 3px #3CD3A9);
 }
 
 .arrow {
@@ -540,7 +536,7 @@ body {
   margin-left: 274px;
 }
 
-.footer__logo_text {
+.footer__logo-text {
   margin-top: 30px;
   width: 340px;
   font-family: Pragmatica-Medium, Merriweather, sans-serif;
@@ -550,7 +546,7 @@ body {
   color: #444B51;
 }
 
-.footer__logo_social-link {
+.footer__logo-social-link {
   margin-top: 40px;
   width: 260px;
   display: flex;
@@ -574,7 +570,7 @@ body {
   list-style-type: none;
 }
 
-.footer__list_link {
+.footer__list-link {
   font-family: Pragmatica-Medium, Merriweather, sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -583,7 +579,7 @@ body {
   text-decoration: none;
 }
 
-.footer__list_link:hover {
+.footer__list-link:hover {
   font-family: Pragmatica-Bold, Merriweather, sans-serif;
   font-weight: 700;
 }
@@ -598,7 +594,7 @@ body {
   fill: #E24329;
 }
 
-.footer__list_unit {
+.footer__list-unit {
   margin-top: 16px;
 }
 
@@ -612,7 +608,7 @@ body {
   justify-content: center;
 }
 
-.footer__copyright_text {
+.footer__copyright-text {
   font-family: Pragmatica-Medium, Merriweather, sans-serif;
   font-weight: 500;
   font-size: 16px;
