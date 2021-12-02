@@ -64,7 +64,8 @@ body {
 .action__sign-in {
   margin: 0 42px 0 47px;
   border: 0;
-  height: 40px;
+  min-height: 40px;
+  height: auto;
   width: 107px;
   border-radius: 21px;
   padding: 12px 24px;
@@ -213,6 +214,7 @@ body {
   font-size: 18px;
   line-height: 26px;
   width: 615px;
+  max-width: 100%;
   color: #444B51;
   text-align: center;
   margin: 16px 0 40px;
@@ -234,9 +236,10 @@ body {
   align-items: center;
   padding: 34px 24px;
   width: 370px;
-  height: 260px;
+  min-height: 260px;
   border-radius: 16px;
   margin: 0 0 30px;
+  height: auto;
 }
 
 .advantage__info {
@@ -285,7 +288,7 @@ body {
 }
 
 .job-offer {
-  padding: 100px 0;
+  padding: 0 0 100px;
 }
 
 .job-offer__container {
@@ -366,10 +369,14 @@ body {
 }
 
 .news-tips__item {
-  width: 370px;
+  max-width: 370px;
   display: flex;
   flex-direction: column;
   align-items: start;
+}
+
+.news-tips__item__img {
+  width: 100%;
 }
 
 .item__suptitle {
@@ -564,5 +571,94 @@ body {
 
   .news-tips__item {
     margin: 40px 0 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .header {
+    height: 120px;
+    justify-content: space-evenly;
+  }
+
+  .header__container {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .action__sign-in {
+    margin: 0 10px;
+  }
+
+  .about-us {
+    padding: 30px 0;
+  }
+
+  .about-us__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .bike-deliver {
+    display: none;
+  }
+
+  .advantages {
+    padding: 30px 0;
+  }
+
+  .job-offer {
+    padding: 0 0 40px;
+  }
+
+  .job-offer__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .news-tips {
+    padding: 0;
+  }
+
+  .news-tips__item {
+    width: 100%;
+    margin: 0 auto 10px;
+  }
+
+  .footer__content__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__communication {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .footer__important-links {
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .footer__policy {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .clients__list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .clients__title {
+    margin: 20px 0;
+  }
+
+  .clients__item {
+    margin: 10px 0;
   }
 }
