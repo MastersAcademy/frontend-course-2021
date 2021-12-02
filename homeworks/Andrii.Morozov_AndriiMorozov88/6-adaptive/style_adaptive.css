@@ -1,4 +1,6 @@
 body {
+  max-width: 1440px;
+  margin: auto;
   overflow-y: scroll;
 }
 
@@ -165,7 +167,7 @@ body {
   display: flex;
   width: 1440px;
   height: 600px;
-  margin-top: 300px;
+  margin-top: 500px;
   justify-content: flex-end;
   align-items: center;
 }
@@ -179,14 +181,15 @@ body {
 }
 
 .page__apply-aside-button {
-  width: 350px;
+  width: 200px;
   height: 60px;
   margin-top: 20px;
-  margin-left: 100px;
+  margin-left: 250px;
   font-size: 30px;
   background-color: #B41111;
-  border-radius: 50%;
+  border-radius: 20px;
   color: #F0F8FF;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .page__news {
@@ -226,7 +229,7 @@ body {
 }
 
 .page__clients {
-  margin-left: 30px;
+  margin-left: 150px;
 }
 
 .page__bottom {
@@ -267,4 +270,8 @@ body {
   text-align: center;
   padding-top: 5px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 767px) {
+  }
 }
