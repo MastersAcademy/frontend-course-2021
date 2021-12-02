@@ -10,7 +10,7 @@ export class Gallery {
         private imageUploader: any,
     ){
         this.fullScreen = new FullScreen(document.querySelector('[data-full-screen]') as HTMLElement);
-        this.imageUploader = new Uploader(document.querySelector('[data-image-upload]') as HTMLElement);
+        this.imageUploader = new Uploader(document.querySelector('[data-image-upload]') as HTMLElement, this.saveImage);
 
         this.imageStorage = [
             'img/img-0.jpg',
@@ -31,7 +31,9 @@ export class Gallery {
     }
 
     private saveImage(element: any) {
-        this.imageStorage.push(element);
+        console.log(element);
+        // this.imageStorage.push(element);
+        // console.log(this.imageStorage);
     }
 
     private renderImage(image: any, index: any): void {
@@ -59,20 +61,6 @@ export class Gallery {
                 const fullScreenImage: HTMLElement = this.fullScreen.createImage(source);
                 this.fullScreen.toggleImage(fullScreenImage);
             }
-        });
-
-        this.imageUploader.el.addEventListener('change', (event: MouseEvent) => {
-            const element = (event.target as HTMLInputElement);
-            const file = (element.files as FileList)[0];
-
-            this.imageUploader.getBase64(file).then((imageElement: any) => {
-                this.saveImage(imageElement);
-
-                const index = this.imageStorage.length - 1;
-                const image = this.imageStorage[index];
-
-                this.renderImage(image, index);
-            });
         });
     }
 }
