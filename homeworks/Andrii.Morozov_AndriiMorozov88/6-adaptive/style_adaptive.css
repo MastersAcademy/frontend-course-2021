@@ -2,18 +2,27 @@ body {
   overflow-y: scroll;
 }
 
+.header {
+  display: flex;
+  width: 1440px;
+  height: 80px;
+  background-color: #EFF3F3;
+  top: 0;
+}
+
 .page {
   display: block;
-  width: 1240px;
+  width: 1440px;
 }
 
 .page__track {
   display: flex;
-  width: 1240px;
-  height: 700px;
+  width: 1440px;
+  height: 745px;
   background-color: #E72B2B;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 120px;
 }
 
 .page__track_textfield {
@@ -22,18 +31,23 @@ body {
 }
 
 .page__track_textfield-text-big {
-  font-size: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 55px;
   color: #EFF3F3;
+  margin-left: 50px;
 }
 
 .page__track_textfield-text-small {
   font-size: 20px;
   color: #EFF3F3;
+  margin-left: 50px;
 }
 
 .page__bonik {
+  position: absolute;
   width: 620px;
   height: 500px;
+  margin-left: 720px;
 }
 
 .page__track_inputfield {
@@ -49,6 +63,7 @@ body {
   border-right: none;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+  margin-left: 50px;
 }
 
 .page__track_inputfield-button {
@@ -64,7 +79,9 @@ body {
 
 .page__title {
   text-align: center;
-  font-size: 40px;
+  font-size: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
 }
 
 .page__text {
@@ -72,24 +89,27 @@ body {
   margin-right: auto;
   text-align: center;
   font-size: 25px;
-  width: 700px;
+  width: 800px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .page__offers {
   display: flex;
-  width: 1240px;
+  width: 1440px;
   height: 500px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .page__offers-block {
   width: 370px;
-  height: 200px;
+  height: 260px;
   margin-top: 30px;
+  margin-left: 30px;
   display: block;
   text-align: center;
   padding-top: 30px;
+  border-radius: 20px;
 }
 
 .page__offers-block-color-a {
@@ -106,7 +126,7 @@ body {
 
 .page__apply {
   display: flex;
-  width: 1240px;
+  width: 1440px;
   height: 600px;
   margin-top: 300px;
   justify-content: flex-end;
@@ -134,7 +154,7 @@ body {
 
 .page__news {
   display: flex;
-  width: 1240px;
+  width: 1440px;
   height: 550px;
   justify-content: space-around;
 }
@@ -174,7 +194,7 @@ body {
 
 .page__bottom {
   display: flex;
-  width: 1240px;
+  width: 1440px;
   height: 300px;
   background-color: #C47676;
   align-items: center;
@@ -203,7 +223,7 @@ body {
 }
 
 .page-copyright {
-  width: 1240px;
+  width: 1440px;
   height: 50px;
   background-color: #B41111;
   color: #F0F8FF;
