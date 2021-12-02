@@ -8,17 +8,25 @@
         <title>Document</title>
     </head>
     <body>
-        <div class="all" data-panel>
+        <header class="header">
+            <a class="header__logo">
+                <img class="logo__img" src="img/Vector.svg">
+            </a>
+            <h1 class="header__title">MyLibrary</h1>
+        </header>
+        <main class="main" data-panel>
             <div class="photo-gallery" data-gallery>
-                <img src="img/cat.jpg" data-image>
-                <img src="img/love.jpg" data-image>
+                <img class="image" src="img/cat.jpg" data-image>
+                <img class="image" src="img/love.jpg" data-image>
             </div>
-            <input type="file" data-upload>
+            <label class="uploader">
+                <input type="file" data-upload>+
+            </label>
             <div class="image-preview hidden" data-image-preview>
                 <img class="big-image" data-big-image>
                 <button class="big-image--close" data-close-button type="button">X</button>
             </div>
-        </div>
+        </main>
 
         <script src="../dist/bundle.js"></script>
     </body>

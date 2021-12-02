@@ -1,10 +1,53 @@
+.body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 20%;
+  display: flex;
+  align-items: center;
+  background: #6200EE;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, .14), 0 1px 10px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.header__logo {
+  padding: 0 2%;
+}
+
+.header__title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: .15px;
+  color: #FFF;
+}
+
+.main {
+  padding: 1% 3%;
+}
+
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image {
+  width: 24%;
+  margin: .5%;
+}
+
 .image-preview {
+  background: rgba(0, 0, 0, .85);
   min-width: 100%;
   min-height: 100%;
   display: flex;
   justify-content: center;
   position: absolute;
   top: 0;
+  left: 0;
 }
 
 .fade {
@@ -20,6 +63,49 @@
 }
 
 .big-image {
-  width: 700px;
-  height: 700px;
+  width: 50%;
+  height: 50%;
+  margin-top: 25%
+}
+
+.big-image--close {
+  position: absolute;
+  right: 5%;
+  top: 5%
+}
+
+.uploader > input {
+  display: none;
+}
+
+.uploader {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  font-size: 28px;
+  font-weight: 700;
+  background: #03DAC5;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, .14), 0 1px 10px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .2);
+  border-radius: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .image {
+    width: 30%;
+  }
+}
+
+@media (max-width: 320px) {
+
+  .image {
+    flex-direction: column;
+    width: 100%;
+  }
 }

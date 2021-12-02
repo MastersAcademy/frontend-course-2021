@@ -68,6 +68,7 @@ class ImageUpload {
             this.newImage = document.createElement('img');
             this.newImage.src = URL.createObjectURL((<HTMLInputElement>event.target).files[0])
             this.newImage.setAttribute('data-image', '');
+            this.newImage.classList.add('image');
             galleryEl.appendChild(this.newImage);
         })
     }
