@@ -44,9 +44,6 @@ body {
 
 .photo-grid {
   padding: 1rem 0;
-  /* display: flex;
-  flex-wrap: wrap; */
-  /* gap: 1rem; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
@@ -57,6 +54,7 @@ body {
   height: auto;
   object-fit: cover;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .image-upload {
@@ -102,6 +100,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .full-screen__image {
@@ -134,7 +133,8 @@ body {
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 @media (min-width: 321px) and (max-width: 768px) {

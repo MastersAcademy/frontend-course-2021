@@ -22,7 +22,6 @@ export class Gallery {
 
         this.initGallery();
         this.listenEvents();
-
     }
 
     private initGallery() {
@@ -60,7 +59,21 @@ export class Gallery {
                 const fullScreenImage: HTMLElement = this.fullScreen.createImage(source);
                 this.fullScreen.toggleImage(fullScreenImage);
             }
-        })
+        });
+
+        this.imageUploader.el.addEventListener('change', (event: MouseEvent) => {
+            const element = (event.target as HTMLInputElement);
+            const file = (element.files as FileList)[0];
+
+            this.imageUploader.getBase64(file).then((imageElement: any) => {
+                this.saveImage(imageElement);
+
+                const index = this.imageStorage.length - 1;
+                const image = this.imageStorage[index];
+
+                this.renderImage(image, index);
+            });
+        });
     }
 }
 
