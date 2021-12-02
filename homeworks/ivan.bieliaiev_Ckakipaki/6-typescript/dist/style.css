@@ -1,0 +1,38 @@
+.game__container {
+  width: 60%;
+  height: 90vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.game-score {
+  font-size: 60px;
+}
+
+.game-ball {
+  width: 220px;
+  height: 220px;
+  background: #345;
+  border-radius: 50%;
+}
+
+.game-changing-score {
+  font-size: 30px;
+}
+
+.letter-container {
+  width: 150px;
+  height: 150px;
+  background: #939FA1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.current-letter {
+  margin: 0 auto;
+  font-size: 50px;
+}
