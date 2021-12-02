@@ -77,6 +77,7 @@ body {
 
 .action__sign-in:hover {
   background: #123;
+  cursor: pointer;
 }
 
 .action__language {
@@ -187,6 +188,7 @@ body {
 
 .search__button:hover {
   background: #123;
+  cursor: pointer;
 }
 
 .bike-deliver {
@@ -340,6 +342,7 @@ body {
 
 .job-offer__button:hover {
   background: #123;
+  cursor: pointer;
 }
 
 .news-tips {
@@ -536,6 +539,16 @@ body {
 
 .important-links__item:last-of-type, .policy__item:last-of-type {
   margin: 0;
+}
+
+.important-links__item-link, .policy__item-link {
+  text-decoration: none;
+  transition: all .3s linear;
+}
+
+.important-links__item-link:hover, .policy__item-link:hover {
+  color: #4DB5A1;
+  cursor: pointer;
 }
 
 .footer__founder {
