@@ -25,9 +25,20 @@ body {
 }
 
 .gallery {
+  padding: 0;
   max-width: 1140px;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.gallery__item {
+  list-style: none;
+  max-width: 360px;
+}
+
+.gallery__image {
+  width: 100%;
 }
