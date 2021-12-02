@@ -19,7 +19,7 @@ body {
   display: flex;
   width: 1440px;
   height: 745px;
-  background-color: #E72B2B;
+  background-color: #E24329;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 120px;
@@ -41,6 +41,7 @@ body {
   font-size: 20px;
   color: #EFF3F3;
   margin-left: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .page__bonik {
@@ -99,19 +100,25 @@ body {
   height: 500px;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .page__offers-block {
+  display: block;
+  text-align: center;
   width: 370px;
   height: 260px;
   margin-top: 30px;
   margin-left: 30px;
-  display: block;
-  text-align: center;
-  padding-top: 30px;
   border-radius: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  padding-bottom: 20px;
 }
 
+.page__offers-block-img {
+  padding-top: 40px;
+}
 .page__offers-block-color-a {
   background-color: #FFE4C4;
 }
@@ -222,11 +229,12 @@ body {
   color: #E3F3F3;
 }
 
-.page-copyright {
+.page__copyright {
   width: 1440px;
   height: 50px;
   background-color: #B41111;
   color: #F0F8FF;
   text-align: center;
-  padding-top: 25px;
+  padding-top: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
