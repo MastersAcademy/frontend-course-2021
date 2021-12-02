@@ -3,8 +3,8 @@
   font-style: bold;
   font-weight: 700;
   src: local("Pragmatica-Bold"),
-    url("/fonts/Pragmatica-Bold.woff2") format("woff2"),
-    url("/fonts/Pragmatica-Bold.woff") format("woff");
+    url("/frontend-course-2021/homeworks/oleksandr.prylutskiy_SanSandru4/6-adaptive/fonts/Pragmatica-Bold.woff2") format("woff2"),
+    url("/frontend-course-2021/homeworks/oleksandr.prylutskiy_SanSandru4/6-adaptive/fonts/Pragmatica-Bold.woff") format("woff");
 }
 
 @font-face {
@@ -12,8 +12,8 @@
   font-style: normal;
   font-weight: 500;
   src: local("Pragmatica-Medium"),
-    url("/fonts/Pragmatica-Medium.woff2") format("woff2"),
-    url("/fonts/Pragmatica-Medium.woff") format("woff");
+    url("/frontend-course-2021/homeworks/oleksandr.prylutskiy_SanSandru4/6-adaptive/fonts/Pragmatica-Medium.woff2") format("woff2"),
+    url("/frontend-course-2021/homeworks/oleksandr.prylutskiy_SanSandru4/6-adaptive/fonts/Pragmatica-Medium.woff") format("woff");
 }
 
 @font-face {
@@ -21,8 +21,8 @@
   font-style: normal;
   font-weight: 400;
   src: local("Pragmatica-Light"),
-    url("/fonts/Pragmatica-Light.woff2") format("woff2"),
-    url("/fonts/Pragmatica-Light.woff") format("woff");
+    url("/frontend-course-2021/homeworks/oleksandr.prylutskiy_SanSandru4/6-adaptive/fonts/Pragmatica-Light.woff2") format("woff2"),
+    url("/frontend-course-2021/homeworks/oleksandr.prylutskiy_SanSandru4/6-adaptive/fonts/Pragmatica-Light.woff") format("woff");
 }
 
 * {
@@ -31,6 +31,8 @@
 }
 
 body {
+  margin: 0 auto;
+  width: 1440px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,21 +55,39 @@ body {
 .header__info {
   margin-right: 136px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   font-family: Pragmatica-Medium, Merriweather, sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 17px;
   color: #444B51;
 }
 
 .header__info-number-phone {
   margin-left: 10px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .header__info-number-phone_input {
-  margin-left: 5px;
-  height: 25px;
+  font-family: Pragmatica-Medium, Merriweather, sans-serif;
+  font-weight: 500;
+  color: #444B51;
+  text-decoration: none;
+}
+
+.phone {
+  fill: #444B51;
+  margin-right: 5px;
+  width: 12px;
+  height: 16px;
+}
+
+.header__info-number-phone_input:hover {
+  color: #E24329;
+}
+
+.phone:hover {
+  fill: #E24329;
 }
 
 .header__info_btn {
@@ -75,7 +95,11 @@ body {
   height: 40px;
   margin-left: 47px;
   background-color: #E24329;
+  border: none;
   border-radius: 21px;
+  font-family: Pragmatica-Medium, Merriweather, sans-serif;
+  font-weight: 500;
+  font-size: 17px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,6 +117,16 @@ body {
   font-size: 16px;
   display: flex;
   flex-direction: row;
+}
+
+.globus {
+  fill: #828282;
+  width: 21px;
+  height: 20px;
+}
+
+.globus:hover {
+  fill: #E24329;
 }
 
 .header__info-language-change {
@@ -218,8 +252,11 @@ body {
   color: #444B51;
 }
 
+.choose-us_information, .news__information, .our-clients__information {
+  margin-top: 100px;
+}
+
 .main__text-head {
-  padding-top: 100px;
   font-family: Pragmatica-Bold, Merriweather, sans-serif;
   font-size: 40px;
   font-weight: 700;
@@ -249,7 +286,7 @@ body {
 
 .choose-us__list {
   margin-top: 39px;
-  width: 1314px;
+  width: 1164px;
   height: auto;
   display: flex;
   flex-wrap: wrap;
@@ -310,6 +347,7 @@ body {
   flex-direction: column;
   border-radius: 16px;
   color: #444B51;
+  box-sizing: border-box;
 }
 
 .apply {
@@ -408,6 +446,12 @@ body {
   justify-content: space-between;
 }
 
+.eye {
+  width: 18px;
+  height: 12px;
+  fill: #666;
+}
+
 .card__head {
   margin-top: 25px;
   font-family: Segoe UI, Roboto, sans-serif;
@@ -438,8 +482,19 @@ body {
   font-family: Segoe UI, Roboto, sans-serif;
   font-weight: 500;
   font-size: 16px;
+  text-decoration: none;
   color: #29DBCC;
   cursor: pointer;
+}
+
+.card__learn-more_link:hover {
+  color: #E24329;
+}
+
+.arrow {
+  width: 18px;
+  height: 16px;
+  fill: #29DBCC;
 }
 
 .our-clients__logos {
