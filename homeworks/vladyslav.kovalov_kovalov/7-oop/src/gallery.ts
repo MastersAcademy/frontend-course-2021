@@ -3,14 +3,16 @@ import { FullScreen } from './fullscreen';
 
 export class Gallery {
     private imageStorage: string[] = [];
+    private onImageUploaded: any;
 
     constructor(
         private galleryElement:HTMLElement,
         private fullScreen: any,
         private imageUploader: any,
     ){
+        this.onImageUploaded = this.saveImage.bind(this);
         this.fullScreen = new FullScreen(document.querySelector('[data-full-screen]') as HTMLElement);
-        this.imageUploader = new Uploader(document.querySelector('[data-image-upload]') as HTMLElement, this.saveImage);
+        this.imageUploader = new Uploader(document.querySelector('[data-image-upload]') as HTMLElement, this.onImageUploaded);
 
         this.imageStorage = [
             'img/img-0.jpg',
@@ -31,9 +33,12 @@ export class Gallery {
     }
 
     private saveImage(element: any) {
-        console.log(element);
-        // this.imageStorage.push(element);
-        // console.log(this.imageStorage);
+        const length = this.imageStorage.push(element)
+        const index = length - 1;
+
+        this.imageStorage.push(element);
+        this.renderImage(element, index);
+
     }
 
     private renderImage(image: any, index: any): void {
