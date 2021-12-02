@@ -1,100 +1,70 @@
-class Gallery {
-    private imageStorage: string[] = [];
+
+class FullScreen {
+    private readonly templateElement: HTMLTemplateElement;
+    private readonly spinnerElement: HTMLDivElement;
 
     constructor(
-        private galleryElement:HTMLDivElement,
-        private fullScreenElement: HTMLDivElement,
-        private imageUploaderElement: HTMLInputElement,
-        private fullScreenTemplate: HTMLTemplateElement,
-        private fullScreenLoader: HTMLDivElement,
-    ){
-        this.imageStorage = [
-            'img/img-0.jpg',
-            'img/img-1.jpg',
-            'img/img-2.jpg',
-            'img/img-3.jpg',
-            'img/img-4.jpg'
-        ];
+        private readonly el: HTMLElement,
+    ) {
+        const templateElement = this.el.querySelector<HTMLTemplateElement>('[data-full-screen-template]');
+        const spinnerElement = this.el.querySelector<HTMLDivElement>('[data-full-screen-spinner]');
+
+        if(!templateElement) throw new Error('Missing element with [data-full-screen-template]');
+
+        if(!spinnerElement) throw new Error('Missing element with [data-full-screen-spinner]')
+
+        this.templateElement = templateElement;
+        this.spinnerElement = spinnerElement;
 
         this.listenEvents();
-        this.initGallery();
     }
 
-    private initGallery() {
-        this.imageStorage.forEach((image, index) => {
-            this.renderImage(image, index);
+    private listenEvents() {
+        this.el.addEventListener('click', event => {
+            const image = (event.target as HTMLElement);
+            const data: DOMStringMap= image.dataset;
+
+            if(data.fullScreen !== undefined) {
+                this.el.classList.add('hidden');
+                const childElement: any = this.el.querySelector('[data-full-screen-image]');
+                this.el.removeChild(childElement);
+            }
         })
+
     }
 
-    private saveImage(element: any) {
-        this.imageStorage.push(element);
-    }
-
-    private renderImage(image: any, index: any) {
-        const currentImage: HTMLImageElement = this.loadImage(image, index);
-        this.galleryElement.prepend(currentImage);
-    }
-
-    private loadImage(imageSrc: string, index: number) {
-        const template = document.querySelector('[data-new-image-template]') as HTMLTemplateElement;
-        const content = template.content.cloneNode(true);
-        const element: any = (content as HTMLImageElement).querySelector('[data-new-image-template-element]');
-        element?.setAttribute('src', imageSrc);
-        element?.setAttribute('data-index', index);
-        element?.removeAttribute('data-new-image-template-element');
+    private createImage(source: string): Element | null {
+        const content = this.templateElement.content.cloneNode(true);
+        const element: HTMLElement | null = (content as HTMLImageElement).querySelector('[data-full-screen-image]');
+        element?.setAttribute('src', source);
         return element;
     }
 
-    private createFullSizeImage(src: any) {
-        const template = document.querySelector('[data-full-screen-template]') as HTMLTemplateElement;
-        const content = template.content.cloneNode(true);
-        const element = (content as HTMLImageElement).querySelector('[data-full-screen-image]');
-        element?.setAttribute('src', src);
-        return element;
-    }
-
-    private toggleFullSizeImage(imageSource: any): void {
-        const imagePath = imageSource;
-        const image: any = this.createFullSizeImage(imagePath);
-
-        this.fullScreenElement?.classList.remove('hidden');
-        this.fullScreenLoader.classList.remove('hidden');
+    private toggleImage(element: HTMLElement): void {
+        this.el.classList.remove('hidden');
+        this.spinnerElement.classList.remove('hidden');
 
         setTimeout(() => {
-            this.fullScreenElement.append(image);
-            this.fullScreenLoader.classList.add('hidden');
+            this.el.append(element);
+            this.spinnerElement.classList.add('hidden');
         }, 1000);
     }
+}
 
-    private listenEvents(): void {
-        this.galleryElement?.addEventListener('click', event => {
-            const image = (event.target as HTMLButtonElement);
-            const imageIndex: any = image.getAttribute('data-index');
-            const imageSource = this.imageStorage[imageIndex];
+class Uploader {
+    constructor(
+        private readonly el: any,
+    ) {
 
-            if(imageSource !== undefined) this.toggleFullSizeImage(imageSource);
+    }
 
-        });
-
-        this.fullScreenElement?.addEventListener('click', event => {
-            const currentImage = (event.target as HTMLButtonElement).dataset;
-            if(currentImage.fullScreenImage !== '') {
-                this.fullScreenElement?.classList.add('hidden');
-                const childElement = this.fullScreenElement.querySelector('[data-full-screen-image]') as HTMLImageElement;
-                this.fullScreenElement.removeChild(childElement);
-            }
-        });
-
-        imageUploaderElement?.addEventListener('change', event => {
+    private listenEvents() {
+        this.el.addEventListener('change', (event: MouseEvent) => {
             const element = (event.target as HTMLInputElement);
             const file = (element.files as FileList)[0];
 
-            this.getBase64(file).then(imageSource => {
-                const element: any = imageSource;
-                this.imageStorage.push(element);
-
-                const index = (this.imageStorage.length - 1);
-                this.renderImage(this.imageStorage[index], index);
+            this.getBase64(file).then(data => {
+                return data;
             });
         })
     }
@@ -109,77 +79,71 @@ class Gallery {
     }
 }
 
-// class Uploader {
-//     constructor(
-//         private imageUploaderElement: HTMLInputElement,
-//     ) {}
+class Gallery {
+    private imageStorage: string[] = [];
 
-//     private listenEvent() {
-//         imageUploaderElement?.addEventListener('change', event => {
-//             const element = (event.target as HTMLInputElement);
-//             const file = (element.files as FileList)[0];
+    constructor(
+        private galleryElement:HTMLElement,
+        private fullScreen: any,
+        private imageUploader: any,
+    ){
+        this.fullScreen = new FullScreen(document.querySelector('[data-full-screen]') as HTMLElement);
+        this.imageUploader = new Uploader(document.querySelector('[data-image-upload]') as HTMLElement);
 
-//             this.getBase64(file).then(image => {
-//                 return image;
-//             });
-//         })
-//     }
+        this.imageStorage = [
+            'img/img-0.jpg',
+            'img/img-1.jpg',
+            'img/img-2.jpg',
+            'img/img-3.jpg',
+            'img/img-4.jpg'
+        ];
 
-//     private getBase64(file: any) {
-//         return new Promise((resolve, reject) => {
-//             const reader = new FileReader();
-//             reader.readAsDataURL(file);
-//             reader.onload = () => resolve(reader.result);
-//             reader.onerror = error => reject(error);
-//         })
-//     }
-// }
+        this.initGallery();
+        this.listenEvents();
 
-// class FullScreenImage {
-//     constructor(
-//         private fullScreenElement: HTMLInputElement,
-//         private fullScreenLoader: HTMLDivElement,
-//         private fullScreenTemplate: HTMLTemplateElement,
-//     ) {}
+    }
 
-//     private listenEvent() {
-//         this.fullScreenElement?.addEventListener('click', event => {
-//             const currentImage = (event.target as HTMLButtonElement).dataset;
-//             if(currentImage.fullScreenImage !== '') {
-//                 this.fullScreenElement?.classList.add('hidden');
-//                 const childElement = this.fullScreenElement.querySelector('[data-full-screen-image]') as HTMLImageElement;
-//                 this.fullScreenElement.removeChild(childElement);
-//             }
-//         });
-//     }
+    private initGallery() {
+        this.imageStorage.forEach((image, index) => {
+            this.renderImage(image, index);
+        })
+    }
 
-//     private createFullSizeImage(src: any) {
-//         const template = document.querySelector('[data-full-screen-template]') as HTMLTemplateElement;
-//         const content = template.content.cloneNode(true);
-//         const element = (content as HTMLImageElement).querySelector('[data-full-screen-image]');
-//         element?.setAttribute('src', src);
-//         return element;
-//     }
+    private saveImage(element: any) {
+        this.imageStorage.push(element);
+    }
 
-//     private toggleFullSizeImage(imageSource: any): void {
-//         const imagePath = imageSource;
-//         const image: any = this.createFullSizeImage(imagePath);
+    private renderImage(image: any, index: any): void {
+        const currentImage: HTMLImageElement = this.loadImage(image, index);
+        this.galleryElement.prepend(currentImage);
+    }
 
-//         this.fullScreenElement?.classList.remove('hidden');
-//         this.fullScreenLoader.classList.remove('hidden');
+    private loadImage(imageSrc: string, index: number) {
+        const template = document.querySelector('[data-new-image-template]') as HTMLTemplateElement;
+        const content = template.content.cloneNode(true);
+        const element: any = (content as HTMLImageElement).querySelector('[data-new-image-template-element]');
+        element?.setAttribute('src', imageSrc);
+        element?.setAttribute('data-index', index);
+        element?.removeAttribute('data-new-image-template-element');
+        return element;
+    }
 
-//         setTimeout(() => {
-//             this.fullScreenElement.append(image);
-//             this.fullScreenLoader.classList.add('hidden');
-//         }, 1000);
-//     }
-// }
+    private listenEvents() {
+        this.galleryElement.addEventListener('click', event => {
+            const image: HTMLElement = (event.target as HTMLElement);
+            const index: string | undefined = image.dataset.index;
 
-const galleryElement = document.querySelector('[data-gallery]')! as HTMLDivElement;
-const fullScreenElement = document.querySelector('[data-full-screen]') as HTMLDivElement;
-const imageUploaderElement = document.querySelector('[data-image-upload]') as HTMLInputElement;
-const fullScreenTemplate = document.querySelector('[data-full-screen-template]') as HTMLTemplateElement;
-const fullScreenLoader = document.querySelector('[data-full-screen-loader]') as HTMLDivElement;
+            if(index !== undefined) {
+                const source: string = this.imageStorage[Number(index)]
+                const fullScreenImage: HTMLElement = this.fullScreen.createImage(source);
+                this.fullScreen.toggleImage(fullScreenImage);
+            }
+        })
+    }
+}
 
-new Gallery(galleryElement, fullScreenElement, imageUploaderElement, fullScreenTemplate, fullScreenLoader);
-
+new Gallery(
+    document.querySelector('[data-gallery]') as HTMLElement,
+    FullScreen,
+    Uploader
+);
