@@ -14,7 +14,9 @@ body {
 }
 
 .header__logo {
-
+ display: flex;
+ align-items: center;
+ margin-left: 100px;
 }
 
 .header__items {
@@ -151,15 +153,15 @@ body {
 .page__offers-block-img {
   padding-top: 40px;
 }
-.page__offers-block-color-a {
+.page__offers-block-color--a {
   background-color: #FFE4C4;
 }
 
-.page__offers-block-color-b {
+.page__offers-block-color--b {
   background-color: #E28E6F;
 }
 
-.page__offers-block-color-c {
+.page__offers-block-color--c {
   background-color: #90CFCF;
 }
 
@@ -259,7 +261,7 @@ body {
 
 .page__bottom-list-links {
   text-decoration: none;
-  color: #E3F3F3;
+  color: #E3F3f3;
 }
 
 .page__copyright {
