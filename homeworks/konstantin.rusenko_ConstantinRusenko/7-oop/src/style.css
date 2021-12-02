@@ -1,0 +1,21 @@
+.image-preview {
+  display: flex;
+  justify-content: center;
+}
+
+.fade {
+  opacity: .4;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.big-image {
+  width: 700px;
+  height: 700px;
+}

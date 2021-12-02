@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="all" data-panel>
+            <div class="photo-gallery" data-gallery>
+                <img src="img/cat.jpg" data-image>
+                <img src="img/love.jpg" data-image>
+            </div>
+            <input type="file" data-upload>
+            <div class="image-preview hidden" data-image-preview>
+                <img class="big-image" data-big-image>
+                <button class="big-image--close" data-close-button type="button">X</button>
+            </div>
+        </div>
+
+        <script src="../dist/bundle.js"></script>
+    </body>
+</html>
