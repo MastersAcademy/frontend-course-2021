@@ -153,15 +153,15 @@ body {
 .page__offers-block-img {
   padding-top: 40px;
 }
-.page__offers-block-color--a {
+.page__offers-block-color--ffe4c4 {
   background-color: #FFE4C4;
 }
 
-.page__offers-block-color--b {
-  background-color: #E28E6F;
+.page__offers-block-color--ecedff {
+  background-color: #ECEDFF;
 }
 
-.page__offers-block-color--c {
+.page__offers-block-color--90cfcf {
   background-color: #90CFCF;
 }
 
@@ -218,7 +218,6 @@ body {
 .page__news-block-signature {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
 }
 
 .page__news-block-signature-right {
@@ -228,9 +227,11 @@ body {
 .page__news-block-signature-img {
   width: 30px;
   height: 15px;
+  margin-top: 15px;
 }
 
 .page__clients {
+  margin-top: 100px;
   margin-left: 150px;
 }
 
@@ -274,6 +275,3 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media (max-width: 767px) {
-  }
-}
