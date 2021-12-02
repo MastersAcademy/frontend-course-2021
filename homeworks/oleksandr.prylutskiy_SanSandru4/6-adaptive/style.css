@@ -25,6 +25,27 @@
     url("/frontend-course-2021/homeworks/oleksandr.prylutskiy_SanSandru4/6-adaptive/fonts/Pragmatica-Light.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Segoe UI Light";
+  font-weight: 400;
+  font-style: normal;
+  src: url("SegoeUI-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Segoe UI Regular";
+  font-weight: 500;
+  font-style: normal;
+  src: url("SegoeUI.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Segoe UI Bold";
+  font-weight: 700;
+  font-style: normal;
+  src: url("SegoeUI-Bold.woff") format("woff");
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -433,7 +454,7 @@ body {
 }
 
 .card__product_text {
-  font-family: Segoe UI, Roboto, sans-serif;
+  font-family: "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
   color: #666;
 }
@@ -454,7 +475,7 @@ body {
 
 .card__head {
   margin-top: 25px;
-  font-family: Segoe UI, Roboto, sans-serif;
+  font-family: "Segoe UI Bold", Roboto, sans-serif;
   font-weight: 900;
   font-size: 19px;
   line-height: 28px;
@@ -464,7 +485,7 @@ body {
 .card__paragraph {
   margin-top: 25px;
   height: 103px;
-  font-family: Segoe UI, Roboto, sans-serif;
+  font-family: "Segoe UI", Roboto, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -479,7 +500,7 @@ body {
 
 .card__learn-more_link {
   padding-right: 8px;
-  font-family: Segoe UI, Roboto, sans-serif;
+  font-family: "Segoe UI", Roboto, sans-serif;
   font-weight: 500;
   font-size: 16px;
   text-decoration: none;
