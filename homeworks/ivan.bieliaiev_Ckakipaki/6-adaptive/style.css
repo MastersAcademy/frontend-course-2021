@@ -101,8 +101,9 @@ body {
   background: inherit;
 }
 
-.language__text:hover {
+.language__text:hover, .language__globus:hover, .phone__img:hover {
   color: #123;
+  cursor: pointer;
 }
 
 .about-us {
@@ -421,6 +422,11 @@ body {
   text-align: center;
   color: #29DBCC;
   text-decoration: none;
+  transition: all .3s linear;
+}
+
+.item__learn-more:hover {
+  font-size: 20px;
 }
 
 .item__arrow {
@@ -460,6 +466,15 @@ body {
   margin: 0 20px 20px 0;
 }
 
+.clients__item svg {
+  transition: all .3s linear;
+}
+
+.clients__item svg:hover {
+  width: 150px;
+  height: 50px;
+}
+
 .footer {
   width: 100%;
   display: flex;
@@ -484,7 +499,8 @@ body {
 .footer__communication {
   display: flex;
   flex-direction: column;
-  width: 370px;
+  max-width: 370px;
+  width: auto;
 }
 
 .communication__address {
@@ -499,6 +515,17 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.social-networks__item .icon {
+  transition: all .3s linear;
+  width: 33px;
+  height: 33px;
+}
+
+.social-networks__item .icon:hover {
+  width: 40px;
+  height: 40px;
 }
 
 .footer__important-links, .footer__policy {
@@ -531,10 +558,6 @@ body {
 
 .important-links__item, .policy__item {
   margin: 0 0 16px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: #444B51;
 }
 
 .important-links__item:last-of-type, .policy__item:last-of-type {
@@ -544,6 +567,10 @@ body {
 .important-links__item-link, .policy__item-link {
   text-decoration: none;
   transition: all .3s linear;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #444B51;
 }
 
 .important-links__item-link:hover, .policy__item-link:hover {
@@ -599,6 +626,11 @@ body {
   .header__container {
     flex-direction: column;
     padding: 10px 0;
+  }
+
+  .header__actions {
+    width: 100%;
+    justify-content: space-evenly;
   }
 
   .action__sign-in {
@@ -662,7 +694,40 @@ body {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 420px) {
+
+  .header__actions {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .about-us__title {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .about-us__subtitle {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+
+  .phone__img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .language__globus {
+    height: 30px;
+    width: 30px;
+  }
+
+  .language__text {
+    display: none;
+  }
+
+  .phone__number {
+    display: none;
+  }
 
   .clients__list {
     flex-direction: column;
