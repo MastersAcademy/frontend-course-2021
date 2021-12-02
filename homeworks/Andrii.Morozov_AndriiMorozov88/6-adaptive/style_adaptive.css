@@ -6,8 +6,38 @@ body {
   display: flex;
   width: 1440px;
   height: 80px;
-  background-color: #EFF3F3;
+  background-color: #FFF;
   top: 0;
+  justify-content: space-between;
+}
+
+.header__logo {
+
+}
+
+.header__items {
+  width: 400px;
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__items-language {
+  display: flex;
+}
+
+.header__items__button {
+  width: 100px;
+  height: 40px;
+  background-color: #FF0000;
+  border-radius: 20px;
+  color: #EFF3F3;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header__items-phone {
+  display: flex;
 }
 
 .page {
