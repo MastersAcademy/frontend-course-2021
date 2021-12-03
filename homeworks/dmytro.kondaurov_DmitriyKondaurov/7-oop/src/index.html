@@ -4,36 +4,48 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>7-oop</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     </head>
     <body>
         <header class="header">
-            <h1>MyLibrary</h1>
+            <h1 class="gallery-name">
+                <img class="logo" src="../src/images/logo.png" alt="logo">MyLibrary
+            </h1>
         </header>
         <main class="main-content">
-            <div class="preloader hide">
+            <button type="button" class="close-image-btn hide" data-close-image-btn>+</button>
+            <div class="preloader hide" data-preloader>
                 <img class="preloader__gif-image" src="../src/images/load.gif" alt="Loading...">
             </div>
-            <ul class="gallery">
-                <li class="gallery__item">
-                    <img class="gallery__image" src="../src/images/1.jpg" alt="Gallery image" width="360px">
+            <ul class="gallery" data-gallery-container>
+                <template data-gallery-item-template>
+                    <li class="gallery__item" data-img-container>
+                        <img class="gallery__image" src="" alt="Gallery image" width="325px" height="325px" data-gallery-img>
+                    </li>
+                </template>
+                <li class="gallery__item" data-img-container>
+                    <img class="gallery__image" src="../src/images/1.jpg" alt="Gallery image" data-gallery-img>
                 </li>
-                <li class="gallery__item">
-                    <img class="gallery__image" src="../src/images/2.jpg" alt="Gallery image" width="360px">
+                <li class="gallery__item" data-img-container>
+                    <img class="gallery__image" src="../src/images/2.jpg" alt="Gallery image" data-gallery-img>
                 </li>
-                <li class="gallery__item">
-                    <img class="gallery__image" src="../src/images/3.jpg" alt="Gallery image" width="360px">
+                <li class="gallery__item" data-img-container>
+                    <img class="gallery__image" src="../src/images/3.jpg" alt="Gallery image" data-gallery-img>
                 </li>
-                <li class="gallery__item">
-                    <img class="gallery__image" src="../src/images/4.jpg" alt="Gallery image" width="360px">
+                <li class="gallery__item" data-img-container>
+                    <img class="gallery__image" src="../src/images/4.jpg" alt="Gallery image" data-gallery-img>
                 </li>
-                <li class="gallery__item">
-                    <img class="gallery__image" src="../src/images/5.jpg" alt="Gallery image" width="360px">
+                <li class="gallery__item" data-img-container>
+                    <img class="gallery__image" src="../src/images/5.jpg" alt="Gallery image" data-gallery-img>
                 </li>
-                <li class="gallery__item">
-                    <img class="gallery__image" src="../src/images/6.jpg" alt="Gallery image" width="360px">
+                <li class="gallery__item" data-img-container>
+                    <img class="gallery__image" src="../src/images/6.jpg" alt="Gallery image" data-gallery-img>
                 </li>
             </ul>
-            <input class="btn-add-file" type="file">
+            <label for="file-upload" class="custom-btn-file-upload">+</label>
+            <input id="file-upload" class="btn-file-upload hide" type="file" data-upload-image-btn>
         </main>
     </body>
 </html>
