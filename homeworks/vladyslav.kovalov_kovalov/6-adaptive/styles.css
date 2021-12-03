@@ -353,6 +353,7 @@ body {
 }
 
 .article-card__link {
+  align-self: flex-start;
   margin-top: auto;
   text-decoration: none;
   padding: 1rem;
@@ -442,7 +443,7 @@ body {
   text-decoration: none;
   color: inherit;
   transition: color .25s ease-in-out;
-  padding: .5rem 1rem;
+  padding: 1rem;
 }
 
 .main-footer__list-item-link:hover {
