@@ -6,6 +6,7 @@ body {
 }
 
 .page {
+  width: 1440px;
   background-color: #FFF;
 }
 
@@ -329,4 +330,120 @@ body {
   text-align: center;
   padding-top: 5px;
   font-family: "Pragmatica", arial;
+}
+
+@media (max-width: 767px) {
+
+  .page__bonik {
+    display: none;
+  }
+
+  .page__bonik-left {
+    display: none;
+  }
+
+  .header__logo {
+    display: none;
+  }
+
+  .header {
+    display: flex;
+    width: 767px;
+    height: 80px;
+    background-color: #FFF;
+    top: 0;
+    justify-content: center;
+  }
+
+  .page__track {
+    display: flex;
+    width: 767px;
+    height: 400px;
+    background-color: #E24329;
+    margin-bottom: 70px;
+  }
+
+  .page__track_textfield {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page__track_textfield-text-big {
+    font-family: "Pragmatica", arial;
+    font-weight: 700;
+    font-size: 25px;
+    color: #FFF;
+    line-height: .5;
+  }
+
+  .page__track_textfield-text-small {
+    font-family: "Pragmatica", arial;
+    font-size: 10px;
+    color: #FFF;
+    line-height: .5;
+    margin-bottom: 50px;
+  }
+
+  .page__track_inputfield-input {
+    width: 200px;
+    height: 30px;
+    font-size: 12px;
+    padding-left: 20px;
+    border: #000 2px solid;
+    border-right: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    font-family: "Pragmatica", arial;
+  }
+
+  .page__track_inputfield-button {
+    width: 85px;
+    height: 34px;
+    font-size: 12px;
+    background-color: #FF6A00;
+    border: #000 2px solid;
+    border-left: none;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: #FFF;
+    font-family: "Pragmatica", arial;
+  }
+
+  .page__offers__title {
+    width: 767px;
+    font-size: 25px;
+    text-align: center;
+    font-family: "Pragmatica", arial;
+  }
+
+  .page__offers__text {
+    width: 767px;
+    text-align: center;
+    font-size: 15px;
+    line-height: .5;
+    font-family: "Pragmatica", arial;
+  }
+
+  .page__offers {
+    display: flex;
+    width: 767px;
+    justify-content: center;
+  }
+
+  .page__offers-block {
+    display: block;
+    text-align: center;
+    width: 350px;
+    height: 130px;
+    margin-top: 30px;
+    margin-left: 30px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-family: "Pragmatica", arial;
+  }
+
+  .page__offers-block-img {
+    display: none;
+  }
 }
