@@ -29,21 +29,21 @@
   font-family: "Segoe UI Light";
   font-weight: 400;
   font-style: normal;
-  src: url("SegoeUI-Light.woff") format("woff");
+  src: url("./fonts/SegoeUI-Light.woff") format("woff");
 }
 
 @font-face {
   font-family: "Segoe UI Regular";
   font-weight: 500;
   font-style: normal;
-  src: url("SegoeUI.woff") format("woff");
+  src: url("./fonts/SegoeUI.woff") format("woff");
 }
 
 @font-face {
   font-family: "Segoe UI Bold";
   font-weight: 700;
   font-style: normal;
-  src: url("SegoeUI-Bold.woff") format("woff");
+  src: url("./fonts/SegoeUI-Bold.woff") format("woff");
 }
 
 * {
@@ -89,22 +89,23 @@ body {
   align-items: flex-end;
 }
 
-.header__info-number-phone_input {
+.header__info-number-phone_input, .header__info-link {
   font-family: Pragmatica-Medium, Merriweather, sans-serif;
   font-weight: 500;
   color: #444B51;
   text-decoration: none;
 }
 
-.phone {
-  fill: #444B51;
+.header__phone-icon {
+  fill: #E24329;
   margin-right: 5px;
   width: 12px;
   height: 16px;
 }
 
 .header__info-number-phone_input:hover {
-  filter: drop-shadow(0 0 5px #76828B);
+  filter: drop-shadow(0 0 5px #E24329);
+  color: #E24329;
 }
 
 .header__info_btn {
@@ -136,13 +137,23 @@ body {
   flex-direction: row;
 }
 
-.globus {
+.header__info-link {
+  display: flex;
+  flex-direction: row;
+}
+
+.header__globus-icon {
   fill: #828282;
   width: 21px;
   height: 20px;
 }
 
-.globus:hover {
+.header__info-link:hover {
+  filter: drop-shadow(0 0 5px #E24329);
+  color: #E24329;
+}
+
+.header__globus-icon:hover, .header__info-link:hover {
   fill: #E24329;
 }
 
@@ -176,9 +187,9 @@ body {
 .process__text {
   margin-top: 30px;
   width: auto;
-  font-family: Pragmatica-Light, Merriweather, sans-serif;
+  font-family: Pragmatica-Medium, Merriweather, sans-serif;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 26px;
 }
 
@@ -199,6 +210,8 @@ body {
   border: 1px solid #BDBDBD;
   box-sizing: border-box;
   border-radius: 30px 0 0 30px;
+  font-family: Pragmatica-Light, Merriweather, sans-serif;
+  font-weight: 400;
   font-size: 18px;
   color: #BABABA;
 }
@@ -335,7 +348,7 @@ body {
   background: #ECEDFF;
 }
 
-.card-head {
+.card__list-head {
   margin-top: 34px;
   font-family: Pragmatica-Bold, Merriweather, sans-serif;
   font-size: 24px;
@@ -450,7 +463,7 @@ body {
 }
 
 .card__product-text {
-  font-family: "Segoe UI", Roboto, sans-serif;
+  font-family: "Segoe UI Regular", Roboto, sans-serif;
   font-size: 16px;
   color: #666;
 }
@@ -481,7 +494,7 @@ body {
 .card__paragraph {
   margin-top: 25px;
   height: 103px;
-  font-family: "Segoe UI", Roboto, sans-serif;
+  font-family: "Segoe UI Regular", Roboto, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -496,7 +509,7 @@ body {
 
 .card__learn-more_link {
   padding-right: 8px;
-  font-family: "Segoe UI", Roboto, sans-serif;
+  font-family: "Segoe UI Regular", Roboto, sans-serif;
   font-weight: 500;
   font-size: 16px;
   text-decoration: none;
@@ -508,7 +521,7 @@ body {
   filter: drop-shadow(0 0 3px #3CD3A9);
 }
 
-.arrow {
+.card__arrow {
   width: 18px;
   height: 16px;
   fill: #29DBCC;
