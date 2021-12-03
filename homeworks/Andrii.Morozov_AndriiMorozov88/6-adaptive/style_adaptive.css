@@ -70,12 +70,15 @@ body {
 }
 
 .page__track_textfield-text-big {
-  font-size: 55px;
+  font-family: "Pragmatica", arial;
+  font-weight: 700;
+  font-size: 50px;
   color: #FFF;
   line-height: .5;
 }
 
 .page__track_textfield-text-small {
+  font-family: "Pragmatica", arial;
   font-size: 20px;
   color: #FFF;
   line-height: .5;
@@ -107,6 +110,7 @@ body {
   border-right: none;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
+  font-family: "Pragmatica", arial;
 }
 
 .page__track_inputfield-button {
@@ -119,17 +123,20 @@ body {
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   color: #FFF;
+  font-family: "Pragmatica", arial;
 }
 
 .page__offers__title {
   font-size: 40px;
   text-align: center;
+  font-family: "Pragmatica", arial;
 }
 
 .page__offers__text {
   text-align: center;
   font-size: 18px;
   line-height: .5;
+  font-family: "Pragmatica", arial;
 }
 
 .page__offers {
@@ -149,15 +156,18 @@ body {
   margin-left: 30px;
   border-radius: 16px;
   font-size: 24px;
+  font-family: "Pragmatica", arial;
 }
 
 .page__offers-block--title {
   font-size: 24px;
+  font-family: "Pragmatica", arial;
 }
 
 .page__offers-block--text {
   font-size: 16px;
   line-height: .3;
+  font-family: "Pragmatica", arial;
 }
 
 .page__offers-block-img {
@@ -204,11 +214,13 @@ body {
 
 .page__apply__aside__title {
   font-size: 40px;
+  font-family: "Pragmatica", arial;
 }
 
 .page__apply__aside__text {
   font-size: 18px;
   line-height: .3;
+  font-family: "Pragmatica", arial;
 }
 
 .page__apply-aside-button {
@@ -219,6 +231,7 @@ body {
   background-color: #E24329;
   border-radius: 25px;
   color: #FFF;
+  font-family: "Pragmatica", arial;
 }
 
 .page__news {
@@ -234,14 +247,16 @@ body {
 }
 
 .page__news__block__title {
-  font-size: 20px;
+  font-size: 18px;
   line-height: .5;
+  font-family: "Pragmatica", arial;
 }
 
 .page__news__title {
   font-size: 40px;
   line-height: .2;
   text-align: center;
+  font-family: "Pragmatica", arial;
 }
 
 .page__news-block-img {
@@ -282,6 +297,7 @@ body {
   align-items: center;
   margin-top: 30px;
   justify-content: space-around;
+  font-family: "Pragmatica", arial;
 }
 
 .page__bottom-image {
@@ -312,4 +328,5 @@ body {
   color: #F0F8FF;
   text-align: center;
   padding-top: 5px;
+  font-family: "Pragmatica", arial;
 }
