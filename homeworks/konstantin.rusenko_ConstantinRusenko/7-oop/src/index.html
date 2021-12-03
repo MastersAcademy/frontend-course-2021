@@ -4,27 +4,38 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/font.css">
         <title>Document</title>
     </head>
     <body>
-        <header class="header">
-            <a class="header__logo">
-                <img class="logo__img" src="img/Vector.svg">
+        <header class="header" data-header>
+            <svg class="header__burger" xmlns="http://www.w3.org/2000/svg">
+                <use href="img/burger.svg#burger" data-burger></use>
+            </svg>
+            <a href="index.html" class="header__logo">
+                <svg class="logo__img" xmlns="http://www.w3.org/2000/svg">
+                    <use href="img/logo.svg#logo"></use>
+                </svg>  
             </a>
             <h1 class="header__title">MyLibrary</h1>
         </header>
         <main class="main" data-panel>
-            <div class="photo-gallery" data-gallery>
-                <img class="image" src="img/cat.jpg" data-image>
-                <img class="image" src="img/love.jpg" data-image>
+            <div class="interface">
+                <div class="main__users-block" data-users-bar></div>
+                <div class="photo-gallery" data-gallery></div>
             </div>
             <label class="uploader">
                 <input type="file" data-upload>+
             </label>
             <div class="image-preview hidden" data-image-preview>
                 <img class="big-image" data-big-image>
-                <button class="big-image--close" data-close-button type="button">X</button>
+                <svg class="big-image--close" xmlns="http://www.w3.org/2000/svg" data-close-button type>
+                    <use href="img/close.svg#close"></use>
+                </svg> 
+            </div>
+            <div class="image-preview hidden" data-loader>
+                <div class="loader"></div>
             </div>
         </main>
 
