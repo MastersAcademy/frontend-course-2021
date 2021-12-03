@@ -30,7 +30,7 @@ export class FullScreen {
             if(data.fullScreen !== undefined) {
                 this.el.classList.add('hidden');
                 const childElement: HTMLImageElement = this.el.querySelector('[data-full-screen-image]') as HTMLImageElement;
-                this.el.removeChild(childElement);
+                if(childElement) this.el.removeChild(childElement);
             }
         });
 

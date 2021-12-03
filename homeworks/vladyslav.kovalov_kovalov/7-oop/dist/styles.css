@@ -100,7 +100,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.5s ease-in-out;
 }
 
 .full-screen__close-icon {
@@ -114,8 +113,10 @@ body {
 }
 
 .full-screen__image {
-  height: 800px;
-  width: 800px;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  max-height: 800px;
 }
 
 .full-screen__spinner {
@@ -143,22 +144,20 @@ body {
 }
 
 .hidden {
-  opacity: 0;
-  visibility: hidden;
+  display: none;
 }
 
 @media (min-width: 321px) and (max-width: 768px) {
   .full-screen__image {
-    height: 500px;
-    width: 500px;
+    max-height: 500px;
+    max-width: 500px;
     padding: 1rem;
   }
 }
 
 @media (max-width: 320px) {
   .full-screen__image {
-    height: 300px;
-    width: 300px;
-    padding: 1rem;
+    max-width: 300px;
+    max-height: 300px;
   }
 }
