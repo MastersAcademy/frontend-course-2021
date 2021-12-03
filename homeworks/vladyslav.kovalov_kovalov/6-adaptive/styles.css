@@ -661,11 +661,9 @@ body {
 
   .main-footer__list-item-link {
     text-align: center;
-    display: block;
   }
 
   .main-footer__social-link {
-    display: block;
     margin-right: 1rem;
   }
 }
