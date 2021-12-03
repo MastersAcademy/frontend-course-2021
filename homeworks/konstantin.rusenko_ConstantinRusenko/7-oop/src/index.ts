@@ -36,7 +36,7 @@ class ImageGallery {
     }
 
     public render() {
-        GALLERY_EL.innerHTML = "";
+        GALLERY_EL.innerHTML = '';
         this.images.forEach((image) => {
             ImageUploader.createImage(image);
         });
@@ -44,11 +44,11 @@ class ImageGallery {
 
     private listenEvents() {
         GALLERY_EL.addEventListener('click', (event) => {
-                const target = event.target as Element;
-                if (target.hasAttribute('data-image')) {
-                    this.toggleContent(target);
-                }
-            });
+            const target = event.target as Element;
+            if (target.hasAttribute('data-image')) {
+                this.toggleContent(target);
+            }
+        });
 
         this.imagePreviewEl.addEventListener('click', () => {
             this.imagePreviewEl.classList.add('hidden');
@@ -64,7 +64,9 @@ class ImageGallery {
 }
 
 class ImageUploader {
-    constructor() {}
+    constructor() {
+
+    }
 
     static createImage(source: string) {
         const newImage = document.createElement('img');
@@ -83,8 +85,8 @@ class ImageUploader {
                 const imageUrl = URL.createObjectURL((<HTMLInputElement>event.target).files[0])
                 this.createImage(imageUrl)
                 currentUser.gallery.addImage(imageUrl);
-            LOADER_EL.classList.add('hidden');
-            BODY.classList.remove('overflow--hidden');
+                LOADER_EL.classList.add('hidden');
+                BODY.classList.remove('overflow--hidden');
             }, 2000);
 
         });
@@ -93,12 +95,12 @@ class ImageUploader {
     static toggleMenu() {
         const burgerEl = HEADER.querySelector<SVGElement>('[data-burger]');
         burgerEl.addEventListener('click', () => {
-                USERS_BAR_EL.classList.toggle('visible');
-                if (USERS_BAR_EL.classList.contains('visible')) {
-                    burgerEl.setAttribute('href','img/burger.svg#close');
-                } else {
-                    burgerEl.setAttribute('href','img/burger.svg#burger');
-                }
+            USERS_BAR_EL.classList.toggle('visible');
+            if (USERS_BAR_EL.classList.contains('visible')) {
+                burgerEl.setAttribute('href','img/burger.svg#close');
+            } else {
+                burgerEl.setAttribute('href','img/burger.svg#burger');
+            }
         })
     }  
 }
