@@ -334,6 +334,10 @@ body {
 
 @media (max-width: 767px) {
 
+  body {
+    margin: auto;
+  }
+
   .page__bonik {
     display: none;
   }
@@ -445,5 +449,69 @@ body {
 
   .page__offers-block-img {
     display: none;
+  }
+
+  .page__apply {
+    display: flex;
+    width: 767px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .page__apply__aside__title {
+    font-size: 20px;
+    font-family: "Pragmatica", arial;
+  }
+
+  .page__apply__aside__text {
+    font-size: 10px;
+    line-height: .3;
+    font-family: "Pragmatica", arial;
+  }
+
+  .page__news__title {
+    width: 767px;
+    font-size: 30px;
+    line-height: .2;
+    text-align: center;
+    font-family: "Pragmatica", arial;
+  }
+
+  .page__news {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 767px;
+    margin-left: 149px;
+    margin-right: 121px;
+  }
+
+  .page__clients {
+    display: none;
+  }
+
+  .page__bottom {
+    display: flex;
+    width: 767px;
+    background-color: #FFF2EF;
+    align-items: center;
+    margin-top: 30px;
+    justify-content: space-around;
+    font-family: "Pragmatica", arial;
+  }
+
+  .page__bottom-image {
+    display: none;
+  }
+
+  .page__copyright {
+    width: 767px;
+    height: 50px;
+    background-color: #E24329;
+    color: #F0F8FF;
+    text-align: center;
+    padding-top: 5px;
+    font-family: "Pragmatica", arial;
   }
 }
