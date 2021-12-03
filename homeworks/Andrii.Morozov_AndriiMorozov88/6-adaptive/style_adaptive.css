@@ -2,7 +2,6 @@ body {
   max-width: 1440px;
   margin: auto;
   overflow-y: scroll;
-  background-color: #E5E5E5;
 }
 
 .page {
@@ -335,6 +334,7 @@ body {
 @media (max-width: 767px) {
 
   body {
+    max-width: 767px;
     margin: auto;
   }
 
@@ -357,6 +357,7 @@ body {
     background-color: #FFF;
     top: 0;
     justify-content: center;
+    margin-left: 75px;
   }
 
   .page__track {
@@ -365,6 +366,7 @@ body {
     height: 400px;
     background-color: #E24329;
     margin-bottom: 70px;
+    margin-left: 75px;
   }
 
   .page__track_textfield {
@@ -416,12 +418,14 @@ body {
 
   .page__offers__title {
     width: 767px;
+    margin-left: 75px;
     font-size: 25px;
     text-align: center;
     font-family: "Pragmatica", arial;
   }
 
   .page__offers__text {
+    margin-left: 75px;
     width: 767px;
     text-align: center;
     font-size: 15px;
@@ -433,6 +437,7 @@ body {
     display: flex;
     width: 767px;
     justify-content: center;
+    margin-left: 75px;
   }
 
   .page__offers-block {
@@ -454,24 +459,26 @@ body {
   .page__apply {
     display: flex;
     width: 767px;
+    margin-top: 250px;
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
   }
 
   .page__apply__aside__title {
-    font-size: 20px;
+    font-size: 30px;
     font-family: "Pragmatica", arial;
   }
 
   .page__apply__aside__text {
-    font-size: 10px;
+    font-size: 20px;
     line-height: .3;
     font-family: "Pragmatica", arial;
   }
 
   .page__news__title {
     width: 767px;
+    margin-left: 75px;
     font-size: 30px;
     line-height: .2;
     text-align: center;
@@ -497,6 +504,7 @@ body {
     background-color: #FFF2EF;
     align-items: center;
     margin-top: 30px;
+    margin-left: 75px;
     justify-content: space-around;
     font-family: "Pragmatica", arial;
   }
@@ -508,6 +516,7 @@ body {
   .page__copyright {
     width: 767px;
     height: 50px;
+    margin-left: 75px;
     background-color: #E24329;
     color: #F0F8FF;
     text-align: center;
