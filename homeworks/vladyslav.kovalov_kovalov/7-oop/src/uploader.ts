@@ -7,23 +7,16 @@ export class Uploader {
         this.listenEvents(this.callback);
     }
 
-    private listenEvents(callback: any) {
+    private listenEvents(callback: any): void {
         this.el.addEventListener('change', (event: MouseEvent) => {
             const element = (event.target as HTMLInputElement);
-            const file = (element.files as FileList)[0];
-
-            this.getBase64(file).then(data => {
-                callback(data);
-            });
-        })
+            this.getImageUrl(element, callback);
+        });
     }
 
-    private getBase64(file: any) {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = error => reject(error);
-        })
+    private getImageUrl(element: HTMLInputElement, callback: any) {
+        const file = (element.files as FileList)[0];
+        const url = URL.createObjectURL(file);
+        callback(url);
     }
 }

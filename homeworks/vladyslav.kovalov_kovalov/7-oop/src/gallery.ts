@@ -10,9 +10,10 @@ export class Gallery {
         private fullScreen: any,
         private imageUploader: any,
     ){
+
         this.onImageUploaded = this.saveImage.bind(this);
         this.fullScreen = new FullScreen(document.querySelector('[data-full-screen]') as HTMLElement);
-        this.imageUploader = new Uploader(document.querySelector('[data-image-upload]') as HTMLElement, this.onImageUploaded);
+        this.imageUploader = new Uploader(document.querySelector('[data-image-upload]') as HTMLInputElement, this.onImageUploaded);
 
         this.imageStorage = [
             'img/img-0.jpg',
@@ -26,27 +27,25 @@ export class Gallery {
         this.listenEvents();
     }
 
-    private initGallery() {
+    private initGallery(): void {
         this.imageStorage.forEach((image, index) => {
             this.renderImage(image, index);
         })
     }
 
-    private saveImage(element: any) {
+    private saveImage(element: any): void {
         const length = this.imageStorage.push(element)
         const index = length - 1;
 
-        this.imageStorage.push(element);
         this.renderImage(element, index);
-
     }
 
-    private renderImage(image: any, index: any): void {
+    private renderImage(image: string, index: number): void {
         const currentImage: HTMLImageElement = this.loadImage(image, index);
         this.galleryElement.prepend(currentImage);
     }
 
-    private loadImage(imageSrc: string, index: number) {
+    private loadImage(imageSrc: string, index: number): HTMLImageElement {
         const template = document.querySelector('[data-new-image-template]') as HTMLTemplateElement;
         const content = template.content.cloneNode(true);
         const element: any = (content as HTMLImageElement).querySelector('[data-new-image-template-element]');
@@ -56,7 +55,7 @@ export class Gallery {
         return element;
     }
 
-    private listenEvents() {
+    private listenEvents(): void {
         this.galleryElement.addEventListener('click', event => {
             const image: HTMLElement = (event.target as HTMLElement);
             const index: string | undefined = image.dataset.index;

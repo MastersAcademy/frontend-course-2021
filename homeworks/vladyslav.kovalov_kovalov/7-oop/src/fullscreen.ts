@@ -1,4 +1,3 @@
-
 export class FullScreen {
     private readonly templateElement: HTMLTemplateElement;
     private readonly spinnerElement: HTMLDivElement;
@@ -6,6 +5,7 @@ export class FullScreen {
     constructor(
         private readonly el: HTMLElement,
     ) {
+
         const templateElement = this.el.querySelector<HTMLTemplateElement>('[data-full-screen-template]');
         const spinnerElement = this.el.querySelector<HTMLDivElement>('[data-full-screen-spinner]');
 
@@ -19,18 +19,17 @@ export class FullScreen {
         this.listenEvents();
     }
 
-    private listenEvents() {
+    private listenEvents(): void {
         this.el.addEventListener('click', event => {
-            const image = (event.target as HTMLElement);
-            const data: DOMStringMap= image.dataset;
+            const image: HTMLElement = (event.target as HTMLElement);
+            const data: DOMStringMap = image.dataset;
 
             if(data.fullScreen !== undefined) {
                 this.el.classList.add('hidden');
-                const childElement: any = this.el.querySelector('[data-full-screen-image]');
+                const childElement: HTMLImageElement = this.el.querySelector('[data-full-screen-image]') as HTMLImageElement;
                 this.el.removeChild(childElement);
             }
         })
-
     }
 
     private createImage(source: string): Element | null {
