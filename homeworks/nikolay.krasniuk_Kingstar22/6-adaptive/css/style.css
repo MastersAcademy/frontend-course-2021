@@ -16,6 +16,8 @@ a {
 }
 
 .header {
+  margin: 0 auto;
+  max-width: 1440px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,13 +71,18 @@ a {
 }
 
 .delivery {
-  position: relative;
-  padding: 136px 0 203px 135px;
   background-color: #E24329;
   max-height: 743px;
 }
 
 .delivery__wrapper {
+  position: relative;
+  padding: 136px 0 203px 135px;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.delivery__content {
   max-width: 650px;
 }
 
@@ -136,8 +143,10 @@ a {
   width: 100%;
 }
 
-.benefits {
+.benefits__wrapper {
   padding: 100px 135px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .benefits__title {
@@ -227,9 +236,14 @@ a {
 }
 
 .apply {
+  margin-left: 15px;
+}
+
+.apply__wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  margin-left: 15px;
   padding: 0 153px 100px;
 }
 
@@ -270,7 +284,9 @@ a {
   cursor: pointer;
 }
 
-.news {
+.news__wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 0 120px 100px 150px;
 }
 
@@ -371,8 +387,11 @@ a {
   height: 16px;
 }
 
-.clients {
+
+.clients__wrapper {
   padding: 0 135px 95px 177px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .clients__title {
@@ -391,10 +410,15 @@ a {
   background: #FFF2EF;
 }
 
+.footer__wrapper {
+  padding: 74px 275px 30px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .footer__content {
   display: flex;
   justify-content: space-between;
-  padding: 74px 275px 30px;
 }
 
 .footer__contacts {
