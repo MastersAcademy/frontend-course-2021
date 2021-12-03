@@ -120,22 +120,8 @@ body {
 }
 
 .full-screen__spinner {
-  position: relative;
-}
-
-.full-screen__spinner:before {
-  content: '';
-  box-sizing: border-box;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50px;
-  height: 50px;
-  margin-top: -15px;
-  margin-left: -15px;
-  border-radius: 50%;
-  border: 2.5px solid transparent;
-  border-top-color: #FFF;
+  height: 35px;
+  width: 35px;
   animation: spinner .6s linear infinite;
 }
 
