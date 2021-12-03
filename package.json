@@ -4,8 +4,9 @@
     "description": "Репозиторій з курсу «Advanced Front-end» проекту Masters Academy",
     "scripts": {
         "lint": "lint-staged",
-        "lint:all": "npm run lint:branch-name && npm run lint:css && npm run lint:js && npm run lint:html",
+        "lint:all": "npm run lint:branch-name && npm run lint:css && npm run lint:js && npm run lint:ts && npm run lint:html",
         "lint:js": "npx eslint --config .eslintrc.js ./homeworks/**/*.js",
+        "lint:ts": "npx eslint --config .eslintrc.js ./homeworks/**/*.ts --no-error-on-unmatched-pattern",
         "lint:css": "npx stylelint --config .stylelintrc ./homeworks/**/*.{css,scss}",
         "lint:html": "npx eslint --config .eslintrc.js ./homeworks/**/*.html",
         "lint:branch-name": "npx branch-name-lint ./.branchlintrc.json",
@@ -19,12 +20,14 @@
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-plugin-import": "^2.24.2",
         "eslint-plugin-no-jquery": "^2.6.0",
-        "stylelint": "^13.13.1"
+        "@typescript-eslint/eslint-plugin": "^5.5.0",
+        "@typescript-eslint/parser": "^5.5.0",
+        "stylelint": "^13.13.1",
+        "typescript": "^4.5.2"
     },
     "devDependencies": {
         "husky": "^7.0.2",
-        "lint-staged": "^11.1.2",
-        "typescript": "^4.5.2"
+        "lint-staged": "^11.1.2"
     },
     "author": "DrSmile444 <dmytro.vakulenko@masterofcode.com>",
     "license": "MIT",
@@ -36,14 +39,8 @@
         "url": "https://github.com/MastersAcademy/frontend-course-2021/issues"
     },
     "homepage": "https://github.com/MastersAcademy/frontend-course-2021",
-    "eslintIgnore": [
-        "*dist",
-        "*node_modules",
-        "*webpack.config.js",
-        "*webpack.config.dev.js"
-    ],
     "lint-staged": {
-        "*.{js,html}": [
+        "*.{js,html,ts}": [
             "eslint --config .eslintrc.js"
         ],
         "*.{css,scss}": [
