@@ -441,8 +441,8 @@ body {
 .main-footer__list-item-link {
   text-decoration: none;
   color: inherit;
-  display: flex;
   transition: color .25s ease-in-out;
+  padding: .5rem 1rem;
 }
 
 .main-footer__list-item-link:hover {
@@ -522,10 +522,6 @@ body {
   .news-section__articles-container {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .main-footer__company-info {
-    margin-right: 3rem;
-  }
 }
 
 @media (max-width: 700px) {
@@ -557,6 +553,12 @@ body {
   .main-footer__container {
     grid-template-columns: 1fr;
     padding: 2rem;
+    text-align: center;
+  }
+
+  .main-footer__social-links {
+    width: 100%;
+    justify-content: space-around;
   }
 
   .clients-section {
@@ -639,6 +641,7 @@ body {
   .main-footer__container {
     grid-template-columns: 1fr;
     padding: 2rem;
+    text-align: center;
   }
 
   .main-footer__company-info {
