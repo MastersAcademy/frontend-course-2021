@@ -1,6 +1,7 @@
 export class FullScreen {
     private readonly templateElement: HTMLTemplateElement;
     private readonly spinnerElement: HTMLDivElement;
+    private readonly closeElement: HTMLElement;
 
     constructor(
         private readonly el: HTMLElement,
@@ -8,13 +9,15 @@ export class FullScreen {
 
         const templateElement = this.el.querySelector<HTMLTemplateElement>('[data-full-screen-template]');
         const spinnerElement = this.el.querySelector<HTMLDivElement>('[data-full-screen-spinner]');
+        const closeElement = this.el.querySelector<HTMLElement>('[data-full-screen-close]');
 
         if(!templateElement) throw new Error('Missing element with [data-full-screen-template]');
-
         if(!spinnerElement) throw new Error('Missing element with [data-full-screen-spinner]')
+        if(!closeElement) throw new Error('Missing element with [data-full-screen-close]')
 
         this.templateElement = templateElement;
         this.spinnerElement = spinnerElement;
+        this.closeElement = closeElement;
 
         this.listenEvents();
     }
@@ -29,7 +32,13 @@ export class FullScreen {
                 const childElement: HTMLImageElement = this.el.querySelector('[data-full-screen-image]') as HTMLImageElement;
                 this.el.removeChild(childElement);
             }
-        })
+        });
+
+        this.closeElement.addEventListener('click', () => {
+            this.el.classList.add('hidden');
+            const childElement: HTMLImageElement = this.el.querySelector('[data-full-screen-image]') as HTMLImageElement;
+            this.el.removeChild(childElement);
+        });
     }
 
     private createImage(source: string): Element | null {
@@ -43,9 +52,10 @@ export class FullScreen {
         this.el.classList.remove('hidden');
         this.spinnerElement.classList.remove('hidden');
 
-        setTimeout(() => {
+        const timeout = window.setTimeout(() => {
             this.el.append(element);
             this.spinnerElement.classList.add('hidden');
+            clearTimeout(timeout);
         }, 1000);
     }
 }
