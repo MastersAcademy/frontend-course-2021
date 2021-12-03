@@ -3,7 +3,7 @@ import { FullScreen } from './fullscreen';
 
 export class Gallery {
     private imageStorage: string[] = [];
-    private onImageUploaded: any;
+    private onImageUploaded: FunctionStringCallback;
 
     constructor(
         private galleryElement:HTMLElement,
