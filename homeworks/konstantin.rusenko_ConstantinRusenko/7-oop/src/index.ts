@@ -64,9 +64,6 @@ class ImageGallery {
 }
 
 class ImageUploader {
-    constructor() {
-
-    }
 
     static createImage(source: string) {
         const newImage = document.createElement('img');
