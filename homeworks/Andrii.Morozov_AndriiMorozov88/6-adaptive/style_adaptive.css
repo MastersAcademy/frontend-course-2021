@@ -297,22 +297,18 @@ body {
     display: none;
   }
 
-  .header__logo {
-    display: none;
-  }
-
   .header {
     display: flex;
-    max-width: auto;
+    width: auto;
     height: 80px;
     background-color: #FFF;
     top: 0;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .page__track {
     display: flex;
-    width: auto;
+    max-width: 100%;
     height: 300px;
     justify-content: center;
     background-color: #E24329;
@@ -320,19 +316,19 @@ body {
 
   .page__title {
     text-align: center;
-    font-size: 37px;
+    font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   .page__text {
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   .page__track_textfield-text-big {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     color: #EFF3F3;
   }
 
@@ -344,7 +340,7 @@ body {
 
   .page__offers {
     display: flex;
-    width: auto;
+    max-width: 100%;
     height: auto;
     justify-content: center;
   }
@@ -355,7 +351,7 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     width: 450px;
-    height: 180px;
+    height: 150px;
     border-radius: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
@@ -367,21 +363,21 @@ body {
 
   .page__apply {
     display: flex;
-    width: auto;
+    max-width: 100%;
     height: auto;
     margin-top: 50px;
     align-items: center;
   }
 
   .page__apply-aside-lines {
-    font-size: 25px;
+    font-size: 15px;
     padding: 5px;
   }
 
   .page__apply-aside-button {
     width: 200px;
     height: 60px;
-    font-size: 30px;
+    font-size: 20px;
     background-color: #B41111;
     border-radius: 20px;
     color: #F0F8FF;
@@ -391,6 +387,7 @@ body {
 
   .page__news {
     display: block;
+    max-width: auto;
     height: auto;
     margin-left: 550px;
     margin-top: 50px;
@@ -404,6 +401,7 @@ body {
   }
 
   .page__bottom {
+    max-width: auto;
     display: flex;
     background-color: #C47676;
     align-items: center;
@@ -411,8 +409,15 @@ body {
     justify-content: center
   }
 
+  .page__bottom-image {
+    display: none;
+    width: 370px;
+    height: 200px;
+  }
+
   .page__copyright {
     display: flex;
+    max-width: auto;
     height: 50px;
     background-color: #B41111;
     color: #F0F8FF;
