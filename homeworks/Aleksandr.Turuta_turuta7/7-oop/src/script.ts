@@ -5,10 +5,14 @@ class LoaderImage {
     }
 
     visible() {
-        this.loaderEl.classList.add('display__flex')
-        setTimeout(() => {
-            this.hidden()
-        }, 1000)
+        return new Promise(resolve => {
+            this.loaderEl.classList.add('display__flex')
+            setTimeout(() => {
+                resolve(this.hidden())
+
+            }, 1000)
+        })
+
     }
 }
 
@@ -26,7 +30,6 @@ class ImageLibrary {
         this.imageEl = el
         this.templateEl = tm
         this.modalRindow = mRindow
-
         this.listenerLoadFile()
     }
     listenerLoadFile() {
@@ -36,16 +39,18 @@ class ImageLibrary {
         })
     }
 
-    getBase64(image: FileList[0]): void {
+    async getBase64(image: FileList[0]) {
         const templateImageEl = this.tm.content.cloneNode(true) as HTMLElement
 
         const reader = new FileReader();
         reader.readAsDataURL(image);
-        new LoaderImage(document.querySelector('[data-loader]')).visible()
+        const sleepLoader = new LoaderImage(document.querySelector('[data-loader]'))
         reader.onloadend = () => {
             const imageDateEl: HTMLDivElement = templateImageEl.querySelector('[data-photo]')
-            imageDateEl.setAttribute('src', reader.result.toString());
-            this.listenerClickImage(imageDateEl, reader.result.toString())
+            sleepLoader.visible().then(() => {
+                imageDateEl.setAttribute('src', reader.result.toString());
+                this.listenerClickImage(imageDateEl, reader.result.toString())
+            });
         }
     }
 
@@ -55,7 +60,7 @@ class ImageLibrary {
             this.modalRindow.querySelector('[data-modal-image]').setAttribute('src', render);
             this.listenerClickCancelImage()
         })
-        this.imageEl.querySelector('[data-image-collection]').append(imageDateEl)
+        this.imageEl.querySelector('[data-image-collection]').after(imageDateEl)
     }
 
     listenerClickCancelImage() {
