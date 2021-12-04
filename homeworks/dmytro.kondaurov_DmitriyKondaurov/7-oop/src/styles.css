@@ -108,6 +108,9 @@ body {
 }
 
 .custom-btn-file-upload {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,6 +120,12 @@ body {
   background-color: #03DAC5;
   font-size: 24px;
   line-height: 24px;
+  cursor: pointer;
+}
+
+.custom-btn-file-upload:hover {
+  background-color: #6200EE;
+  color: #FFF2EF;
 }
 
 .hide {
