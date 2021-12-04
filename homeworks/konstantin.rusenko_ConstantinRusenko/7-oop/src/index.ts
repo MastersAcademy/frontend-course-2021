@@ -66,11 +66,14 @@ class ImageGallery {
 class ImageUploader {
 
     static createImage(source: string) {
+        const newImageBlock = document.createElement('div');
         const newImage = document.createElement('img');
+        newImageBlock.classList.add('image-block');
         newImage.src = source;
         newImage.setAttribute('data-image', '');
         newImage.classList.add('image');
-        GALLERY_EL.prepend(newImage);
+        GALLERY_EL.prepend(newImageBlock)
+        newImageBlock.append(newImage);
     }
 
     static listenEvents() {
@@ -92,13 +95,21 @@ class ImageUploader {
     }
 
     static toggleMenu() {
-        const burgerEl = HEADER.querySelector<SVGElement>('[data-burger]');
+        const burgerSvg = HEADER.querySelector<SVGElement>('[data-burger]');
+        const burgerEl = HEADER.querySelector<HTMLElement>('[data-toggle]');
+
+        GALLERY_EL.addEventListener('click', () => {
+            if (USERS_BAR_EL.classList.contains('visible')) {
+                USERS_BAR_EL.classList.remove('visible');
+                burgerEl.setAttribute('href','img/burger.svg#burger');
+            }
+        })
         burgerEl.addEventListener('click', () => {
             USERS_BAR_EL.classList.toggle('visible');
             if (USERS_BAR_EL.classList.contains('visible')) {
-                burgerEl.setAttribute('href','img/burger.svg#close');
+                burgerSvg.setAttribute('href','img/burger.svg#close');
             } else {
-                burgerEl.setAttribute('href','img/burger.svg#burger');
+                burgerSvg.setAttribute('href','img/burger.svg#burger');
             }
         })
     }  
