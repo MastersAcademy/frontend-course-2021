@@ -96,6 +96,10 @@ body {
   height: 17px;
 }
 
+.big-image--close:hover {
+  cursor: pointer;
+}
+
 .uploader > input {
   display: none;
 }
