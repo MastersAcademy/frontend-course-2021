@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <div class="modal" data-modal>
+            <div class="modal__container">
+                <span class="modal__container-cancel" data-cancel>X</span>
+                <img class="modal__container-image" data-modal-image src="" alt="">
+            </div>
+        </div>
+        <header class="header">
+
+            <img src="../assets/Vector.svg" alt="" class="header__logo">
+            <p class="header__name-app">MyLibrary</p>
+        </header>
+        <main class="main" data-main>
+            <div class="main-image" data-image-collection>
+                <div class="loader__container" data-loader>
+                    <div class="loader"></div>
+                </div>
+            </div>
+            <footer class="main__footer">
+                <label class="dish__main-add-image-and-input">
+                    <img class="dish__main-image" src="../assets/1. Standard.png" alt="camera">
+                    <input class="dish__main-input" type="file" data-image>
+                </label>
+                <p data-p></p>
+            </footer>
+        </main>
+
+        <template data-image-template>
+            <div class="image__block" data-image-block>
+                <img class="image" data-photo src="../assets/Vector.svg" alt="image">
+            </div>
+        </template>
+
+        <script src="../dist/bundle.js"></script>
+    </body>
+
+</html>
