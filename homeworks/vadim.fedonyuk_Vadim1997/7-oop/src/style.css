@@ -51,9 +51,10 @@ body {
 }
 
 .gallery-section__img {
+  object-fit: cover;
   margin: 5px;
-  max-height: 300px;
-  max-width: 300px;
+  height: 300px;
+  width: 300px;
 }
 
 .gallery-section__upload-input {
