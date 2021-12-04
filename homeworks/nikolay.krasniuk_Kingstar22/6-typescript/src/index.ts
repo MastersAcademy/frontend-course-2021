@@ -5,7 +5,7 @@ const fieldCounterEL: HTMLElement = document.querySelector('[data-caunter-number
 const circleEL: HTMLElement = document.querySelector('[data-game-circle]');
 const fieldPlusPointsEl: HTMLElement = document.querySelector('[data-plus-points]');
 const fieldMinusPointsEl: HTMLElement = document.querySelector('[data-minus-points]');
-const letters: string = 'QWERTYUIOPASDFGHJKLZXCVBNM'
+const letters: string = 'QWERTYUIOPASDFGHJKLZXCVBNM';
 let counter: number = 100;
 fieldCounterEL.textContent = `${counter}`;
 let valueRandomLetter: string;

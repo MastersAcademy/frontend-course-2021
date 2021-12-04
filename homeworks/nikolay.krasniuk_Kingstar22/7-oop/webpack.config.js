@@ -31,7 +31,7 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+                test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
                 type: 'asset/resource',
             },
         ],
@@ -40,6 +40,6 @@ module.exports = {
         extensions: ['.ts', '.js'],
     },
     devServer: {
-        port: 5000,
+        port: 5050,
     },
 };

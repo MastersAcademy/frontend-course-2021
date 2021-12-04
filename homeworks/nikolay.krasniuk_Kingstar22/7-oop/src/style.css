@@ -26,43 +26,24 @@
 
 .main {
   display: flex;
+  position: relative;
   height: 100%;
   max-width: 1440px;
+  margin: 0 auto;
 }
-
-/* .main__users {
-  display: flex;
-  padding: 17px 0 0 13px;
-  flex-direction: column;
-  max-width: 300px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, .14), 0 3px 1px rgba(0, 0, 0, .12), 0 1px 5px rgba(0, 0, 0, .2);
-}
-
-.main__user {
-  display: flex;
-  margin-top: 10px;
-}
-
-.main__user-name {
-  margin-left: 33px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-    color: rgba(0, 0, 0, .6);
-} */
 
 .main__content {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 10px;
   padding: 34px;
   height: 100%;
+  width: 100%;
 }
 
 .main__content-item {
-  object-fit: contain;
-  max-width: 350px;
-  max-height: 350px;
+  object-fit: cover;
+  width: 24%;
   box-shadow: 0 2px 2px rgba(0, 0, 0, .14), 0 3px 1px rgba(0, 0, 0, .12), 0 1px 5px rgba(0, 0, 0, .2);
 }
 
@@ -71,14 +52,20 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   background: #03DAC5;
   box-shadow: 0 4px 5px rgba(0, 0, 0, .14), 0 1px 10px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .2);
   border-radius: 50%;
   right: 35px;
   bottom: 35px;
   cursor: pointer;
+  z-index: 1;
+}
+
+.upload__icon {
+  width: 20px;
+  height: 20px;
 }
 
 .upload__input {
@@ -91,8 +78,8 @@
 }
 
 .screen__loader {
+  display: none;
   position: fixed;
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -104,7 +91,7 @@
 }
 
 .active {
-  display: none;
+  display: flex;
 }
 
 .lds-dual-ring {
@@ -122,10 +109,58 @@
   border-radius: 50%;
   border: 6px solid #FFF;
   border-color: #FFF transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
+  animation: lds-dual-ring 2s linear infinite;
 }
 
 @keyframes lds-dual-ring {
   0% { transform: rotate(0deg) }
   100% { transform: rotate(360deg) }
+}
+
+.main__images {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 48px);
+  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,.5);
+  z-index: 10;
+}
+
+.images__enlarged {
+  max-width: 60%;
+  max-height: 60%;
+}
+
+.images__active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (max-width: 768px) {
+
+  .main__content {
+    padding: 20px;
+  }
+
+  .main__content-item {
+    width: 30%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 320px) {
+
+  .main__content {
+    padding: 15px;
+  }
+
+  .main__content-item {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
