@@ -16,7 +16,11 @@ export class Uploader {
 
     private getImageUrl(element: HTMLInputElement, callback: any) {
         const file = (element.files as FileList)[0];
-        const url = URL.createObjectURL(file);
-        callback(url);
+        const acceptedImageTypes: string[] = ['image/gif', 'image/jpeg', 'image/png'];
+
+        if(file && acceptedImageTypes.includes(file['type'])) {
+            const url = URL.createObjectURL(file);
+            callback(url);
+        }
     }
 }
