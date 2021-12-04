@@ -2,19 +2,23 @@ export class FullScreen {
     private readonly templateElement: HTMLTemplateElement;
     private readonly spinnerElement: HTMLDivElement;
     private readonly closeElement: HTMLElement;
+    private readonly containerElement: HTMLDivElement;
 
     constructor(
         private readonly el: HTMLElement,
     ) {
 
+        const containerElement: HTMLDivElement | null = this.el.querySelector<HTMLDivElement>('[data-full-screen-container]');
         const templateElement: HTMLTemplateElement | null = this.el.querySelector<HTMLTemplateElement>('[data-full-screen-template]');
         const spinnerElement: HTMLDivElement | null = this.el.querySelector<HTMLDivElement>('[data-full-screen-spinner]');
         const closeElement: HTMLElement | null = this.el.querySelector<HTMLElement>('[data-full-screen-close]');
 
         if(!templateElement) throw new Error('Missing element with [data-full-screen-template]');
-        if(!spinnerElement) throw new Error('Missing element with [data-full-screen-spinner]')
-        if(!closeElement) throw new Error('Missing element with [data-full-screen-close]')
+        if(!spinnerElement) throw new Error('Missing element with [data-full-screen-spinner]');
+        if(!closeElement) throw new Error('Missing element with [data-full-screen-close]');
+        if(!containerElement) throw new Error('Missing element with [data-full-screen-container]');
 
+        this.containerElement = containerElement;
         this.templateElement = templateElement;
         this.spinnerElement = spinnerElement;
         this.closeElement = closeElement;
@@ -27,17 +31,15 @@ export class FullScreen {
             const image: HTMLElement = (event.target as HTMLElement);
             const data: DOMStringMap = image.dataset;
 
-            if(data.fullScreen !== undefined) {
+            if(data.fullScreen === '') {
                 this.el.classList.add('hidden');
-                const childElement: HTMLImageElement = this.el.querySelector('[data-full-screen-image]') as HTMLImageElement;
-                if(childElement) this.el.removeChild(childElement);
+                if(this.containerElement.children) this.containerElement.innerHTML = '';
             }
         });
 
         this.closeElement.addEventListener('click', () => {
             this.el.classList.add('hidden');
-            const childElement: HTMLImageElement = this.el.querySelector('[data-full-screen-image]') as HTMLImageElement;
-            this.el.removeChild(childElement);
+            this.containerElement.innerHTML = '';
         });
     }
 
@@ -53,7 +55,7 @@ export class FullScreen {
         this.spinnerElement.classList.remove('hidden');
 
         const timeout = window.setTimeout(() => {
-            this.el.append(element);
+            this.containerElement.append(element);
             this.spinnerElement.classList.add('hidden');
             clearTimeout(timeout);
         }, 1000);
