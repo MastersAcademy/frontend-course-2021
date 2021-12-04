@@ -11,7 +11,8 @@ class LoaderImage {
         }, 1000)
     }
 }
-
+type Opaque<T, K extends string> = T & { __typename: K }
+type Base64 = Opaque<string, "base64">
 class ImageLibrary {
 
     private readonly imageEl: HTMLElement;
@@ -37,23 +38,22 @@ class ImageLibrary {
     }
 
     getBase64(image: FileList[0]): void {
-        const templateImageEl: any = this.tm.content.cloneNode(true);
+        const templateImageEl = this.tm.content.cloneNode(true) as HTMLElement
+
         const reader = new FileReader();
         reader.readAsDataURL(image);
         new LoaderImage(document.querySelector('[data-loader]')).visible()
-
         reader.onloadend = () => {
-
-            const imageDateEl: any = templateImageEl.querySelector('[data-photo]')
-            imageDateEl.src = reader.result;
-            this.listenerClickImage(imageDateEl, reader.result)
+            const imageDateEl: HTMLDivElement = templateImageEl.querySelector('[data-photo]')
+            imageDateEl.setAttribute('src', reader.result.toString());
+            this.listenerClickImage(imageDateEl, reader.result.toString())
         }
     }
 
-    listenerClickImage(imageDateEl: HTMLTemplateElement, render: string | ArrayBuffer) {
+    listenerClickImage(imageDateEl: HTMLDivElement, render: string) {
         imageDateEl.addEventListener('click', () => {
             this.modalRindow.classList.add('display__block')
-            this.modalRindow.querySelector<any>('[data-modal-image]').src = render;
+            this.modalRindow.querySelector('[data-modal-image]').setAttribute('src', render);
             this.listenerClickCancelImage()
         })
         this.imageEl.querySelector('[data-image-collection]').append(imageDateEl)
