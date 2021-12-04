@@ -36,7 +36,7 @@ body {
 .gallery-section__images {
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 300px);
+  grid-template-columns: repeat(4, 230px);
   justify-content: center;
   gap: 10px;
 }
@@ -60,9 +60,8 @@ body {
 
 .gallery-section__img {
   object-fit: cover;
-  margin: 5px;
-  height: 300px;
-  width: 300px;
+  height: 230px;
+  width: 230px;
 }
 
 .gallery-section__upload-input {
@@ -115,10 +114,10 @@ body {
   align-items: center;
 }
 
-@media (max-width: 768px) and (min-width: 321px) {
+@media (max-width: 768px) and (min-width: 426px) {
 
   .gallery-section__images {
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(3, 200px);
   }
 
   .gallery-section__img {
@@ -127,9 +126,14 @@ body {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 425px) {
 
   .gallery-section__images {
     grid-template-columns: repeat(1, 300px);
+  }
+
+  .gallery-section__img {
+    height: 300px;
+    width: 300px;
   }
 }

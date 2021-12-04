@@ -20,7 +20,8 @@ class Gallery {
         this.imageStore = [
             'https://images.unsplash.com/photo-1474591424615-7fe467c7fac9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4032&q=80',
             'https://images.unsplash.com/photo-1475518845976-0fd87b7e4e5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=7360&q=80',
-            'https://images.unsplash.com/photo-1630936404616-df78789005c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3763&q=80'
+            'https://images.unsplash.com/photo-1630936404616-df78789005c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3763&q=80',
+            'https://images.unsplash.com/photo-1560450704-5bc8d6792948?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=521&q=80'
         ]
 
         this.inputFileEl = inputFileEl;
