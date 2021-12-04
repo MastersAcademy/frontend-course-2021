@@ -58,6 +58,10 @@ body {
   position: fixed;
 }
 
+.gallery-section__button:hover {
+  transform: scale(1.1);
+}
+
 .gallery-section__img {
   object-fit: cover;
   height: 230px;
