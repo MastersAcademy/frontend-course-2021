@@ -56,7 +56,7 @@ class ImageLibrary {
             this.listenerClickCancelImage()
         })
         this.imageEl.querySelector('[data-image-collection]').append(imageDateEl)
-    };
+    }
 
     listenerClickCancelImage() {
         this.modalRindow.querySelector('[data-cancel]').addEventListener('click', () => {
