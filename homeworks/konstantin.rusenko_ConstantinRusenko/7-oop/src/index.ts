@@ -70,7 +70,7 @@ class ImageUploader {
         newImage.src = source;
         newImage.setAttribute('data-image', '');
         newImage.classList.add('image');
-        GALLERY_EL.appendChild(newImage);
+        GALLERY_EL.prepend(newImage);
     }
 
     static listenEvents() {
