@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@200;300&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script></head>
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+            <symbol id="logo" viewBox="0 0 32 32" fill="none">
+                <title>Gallery Logo</title>
+                <path d="M2.66665 24L9.33331 16L13.3333 20L18.6666 13.3333L25.3333 21.3333M1.33331 1.33334H25.3333V25.3333H1.33331V1.33334ZM6.66665 25.3333V30.6667H30.6666V7.96001H25.3333L6.66665 25.3333ZM7.99998 10.6667C8.3536 10.6667 8.69274 10.5262 8.94279 10.2762C9.19284 10.0261 9.33331 9.68697 9.33331 9.33334C9.33331 8.97972 9.19284 8.64058 8.94279 8.39053C8.69274 8.14049 8.3536 8.00001 7.99998 8.00001C7.64636 8.00001 7.30722 8.14049 7.05717 8.39053C6.80712 8.64058 6.66665 8.97972 6.66665 9.33334C6.66665 9.68697 6.80712 10.0261 7.05717 10.2762C7.30722 10.5262 7.64636 10.6667 7.99998 10.6667Z" stroke="white" stroke-width="2"></path>
+            </symbol>
+            <symbol id="add" viewBox="0 0 24 24">
+                <title>Add</title>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="black" fill-opacity="0.87"></path>
+            </symbol>
+        </svg>
+        <header class="header">
+            <svg class="header__logo">
+                <use xlink:href="#logo"></use>
+            </svg>
+            <h1 class="header__title">MyLibrary</h1>
+        </header>
+        <main data-gallery>
+            <section data-images>
+                <template data-new-image-template>
+                    <img class="img" data-new-image-template-element src="">
+                </template>
+            </section>
+            <div>
+                <input data-add-button type="file">
+            </div>
+        </main>
+        <script src="src/index.ts"></script>
+    </body>
+</html>
