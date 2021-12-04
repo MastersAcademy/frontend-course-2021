@@ -14,7 +14,7 @@ class ImageGallery {
     private newImgEl: HTMLElement = (<HTMLTemplateElement>this.templateImgEl).content.querySelector('[data-img-container]');
     private closeImgBtnEl: HTMLElement = document.querySelector('[data-close-image-btn]');
     private activeImageEl: HTMLElement;
-    private cloneNewImgEl: Node = this.newImgEl.cloneNode(true);
+    private cloneNewImgEl: Node;
     private imageGalleryContainer: HTMLElement = document.querySelector('[data-gallery-container]');
     private uploadImgBtnEl: HTMLElement = document.querySelector('[data-upload-image-btn]');
     private preloaderEl: HTMLElement = document.querySelector('[data-preloader]');
@@ -26,15 +26,15 @@ class ImageGallery {
             this.preloaderEl.classList.remove('hide');
             await setTimeout(() => {
                 this.newImageSrc = (<HTMLInputElement>event.target).files[0];
-                const cloneNewImgEl = this.newImgEl.cloneNode(true);
-                (<HTMLImageElement>(<HTMLElement>cloneNewImgEl)
+                this.cloneNewImgEl = this.newImgEl.cloneNode(true);
+                (<HTMLImageElement>(<HTMLElement>this.cloneNewImgEl)
                     .querySelector('[data-gallery-img]'))
                     .src = URL.createObjectURL(this.newImageSrc);
-                (<HTMLImageElement>(<HTMLElement>cloneNewImgEl)).addEventListener('click', (event: MouseEvent) => {
+                (<HTMLImageElement>(<HTMLElement>this.cloneNewImgEl)).addEventListener('click', (event: MouseEvent) => {
                     (<HTMLElement>event.currentTarget).classList.add('active');
                     this.closeImgBtnEl.classList.remove('hide');
                 })
-                this.imageGalleryContainer.append(cloneNewImgEl);
+                this.imageGalleryContainer.append(this.cloneNewImgEl);
                 this.preloaderEl.classList.add('hide');
             }, 2000);
         })
