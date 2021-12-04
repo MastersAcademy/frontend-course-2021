@@ -51,7 +51,7 @@ class ImageLibrary {
     }
 
     listenerClickImage(imageDateEl: HTMLTemplateElement, render: string | ArrayBuffer) {
-        imageDateEl.addEventListener('click', (e) => {
+        imageDateEl.addEventListener('click', () => {
             this.modalRindow.classList.add('display__block')
             this.modalRindow.querySelector<any>('[data-modal-image]').src = render;
             this.listenerClickCancelImage()
