@@ -11,8 +11,7 @@ class LoaderImage {
         }, 1000)
     }
 }
-type Opaque<T, K extends string> = T & { __typename: K }
-type Base64 = Opaque<string, "base64">
+
 class ImageLibrary {
 
     private readonly imageEl: HTMLElement;
