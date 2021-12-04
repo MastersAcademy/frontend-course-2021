@@ -151,7 +151,6 @@ body {
 
   .big-image {
     object-fit: cover;
-    width: 45vh;
     margin-top: 10%;
   }
 }
