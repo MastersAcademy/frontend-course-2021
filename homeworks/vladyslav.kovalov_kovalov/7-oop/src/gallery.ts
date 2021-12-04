@@ -3,7 +3,7 @@ import { FullScreen } from './fullscreen';
 
 export class Gallery {
     private imageStorage: string[] = [];
-    private onImageUploaded: FunctionStringCallback;
+    private onImageUploaded: CallableFunction;
 
     constructor(
         private galleryElement:HTMLElement,
@@ -13,7 +13,7 @@ export class Gallery {
 
         this.onImageUploaded = this.saveImage.bind(this);
         this.fullScreen = new FullScreen(document.querySelector('[data-full-screen]') as HTMLElement);
-        this.imageUploader = new Uploader(document.querySelector('[data-image-upload]') as HTMLInputElement, this.onImageUploaded);
+        this.imageUploader = new Uploader(document.querySelector('[data-image-upload]') as HTMLElement, this.onImageUploaded);
 
         this.imageStorage = [
             'img/img-0.jpg',
@@ -34,8 +34,8 @@ export class Gallery {
     }
 
     private saveImage(element: any): void {
-        const length = this.imageStorage.push(element)
-        const index = length - 1;
+        const length: number = this.imageStorage.push(element)
+        const index: number = length - 1;
 
         this.renderImage(element, index);
     }
@@ -46,8 +46,8 @@ export class Gallery {
     }
 
     private loadImage(imageSrc: string, index: number): HTMLImageElement {
-        const template = document.querySelector('[data-new-image-template]') as HTMLTemplateElement;
-        const content = template.content.cloneNode(true);
+        const template: HTMLTemplateElement = document.querySelector('[data-new-image-template]') as HTMLTemplateElement;
+        const content: any = template.content.cloneNode(true);
         const element: any = (content as HTMLImageElement).querySelector('[data-new-image-template-element]');
         element?.setAttribute('src', imageSrc);
         element?.setAttribute('data-index', index);

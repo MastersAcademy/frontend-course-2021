@@ -7,9 +7,9 @@ export class FullScreen {
         private readonly el: HTMLElement,
     ) {
 
-        const templateElement = this.el.querySelector<HTMLTemplateElement>('[data-full-screen-template]');
-        const spinnerElement = this.el.querySelector<HTMLDivElement>('[data-full-screen-spinner]');
-        const closeElement = this.el.querySelector<HTMLElement>('[data-full-screen-close]');
+        const templateElement: HTMLTemplateElement | null = this.el.querySelector<HTMLTemplateElement>('[data-full-screen-template]');
+        const spinnerElement: HTMLDivElement | null = this.el.querySelector<HTMLDivElement>('[data-full-screen-spinner]');
+        const closeElement: HTMLElement | null = this.el.querySelector<HTMLElement>('[data-full-screen-close]');
 
         if(!templateElement) throw new Error('Missing element with [data-full-screen-template]');
         if(!spinnerElement) throw new Error('Missing element with [data-full-screen-spinner]')
@@ -42,7 +42,7 @@ export class FullScreen {
     }
 
     private createImage(source: string): Element | null {
-        const content = this.templateElement.content.cloneNode(true);
+        const content: any = this.templateElement.content.cloneNode(true);
         const element: HTMLElement | null = (content as HTMLImageElement).querySelector('[data-full-screen-image]');
         element?.setAttribute('src', source);
         return element;
