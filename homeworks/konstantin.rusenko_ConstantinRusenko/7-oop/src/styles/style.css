@@ -8,7 +8,9 @@ body {
 }
 
 .header {
-  height: 20%;
+  position: fixed;
+  height: 50px;
+  width: 100%;
   display: flex;
   align-items: center;
   background: #6200EE;
@@ -26,6 +28,10 @@ body {
 .logo__img {
   width: 32px;
   height: 32px;
+}
+
+.main {
+  padding-top: 50px;
 }
 
 .interface {
