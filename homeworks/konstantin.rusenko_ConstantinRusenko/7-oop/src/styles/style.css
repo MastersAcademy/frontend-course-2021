@@ -143,6 +143,10 @@ body {
     width: 50%;
   }
 
+  .photo-gallery {
+    justify-content: center;
+  }
+
   .image {
     flex-direction: column;
     width: 45%;
@@ -150,7 +154,7 @@ body {
 
   .big-image {
     width: 75%;
-    height: 100%;
+    height: 50vh;
     margin-top: 50%;
   }
 
@@ -180,12 +184,13 @@ body {
 
   .image {
     flex-direction: column;
+    min-height: 42.5vh;
     width: 100%;
   }
 
   .big-image {
     width: 75%;
-    height: 100%;
+    height: 50vh;
     margin-top: 50%;
   }
 
