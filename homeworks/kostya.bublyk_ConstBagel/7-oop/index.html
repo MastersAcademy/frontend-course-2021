@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Gallary</title>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <div class="gallery__wrapper">
+            <header class="gallery__header">
+               <a href="#" class="header__title"><img class="header__logo" src="./img/logo.svg" alt="logo">MyLibrary</a>
+               <!-- <h1 class="header-title">MyLibrary</h1>-->
+            </header>
+            <main class="gallery__main" data-role="main-field">
+            </main>
+            <input type="file" data-role="input-image" style="display: none;">
+            <button
+              type="button"
+              class="gallery__add"
+              onclick="document.querySelector(`input[type='file']`).click();"
+            >
+            </button>
+        </div>
+        <div class="gallery__loader" data-role="loader"></div>
+        <div class="gallery__image" data-role="image-field">
+            <button
+                type="button"
+                class="image__close"
+                data-role="close-image-button"
+            >
+            <img src="./img/cross.svg" alt="cross">
+            </button>
+        </div>
+        <script src="./dist/bundle.js"></script>
+    </body>
+</html>

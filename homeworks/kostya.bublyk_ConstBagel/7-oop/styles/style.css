@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gallery__wrapper {
+  width: 100%;
+  height: fit-content;
+  background-color: #FFF;
+}
+
+.gallery__header {
+  position: fixed;
+  width: 100%;
+  height: 56px;
+  background-color: #6200EE;
+  z-index: 0;
+}
+
+.header__title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: .15px;
+  color: #FFF;
+}
+
+.gallery__main {
+  width: 100%;
+}
+
+.main__image {
+  display: block;
+}
+
+/** mobile **/
+@media only screen and (min-width: 301px) {
+
+  .gallery__main {
+    display: inline-grid;
+    justify-items: center;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: 10px;
+  }
+
+  .main__image {
+    display: block;
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/** tablets **/
+@media only screen and (min-width: 601px) {
+  .gallery__main {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    justify-content: space-around;
+  }
+
+  .main__image {
+    display: block;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/** Laptops, descktops **/
+@media only screen and (min-width: 992px) {
+
+  .gallery__main {
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    justify-content: space-around;
+    row-gap: 5px;
+  }
+
+  .main__image {
+    display: block;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.main__image:hover {
+  cursor: pointer;
+}
+
+.gallery__add {
+  position: fixed;
+  display: block;
+  width: 56px;
+  height: 56px;
+  right: 5%;
+  top: 80%;
+  background: rgba(255, 255, 255, .04);
+  border-radius: 28px;
+  background: url("../img/plus.svg") center;
+  cursor: pointer;
+}
+
+.gallery__image {
+  display: none;
+}
+
+.gallery__image--show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .85);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image__big {
+  display: block;
+  max-width: 60%;
+  max-height: 80%;
+}
+
+.image__close {
+  position: absolute;
+  display: block;
+  top: 2%;
+  left: 90%;
+  background: rgba(0, 0, 0, .85);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.gallery__loader {
+  display: none;
+}
+
+.gallery__loader--show {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-image: url("../img/load.svg");
+  background: rgba(0, 0, 0, .85);
+}
