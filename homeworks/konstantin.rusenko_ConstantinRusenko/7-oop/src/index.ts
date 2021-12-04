@@ -79,9 +79,11 @@ class ImageUploader {
             LOADER_EL.classList.remove('hidden');
             BODY.classList.remove('overflow--hidden');
             setTimeout(() =>{
-                const imageUrl = URL.createObjectURL((<HTMLInputElement>event.target).files[0])
-                this.createImage(imageUrl)
-                currentUser.gallery.addImage(imageUrl);
+                if (!!(<HTMLInputElement>event.target).files[0]) {
+                    const imageUrl = URL.createObjectURL((<HTMLInputElement>event.target).files[0])
+                    this.createImage(imageUrl)
+                    currentUser.gallery.addImage(imageUrl);
+                }
                 LOADER_EL.classList.add('hidden');
                 BODY.classList.remove('overflow--hidden');
             }, 2000);
