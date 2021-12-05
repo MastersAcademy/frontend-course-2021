@@ -160,7 +160,7 @@
   animation-delay: -.15s;
 }
 
-.test {
+.main__container {
   max-width: 1096px;
   margin: 0 auto;
 }
@@ -182,7 +182,7 @@
     margin: 0 5.5px 11px;
   }
 
-  .test {
+  .main__container {
     max-width: 834px;
     margin: 0 auto;
   }
@@ -190,7 +190,7 @@
 
 @media screen and (max-width:834px) {
 
-  .test {
+  .main__container {
     max-width: 343px;
     margin: 0 auto;
   }
