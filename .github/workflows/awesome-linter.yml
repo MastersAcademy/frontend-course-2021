@@ -25,6 +25,17 @@ jobs:
       - run: npm install --production
       - run: npm run lint:js
 
+  lint-ts:
+    name: Lint TS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.18.1
+      - run: npm install --production
+      - run: npm run lint:ts
+
   lint-css:
     name: Lint CSS
     runs-on: ubuntu-latest
