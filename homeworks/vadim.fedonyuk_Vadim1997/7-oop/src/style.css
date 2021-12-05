@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
   padding: 0;
   margin: 0;
   font-size: 20px;
@@ -56,6 +56,7 @@ body {
   border-radius: 50%;
   bottom: 50px;
   position: fixed;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 
 .gallery-section__button:hover {
