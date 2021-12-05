@@ -8,6 +8,7 @@ class Gallery {
     private readonly fullSizeModal: HTMLElement;
     private readonly fullSizeImage: HTMLElement;
     private readonly closeSizeImage: HTMLElement;
+    private readonly loadModal: HTMLElement;
 
     constructor(private images: Element) {
         const dataGalleryEl = this.images.querySelector<HTMLElement>('[data-images]');
@@ -15,7 +16,8 @@ class Gallery {
         const inputFileEl = this.images.querySelector<HTMLButtonElement>('[data-input-file]');
         this.fullSizeModal = document.querySelector<HTMLElement>('[data-full-size-modal]');
         this.fullSizeImage = document.querySelector<HTMLElement>('[data-full-image]');
-        this.closeSizeImage = document.querySelector<HTMLElement>('[data-button-close]')
+        this.closeSizeImage = document.querySelector<HTMLElement>('[data-button-close]');
+        this.loadModal = document.querySelector<HTMLElement>('[data-load-modal]');
 
         this.imageStore = [
             'https://images.unsplash.com/photo-1474591424615-7fe467c7fac9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4032&q=80',
@@ -59,7 +61,12 @@ class Gallery {
         this.inputFileEl.addEventListener('change', (event) => {
             const objectURL = URL.createObjectURL((event.target as HTMLInputElement).files[0])
             this.imageStore.push(objectURL);
-            this.renderImage(objectURL);
+            this.loadModal.classList.add('visible')
+            setTimeout(() => {
+                this.loadModal.classList.remove('visible')
+                this.renderImage(objectURL);
+            }, 2000);
+
         })
         this.dataGalleryEl.addEventListener('click', (event) => {
             if (!(event.target as HTMLImageElement).currentSrc) {
@@ -73,7 +80,6 @@ class Gallery {
             this.fullSizeModal.classList.add('hidden');
         })
     }
-
 }
 
 const contentEl = document.querySelector<HTMLElement>('[data-gallery]');
