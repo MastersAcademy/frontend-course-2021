@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/font.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <header class="header" data-header>
+            <div class="header__burger--toggle" data-toggle>
+                <svg class="header__burger" xmlns="http://www.w3.org/2000/svg">
+                    <use href="img/burger.svg#burger" data-burger></use>
+                </svg>
+            </div>
+            <a href="index.html" class="header__logo">
+                <svg class="logo__img" xmlns="http://www.w3.org/2000/svg">
+                    <use href="img/logo.svg#logo"></use>
+                </svg>  
+            </a>
+            <h1 class="header__title">MyLibrary</h1>
+        </header>
+        <main class="main" data-panel>
+            <div class="interface">
+                <div class="main__users-block" data-users-bar></div>
+                <div class="photo-gallery" data-gallery></div>
+            </div>
+            <label class="uploader">
+                <input type="file" accept="image/*" data-upload>+
+            </label>
+            <div class="image-preview hidden" data-image-preview>
+                <img class="big-image" data-big-image>
+                <svg class="big-image--close" xmlns="http://www.w3.org/2000/svg" data-close-button type>
+                    <use href="img/close.svg#close"></use>
+                </svg> 
+            </div>
+            <div class="image-preview hidden" data-loader>
+                <div class="loader"></div>
+            </div>
+        </main>
+
+        <script src="../dist/bundle.js"></script>
+    </body>
+</html>
