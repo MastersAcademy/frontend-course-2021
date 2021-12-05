@@ -33,7 +33,9 @@ export class FullScreen {
 
             if(data.fullScreen === '') {
                 this.el.classList.add('hidden');
-                if(this.containerElement.children) this.containerElement.innerHTML = '';
+                if(this.containerElement.children) {
+                    this.containerElement.innerHTML = '';
+                }
             }
         });
 
@@ -55,9 +57,11 @@ export class FullScreen {
         this.spinnerElement.classList.remove('hidden');
 
         const timeout = window.setTimeout(() => {
-            this.containerElement.append(element);
+            console.log('Timeout launched');
             this.spinnerElement.classList.add('hidden');
+            this.containerElement.append(element);
             clearTimeout(timeout);
         }, 1000);
+
     }
 }

@@ -1,6 +1,5 @@
 import { Uploader } from './uploader';
 import { FullScreen } from './fullscreen';
-
 export class Gallery {
     private imageStorage: string[] = [];
     private onImageUploaded: CallableFunction;
@@ -62,7 +61,7 @@ export class Gallery {
 
             if(index !== undefined) {
                 const source: string = this.imageStorage[Number(index)]
-                const fullScreenImage: HTMLElement = this.fullScreen.createImage(source);
+                const fullScreenImage: HTMLImageElement = this.fullScreen.createImage(source);
                 this.fullScreen.toggleImage(fullScreenImage);
             }
         });
