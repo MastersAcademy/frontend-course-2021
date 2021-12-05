@@ -9,10 +9,8 @@ class LoaderImage {
             this.loaderEl.classList.add('display__flex')
             setTimeout(() => {
                 resolve(this.hidden())
-
             }, 1000)
         })
-
     }
 }
 
@@ -32,6 +30,7 @@ class ImageLibrary {
         this.modalRindow = mRindow
         this.listenerLoadFile()
     }
+
     listenerLoadFile() {
         this.imageEl.addEventListener('change', (e) => {
             const element = (e.target as HTMLInputElement);
@@ -41,22 +40,22 @@ class ImageLibrary {
 
     async getBase64(image: FileList[0]) {
         const templateImageEl = this.tm.content.cloneNode(true) as HTMLElement
-
         const reader = new FileReader();
         reader.readAsDataURL(image);
-        const sleepLoader = new LoaderImage(document.querySelector('[data-loader]'))
         reader.onloadend = () => {
             const imageDateEl: HTMLDivElement = templateImageEl.querySelector('[data-photo]')
-            sleepLoader.visible().then(() => {
-                imageDateEl.setAttribute('src', reader.result.toString());
-                this.listenerClickImage(imageDateEl, reader.result.toString())
-            });
+            imageDateEl.setAttribute('src', reader.result.toString());
+            this.listenerClickImage(imageDateEl, reader.result.toString())
         }
     }
 
     listenerClickImage(imageDateEl: HTMLDivElement, render: string) {
         imageDateEl.addEventListener('click', () => {
             this.modalRindow.classList.add('display__block')
+            new LoaderImage(document.querySelector('[data-loader]')).visible().then(() => {
+                this.modalRindow.querySelector('[data-modal-container]').classList.add('display__flex')
+                this.modalRindow.querySelector('[data-cancel]').classList.add('display__block')
+            });
             this.modalRindow.querySelector('[data-modal-image]').setAttribute('src', render);
             this.listenerClickCancelImage()
         })
@@ -66,6 +65,9 @@ class ImageLibrary {
     listenerClickCancelImage() {
         this.modalRindow.querySelector('[data-cancel]').addEventListener('click', () => {
             this.modalRindow.classList.remove('display__block')
+            this.modalRindow.querySelector('[data-modal-container]').classList.remove('display__flex')
+            this.modalRindow.querySelector('[data-cancel]').classList.remove('display__block')
+
         })
     }
 }

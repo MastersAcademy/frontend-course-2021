@@ -15,12 +15,11 @@
     <body>
         <div class="modal" data-modal>
             <img class="modal__container-cancel" data-cancel src="../assets/Vector (1).svg" alt="">
-            <div class="modal__container">
+            <div class="modal__container" data-modal-container>
                 <img class="modal__container-image" data-modal-image src="" alt="">
             </div>
         </div>
         <header class="header">
-
             <img src="../assets/Vector.svg" alt="" class="header__logo">
             <p class="header__name-app">MyLibrary</p>
         </header>
@@ -28,16 +27,19 @@
             <div class="test">
                 <div class="main-image">
                     <div data-image-collection>
-                        <div class="loader__container" data-loader>
-                            <div class="loader"></div>
+                        <div class="loader" data-loader>
+                            <div class="loader__children loader__children--one"></div>
+                            <div class="loader__children loader__children--two"></div>
+                            <div class="loader__children loader__children--three"></div>
+                            <div class="loader__children loader__children--four"></div>
                         </div>
                     </div>
                 </div>
             </div>
             <footer class="main__footer">
-                <label class="dish__main-add-image-and-input">
-                    <img class="dish__main-image" src="../assets/1. Standard.png" alt="camera">
-                    <input class="dish__main-input" type="file" data-image>
+                <label class="main__footer-label">
+                    <img class="main__footer-image" src="../assets/1. Standard.png" alt="camera">
+                    <input class="main__footer-input" type="file" data-image>
                 </label>
                 <p data-p></p>
             </footer>
