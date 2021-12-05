@@ -4,7 +4,7 @@ export class Uploader {
     private readonly spinnerElement: HTMLElement;
 
     constructor(
-        private readonly el: any,
+        private readonly el: HTMLElement,
         private readonly callback: CallableFunction,
 
     ) {
@@ -24,7 +24,7 @@ export class Uploader {
 
     }
     private listenEvents(callback: CallableFunction): void {
-        this.el.addEventListener('change', (event: MouseEvent) => {
+        this.el.addEventListener('change', (event: Event) => {
             const element: HTMLInputElement = (event.target as HTMLInputElement);
             this.getImageUrl(element, callback);
         });

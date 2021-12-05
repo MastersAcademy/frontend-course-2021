@@ -5,7 +5,7 @@ export class Gallery {
     private onImageUploaded: CallableFunction;
 
     constructor(
-        private galleryElement:HTMLElement,
+        private galleryElement: HTMLElement,
         private fullScreen: any,
         private imageUploader: any,
     ){
@@ -40,14 +40,14 @@ export class Gallery {
     }
 
     private renderImage(image: string, index: number): void {
-        const currentImage: HTMLImageElement = this.loadImage(image, index);
+        const currentImage: any = this.loadImage(image, String(index));
         this.galleryElement.prepend(currentImage);
     }
 
-    private loadImage(imageSrc: string, index: number): HTMLImageElement {
+    private loadImage(imageSrc: string, index: string): HTMLImageElement | null {
         const template: HTMLTemplateElement = document.querySelector('[data-new-image-template]') as HTMLTemplateElement;
         const content: any = template.content.cloneNode(true);
-        const element: any = (content as HTMLImageElement).querySelector('[data-new-image-template-element]');
+        const element: HTMLImageElement | null = content.querySelector('[data-new-image-template-element]');
         element?.setAttribute('src', imageSrc);
         element?.setAttribute('data-index', index);
         element?.removeAttribute('data-new-image-template-element');
