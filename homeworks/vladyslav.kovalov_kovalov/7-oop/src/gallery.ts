@@ -12,7 +12,7 @@ export class Gallery {
 
         this.onImageUploaded = this.saveImage.bind(this);
         this.fullScreen = new FullScreen(document.querySelector('[data-full-screen]') as HTMLElement);
-        this.imageUploader = new Uploader(document.querySelector('[data-image-upload]') as HTMLElement, this.onImageUploaded);
+        this.imageUploader = new Uploader(document.querySelector('[data-image-uploader]') as HTMLElement, this.onImageUploaded);
 
         this.imageStorage = [
             'img/img-0.jpg',
@@ -32,7 +32,7 @@ export class Gallery {
         })
     }
 
-    private saveImage(element: any): void {
+    private saveImage(element: string): void {
         const length: number = this.imageStorage.push(element)
         const index: number = length - 1;
 

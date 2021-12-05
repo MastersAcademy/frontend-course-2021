@@ -54,23 +54,41 @@
             </template>
         </div>
     </main>
-    <div class="image-upload">
-        <label for="image-upload" class="image-upload__label">
-            <svg class="image-upload__icon">
+    <!-- <div data-image-upload-container class="image-upload__container">
+        <div data-upload-full-screen lass="image-upload-full-screen hidden">
+            <svg image-upload-spinner class="image-uload-full-screen__spinner">
+                <use xlink:href="#spinner"></use>
+              </svg>
+        </div>
+        <div class="image-upload">
+            <label for="image-upload" class="image-upload__label">
+                <svg class="image-upload__icon">
+                    <use xlink:href="#add-icon"></use>
+                </svg>
+            </label>
+            <input data-image-upload class="image-upload__input" id="image-upload" type="file"/>
+        </div>
+    </div> -->
+    <div data-image-uploader class="image-uploader__container">
+       <div class="image-uploader__input-container">
+        <label for="image-uploader" class="image-uploader__label">
+            <svg class="image-uploader__icon">
                 <use xlink:href="#add-icon"></use>
             </svg>
         </label>
-        <input data-image-upload class="image-upload__input" id="image-upload" type="file"/>
+        <input data-image-uploader-input class="image-uploader__input" id="image-uploader" type="file"/>
+       </div>
+       <div data-image-uploader-full-screen class="image-uploader__full-screen hidden">
+        <svg data-image-uploader-spinner class="image-uploader__spinner">
+            <use xlink:href="#spinner"></use>
+          </svg>
+       </div>
     </div>
     <div data-full-screen class="full-screen hidden">
         <div data-full-screen-container class="full-screen__image-container"></div>
 			<svg data-full-screen-close class="full-screen__close-icon">
 				<use xlink:href="#close-icon"></use>
 	  		</svg>
-			<svg data-full-screen-spinner class="full-screen__spinner">
-				<use xlink:href="#spinner"></use>
-	  		</svg>
-        <div data-full-screen-spinner class="full-screen__spinner hidden">Loading</div>
         <template data-full-screen-template>
             <img data-full-screen-image class="full-screen__image" src="">
         </template>
