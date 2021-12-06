@@ -1,4 +1,6 @@
-export class FullScreen {
+import { IFullScreen } from './FullScreen.types';
+
+export class FullScreen implements IFullScreen {
     constructor(
         private fullScreenElement: HTMLElement | null,
         private fullScreenCloseElement: HTMLElement | null,
@@ -28,16 +30,3 @@ export class FullScreen {
         this.fullScreenElement?.classList.remove('hidden');
     }
 }
-
-export interface IFullScreen {
-    fullScreenElement: HTMLElement | null;
-    fullScreenCloseElement: HTMLElement | null;
-    fullScreenImageElement: HTMLElement | null;
-    listenEvents: () => void;
-    toggle: (source: string) => void;
-}
-
-// export interface IStorage {
-//     images: string[];
-//     save(image: string): number;
-// }

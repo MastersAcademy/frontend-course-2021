@@ -1,6 +1,5 @@
-import { IStorage } from './imagestorage';
-import { IFullScreen } from './fullscreen';
-import { IUploader } from './uploader';
+import { IStorage } from './ImageStorage.types';
+
 export class Gallery {
     public onImageLoaded: CallableFunction;
 

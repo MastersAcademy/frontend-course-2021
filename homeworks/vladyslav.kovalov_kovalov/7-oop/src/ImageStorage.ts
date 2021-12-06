@@ -1,4 +1,6 @@
-export class Storage {
+import { IStorage } from './ImageStorage.types';
+
+export class Storage implements IStorage {
     public images: string[] = [];
 
     constructor() {
@@ -14,11 +16,6 @@ export class Storage {
     public save(image: string): number {
         return this.images.push(image);
     }
-}
-
-export interface IStorage {
-    images: string[];
-    save(image: string): number;
 }
 
 

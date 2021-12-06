@@ -1,7 +1,7 @@
-import { Gallery } from './gallery';
-import { FullScreen } from './fullscreen';
-import { Uploader } from './uploader';
-import { Storage } from './imagestorage';
+import { Gallery } from './Gallery';
+import { FullScreen } from './FullScreen';
+import { Uploader } from './Uploader';
+import { Storage } from './ImageStorage';
 
 const galleryElement: HTMLElement | null = document.querySelector<HTMLElement>('[data-gallery]');
 const fullScreenElement: HTMLElement | null = document.querySelector<HTMLElement>('[data-full-screen]');

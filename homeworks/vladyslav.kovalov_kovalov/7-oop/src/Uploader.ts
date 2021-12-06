@@ -1,11 +1,13 @@
-export class Uploader {
+import { IUploader } from './Uploader.types'
+
+export class Uploader implements IUploader {
     constructor(
         private inputElement: HTMLElement | null,
         private inputFullScreenElement: HTMLElement | null,
 
     ) {}
 
-    private listenEvents(callback: CallableFunction): void {
+    public listenEvents(callback: CallableFunction): void {
         this.inputElement?.addEventListener('change', event => {
             const element: HTMLInputElement = (event.target as HTMLInputElement);
             this.getUrl(element, callback);
@@ -27,11 +29,4 @@ export class Uploader {
             }, 1000);
         }
     }
-}
-
-export interface IUploader {
-    inputElement: HTMLElement | null;
-    inputFullScreenElement: HTMLElement | null;
-    listenEvents: (callback: CallableFunction) => void;
-    getUrl: (element: HTMLInputElement, callback: CallableFunction) => void;
 }
