@@ -36,7 +36,6 @@ export class Gallery {
 
     public save(image: string) {
         const length: number = this.storage.save(image);
-        console.log(length);
         const index: number = length - 1;
         this.render(image, index);
     }

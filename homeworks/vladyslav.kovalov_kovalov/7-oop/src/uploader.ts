@@ -1,6 +1,5 @@
 export class Uploader {
     constructor(
-        private storage: any,
         private inputElement: HTMLElement | null,
         private inputFullScreenElement: HTMLElement | null,
 
