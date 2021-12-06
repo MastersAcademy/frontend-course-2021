@@ -1,4 +1,6 @@
 import { IStorage } from './ImageStorage.types';
+import { IFullScreen } from './FullScreen.types';
+import { IUploader } from './Uploader.types';
 
 export class Gallery {
     public onImageLoaded: CallableFunction;
@@ -6,8 +8,8 @@ export class Gallery {
     constructor(
         private storage: IStorage,
         private galleryElement: HTMLElement | null,
-        private fullScreen: any,
-        private Uploader: any,
+        private fullScreen: IFullScreen,
+        private Uploader: IUploader,
 
     ) {
         this.init();
