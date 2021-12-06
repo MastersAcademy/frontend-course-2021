@@ -173,3 +173,10 @@ body {
   }
 }
 
+@media (min-width: 991px) {
+  .full-screen__image {
+    max-width: 900px;
+    max-height: 900px;
+  }
+}
+
