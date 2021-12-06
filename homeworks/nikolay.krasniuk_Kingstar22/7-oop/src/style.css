@@ -7,7 +7,6 @@
 
 .body {
   height: 100vh;
-  position: relative;
 }
 
 .header {
@@ -119,7 +118,7 @@
 
 .main__images {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

@@ -54,6 +54,7 @@ class UploadImage {
             `<img class="images__enlarged" src="${src}"/>
         `);
         this.loaderEl.classList.remove('active');
+
     }
 
     private hideShowPreviewImages = () => {
