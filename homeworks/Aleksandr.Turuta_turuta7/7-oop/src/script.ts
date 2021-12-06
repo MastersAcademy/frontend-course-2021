@@ -1,24 +1,5 @@
-class Hidden {
-    public hidden(dataEl: HTMLElement, dataClass: string) {
-        dataEl.classList.remove(`${dataClass}`)
-    }
-
-    public visible(dataEl: HTMLElement, dataClass: string) {
-        dataEl.classList.add(`${dataClass}`)
-    }
-}
-
-class Base64 {
-    public getBase64(image: File) {
-        return new Promise(resolve => {
-            const reader = new FileReader();
-            reader.readAsDataURL(image);
-            reader.onloadend = () => {
-                resolve(reader.result.toString());
-            }
-        })
-    }
-}
+import { Hidden } from './Class/Hidden';
+import { Base64 } from './Class/Base64'
 
 class ImageLibrary {
     constructor(
