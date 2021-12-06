@@ -18,39 +18,37 @@ class UploadImage {
 
     private listenEvents() {
         this.uploadInputEl.addEventListener('change', this.settingsHandler);
-        this.displayContentEl.addEventListener('click', (event) => {
+        this.displayContentEl.addEventListener('click', (event: Event) => {
+
             this.loaderEl.classList.add('active');
+            const url: string = (event.target as HTMLImageElement).src;
             setTimeout(() => {
-                this.showPreviewImages(event);
+                this.showPreviewImages(url);
             }, 500);
         });
         this.imageFocusEl.addEventListener('click', this.hideShowPreviewImages);
     }
 
-    private settingsHandler = (event: any) => {
-        const files = event.target.files[0];
-        if (!event.target.files.length) {
-            return
-        }
-        if (!files.type.match('image')) {
+    private settingsHandler = (event: Event):void => {
+        const file = (event.target as HTMLInputElement).files[0];
+        if (!file.type.match('image')) {
             return  alert('Data type does not match "image"');
         }
         this.loaderEl.classList.add('active');
+        const url: string = URL.createObjectURL(file);
         setTimeout(() => {
-            this.renderImage(files);
+            this.renderImage(url);
         }, 2000);
     };
 
-    private renderImage = (files: any) => {
-        const src: string = URL.createObjectURL(files);
+    private renderImage = (src: string) => {
         this.displayContentEl.insertAdjacentHTML('afterbegin',
-            `<img class="main__content-item" src="${src}" alt="${files.name}"/>
+            `<img class="main__content-item" src="${src}"/>
         `);
         this.loaderEl.classList.remove('active');
     };
 
-    private showPreviewImages = (event: any) => {
-        const src: string = (event.target as HTMLImageElement).src;
+    private showPreviewImages = (src: string) => {
         this.imageFocusEl.classList.add('images__active');
         this.imageFocusEl.insertAdjacentHTML('afterbegin',
             `<img class="images__enlarged" src="${src}"/>
