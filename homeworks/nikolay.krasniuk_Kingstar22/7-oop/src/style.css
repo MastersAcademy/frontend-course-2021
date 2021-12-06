@@ -10,6 +10,8 @@
 }
 
 .header {
+  position: fixed;
+  width: 100%;
   padding: 12px 34px;
   display: flex;
   align-items: center;
@@ -25,6 +27,7 @@
 }
 
 .main {
+  padding-top: 60px;
   display: flex;
   height: 100%;
   max-width: 1440px;

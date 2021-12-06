@@ -19,17 +19,18 @@ class UploadImage {
     private listenEvents() {
         this.uploadInputEl.addEventListener('change', this.settingsHandler);
         this.displayContentEl.addEventListener('click', (event: Event) => {
-
-            this.loaderEl.classList.add('active');
-            const url: string = (event.target as HTMLImageElement).src;
-            setTimeout(() => {
-                this.showPreviewImages(url);
-            }, 500);
+            const target = event.target as HTMLInputElement;
+            if (target.hasAttribute('data-item-img')) {
+                this.loaderEl.classList.add('active');
+                setTimeout(() => {
+                    this.showPreviewImages(target.src);
+                }, 500);
+            }
         });
         this.imageFocusEl.addEventListener('click', this.hideShowPreviewImages);
     }
 
-    private settingsHandler = (event: Event):void => {
+    private settingsHandler = (event: Event): void => {
         const file = (event.target as HTMLInputElement).files[0];
         if (!file.type.match('image')) {
             return  alert('Data type does not match "image"');
@@ -41,14 +42,14 @@ class UploadImage {
         }, 2000);
     };
 
-    private renderImage = (src: string) => {
+    private renderImage = (src: string): void => {
         this.displayContentEl.insertAdjacentHTML('afterbegin',
-            `<img class="main__content-item" src="${src}"/>
+            `<img data-item-img class="main__content-item" src="${src}"/>
         `);
         this.loaderEl.classList.remove('active');
     };
 
-    private showPreviewImages = (src: string) => {
+    private showPreviewImages = (src: string): void => {
         this.imageFocusEl.classList.add('images__active');
         this.imageFocusEl.insertAdjacentHTML('afterbegin',
             `<img class="images__enlarged" src="${src}"/>
@@ -57,7 +58,7 @@ class UploadImage {
 
     }
 
-    private hideShowPreviewImages = () => {
+    private hideShowPreviewImages = (): void => {
         this.imageFocusEl.classList.remove('images__active');
         this.imageFocusEl.innerHTML = '';
     };
