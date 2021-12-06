@@ -1,70 +1,55 @@
-import { Uploader } from './uploader';
-import { FullScreen } from './fullscreen';
 export class Gallery {
-    private imageStorage: string[] = [];
-    private onImageUploaded: CallableFunction;
+    public onImageLoaded: CallableFunction;
 
     constructor(
-        private galleryElement: HTMLElement,
+        private storage: any,
+        private galleryElement: HTMLElement | null,
         private fullScreen: any,
-        private imageUploader: any,
-    ){
+        private Uploader: any,
 
-        this.onImageUploaded = this.saveImage.bind(this);
-        this.fullScreen = new FullScreen(document.querySelector('[data-full-screen]') as HTMLElement);
-        this.imageUploader = new Uploader(document.querySelector('[data-image-uploader]') as HTMLElement, this.onImageUploaded);
-
-        this.imageStorage = [
-            'img/img-0.jpg',
-            'img/img-1.jpg',
-            'img/img-2.jpg',
-            'img/img-3.jpg',
-            'img/img-4.jpg'
-        ];
-
-        this.initGallery();
+    ) {
+        this.init();
         this.listenEvents();
-    }
+        this.onImageLoaded = this.save.bind(this);
+        this.Uploader.listenEvents(this.onImageLoaded);
 
-    private initGallery(): void {
-        this.imageStorage.forEach((image, index) => {
-            this.renderImage(image, index);
+    }
+    private init(): void {
+        this.storage.images.forEach((image: string, index: number): void => {
+            this.render(image, index);
         })
     }
 
-    private saveImage(element: string): void {
-        const length: number = this.imageStorage.push(element)
+    private render(image: string, index: number): void {
+        const newImage: HTMLImageElement = this.create(image, index);
+        this.galleryElement?.prepend(newImage);
+    }
+
+    private create(source: string, index: number): HTMLImageElement {
+        const image: HTMLImageElement = document.createElement('img');
+        image.classList.add('photo-grid__item');
+        image.src = source;
+        image.dataset.galleryItem = '';
+        image.dataset.index = String(index);
+        return image;
+    }
+
+    public save(image: string) {
+        const length: number = this.storage.save(image);
+        console.log(length);
         const index: number = length - 1;
-
-        this.renderImage(element, index);
-    }
-
-    private renderImage(image: string, index: number): void {
-        const currentImage: any = this.loadImage(image, String(index));
-        this.galleryElement.prepend(currentImage);
-    }
-
-    private loadImage(imageSrc: string, index: string): HTMLImageElement | null {
-        const template: HTMLTemplateElement = document.querySelector('[data-new-image-template]') as HTMLTemplateElement;
-        const content: any = template.content.cloneNode(true);
-        const element: HTMLImageElement | null = content.querySelector('[data-new-image-template-element]');
-        element?.setAttribute('src', imageSrc);
-        element?.setAttribute('data-index', index);
-        element?.removeAttribute('data-new-image-template-element');
-        return element;
+        this.render(image, index);
     }
 
     private listenEvents(): void {
-        this.galleryElement.addEventListener('click', event => {
+        this.galleryElement?.addEventListener('click', event => {
             const image: HTMLElement = (event.target as HTMLElement);
-            const index: string | undefined = image.dataset.index;
+            const {index}: DOMStringMap = image.dataset;
 
             if(index !== undefined) {
-                const source: string = this.imageStorage[Number(index)]
-                const fullScreenImage: HTMLImageElement = this.fullScreen.createImage(source);
-                this.fullScreen.toggleImage(fullScreenImage);
+                const source: string = this.storage.images[Number(index)];
+                this.fullScreen.toggle(source);
             }
         });
     }
 }
-

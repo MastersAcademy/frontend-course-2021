@@ -1,46 +1,30 @@
 export class Uploader {
-    private readonly inputElement: HTMLElement;
-    private readonly fullScreenElement: HTMLElement;
-    private readonly spinnerElement: HTMLElement;
-
     constructor(
-        private readonly el: HTMLElement,
-        private readonly callback: CallableFunction,
+        private storage: any,
+        private inputElement: HTMLElement | null,
+        private inputFullScreenElement: HTMLElement | null,
 
-    ) {
-        const inputElement: HTMLElement | null = this.el.querySelector('[data-image-uploader-input]');
-        const fullScreenElement: HTMLElement | null = this.el.querySelector('[data-image-uploader-full-screen]');
-        const spinnerElement: HTMLElement | null = this.el.querySelector('[data-image-uploader-spinner]');
+    ) {}
 
-        if(!inputElement) throw new Error('Missing element with [data-image-uploader-input]');
-        if(!fullScreenElement) throw new Error('Missing element with [data-image-uploader-full-screen]');
-        if(!spinnerElement) throw new Error('Missing element with [data-image-uploader-spinner]');
-
-        this.inputElement = inputElement;
-        this.fullScreenElement = fullScreenElement;
-        this.spinnerElement = spinnerElement;
-
-        this.listenEvents(this.callback);
-
-    }
     private listenEvents(callback: CallableFunction): void {
-        this.el.addEventListener('change', (event: Event) => {
+        this.inputElement?.addEventListener('change', event => {
             const element: HTMLInputElement = (event.target as HTMLInputElement);
-            this.getImageUrl(element, callback);
+            this.getUrl(element, callback);
         });
     }
 
-    private getImageUrl(element: HTMLInputElement, callback: CallableFunction) {
+    private getUrl(element: HTMLInputElement, callback: CallableFunction) {
         const file: File = (element.files as FileList)[0];
         const acceptedImageTypes: string[] = ['image/gif', 'image/jpeg', 'image/png'];
 
         if(file && acceptedImageTypes.includes(file['type'])) {
-            this.fullScreenElement.classList.remove('hidden');
+            this.inputFullScreenElement?.classList.remove('hidden');
 
-            setTimeout(() => {
+            const timeout: number = window.setTimeout(() => {
                 const url: string = window.URL.createObjectURL(file);
+                this.inputFullScreenElement?.classList.add('hidden');
                 callback(url);
-                this.fullScreenElement.classList.add('hidden');
+                clearTimeout(timeout);
             }, 1000);
         }
     }
