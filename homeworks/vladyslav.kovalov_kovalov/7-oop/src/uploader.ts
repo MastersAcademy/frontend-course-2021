@@ -12,7 +12,7 @@ export class Uploader {
         });
     }
 
-    private getUrl(element: HTMLInputElement, callback: CallableFunction) {
+    private getUrl(element: HTMLInputElement, callback: CallableFunction): void {
         const file: File = (element.files as FileList)[0];
         const acceptedImageTypes: string[] = ['image/gif', 'image/jpeg', 'image/png'];
 
@@ -27,4 +27,11 @@ export class Uploader {
             }, 1000);
         }
     }
+}
+
+export interface IUploader {
+    inputElement: HTMLElement | null;
+    inputFullScreenElement: HTMLElement | null;
+    listenEvents: (callback: CallableFunction) => void;
+    getUrl: (element: HTMLInputElement, callback: CallableFunction) => void;
 }

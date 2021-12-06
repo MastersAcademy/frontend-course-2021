@@ -15,3 +15,10 @@ export class Storage {
         return this.images.push(image);
     }
 }
+
+export interface IStorage {
+    images: string[];
+    save(image: string): number;
+}
+
+

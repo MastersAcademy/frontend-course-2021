@@ -1,8 +1,11 @@
+import { IStorage } from './imagestorage';
+import { IFullScreen } from './fullscreen';
+import { IUploader } from './uploader';
 export class Gallery {
     public onImageLoaded: CallableFunction;
 
     constructor(
-        private storage: any,
+        private storage: IStorage,
         private galleryElement: HTMLElement | null,
         private fullScreen: any,
         private Uploader: any,
