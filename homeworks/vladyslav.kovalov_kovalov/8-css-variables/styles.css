@@ -1,3 +1,12 @@
+:root {
+  --white-color: #E5E5E5;
+  --black-color: #000;
+  --gray-color-dark: #444;
+  --gray-color-medium: #585858;
+  --gray-color-light: #F9F9F9;
+  --accented-color: #FD665E;
+}
+
 *,
 *::before,
 *::after {
