@@ -10,6 +10,7 @@
   --accented-color-light: hsla(3, 98%, 68%, .85);
   --main-font: roboto, sans-serif;
   --secondary-font: merriweather, sans-serif;
+  --gradient-light: linear-gradient(180deg, var(--gray-color-light) 22.12%, rgba(249, 249, 249, 0) 100%);
 }
 
 *,
@@ -185,6 +186,7 @@
   margin-bottom: 2rem;
   margin-right: 2.5rem;
   padding: 1rem 1rem 1rem 0;
+  width: 300px;
 }
 
 .hero-section__image-container {
@@ -258,7 +260,7 @@
 }
 
 .footer-section {
-  background: linear-gradient(180deg, var(--gray-color-light) 22.12%, rgba(249, 249, 249, 0) 100%);
+  background: var(--gradient-light);
 }
 
 .footer-section__navigation {
