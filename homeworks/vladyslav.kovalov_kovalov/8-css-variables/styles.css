@@ -69,6 +69,18 @@
   background: 0;
 }
 
+.accounts-actions__theme-toggler-icon {
+  fill: var(--black-color);
+  height: 20px;
+  width: 20px;
+  align-self: center;
+  transition: fill .25s ease-in-out;
+}
+
+.button--theme-toggler:hover .accounts-actions__theme-toggler-icon {
+  fill: var(--accented-color);
+}
+
 .title {
   font-family: var(--secondary-font);
   font-size: 48px; /* 3rem */
@@ -143,13 +155,6 @@
 .account-actions {
   display: flex;
   margin-left: auto;
-}
-
-.accounts-actions__theme-toggler-icon {
-  fill: var(--black-color);
-  height: 20px;
-  width: 20px;
-  align-self: center;
 }
 
 .hero-section__title {
