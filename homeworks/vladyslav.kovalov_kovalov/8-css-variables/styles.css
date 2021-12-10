@@ -5,6 +5,7 @@
   --gray-color-dark: #444;
   --gray-color-medium: #585858;
   --gray-color-light: #F9F9F9;
+  --gray-color-lightest: #F0F0F0;
   --accented-color: #FD665E;
   --accented-color-light: hsla(3, 98%, 68%, .85);
   --main-font: roboto, sans-serif;
@@ -148,8 +149,12 @@
   margin-left: 1rem;
 }
 
+.navigation-list__item--first {
+  margin-left: 0;
+}
+
 .navigation__link--first {
-  padding-left: 0;
+  padding: 0;
 }
 
 .account-actions {
@@ -175,4 +180,25 @@
 .hero-section__image-container {
   width: 100%;
   height: auto;
+}
+
+.gallery-section__title {
+  margin: 0 auto;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+
+.gallery-section__row {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.footer-section {
+  border-top: 1px solid var(--gray-color-lightest);
+  padding: 4rem 0;
+}
+
+.footer-section__logo {
+  order: 1;
+  margin-left: auto;
 }
