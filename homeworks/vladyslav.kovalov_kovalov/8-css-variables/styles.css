@@ -8,7 +8,7 @@
   --gray-color-lightest: #F0F0F0;
   --accented-color: #FD665E;
   --accented-color-light: hsla(3, 98%, 68%, .85);
-  --main-font: roboto, sans-serif;
+  --primary-font: roboto, sans-serif;
   --secondary-font: merriweather, sans-serif;
   --gradient-light: linear-gradient(180deg, var(--gray-color-light) 22.12%, rgba(249, 249, 249, 0) 100%);
 }
@@ -49,7 +49,7 @@
   border: 0;
   background: 0;
   font-size: 14px; /* 0.875rem */
-  font-family: var(--main-font);
+  font-family: var(--primary-font);
   font-weight: 900;
   padding: 1rem 1.5rem;
   border-radius: 4px;
@@ -110,7 +110,7 @@
 }
 
 .text {
-  font-family: var(--main-font);
+  font-family: var(--primary-font);
   font-weight: 400;
   font-size: 16px; /* 1rem */
   color: var(--black-color);
@@ -127,7 +127,7 @@
 }
 
 .navigation {
-  font-family: var(--main-font);
+  font-family: var(--primary-font);
   font-weight: 400;
   display: flex;
   align-items: center;
@@ -228,7 +228,7 @@
 
 .features-list {
   list-style-type: none;
-  font-family: var(--main-font);
+  font-family: var(--primary-font);
 }
 
 .feature-item {
