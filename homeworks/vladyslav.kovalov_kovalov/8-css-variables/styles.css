@@ -194,6 +194,7 @@
 }
 
 .footer-section {
+  background-color: var(--gray-color-light);
   border-top: 1px solid var(--gray-color-lightest);
   padding: 4rem 0;
 }
