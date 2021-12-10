@@ -139,17 +139,17 @@
   height: 28px;
 }
 
-.navigation-list {
+.navigation__list {
   list-style: none;
   display: flex;
   align-items: center;
 }
 
-.navigation-list__item {
+.navigation__list-item {
   margin-left: 1rem;
 }
 
-.navigation-list__item--first {
+.navigation__list-item--first {
   margin-left: 0;
 }
 
@@ -191,6 +191,55 @@
 .gallery-section__row {
   display: flex;
   gap: 2.5rem;
+}
+
+.features-section__title {
+  margin-bottom: 3rem;
+  width: 500px;
+}
+
+.features-section__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.features-section__list {
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.features-list {
+  list-style-type: none;
+  font-family: var(--main-font);
+}
+
+.feature-item {
+  position: relative;
+  padding-inline-start: 1rem;
+  margin-bottom: 3rem;
+}
+
+.feature-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background: url("icons/icons-sprite.svg#shield") center center no-repeat;
+  width: 50px;
+  height: 50px;
+}
+
+.feature-item__title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.feature-item__lead {
+  font-weight: 400;
+  width: 300px;
+  line-height: 1.6;
 }
 
 .consultation-section {
