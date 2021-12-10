@@ -30,6 +30,10 @@
   margin: 0 auto;
 }
 
+.page-container--large {
+  max-width: 1400px;
+}
+
 .page-section {
   padding: 4rem 0;
 }
@@ -190,7 +194,11 @@
 
 .gallery-section__row {
   display: flex;
-  gap: 2.5rem;
+  justify-content: space-between;
+}
+
+.gallery-section__image {
+  display: flex;
 }
 
 .features-section__title {
