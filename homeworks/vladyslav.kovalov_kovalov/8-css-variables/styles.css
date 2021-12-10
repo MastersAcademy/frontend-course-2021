@@ -31,7 +31,7 @@
 }
 
 .page-section {
-  padding: 2rem 0;
+  padding: 4rem 0;
 }
 
 .button {
@@ -191,6 +191,24 @@
 .gallery-section__row {
   display: flex;
   gap: 2.5rem;
+}
+
+.consultation-section {
+  background-color: var(--gray-color-light);
+}
+
+.consultation-section__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.consultation-section__hero-container {
+  width: 600px;
+}
+
+.consultation-section__title {
+  margin-bottom: 4rem;
 }
 
 .footer-section {
