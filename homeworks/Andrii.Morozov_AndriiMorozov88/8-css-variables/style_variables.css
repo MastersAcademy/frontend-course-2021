@@ -254,6 +254,7 @@ header {
   height: 208px;
   align-items: center;
   background-color: #F9F9F9;
+  justify-content: space-between;
 }
 
 .footer__menu {
@@ -270,5 +271,11 @@ header {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
   margin-right: 48px;
+}
+
+.footer__logo {
+  width: 62px;
+  height: 28px;
+  margin-right: 180px;
 }
 
