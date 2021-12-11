@@ -80,6 +80,7 @@ body {
 
 .header__menu-link:hover, .header__control_sign-in:hover {
   font-weight: 900;
+  color: var(--color-red);
 }
 
 .header__btn {
@@ -100,7 +101,6 @@ body {
 
 .main {
   width: 1440px;
-  border: 1px solid #000;
   box-sizing: border-box;
 }
 
@@ -121,7 +121,7 @@ body {
   letter-spacing: -.04em;
 }
 
-.color__word {
+.main__color-word {
   color: var(--color-red);
 }
 
@@ -168,7 +168,7 @@ body {
   flex-direction: column;
 }
 
-.main__build-room_name, .main__archmove_name {
+.main__build-room_name, .main__archmove_name, .main__realize-dream_name {
   font-family: Merriweather;
   font-weight: 900;
   font-size: 48px;
@@ -274,6 +274,11 @@ body {
   background-color: var(--color-btn-hover);
 }
 
+.free-consultation__btn--no-margin {
+  margin-top: 64px;
+  margin-left: 0;
+}
+
 .main__realize-dream {
   margin-top: 64px;
   width: 1440px;
@@ -286,4 +291,50 @@ body {
 .main__realize-dream_img {
   margin-left: 119px;
   padding-top: 88px;
+}
+
+.main__realize-dream_text {
+  margin-left: 123px;
+}
+
+.main__realize-dream_name {
+  width: 521px;
+}
+
+.footer {
+  width: 1440px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.footer__menu, .footer_logo {
+  margin-top: 93px;
+  margin-left: 160px;
+  margin-bottom: 94px;
+}
+
+.footer__menu {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: var(--color-menu);
+}
+
+.footer__menu-link {
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: Roboto, sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  color: var(--color-menu);
+  text-decoration: none;
+}
+
+.footer__menu-link:hover {
+  color: var(--color-red);
+}
+
+.footer_logo {
+  margin-right: 166px;
 }
