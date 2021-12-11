@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <link rel="icon" href="./favicon.ico">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="./src/css/normalize.css">
+        <link rel="stylesheet" href="./src/css/animations.css">
+        <link rel="stylesheet" href="./src/css/index.css">
+    </head>
+
+    <body data-theme="light">
+        <svg class="sprite-svg">
+            <symbol
+                id="logo"
+                viewBox="0 0 62 28"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+            >
+                <path d="M14 12.68 9.686.525H7.279l-4.23 11.784c-.721 2.038-1.06 2.409-2.131 2.604v.505h4.127v-.505c-1.41-.216-1.616-.669-1.008-2.562l.668-2.028h4.611l.762 2.264c.556 1.688.299 2.13-1.009 2.326v.505h6.917v-.505c-1.04-.195-1.4-.586-1.987-2.233ZM4.931 9.603 6.98 3.324l2.1 6.279H4.932Z" fill="currentColor"></path>
+                <path d="m20 5.053-4.549.556v.474l.525.164c.566.196.659.34.659 1.009v6.546c0 .72-.165.947-1.184 1.111v.505h5.887v-.505c-1.132-.185-1.317-.401-1.317-1.214V8.306c.453-.422 1.492-.69 2.511-.69.587 0 1.184.093 1.483.206.123-.247.236-.68.236-1.122 0-.926-.442-1.667-1.369-1.667-1.04 0-1.904.875-2.892 2.923L20 5.053ZM29.563 15.624c1.852 0 3.396-.71 4.158-1.802v-.504c-.515.504-1.41.844-2.408.844-2.049 0-3.706-1.616-3.706-4.446 0-2.357 1.235-3.86 3.098-3.86.556 0 1.05.134 1.441.381-.02-.01-.03-.01-.051-.01-.793 0-1.441.658-1.441 1.492s.669 1.493 1.513 1.493c.823 0 1.513-.649 1.513-1.555 0-1.482-1.41-2.665-3.89-2.665-3.274 0-5.682 2.182-5.682 5.331 0 3.263 2.419 5.3 5.455 5.3ZM38.446 0l-4.57.556v.473l.525.175c.576.196.659.34.659 1.009V13.78c0 .741-.186.957-1.184 1.132v.505h5.599v-.505c-.895-.164-1.03-.35-1.03-1.07V7.369c.31-.576.958-.967 1.802-.967 1.163 0 1.842.69 1.842 2.068v5.373c0 .72-.154.916-1.029 1.07v.505h5.599v-.505c-1.019-.175-1.194-.39-1.194-1.132V8.275c0-2.223-1.41-3.283-3.5-3.283-1.739 0-3.005.792-3.54 1.955L38.445 0ZM15.18 17.43l-4.55.556v.473l.526.165c.576.195.658.34.658 1.008v6.526c0 .74-.185.957-1.183 1.132v.504h5.599v-.504c-.896-.154-1.03-.35-1.03-1.07v-6.474c.31-.566.896-.968 1.73-.968 1.08 0 1.698.68 1.698 2.048v5.393c0 .72-.124.916-1.02 1.07v.505h5.435v-.504c-.895-.154-1.03-.35-1.03-1.07v-5.744c0-.288-.02-.535-.071-.782.319-.556.936-.916 1.77-.916 1.091 0 1.73.68 1.73 2.048v5.393c0 .72-.135.906-1.03 1.07v.505h5.599v-.504c-1.009-.175-1.184-.391-1.184-1.132V20.63c0-2.172-1.348-3.263-3.396-3.263-1.719 0-3.047.824-3.55 1.987-.371-1.287-1.586-1.987-3.202-1.987-1.75 0-3.005.824-3.5 1.976V17.43ZM36.002 28c3.314 0 5.794-2.203 5.794-5.362 0-3.222-2.46-5.27-5.753-5.27-3.304 0-5.784 2.192-5.784 5.352 0 3.232 2.46 5.28 5.743 5.28Zm.072-.68c-1.38 0-2.233-1.77-2.233-4.713 0-2.84.74-4.56 2.14-4.56 1.37 0 2.223 1.76 2.223 4.704 0 2.84-.74 4.57-2.13 4.57ZM42.754 19.766l3.088 8.049h1.853l2.943-7.627c.638-1.657.927-1.945 1.75-2.11v-.514H48.95v.514c1.163.165 1.297.494.813 2.028l-1.626 4.878-1.626-4.899c-.474-1.513-.34-1.852.854-2.007v-.514H41.18v.514c.813.175 1.09.463 1.574 1.688ZM51.586 22.7c0 3.272 2.419 5.3 5.486 5.3 1.914 0 3.478-.69 4.23-1.822l-.01-.504c-.515.525-1.38.906-2.388.906-2.08 0-3.613-1.513-3.88-4.19h6.411c.021-.174.052-.442.052-.71 0-2.552-1.709-4.312-4.56-4.312-3.21 0-5.341 2.203-5.341 5.332Zm3.386-1.194c0-2.213.71-3.459 1.956-3.459 1.09 0 1.585 1.174 1.585 3.006 0 .298 0 .514-.01.71l-3.52.041c-.011-.103-.011-.195-.011-.298Z" fill="currentColor"></path>
+            </symbol>
+
+            <symbol
+                id="circle"
+                viewBox="0 0 40 53"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+            >
+                <path d="M2 51V17.91L19.532 2.625 38 17.94V51H2Z" stroke="currentColor" stroke-width="4"></path>
+                <circle cx="20" cy="24" r="5" stroke="var(--head-cust-color)" stroke-width="4"></circle>
+            </symbol>
+
+            <symbol
+                id="ok"
+                viewBox="0 0 48 56"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+            >
+                <path d="M22.627 51.925A49.513 49.513 0 0 1 2.086 15.997l21.538-13.64 22.25 13.637a51.858 51.858 0 0 1-21.34 35.967l-.927.663-.98-.7Z" stroke="currentColor" stroke-width="4"></path>
+                <path d="m17.5 24.9 5.008 5.008 9.9-9.9" stroke="var(--head-cust-color)" stroke-width="4"></path>
+            </symbol>
+
+            <symbol
+                id="dollar"
+                viewBox="0 0 39 48"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+            >
+                <path d="M2 2h35v44H2V2Z" stroke="currentColor" stroke-width="4"></path>
+                <path d="M23.254 38v-1.234C26.308 36.502 28 34.916 28 32.33c0-2.203-1.232-3.564-3.651-4.064l-1.095-.215v-3.046c.791.137 1.37.813 1.398 1.587h3.09c-.027-2.331-1.756-3.976-4.488-4.25V21H21.93v1.332c-2.971.235-4.682 1.821-4.682 4.357 0 2.145 1.233 3.555 3.587 4.104l1.095.254V34.2c-.984-.107-1.692-.783-1.738-1.645H17c.01 2.507 1.821 4.064 4.93 4.23V38h1.324Zm1.6-5.268c0 .832-.597 1.39-1.6 1.468v-2.918c1.076.216 1.6.695 1.6 1.45Zm-4.377-6.375c0-.755.597-1.313 1.453-1.371v2.78c-.948-.205-1.453-.695-1.453-1.41Z" fill="var(--head-cust-color)"></path>
+            </symbol>
+
+            <symbol
+                id="burger"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+            >
+                <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path>
+            </symbol>
+
+            <symbol
+                id="light"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+            >
+                <path d="M12 4.875A7.133 7.133 0 0 0 4.875 12 7.133 7.133 0 0 0 12 19.125 7.133 7.133 0 0 0 19.125 12 7.133 7.133 0 0 0 12 4.875Zm0 12.75A5.625 5.625 0 1 1 17.625 12 5.632 5.632 0 0 1 12 17.625ZM11.25.75h1.5V3h-1.5V.75ZM11.25 21h1.5v2.25h-1.5V21ZM21 11.25h2.25v1.5H21v-1.5ZM.75 11.25H3v1.5H.75v-1.5ZM18.22 19.28l1.06-1.06 1.5 1.5-1.06 1.06-1.5-1.5ZM3.22 4.28l1.06-1.06 1.5 1.5-1.06 1.06-1.5-1.5ZM3.22 19.72l1.5-1.5 1.06 1.06-1.5 1.5-1.06-1.06ZM18.22 4.72l1.5-1.5 1.06 1.06-1.5 1.5-1.06-1.06Z" fill="currentColor"></path>
+            </symbol>
+
+            <symbol
+                id="dark"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+            >
+                <path d="M9.5 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65c1.47.85 3.18 1.35 5 1.35 5.52 0 10-4.48 10-10S15.02 2 9.5 2Z" fill="currentColor"></path>
+            </symbol>
+        </svg>
+
+        <div class="header__wrapper" data-header-wrapper>
+            <header class="header" data-header>
+                <a class="logo" href=".">
+                    <svg
+                        width="60px"
+                        height="28px"
+                    >
+                        <use xlink:href="#logo"></use>
+                    </svg>
+                </a>
+
+                <button class="header__nav-button" data-nav-btn type="button">
+                    <svg
+                        width="24px"
+                        height="24px"
+                    >
+                        <use xlink:href="#burger"></use>
+                    </svg>
+                </button>
+
+                <div class="header__content" data-nav>
+                    <nav class="header__nav">
+                        <a class="header__nav-item" href=".">Design Gallery</a>
+
+                        <a class="header__nav-item" href=".">List of Architect</a>
+
+                        <a class="header__nav-item" href=".">Articles</a>
+
+                        <a class="header__nav-item" href=".">How it Works</a>
+                    </nav>
+
+                    <div class="header__controls">
+                        <button class="header__button button button--icon theme-switcher" type="button" data-theme-switcher>
+                            <svg
+                                width="24px"
+                                height="24px"
+                            >
+                                <use xlink:href="#dark" data-theme-switcher-icon></use>
+                            </svg>
+                        </button>
+
+                        <button class="header__button button button--thin" type="button">Sign in</button>
+                        <button class="header__button button button--main" type="button">Sign Up</button>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <div class="container">
+            <div class="hero container-x">
+                <h1 class="head-1">
+                    Build Your Dream <span>House</span>
+                </h1>
+
+                <div class="hero__content">
+                    <div class="hero__content-text">
+                        <p class="text">The first and most trusted marketplace of design & build house in The World. 100% guaranteed Build safe, comfortable and transparent with a project management for the best result</p>
+
+                        <button class="header__button button button--main" type="button">Free Consultation</button>
+                    </div>
+
+                    <div class="hero__content-image image-wrapper">
+                        <img src="./assets/Rectangle 1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallary space-between">
+                <h2 class="head-2">Build professional valuable room for you</h2>
+
+                <div class="gallery__content">
+                    <div class="gallery__item image-wrapper">
+                        <img src="./assets/img-01.jpg" alt="1">
+                    </div>
+
+                    <div class="gallery__item image-wrapper">
+                        <img src="./assets/img-02.jpg" alt="2">
+                    </div>
+
+                    <div class="gallery__item image-wrapper">
+                        <img src="./assets/img-03.jpg" alt="3">
+                    </div>
+
+                    <div class="gallery__item image-wrapper">
+                        <img src="./assets/img-04.jpg" alt="4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="profit space-between container-x">
+                <h2 class="head-2">Build professional valuable room for you</h2>
+
+                <div class="profit__res">
+                    <div class="image-wrapper">
+                        <img src="./assets/img-5.jpg" alt="">
+                    </div>
+
+                    <div class="profit__content">
+                        <div class="profit__content-item">
+                            <div class="profit__content-item-icon">
+                                <svg
+                                    width="48px"
+                                    height="56px"
+                                >
+                                    <use xlink:href="#ok"></use>
+                                </svg>
+                            </div>
+
+                            <div class="profit__content-item-text">
+                                <h3 class="head-3">100% guaranteed project completion</h3>
+                                <p class="text">Build safe, comfortable and transparent with a project management application with a joint account.</p>
+                            </div>
+                        </div>
+
+                        <div class="profit__content-item">
+                            <div class="profit__content-item-icon">
+                                <svg
+                                    width="40px"
+                                    height="53px"
+                                >
+                                    <use xlink:href="#dollar"></use>
+                                </svg>
+                            </div>
+
+                            <div class="profit__content-item-text">
+                                <h3 class="head-3">No additional fees</h3>
+                                <p class="text">There are no hidden costs. The value of the offer you get is the value you paid.</p>
+                            </div>
+                        </div>
+
+                        <div class="profit__content-item">
+                            <div class="profit__content-item-icon">
+                                <svg
+                                    width="40px"
+                                    height="53px"
+                                >
+                                    <use xlink:href="#circle"></use>
+                                </svg>
+                            </div>
+
+                            <div class="profit__content-item-text">
+                                <h3 class="head-3">Get escort from the Team</h3>
+                                <p class="text">Monitor reports from the Arsitag team who check directly in the field.</p>
+                            </div>
+                        </div>
+
+                        <button class="header__button button button--main" type="button">Free Consultation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__wrapper">
+            <div class="container">
+                <div class="footer__pre container-x">
+                    <div class="image-wrapper">
+                        <img src="./assets/img.png" alt="img">
+                    </div>
+
+                    <div class="footer__content-item-text">
+                        <h2 class="head-2">
+                            Realize your dream project with <span>Archmove</span>
+                        </h2>
+
+                        <button class="header__button button button--main" type="button">Free Consultation</button>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer__nav">
+                <div class="container footer__content">
+                    <ul class="footer__content-nav">
+                        <li>
+                            <a class="footer__content-nav-link" href=".">About Us</a>
+                        </li>
+                        <li>
+                            <a class="footer__content-nav-link" href=".">How it Works</a>
+                        </li>
+                        <li>
+                            <a class="footer__content-nav-link" href=".">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="footer__content-nav-link" href=".">Contact Us</a>
+                        </li>
+                        <li>
+                            <a class="footer__content-nav-link" href=".">Privacy Policy</a>
+                        </li>
+                    </ul>
+
+                    <a class="logo" href=".">
+                        <svg
+                            width="60px"
+                            height="28px"
+                        >
+                            <use xlink:href="#logo"></use>
+                        </svg>
+                    </a>
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://unpkg.com/rxjs@^7/dist/bundles/rxjs.umd.min.js"></script>
+        <script src="./src/js/index.js"></script>
+    </body>
+</html>
