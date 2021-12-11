@@ -70,7 +70,7 @@ body {
 .button {
   border: 0;
   background: 0;
-  font-size: 14px; /* 0.875rem */
+  font-size: .875rem;
   font-family: var(--primary-font);
   font-weight: 900;
   padding: 1rem 1.5rem;
@@ -117,14 +117,14 @@ body {
 
 .title {
   font-family: var(--secondary-font);
-  font-size: 48px; /* 3rem */
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.1;
   color: var(--text-color);
 }
 
 .title--large {
-  font-size: 7rem; /* 112px */
+  font-size: 7rem;
 }
 
 .title--accented {
@@ -134,7 +134,7 @@ body {
 .text {
   font-family: var(--primary-font);
   font-weight: 400;
-  font-size: 16px; /* 1rem */
+  font-size: 1rem;
   color: var(--text-color);
   line-height: 1.8;
 }
@@ -299,7 +299,7 @@ body {
 }
 
 .footer-section__navigation {
-  font-size: 12px;
+  font-size: .75rem;
   font-weight: 900;
 }
 
