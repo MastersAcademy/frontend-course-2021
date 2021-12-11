@@ -1,10 +1,9 @@
 header {
-  top: 0;
-  margin: auto;
   display: flex;
   width: 1440px;
   height: 96px;
   align-items: center;
+  margin: auto;
 }
 
 .header__logo {
@@ -22,7 +21,6 @@ header {
 .header__menu__list {
   display: flex;
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
   font-size: 14px;
 }
 
@@ -66,7 +64,61 @@ header {
   border-radius: 4px;
   width: 99px;
   height: 48px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", serif;
   font-size: 14px;
   cursor: pointer;
+}
+
+.dreamhouse__title-container {
+  width: 870px;
+  margin-left: 165px;
+}
+
+.dreamhouse__title-container__title {
+  font-size: 112px;
+  font-family: "Merriweather", serif;
+  line-height: 112px;
+}
+
+.dreamhouse__title-container__title--house {
+  color: #FD665E;
+}
+
+.dreamhouse {
+  display: flex;
+  margin-left: 165px;
+  margin-right: 165px;
+  width: 1110px;
+  height: 480px;
+}
+
+.dreamhouse__aside {
+  display: block;
+  width: 350;
+  height: 480px;
+}
+
+.dreamhouse__aside__text {
+  width: 350px;
+  height: 130px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: .75;
+}
+
+.dreamhouse__aside__button {
+  margin-top: 56px;
+  font-family: "Roboto", serif;
+  width: 179px;
+  height: 56px;
+  font-size: 14px;
+  color: #FFF;
+  background-color: #FD665E;
+  border: none;
+  border-radius: 4px;
+}
+
+.dreamhouse__photo {
+  width: 760px;
+  height: 480px;
 }
