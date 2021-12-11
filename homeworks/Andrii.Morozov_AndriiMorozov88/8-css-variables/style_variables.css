@@ -90,6 +90,7 @@ header {
   margin-right: 165px;
   width: 1110px;
   height: 480px;
+  margin-bottom: 112px;
 }
 
 .dreamhouse__aside {
@@ -121,4 +122,22 @@ header {
 .dreamhouse__photo {
   width: 760px;
   height: 480px;
+}
+
+.design__title {
+  font-size: 48px;
+  font-family: "Merriweather", serif;
+  text-align: center;
+  line-height: .5;
+  font-weight: 700;
+}
+
+.design {
+  display: flex;
+  width: 1340px;
+  height: 432px;
+  margin-left: 50px;
+  margin-right: 50px;
+  justify-content: space-between;
+  margin-top: 40px;
 }
