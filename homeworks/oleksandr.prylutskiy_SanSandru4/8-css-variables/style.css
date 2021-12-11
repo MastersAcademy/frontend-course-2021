@@ -9,12 +9,15 @@
   --color-white: #FFF;
   --color-menu: #585858;
   --color-btn-hover: #FC9791;
+  --border-radius-button: 4px;
 }
 
 body {
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .logo {
@@ -48,7 +51,6 @@ body {
   justify-content: space-between;
   flex-direction: row;
   box-sizing: border-box;
-  border: 1px solid #000;
 }
 
 .header__nav, .header__control {
@@ -88,10 +90,200 @@ body {
   color: var(--color-white);
   background-color: var(--color-red);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--border-radius-button);
   cursor: pointer;
 }
 
 .header__btn:hover {
   background-color: var(--color-btn-hover);
+}
+
+.main {
+  width: 1440px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+
+.main__dream-house {
+  margin-top: 50px;
+  margin-left: 165px;
+  width: 1110px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main__dream-house_name {
+  width: 870px;
+  font-family: Merriweather;
+  font-weight: 900;
+  font-size: 112px;
+  line-height: 100%;
+  letter-spacing: -.04em;
+}
+
+.color__word {
+  color: var(--color-red);
+}
+
+.main__dream-house_info {
+  margin-top: 56px;
+  margin-right: 55px;
+}
+
+.dream-house__text {
+  width: 290px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: var(--color-black);
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: .01em;
+}
+
+.dream-house__btn {
+  margin-top: 48px;
+  width: 179px;
+  height: 56px;
+  background-color: var(--color-red);
+  border: none;
+  border-radius: var(--border-radius-button);
+  font-family: Roboto, sans-serif;
+  font-weight: 900;
+  color: var(--color-white);
+  font-size: 14px;
+}
+
+.dream-house__btn:hover {
+  background-color: var(--color-btn-hover);
+}
+
+.main__dream-house_picture {
+  margin-top: 47px;
+}
+
+.main__build-room {
+  margin-top: 112px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main__build-room_name, .main__archmove_name {
+  font-family: Merriweather;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 124%;
+  letter-spacing: -.04em;
+}
+
+.main__build-room_name {
+  width: 535px;
+}
+
+.main__build-room_picture {
+  margin-top: 40px;
+  width: 1340px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main__archmove {
+  margin-top: 128px;
+  margin-left: 165px;
+}
+
+.main__archmove_name {
+  width: 459px;
+}
+
+.main__archmove_info {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.main__archmove_picture {
+  margin-right: 155px;
+}
+
+.consultation__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.consultation__list_info {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: row;
+}
+
+.list__img {
+  margin-right: 38px;
+  width: 40px;
+  height: 53px;
+  fill: var(--color-white);
+}
+
+.guaranteed {
+  width: 48px;
+  height: 56px;
+}
+
+.fees {
+  width: 39px;
+  height: 48px;
+}
+
+.escort {
+  width: 40px;
+  height: 53px;
+}
+
+.list_text {
+  width: 305px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: .01em;
+}
+
+.list_name {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.free-consultation__btn {
+  margin-top: 72px;
+  margin-left: 83px;
+  width: 205px;
+  height: 56px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-family: Roboto, sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  border: none;
+  border-radius: var(--border-radius-button);
+}
+
+.free-consultation__btn:hover {
+  background-color: var(--color-btn-hover);
+}
+
+.main__realize-dream {
+  margin-top: 64px;
+  width: 1440px;
+  background: linear-gradient(180deg, #F9F9F9 22.12%, rgba(249, 249, 249, 0) 100%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.main__realize-dream_img {
+  margin-left: 119px;
+  padding-top: 88px;
 }
