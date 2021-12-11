@@ -1,3 +1,72 @@
-body {
+header {
+  top: 0;
+  margin: auto;
+  display: flex;
+  width: 1440px;
+  height: 96px;
+  align-items: center;
+}
+
+.header__logo {
+  margin-left: 50px;
+  margin-right: 32px;
+  width: 62px;
+  height: 28px;
+}
+
+.header__menu {
+  width: auto;
+  margin-right: 450px;
+}
+
+.header__menu__list {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.header__menu__lines {
+  list-style-type: none;
+  margin-right: 48px;
+}
+
+.header__menu__links {
+  text-decoration: none;
+  cursor: pointer;
+  color: #585858;
+}
+
+.header__buttons {
+  display: flex;
+}
+
+.header__buttons__tougle {
+  margin-right: 45px;
+  cursor: pointer;
+  width: 15px;
+  height: 20px;
+}
+
+.header__buttons__sign--in {
+  margin-right: 30px;
+  width: 60px;
+  height: 40px;
   background-color: #FFF;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.header__buttons__sign--up {
+  color: #FFF;
+  border: none;
+  background-color: #FD665E;
+  border-radius: 4px;
+  width: 99px;
+  height: 48px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
 }
