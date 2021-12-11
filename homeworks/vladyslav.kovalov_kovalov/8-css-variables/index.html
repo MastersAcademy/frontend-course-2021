@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="styles.css">
         <title>Archmove | Architech Marketplace?</title>
     </head>
-    <body>
+    <body data-page-container data-theme="light">
         <header class="main-header page-section">
             <div class="main-header__container page-container page-container--large">
                 <nav class="main-header__navigation navigation">
@@ -43,7 +43,7 @@
                     </ul>
                 </nav>
                 <div class="account-actions">
-                    <button class="button button--theme-toggler" type="button">
+                    <button data-theme-toggler class="button button--theme-toggler" type="button">
                         <svg class="accounts-actions__theme-toggler-icon">
                             <use xlink:href="icons/icons-sprite.svg#theme-toggler"></use>
                         </svg>
@@ -206,4 +206,5 @@
             </div>
         </footer>
     </body>
+    <script src="app.js"></script>
 </html>
