@@ -31,13 +31,6 @@ class ThemeToggler {
     }
 }
 
-// new ThemeToggler(
-//     document.querySelector('[data-theme-toggler]'),
-//     document.querySelector('[data-page-container]'),
-//     document.querySelector('[data-theme]'),
-//     document.querySelector('[data-theme-toggler-icon]'),
-// );
-
 function initThemeToggler() {
     return new ThemeToggler(
         document.querySelector('[data-theme-toggler]'),
