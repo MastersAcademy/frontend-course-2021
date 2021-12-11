@@ -20,16 +20,16 @@ header {
 
 .header__menu__list {
   display: flex;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
 }
 
 .header__menu__lines {
   list-style-type: none;
   margin-right: 48px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
 }
 
-.header__menu__links {
+.menu__links {
   text-decoration: none;
   cursor: pointer;
   color: #585858;
@@ -81,7 +81,7 @@ header {
   letter-spacing: -2px;
 }
 
-.dreamhouse__title-container__title--house {
+.word--color {
   color: #FD665E;
 }
 
@@ -205,6 +205,70 @@ header {
   border: none;
   font-family: "Roboto", serif;
   font-size: 14px;
-  margin-top: 65px;
+  margin-top: 50px;
   margin-left: 90px;
 }
+
+.dream-project {
+  width: 1440px;
+  height: 812px;
+  margin-top: 64px;
+  background-color: #F9F9F9;
+  display: flex;
+}
+
+.dream-project--photo {
+  margin-left: 155px;
+  margin-top: 88px;
+}
+
+.dream-project__content {
+  display: block;
+}
+
+.dream-project__content__text {
+  margin-top: 299px;
+  font-family: "Merriweather";
+  font-size: 48px;
+  line-height: .25;
+  letter-spacing: -1px;
+  margin-left: 138px;
+}
+
+.dream-project__content__button {
+  width: 205px;
+  height: 56px;
+  background-color: #FD665E;
+  color: #FFF;
+  border-radius: 4px;
+  border: none;
+  font-family: "Roboto", serif;
+  font-size: 14px;
+  margin-top: 64px;
+  margin-left: 138px;
+}
+
+.footer {
+  display: flex;
+  width: 1440px;
+  height: 208px;
+  align-items: center;
+  background-color: #F9F9F9;
+}
+
+.footer__menu {
+  display: flex;
+  margin-left: 80px;
+}
+
+.footer__menu__list {
+  display: flex;
+}
+
+.footer__menu__lines {
+  list-style-type: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  margin-right: 48px;
+}
+
