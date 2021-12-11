@@ -304,3 +304,52 @@ html, body {
 .text-color {
   color: #FD665E;
 }
+
+@media (max-width: 1024px) {
+
+  .headline__features {
+    margin-left: 100px;
+  }
+
+  .content-row__gallery {
+    padding: 0 190px;
+  }
+
+  .headline-benefits {
+    max-width: 100%;
+    justify-content: space-around;
+  }
+
+  .content-columns__project {
+    align-items: center;
+  }
+}
+
+.button__red-square:hover,
+.button__red-square:focus {
+  background-color: #B90E04;
+  transition: 100ms;
+}
+
+.list__link-navigation:hover,
+.list__link-navigation:focus {
+  color: #FD665E;
+  transition: 100ms;
+}
+
+.list__link-footer:hover,
+.list__link-footer:focus {
+  color: #FD665E;
+  transition: 100ms;
+}
+
+.button__sing-in:hover,
+.button__sing-in:focus {
+  color: #FD665E;
+  transition: 100ms;
+}
+
+.header__button-switch:hover {
+  opacity: .5;
+  transition: 100ms;
+}
