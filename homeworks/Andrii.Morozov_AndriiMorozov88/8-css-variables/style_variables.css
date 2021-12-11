@@ -78,6 +78,7 @@ header {
   font-size: 112px;
   font-family: "Merriweather", serif;
   line-height: 112px;
+  letter-spacing: -2px;
 }
 
 .dreamhouse__title-container__title--house {
@@ -127,9 +128,9 @@ header {
 .design__title {
   font-size: 48px;
   font-family: "Merriweather", serif;
-  text-align: center;
+  margin-left: 452px;
   line-height: .5;
-  font-weight: 700;
+  letter-spacing: -2px;
 }
 
 .design {
@@ -140,4 +141,70 @@ header {
   margin-right: 50px;
   justify-content: space-between;
   margin-top: 40px;
+  margin-bottom: 128px;
+}
+
+.archmove__title {
+  font-size: 48px;
+  font-family: "Merriweather";
+  margin-left: 165px;
+  line-height: 26px;
+  letter-spacing: -2px;
+}
+
+.archmove {
+  display: flex;
+  margin-left: 165px;
+  margin-right: 197px;
+  margin-top: 60px;
+}
+
+.archmove__content {
+  display: block;
+  margin-left: 155px;
+}
+
+.archmove__icon {
+  margin-top: 15px;
+}
+
+.archmove__icon--bird {
+  margin-top: 15px;
+  margin-left: 5px;
+}
+
+.archmove__content__part {
+  display: flex;
+  width: 391px;
+  height: 112px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+
+.archmove__content__part--bird {
+  display: flex;
+  width: 391px;
+  height: 112px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.archmove__content__part--text {
+  font-family: "Roboto", serif;
+  font-size: 16px;
+  line-height: .5;
+  margin-left: 40px;
+}
+
+.archmove__content__button {
+  width: 205px;
+  height: 56px;
+  background-color: #FD665E;
+  color: #FFF;
+  border-radius: 4px;
+  border: none;
+  font-family: "Roboto", serif;
+  font-size: 14px;
+  margin-top: 65px;
+  margin-left: 90px;
 }
