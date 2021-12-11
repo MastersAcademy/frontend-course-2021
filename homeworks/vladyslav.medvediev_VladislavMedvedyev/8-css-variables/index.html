@@ -151,10 +151,14 @@
 
             <footer class="footer">
                 <section class="footer__realize-project realize-project">
-                    <picture class="realize-project__picture">
-                        <source srcset="images/realize-project-x2.png" media="(min-resolution: 2dppx)">
-                        <img src="images/realize-project.png" alt="#">
-                    </picture>
+                    <div class="realize-project-picture__container">
+                        <img class="realize-project__big-cloud" src="images/big-cloud.png" alt="#">
+                        <img class="realize-project__small-cloud" src="images/small-cloud.png" alt="#">
+                        <picture class="realize-project__picture">
+                            <source srcset="images/realize-project-x2.png" media="(min-resolution: 2dppx)">
+                            <img src="images/realize-project.png" alt="#">
+                        </picture>
+                    </div>
                     <div class="realize-project-container">
                         <h2 class="realize-project__title">
                             Realize your dream project with <span>Archmove</span>
@@ -185,12 +189,6 @@
                             <use href="images/sprite.svg#logo"></use>
                         </svg>
                     </a> 
-                </div>
-                <div class="footer__big-cloud">
-                    <img src="images/big-cloud.png" alt="#">
-                </div>
-                <div class="footer__small-cloud">
-                    <img src="images/small-cloud.png" alt="#">
                 </div>
             </footer>
         </div>
