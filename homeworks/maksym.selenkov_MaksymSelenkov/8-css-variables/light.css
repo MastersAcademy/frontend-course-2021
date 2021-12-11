@@ -1,0 +1,51 @@
+* {
+  color: var(--color-black);
+  --color-grey: #585858;
+  --color-black: #000;
+  --color-white: #FFF;
+  --color-carrot: #FD665E;
+}
+
+.nav__link {
+  color: var(--color-grey);
+}
+
+.controls__in {
+  color: var(--color-grey);
+}
+
+.controls__up {
+  background-color: var(--color-carrot);
+  color: var(--color-white);
+}
+
+.carrot-word {
+  color: var(--color-carrot);
+}
+
+.start__button {
+  background-color: var(--color-carrot);
+  color: var(--color-white);
+}
+
+.needs__button {
+  background-color: var(--color-carrot);
+  color: var(--color-white);
+}
+
+.container {
+  background: linear-gradient(180deg, #F9F9F9 22.12%, rgba(249, 249, 249, 0) 100%);
+}
+
+.dream__button {
+  background-color: var(--color-carrot);
+  color: var(--color-white);
+}
+
+.line {
+  color: #F0F0F0;
+}
+
+.footer__nav * {
+  color: var(--color-grey);
+}

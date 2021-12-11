@@ -1,0 +1,41 @@
+* {
+  --color-grey: #585858;
+  --color-black: #000;
+  --color-white: #FFF;
+  --color-carrot: #FD665E;
+
+  background: var(--color-black);
+}
+
+.nav__link, .controls__in {
+  color: var(--color-white);
+}
+
+.start__heading, .start__message, .rooms__heading, .needs__heading, .dream__heading, .item__title, .item__text {
+  color: var(--color-white);
+}
+
+.carrot-word {
+  color: var(--color-carrot);
+}
+
+.start__button, .controls__up, .needs__button, .dream__button {
+  background-color: var(--color-carrot);
+  color: var(--color-black);
+}
+
+.item__icon {
+  stroke: var(--color-white);
+}
+
+.footer__nav * {
+  color: var(--color-white);
+}
+
+.container {
+  background: linear-gradient(180deg, #0D0D0D 22.12%, rgba(249, 249, 249, 0) 100%);
+}
+
+.line {
+  color: #1C1C1C;
+}

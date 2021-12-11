@@ -1,10 +1,5 @@
 * {
   font-family: "Roboto", sans-serif;
-  color: var(--color-black);
-  --color-grey: #585858;
-  --color-black: #000;
-  --color-white: #FFF;
-  --color-carrot: #FD665E;
 }
 
 a {
@@ -17,6 +12,10 @@ button {
   background: none;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
@@ -24,6 +23,7 @@ button {
 
 .header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin: 35px 50px;
 }
@@ -32,25 +32,22 @@ button {
   margin-right: 60px;
 }
 
-/*.header__nav {*/
-/*}*/
-
 .nav__link {
   margin-right: 48px;
   font-weight: 400;
   font-size: 14px;
   line-height: 286%;
   text-align: center;
-  color: var(--color-grey);
 }
 
 .header__controls {
   margin-left: auto;
 }
 
-/*.controls__light {*/
-
-/*}*/
+.controls__light {
+  max-width: 24px;
+  width: 100%;
+}
 
 .controls__in {
   margin-left: 40px;
@@ -61,14 +58,17 @@ button {
   width: 99px;
   height: 48px;
   border-radius: 4px;
-  background-color: var(--color-carrot);
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 286%;
+  text-align: center;
 }
 
-/*.page {*/
-/*}*/
-
-/*.page__start {*/
-/*}*/
+.page__start {
+  height: 800px;
+  position: relative;
+  margin-bottom: 130px;
+}
 
 .start__heading {
   max-width: 870px;
@@ -76,10 +76,6 @@ button {
   font-weight: 700;
   font-size: 112px;
   line-height: 100%;
-}
-
-.carrot-word {
-  color: var(--color-carrot);
 }
 
 .start__message {
@@ -92,11 +88,21 @@ button {
   width: 179px;
   height: 56px;
   border-radius: 4px;
-  background-color: var(--color-carrot);
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 286%;
+  text-align: center;
 }
 
-/*.page__rooms {*/
-/*}*/
+.start__image {
+  position: absolute;
+  right: 165px;
+  bottom: 0;
+}
+
+.page__rooms {
+  margin-bottom: 130px;
+}
 
 .rooms__heading {
   max-width: 535px;
@@ -109,12 +115,14 @@ button {
 
 .rooms__gallery {
   display: flex;
+  flex-wrap: wrap;
   column-gap: 40px;
   margin: 40px 50px;
 }
 
 .page__needs {
   margin-left: 165px;
+  margin-bottom: 150px;
 }
 
 .needs__heading {
@@ -127,6 +135,7 @@ button {
 
 .needs__content {
   display: flex;
+  flex-wrap: wrap;
   column-gap: 159px;
 }
 
@@ -146,9 +155,11 @@ button {
   font-weight: 700;
   font-size: 16px;
   line-height: 160%;
+  margin-top: 0;
 }
 
 .item__text {
+  max-width: 305px;
   font-size: 16px;
   line-height: 160%;
 }
@@ -158,11 +169,21 @@ button {
   width: 205px;
   height: 56px;
   border-radius: 4px;
-  background-color: var(--color-carrot);
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 286%;
+  text-align: center;
 }
 
 .page__dream {
-  margin: 0 165px;
+  margin: 0 auto 200px;
+  width: 100%;
+  max-width: 1440px;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 138px;
+  align-items: center;
 }
 
 .dream__heading {
@@ -177,16 +198,30 @@ button {
   width: 205px;
   height: 56px;
   border-radius: 4px;
-  background-color: var(--color-carrot);
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 286%;
+  text-align: center;
+}
+
+.dream__image {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .25));
+}
+
+.line {
+  width: 100%;
+  height: 1px;
 }
 
 .footer {
-  margin: 0 165px;
+  margin: 50px 165px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .footer__nav * {
-  color: var(--color-grey);
   margin-right: 48px;
   font-weight: 900;
   font-size: 12px;
