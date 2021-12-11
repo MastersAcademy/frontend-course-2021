@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./src/style.css">
+        <link rel="stylesheet" href="./src/fonts/font.css">
+
+        <title>Document</title>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="nav-bar">
+                <a class="link header__logo--link nav__item" href="index.html">
+                    <svg class="header-logo" xmlns="http://www.w3.org/2000/svg">
+                        <use href="src/image/sprite.svg#logo-arch"></use>
+                    </svg>
+                </a>
+                <ul class="nav__links" data-nav>
+                    <li class="nav__link">
+                        <a class="link nav__item" href="#">Design Gallery</a>
+                    </li>
+                    <li class="nav__link">
+                        <a class="link nav__item" href="#">List of Architect</a>
+                    </li>
+                    <li class="nav__link">
+                        <a class="link nav__item" href="#">Articles</a>
+                    </li>
+                    <li class="nav__link">
+                        <a class="link nav__item" href="#">How it Works</a>
+                    </li>
+                </ul>
+                <div class="header__burger--toggle" data-toggle>
+                    <svg class="header__burger" xmlns="http://www.w3.org/2000/svg">
+                        <use class="header__burger-color" href="src/image/sprite.svg#burger" data-burger></use>
+                    </svg>
+                </div>
+            </nav>
+            <div class="header__controls">
+                <div class="controls__color-mode">
+                    <svg class="color-mode__image" xmlns="http://www.w3.org/2000/svg" data-theme="light">
+                        <use href="src/image/sprite.svg#dark" data-theme-icon></use>
+                    </svg>
+                </div>
+                <button class="button controls__sign-in" type="button">Sign In</button>
+                <button class="button controls__sign-up" type="button">Sign Up</button>
+
+            </div>
+        </header>
+        <main class="main">
+            <section class="main__consultation">
+                <h1 class="title">Build Your Dream
+                    <span class="red-text">House</span>
+                </h1>
+                <div class="consultation__block">
+                    <div class="consultation__description">
+                        <p class="cosulatation__text text">The first and most trusted marketplace of design & build house in The World. 100% guaranteed Build safe, comfortable and transparent with a project management for the best result</p>
+                        <button class="button consultation__button" type="button">Free Consultation</button>
+                    </div>
+                    <div class="cosultation__image-block">
+                        <img class="cosultation__image" 
+                            src="src/image/consultation.png"
+                            srcset="src/image/cosultation-retina.png 2x">
+                    </div>
+                </div>
+            </section>
+            <section class="main__build">
+                <div class="build__title">
+                    <h2 class="subtitle">Build professional valuable room for you</h2>
+                </div>
+                <ul class="build__gallery">
+                    <li class="gallery__image-block">
+                        <img class="gallery__image"
+                            src="src/image/img-01.png"
+                            srcset="src/image/img-01-retina.png 2x">
+                    </li>
+                    <li class="gallery__image-block">
+                        <img class="gallery__image"
+                            src="src/image/img-02.png"
+                            srcset="src/image/img-02-retina.png 2x">
+                    </li>
+                    <li class="gallery__image-block">
+                        <img class="gallery__image"
+                            src="src/image/img-03.png"
+                            srcset="src/image/img-03-retina.png 2x">
+                    </li>
+                    <li class="gallery__image-block">
+                        <img class="gallery__image"
+                            src="src/image/img-04.png"
+                            srcset="src/image/img-04-retina.png 2x">
+                    </li>
+                </ul>
+            </section>
+            <section class="main__advantages">
+                <div class="advantages__tiltle">
+                    <h2 class="subtitile">Build your needs with Archmove</h2>
+                </div>
+                <div class="advantages__block">
+                    <div class="advantages__image-block">
+                        <img class="advantages__image"
+                            src="src/image/company.png"
+                            srcset="src/image/company-retina.png 2x">
+                    </div>
+                    <div class="block__right">
+                        <ul class="advantages__list">
+                            <li class="advantage">
+                                <svg class="advantage__image" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="svg-color" href="src/image/sprite.svg#shield"></use>
+                                </svg>
+                                <div class="advantage__text">
+                                    <h4>100% guaranteed project completion</h4>
+                                    <p>Build safe, comfortable and transparent with a project management application with a joint account.</p>
+                                </div>
+                            </li>
+                            <li class="advantage">
+                                <svg class="advantage__image" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="svg-color" href="src/image/sprite.svg#rectangle"></use>
+                                </svg>
+                                <div class="advantage__text">
+                                    <h4>Build safe, comfortable and transparent with a project management application with a joint account.</h4>
+                                    <p>There are no hidden costs. The value of the offer you get is the value you paid.</p>
+                                </div>
+                            </li>
+                            <li class="advantage">
+                                <svg class="advantage__image" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="svg-color" href="src/image/sprite.svg#house"></use>
+                                </svg>
+                                <div class="advantage__text">
+                                    <h4>Get escort from the Team</h4>
+                                    <p>Monitor reports from the Arsitag team who check directly in the field.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="button consultation__button advantages__button" type="button">FREE CONSULTATION</button>
+                    </div>
+                </div>
+            </section>
+            <section class="gradient">
+                <section class="main_realize">
+                    <div class="realize__image-block">
+                        <img class="realize__image"
+                            src="src/image/house.png"
+                            srcset="src/image/house-retina.png 2x">
+                    </div>
+                    <div class="realize__block">
+                        <div class="realize__title">
+                            <h2 class="subtitile">Realize your dream project with
+                                <span class="red-text">Archmove</span>
+                            </h2>
+                        </div>
+                        <button class="button consultation__button" type="button">FREE CONSULTATION</button>
+                    </div>
+                </section>
+                <footer class="footer">
+                    <ul class="footer__about">
+                        <li class="about__item">
+                            <a class="link">About Us</a>
+                        </li>
+                        <li class="about__item">
+                            <a class="link">How it Works</a>
+                        </li>
+                        <li class="about__item">
+                            <a class="link">FAQ</a>
+                        </li>
+                        <li class="about__item">
+                            <a class="link">Contact Us</a>
+                        </li>
+                        <li class="about__item">
+                            <a class="link">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <a class="link" href="index.html">
+                        <svg class="footer__logo" xmlns="http://www.w3.org/2000/svg">
+                            <use href="src/image/sprite.svg#logo-arch"></use>
+                        </svg>
+                    </a>
+                </footer>
+            </section>
+        </main>
+        <script src="src/index.js"></script>
+    </body>
+</html>
