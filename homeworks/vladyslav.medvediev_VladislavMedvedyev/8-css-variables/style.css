@@ -1,0 +1,726 @@
+:root {
+  --button-color: rgba(253, 102, 94, 1);
+  --background-color: rgba(255, 255, 255, 1);
+  --header-and-footer-text-color: rgba(88, 88, 88, 1);
+  --text-color: rgba(0, 0, 0, 1);
+  --border-bottom-color: rgba(240, 240, 240, 1);
+  --background-gradient: linear-gradient(180deg, rgba(249, 249, 249, 1) 22.12%, rgba(249, 249, 249, 0) 100%);
+  --advantages-svg-stroke-color: rgba(0, 0, 0, 1);
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2 {
+  padding: 0;
+  margin: 0;
+  font-family: "Merriweather", "-apple-system", "BlinkMacSystemFont", "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h2 {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 60px;
+  color: var(--text-color);
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", "-apple-system", "BlinkMacSystemFont", "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--text-color);
+}
+
+body {
+  font-family: "Roboto", "-apple-system", "BlinkMacSystemFont", "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.advantages__one-svg,
+.advantages__two-svg,
+.advantages__three-svg {
+  stroke: var(--advantages-svg-stroke-color);
+}
+
+.header__logo-svg,
+.footer__logo-svg {
+  fill: var(--button-color);
+}
+
+.header__button-night-theme {
+  display: block;
+}
+
+.header__button-night-theme-hidden {
+  display: none;
+}
+
+
+.header__button-day-theme {
+  display: none;
+}
+
+.header__button-day-theme-visible {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+
+  button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: "Roboto", "-apple-system", "BlinkMacSystemFont", "Segoe UI",
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    color: var(--background-color);
+    background-color: var(--button-color);
+    border-radius: 4px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    background-color: var(--background-color);
+  }
+
+  .header__logo {
+    width: 12%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header__menu {
+    width: 60%;
+  }
+
+  .header__menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 5.6%;
+  }
+
+  .header__menu a {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 40px;
+    text-align: center;
+    color: var(--header-and-footer-text-color);
+  }
+
+  .header__button {
+    width: 4%;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+  }
+
+  .header__sign-in {
+    width: 6%;
+    height: 40px;
+    font-weight: 14;
+    color: var(--header-and-footer-text-color);
+    background: none;
+  }
+
+  .header__sign-up {
+    width: 6.95%;
+    height: 48px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+  }
+
+  .main__dream-house {
+    width: 77%;
+    max-height: 751px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .dream-house__title {
+    width: 85%;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 112px;
+    line-height: 112px;
+  }
+
+  .dream-house__title span {
+    color: var(--button-color);
+  }
+
+  .dream-house-container {
+    display: grid;
+    grid-template: 100% / 26.155% 4.845% 69%;
+    margin-top: 56px;
+  }
+
+
+  .dream-house__text {
+    grid-column: 1 / 2;
+    font-style: normal;
+    line-height: 25.6px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .dream-house__button {
+    grid-column: 1 / 2;
+    width: 60%;
+    height: 56px;
+    margin-top: 48px;
+  }
+
+  .dream-house__image {
+    grid-row: 1 / 3;
+    grid-column: 3 / 4;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .dream-house__image img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .main__professional-valuable {
+    display: flex;
+    flex-direction: column;
+    margin-top: 112px;
+  }
+
+  .professional-valuable__title {
+    width: 42%;
+    align-self: center;
+  }
+
+  .professional-valuable-container {
+    width: 90%;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+    margin-top: 45px;
+  }
+
+  .professional-valuable__example {
+    width: 100%;
+    height: 100%;
+  }
+
+  .professional-valuable__example img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .main__archmove {
+    width: 77%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 128px;
+  }
+
+  .archmove__title {
+    width: 41.43%;
+  }
+
+  .arcmove-container {
+    margin-top: 45px;
+    display: flex;
+  }
+
+  .archmove__picture {
+    width: 48.25%;
+    height: 100%;
+  }
+
+  .archmove__picture img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .archmove__advantages {
+    width: 40.5%;
+    margin-left: 11.36%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+  }
+
+  .advantages__one,
+  .advantages__two,
+  .advantages__three {
+    display: flex;
+    flex-direction: row;
+    column-gap: 39px;
+  }
+
+  .advantages__two,
+  .advantages__three {
+    margin-left: 4px;
+    column-gap: 43px;
+  }
+
+  .advantages__one div,
+  .advantages__two div,
+  .advantages__three div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+  }
+
+  .advantages__consultation {
+    align-self: center;
+    width: 45.7%;
+  }
+
+  .footer {
+    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+    background: var(--background-gradient);
+  }
+
+  .footer__realize-project {
+    display: flex;
+  }
+
+  .realize-project__picture {
+    margin-top: 88px;
+    margin-left: 155px;
+    min-width: 397px;
+    max-width: 397px;
+  }
+
+  .realize-project__picture img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .realize-project-container {
+    align-self: center;
+    justify-self: center;
+    margin-left: 138px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 64px;
+  }
+
+  .realize-project__title {
+    width: 66%;
+  }
+
+  .realize-project__title span {
+    color: var(--button-color);
+  }
+
+  .realize-project__button {
+    width: 205px;
+  }
+
+  .footer__about-us {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer__about-us ul {
+    margin-left: 11.11%;
+    width: 80%;
+    display: flex;
+    column-gap: 3.33%;
+  }
+
+  .footer__about-us a {
+    font-size: 12px;
+    font-weight: 900;
+    font-style: normal;
+    line-height: 40px;
+    text-align: center;
+    color: var(--header-and-footer-text-color);
+  }
+
+  .footer__logo {
+    margin-right: 11.45%;
+  }
+
+  /* .footer__big-cloud {
+    position: absolute;
+    left: 119px;
+    bottom: 630px;
+    width: 201px;
+  }
+
+  .footer__big-cloud img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .footer__small-cloud {
+    position: absolute;
+    left: 486px;
+    top: 81.44%;
+    bottom: 50px;
+    width: 130px;
+    height: 84px;
+  } */
+}
+
+@media (max-width: 1023px) {
+
+  button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: "Roboto", "-apple-system", "BlinkMacSystemFont", "Segoe UI",
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    color: var(--background-color);
+    background-color: var(--button-color);
+    border-radius: 4px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1em;
+    background-color: var(--background-color);
+  }
+
+  .header__logo {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header__menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1em;
+  }
+
+  .header__menu a {
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: var(--header-and-footer-text-color);
+  }
+
+  .header__button {
+    width: 10%;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+  }
+
+  .header__sign-in {
+    font-weight: 24;
+    color: var(--header-and-footer-text-color);
+    background: none;
+  }
+
+  .header__sign-up {
+    width: 70%;
+    height: 48px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    background-color: var(--background-color);
+  }
+
+  .main__dream-house {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+  }
+
+  .dream-house__title {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 56px;
+    line-height: 56px;
+    text-align: center;
+  }
+
+  .dream-house__title span {
+    color: var(--button-color);
+  }
+
+  .dream-house-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 28px;
+  }
+
+  .main__dream-house div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dream-house__text {
+    align-self: center;
+    max-width: 90%;
+    margin-top: 28px;
+    font-style: normal;
+    line-height: 25.6px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .dream-house__button {
+    align-self: center;
+    width: 70%;
+    margin-top: 28px;
+  }
+
+  .dream-house__image {
+    margin-top: 28px;
+    width: 90%;
+    align-self: center;
+  }
+
+  .dream-house__image img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .main__professional-valuable {
+    align-self: center;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 38px;
+  }
+
+  .professional-valuable__title {
+    width: 90%;
+    align-self: center;
+    text-align: center;
+    font-size: 36px;
+  }
+
+  .professional-valuable-container {
+    width: 90%;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 40px;
+    margin-top: 22.5px;
+  }
+
+  .professional-valuable__example {
+    width: 45%;
+    height: 100%;
+  }
+
+  .professional-valuable__example img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .main__archmove {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 64px;
+  }
+
+  .archmove__title {
+    text-align: center;
+  }
+
+  .arcmove-container {
+    margin-top: 22.5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .archmove__picture {
+    width: 100%;
+    height: 100%;
+  }
+
+  .archmove__picture img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .archmove__advantages {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  .advantages__one,
+  .advantages__two,
+  .advantages__three {
+    display: flex;
+    flex-direction: row;
+    column-gap: 39px;
+  }
+
+  .advantages__two,
+  .advantages__three {
+    margin-left: 4px;
+    column-gap: 43px;
+  }
+
+  .advantages__one div,
+  .advantages__two div,
+  .advantages__three div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+  }
+
+  .advantages__consultation {
+    align-self: center;
+    width: 70%;
+  }
+
+  .footer {
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    background: var(--background-gradient);
+  }
+
+  .footer__realize-project {
+    width: 90%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .realize-project__picture img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .realize-project-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+  }
+
+  .realize-project__title {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .realize-project__title span {
+    color: var(--button-color);
+  }
+
+  .realize-project__button {
+    width: 70%;
+  }
+
+  .footer__about-us {
+    margin-top: 30px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__about-us ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 1em;
+  }
+
+  .footer__about-us a {
+    font-size: 24px;
+    font-weight: 900;
+    font-style: normal;
+    color: var(--header-and-footer-text-color);
+  }
+
+  .footer__logo {
+    margin-top: 1em;
+  }
+}
