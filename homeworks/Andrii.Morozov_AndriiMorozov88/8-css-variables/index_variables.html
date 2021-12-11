@@ -6,12 +6,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Variables</title>
         <link rel="stylesheet" href="style_variables.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <svg>
-                <use xlink:href="sprite.svg#sun"></use>
+        <header class="header">
+            <svg class="header__logo">
+                <use xlink:href="sprite.svg#logo"></use>
             </svg>
+            <div class="header__menu">
+                <ul class="header__menu__list">
+                    <li class="header__menu__lines">
+                        <a class="header__menu__links" href="#">Design Gallery</a>
+                    </li>
+                    <li class="header__menu__lines">
+                        <a class="header__menu__links" href="#">List of Architect</a>
+                    </li>
+                    <li class="header__menu__lines">
+                        <a class="header__menu__links" href="#">Articles</a>
+                    </li>
+                    <li class="header__menu__lines">
+                        <a class="header__menu__links" href="#">How it Works</a>
+                    </li>
+                </ul>
+            </div>
+            <svg class="header__buttons__tougle" width="15" height="20" data-tougle>
+                <use xlink:href="sprite.svg#halfmoon"></use>
+            </svg>
+            <button type="button" class="header__buttons__sign--in">Sign In</button>
+            <button type="button" class="header__buttons__sign--up">Sign Up</button>
         </header>
         <script defer src="script_variables.js"></script>
     </body>
