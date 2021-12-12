@@ -281,7 +281,7 @@ body {
   width: 205px;
   height: 56px;
   background-color: var(--color-red);
-  color: var(--color-white);
+  color: var(--color-text);
   font-family: Roboto, sans-serif;
   font-weight: 900;
   font-size: 14px;
