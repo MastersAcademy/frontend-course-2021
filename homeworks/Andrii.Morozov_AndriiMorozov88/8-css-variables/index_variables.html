@@ -13,9 +13,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body data-body>
         <header class="header">
-            <svg class="header__logo">
+            <svg class="logo header__logo day" data-header-logo>
                 <use xlink:href="sprite.svg#logo"></use>
             </svg>
             <div class="header__menu">
@@ -34,17 +34,17 @@
                     </li>
                 </ul>
             </div>
-            <svg class="header__buttons__tougle" width="15" height="20" data-tougle>
+            <svg class="header__buttons__tougle day" width="15" height="20" data-toggle>
                 <use xlink:href="sprite.svg#halfmoon"></use>
             </svg>
             <button type="button" class="header__buttons__sign--in">Sign In</button>
-            <button type="button" class="header__buttons__sign--up">
+            <button type="button" data-header-button class="header__buttons__sign--up buttons day">
                 <b>Sign Up</b>
             </button>
         </header>
         <div class="dreamhouse__title-container">
             <h1 class="dreamhouse__title-container__title">
-                Build Your Dream <span class="word--color">House</span>
+                Build Your Dream <span data-word-house class="word--color day">House</span>
             </h1>
         </div>
         <div class="dreamhouse">
@@ -56,7 +56,7 @@
                     <p>comfortable and transparate with a</p>
                     <p>project management for the best result</p>
                 </div>
-                <button type="button" class="dreamhouse__aside__button">
+                <button type="button" data-dreamhouse-button class="dreamhouse__aside__button buttons day">
                     <b>Free Consultation</b>
                 </button>
             </div>
@@ -134,68 +134,70 @@
                         <p>who check directly in the field</p>
                     </div>
                 </div>
-                <button type="button" class="archmove__content__button">
+                <button type="button" data-archmove-button class="archmove__content__button buttons day">
                     <b>FREE CONSULTATION</b>
                 </button>
             </div>
         </div>
-        <div class="dream-project">
-            <div class="dream-project--photo">
-                <picture>
-                    <source srcset="2x/house_2x.png 2x">
-                    <img src="1x/house_1x.png" alt="diningroom">
-                </picture>
-            </div>
-            <div class="dream-project__content">
-                <div class="dream-project__content__text">
-                    <p>
-                        <b>Realize your dream</b>
-                    </p>
-                    <p>
-                        <b>project with
-                            <span class="word--color">Archmove</span>
-                        </b>
-                    </p>
+        <div class="container day">
+            <div class="dream-project day">
+                <div class="dream-project--photo">
+                    <picture>
+                        <source srcset="2x/house_2x.png 2x">
+                        <img src="1x/house_1x.png" alt="diningroom">
+                    </picture>
                 </div>
-                <button type="button" class="dream-project__content__button">
-                    <b>FREE CONSULTATION</b>
-                </button>
+                <div class="dream-project__content">
+                    <div class="dream-project__content__text">
+                        <p>
+                            <b>Realize your dream</b>
+                        </p>
+                        <p>
+                            <b>project with
+                                <span class="word--color day" data-word-archmove>Archmove</span>
+                            </b>
+                        </p>
+                    </div>
+                    <button type="button" data-dream-project-button class="dream-project__content__button buttons day">
+                        <b>FREE CONSULTATION</b>
+                    </button>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer__menu">
+                    <ul class="footer__menu__list">
+                        <li class="footer__menu__lines">
+                            <a href="#" class="menu__links">
+                                <b>About Us</b>
+                            </a>
+                        </li>
+                        <li class="footer__menu__lines">
+                            <a href="#" class="menu__links">
+                                <b>How it Works</b>
+                            </a>
+                        </li>
+                        <li class="footer__menu__lines">
+                            <a href="#" class="menu__links">
+                                <b>FAQ</b>
+                            </a>
+                        </li>
+                        <li class="footer__menu__lines">
+                            <a href="#" class="menu__links">
+                                <b>Contact Us</b>
+                            </a>
+                        </li>
+                        <li class="footer__menu__lines">
+                            <a href="#" class="menu__links">
+                                <b>Privacy Policy</b>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <svg class="logo footer__logo day" data-footer-logo>
+                    <use xlink:href="sprite.svg#logo"></use>
+                </svg>
             </div>
         </div>
-        <footer class="footer">
-            <div class="footer__menu">
-                <ul class="footer__menu__list">
-                    <li class="footer__menu__lines">
-                        <a href="#" class="menu__links">
-                            <b>About Us</b>
-                        </a>
-                    </li>
-                    <li class="footer__menu__lines">
-                        <a href="#" class="menu__links">
-                            <b>How it Works</b>
-                        </a>
-                    </li>
-                    <li class="footer__menu__lines">
-                        <a href="#" class="menu__links">
-                            <b>FAQ</b>
-                        </a>
-                    </li>
-                    <li class="footer__menu__lines">
-                        <a href="#" class="menu__links">
-                            <b>Contact Us</b>
-                        </a>
-                    </li>
-                    <li class="footer__menu__lines">
-                        <a href="#" class="menu__links">
-                            <b>Privacy Policy</b>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <svg class="footer__logo">
-                <use xlink:href="sprite.svg#logo"></use>
-            </svg>
-        </footer>
         <script defer src="script_variables.js"></script>
     </body>
 </html>
