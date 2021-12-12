@@ -2,6 +2,7 @@ const toggleSwitch = document.querySelector('[data-theme]');
 const toggleSwitchIcon = document.querySelector('[data-theme-icon]');
 const burgerToggle = document.querySelector('[data-toggle]');
 const burgerIcon = document.querySelector('[data-burger]');
+const burgerSVG = document.querySelector('[data-svg]');
 const navigation = document.querySelector('[data-nav]');
 const currentTheme = toggleSwitch.dataset.theme;
 
@@ -30,5 +31,16 @@ const toggleBurger = () => {
     }
 };
 
+const finc = (event) => {
+    if ((event.target !== navigation)
+        && (event.target !== burgerIcon)
+        && (event.target !== burgerSVG)
+        && navigation.classList.contains('visible')) {
+        navigation.classList.remove('visible');
+        burgerIcon.setAttribute('href', 'src/image/sprite.svg#burger');
+    }
+};
+
+document.addEventListener('click', finc);
 toggleSwitch.addEventListener('click', switchTheme);
 burgerToggle.addEventListener('click', toggleBurger);

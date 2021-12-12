@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Roboto:wght@400;500&display=swap");
 
 
-h1 {
+.title {
   font-family: Merriweather;
   font-style: normal;
   font-weight: 700;
@@ -10,7 +10,7 @@ h1 {
   letter-spacing: -.04em;
 }
 
-h2 {
+.subtitle {
   font-family: Merriweather;
   font-style: normal;
   font-weight: 700;
@@ -19,19 +19,10 @@ h2 {
   letter-spacing: -.04em;
 }
 
-h4 {
+.text-title {
   font-family: Roboto;
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 160%;
-  letter-spacing: .01em;
-}
-
-p {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 400;
   font-size: 16px;
   line-height: 160%;
   letter-spacing: .01em;
@@ -66,4 +57,26 @@ p {
   letter-spacing: .01em;
   border: none;
   border-radius: 4px;
+}
+
+@media (max-width: 576px) {
+
+  .title {
+    font-size: 100px;
+  }
+
+  .subtitle {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 320px) {
+
+  .title {
+    font-size: 80px;
+  }
+
+  .subtitle {
+    font-size: 36px;
+  }
 }
