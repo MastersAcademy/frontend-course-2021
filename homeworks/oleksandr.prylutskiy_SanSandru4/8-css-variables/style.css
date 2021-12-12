@@ -5,19 +5,32 @@
 
 :root {
   --color-red: #FD7E77;
-  --color-black: #000;
-  --color-white: #FFF;
-  --color-menu: #585858;
+  --color-text: #000;
+  --color-background: #FFF;
   --color-btn-hover: #FC9791;
   --border-radius-button: 4px;
 }
 
+[data-skin="light"] {
+  --color-text: #000;
+  --color-background: #FFF;
+}
+
+[data-skin="dark"] {
+  --color-background: #000;
+  --color-text: #FFF;
+}
+
 body {
+  max-width: 1440px;
+  min-width: 731px;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  color: var(--color-text);
 }
 
 .logo {
@@ -25,19 +38,20 @@ body {
   height: 28px;
 }
 
-.moon {
-  width: 16px;
+.icon {
+  width: 20px;
   height: 20px;
-  fill: #444;
+  fill: var(--color-text);
 }
 
-.sun {
+/* .sun {
   width: 24px;
   height: 24px;
-  fill: var(--color-white);
-}
+  fill: var(--color-text);
+  display: none;
+} */
 
-.moon:hover, .sun:hover {
+.icon:hover {
   fill: var(--color-red);
 }
 
@@ -51,6 +65,7 @@ body {
   justify-content: space-between;
   flex-direction: row;
   box-sizing: border-box;
+  background-color: var(--color-background);
 }
 
 .header__nav, .header__control {
@@ -65,7 +80,7 @@ body {
   margin-left: 37px;
   font-family: Roboto, sans-serif;
   font-weight: 400;
-  color: var(--color-menu);
+  color: var(--color-text);
 }
 
 .header__menu-link, .header__control_sign-in {
@@ -74,13 +89,17 @@ body {
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: var(--color-menu);
+  color: var(--color-text);
   text-decoration: none;
 }
 
 .header__menu-link:hover, .header__control_sign-in:hover {
-  font-weight: 900;
   color: var(--color-red);
+}
+
+.header__skin-btn {
+  border: none;
+  background-color: var(--color-background);
 }
 
 .header__btn {
@@ -88,7 +107,7 @@ body {
   height: 48px;
   font-family: Roboto, sans-serif;
   font-weight: 900;
-  color: var(--color-white);
+  color: var(--color-background);
   background-color: var(--color-red);
   border: none;
   border-radius: var(--border-radius-button);
@@ -101,6 +120,7 @@ body {
 
 .main {
   width: 1440px;
+  background-color: var(--color-background);
   box-sizing: border-box;
 }
 
@@ -149,7 +169,7 @@ body {
   border-radius: var(--border-radius-button);
   font-family: Roboto, sans-serif;
   font-weight: 900;
-  color: var(--color-white);
+  color: var(--color-background);
   font-size: 14px;
 }
 
@@ -225,7 +245,7 @@ body {
   margin-right: 38px;
   width: 40px;
   height: 53px;
-  fill: var(--color-white);
+  fill: var(--color-background);
 }
 
 .guaranteed {
@@ -282,7 +302,7 @@ body {
 .main__realize-dream {
   margin-top: 64px;
   width: 1440px;
-  background: linear-gradient(180deg, #F9F9F9 22.12%, rgba(249, 249, 249, 0) 100%);
+  background: linear-gradient(0deg, rgb(249, 249, 249, .6) 12%, rgba(249, 249, 249, 0) 100%);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -306,6 +326,8 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background: linear-gradient(180deg, rgb(249, 249, 249, .6) 12%, rgba(249, 249, 249, 0) 100%);
+  background-color: var(--color-background);
   box-sizing: border-box;
 }
 
@@ -318,7 +340,7 @@ body {
 .footer__menu {
   font-family: Roboto, sans-serif;
   font-weight: 400;
-  color: var(--color-menu);
+  color: var(--color-text);
 }
 
 .footer__menu-link {
@@ -327,7 +349,7 @@ body {
   font-family: Roboto, sans-serif;
   font-weight: 900;
   font-size: 12px;
-  color: var(--color-menu);
+  color: var(--color-text);
   text-decoration: none;
 }
 
