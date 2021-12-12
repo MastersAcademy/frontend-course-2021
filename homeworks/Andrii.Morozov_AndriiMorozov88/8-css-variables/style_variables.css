@@ -1,16 +1,19 @@
 
 .day {
   --pink: #FD665E;
-  --main-color: #000;
+  --text-color-button: #FFF;
   --halfmoon-color: #444;
   --dream-project-background: #F9F9F9;
+  --footer-image: #F9F9F9;
 }
 
 .night {
-  --pink: #008000;
-  --main-color: #F00;
+  --pink: #FD7E77;
+  --text-color-button: #0D0D0D;
   --halfmoon-color: #FF0;
   --body-background: #000;
+  --footer-image: linear-gradient(180deg,#0D0D0D, #F9F9F9);
+  --font-color: #FFF;
 }
 
 body {
@@ -18,7 +21,7 @@ body {
 }
 
 .buttons {
-  color: var(--main-color);
+  color: var(--text-color-button);
   border: none;
   background-color: var(--pink);
   border-radius: 4px;
@@ -107,7 +110,7 @@ header {
   font-family: "Merriweather", serif;
   line-height: 112px;
   letter-spacing: -2px;
-  font: (--main-color)
+  color: var(--font-color);
 }
 
 .word--color {
@@ -135,6 +138,7 @@ header {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: .75;
+  color: var(--font-color);
 }
 
 .dreamhouse__aside__button {
@@ -156,6 +160,7 @@ header {
   margin-left: 452px;
   line-height: .5;
   letter-spacing: -2px;
+  color: var(--font-color);
 }
 
 .design {
@@ -175,6 +180,7 @@ header {
   margin-left: 165px;
   line-height: 26px;
   letter-spacing: -2px;
+  color: var(--font-color);
 }
 
 .archmove {
@@ -219,6 +225,7 @@ header {
   font-size: 16px;
   line-height: .5;
   margin-left: 40px;
+  color: var(--font-color);
 }
 
 .archmove__content__button {
@@ -232,7 +239,8 @@ header {
 
 .container {
   width: 1440px;
-  background-image: linear-gradient(180deg,#0D0D0D, #F9F9F9);
+  background-color: var(--footer-image);
+  background-image: var(--footer-image);
 }
 
 .dream-project {
@@ -258,6 +266,7 @@ header {
   line-height: .25;
   letter-spacing: -1px;
   margin-left: 138px;
+  color: var(--font-color);
 }
 
 .dream-project__content__button {
