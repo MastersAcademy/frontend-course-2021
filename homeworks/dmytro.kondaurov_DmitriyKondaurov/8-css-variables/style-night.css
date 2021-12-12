@@ -1,3 +1,4 @@
-.wrapper {
-  max-width: 1470px;
+:root {
+  --theme-bg-color: #000;
+  --theme-text-color: #FFF;
 }
