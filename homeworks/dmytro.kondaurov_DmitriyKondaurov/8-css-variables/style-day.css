@@ -1,3 +1,7 @@
+
 .wrapper {
-  max-width: 1470px;
+  max-width: 1440px;
+  min-width: 731px;
+  height: 100%;
+  margin: 0 auto;
 }
