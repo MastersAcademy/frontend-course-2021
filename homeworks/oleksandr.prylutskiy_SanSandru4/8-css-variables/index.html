@@ -11,128 +11,130 @@
         <title>Document</title>
     </head>
     <body>
-        <header class="header">
-            <div class="header__nav">
-                <div class="header__logo">
+        <div class="wrapper">
+            <header class="header">
+                <div class="header__nav">
+                    <div class="header__logo">
+                        <svg class="logo">
+                            <use xlink:href="#logo"></use>
+                        </svg>
+                    </div>
+                    <div class="header__menu">
+                        <a href="#Design Gallery" class="header__menu-link">Design Gallery</a>
+                        <a href="#List of Architect" class="header__menu-link">List of Architect</a>
+                        <a href="#Articles" class="header__menu-link">Articles</a>
+                        <a href="#How it Works" class="header__menu-link">How it Works</a>
+                    </div>
+                </div>
+                <div class="header__control">
+                    <button class="header__skin-btn" type="button" data-attr-change-skin>
+                        <svg class="icon">
+                            <use xlink:href="#moon" data-attr-icon></use>
+                        </svg>
+                    </button>
+                    <div class="header__control_sign-in">
+                        <a href="#" class="header__control_sign-in">Sign in</a>
+                    </div>
+                    <button class="header__btn" type="button">Sign Up</button>
+                </div>
+            </header>
+            <main class="main">
+                <div class="main__dream-house">
+                    <h1 class="main__dream-house_name">
+                        Build Your Dream <span class="main__color-word">House</span>
+                    </h1>
+                    <div class="main__dream-house_info">
+                        <p class="dream-house__text">
+                            The first and most trusted marketplace of design & build house in The World. 100% guaranteed Build safe, comfortable and transparent with a project management for the best result
+                        </p>
+                        <button class="dream-house__btn" type="button">Free Consultation</button>
+                    </div>
+                    <div class="main__dream-house_picture">
+                        <img class="dream-house__img" src="img/Rectangle 1.jpg" alt="dream house">
+                    </div>
+                </div>
+                <div class="main__build-room">
+                    <h3 class="main__build-room_name">Build professional valuable room for you</h3>
+                    <div class="main__build-room_picture">
+                        <img class="build-room__img" src="img/img-01.jpg" alt="room 1">
+                        <img class="build-room__img" src="img/img-02.jpg" alt="room 2">
+                        <img class="build-room__img" src="img/img-03.jpg" alt="room 3">
+                        <img class="build-room__img" src="img/img-04.jpg" alt="room 4">
+                    </div>
+                </div>
+                <div class="main__archmove">
+                    <h3 class="main__archmove_name">Build your needs with Archmove</h3>
+                    <div class="main__archmove_info">
+                        <div class="main__archmove_picture">
+                            <img src="img/img-5.jpg" alt="archmove">
+                        </div>
+                        <div class="main__archmove_consultation">
+                            <ul class="consultation__list">
+                                <li class="consultation__list_info">
+                                    <div class="list__img">
+                                        <svg class="guaranteed">
+                                            <use xlink:href="#guaranteed"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="list_text">
+                                        <p class="list_name">100% guaranteed project completion</p>
+                                        <p class="list_paragraph">Build safe, comfortable and transparent with a project management application with a joint account.</p>
+                                    </div>
+                                </li>
+                                <li class="consultation__list_info">
+                                    <div class="list__img">
+                                        <svg class="fees">
+                                            <use xlink:href="#fees"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="list_text">
+                                        <p class="list_name">No additional fees</p>
+                                        <p class="list_paragraph">There are no hidden costs. The value of the offer you get is the value you paid.</p>
+                                    </div>
+                                </li>
+                                <li class="consultation__list_info">
+                                    <div class="list__img">
+                                        <svg class="escort">
+                                            <use xlink:href="#escort"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="list_text">
+                                        <p class="list_name">Get escort from the Team</p>
+                                        <p class="list_paragraph">Monitor reports from the Arsitag team who check directly in the field.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button class="free-consultation__btn" type="button">FREE CONSULTATION</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__realize-dream">
+                    <div class="main__realize-dream_img">
+                        <img src="img/img.png" alt="house in the sky">
+                    </div>
+                    <div class="main__realize-dream_text">
+                        <h3 class="main__realize-dream_name">
+                            Realize your dream project with <span class="main__color-word">Archmove</span>
+                        </h3>
+                        <button class="free-consultation__btn free-consultation__btn--no-margin" type="button">FREE CONSULTATION</button>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="footer__menu">
+                    <a class="footer__menu-link" href="#About Us">About Us</a>
+                    <a class="footer__menu-link" href="#How it Works">How it Works</a>
+                    <a class="footer__menu-link" href="#FAQ">FAQ</a>
+                    <a class="footer__menu-link" href="#Contact Us">Contact Us</a>
+                    <a class="footer__menu-link" href="#Privacy Policy">Privacy Policy</a>
+                </div>
+                <div class="footer_logo">
                     <svg class="logo">
                         <use xlink:href="#logo"></use>
                     </svg>
                 </div>
-                <div class="header__menu">
-                    <a href="#Design Gallery" class="header__menu-link">Design Gallery</a>
-                    <a href="#List of Architect" class="header__menu-link">List of Architect</a>
-                    <a href="#Articles" class="header__menu-link">Articles</a>
-                    <a href="#How it Works" class="header__menu-link">How it Works</a>
-                </div>
-            </div>
-            <div class="header__control">
-                <button class="header__skin-btn" type="button" data-attr-change-skin>
-                    <svg class="icon">
-                        <use xlink:href="#moon" data-attr-icon></use>
-                    </svg>
-                </button>
-                <div class="header__control_sign-in">
-                    <a href="#" class="header__control_sign-in">Sign in</a>
-                </div>
-                <button class="header__btn" type="button">Sign Up</button>
-            </div>
-        </header>
-        <main class="main">
-            <div class="main__dream-house">
-                <h1 class="main__dream-house_name">
-                    Build Your Dream <span class="main__color-word">House</span>
-                </h1>
-                <div class="main__dream-house_info">
-                    <p class="dream-house__text">
-                        The first and most trusted marketplace of design & build house in The World. 100% guaranteed Build safe, comfortable and transparent with a project management for the best result
-                    </p>
-                    <button class="dream-house__btn" type="button">Free Consultation</button>
-                </div>
-                <div class="main__dream-house_picture">
-                    <img class="dream-house__img" src="img/Rectangle 1.jpg" alt="dream house">
-                </div>
-            </div>
-            <div class="main__build-room">
-                <h3 class="main__build-room_name">Build professional valuable room for you</h3>
-                <div class="main__build-room_picture">
-                    <img class="build-room__img" src="img/img-01.jpg" alt="room 1">
-                    <img class="build-room__img" src="img/img-02.jpg" alt="room 2">
-                    <img class="build-room__img" src="img/img-03.jpg" alt="room 3">
-                    <img class="build-room__img" src="img/img-04.jpg" alt="room 4">
-                </div>
-            </div>
-            <div class="main__archmove">
-                <h3 class="main__archmove_name">Build your needs with Archmove</h3>
-                <div class="main__archmove_info">
-                    <div class="main__archmove_picture">
-                        <img src="img/img-5.jpg" alt="archmove">
-                    </div>
-                    <div class="main__archmove_consultation">
-                        <ul class="consultation__list">
-                            <li class="consultation__list_info">
-                                <div class="list__img">
-                                    <svg class="guaranteed">
-                                        <use xlink:href="#guaranteed"></use>
-                                    </svg>
-                                </div>
-                                <div class="list_text">
-                                    <p class="list_name">100% guaranteed project completion</p>
-                                    <p class="list_paragraph">Build safe, comfortable and transparent with a project management application with a joint account.</p>
-                                </div>
-                            </li>
-                            <li class="consultation__list_info">
-                                <div class="list__img">
-                                    <svg class="fees">
-                                        <use xlink:href="#fees"></use>
-                                    </svg>
-                                </div>
-                                <div class="list_text">
-                                    <p class="list_name">No additional fees</p>
-                                    <p class="list_paragraph">There are no hidden costs. The value of the offer you get is the value you paid.</p>
-                                </div>
-                            </li>
-                            <li class="consultation__list_info">
-                                <div class="list__img">
-                                    <svg class="escort">
-                                        <use xlink:href="#escort"></use>
-                                    </svg>
-                                </div>
-                                <div class="list_text">
-                                    <p class="list_name">Get escort from the Team</p>
-                                    <p class="list_paragraph">Monitor reports from the Arsitag team who check directly in the field.</p>
-                                </div>
-                            </li>
-                        </ul>
-                        <button class="free-consultation__btn" type="button">FREE CONSULTATION</button>
-                    </div>
-                </div>
-            </div>
-            <div class="main__realize-dream">
-                <div class="main__realize-dream_img">
-                    <img src="img/img.png" alt="house in the sky">
-                </div>
-                <div class="main__realize-dream_text">
-                    <h3 class="main__realize-dream_name">
-                        Realize your dream project with <span class="main__color-word">Archmove</span>
-                    </h3>
-                    <button class="free-consultation__btn free-consultation__btn--no-margin" type="button">FREE CONSULTATION</button>
-                </div>
-            </div>
-        </main>
-        <footer class="footer">
-            <div class="footer__menu">
-                <a class="footer__menu-link" href="#About Us">About Us</a>
-                <a class="footer__menu-link" href="#How it Works">How it Works</a>
-                <a class="footer__menu-link" href="#FAQ">FAQ</a>
-                <a class="footer__menu-link" href="#Contact Us">Contact Us</a>
-                <a class="footer__menu-link" href="#Privacy Policy">Privacy Policy</a>
-            </div>
-            <div class="footer_logo">
-                <svg class="logo">
-                    <use xlink:href="#logo"></use>
-                </svg>
-            </div>
-        </footer>
+            </footer>
+        </div>
 
         <svg display="none" xmlns="http://www.w3.org/2000/svg">
             <symbol id="logo" viewBox="0 0 62 28">
