@@ -1,1 +1,22 @@
-console.log();
+const toggleButton = document.querySelector('[data-toggle]');
+const wordHouse = document.querySelector('[data-word-house]');
+const wordArchmove = document.querySelector('[data-word-archmove]');
+const headerButton = document.querySelector('[data-header-button]');
+const dreamHouseButton = document.querySelector('[data-dreamhouse-button]');
+const archmoveButton = document.querySelector('[data-archmove-button]');
+const dreamProjectButton = document.querySelector('[data-dream-project-button]');
+const headerLogo = document.querySelector('[data-header-logo]');
+const footerLogo = document.querySelector('[data-footer-logo]');
+const body = document.querySelector('[data-body]');
+toggleButton.addEventListener('click', () => {
+    wordHouse.classList.toggle('night');
+    wordArchmove.classList.toggle('night');
+    headerButton.classList.toggle('night');
+    dreamHouseButton.classList.toggle('night');
+    archmoveButton.classList.toggle('night');
+    dreamProjectButton.classList.toggle('night');
+    headerLogo.classList.toggle('night');
+    footerLogo.classList.toggle('night');
+    toggleButton.classList.toggle('night');
+    body.classList.toggle('night');
+});
