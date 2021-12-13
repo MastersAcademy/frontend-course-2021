@@ -19,7 +19,7 @@ button:hover {
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 5%;
+  padding: 2.9%;
 }
 
 .header {
@@ -73,9 +73,7 @@ button:hover {
 }
 
 .page__start {
-  height: 800px;
-  position: relative;
-  margin-bottom: 130px;
+  margin-bottom: 10%;
 }
 
 .start__heading {
@@ -84,6 +82,13 @@ button:hover {
   font-weight: 700;
   font-size: 8vw;
   line-height: 100%;
+}
+
+.start__content {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 55px;
+  row-gap: 15px;
 }
 
 .start__message {
@@ -104,14 +109,10 @@ button:hover {
 
 .start__image {
   max-width: 100%;
-  position: absolute;
-  right: 11.5%;
-  bottom: 0;
-  z-index: -1;
 }
 
 .page__rooms {
-  margin-bottom: 130px;
+  margin-bottom: 10%;
 }
 
 .rooms__heading {
@@ -127,12 +128,13 @@ button:hover {
 .rooms__gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
-  margin: 40px 50px;
+  column-gap: 40px;
+  row-gap: 15px;
+  margin: 40px 0;
 }
 
 .rooms__image {
-  max-width: 22%;
+  max-width: 100%;
 }
 
 .page__needs {
@@ -185,7 +187,7 @@ button:hover {
 }
 
 .needs__button {
-  margin-top: 80px;
+  margin-top: 5.5%;
   width: 205px;
   height: 56px;
   border-radius: 4px;
@@ -203,6 +205,7 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   column-gap: 138px;
+  row-gap: 15px;
   align-items: center;
 }
 
@@ -236,7 +239,7 @@ button:hover {
 }
 
 .footer {
-  margin: 50px 165px;
+  margin: 50px auto;
   display: flex;
   flex-wrap: wrap;
 }
