@@ -80,7 +80,7 @@ body {
 }
 
 .header__burger {
-  height: 25px;
+  height: 27px;
   width: 30px;
 }
 
@@ -99,7 +99,7 @@ body {
 
 .color-mode__image {
   width: 24px;
-  height: 24px;
+  height: 20px;
 }
 
 .color-mode__image:hover {
@@ -148,7 +148,7 @@ body {
   width: 50%;
   margin: 5px;
   height: 0;
-  padding-top: 480px;
+  padding-top: 35%;
   position: relative;
 }
 
@@ -219,9 +219,9 @@ body {
 
 .advantages__image-block {
   margin: 5px;
-  width: 40%;
+  width: 50%;
   height: 0;
-  padding-top: 610px;
+  padding-top: 60%;
   position: relative;
 }
 
@@ -282,7 +282,7 @@ body {
   margin: 5px 50px 5px 5px;
   width: 35%;
   height: 0;
-  padding-top: 684px;
+  padding-top: 60%;
   position: relative;
 }
 
@@ -326,7 +326,7 @@ body {
 }
 
 .gradient {
-  background: linear-gradient(180deg, var(--gradient-color) 22.8%, rgba(249, 249, 249, .2) 92%, var(--gradient-color) 96.8%)
+  background: linear-gradient(180deg, var(--background-color) -2.2%, rgba(249, 249, 249, .2) 78%, var(--gradient-color) 96.8%);
 }
 
 .advantage__image {
@@ -352,11 +352,13 @@ body {
   }
 
   .advantages__image-block {
-    width: 50%;
+    width: 100%;
+    padding-top: 70%;
   }
 
   .realize__image-block {
-    width: 50%;
+    width: 60%;
+    padding-top: 80%;
   }
 }
 
@@ -364,6 +366,7 @@ body {
 
   .header__burger--toggle {
     display: flex;
+    align-self: center;
   }
 
   .nav__links {
@@ -385,21 +388,35 @@ body {
     display: flex;
   }
 
+  .cosultation__image-block {
+    padding-top: 46%;
+  }
+
   .gallery__image-block {
     width: 30%;
     padding-top: 40%;
   }
 
+  .advantages__title {
+    text-align: center;
+  }
+
+  .advantages__block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .advantages__button {
+    align-self: center;
+    margin-left: 0;
+  }
+
   .advantages__image-block {
-    width: 75%;
+    width: 100%;
   }
 
   .realize__image-block {
-    width: 70%;
-  }
-
-  .image {
-    object-fit: cover;
+    width: 80%;
   }
 }
 
@@ -425,10 +442,11 @@ body {
 
   .advantages__image-block {
     width: 100%;
+    padding-top: 100%;
   }
 
   .realize__image-block {
-    width: 100%;
+    width: 120%;
     padding-right: 0;
   }
 
@@ -459,10 +477,12 @@ body {
 
   .controls__sign-in {
     margin: 0;
+    padding: 4px 16px;
   }
 
   .controls__sign-up {
     margin-right: 15px;
+    padding: 4px 16px;
   }
 
   .consultation__block {
@@ -487,10 +507,16 @@ body {
 
   .cosultation__image-block {
     width: auto;
+    padding-top: 100%;
   }
 
   .advantages__block {
     flex-direction: column;
+  }
+
+  .advantages__button {
+    margin-left: 0;
+    align-self: center;
   }
 
   .advantages__title {
@@ -506,6 +532,7 @@ body {
   .realize__image-block {
     padding-right: 0;
     margin: 0;
+    padding-top: 140%;
   }
 
   .realize__block {
@@ -533,6 +560,10 @@ body {
 }
 
 @media (max-width: 320px) {
+
+  .header__burger--toggle {
+    align-self: auto;
+  }
 
   .consultation__title {
     font-size: 80px;
