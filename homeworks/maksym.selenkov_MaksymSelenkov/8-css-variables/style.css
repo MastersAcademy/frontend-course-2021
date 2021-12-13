@@ -19,6 +19,7 @@ button:hover {
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
+  padding: 5%;
 }
 
 .header {
@@ -32,6 +33,11 @@ button:hover {
   margin-right: 60px;
 }
 
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .nav__link {
   margin-right: 48px;
   font-weight: 400;
@@ -42,6 +48,8 @@ button:hover {
 
 .header__controls {
   margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .controls__light {
@@ -74,7 +82,7 @@ button:hover {
   max-width: 870px;
   font-family: "Merriweather", serif;
   font-weight: 700;
-  font-size: 112px;
+  font-size: 8vw;
   line-height: 100%;
 }
 
@@ -95,9 +103,11 @@ button:hover {
 }
 
 .start__image {
+  max-width: 100%;
   position: absolute;
-  right: 165px;
+  right: 11.5%;
   bottom: 0;
+  z-index: -1;
 }
 
 .page__rooms {
@@ -108,35 +118,45 @@ button:hover {
   max-width: 535px;
   font-family: "Merriweather", serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 3.3vw;
   line-height: 124%;
   margin: 0 auto;
+  text-align: center;
 }
 
 .rooms__gallery {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 40px;
+  gap: 40px;
   margin: 40px 50px;
 }
 
+.rooms__image {
+  max-width: 22%;
+}
+
 .page__needs {
-  margin-left: 165px;
-  margin-bottom: 150px;
+  margin-left: 11.5%;
+  margin-bottom: 10%;
 }
 
 .needs__heading {
   max-width: 459px;
   font-family: "Merriweather", serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 3.3vw;
   line-height: 124%;
+  text-align: center;
 }
 
 .needs__content {
   display: flex;
   flex-wrap: wrap;
   column-gap: 159px;
+}
+
+.needs__image {
+  max-width: 100%;
 }
 
 .needs__menu {
@@ -190,7 +210,7 @@ button:hover {
   max-width: 521px;
   font-family: "Merriweather", serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 3.3vw;
   line-height: 124%;
 }
 
