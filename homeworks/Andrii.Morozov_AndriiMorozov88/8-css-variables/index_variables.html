@@ -15,10 +15,10 @@
     </head>
     <body data-body>
         <header class="header">
-            <svg class="logo header__logo day" data-header-logo>
-                <use xlink:href="sprite.svg#logo"></use>
-            </svg>
             <div class="header__menu">
+                <svg class="logo header__logo day" data-header-logo>
+                    <use xlink:href="sprite.svg#logo"></use>
+                </svg>
                 <ul class="header__menu__list">
                     <li class="header__menu__lines">
                         <a class="menu__links day" data-link-gallery href="#">Design Gallery</a>
@@ -34,18 +34,20 @@
                     </li>
                 </ul>
             </div>
-            <div class="header__buttons__tougle day" data-toggle>
-                <svg width="15" height="20" class="halfmoon" data-toggle-halfmoon>
-                    <use xlink:href="sprite.svg#halfmoon"></use>
-                </svg>
-                <svg width="24" height="24" class="sun">
-                    <use xlink:href="sprite.svg#sun"></use>
-                </svg>
+            <div class="header__buttons">
+                <div class="header__buttons__tougle day" data-toggle>
+                    <svg width="15" height="20" class="halfmoon" data-toggle-halfmoon>
+                        <use xlink:href="sprite.svg#halfmoon"></use>
+                    </svg>
+                    <svg width="24" height="24" class="sun">
+                        <use xlink:href="sprite.svg#sun"></use>
+                    </svg>
+                </div>
+                <button type="button" class="header__buttons__sign--in" data-header-button-in>Sign In</button>
+                <button type="button" data-header-button class="header__buttons__sign--up buttons day">
+                    <b>Sign Up</b>
+                </button>
             </div>
-            <button type="button" class="header__buttons__sign--in" data-header-button-in>Sign In</button>
-            <button type="button" data-header-button class="header__buttons__sign--up buttons day">
-                <b>Sign Up</b>
-            </button>
         </header>
         <div class="dreamhouse__title-container">
             <h1 class="dreamhouse__title-container__title" data-dreamhouse-title>
