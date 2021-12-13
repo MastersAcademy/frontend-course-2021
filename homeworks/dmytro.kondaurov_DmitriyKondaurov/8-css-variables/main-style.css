@@ -229,8 +229,8 @@ body {
 .section-hero__banner {
   margin: 55px 0 0 15px;
   max-width: 870px;
-  font-size: 112px;
-  line-height: 112px;
+  font-size: 58px;
+  line-height: 58px;
   display: block;
 }
 
@@ -384,6 +384,14 @@ body {
 
 .footer__logo {
   padding-right: 44px;
+}
+
+@media only screen and (min-width: 585px) {
+
+  .section-hero__banner {
+    font-size: 112px;
+    line-height: 112px;
+  }
 }
 
 @media (max-width: 998px) {
