@@ -14,6 +14,7 @@
   --background-color: #FFF;
   --text-color: #000;
   --button-text-color: #FFF;
+  --header-text-color: #585858;
   --footer-text-color: #444;
   --button-empty-text-color: #585858;
   --footer-line: #F0F0F0;
@@ -24,6 +25,7 @@
   --background-color: #000;
   --text-color: #FFF;
   --button-text-color: #000;
+  --header-text-color: #FFF;
   --footer-text-color: #FFF;
   --button-empty-text-color: #FFF;
   --footer-line: #1C1C1C;
@@ -78,7 +80,7 @@ body {
 .header__link {
   padding: 1rem;
   font-family: var(--primary-font);
-  color: var(--navigation-text-color);
+  color: var(--header-text-color);
   text-decoration: none;
 }
 
