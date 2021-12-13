@@ -1,7 +1,9 @@
 const toggleButton = document.querySelector('[data-toggle]');
+const toggleButtonHalfmoon = document.querySelector('[data-toggle-halfmoon]');
 const wordHouse = document.querySelector('[data-word-house]');
 const wordArchmove = document.querySelector('[data-word-archmove]');
 const headerButton = document.querySelector('[data-header-button]');
+const headerButtonIn = document.querySelector('[data-header-button-in]');
 const dreamHouseButton = document.querySelector('[data-dreamhouse-button]');
 const dreamHouseTitle = document.querySelector('[data-dreamhouse-title]');
 const dreamHouseText = document.querySelector('[data-dreamhouse-text]');
@@ -15,9 +17,14 @@ const designTitle = document.querySelector('[data-design-title]');
 const archmoveTitle = document.querySelector('[data-archmove-title]');
 const archmoveText = document.querySelector('[data-archmove-text]');
 const dreamProjectText = document.querySelector('[data-dream-project-text]');
+const linkGallery = document.querySelector('[data-link-gallery]');
+const linkList = document.querySelector('[data-link-list]');
+const linkArticles = document.querySelector('[data-link-articles]');
+const linkWorks = document.querySelector('[data-link-works]');
 toggleButton.addEventListener('click', () => {
     wordHouse.classList.toggle('night');
     wordArchmove.classList.toggle('night');
+    headerButtonIn.classList.toggle('header__buttons__sign--in--night');
     headerButton.classList.toggle('night');
     dreamHouseButton.classList.toggle('night');
     archmoveButton.classList.toggle('night');
@@ -25,6 +32,7 @@ toggleButton.addEventListener('click', () => {
     headerLogo.classList.toggle('night');
     footerLogo.classList.toggle('night');
     toggleButton.classList.toggle('night');
+    toggleButtonHalfmoon.classList.toggle('halfmoon--hidden');
     body.classList.toggle('night');
     container.classList.toggle('night');
     dreamHouseTitle.classList.toggle('night');
@@ -33,4 +41,8 @@ toggleButton.addEventListener('click', () => {
     archmoveTitle.classList.toggle('night');
     archmoveText.classList.toggle('night');
     dreamProjectText.classList.toggle('night');
+    linkGallery.classList.toggle('night');
+    linkList.classList.toggle('night');
+    linkArticles.classList.toggle('night');
+    linkWorks.classList.toggle('night');
 });
