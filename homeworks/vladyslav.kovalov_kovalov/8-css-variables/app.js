@@ -14,20 +14,20 @@ class ThemeToggler {
 
     eventListeners() {
         this.buttonElement.addEventListener('click', () => {
-            this.getTheme();
+            this.setTheme();
         });
     }
 
-    getTheme() {
-        if (this.theme.dataset.theme === 'dark') this.setTheme('light');
-        else this.setTheme('dark');
-    }
-
-    setTheme(themeName) {
-        if (themeName === 'dark') this.togglerIcon.setAttribute('xlink:href', 'icons/icons-sprite.svg#theme-toggler-light');
-        else this.togglerIcon.setAttribute('xlink:href', 'icons/icons-sprite.svg#theme-toggler-dark');
-
-        this.pageContainer.setAttribute('data-theme', themeName);
+    setTheme() {
+        const { theme } = this.theme.dataset;
+        if (theme === 'dark') {
+            this.togglerIcon.setAttribute('href', 'icons/theme-toggler.svg#dark-theme-logo');
+            this.pageContainer.setAttribute('data-theme', 'light');
+        }
+        if (theme === 'light') {
+            this.togglerIcon.setAttribute('href', 'icons/theme-toggler.svg#light-theme-logo');
+            this.pageContainer.setAttribute('data-theme', 'dark');
+        }
     }
 }
 
