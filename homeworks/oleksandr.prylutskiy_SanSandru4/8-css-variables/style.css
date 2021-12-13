@@ -4,7 +4,7 @@
 }
 
 :root {
-  --color-red: #FD7E77;
+  --color-red: #FD665E;
   --color-text: #000;
   --color-background: #FFF;
   --color-btn-hover: #FC9791;
@@ -37,6 +37,10 @@ body {
   background-color: var(--color-background);
 }
 
+.header__logo {
+  list-style: none;
+}
+
 .logo {
   width: 62px;
   height: 28px;
@@ -46,6 +50,7 @@ body {
   width: 20px;
   height: 20px;
   fill: var(--color-text);
+  cursor: pointer;
 }
 
 .icon:hover {
@@ -82,7 +87,7 @@ body {
   color: var(--color-text);
 }
 
-.header__menu-link, .header__control_sign-in {
+.header__menu-link, .header__control-sign-in {
   padding-left: 24px;
   padding-right: 24px;
   font-family: Roboto, sans-serif;
@@ -92,7 +97,7 @@ body {
   text-decoration: none;
 }
 
-.header__menu-link:hover, .header__control_sign-in:hover {
+.header__menu-link:hover, .header__control-sign-in:hover {
   color: var(--color-red);
 }
 
@@ -131,7 +136,7 @@ body {
   flex-wrap: wrap;
 }
 
-.main__dream-house_name {
+.main__dream-house-name {
   width: 870px;
   font-family: Merriweather;
   font-weight: 900;
@@ -144,7 +149,7 @@ body {
   color: var(--color-red);
 }
 
-.main__dream-house_info {
+.main__dream-house-info {
   margin-top: 56px;
   margin-right: 55px;
 }
@@ -170,13 +175,14 @@ body {
   font-weight: 900;
   color: var(--color-background);
   font-size: 14px;
+  cursor: pointer;
 }
 
 .dream-house__btn:hover {
   background-color: var(--color-btn-hover);
 }
 
-.main__dream-house_picture {
+.main__dream-house-picture {
   margin-top: 47px;
 }
 
@@ -187,7 +193,7 @@ body {
   flex-direction: column;
 }
 
-.main__build-room_name, .main__archmove_name, .main__realize-dream_name {
+.main__build-room-name, .main__archmove-name, .main__realize-dream-name {
   font-family: Merriweather;
   font-weight: 900;
   font-size: 48px;
@@ -195,11 +201,11 @@ body {
   letter-spacing: -.04em;
 }
 
-.main__build-room_name {
+.main__build-room-name {
   width: 535px;
 }
 
-.main__build-room_picture {
+.main__build-room-picture {
   margin-top: 40px;
   width: 92%;
   display: flex;
@@ -213,18 +219,18 @@ body {
   margin-left: 165px;
 }
 
-.main__archmove_name {
+.main__archmove-name {
   width: 459px;
 }
 
-.main__archmove_info {
+.main__archmove-info {
   margin-top: 40px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 }
 
-.main__archmove_picture {
+.main__archmove-picture {
   margin-right: 155px;
 }
 
@@ -234,13 +240,13 @@ body {
   flex-direction: column;
 }
 
-.consultation__list_info {
+.consultation__list-info {
   margin-top: 48px;
   display: flex;
   flex-direction: row;
 }
 
-.list__img {
+.list__info-img {
   margin-right: 38px;
   width: 40px;
   height: 53px;
@@ -262,7 +268,7 @@ body {
   height: 53px;
 }
 
-.list_text {
+.list__info-text {
   width: 305px;
   font-family: Roboto, sans-serif;
   font-size: 16px;
@@ -270,7 +276,7 @@ body {
   letter-spacing: .01em;
 }
 
-.list_name {
+.list__info-name {
   margin-bottom: 8px;
   font-weight: 700;
 }
@@ -287,6 +293,7 @@ body {
   font-size: 14px;
   border: none;
   border-radius: var(--border-radius-button);
+  cursor: pointer;
 }
 
 .free-consultation__btn:hover {
@@ -307,16 +314,16 @@ body {
   align-items: center;
 }
 
-.main__realize-dream_img {
+.main__realize-dream-img {
   margin-left: 119px;
   padding-top: 88px;
 }
 
-.main__realize-dream_text {
+.main__realize-dream-text {
   margin-left: 123px;
 }
 
-.main__realize-dream_name {
+.main__realize-dream-name {
   width: 521px;
 }
 
@@ -330,7 +337,7 @@ body {
   box-sizing: border-box;
 }
 
-.footer__menu, .footer_logo {
+.footer__menu, .footer__logo {
   margin-top: 93px;
   margin-left: 160px;
   margin-bottom: 94px;
@@ -356,8 +363,9 @@ body {
   color: var(--color-red);
 }
 
-.footer_logo {
+.footer__logo {
   margin-right: 166px;
+  list-style: none;
 }
 
 @media (max-width: 800px) {
@@ -379,7 +387,7 @@ body {
     flex-direction: column;
   }
 
-  .main__dream-house_name {
+  .main__dream-house-name {
     width: 600px;
     font-size: 80px;
   }
@@ -392,7 +400,7 @@ body {
     width: 92%;
   }
 
-  .build-room__img {
+  .build-room__picture-img {
     margin-bottom: 20px;
   }
 
@@ -401,7 +409,7 @@ body {
     margin-left: 30px;
   }
 
-  .main__archmove_info {
+  .main__archmove-info {
     flex-wrap: wrap;
   }
 
@@ -428,7 +436,7 @@ body {
     font-size: 18px;
   }
 
-  .footer_logo {
+  .footer__logo {
     margin-right: 60px;
   }
 }

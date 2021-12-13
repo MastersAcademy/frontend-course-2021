@@ -9,16 +9,20 @@ function setTheme(name, icon) {
     localStorage.setItem('skin', name);
 }
 
-if (currentTheme) {
-    bodyEl.setAttribute('data-skin', currentTheme);
-} else {
-    setTheme('light', '#moon');
-}
-
-changeSkin.addEventListener('click', () => {
-    if (bodyEl.getAttribute('data-skin') === 'light') {
-        setTheme('dark', '#sun');
+function init() {
+    if (currentTheme) {
+        bodyEl.setAttribute('data-skin', currentTheme);
     } else {
         setTheme('light', '#moon');
     }
-});
+
+    changeSkin.addEventListener('click', () => {
+        if (bodyEl.getAttribute('data-skin') === 'light') {
+            setTheme('dark', '#sun');
+        } else {
+            setTheme('light', '#moon');
+        }
+    });
+}
+
+init();
