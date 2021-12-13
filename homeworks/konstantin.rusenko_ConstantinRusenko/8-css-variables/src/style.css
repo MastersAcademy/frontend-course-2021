@@ -358,7 +358,7 @@ body {
 
   .realize__image-block {
     width: 60%;
-    padding-top: 80%;
+    padding-top: 70%;
   }
 }
 
@@ -413,10 +413,12 @@ body {
 
   .advantages__image-block {
     width: 100%;
+    padding-top: 100%;
   }
 
   .realize__image-block {
-    width: 80%;
+    width: 90%;
+    padding-top: 80%;
   }
 }
 
@@ -447,7 +449,7 @@ body {
 
   .realize__image-block {
     width: 120%;
-    padding-right: 0;
+    padding-top: 90%;
   }
 
   .about__item {
