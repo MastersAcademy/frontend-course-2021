@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-roboto: "Roboto", sant-serif;
+  --font-Mmerriweather: "Merriweather", serif;
+  --text-size: 14px;
+  --title-size1: 40px;
+  --title-size2: 112px;
+  --font-weight-bold: 700;
+  --color-background: #FFF;
+  --color-font: #111;
+  --navigation-color: #585858;
+  --color-font-red: #FD665E;
+}
+
+body {
+  width: 100%;
+  background: var(--color-background);
+}
+
+.header {
+  padding: 0 50px;
+  width: 100%;
+}
+
+.header__container {
+  height: 96px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__left-container {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo:hover {
+  cursor: pointer;
+}
+
+.header__navigation {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 519px;
+  margin: 0 0 0 37px;
+}
+
+.navigation__item {
+  color: var(--navigation-color);
+  text-decoration: none;
+  font-size: var(--text-size);
+}
+
+.navigation__item:hover {
+  color: var(--color-font-red);
+}
+
+.header__actions {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.action__switch-style {
+  cursor: pointer;
+}
+
+.sign-in__action {
+  color: var(--color-font);
+  width: 92px;
+  height: 48px;
+  margin: 0 19px 0 15px;
+  background: var(--color-background);
+  transition: all .3s linear;
+  border: 0;
+}
+
+.sign-in__action:hover {
+  cursor: pointer;
+  border: 1px solid var(--color-font-red);
+  border-radius: 4px;
+}
+
+.sign-up__action {
+  background: var(--color-font-red);
+  color: var(--color-background);
+  border-radius: 4px;
+  border: 0;
+  width: 99px;
+  height: 48px;
+  transition: all .3s linear;
+}
+
+.sign-up__action:hover {
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.dream-house {
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 18px auto 0;
+}
+
+.dream-house__title {
+  font-family: var(--font-Mmerriweather);
+  font-weight: 700;
+  font-size: var(--title-size2);
+  display: block;
+  width: 870px;
+  line-height: 100%;
+  color: var(--color-font);
+}
+
+.dream-house__title__house {
+  color: var(--color-font-red);
+}
+
+.dream-house__info {
+  display: flex;
+  margin: 47px 0 0;
+}
+
+.dream-house__image {
+  height: auto;
+}
+
+.info__left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.dream-house__text {
+  display: block;
+  margin: 0 55px 56px 0;
+  font-size: 16px;
+  line-height: 160%;
+  font-family: var(--font-roboto);
+  color: var(--color-font);
+}
+
+.dream-house__button {
+  background: var(--color-font-red);
+  width: 179px;
+  height: 56px;
+  border: 0;
+  border-radius: 4px;
+  color: var(--color-background);
+  font-weight: 900;
+}
+
+.dream-house__button:hover {
+  cursor: pointer;
+  border: 10px;
+}
+
+.valuable-rooms {
+  margin: 112px auto 0;
+  display: flex;
+  max-width: 1340px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.valuable-rooms__title {
+  display: flex;
+  max-width: 535px;
+  font-family: var(--font-Mmerriweather);
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 124%;
+  margin: 0 0 40px;
+  color: var(--color-font);
+}
+
+.valuable-rooms__list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.valuable-rooms__img {
+  max-width: 24.5%;
+  height: auto;
+}
+
+.needs {
+  margin: 128px auto 0;
+  max-width: 1080px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.needs__title {
+  margin: 0 0 40px;
+  font-family: var(--font-Mmerriweather);
+  font-size: 48px;
+  color: var(--color-font);
+}
+
+.needs__info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.needs__right-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 391px;
+}
+
+.needs__list__item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.needs__item__icon {
+  margin: 0 38px 0 0;
+}
+
+.needs__item__info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.needs__item__title {
+  font-size: 16px;
+  font-family: var(--font-roboto);
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--color-font);
+}
+
+.needs__item__text {
+  font-family: var(--font-roboto);
+  font-size: 16px;
+  line-height: 160%;
+  margin: 0 0 48px;
+  color: var(--color-font);
+}
+
+.needs__button {
+  margin: 24px 0 0;
+  width: 205px;
+  height: 56px;
+  background: var(--color-font-red);
+  border: 0;
+  border-radius: 4px;
+  color: var(--color-background);
+  font-weight: 900;
+}
+
+.realize-house {
+  margin: 128px auto 64px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1202px;
+  padding: 0 61px 0 0;
+  align-items: center;
+}
+
+.realize-house__info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.realize-house__title {
+  display: block;
+  font-size: 48px;
+  line-height: 124%;
+  font-family: var(--font-Mmerriweather);
+  font-weight: 700;
+  color: var(--color-font);
+}
+
+.realize-house__title-red {
+  color: var(--color-font-red);
+}
+
+.realize-house__button {
+  background: var(--color-font-red);
+  width: 205px;
+  height: 56px;
+  font-size: 14px;
+  line-height: 40px;
+  font-family: var(--font-roboto);
+  color: var(--color-background);
+  border: 0;
+  margin: 72px 0 0;
+  font-weight: 900;
+}
+
+.realize-house__button:hover {
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  max-width: 1114px;
+  padding: 83px 0;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.footer__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 519px;
+}
