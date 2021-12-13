@@ -10,7 +10,6 @@ body {
 
 .wrapper {
   max-width: 1470px;
-  min-width: 730px;
   height: 100%;
   margin: 0 auto;
 }
@@ -25,10 +24,11 @@ body {
   align-items: flex-start;
   margin: 0;
   padding: 30px 0 0;
-  font-weight: 400;
+  font-weight: 900;
+  letter-spacing: 5px;
 }
 
-.list--visibility-toggle {
+.list--visibility-hide {
   visibility: hidden;
   opacity: 0;
 }
@@ -80,7 +80,7 @@ body {
 }
 
 .list__item {
-  width: 360px;
+  width: 380px;
   text-align: center;
   font-size: 36px;
   line-height: 42px;
@@ -95,6 +95,8 @@ body {
 
 .list__link {
   text-decoration: none;
+  display: inline-block;
+  width: 100%;
   cursor: pointer;
   height: 100%;
   color: var(--theme-text-color,#585858);
@@ -125,6 +127,7 @@ body {
 .section-hero__teaser {
   display: flex;
   margin: 45px 0 0;
+  padding: 15px;
   justify-content: space-around;
   align-items: start;
   flex-wrap: wrap;
@@ -418,13 +421,16 @@ body {
 
 .list__link:hover,
 .list__link:focus {
-  background-color: var(--theme-bg-color);
   color: #FD665E;
 }
 
 .list__item:hover,
 .list__item:focus {
   background-color: var(--theme-bg-color);
+}
+
+.header-menu__link_active {
+  color: #FD665E;
 }
 
 .header__theme-switcher:hover {
@@ -448,6 +454,11 @@ body {
     background-color: transparent;
   }
 
+  .header__nav {
+    font-weight: 400;
+    letter-spacing: normal;
+  }
+
   .header__nav .nav-menu__list, .footer__nav .nav-menu__list {
     position: inherit;
     height: 95px;
@@ -465,11 +476,6 @@ body {
     width: auto;
     font-size: inherit;
     line-height: inherit;
-  }
-
-  .list--visibility-toggle {
-    visibility: visible;
-    opacity: inherit;
   }
 
   .nav-menu__list--mobile-hide {
