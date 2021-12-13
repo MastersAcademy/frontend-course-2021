@@ -12,9 +12,11 @@
   --pink: #FD7E77;
   --text-color-button: #0D0D0D;
   --body-background: #000;
-  --footer-image: linear-gradient(180deg,#0D0D0D, #F9F9F9);
+  --footer-image: linear-gradient(180deg,#000 22%, #F9F9F9);
   --font-color: #FFF;
   --link-color: #FFF;
+  --icon-fill: #000;
+  --icon-stroke: #FFF;
 }
 
 .halfmoon {
@@ -173,10 +175,14 @@ header {
   height: 480px;
 }
 
+.block__design__title {
+  width: 1440px;
+  margin-left: 452px;
+}
+
 .design__title {
   font-size: 48px;
   font-family: "Merriweather", serif;
-  margin-left: 452px;
   line-height: .5;
   letter-spacing: -2px;
   color: var(--font-color);
@@ -216,11 +222,15 @@ header {
 
 .archmove__icon {
   margin-top: 15px;
+  fill: var(--icon-fill);
+  stroke: var(--icon-stroke);
 }
 
 .archmove__icon--bird {
   margin-top: 15px;
   margin-left: 5px;
+  fill: var(--icon-fill);
+  stroke: var(--icon-stroke);
 }
 
 .archmove__content__part {
@@ -325,3 +335,76 @@ header {
   margin-right: 180px;
 }
 
+@media (max-width: 767px) {
+
+  header {
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
+  }
+
+  .header__logo {
+    display: none;
+  }
+
+  .header__menu__list {
+    display: block;
+    line-height: 1.5;
+  }
+
+  .dreamhouse__photo {
+    display: none;
+    width: 760px;
+    height: 480px;
+  }
+
+  .dreamhouse__aside {
+    display: block;
+    width: 350;
+    height: 480px;
+    margin-left: auto;
+    margin-right: auto
+  }
+
+  .dreamhouse__aside__text {
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    line-height: .75;
+    height: 300px;
+    width: 500px;
+  }
+
+  .block__design__title {
+    width: 50%;
+    margin-left: 452px;
+  }
+
+  .design__title {
+    font-size: 25px;
+  }
+
+  .design {
+    display: block;
+    width: 50%;
+    margin-left: 250px;
+    margin-top: 40px;
+    margin-bottom: 1400px;
+  }
+
+  .archmove__photo {
+    display: none;
+  }
+
+  .archmove__title {
+    font-size: 25px;
+    line-height: .5;
+  }
+
+  .dream-project--photo {
+    display: none;
+  }
+
+  .footer__logo {
+    display: none;
+  }
+}
