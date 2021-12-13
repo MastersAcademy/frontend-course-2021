@@ -1,7 +1,5 @@
 const toggleButton = document.querySelector('[data-toggle]');
 const toggleButtonHalfmoon = document.querySelector('[data-toggle-halfmoon]');
-const wordHouse = document.querySelector('[data-word-house]');
-const wordArchmove = document.querySelector('[data-word-archmove]');
 const headerButton = document.querySelector('[data-header-button]');
 const headerButtonIn = document.querySelector('[data-header-button-in]');
 const dreamHouseButton = document.querySelector('[data-dreamhouse-button]');
@@ -21,9 +19,10 @@ const linkGallery = document.querySelector('[data-link-gallery]');
 const linkList = document.querySelector('[data-link-list]');
 const linkArticles = document.querySelector('[data-link-articles]');
 const linkWorks = document.querySelector('[data-link-works]');
+const iconBird = document.querySelector('[data-icon-bird]');
+const iconDollar = document.querySelector('[data-icon-dollar]');
+const iconCircle = document.querySelector('[data-icon-circle]');
 toggleButton.addEventListener('click', () => {
-    wordHouse.classList.toggle('night');
-    wordArchmove.classList.toggle('night');
     headerButtonIn.classList.toggle('header__buttons__sign--in--night');
     headerButton.classList.toggle('night');
     dreamHouseButton.classList.toggle('night');
@@ -45,4 +44,7 @@ toggleButton.addEventListener('click', () => {
     linkList.classList.toggle('night');
     linkArticles.classList.toggle('night');
     linkWorks.classList.toggle('night');
+    iconBird.classList.toggle('night');
+    iconDollar.classList.toggle('night');
+    iconCircle.classList.toggle('night');
 });

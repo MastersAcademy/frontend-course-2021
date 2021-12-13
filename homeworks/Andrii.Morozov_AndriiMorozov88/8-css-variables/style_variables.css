@@ -225,15 +225,14 @@ header {
 
 .archmove__icon {
   margin-top: 15px;
-  fill: var(--icon-fill);
-  stroke: var(--icon-stroke);
+  stroke: var(--pink);
+  fill: var(--pink);
 }
 
 .archmove__icon--bird {
   margin-top: 15px;
   margin-left: 5px;
-  fill: var(--icon-fill);
-  stroke: var(--icon-stroke);
+  stroke: var(--pink);
 }
 
 .archmove__content__part {
