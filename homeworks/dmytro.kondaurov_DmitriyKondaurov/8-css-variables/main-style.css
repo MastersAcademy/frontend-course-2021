@@ -437,6 +437,10 @@ body {
   border-color: #FD665E;
 }
 
+.header--scrolled {
+  background-color: rgba(255, 255, 0, .5);
+}
+
 @media only screen and (min-width: 1024px) {
 
   .header-menu__switcher {

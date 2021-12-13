@@ -4,6 +4,7 @@ const menuSwitcherBtn = document.querySelector('[data-menu-switcher-btn]');
 const switcherBtnLine1 = document.querySelector('[data-cross-line-1]');
 const switcherBtnLine2 = document.querySelector('[data-cross-line-2]');
 const menuContainer = document.querySelector('[data-header-menu]');
+const headerContainer = document.querySelector('[data-header]');
 let themeStatus = styleSrc.getAttribute('href');
 const listNavItems = Array.from(document.querySelectorAll('[data-nav-item]'));
 let width = (window.innerWidth > 0) ? window.innerWidth : window.screen.width;
@@ -15,6 +16,14 @@ window.addEventListener('load', () => {
     } else {
         menuSwitcherBtn.attributes['data-menu-switcher-btn'].value = '1';
         menuContainer.classList.add('list--visibility-hide');
+    }
+});
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        headerContainer.classList.add('header--scrolled');
+    } else {
+        headerContainer.classList.remove('header--scrolled');
     }
 });
 
