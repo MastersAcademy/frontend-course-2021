@@ -21,23 +21,28 @@
             <div class="header__menu">
                 <ul class="header__menu__list">
                     <li class="header__menu__lines">
-                        <a class="menu__links" href="#">Design Gallery</a>
+                        <a class="menu__links day" data-link-gallery href="#">Design Gallery</a>
                     </li>
                     <li class="header__menu__lines">
-                        <a class="menu__links" href="#">List of Architect</a>
+                        <a class="menu__links day" data-link-list href="#">List of Architect</a>
                     </li>
                     <li class="header__menu__lines">
-                        <a class="menu__links" href="#">Articles</a>
+                        <a class="menu__links day" data-link-articles href="#">Articles</a>
                     </li>
                     <li class="header__menu__lines">
-                        <a class="menu__links" href="#">How it Works</a>
+                        <a class="menu__links day" data-link-works href="#">How it Works</a>
                     </li>
                 </ul>
             </div>
-            <svg class="header__buttons__tougle day" width="15" height="20" data-toggle>
-                <use xlink:href="sprite.svg#halfmoon"></use>
-            </svg>
-            <button type="button" class="header__buttons__sign--in">Sign In</button>
+            <div class="header__buttons__tougle day" data-toggle>
+                <svg width="15" height="20" class="halfmoon" data-toggle-halfmoon>
+                    <use xlink:href="sprite.svg#halfmoon"></use>
+                </svg>
+                <svg width="24" height="24" class="sun">
+                    <use xlink:href="sprite.svg#sun"></use>
+                </svg>
+            </div>
+            <button type="button" class="header__buttons__sign--in" data-header-button-in>Sign In</button>
             <button type="button" data-header-button class="header__buttons__sign--up buttons day">
                 <b>Sign Up</b>
             </button>
@@ -139,7 +144,7 @@
                 </button>
             </div>
         </div>
-        <div class="container day" data-container>
+        <div class="bottom day" data-container>
             <div class="dream-project day">
                 <div class="dream-project--photo">
                     <picture>

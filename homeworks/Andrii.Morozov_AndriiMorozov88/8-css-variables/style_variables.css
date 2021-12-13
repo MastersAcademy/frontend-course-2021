@@ -5,15 +5,28 @@
   --halfmoon-color: #444;
   --dream-project-background: #F9F9F9;
   --footer-image: #F9F9F9;
+  --link-color: #585858;
 }
 
 .night {
   --pink: #FD7E77;
   --text-color-button: #0D0D0D;
-  --halfmoon-color: #FF0;
   --body-background: #000;
   --footer-image: linear-gradient(180deg,#0D0D0D, #F9F9F9);
   --font-color: #FFF;
+  --link-color: #FFF;
+}
+
+.halfmoon {
+  fill: #585858;
+}
+
+.halfmoon--hidden {
+  display: none;
+}
+
+.sun {
+  fill: #FFF;
 }
 
 body {
@@ -61,12 +74,13 @@ header {
   margin-right: 48px;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
+  color: var(--link-color);
 }
 
 .menu__links {
   text-decoration: none;
   cursor: pointer;
-  color: #585858;
+  color: var(--link-color);
 }
 
 .header__buttons {
@@ -91,6 +105,11 @@ header {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   cursor: pointer;
+}
+
+.header__buttons__sign--in--night {
+  color: #FFF;
+  background-color: #000;
 }
 
 .header__buttons__sign--up {
@@ -237,7 +256,7 @@ header {
   margin-left: 90px;
 }
 
-.container {
+.bottom {
   width: 1440px;
   background-color: var(--footer-image);
   background-image: var(--footer-image);
