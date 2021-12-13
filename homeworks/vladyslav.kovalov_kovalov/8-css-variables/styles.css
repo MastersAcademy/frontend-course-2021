@@ -415,6 +415,7 @@ body {
   display: flex;
   font-weight: 900;
   font-size: .75rem;
+  text-align: center;
 }
 
 .footer-section__link {
