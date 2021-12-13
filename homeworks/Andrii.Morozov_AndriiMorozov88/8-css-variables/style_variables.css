@@ -53,6 +53,7 @@ header {
   display: flex;
   width: 1440px;
   height: 96px;
+  justify-content: space-between;
   align-items: center;
   margin: auto;
 }
@@ -63,8 +64,8 @@ header {
 }
 
 .header__menu {
+  display: flex;
   width: auto;
-  margin-right: 450px;
 }
 
 .header__menu__list {
@@ -87,6 +88,8 @@ header {
 
 .header__buttons {
   display: flex;
+  align-items: center;
+  margin-right: 75px;
 }
 
 .header__buttons__tougle {
@@ -345,11 +348,6 @@ header {
 
   .header__logo {
     display: none;
-  }
-
-  .header__menu__list {
-    display: block;
-    line-height: 1.5;
   }
 
   .dreamhouse__photo {
