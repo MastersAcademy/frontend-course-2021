@@ -577,6 +577,16 @@ body {
     width: 100%;
   }
 
+  .footer-section__text-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-section__full-button {
+    margin: 0;
+    align-self: center;
+  }
+
   .footer-section__footer-container {
     display: flex;
     flex-direction: column-reverse;
