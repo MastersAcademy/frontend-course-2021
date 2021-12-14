@@ -1,4 +1,3 @@
-
 .day {
   --pink: #FD665E;
   --text-color-button: #FFF;
@@ -9,14 +8,12 @@
 }
 
 .night {
-  --pink: #FD7E77;
+  --pink: #008000;
   --text-color-button: #0D0D0D;
   --body-background: #000;
-  --footer-image: linear-gradient(180deg,#000 22%, #F9F9F9);
+  --footer-image: linear-gradient(180deg, #0D0D0D 22%, rgba(249, 249, 249, 0) 100%);
   --font-color: #FFF;
   --link-color: #FFF;
-  --icon-fill: #000;
-  --icon-stroke: #FFF;
 }
 
 .halfmoon {
@@ -33,6 +30,8 @@
 
 body {
   background-color: var(--body-background);
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .buttons {
@@ -179,7 +178,7 @@ header {
 }
 
 .block__design__title {
-  width: 1440px;
+  width: 100%;
   margin-left: 452px;
 }
 
@@ -225,8 +224,8 @@ header {
 
 .archmove__icon {
   margin-top: 15px;
-  stroke: var(--pink);
   fill: var(--pink);
+  stroke: var(--pink);
 }
 
 .archmove__icon--bird {
@@ -270,8 +269,8 @@ header {
 
 .bottom {
   width: 1440px;
-  background-color: var(--footer-image);
-  background-image: var(--footer-image);
+  background: var(--footer-image);
+  background: var(--footer-image);
 }
 
 .dream-project {
