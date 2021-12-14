@@ -10,8 +10,8 @@
 .night {
   --pink: #008000;
   --text-color-button: #0D0D0D;
-  --body-background: #000;
-  --footer-image: linear-gradient(180deg, #0D0D0D 22%, rgba(249, 249, 249, 0) 100%);
+  --body-background: #0D0D0D;
+  --footer-image: linear-gradient(180deg, #0D0D0D 22%, #F9F9F9 300%);
   --font-color: #FFF;
   --link-color: #FFF;
 }
@@ -34,7 +34,7 @@ body {
   margin: 0 auto;
 }
 
-.buttons {
+.button {
   color: var(--text-color-button);
   border: none;
   background-color: var(--pink);
@@ -67,11 +67,11 @@ header {
   width: auto;
 }
 
-.header__menu__list {
+.menu__list {
   display: flex;
 }
 
-.header__menu__lines {
+.menu__lines {
   list-style-type: none;
   margin-right: 48px;
   font-family: "Roboto", sans-serif;
@@ -91,7 +91,7 @@ header {
   margin-right: 75px;
 }
 
-.header__buttons__tougle {
+.header__buttons__toggle {
   margin-right: 45px;
   cursor: pointer;
   width: 15px;
@@ -131,7 +131,7 @@ header {
 .dreamhouse__title-container__title {
   font-size: 112px;
   font-family: "Merriweather", serif;
-  line-height: 112px;
+  line-height: 1;
   letter-spacing: -2px;
   color: var(--font-color);
 }
@@ -160,7 +160,7 @@ header {
   height: 130px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  line-height: .75;
+  line-height: 1;
   color: var(--font-color);
 }
 
@@ -185,7 +185,7 @@ header {
 .design__title {
   font-size: 48px;
   font-family: "Merriweather", serif;
-  line-height: .5;
+  line-height: 1.25;
   letter-spacing: -2px;
   color: var(--font-color);
 }
@@ -205,7 +205,7 @@ header {
   font-size: 48px;
   font-family: "Merriweather";
   margin-left: 165px;
-  line-height: 26px;
+  line-height: 1.25;
   letter-spacing: -2px;
   color: var(--font-color);
 }
@@ -270,7 +270,7 @@ header {
 .bottom {
   width: 1440px;
   background: var(--footer-image);
-  background: var(--footer-image);
+  background-color: var(--footer-image);
 }
 
 .dream-project {
