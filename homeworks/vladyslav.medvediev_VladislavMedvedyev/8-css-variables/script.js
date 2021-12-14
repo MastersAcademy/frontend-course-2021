@@ -1,5 +1,5 @@
 const nightThemeToggleEl = document.querySelector('[data-night-theme]');
-const dayThemeToggleEl = document.querySelector(['[data-day-theme]']);
+const dayThemeToggleEl = document.querySelector('[data-day-theme]');
 const bodyEl = document.querySelector('[data-body]');
 
 nightThemeToggleEl.addEventListener('click', () => {
