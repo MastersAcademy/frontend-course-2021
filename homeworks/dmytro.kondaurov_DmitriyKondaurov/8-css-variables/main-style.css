@@ -81,7 +81,6 @@ body {
 
 .list__item {
   width: 380px;
-  text-align: center;
   font-size: 36px;
   line-height: 42px;
   box-sizing: border-box;
@@ -486,6 +485,7 @@ body {
 
   .list__item {
     width: auto;
+    text-align: center;
     font-size: inherit;
     line-height: inherit;
   }
