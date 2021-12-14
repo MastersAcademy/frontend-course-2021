@@ -40,6 +40,7 @@ body {
   background-color: var(--pink);
   border-radius: 4px;
   cursor: pointer;
+  font-weight: 900;
 }
 
 .logo {
@@ -123,12 +124,7 @@ header {
   font-size: 14px;
 }
 
-.dreamhouse__title-container {
-  width: 870px;
-  margin-left: 165px;
-}
-
-.dreamhouse__title-container__title {
+.dreamhouse__title {
   font-size: 112px;
   font-family: "Merriweather", serif;
   line-height: 1;
@@ -141,18 +137,18 @@ header {
 }
 
 .dreamhouse {
-  display: flex;
+  display: block;
   margin-left: 165px;
   margin-right: 165px;
-  width: 1110px;
-  height: 480px;
   margin-bottom: 112px;
+}
+
+.dreamhouse__container {
+  display: flex;
 }
 
 .dreamhouse__aside {
   display: block;
-  width: 350;
-  height: 480px;
 }
 
 .dreamhouse__aside__text {
@@ -162,10 +158,10 @@ header {
   font-size: 16px;
   line-height: 1;
   color: var(--font-color);
+  margin-bottom: 50px;
 }
 
 .dreamhouse__aside__button {
-  margin-top: 56px;
   font-family: "Roboto", serif;
   width: 179px;
   height: 56px;
@@ -192,13 +188,9 @@ header {
 
 .design {
   display: flex;
-  width: 1340px;
-  height: 432px;
   margin-left: 50px;
   margin-right: 50px;
   justify-content: space-between;
-  margin-top: 40px;
-  margin-bottom: 128px;
 }
 
 .archmove__title {
@@ -211,10 +203,12 @@ header {
 }
 
 .archmove {
+  display: block;
+}
+
+.archmove__container {
   display: flex;
-  margin-left: 165px;
-  margin-right: 197px;
-  margin-top: 60px;
+  margin-left: 155px;
 }
 
 .archmove__content {
@@ -223,13 +217,11 @@ header {
 }
 
 .archmove__icon {
-  margin-top: 15px;
   fill: var(--pink);
   stroke: var(--pink);
 }
 
 .archmove__icon--bird {
-  margin-top: 15px;
   margin-left: 5px;
   stroke: var(--pink);
 }
@@ -246,7 +238,6 @@ header {
   display: flex;
   width: 391px;
   height: 112px;
-  margin-top: 30px;
   margin-bottom: 30px;
 }
 
@@ -263,7 +254,6 @@ header {
   height: 56px;
   font-family: "Roboto", serif;
   font-size: 14px;
-  margin-top: 50px;
   margin-left: 90px;
 }
 
@@ -276,13 +266,11 @@ header {
 .dream-project {
   width: 1440px;
   height: 812px;
-  margin-top: 64px;
   display: flex;
 }
 
 .dream-project--photo {
   margin-left: 155px;
-  margin-top: 88px;
 }
 
 .dream-project__content {
@@ -290,7 +278,6 @@ header {
 }
 
 .dream-project__content__text {
-  margin-top: 299px;
   font-family: "Merriweather";
   font-size: 48px;
   line-height: .25;
@@ -384,7 +371,6 @@ header {
     width: 50%;
     margin-left: 250px;
     margin-top: 40px;
-    margin-bottom: 1400px;
   }
 
   .archmove__photo {
