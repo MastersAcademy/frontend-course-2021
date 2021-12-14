@@ -127,10 +127,11 @@ body {
 
 .dream-house {
   width: 100%;
-  padding: 0 165px;
+  max-width: 1090px;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
-  margin: 48px 0 0;
+  margin: 48px auto 0;
 }
 
 .dream-house__title {
@@ -234,7 +235,8 @@ body {
 .needs {
   width: 100%;
   margin: 128px 0;
-  padding: 0 194px 0 165px ;
+  max-width: 1060px;
+  padding: 0 10px 0 40px;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -342,7 +344,7 @@ body {
 
 .realize-house__title {
   display: block;
-  font-size: 48px;
+  font-size: var(--title-size3);
   line-height: 124%;
   font-family: var(--font-Mmerriweather);
   font-weight: 700;
@@ -391,6 +393,11 @@ body {
 
 @media screen and (max-width: 768px) {
 
+  body {
+    --title-size2: 48px;
+    --title-size3: 30px;
+  }
+
   .header {
     padding: 10px 15px;
   }
@@ -411,7 +418,7 @@ body {
   }
 
   .valuable-rooms {
-    margin: 30px 0;
+    margin: 30px 0 10px;
     padding: 0 10px;
   }
 
