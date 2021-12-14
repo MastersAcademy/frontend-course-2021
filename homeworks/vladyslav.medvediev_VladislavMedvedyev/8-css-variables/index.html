@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="style.css">
         <title>Archmove - Architech Marketplace</title>
     </head>
-    <body class="body">
+    <body class="body" data-body>
         <div class="container">
 
             <header class="header">
@@ -22,27 +22,25 @@
                     </a>
                 </div>
                 <nav class="header__menu">
-                    <ul class="menu ul">
-                        <li class="li">
+                    <ul class="menu">
+                        <li>
                             <a class="menu__item a" href="#">Design Gallery</a>
                         </li>
-                        <li class="li">
+                        <li>
                             <a class="menu__item a" href="#">List of Architect</a>
                         </li>
-                        <li class="li">
+                        <li>
                             <a class="menu__item a" href="#">Articles</a>
                         </li>
-                        <li class="li">
+                        <li>
                             <a class="menu__item a" href="#">How it Works</a>
                         </li>
                     </ul>
                 </nav>
                 <button class="header__button" type="button">
-                    <svg class="header__button-night-theme" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg" data-night-theme>
-                        <use href="images/sprite.svg#night-theme"></use>
-                    </svg>
-                    <svg class="header__button-day-theme" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-day-theme>
-                        <use href="images/sprite.svg#day-theme"></use>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use class="header__button-night-theme" href="images/sprite.svg#night-theme" data-night-theme></use>
+                        <use class="header__button-day-theme" href="images/sprite.svg#day-theme" data-day-theme></use>
                     </svg>
                 </button>
                 <button class="header__sign-in" type="button">Sign In</button>
@@ -106,37 +104,37 @@
                         <div class="archmove__advantages advantages">
 
                             <div class="advantages__one">
-                                <div class="advantages-item__container">
+                                <div>
                                     <svg class="advantages__one-svg" width="48" height="56" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <use href="images/sprite.svg#advantage-1"></use>
                                     </svg>
                                 </div>
-                                <div>
-                                    <h3 class="h3">100% guaranteed project completion</h3>
+                                <div class="advantages-item__container">
+                                    <h3 class="advantages__title">100% guaranteed project completion</h3>
                                     <article>Build safe, comfortable and transparent with a project management application with a joint account.</article>
                                 </div>
                             </div>
 
                             <div class="advantages__two">
-                                <div class="advantages-item__container">
+                                <div>
                                     <svg class="advantages__two-svg" width="39" height="48" viewBox="0 0 39 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <use href="images/sprite.svg#advantage-2"></use>
                                     </svg>
                                 </div>
-                                <div>
-                                    <h3 class="h3">No additional fees</h3>
+                                <div class="advantages-item__container">
+                                    <h3 class="advantages__title">No additional fees</h3>
                                     <article>There are no hidden costs. The value of the offer you get is the value you paid.</article>
                                 </div>
                             </div>
 
                             <div class="advantages__three">
-                                <div class="advantages-item__container">
+                                <div>
                                     <svg class="advantages__three-svg" width="40" height="53" viewBox="0 0 40 53" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <use href="images/sprite.svg#advantage-3"></use>
                                     </svg>
                                 </div>
-                                <div>
-                                    <h3 class="h3">Get escort from the Team</h3>
+                                <div class="advantages-item__container">
+                                    <h3 class="advantages__title">Get escort from the Team</h3>
                                     <article>Monitor reports from the Arsitag team who check directly in the field.</article>
                                 </div>
                             </div>
@@ -165,20 +163,20 @@
                     </div>
                 </section>
                 <div class="footer__about-us">
-                    <ul class="about-us__container ul">
-                        <li class="li">
+                    <ul class="about-us__container">
+                        <li>
                             <a class="about-us__item a" href="#">About Us</a>
                         </li>
-                        <li class="li">
+                        <li>
                             <a class="about-us__item a" href="#">How it Works</a>
                         </li>
-                        <li class="li">
+                        <li>
                             <a class="about-us__item a" href="#">FAQ</a>
                         </li>
-                        <li class="li">
+                        <li>
                             <a class="about-us__item a" href="#">Contact Us</a>
                         </li>
-                        <li class="li">
+                        <li>
                             <a class="about-us__item a" href="#">Privacy Policy</a>
                         </li>
                     </ul>
