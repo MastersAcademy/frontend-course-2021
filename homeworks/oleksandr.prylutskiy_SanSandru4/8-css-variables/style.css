@@ -7,18 +7,20 @@
   --color-red: #FD665E;
   --color-text: #000;
   --color-background: #FFF;
-  --color-btn-hover: #FC9791;
+  --color-btn-hover: #F8A09C;
   --border-radius-button: 4px;
 }
 
 [data-skin="light"] {
   --color-text: #000;
   --color-background: #FFF;
+  --color-red: #FD665E;
 }
 
 [data-skin="dark"] {
   --color-background: #000;
   --color-text: #FFF;
+  --color-red: #FD7E77;
 }
 
 body {
@@ -87,7 +89,7 @@ body {
   color: var(--color-text);
 }
 
-.header__menu-link, .header__control-sign-in {
+.header__menu-link, .control__sign-in {
   padding-left: 24px;
   padding-right: 24px;
   font-family: Roboto, sans-serif;
@@ -97,7 +99,7 @@ body {
   text-decoration: none;
 }
 
-.header__menu-link:hover, .header__control-sign-in:hover {
+.header__menu-link:hover, .control__sign-in:hover {
   color: var(--color-red);
 }
 
@@ -106,7 +108,7 @@ body {
   background-color: var(--color-background);
 }
 
-.header__btn {
+.control__btn {
   width: 99px;
   height: 48px;
   font-family: Roboto, sans-serif;
@@ -118,7 +120,7 @@ body {
   cursor: pointer;
 }
 
-.header__btn:hover {
+.control__btn:hover {
   background-color: var(--color-btn-hover);
 }
 
@@ -136,7 +138,7 @@ body {
   flex-wrap: wrap;
 }
 
-.main__dream-house-name {
+.dream-house__name {
   width: 870px;
   font-family: Merriweather;
   font-weight: 900;
@@ -149,7 +151,7 @@ body {
   color: var(--color-red);
 }
 
-.main__dream-house-info {
+.dream-house__info {
   margin-top: 56px;
   margin-right: 55px;
 }
@@ -182,7 +184,7 @@ body {
   background-color: var(--color-btn-hover);
 }
 
-.main__dream-house-picture {
+.dream-house__picture {
   margin-top: 47px;
 }
 
@@ -193,7 +195,7 @@ body {
   flex-direction: column;
 }
 
-.main__build-room-name, .main__archmove-name, .main__realize-dream-name {
+.build-room__name, .archmove__name, .realize-dream__name {
   font-family: Merriweather;
   font-weight: 900;
   font-size: 48px;
@@ -201,11 +203,11 @@ body {
   letter-spacing: -.04em;
 }
 
-.main__build-room-name {
+.build-room__name {
   width: 535px;
 }
 
-.main__build-room-picture {
+.build-room__picture {
   margin-top: 40px;
   width: 92%;
   display: flex;
@@ -219,18 +221,18 @@ body {
   margin-left: 165px;
 }
 
-.main__archmove-name {
+.archmove__name {
   width: 459px;
 }
 
-.main__archmove-info {
+.archmove__info {
   margin-top: 40px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 }
 
-.main__archmove-picture {
+.archmove__picture {
   margin-right: 155px;
 }
 
@@ -240,13 +242,13 @@ body {
   flex-direction: column;
 }
 
-.consultation__list-info {
+.list__info {
   margin-top: 48px;
   display: flex;
   flex-direction: row;
 }
 
-.list__info-img {
+.info__img {
   margin-right: 38px;
   width: 40px;
   height: 53px;
@@ -268,7 +270,7 @@ body {
   height: 53px;
 }
 
-.list__info-text {
+.info__text {
   width: 305px;
   font-family: Roboto, sans-serif;
   font-size: 16px;
@@ -276,7 +278,7 @@ body {
   letter-spacing: .01em;
 }
 
-.list__info-name {
+.info__name {
   margin-bottom: 8px;
   font-weight: 700;
 }
@@ -314,16 +316,16 @@ body {
   align-items: center;
 }
 
-.main__realize-dream-img {
+.realize-dream__img {
   margin-left: 119px;
   padding-top: 88px;
 }
 
-.main__realize-dream-text {
+.realize-dream__text {
   margin-left: 123px;
 }
 
-.main__realize-dream-name {
+.realize-dream__name {
   width: 521px;
 }
 
@@ -349,7 +351,7 @@ body {
   color: var(--color-text);
 }
 
-.footer__menu-link {
+.menu__link {
   padding-left: 24px;
   padding-right: 24px;
   font-family: Roboto, sans-serif;
@@ -359,7 +361,7 @@ body {
   text-decoration: none;
 }
 
-.footer__menu-link:hover {
+.menu__link:hover {
   color: var(--color-red);
 }
 
@@ -387,7 +389,7 @@ body {
     flex-direction: column;
   }
 
-  .main__dream-house-name {
+  .dream-house__name {
     width: 600px;
     font-size: 80px;
   }
@@ -396,11 +398,11 @@ body {
     width: 75%;
   }
 
-  .dream-house__img {
+  .picture__img {
     width: 92%;
   }
 
-  .build-room__picture-img {
+  .build-room__img {
     margin-bottom: 20px;
   }
 
@@ -409,12 +411,8 @@ body {
     margin-left: 30px;
   }
 
-  .main__archmove-info {
+  .archmove__info {
     flex-wrap: wrap;
-  }
-
-  .list_text {
-    width: 70%;
   }
 
   .main__realize-dream {
@@ -432,7 +430,7 @@ body {
     margin-bottom: 30px;
   }
 
-  .footer__menu-link {
+  .menu__link {
     font-size: 18px;
   }
 
