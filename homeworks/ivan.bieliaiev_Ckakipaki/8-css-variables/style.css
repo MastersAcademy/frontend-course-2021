@@ -8,37 +8,44 @@
   --font-roboto: "Roboto", sant-serif;
   --font-Mmerriweather: "Merriweather", serif;
   --text-size: 14px;
+  --title-size3: 48px;
   --title-size1: 40px;
   --title-size2: 112px;
   --font-weight-bold: 700;
+  --font-weight-extra: 900;
   --color-background: #FFF;
   --color-font: #111;
   --navigation-color: #585858;
   --color-font-red: #FD665E;
+  --transition-all: all .3s linear;
 }
 
 body {
   width: 100%;
   background: var(--color-background);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .header {
-  padding: 0 50px;
   width: 100%;
-}
-
-.header__container {
-  height: 96px;
-  max-width: 1440px;
-  margin: 0 auto;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 24px 50px;
+  height: auto;
 }
 
 .header__left-container {
   display: flex;
   align-items: center;
+  max-width: 641px;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .header__logo:hover {
@@ -50,14 +57,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 519px;
-  margin: 0 0 0 37px;
+  max-width: 509px;
+  padding: 0 10px 0 0;
+  width: 100%;
 }
 
 .navigation__item {
+  padding: 0 0 0 9px;
   color: var(--navigation-color);
   text-decoration: none;
   font-size: var(--text-size);
+  font-family: var(--font-roboto);
+  transition: var(--transition-all);
 }
 
 .navigation__item:hover {
@@ -66,8 +77,11 @@ body {
 
 .header__actions {
   height: 100%;
+  width: 100%;
+  max-width: 240px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .action__switch-style {
@@ -78,46 +92,54 @@ body {
   color: var(--color-font);
   width: 92px;
   height: 48px;
-  margin: 0 19px 0 15px;
   background: var(--color-background);
-  transition: all .3s linear;
+  transition: var(--transition-all);
+  font-size: var(--text-size);
+  font-family: var(--font-roboto);
   border: 0;
+  border-radius: 4px;
 }
 
 .sign-in__action:hover {
   cursor: pointer;
   border: 1px solid var(--color-font-red);
-  border-radius: 4px;
 }
 
 .sign-up__action {
   background: var(--color-font-red);
   color: var(--color-background);
+  font-size: var(--text-size);
+  font-weight: var(--font-weight-extra);
+  font-family: var(--font-roboto);
   border-radius: 4px;
   border: 0;
   width: 99px;
   height: 48px;
-  transition: all .3s linear;
+  transition: var(--transition-all);
+  letter-spacing: .01em;
 }
 
 .sign-up__action:hover {
   cursor: pointer;
   border-radius: 10px;
+  opacity: .8;
 }
 
 .dream-house {
+  width: 100%;
+  padding: 0 165px;
   display: flex;
   flex-direction: column;
-  max-width: 1100px;
-  margin: 18px auto 0;
+  margin: 48px 0 0;
 }
 
 .dream-house__title {
   font-family: var(--font-Mmerriweather);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-size: var(--title-size2);
   display: block;
-  width: 870px;
+  width: 100%;
+  max-width: 870px;
   line-height: 100%;
   color: var(--color-font);
 }
@@ -128,14 +150,19 @@ body {
 
 .dream-house__info {
   display: flex;
+  justify-content: space-between;
   margin: 47px 0 0;
+  width: 100%;
 }
 
 .dream-house__image {
+  padding: 0 0 0 10px;
   height: auto;
+  min-width: 400px;
 }
 
 .info__left-container {
+  padding: 0 0 0 10px;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -143,7 +170,8 @@ body {
 
 .dream-house__text {
   display: block;
-  margin: 0 55px 56px 0;
+  margin: 0 0 56px;
+  max-width: 290px;
   font-size: 16px;
   line-height: 160%;
   font-family: var(--font-roboto);
@@ -151,6 +179,7 @@ body {
 }
 
 .dream-house__button {
+  font-size: var(--text-size);
   background: var(--color-font-red);
   width: 179px;
   height: 56px;
@@ -158,17 +187,20 @@ body {
   border-radius: 4px;
   color: var(--color-background);
   font-weight: 900;
+  transition: all .3s linear;
 }
 
 .dream-house__button:hover {
   cursor: pointer;
   border: 10px;
+  opacity: .8;
 }
 
 .valuable-rooms {
-  margin: 112px auto 0;
+  margin: 112px 0 0;
   display: flex;
-  max-width: 1340px;
+  width: 100%;
+  padding: 0 50px;
   flex-direction: column;
   align-items: center;
 }
@@ -176,9 +208,10 @@ body {
 .valuable-rooms__title {
   display: flex;
   max-width: 535px;
+  width: 100%;
   font-family: var(--font-Mmerriweather);
   font-weight: 900;
-  font-size: 48px;
+  font-size: var(--title-size3);
   line-height: 124%;
   margin: 0 0 40px;
   color: var(--color-font);
@@ -188,16 +221,20 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .valuable-rooms__img {
-  max-width: 24.5%;
   height: auto;
+  width: 24.5%;
+  margin: 0 0 5px;
 }
 
 .needs {
-  margin: 128px auto 0;
-  max-width: 1080px;
+  width: 100%;
+  margin: 128px 0;
+  padding: 0 194px 0 165px ;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -206,7 +243,7 @@ body {
 .needs__title {
   margin: 0 0 40px;
   font-family: var(--font-Mmerriweather);
-  font-size: 48px;
+  font-size: var(--title-size3);
   color: var(--color-font);
 }
 
@@ -216,21 +253,36 @@ body {
   justify-content: space-between;
 }
 
+.needs__image {
+  max-width: 70%;
+  margin: 0 10px 0 0;
+  object-fit: cover;
+}
+
 .needs__right-info {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 391px;
 }
 
 .needs__list__item {
   width: 100%;
+  max-width: 391px;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
 }
 
 .needs__item__icon {
-  margin: 0 38px 0 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 30px 0 0;
+}
+
+.needs__item__info {
+  width: 100%;
+  max-width: 305px;
 }
 
 .needs__item__info {
@@ -262,8 +314,15 @@ body {
   background: var(--color-font-red);
   border: 0;
   border-radius: 4px;
+  font-size: var(--text-size);
   color: var(--color-background);
   font-weight: 900;
+  transition: all .3s linear;
+}
+
+.needs__button:hover {
+  cursor: pointer;
+  opacity: .8;
 }
 
 .realize-house {
@@ -298,24 +357,26 @@ body {
   background: var(--color-font-red);
   width: 205px;
   height: 56px;
-  font-size: 14px;
+  font-size: var(--text-size);
   line-height: 40px;
   font-family: var(--font-roboto);
   color: var(--color-background);
   border: 0;
+  border-radius: 4px;
   margin: 72px 0 0;
   font-weight: 900;
+  transition: all .3s linear;
 }
 
 .realize-house__button:hover {
   cursor: pointer;
+  opacity: .8;
 }
 
 .footer {
   display: flex;
-  max-width: 1114px;
-  padding: 83px 0;
-  margin: 0 auto;
+  width: 100%;
+  padding: 83px 30px;
   justify-content: space-between;
 }
 
@@ -323,5 +384,51 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 519px;
+  max-width: 500px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .header {
+    padding: 10px 15px;
+  }
+
+  .header__left-container {
+    padding: 0 30px 0 0;
+  }
+
+  .dream-house {
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .dream-house__title {
+    width: 100%;
+    max-width: 100%;
+    --title-size2: 60px;
+  }
+
+  .valuable-rooms {
+    margin: 30px 0;
+    padding: 0 10px;
+  }
+
+  .valuable-rooms__img {
+    width: 49%;
+  }
+
+  .needs {
+    padding: 0 10px;
+    margin: 0;
+  }
+
+  .needs__image {
+    width: 50%;
+  }
+
+  .realize-house__image {
+    width: 60%;
+  }
 }
