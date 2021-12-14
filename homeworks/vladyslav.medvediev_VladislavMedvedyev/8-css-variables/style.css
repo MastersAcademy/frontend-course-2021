@@ -43,7 +43,7 @@
   font-weight: 900;
   font-size: 16px;
   line-height: 26px;
-  color: var(--header-and-footer-text-color);
+  color: var(--text-and-advantages-svg-stroke-color);
 }
 
 .container {
@@ -57,8 +57,11 @@
   color: var(--header-and-footer-text-color);
 }
 
+.advantages__two-svg {
+  stroke: var(--text-and-advantages-svg-stroke-color);
+}
+
 .advantages__one-svg,
-.advantages__two-svg,
 .advantages__three-svg {
   stroke: var(--text-and-advantages-svg-stroke-color);
 }
