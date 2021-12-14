@@ -1,9 +1,9 @@
-const themeBtn = document.querySelector('[data-btn]');
+const themeBtnEL = document.querySelector('[data-btn]');
 const hamburgerEl = document.querySelector('[data-header-burger]');
 const menuEl = document.querySelector('[data-menu]');
-const fixedMenu = document.querySelector('body');
+const fixedMenuEl = document.querySelector('body');
 
-themeBtn.addEventListener('click', () => {
+themeBtnEL.addEventListener('click', () => {
     const icon = document.querySelector('[data-icon]');
     const value = icon.getAttribute('xlink:href');
     if (value !== '#moon') {
@@ -17,10 +17,10 @@ themeBtn.addEventListener('click', () => {
 hamburgerEl.addEventListener('click', () => {
     hamburgerEl.classList.toggle('header__burger-active');
     menuEl.classList.toggle('header__menu-active');
-    fixedMenu.classList.toggle('lock');
+    fixedMenuEl.classList.toggle('lock');
 });
 menuEl.addEventListener('click', () => {
     hamburgerEl.classList.remove('header__burger-active');
     menuEl.classList.remove('header__menu-active');
-    fixedMenu.classList.remove('lock');
+    fixedMenuEl.classList.remove('lock');
 });

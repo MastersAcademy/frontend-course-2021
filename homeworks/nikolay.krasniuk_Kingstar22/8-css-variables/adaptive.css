@@ -206,6 +206,19 @@
     line-height: 20px;
   }
 
+  .room__gallery {
+    flex-wrap: wrap;
+    margin-top: 25px;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .room__gallery-picture {
+    margin-right: 0;
+    max-width: 300px;
+    max-height: 429px;
+  }
+
   .archmove__content {
     flex-direction: column;
     align-items: center;
@@ -292,18 +305,6 @@
     margin-top: 25px;
   }
 
-  .room__gallery {
-    flex-wrap: wrap;
-    margin-top: 25px;
-    justify-content: space-around;
-    gap: 20px;
-  }
-
-  .room__gallery-picture {
-    margin-right: 0;
-    max-width: 300px;
-    max-height: 429px;
-  }
 
   .archmove {
     padding: 0 20px 45px;
