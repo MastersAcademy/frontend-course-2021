@@ -84,11 +84,11 @@ menuContainer.addEventListener('click', (e) => {
 themeSwitcherBtn.addEventListener('click', () => {
     if (themeStatus === 'style-day.css') {
         styleSrc.setAttribute('href', 'style-night.css');
-        themeSwitcherBtn.setAttribute('src', 'images/cil_sun.png');
+        themeSwitcherBtn.firstElementChild.setAttribute('src', 'images/cil_sun.png');
         themeStatus = false;
     } else {
         styleSrc.setAttribute('href', 'style-day.css');
-        themeSwitcherBtn.setAttribute('src', 'images/ic_sharp-mode-night.png');
+        themeSwitcherBtn.firstElementChild.setAttribute('src', 'images/ic_sharp-mode-night.png');
         themeStatus = 'style-day.css';
     }
 });

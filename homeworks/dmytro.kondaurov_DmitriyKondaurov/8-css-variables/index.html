@@ -14,8 +14,8 @@
         <link rel="stylesheet" href="main-style.css">
     </head>
     <body>
-        <div class="wrapper">
-            <header class="header" data-header>
+        <header class="header" data-header>
+            <div class="header__wrapper">
                 <a class="header__logo" href="#">
                     <img src="./images/logo-arch.png" alt="logo">
                 </a>
@@ -40,13 +40,15 @@
                     </button>
                 </nav>
                 <div class="header__control-buttons">
-                    <button class="button header__theme-switcher" type="button">
-                        <img src="images/ic_sharp-mode-night.png" data-switch-btn alt="switcher theme">
+                    <button class="button header__theme-switcher" type="button" data-switch-btn>
+                        <img src="images/ic_sharp-mode-night.png" alt="switcher theme">
                     </button>
                     <button class="button header__btn-sing-in" type="button">Sign In</button>
                     <button class="button header__btn-sing-up" type="button">Sign Up</button>
                 </div>
-            </header>
+            </div>
+        </header>
+        <div class="wrapper">
             <main class="main-content">
                 <section class="section section-hero">
                     <h1 class="section-hero__banner">
