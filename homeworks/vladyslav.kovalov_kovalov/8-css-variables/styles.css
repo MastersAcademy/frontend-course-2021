@@ -317,8 +317,9 @@ body {
 }
 
 .features-section__icon {
+  flex-shrink: 0;
   height: 60px;
-  width: 110px;
+  width: 60px;
   margin-right: 2rem;
   fill: none;
 }
