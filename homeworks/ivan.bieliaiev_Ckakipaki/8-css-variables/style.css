@@ -276,6 +276,7 @@ body {
   display: block;
   margin: 0 30px 0 0;
   stroke: var(--color-font);
+  fill: var(--color-background);
 }
 
 .needs__item__info {
