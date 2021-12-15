@@ -2,6 +2,15 @@ const changeSkin = document.querySelector('[data-attr-change-skin]');
 const iconSkinEl = document.querySelector('[data-attr-icon]');
 const bodyEl = document.querySelector('body');
 const currentTheme = localStorage.getItem('skin');
+const preloaderEl = document.querySelector('[data-preloader]');
+
+document.body.onload = (() => {
+    setTimeout(() => {
+        if (!preloaderEl.classList.contains('done')) {
+            preloaderEl.classList.add('done');
+        }
+    }, 1000);
+});
 
 function setTheme(name) {
     bodyEl.setAttribute('data-skin', name);
