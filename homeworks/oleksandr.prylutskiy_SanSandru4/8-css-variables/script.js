@@ -11,7 +11,6 @@ function setTheme(name) {
 
 function init() {
     if (currentTheme) {
-        bodyEl.setAttribute('data-skin', currentTheme);
         setTheme(currentTheme);
     } else {
         setTheme('light');

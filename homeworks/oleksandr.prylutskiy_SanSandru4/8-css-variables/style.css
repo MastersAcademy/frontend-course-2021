@@ -283,7 +283,7 @@ body {
   font-weight: 700;
 }
 
-.free-consultation__btn {
+.free-consultation-btn {
   margin-top: 72px;
   margin-left: 83px;
   width: 205px;
@@ -298,11 +298,11 @@ body {
   cursor: pointer;
 }
 
-.free-consultation__btn:hover {
+.free-consultation-btn:hover {
   background-color: var(--color-btn-hover);
 }
 
-.free-consultation__btn--no-margin {
+.free-consultation-btn--no-margin {
   margin-top: 64px;
   margin-left: 0;
 }
