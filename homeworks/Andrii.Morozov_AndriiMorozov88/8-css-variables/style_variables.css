@@ -5,6 +5,12 @@ html {
   --clr4: #F9F9F9;
   --clr5: #585858;
   --clr6: #000;
+  --font48: 48px;
+  --font14: 14px;
+  --font12: 12px;
+  --font16: 16px;
+  --font-roboto: "Roboto", serif;
+  --font-merriweather: "Merriweather", serif;
 }
 
 .html--night {
@@ -24,10 +30,6 @@ html {
   display: none;
 }
 
-.sun {
-  fill: #FFF;
-}
-
 body {
   background-color: var(--clr2);
   width: 100%;
@@ -35,13 +37,16 @@ body {
   color: var(--clr6);
 }
 
-.button {
+.button--primary {
   color: var(--clr3);
   border: none;
   background-color: var(--clr1);
   border-radius: 4px;
   cursor: pointer;
   font-weight: 900;
+  font-family: var(--font-roboto);
+  font-size: var(--font14);
+  padding: 15px 24px;
 }
 
 .logo {
@@ -74,8 +79,8 @@ body {
 .menu__lines {
   list-style-type: none;
   margin-right: 48px;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-family: var(--font-roboto);
+  font-size: var(--font14);
   color: var(--clr5);
 }
 
@@ -98,28 +103,19 @@ body {
   height: 20px;
 }
 
-.header__buttons__sign--in {
+.button--secondary {
   margin-right: 30px;
-  width: 60px;
-  height: 40px;
   background-color: var(--clr2);
   color: var(--clr5);
   border: none;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-family: var(--font-roboto);
+  font-size: var(--font14);
   cursor: pointer;
-}
-
-.header__buttons__sign--up {
-  width: 99px;
-  height: 48px;
-  font-family: "Roboto", serif;
-  font-size: 14px;
 }
 
 .dreamhouse__title {
   font-size: 112px;
-  font-family: "Merriweather", serif;
+  font-family: var(--font-merriweather);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -142,19 +138,15 @@ body {
   display: block;
 }
 
-.dreamhouse__aside__text {
-  width: 350px;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  line-height: 1;
-  margin-bottom: 50px;
+.dreamhouse__photo {
+  margin-left: 40px;
 }
 
-.dreamhouse__aside__button {
-  font-family: "Roboto", serif;
-  width: 179px;
-  height: 56px;
-  font-size: 14px;
+.dreamhouse__aside__text {
+  font-family: var(--font-roboto);
+  font-size: var(--font16);
+  line-height: 1;
+  margin-bottom: 50px;
 }
 
 .design__title {
@@ -163,8 +155,8 @@ body {
 }
 
 .design__title--text {
-  font-size: 48px;
-  font-family: "Merriweather", serif;
+  font-size: var(--font48);
+  font-family: var(--font-merriweather);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -179,9 +171,8 @@ body {
   justify-content: space-around;
 }
 
-
 .archmove__title {
-  font-size: 48px;
+  font-size: var(--font48);
   font-family: "Merriweather";
   margin-left: 165px;
   line-height: 1.25;
@@ -224,23 +215,17 @@ body {
 
 .archmove__content__part--bird {
   display: flex;
-  width: 391px;
-  height: 112px;
   margin-bottom: 30px;
 }
 
 .archmove__content__part--text {
-  font-family: "Roboto", serif;
-  font-size: 16px;
+  font-family: var(--font-roboto);
+  font-size: var(--font16);
   line-height: .5;
   margin-left: 40px;
 }
 
-.archmove__content__button {
-  width: 205px;
-  height: 56px;
-  font-family: "Roboto", serif;
-  font-size: 14px;
+.archmove__button {
   margin-left: 90px;
 }
 
@@ -261,24 +246,16 @@ body {
 .dream-project__content {
   display: block;
   padding-top: 200px;
+  padding-left: 100px;
 }
 
 .dream-project__content__text {
-  font-family: "Merriweather";
-  font-size: 48px;
+  font-family: var(--font-merriweather);
+  font-size: var(--font48);
   line-height: 1;
   letter-spacing: -1px;
-  padding-left: 100px;
   margin-bottom: 72px;
   font-weight: 900;
-}
-
-.dream-project__content__button {
-  width: 205px;
-  height: 56px;
-  font-family: "Roboto", serif;
-  font-size: 14px;
-  margin-left: 100px;
 }
 
 .footer {
@@ -300,8 +277,8 @@ body {
 
 .footer__menu__lines {
   list-style-type: none;
-  font-family: "Roboto", sans-serif;
-  font-size: 12px;
+  font-family: var(--font-roboto);
+  font-size: var(--font12);
   margin-right: 48px;
 }
 
