@@ -1,5 +1,19 @@
 const switchLunaEl = document.querySelector('[data-switch-luna]');
 const switchSunEl = document.querySelector('[data-switch-sun]');
+const logoEl = document.querySelector('[data-logo]');
+// const { fromEvent } = window.rxjs;
+// const { scan, filter, debounceTime } = window.rxjs.operators;
+
+const showAnimationLogo = () => {
+    logoEl.animate([
+        { transform: 'scale(.5)' },
+        { transform: 'scale(1)' },
+    ], {
+        duration: 500,
+        iterations: 1,
+        fill: 'forwards',
+    });
+};
 
 const switchToDark = () => {
     switchLunaEl.style.display = 'none';
@@ -18,6 +32,10 @@ const switchToWhite = () => {
     document.body.style.setProperty('--color-font', '#111');
     document.querySelector('.realize-house').style.background = '';
 };
+
+window.addEventListener('load', () => {
+    showAnimationLogo();
+});
 
 switchLunaEl.addEventListener('click', () => {
     switchToDark();

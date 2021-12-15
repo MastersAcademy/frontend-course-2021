@@ -56,7 +56,7 @@ body {
 }
 
 .logo__icon:hover {
-  transform: scale(1.3);
+  opacity: .7;
 }
 
 .header__navigation {
@@ -130,12 +130,14 @@ body {
   height: 48px;
   transition: var(--transition-all);
   letter-spacing: .01em;
+  animation: buttonGradient 3s infinite linear;
 }
 
 .sign-up__action:hover {
   cursor: pointer;
   border-radius: 10px;
   opacity: .8;
+  animation: none;
 }
 
 .dream-house {
@@ -204,12 +206,14 @@ body {
   color: var(--color-background);
   font-weight: 900;
   transition: all .3s linear;
+  animation: buttonGradient 3s infinite linear;
 }
 
 .dream-house__button:hover {
   cursor: pointer;
   border: 10px;
   opacity: .8;
+  animation: none;
 }
 
 .valuable-rooms {
@@ -334,11 +338,13 @@ body {
   color: var(--color-background);
   font-weight: 900;
   transition: all .3s linear;
+  animation: buttonGradient 3s infinite linear;
 }
 
 .needs__button:hover {
   cursor: pointer;
   opacity: .8;
+  animation: none;
 }
 
 .realize-house {
@@ -387,11 +393,13 @@ body {
   margin: 72px 0 0;
   font-weight: 900;
   transition: all .3s linear;
+  animation: buttonGradient 3s infinite linear;
 }
 
 .realize-house__button:hover {
   cursor: pointer;
   opacity: .8;
+  animation: none;
 }
 
 .footer {
@@ -454,6 +462,17 @@ body {
 
   .realize-house__image {
     width: 60%;
+  }
+}
+
+@keyframes buttonGradient {
+
+  from, to {
+    background: #C00;
+  }
+
+  50% {
+    background: #EE6F6B;
   }
 }
 
