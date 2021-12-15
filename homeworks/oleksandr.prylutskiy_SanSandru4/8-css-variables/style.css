@@ -236,7 +236,7 @@ body {
   margin-right: 155px;
 }
 
-.consultation__list {
+.list {
   list-style: none;
   display: flex;
   flex-direction: column;
