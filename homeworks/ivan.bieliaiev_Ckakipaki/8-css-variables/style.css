@@ -81,7 +81,15 @@ body {
 }
 
 .action__switch-style {
+  fill: var(--navigation-color);
+  width: 24px;
+  height: 24px;
   cursor: pointer;
+  transition: var(--transition-all);
+}
+
+.action__switch-style:hover {
+  fill: var(--color-font-red);
 }
 
 .sign-in__action {

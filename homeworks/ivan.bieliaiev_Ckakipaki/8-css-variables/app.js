@@ -3,6 +3,7 @@ const switchSunEl = document.querySelector('[data-switch-sun]');
 
 const switchToDark = () => {
     switchLunaEl.style.display = 'none';
+    switchSunEl.style.display = 'block';
     document.body.style.setProperty('--color-background', '#111');
     document.body.style.setProperty('--navigation-color', '#FFF');
     document.body.style.setProperty('--color-font', '#FFF');
@@ -11,6 +12,7 @@ const switchToDark = () => {
 
 const switchToWhite = () => {
     switchLunaEl.style.display = 'block';
+    switchSunEl.style.display = 'none';
     document.body.style.setProperty('--navigation-color', '#585858');
     document.body.style.setProperty('--color-background', '#FFF');
     document.body.style.setProperty('--color-font', '#111');
