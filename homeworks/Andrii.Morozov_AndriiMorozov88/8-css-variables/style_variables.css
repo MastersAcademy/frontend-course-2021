@@ -22,7 +22,7 @@ html {
   --clr6: #FFF;
 }
 
-.halfmoon {
+.themes-toggle__button--halfmoon {
   fill: #444;
 }
 
@@ -96,7 +96,7 @@ body {
   margin-right: 75px;
 }
 
-.header__buttons__toggle {
+.theme-toggle {
   margin-right: 45px;
   cursor: pointer;
   width: 15px;
@@ -173,7 +173,7 @@ body {
 
 .archmove__title {
   font-size: var(--font48);
-  font-family: "Merriweather";
+  font-family: var(--font-merriweather);
   margin-left: 165px;
   line-height: 1.25;
   letter-spacing: -2px;
@@ -221,7 +221,7 @@ body {
 .archmove__content__part--text {
   font-family: var(--font-roboto);
   font-size: var(--font16);
-  line-height: .5;
+  line-height: 1;
   margin-left: 40px;
 }
 
@@ -229,12 +229,12 @@ body {
   margin-left: 90px;
 }
 
-.bottom {
+.dream-project {
   width: 100%;
   background: var(--clr4);
 }
 
-.dream-project {
+.dream-project__container {
   width: 100%;
   display: flex;
 }
@@ -249,7 +249,7 @@ body {
   padding-left: 100px;
 }
 
-.dream-project__content__text {
+.dream-project__text {
   font-family: var(--font-merriweather);
   font-size: var(--font48);
   line-height: 1;
@@ -271,11 +271,11 @@ body {
   margin-left: 80px;
 }
 
-.footer__menu__list {
+.footer__list {
   display: flex;
 }
 
-.footer__menu__lines {
+.footer__lines {
   list-style-type: none;
   font-family: var(--font-roboto);
   font-size: var(--font12);
@@ -339,7 +339,7 @@ body {
     display: none;
   }
 
-  .dream-project--photo {
+  .dream-project__photo {
     display: none;
   }
 
