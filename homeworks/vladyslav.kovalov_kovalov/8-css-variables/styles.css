@@ -98,11 +98,12 @@ body {
 .header__list-item::after {
   content: " ";
   position: absolute;
-  bottom: 0;
   left: 50%;
+  bottom: 0;
   width: 0;
   height: 2px;
   transform: translate(-50%, 0);
+  background-color: var(--accent-color);
   transition: width .15s ease-in-out;
 }
 
@@ -462,11 +463,12 @@ body {
 .footer-section__list-item::after {
   content: " ";
   position: absolute;
-  bottom: 0;
   left: 50%;
+  bottom: 0;
   width: 0;
   height: 2px;
   transform: translate(-50%, 0);
+  background-color: var(--accent-color);
   transition: width .15s ease-in-out;
 }
 
