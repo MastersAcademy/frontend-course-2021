@@ -6,7 +6,7 @@ const switchToDark = () => {
     document.body.style.setProperty('--color-background', '#111');
     document.body.style.setProperty('--navigation-color', '#FFF');
     document.body.style.setProperty('--color-font', '#FFF');
-    document.querySelector('.realize-house').style.background = 'linear-gradient(to top, var(--color-background), var(--color-background), var(--color-font), var(--color-background), var(--color-background))';
+    document.querySelector('.realize-house').style.background = 'linear-gradient(to bottom, #111 0%,#1111 0%,#2c2c2c 20%,#444444 50%,#111 80%)';
 };
 
 const switchToWhite = () => {

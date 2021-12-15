@@ -33,7 +33,6 @@ body {
 .header {
   width: 100%;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 24px 50px;
@@ -43,8 +42,7 @@ body {
 .header__left-container {
   display: flex;
   align-items: center;
-  max-width: 641px;
-  width: 100%;
+  width: 60%;
   justify-content: space-between;
 }
 
@@ -57,9 +55,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 509px;
   padding: 0 10px 0 0;
-  width: 100%;
+  width: 85%;
 }
 
 .navigation__item {
@@ -77,11 +74,10 @@ body {
 
 .header__actions {
   height: 100%;
-  width: 100%;
-  max-width: 240px;
+  width: 30%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .action__switch-style {
@@ -140,7 +136,6 @@ body {
   font-size: var(--title-size2);
   display: block;
   width: 100%;
-  max-width: 870px;
   line-height: 100%;
   color: var(--color-font);
 }
@@ -159,10 +154,12 @@ body {
 .dream-house__image {
   padding: 0 0 0 10px;
   height: auto;
-  min-width: 400px;
+  width: 70%;
+  object-fit: cover;
 }
 
 .info__left-container {
+  width: 30%;
   padding: 0 0 0 10px;
   display: flex;
   flex-direction: column;
@@ -172,7 +169,7 @@ body {
 .dream-house__text {
   display: block;
   margin: 0 0 56px;
-  max-width: 290px;
+  width: 100%;
   font-size: 16px;
   line-height: 160%;
   font-family: var(--font-roboto);
@@ -182,7 +179,8 @@ body {
 .dream-house__button {
   font-size: var(--text-size);
   background: var(--color-font-red);
-  width: 179px;
+  width: 100%;
+  max-width: 179px;
   height: 56px;
   border: 0;
   border-radius: 4px;
@@ -208,8 +206,7 @@ body {
 
 .valuable-rooms__title {
   display: flex;
-  max-width: 535px;
-  width: 100%;
+  width: auto;
   font-family: var(--font-Mmerriweather);
   font-weight: 900;
   font-size: var(--title-size3);
@@ -277,9 +274,8 @@ body {
 
 .needs__item__icon {
   display: block;
-  width: 40px;
-  height: 40px;
   margin: 0 30px 0 0;
+  stroke: var(--color-font);
 }
 
 .needs__item__info {
@@ -328,9 +324,14 @@ body {
 }
 
 .realize-house {
+  width: 100%;
+}
+
+.realize-house__container {
   margin: 128px auto 64px;
   display: flex;
   justify-content: space-between;
+  width: 100%;
   max-width: 1202px;
   padding: 0 61px 0 0;
   align-items: center;
@@ -386,8 +387,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 500px;
-  width: 100%;
+  width: 70%;
   padding: 0 10px;
 }
 
@@ -413,7 +413,6 @@ body {
 
   .dream-house__title {
     width: 100%;
-    max-width: 100%;
     --title-size2: 60px;
   }
 
