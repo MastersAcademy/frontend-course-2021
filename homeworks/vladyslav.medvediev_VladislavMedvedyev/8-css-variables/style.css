@@ -369,7 +369,7 @@
 }
 
 .footer__about-us {
-  height: 200px;
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -399,136 +399,127 @@
 
 @media (max-width: 1023px) {
 
-  .container {
-    font-size: 32px;
-    align-items: center;
+  .h2 {
+    text-align: center;
+  }
+
+  .advantages__title {
+    font-size: 16px;
+    line-height: 26px;
   }
 
   .button {
-    width: 70%;
-    height: 70px;
-    max-width: 70%;
-    max-height: 70px;
-    font-size: 1.5em;
+    font-size: 24px;
+    line-height: 30px;
+    align-self: center;
   }
 
   .header {
     flex-direction: column;
-    width: 100%;
   }
 
   .header__logo {
-    margin-top: 1em;
+    margin-top: 30px;
+    width: 100%;
   }
 
   .header__menu {
-    width: 90%;
-    margin-top: 1.5em;
+    width: 100%;
   }
 
   .menu {
-    flex-direction: column;
-    row-gap: 1em;
-    text-align: center;
-    margin-bottom: 1em;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .menu__item {
-    font-size: 1.5em;
-  }
-
-  .header__button {
-    margin-top: 3em;
-  }
-
-  .header__sign-in {
-    margin-top: 1em;
-    width: 100%;
-    font-size: 1.5em;
-  }
-
-  .header__sign-up {
-    margin-top: 1em;
-  }
-
-  .main {
-    margin: 0;
-    padding-top: 1em;
-    padding-bottom: 2em;
-    align-content: center;
-  }
-
-  .main__dream-house {
-    width: 90%;
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-
-  .dream-house__title {
-    width: 100%;
-    text-align: center;
-  }
-
-  .dream-house__info {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .menu__item {
+    font-size: 28px;
+  }
+
+  .header__button {
+    margin-top: 30px;
     width: 100%;
   }
 
+  .header__sign-in {
+    margin-top: 30px;
+    font-size: 24px;
+    width: 70%;
+    height: 40px;
+  }
+
+  .header__sign-up {
+    margin-top: 30px;
+    width: 70%;
+    height: 48px;
+  }
+
+  .main__dream-house {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .dream-house__title {
+    text-align: center;
+    font-size: 56px;
+    line-height: 86px;
+    margin: 0;
+  }
+
+  .dream-house__info {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
   .dream-house__text {
-    line-height: 50px;
+    margin-left: 15px;
+    line-height: 40px;
   }
 
   .dream-house__button {
-    width: 70%;
+    margin-top: 30px;
   }
 
   .dream-house__image {
     width: 100%;
-    max-width: 1023px;
+    margin-top: 30px;
   }
 
   .main__professional-valuable {
-    align-content: center;
-    margin-top: 2em;
+    margin: 0;
   }
 
   .professional-valuable__title {
-    width: 90%;
-    text-align: center;
+    width: 100%;
+    align-self: center;
+    margin-top: 30px;
   }
 
   .professional-valuable-container {
-    flex-direction: column;
-    align-items: center;
-    row-gap: 1em;
-    margin-top: 1em;
-  }
-
-  .professional-valuable__example {
     width: 100%;
-    height: 100%;
+    flex-direction: column;
+    row-gap: 30px;
+    margin-top: 30px;
   }
 
   .main__archmove {
-    width: 90%;
-    margin-top: 2em;
-  }
-
-  .archmove__title {
-    margin-top: 1em;
-    text-align: center;
+    margin: 0;
     width: 100%;
   }
 
+  .archmove__title {
+    width: 100%;
+    margin-top: 30px;
+  }
+
   .arcmove-container {
-    margin-top: 1em;
+    margin-top: 30px;
     flex-direction: column;
-    row-gap: 1em;
   }
 
   .archmove__picture {
@@ -539,21 +530,22 @@
   .advantages__two,
   .advantages__three {
     flex-direction: row;
-    column-gap: 39px;
-    margin-top: 2em;
-    margin-left: 0;
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+
+  .advantages__one {
+    margin-left: 15px;
   }
 
   .advantages__consultation {
     align-self: center;
-    margin-top: 2em;
+    margin-top: 30px;
     margin-left: 0;
   }
 
   .footer {
-    padding-top: 0;
-    align-items: center;
-    width: 100%;
+    padding-top: 30px;
   }
 
   .footer__realize-project {
@@ -561,38 +553,57 @@
     align-items: center;
   }
 
+  .realize-project__big-cloud {
+    top: 70px;
+    left: -15px;
+    width: 137px;
+    height: 88px;
+    z-index: 999;
+  }
+
+  .realize-project__small-cloud {
+    top: 75px;
+    left: 220px;
+    width: 88px;
+    height: 57px;
+  }
+
+  .realize-project__picture {
+    bottom: 127px;
+    margin-left: 25px;
+    min-width: 270px;
+    max-width: 270px;
+  }
+
   .realize-project-container {
     margin-left: 0;
-    align-items: center;
-    row-gap: 1em;
+    row-gap: 30px;
   }
 
   .realize-project__title {
     width: 100%;
-    text-align: center;
   }
 
   .footer__about-us {
-    width: 90%;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
   }
 
   .about-us__container {
+    margin: 0;
+    margin-top: 30px;
     width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-  }
-
-  .about-us__item {
-    font-size: 1em;
+    flex-direction: column;
     text-align: center;
   }
 
+  .about-us__item {
+    font-size: 16px;
+    line-height: 40px;
+  }
+
   .footer__logo {
-    margin: 0;
+    margin-top: 30px;
+    margin-right: 0;
   }
 }
