@@ -57,6 +57,21 @@ body {
 
 .header__logo {
   margin-right: 3rem;
+  animation-name: logo-animation;
+  animation-duration: 1s;
+  animation-delay: .5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes logo-animation {
+
+  25% {
+    transform: rotate(-5deg)
+  }
+
+  50% {
+    transform: rotate(5deg)
+  }
 }
 
 .header__icon {
@@ -82,6 +97,7 @@ body {
   font-family: var(--primary-font);
   color: var(--header-text-color);
   text-decoration: none;
+  transition: color .25s ease-in-out;
 }
 
 .header__link:hover {
@@ -166,10 +182,12 @@ body {
   color: var(--button-text-color);
   background-color: var(--accent-color);
   font-weight: 900;
+  transition: transform .25s ease-in-out;
 }
 
 .header__full-button:hover {
   background-color: var(--accent-color-light);
+  transform: scale(1.05);
 }
 
 .main-section {
@@ -236,10 +254,12 @@ body {
   color: var(--button-text-color);
   background-color: var(--accent-color);
   font-weight: 900;
+  transition: transform .25s ease-in-out;
 }
 
 .main-section__full-button:hover {
   background-color: var(--accent-color-light);
+  transform: scale(1.05);
 }
 
 .gallery-section {
@@ -429,10 +449,12 @@ body {
   color: var(--button-text-color);
   background-color: var(--accent-color);
   font-weight: 900;
+  transition: transform .25s ease-in-out;
 }
 
 .footer-section__full-button:hover {
   background-color: var(--accent-color-light);
+  transform: scale(1.05);
 }
 
 .footer-section__list {
@@ -448,6 +470,7 @@ body {
   text-decoration: none;
   color: var(--footer-text-color);
   font-family: var(--primary-font);
+  transition: color .25s ease-in-out;
 }
 
 .footer-section__link:hover {
