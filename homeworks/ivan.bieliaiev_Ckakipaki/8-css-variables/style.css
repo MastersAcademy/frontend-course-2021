@@ -50,6 +50,15 @@ body {
   cursor: pointer;
 }
 
+.logo__icon {
+  fill: var(--color-font-red);
+  transition: var(--transition-all);
+}
+
+.logo__icon:hover {
+  transform: scale(1.3);
+}
+
 .header__navigation {
   height: 100%;
   display: flex;
