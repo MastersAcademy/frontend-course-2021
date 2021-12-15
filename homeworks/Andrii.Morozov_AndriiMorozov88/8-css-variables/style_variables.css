@@ -1,23 +1,23 @@
-.day {
-  --pink: #FD665E;
-  --text-color-button: #FFF;
-  --halfmoon-color: #444;
-  --dream-project-background: #F9F9F9;
-  --footer-image: #F9F9F9;
-  --link-color: #585858;
+html {
+  --clr1: #FD665E;
+  --clr2: #FFF;
+  --clr3: #FFF;
+  --clr4: #F9F9F9;
+  --clr5: #585858;
+  --clr6: #000;
 }
 
-.night {
-  --pink: #008000;
-  --text-color-button: #0D0D0D;
-  --body-background: #0D0D0D;
-  --footer-image: linear-gradient(180deg, #0D0D0D 22%, #F9F9F9 300%);
-  --font-color: #FFF;
-  --link-color: #FFF;
+.html--night {
+  --clr1: #F97E77;
+  --clr2: #0D0D0D;
+  --clr3: #000;
+  --clr4: linear-gradient(180deg, #0D0D0D 22%, #F9F9F9 300%);
+  --clr5: #FFF;
+  --clr6: #FFF;
 }
 
 .halfmoon {
-  fill: #585858;
+  fill: #444;
 }
 
 .halfmoon--hidden {
@@ -29,15 +29,16 @@
 }
 
 body {
-  background-color: var(--body-background);
+  background-color: var(--clr2);
   width: 100%;
   margin: 0 auto;
+  color: var(--clr6);
 }
 
 .button {
-  color: var(--text-color-button);
+  color: var(--clr3);
   border: none;
-  background-color: var(--pink);
+  background-color: var(--clr1);
   border-radius: 4px;
   cursor: pointer;
   font-weight: 900;
@@ -46,7 +47,7 @@ body {
 .logo {
   width: 62px;
   height: 28px;
-  fill: var(--pink);
+  fill: var(--clr1);
 }
 
 .header__content {
@@ -75,13 +76,13 @@ body {
   margin-right: 48px;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  color: var(--link-color);
+  color: var(--clr5);
 }
 
 .menu__links {
   text-decoration: none;
   cursor: pointer;
-  color: var(--link-color);
+  color: var(--clr5);
 }
 
 .header__buttons {
@@ -95,24 +96,18 @@ body {
   cursor: pointer;
   width: 15px;
   height: 20px;
-  fill: var(--halfmoon-color);
 }
 
 .header__buttons__sign--in {
   margin-right: 30px;
   width: 60px;
   height: 40px;
-  background-color: #FFF;
-  color: #585858;
+  background-color: var(--clr2);
+  color: var(--clr5);
   border: none;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   cursor: pointer;
-}
-
-.header__buttons__sign--in--night {
-  color: #FFF;
-  background-color: #000;
 }
 
 .header__buttons__sign--up {
@@ -127,11 +122,10 @@ body {
   font-family: "Merriweather", serif;
   line-height: 1;
   letter-spacing: -2px;
-  color: var(--font-color);
 }
 
 .word--color {
-  color: var(--pink);
+  color: #FD665E;
 }
 
 .dreamhouse {
@@ -153,7 +147,6 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1;
-  color: var(--font-color);
   margin-bottom: 50px;
 }
 
@@ -165,12 +158,15 @@ body {
 }
 
 .design__title {
+  display: flex;
+  justify-content: center;
+}
+
+.design__title--text {
   font-size: 48px;
   font-family: "Merriweather", serif;
-  line-height: 1.25;
+  line-height: 1;
   letter-spacing: -2px;
-  color: var(--font-color);
-  padding-left: 452px;
 }
 
 .design {
@@ -190,7 +186,6 @@ body {
   margin-left: 165px;
   line-height: 1.25;
   letter-spacing: -2px;
-  color: var(--font-color);
 }
 
 .archmove {
@@ -211,14 +206,14 @@ body {
 
 .archmove__icon {
   padding-top: 15px;
-  fill: var(--pink);
-  stroke: var(--pink);
+  fill: var(--clr1);
+  stroke: var(--clr1);
 }
 
 .archmove__icon--bird {
   margin-left: 5px;
   padding-top: 15px;
-  stroke: var(--pink);
+  stroke: var(--clr1);
 }
 
 .archmove__content__part {
@@ -239,7 +234,6 @@ body {
   font-size: 16px;
   line-height: .5;
   margin-left: 40px;
-  color: var(--font-color);
 }
 
 .archmove__content__button {
@@ -252,8 +246,7 @@ body {
 
 .bottom {
   width: 100%;
-  background: var(--footer-image);
-  background-color: var(--footer-image);
+  background: var(--clr4);
 }
 
 .dream-project {
@@ -276,8 +269,8 @@ body {
   line-height: 1;
   letter-spacing: -1px;
   padding-left: 100px;
-  color: var(--font-color);
   margin-bottom: 72px;
+  font-weight: 900;
 }
 
 .dream-project__content__button {
@@ -357,20 +350,16 @@ body {
     font-size: 25px;
   }
 
-  .design {
-    display: block;
-    width: 50%;
-    margin-left: 250px;
-    margin-top: 40px;
+  .design__photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .archmove__photo {
     display: none;
-  }
-
-  .archmove__title {
-    font-size: 25px;
-    line-height: .5;
   }
 
   .dream-project--photo {
