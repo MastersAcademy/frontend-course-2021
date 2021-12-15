@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     </head>
     <body data-body>
-        <header class="header">
+        <header class="header__content">
             <div class="header__menu">
                 <svg class="logo header__logo day" data-header-logo>
                     <use xlink:href="sprite.svg#logo"></use>
@@ -69,28 +69,28 @@
                 </div>
             </div>
         </div>
-        <div class="block__design__title">
+        <div class="design">
             <h2 class="design__title" data-design-title>Build professional
                 <br>valuable room for you
             </h2>
-        </div>
-        <div class="design">
-            <picture>
-                <source srcset="2x/kitchen.png 2x">
-                <img src="1x/kitchen.png" alt="kitchen">
-            </picture>
-            <picture>
-                <source srcset="2x/gasstove.png 2x">
-                <img src="1x/gasstove.png" alt="gasstove">
-            </picture>
-            <picture>
-                <source srcset="2x/bedroom.png 2x">
-                <img src="1x/bedroom.png" alt="bedroom">
-            </picture>
-            <picture>
-                <source srcset="2x/diningroom.png 2x">
-                <img src="1x/diningroom.png" alt="diningroom">
-            </picture>
+            <div class="design__photo">
+                <picture>
+                    <source srcset="2x/kitchen.png 2x">
+                    <img src="1x/kitchen.png" alt="kitchen">
+                </picture>
+                <picture>
+                    <source srcset="2x/gasstove.png 2x">
+                    <img src="1x/gasstove.png" alt="gasstove">
+                </picture>
+                <picture>
+                    <source srcset="2x/bedroom.png 2x">
+                    <img src="1x/bedroom.png" alt="bedroom">
+                </picture>
+                <picture>
+                    <source srcset="2x/diningroom.png 2x">
+                    <img src="1x/diningroom.png" alt="diningroom">
+                </picture>
+            </div>
         </div>
         <div class="archmove">
             <h2 class="archmove__title" data-archmove-title>Build your needs
@@ -147,7 +147,7 @@
         </div>
         <div class="bottom day" data-container>
             <div class="dream-project day">
-                <div class="dream-project--photo">
+                <div class="dream-project__photo">
                     <picture>
                         <source srcset="2x/house.png 2x">
                         <img src="1x/house.png" alt="diningroom">
@@ -156,12 +156,9 @@
                 <div class="dream-project__content">
                     <div class="dream-project__content__text" data-dream-project-text>
                         <p>
-                            <b>Realize your dream</b>
-                        </p>
-                        <p>
-                            <b>project with
-                                <span class="word--color day">Archmove</span>
-                            </b>
+                            Realize your dream<br>
+                            project with
+                            <span class="word--color day">Archmove</span>
                         </p>
                     </div>
                     <button type="button" data-dream-project-button class="dream-project__content__button button day">FREE CONSULTATION</button>
