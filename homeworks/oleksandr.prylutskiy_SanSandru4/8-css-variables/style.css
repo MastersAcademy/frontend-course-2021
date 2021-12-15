@@ -162,6 +162,7 @@ body {
 }
 
 .header__menu-link, .control__sign-in {
+  display: inline-block;
   padding-left: 24px;
   padding-right: 24px;
   font-family: Roboto, sans-serif;
@@ -171,8 +172,22 @@ body {
   text-decoration: none;
 }
 
+.header__menu-link::after, .control__sign-in::after {
+  display: block;
+  content: "";
+  height: 2px;
+  width: 0%;
+  background-color: var(--color-red);
+  transition: width .3s ease-in-out;
+  transform: translateX(-50%);
+}
+
 .header__menu-link:hover, .control__sign-in:hover {
   color: var(--color-red);
+}
+
+.header__menu-link:hover::after, .control__sign-in:hover::after {
+  width: 100%;
 }
 
 .header__skin-btn {
