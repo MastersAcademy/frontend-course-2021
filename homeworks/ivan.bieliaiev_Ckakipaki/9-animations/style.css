@@ -75,10 +75,39 @@ body {
   font-size: var(--text-size);
   font-family: var(--font-roboto);
   transition: var(--transition-all);
+  position: relative;
 }
 
 .navigation__item:hover {
   color: var(--color-font-red);
+}
+
+.navigation__item::after {
+  content: "";
+  height: 2px;
+  background: var(--color-font-red);
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  display: block;
+  transform: var(--transition-all);
+}
+
+.navigation__item:hover::after {
+  animation: underline infinite 2s;
+}
+
+@keyframes underline {
+
+  from {
+    left: 50%;
+    width: 0;
+  }
+
+  to {
+    left: 5px;
+    width: 100%;
+  }
 }
 
 .header__actions {
