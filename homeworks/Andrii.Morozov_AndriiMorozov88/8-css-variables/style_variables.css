@@ -52,6 +52,10 @@ body {
   transition: .2s;
 }
 
+.p__line-height {
+  line-height: 1.5;
+}
+
 .logo {
   width: 62px;
   height: 28px;
@@ -79,7 +83,7 @@ body {
   display: flex;
 }
 
-.menu__lines {
+.menu__line {
   list-style-type: none;
   margin-right: 48px;
   font-family: var(--font-roboto);
@@ -89,13 +93,13 @@ body {
   transition: .2s;
 }
 
-.menu__links {
+.menu__link {
   text-decoration: none;
   cursor: pointer;
   color: var(--clr5);
 }
 
-.menu__lines:hover {
+.menu__line:hover {
   transform: scale(1.2);
   transition: .2s;
 }
@@ -292,7 +296,7 @@ body {
   display: flex;
 }
 
-.footer__lines {
+.footer__line {
   list-style-type: none;
   font-family: var(--font-roboto);
   font-size: var(--font12);
@@ -301,7 +305,7 @@ body {
   transition: .2s;
 }
 
-.footer__lines:hover {
+.footer__line:hover {
   transform: scale(1.2);
   transition: .2s;
 }
