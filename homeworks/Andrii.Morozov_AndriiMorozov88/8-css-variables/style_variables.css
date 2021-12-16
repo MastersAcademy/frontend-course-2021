@@ -47,6 +47,13 @@ body {
   font-family: var(--font-roboto);
   font-size: var(--font14);
   padding: 15px 24px;
+  transform: scale(1);
+  transition: .2s;
+}
+
+.button--primary:hover {
+  transform: scale(1.2);
+  transition: .2s;
 }
 
 .logo {
@@ -82,12 +89,19 @@ body {
   font-family: var(--font-roboto);
   font-size: var(--font14);
   color: var(--clr5);
+  transform: scale(1);
+  transition: .2s;
 }
 
 .menu__links {
   text-decoration: none;
   cursor: pointer;
   color: var(--clr5);
+}
+
+.menu__lines:hover {
+  transform: scale(1.2);
+  transition: .2s;
 }
 
 .header__buttons {
@@ -111,6 +125,13 @@ body {
   font-family: var(--font-roboto);
   font-size: var(--font14);
   cursor: pointer;
+  transform: scale(1);
+  transition: .2s;
+}
+
+.button--secondary:hover {
+  transform: scale(1.2);
+  transition: .2s;
 }
 
 .dreamhouse__title {
@@ -280,6 +301,13 @@ body {
   font-family: var(--font-roboto);
   font-size: var(--font12);
   margin-right: 48px;
+  transform: scale(1);
+  transition: .2s;
+}
+
+.footer__lines:hover {
+  transform: scale(1.2);
+  transition: .2s;
 }
 
 .footer__logo {
