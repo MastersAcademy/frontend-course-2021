@@ -1,3 +1,5 @@
+// import { Switcher } from './scripts/switcher';
+
 const switchLunaEl = document.querySelector('[data-switch-luna]');
 const switchSunEl = document.querySelector('[data-switch-sun]');
 const logoEl = document.querySelector('[data-logo]');

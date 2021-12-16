@@ -446,6 +446,21 @@ body {
   padding: 0 10px;
 }
 
+.scroll-up {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  stroke: var(--color-font-red);
+  cursor: pointer;
+  transition: var(--transition-all);
+}
+
+.scroll-up:hover {
+  transform: scale(1.5);
+}
+
 @media screen and (max-width: 768px) {
 
   body {
