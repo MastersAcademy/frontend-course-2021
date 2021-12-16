@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Roboto:wght@400;500&display=swap");
+
+
+.title {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 112px;
+  line-height: 100%;
+  letter-spacing: -.04em;
+}
+
+.subtitle {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 124%;
+  letter-spacing: -.04em;
+}
+
+.text-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: .01em;
+}
+
+.text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: .01em;
+}
+
+.link {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: .01em;
+}
+
+.button {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: .01em;
+  border: none;
+  border-radius: 4px;
+}
+
+@media (max-width: 576px) {
+
+  .title {
+    font-size: 100px;
+  }
+
+  .subtitle {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 320px) {
+
+  .title {
+    font-size: 80px;
+  }
+
+  .subtitle {
+    font-size: 36px;
+  }
+}
