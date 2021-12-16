@@ -9,6 +9,7 @@
   --color-background: #FFF;
   --color-btn-hover: #F8A09C;
   --border-radius-button: 4px;
+  --color-btn-shadow: rgba(0, 0, 0, .4);
 }
 
 [data-skin="light"] {
@@ -16,6 +17,7 @@
   --color-background: #FFF;
   --color-red: #FD665E;
   --color-btn-hover: #F8A09C;
+  --color-btn-shadow: rgba(0, 0, 0, .4);
 }
 
 [data-skin="dark"] {
@@ -23,6 +25,7 @@
   --color-text: #FFF;
   --color-red: #FD7E77;
   --color-btn-hover: #F7B2AF;
+  --color-btn-shadow: rgba(255, 255, 255, .7);
 }
 
 
@@ -206,10 +209,33 @@ body {
   border: none;
   border-radius: var(--border-radius-button);
   cursor: pointer;
+  animation: move 2s infinite alternate;
+}
+
+@keyframes move {
+
+  0% {
+    border: 0 solid var(--color-btn-hover);
+  }
+
+  50% {
+    border: 6px solid var(--color-btn-hover);
+  }
+
+  100% {
+    border: 0 solid var(--color-btn-hover);
+  }
+}
+
+.btn--animation {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+  transition: .3s;
 }
 
 .control__btn:hover {
   background-color: var(--color-btn-hover);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, .4);
+  transform: translateY(-3px);
 }
 
 .main {
@@ -266,10 +292,13 @@ body {
   color: var(--color-background);
   font-size: 14px;
   cursor: pointer;
+  animation: move 2s infinite alternate;
 }
 
 .dream-house__btn:hover {
   background-color: var(--color-btn-hover);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, .4);
+  transform: translateY(-3px);
 }
 
 .dream-house__picture {
@@ -384,10 +413,13 @@ body {
   border: none;
   border-radius: var(--border-radius-button);
   cursor: pointer;
+  animation: move 2s infinite alternate;
 }
 
 .free-consultation-btn:hover {
   background-color: var(--color-btn-hover);
+  box-shadow: 0 15px 20px var(--color-btn-shadow);
+  transform: translateY(-3px);
 }
 
 .free-consultation-btn--no-margin {
@@ -470,18 +502,18 @@ body {
 }
 
 .picture__img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   animation: slide 3s ease-in-out infinite;
 }
 
 @keyframes slide {
 
   0% {
-    transform: scale(1.2);
+    transform: scale(1);
   }
 
   20% {
-    transform: scale(1.3);
+    transform: scale(1.2);
   }
 
   80% {
@@ -489,7 +521,7 @@ body {
   }
 
   95% {
-    transform: scale(1.3);
+    transform: scale(1.2);
   }
 }
 
