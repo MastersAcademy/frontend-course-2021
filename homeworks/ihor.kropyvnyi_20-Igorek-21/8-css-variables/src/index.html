@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>8-css-variables</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class=" page-wrapper data-page-wrapper">
+            <header class="main-header">
+                <a class="header__logo-link" href="#">
+                    <svg width="62" height="28">
+                        <use xlink:href="../svg/sprites.svg#logo-icon"></use>
+                    </svg>
+                </a>
+                <nav class="header__navigation">
+                    <ul class="breadcrumbs-list breadcrumbs-list__navigation">
+                        <li class="list__item">
+                            <a class="list__link list__link-navigation" href="#">Design Gallery</a>
+                        </li>
+                        <li class="list__item">
+                            <a class="list__link list__link-navigation" href="#">List of Architect</a>
+                        </li>
+                        <li class="list__item">
+                            <a class="list__link list__link-navigation" href="#">Articles</a>
+                        </li>
+                        <li class="list__item">
+                            <a class="list__link list__link-navigation" href="#">How it Works</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="inner-row">
+                    <button class="button header__button-switch" data-button-switch-theme type="button">
+                        <svg width="24" height="24">
+                            <use data-switch__theme-icon xlink:href="../svg/sprites.svg#theme-night-icon"></use>
+                        </svg>
+                    </button>
+                    <button class="button button__sing-in" type="button">Sign In</button>
+                    <button class="button button__red-square button__red-square--sing-up" type="button">Sign Up</button>
+                </div>
+            </header>
+            <main class="main-container">
+                <h1 class="visually-hidden">Archmore-Architech Marketplace </h1>
+                <section class="section-features">
+                    <h2 class="headline headline__features">Build Your
+                        Dream <span class="text-color">House</span>
+                    </h2>
+                    <div class="content-row content-row__features">
+                        <div class="content-columns content-columns__features">
+                            <p class="features__text">
+                                The first and most trusted marketplace of design & build house in The World. 100% guaranteed Build safe, comfortable and transparent with a project management for the best result
+                            </p>
+                            <button class="button button__red-square button__red-square--features" type="button">Free Consultation</button>
+                        </div>
+                        <picture class="picture-features">
+                            <img class="features__img" src="../img/features.jpg" alt="Photo build your dream house">
+                        </picture>
+                    </div>
+                </section>
+                <section class="section-gallery">
+                    <h2 class="headline headline__gallery">
+                        Build professional<br> valuable room for you
+                    </h2>
+                    <picture class="content-row content-row__gallery">
+                        <img class="gallery__img" src="../img/gallery-01.jpg" alt="Gallery photo 1">
+                        <img class="gallery__img" src="../img/gallery-02.jpg" alt="Gallery photo 2">
+                        <img class="gallery__img" src="../img/gallery-03.jpg" alt="Gallery photo 3">
+                        <img class="gallery__img" src="../img/gallery-04.jpg" alt="Gallery photo 4">
+                    </picture>
+                </section>
+                <section class="section-benefits">
+                    <h2 class="headline headline-benefits">
+                        Build your needs<br> with Archmove
+                    </h2>
+                    <div class="content-row content-row__benefits">
+                        <picture class="picture-benefits">
+                            <img class="benefits__img" src="../img/benefits%20.jpg" alt="Photo build your needs with Archmove">
+                        </picture>
+                        <div class="content-columns content-columns__benefits">
+                            <div class="content-row content-row__inner-benefits">
+                                <svg class="benefits-icon" width="48" height="56">
+                                    <use xlink:href="../svg/sprites.svg#benefits-icon_1"></use>
+                                </svg>
+                                <div class="content-columns content-columns__inner-benefits">
+                                    <h3 class="benefits__title">100% guaranteed project completion</h3>
+                                    <p class="benefits__text">Build safe, comfortable and transparent with a project management application with a joint account.</p>
+                                </div>
+                            </div>
+                            <div class="content-row content-row__inner-benefits">
+                                <svg class="benefits-icon" width="40" height="53">
+                                    <use xlink:href="../svg/sprites.svg#benefits-icon_2"></use>
+                                </svg>
+                                <div class="content-columns content-columns__inner-benefits">
+                                    <h3 class="benefits__title">No additional fees</h3>
+                                    <p class="benefits__text">There are no hidden costs. The value of the offer you get is the value you paid.</p>
+                                </div>
+                            </div>
+                            <div class="content-row content-row__inner-benefits">
+                                <svg class="benefits-icon" width="40" height="53">
+                                    <use xlink:href="../svg/sprites.svg#benefits-icon_3"></use>
+                                </svg>
+                                <div class="content-columns content-columns__inner-benefits">
+                                    <h3 class="benefits__title">Get escort from the Team</h3>
+                                    <p class="benefits__text">Monitor reports from the Arsitag team who check directly in the field.</p>
+                                </div>
+                            </div>
+                            <button class="button button__red-square button__red-square--benefits" type="button">FREE CONSULTATION</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-project">
+                    <picture class="picture-project">
+                        <img class="project__img" src="../img/project.png" alt="Photo build your needs with Archmove">
+                    </picture>
+                    <div class="content-columns content-columns__project">
+                        <h2 class="headline headline-project">
+                            Realize your dream project with <span class="text-color">Archmove</span>
+                        </h2>
+                        <button class="button button__red-square button__red-square--project" type="button">FREE CONSULTATION</button>
+                    </div>
+                </section>
+            </main>
+            <footer class="main-footer">
+                <ul class="breadcrumbs-list breadcrumbs-list__footer">
+                    <li class="list__item">
+                        <a class="list__link list__link-footer" href="#">About Us</a>
+                    </li>
+                    <li class="list__item">
+                        <a class="list__link list__link-footer" href="#">How it Works</a>
+                    </li>
+                    <li class="list__item">
+                        <a class="list__link list__link-footer" href="#">FAQ</a>
+                    </li>
+                    <li class="list__item">
+                        <a class="list__link list__link-footer" href="#">Contact Us</a>
+                    </li>
+                    <li class="list__item">
+                        <a class="list__link list__link-footer" href="#">Privacy Policy</a>
+                    </li>
+                </ul>
+                <svg class="footer__logo-link" width="62" height="28">
+                    <use xlink:href="../svg/sprites.svg#logo-icon"></use>
+                </svg>
+            </footer>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
