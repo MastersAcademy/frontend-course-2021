@@ -454,7 +454,12 @@ body {
   height: 50px;
   stroke: var(--color-font-red);
   cursor: pointer;
-  transition: var(--transition-all);
+  transition: all .6s ease-in-out;
+}
+
+.scroll-up__hidden {
+  display: none;
+  transition: all .6s ease-in-out;
 }
 
 .scroll-up:hover {

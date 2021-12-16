@@ -1,10 +1,10 @@
-// import { Switcher } from './scripts/switcher';
-
 const switchLunaEl = document.querySelector('[data-switch-luna]');
 const switchSunEl = document.querySelector('[data-switch-sun]');
 const logoEl = document.querySelector('[data-logo]');
-// const { fromEvent } = window.rxjs;
-// const { scan, filter, debounceTime } = window.rxjs.operators;
+const scrollEl = document.querySelector('[data-scrolle]');
+scrollEl.classList.add('scroll-up__hidden');
+const { fromEvent } = window.rxjs;
+const { scan, debounceTime } = window.rxjs.operators;
 
 const showAnimationLogo = () => {
     logoEl.animate([
@@ -45,4 +45,26 @@ switchLunaEl.addEventListener('click', () => {
 
 switchSunEl.addEventListener('click', () => {
     switchToWhite();
+});
+
+scrollEl.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+});
+
+const scrolling$ = fromEvent(document, 'scroll')
+    .pipe(
+        scan(() => window.scrollY),
+        debounceTime(20),
+    );
+
+scrolling$.subscribe((winPos) => {
+    console.log(winPos);
+    if (winPos > 100) {
+        scrollEl.classList.remove('scroll-up__hidden');
+    } else {
+        scrollEl.classList.add('scroll-up__hidden');
+    }
 });
