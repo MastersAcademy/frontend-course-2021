@@ -4,12 +4,24 @@
     padding: 76px 70px 112px;
   }
 
+  .dream__title {
+    font-size: calc(15px + 110 * (100vw / 1440));
+  }
+
   .dream__desc {
     margin-right: 40px;
   }
 
+  .room__title {
+    font-size: calc(20px + 28 * (100vw / 1440));
+  }
+
   .archmove {
     padding: 65px 70px 68px;
+  }
+
+  .archmove__title {
+    font-size: calc(20px + 28 * (100vw / 1440));
   }
 
   .project {
@@ -19,6 +31,10 @@
   .project__content {
     margin-top: 150px;
     margin-left: 120px;
+  }
+
+  .project__content-title {
+    font-size: calc(20px + 28 * (100vw / 1440));
   }
 
   .footer {
@@ -167,7 +183,7 @@
     margin-left: 0;
     top: -200vh;
     position: fixed;
-    background: rgba(var(--background-color-menu),.7);
+    background: var(--background-color-menu);
     backdrop-filter: blur(8px);
     transition: all .6s cubic-bezier(.76,.015,.41,1);
   }
@@ -227,7 +243,6 @@
 
   .archmove__content-picture {
     max-width: 380px;
-    max-height: 435px;
   }
 
   .archmove__advantages {
@@ -318,7 +333,6 @@
 
   .archmove__content-picture {
     max-width: 350px;
-    max-height: 400px;
   }
 
   .archmove__item-content {

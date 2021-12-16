@@ -11,46 +11,38 @@ body {
 }
 
 :root {
-  --background-color-btn-active: #FD665E;
-  --foreground-color-btn-active: #585858;
-  --background-color-btn: #FD665E;
+  --color-elements: #FD665E;
+  --color-text-elements: #585858;
   --foreground-color-btn: #FFF;
-  --color-title-last-word: #FD665E;
   --color-text: #000;
-  --color-text-menu: #585858;
-  --color-text-menu-active: #FD665E;
-  --foreground-color-btn-in: #585858;
-  --foreground-color-btn-in-active: #FD665E;
   --overlay-color-first: #F9F9F9;
   --overlay-color-second: rgba(249, 249, 249, 0);
   --rectangle-color: #F0F0F0;
   --icon-color: #000;
   --icon-color-burger: #000;
   --color-burger-menu: #FFF;
-  --background-color-menu: 0, 0, 0;
+  --background-color-menu: rgba(0, 0, 0, .7);
   --icon-color-burger-active: #FFF;
   --color-border-burger-menu: #DAD2D2;
 }
 
 .dark-theme {
-  --foreground-color-btn-active: #FFF;
+  --color-text-elements: #FFF;
   --foreground-color-btn: #000;
   --background-color-body: #000;
-  --color-text-menu: #FFF;
-  --foreground-color-btn-in: #FFF;
   --color-text: #FFF;
   --overlay-color-first: #0D0D0D;
   --rectangle-color: #1C1C1C;
   --icon-color: #FFF;
   --icon-color-burger: #FFF;
   --icon-color-burger-active: #000;
-  --background-color-menu: 255, 255, 255;
+  --background-color-menu: rgba(255, 255, 255, .7);
   --color-burger-menu: #000;
   --color-border-burger-menu: #232020;
 }
 
 span {
-  color: var(--color-title-last-word);
+  color: var(--color-elements);
   font-family: Merriweather, serif;
 }
 
@@ -68,7 +60,7 @@ a {
   width: 99px;
   height: 48px;
   padding: 4px 24px;
-  background-color: var(--background-color-btn);
+  background-color: var(--color-elements);
   border: none;
   border-radius: 4px;
   font-weight: 700;
@@ -78,7 +70,7 @@ a {
 }
 
 .btn:hover {
-  color: var(--foreground-color-btn-active) ;
+  color: var(--color-text-elements) ;
 }
 
 
@@ -110,13 +102,13 @@ a {
 
 .header__item-link {
   padding-left: 48px;
-  color: var(--color-text-menu);
+  color: var(--color-text-elements);
   font-size: 14px;
   font-weight: 400;
 }
 
 .header__item-link:hover {
-  color: var(--color-text-menu-active);
+  color: var(--color-elements);
 }
 
 .header__btns {
@@ -137,12 +129,12 @@ a {
 }
 
 .header__btns-in {
-  color: var(--foreground-color-btn-in);
+  color: var(--color-text-elements);
   background: none;
 }
 
 .header__btns-in:hover {
-  color: var(--foreground-color-btn-in-active);
+  color: var(--color-elements);
 }
 
 .dream {
@@ -151,7 +143,7 @@ a {
 
 .dream__title {
   font-family: Merriweather, serif;
-  font-size: calc(15px + 110 * (100vw / 1440));
+  font-size: 125px;
   max-width: 870px;
   font-weight: 700;
   color: var(--color-text);
@@ -184,11 +176,6 @@ a {
   color: var(--foreground-color-btn);
 }
 
-.dream__content-picture {
-  max-width: 765px;
-  max-height: 480px;
-}
-
 .dream__content-img {
   width: 100%;
   height: 100%;
@@ -205,7 +192,7 @@ a {
   font-family: Merriweather serif;
   font-style: normal;
   font-weight: 700;
-  font-size: calc(20px + 28 * (100vw / 1440));
+  font-size: 48px;
   color: var(--color-text);
 }
 
@@ -217,8 +204,6 @@ a {
 
 .room__gallery-picture {
   margin-right: 25px;
-  max-width: 305px;
-  max-height: 432px;
 }
 
 .room__gallery-picture:last-child {
@@ -229,6 +214,7 @@ a {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  display: flex;
 }
 
 .archmove {
@@ -239,7 +225,7 @@ a {
   max-width: 440px;
   font-family: Merriweather serif;
   font-weight: 700;
-  font-size: calc(20px + 28 * (100vw / 1440));
+  font-size: 48px;
   color: var(--color-text);
 }
 
@@ -251,7 +237,6 @@ a {
 
 .archmove__content-picture {
   max-width: 535px;
-  max-height: 610px;
 }
 
 .archmove__content-img {
@@ -313,11 +298,6 @@ a {
   padding: 88px 130px 65px 80px;
 }
 
-.project__picture {
-  max-width: 497px;
-  max-height: 684px;
-}
-
 .project__picture-img {
   object-fit: cover;
   width: 100%;
@@ -333,7 +313,7 @@ a {
   font-family: Merriweather serif;
   font-style: normal;
   font-weight: 700;
-  font-size: calc(20px + 28 * (100vw / 1440));
+  font-size: 48px;
   color: var(--color-text);
 }
 
@@ -376,10 +356,10 @@ a {
 .footer__item-link {
   font-weight: 900;
   font-size: 12px;
-  color: var(--color-text-menu);
+  color: var(--color-text-elements);
 }
 
 .footer__item-link:hover {
-  color: var(--color-text-menu-active);
+  color: var(--color-elements);
 }
 
