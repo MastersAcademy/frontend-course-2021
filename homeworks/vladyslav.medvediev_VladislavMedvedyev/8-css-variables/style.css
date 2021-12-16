@@ -1,0 +1,609 @@
+.body {
+  --button-color: rgba(253, 102, 94, 1);
+  --background-color: rgba(255, 255, 255, 1);
+  --header-and-footer-text-color: rgba(88, 88, 88, 1);
+  --text-and-advantages-svg-stroke-color: rgba(0, 0, 0, 1);
+  --border-bottom-color: rgba(240, 240, 240, 1);
+  --background-gradient: linear-gradient(180deg, rgba(249, 249, 249, 1) 22.12%, rgba(249, 249, 249, 0) 100%);
+
+  margin: 0;
+}
+
+.body[data-theme-night] {
+  --button-color: rgba(253, 126, 119, 1);
+  --background-color: rgba(13, 13, 13, 1);
+  --header-and-footer-text-color: rgba(255, 255, 255, 1);
+  --text-and-advantages-svg-stroke-color: rgba(255, 255, 255, 1);
+  --border-bottom-color: rgba(240, 240, 240, 1);
+  --background-gradient: linear-gradient(180deg, rgba(13, 13, 13, 1) 22.12%, rgba(249, 249, 249, 0) 100%);
+}
+
+.a {
+  text-decoration: none;
+}
+
+.h2 {
+  font-family: "Merriweather", "-apple-system", "BlinkMacSystemFont", "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 60px;
+  padding: 0;
+  margin: 0;
+  color: var(--header-and-footer-text-color);
+}
+
+.advantages__title {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", "-apple-system", "BlinkMacSystemFont", "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--text-and-advantages-svg-stroke-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", "-apple-system", "BlinkMacSystemFont", "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  color: var(--header-and-footer-text-color);
+}
+
+.advantages__two-svg {
+  stroke: var(--text-and-advantages-svg-stroke-color);
+}
+
+.advantages__one-svg,
+.advantages__three-svg {
+  stroke: var(--text-and-advantages-svg-stroke-color);
+}
+
+.header__logo-svg,
+.footer__logo-svg {
+  fill: var(--button-color);
+}
+
+.header__button-night-theme {
+  display: block;
+}
+
+.header__button-night-theme-hidden {
+  display: none;
+}
+
+
+.header__button-day-theme {
+  display: none;
+}
+
+.header__button-day-theme-visible {
+  display: block;
+}
+
+.button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "Roboto", "-apple-system", "BlinkMacSystemFont", "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 40px;
+  text-align: center;
+  vertical-align: top;
+  cursor: pointer;
+  color: var(--background-color);
+  background-color: var(--button-color);
+  border-radius: 4px;
+  height: 56px;
+  max-width: 205px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 100px;
+  background-color: var(--background-color);
+}
+
+.header__logo {
+  width: 12%;
+  display: flex;
+  justify-content: center;
+}
+
+.header__menu {
+  width: 60%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  column-gap: 5.6%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__item {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 40px;
+  text-align: center;
+  color: var(--header-and-footer-text-color);
+}
+
+.header__button {
+  width: 4%;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header__sign-in {
+  width: 6%;
+  height: 40px;
+  font-weight: 14;
+  color: var(--header-and-footer-text-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header__sign-up {
+  width: 6.95%;
+  height: 48px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+}
+
+.main__dream-house {
+  width: 77%;
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5%;
+  margin-top: 50px;
+}
+
+.dream-house__title {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Merriweather", "-apple-system", "BlinkMacSystemFont", "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 112px;
+  line-height: 112px;
+  margin-right: 21.65%;
+}
+
+.dream-house__title-span {
+  color: var(--button-color);
+}
+
+.dream-house__info {
+  width: 26%;
+  margin-top: 60px;
+}
+
+.dream-house__text {
+  font-style: normal;
+  line-height: 25.6px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.dream-house__button {
+  width: 62%;
+  margin-top: 48px;
+}
+
+.dream-house__image {
+  width: 69%;
+  max-width: 900px;
+  margin-top: 50px;
+}
+
+.img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.main__professional-valuable {
+  display: flex;
+  flex-direction: column;
+  margin-top: 112px;
+}
+
+.professional-valuable__title {
+  width: 42%;
+  align-self: center;
+}
+
+.professional-valuable-container {
+  width: 90%;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+  margin-top: 45px;
+}
+
+.professional-valuable__example {
+  width: 100%;
+  height: 100%;
+}
+
+.main__archmove {
+  width: 77%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-top: 128px;
+}
+
+.archmove__title {
+  width: 41.43%;
+}
+
+.arcmove-container {
+  margin-top: 45px;
+  display: flex;
+}
+
+.archmove__picture {
+  max-width: 48.25%;
+}
+
+.archmove__advantages {
+  display: flex;
+  flex-direction: column;
+}
+
+.advantages__one,
+.advantages__two,
+.advantages__three {
+  display: flex;
+  flex-direction: row;
+  column-gap: 39px;
+  margin-top: 48px;
+  margin-left: 155px;
+}
+
+.advantages__one {
+  column-gap: 35px;
+  margin-left: 150px;
+}
+
+.advantages-item__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+}
+
+.advantages__consultation {
+  margin-top: 72px;
+  margin-left: 238px;
+}
+
+.footer {
+  padding-top: 64px;
+  display: flex;
+  flex-direction: column;
+  background: var(--background-gradient);
+}
+
+.footer__realize-project {
+  display: flex;
+}
+
+.realize-project__picture-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.realize-project__big-cloud {
+  top: 163px;
+  position: relative;
+  left: 80px;
+  width: 201px;
+  height: 130px;
+}
+
+.realize-project__small-cloud {
+  top: 177px;
+  position: relative;
+  left: 440px;
+  width: 130px;
+  height: 84px;
+  z-index: 999;
+}
+
+.realize-project__picture {
+  bottom: 127px;
+  position: relative;
+  margin-left: 155px;
+  min-width: 397px;
+  max-width: 397px;
+}
+
+.realize-project-container {
+  align-self: center;
+  justify-self: center;
+  margin-left: 138px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 64px;
+}
+
+.realize-project__title {
+  width: 75%;
+}
+
+.realize-project__title-span {
+  color: var(--button-color);
+}
+
+.footer__about-us {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-us__container {
+  margin-left: 11.11%;
+  width: 80%;
+  display: flex;
+  column-gap: 3.33%;
+  list-style: none;
+  padding: 0;
+}
+
+.about-us__item {
+  font-size: 12px;
+  font-weight: 900;
+  font-style: normal;
+  line-height: 40px;
+  text-align: center;
+  color: var(--header-and-footer-text-color);
+}
+
+.footer__logo {
+  margin-right: 11.45%;
+}
+
+@media (max-width: 1023px) {
+
+  .h2 {
+    text-align: center;
+  }
+
+  .advantages__title {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .button {
+    font-size: 24px;
+    line-height: 30px;
+    align-self: center;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .header__logo {
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .header__menu {
+    width: 100%;
+  }
+
+  .menu {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu__item {
+    font-size: 28px;
+  }
+
+  .header__button {
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .header__sign-in {
+    margin-top: 30px;
+    font-size: 24px;
+    width: 70%;
+    height: 40px;
+  }
+
+  .header__sign-up {
+    margin-top: 30px;
+    width: 70%;
+    height: 48px;
+  }
+
+  .main__dream-house {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .dream-house__title {
+    text-align: center;
+    font-size: 56px;
+    line-height: 86px;
+    margin: 0;
+  }
+
+  .dream-house__info {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dream-house__text {
+    margin-left: 15px;
+    line-height: 40px;
+  }
+
+  .dream-house__button {
+    margin-top: 30px;
+  }
+
+  .dream-house__image {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .main__professional-valuable {
+    margin: 0;
+  }
+
+  .professional-valuable__title {
+    width: 100%;
+    align-self: center;
+    margin-top: 30px;
+  }
+
+  .professional-valuable-container {
+    width: 100%;
+    flex-direction: column;
+    row-gap: 30px;
+    margin-top: 30px;
+  }
+
+  .main__archmove {
+    margin: 0;
+    width: 100%;
+  }
+
+  .archmove__title {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .arcmove-container {
+    margin-top: 30px;
+    flex-direction: column;
+  }
+
+  .archmove__picture {
+    max-width: 100%;
+  }
+
+  .advantages__one,
+  .advantages__two,
+  .advantages__three {
+    flex-direction: row;
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+
+  .advantages__one {
+    margin-left: 15px;
+  }
+
+  .advantages__consultation {
+    align-self: center;
+    margin-top: 30px;
+    margin-left: 0;
+  }
+
+  .footer {
+    padding-top: 30px;
+  }
+
+  .footer__realize-project {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .realize-project__big-cloud {
+    top: 70px;
+    left: -15px;
+    width: 137px;
+    height: 88px;
+    z-index: 999;
+  }
+
+  .realize-project__small-cloud {
+    top: 75px;
+    left: 220px;
+    width: 88px;
+    height: 57px;
+  }
+
+  .realize-project__picture {
+    bottom: 127px;
+    margin-left: 25px;
+    min-width: 270px;
+    max-width: 270px;
+  }
+
+  .realize-project-container {
+    margin-left: 0;
+    row-gap: 30px;
+  }
+
+  .realize-project__title {
+    width: 100%;
+  }
+
+  .footer__about-us {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-us__container {
+    margin: 0;
+    margin-top: 30px;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-us__item {
+    font-size: 16px;
+    line-height: 40px;
+  }
+
+  .footer__logo {
+    margin-top: 30px;
+    margin-right: 0;
+  }
+}
