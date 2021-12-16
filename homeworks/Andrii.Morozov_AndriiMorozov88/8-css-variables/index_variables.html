@@ -7,16 +7,16 @@
         <title>Variables</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style_variables.css">
     </head>
     <body>
         <header class="header__content">
+            <svg class="logo">
+                <use xlink:href="sprite.svg#logo"></use>
+            </svg>
             <div class="header__menu">
-                <svg class="logo header__logo">
-                    <use xlink:href="sprite.svg#logo"></use>
-                </svg>
                 <ul class="menu__list">
                     <li class="menu__line">
                         <a class="menu__link" href="#">Design Gallery</a>
@@ -34,15 +34,15 @@
             </div>
             <div class="header__buttons">
                 <div class="theme-toggle" data-toggle>
-                    <svg width="15" height="20" data-halfmoon>
+                    <svg width="15" height="20" data-halfmoon class="themes-toggle__button--halfmoon">
                         <use xlink:href="sprite.svg#halfmoon"></use>
                     </svg>
-                    <svg width="24" height="24">
+                    <svg width="24" height="24" data-sun class="themes-toggle__button--sun themes-toggle__button--hidden">
                         <use xlink:href="sprite.svg#sun"></use>
                     </svg>
                 </div>
-                <button type="button" class="button--secondary">Sign In</button>
-                <button type="button" class="button--primary">Sign Up</button>
+                <button type="button" class="button__sign-in button button--secondary">Sign In</button>
+                <button type="button" class="button__sign-up button button--primary">Sign Up</button>
             </div>
         </header>
         <div class="dreamhouse">
@@ -61,7 +61,7 @@
                             project management for the best result
                         </p>
                     </div>
-                    <button type="button" class="button--primary">Free Consultation</button>
+                    <button type="button" class="dreamhouse__button button button--primary">Free Consultation</button>
                 </div>
                 <div class="dreamhouse__photo">
                     <picture>
@@ -73,7 +73,7 @@
         </div>
         <div class="design">
             <div class="design__title">
-                <h2 class="design__title--text">Build professional
+                <h2 class="design__text">Build professional
                     <br>valuable room for you
                 </h2>
             </div>
@@ -108,11 +108,11 @@
                     </picture>
                 </div>
                 <div class="archmove__content">
-                    <div class="archmove__content__part--bird">
+                    <div class="archmove__block--bird">
                         <svg width="48" height="56" class="archmove__icon--bird">
                             <use xlink:href="sprite.svg#bird"></use>
                         </svg>
-                        <div class="archmove__content__part--text">
+                        <div class="archmove__text">
                             <h4>
                                 <b>100% guaranted project completion</b>
                             </h4>
@@ -123,11 +123,11 @@
                             </p>
                         </div>
                     </div>
-                    <div class="archmove__content__part">
+                    <div class="archmove__block">
                         <svg width="39" height="48" class="archmove__icon">
                             <use xlink:href="sprite.svg#dollar"></use>
                         </svg>
-                        <div class="archmove__content__part--text">
+                        <div class="archmove__text">
                             <h4>
                                 <b>No additional fees</b>
                             </h4>
@@ -136,11 +136,11 @@
                             </p>
                         </div>
                     </div>
-                    <div class="archmove__content__part">
+                    <div class="archmove__block">
                         <svg width="40" height="53" class="archmove__icon">
                             <use xlink:href="sprite.svg#circle"></use>
                         </svg>
-                        <div class="archmove__content__part--text">
+                        <div class="archmove__text">
                             <h4>
                                 <b>Get escort from the Team</b>
                             </h4>
@@ -149,7 +149,7 @@
                             </p>
                         </div>
                     </div>
-                    <button type="button" class="button--primary archmove__button">FREE CONSULTATION</button>
+                    <button type="button" class="archmove__button button button--primary">FREE CONSULTATION</button>
                 </div>
             </div>
         </div>
@@ -168,8 +168,8 @@
                             project with
                             <span class="word--color">Archmove</span>
                         </p>
+                        <button type="button" class="dream-project__button button button--primary">FREE CONSULTATION</button>
                     </div>
-                    <button type="button" class="button--primary">FREE CONSULTATION</button>
                 </div>
             </div>
             <div class="footer">
