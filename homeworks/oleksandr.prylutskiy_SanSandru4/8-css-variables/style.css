@@ -9,7 +9,7 @@
   --color-background: #FFF;
   --color-btn-hover: #F8A09C;
   --border-radius-button: 4px;
-  --color-btn-shadow: rgba(0, 0, 0, .4);
+  --color-shadow: rgba(0, 0, 0, .4);
 }
 
 [data-skin="light"] {
@@ -17,7 +17,7 @@
   --color-background: #FFF;
   --color-red: #FD665E;
   --color-btn-hover: #F8A09C;
-  --color-btn-shadow: rgba(0, 0, 0, .4);
+  --color-shadow: rgba(0, 0, 0, .4);
 }
 
 [data-skin="dark"] {
@@ -25,7 +25,7 @@
   --color-text: #FFF;
   --color-red: #FD7E77;
   --color-btn-hover: #F7B2AF;
-  --color-btn-shadow: rgba(255, 255, 255, .7);
+  --color-shadow: rgba(255, 255, 255, .7);
 }
 
 
@@ -234,7 +234,7 @@ body {
 
 .control__btn:hover {
   background-color: var(--color-btn-hover);
-  box-shadow: 0 15px 20px rgba(0, 0, 0, .4);
+  box-shadow: 0 15px 20px var(--color-shadow);
   transform: translateY(-3px);
 }
 
@@ -297,7 +297,7 @@ body {
 
 .dream-house__btn:hover {
   background-color: var(--color-btn-hover);
-  box-shadow: 0 15px 20px rgba(0, 0, 0, .4);
+  box-shadow: 0 15px 20px var(--color-shadow);
   transform: translateY(-3px);
 }
 
@@ -418,7 +418,7 @@ body {
 
 .free-consultation-btn:hover {
   background-color: var(--color-btn-hover);
-  box-shadow: 0 15px 20px var(--color-btn-shadow);
+  box-shadow: 0 15px 20px var(--color-shadow);
   transform: translateY(-3px);
 }
 
