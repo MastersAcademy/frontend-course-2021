@@ -459,6 +459,40 @@ body {
   list-style: none;
 }
 
+.picture {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.picture__img {
+  transition: 1s;
+  display: block;
+}
+
+.picture__img:hover {
+  transform: scale(1.2);
+  animation: slide 3s ease-in-out infinite;
+}
+
+@keyframes slide {
+
+  0% {
+    transform: scale(1.2);
+  }
+
+  20% {
+    transform: scale(1.3);
+  }
+
+  80% {
+    transform: scale(1.1);
+  }
+
+  95% {
+    transform: scale(1.3);
+  }
+}
+
 .to-top {
   position: fixed;
   bottom: 50px;
@@ -521,7 +555,7 @@ body {
   }
 
   .picture__img {
-    width: 92%;
+    width: 45%;
   }
 
   .build-room__img {
