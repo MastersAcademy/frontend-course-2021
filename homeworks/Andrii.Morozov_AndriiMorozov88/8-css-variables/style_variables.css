@@ -22,11 +22,7 @@ html {
   --clr6: #FFF;
 }
 
-.themes-toggle__button--halfmoon {
-  fill: #444;
-}
-
-.halfmoon--hidden {
+.themes-toggle__button--hidden {
   display: none;
 }
 
