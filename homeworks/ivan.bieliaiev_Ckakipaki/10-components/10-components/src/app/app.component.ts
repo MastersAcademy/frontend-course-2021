@@ -12,7 +12,7 @@ export interface IPlayer {
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    Players: IPlayer[] = [{
+    players: IPlayer[] = [{
         name: 'Player 1',
         logo: 'src',
         score: 3,
@@ -24,8 +24,14 @@ export class AppComponent {
     }
     ]
 
+    state: number[][] = [
+        [0, 1, 2],
+        [0, 0 , 0],
+        [1, 2, 1]
+    ]
+
     resetPlayersScores () {
-        this.Players.forEach((player) => {
+        this.players.forEach((player) => {
             player.score = 0;
         })
     }

@@ -82,3 +82,8 @@ body {
   align-items: start;
   margin: 18px 0 0;
 }
+
+.game {
+  width: 100%;
+  max-width: 589px;
+}

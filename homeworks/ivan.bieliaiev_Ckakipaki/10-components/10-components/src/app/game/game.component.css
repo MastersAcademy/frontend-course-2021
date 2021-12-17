@@ -1,3 +1,31 @@
 * {
   margin: 0;
 }
+
+.game__list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.game__list__row {
+  width: 100%;
+  height: auto;
+  margin: 0 0 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game__list__row div {
+  width: 185px;
+  height: 185px;
+  cursor: pointer;
+  border: 1px solid #123;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

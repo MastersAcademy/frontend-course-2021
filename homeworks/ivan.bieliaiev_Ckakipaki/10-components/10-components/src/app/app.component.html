@@ -20,9 +20,9 @@
     </div>
     <div class="game__container">
         <div class="players-actions__container">
-            <app-players class="players__container" [players] = "Players"></app-players>
+            <app-players class="players__container" [players] = "players"></app-players>
             <app-game-actions class="actions__container" (onClick)="resetPlayersScores()"></app-game-actions>
         </div>
-        <app-game></app-game>
+        <app-game class="game" [gameState]="state"></app-game>
     </div>
 </body>

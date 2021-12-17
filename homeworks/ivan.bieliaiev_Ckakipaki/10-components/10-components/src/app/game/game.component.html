@@ -1,2 +1,6 @@
 <!DOCTYPE html>
-<p>game works!</p>
+<ul class="game__list">
+    <li class="game__list__row" *ngFor="let row of gameState">
+        <div *ngFor="let symbol of row">{{symbol}}</div>
+    </li>
+</ul>
