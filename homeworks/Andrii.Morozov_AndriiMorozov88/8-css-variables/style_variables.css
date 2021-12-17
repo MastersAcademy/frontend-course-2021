@@ -191,7 +191,7 @@ body {
   margin-left: 40px;
 }
 
-.dreamhouse__aside__text {
+.dreamhouse__text {
   font-family: var(--ff-p);
   font-size: var(--fs-l);
   line-height: 1;
@@ -371,6 +371,12 @@ body {
     justify-content: center;
   }
 
+  .header__buttons {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
   .logo {
     display: none;
   }
@@ -381,23 +387,19 @@ body {
 
   .dreamhouse__aside {
     display: block;
-    width: 350;
-    height: 480px;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    width: 100%;
   }
 
-  .dreamhouse__aside__text {
-    font-family: "Roboto", sans-serif;
+  .dreamhouse__title {
+    width: 70%;
+  }
+
+  .dreamhouse__text {
+    font-family: var(--ff-p);
     font-size: 25px;
     line-height: 1;
-    height: 300px;
-    width: 500px;
-  }
-
-  .block__design__title {
-    width: 50%;
-    margin-left: 452px;
   }
 
   .design__title {
@@ -413,6 +415,10 @@ body {
   }
 
   .archmove__title {
+    width: 70%;
+  }
+
+  .archmove__content {
     width: 70%;
   }
 
