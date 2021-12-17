@@ -45,6 +45,7 @@ const scrollActions = () => {
         }
     } else {
         headerContainer.classList.remove('header--scrolled');
+        navToTopBtn.classList.remove('active');
     }
 };
 
