@@ -103,17 +103,30 @@ button:hover {
   height: 50px;
   position: absolute;
   z-index: -1;
-  bottom: 45px;
-  left: 75px;
   color: var(--theme-text-color);
   font-size: 1px;
   transition: bottom 1s ease, transform 1s ease;
   animation-name: slideUp;
-  animation-duration: 2s;
+  animation-duration: 5s;
   animation-delay: 0s;
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-timing-function: ease-out;
+}
+
+.section-hero .call-to-action-btn::before {
+  bottom: 45px;
+  left: 75px;
+}
+
+.section-advantage__content .call-to-action-btn::before {
+  bottom: 95px;
+  left: 575px;
+}
+
+.section-resume .call-to-action-btn::before {
+  bottom: 455px;
+  left: 75px;
 }
 
 .list__link::after {
@@ -179,12 +192,12 @@ button:hover {
 @keyframes slideUp {
 
   0%,
-  50% {
+  80% {
     font-size: 5px;
     opacity: 1;
   }
 
-  60% {
+  90% {
     opacity: 1;
     font-size: 37px;
   }
