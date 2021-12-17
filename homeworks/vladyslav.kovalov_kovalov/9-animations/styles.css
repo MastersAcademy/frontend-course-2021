@@ -50,6 +50,7 @@ body {
 }
 
 .scroll-up-button {
+  z-index: 1;
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
@@ -58,7 +59,7 @@ body {
   cursor: pointer;
   border: 0;
   background-color: var(--accent-color);
-  transition: transform .25s ease-in-out;
+  transition: transform .25s ease-in-out, opacity .5s ease-in-out;
 }
 
 .scroll-up-button:hover {
