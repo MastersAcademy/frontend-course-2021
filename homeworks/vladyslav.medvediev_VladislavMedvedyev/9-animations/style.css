@@ -59,16 +59,19 @@
 
 .advantages__two-svg {
   stroke: var(--text-and-advantages-svg-stroke-color);
+  animation: svg-anim 2s linear 1 alternate;
 }
 
 .advantages__one-svg,
 .advantages__three-svg {
   stroke: var(--text-and-advantages-svg-stroke-color);
+  animation: svg-anim 2s linear 1 alternate;
 }
 
 .header__logo-svg,
 .footer__logo-svg {
   fill: var(--button-color);
+  animation: svg-anim 2s linear 1 alternate;
 }
 
 .header__button-night-theme {
@@ -117,6 +120,25 @@
 
   50%, 100% {
     transform: scale(1.2);
+  }
+}
+
+@keyframes svg-anim {
+
+  0%, 25% {
+    transform: rotate(45deg);
+  }
+
+  25%, 50% {
+    transform: rotate(0);
+  }
+
+  50%, 75% {
+    transform: rotate(-45deg);
+  }
+
+  75%, 100% {
+    transform: rotate(0);
   }
 }
 
@@ -175,7 +197,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  animation: button-hover-anim 3s cubic-bezier(.12, 0, .39, 0) infinite alternate;
+  animation: svg-anim 2s linear 1 alternate;
 }
 
 .header__sign-in {
