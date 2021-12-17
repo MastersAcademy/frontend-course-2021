@@ -52,7 +52,7 @@ body {
   visibility: visible;
 }
 
-.loader__spin {
+.preloader__spin {
   width: 360px;
   height: 360px;
   border: 20px solid var(--color-btn-hover);
@@ -227,7 +227,7 @@ body {
   }
 }
 
-.btn--animation {
+.control__btn--animation {
   box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
   transition: .3s;
 }
@@ -491,17 +491,17 @@ body {
   list-style: none;
 }
 
-.picture {
+.animation {
   display: inline-block;
   overflow: hidden;
 }
 
-.picture__img {
+.animation__img {
   transition: 1s;
   display: block;
 }
 
-.picture__img:hover {
+.animation__img:hover {
   transform: scale(1.1);
   animation: slide 3s ease-in-out infinite;
 }
@@ -510,14 +510,6 @@ body {
 
   0% {
     transform: scale(1);
-  }
-
-  20% {
-    transform: scale(1.2);
-  }
-
-  80% {
-    transform: scale(1.1);
   }
 
   95% {
