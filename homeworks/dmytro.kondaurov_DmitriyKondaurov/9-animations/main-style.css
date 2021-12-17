@@ -147,15 +147,11 @@ body {
 
 .header {
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
   height: 95px;
-  /*max-width: 1470px;*/
-  /*margin: auto;*/
-  /*display: flex;*/
-  /*justify-content: flex-start;*/
-  /*align-items: center;*/
 }
 
 .header__wrapper {
