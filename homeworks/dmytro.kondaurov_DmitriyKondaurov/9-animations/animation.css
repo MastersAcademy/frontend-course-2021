@@ -28,3 +28,16 @@
   animation-direction: normal;
   animation-timing-function: ease;
 }
+
+.advantages-list__item-icon,  .advantages-list__item {
+  transition: all .5s ease;
+}
+
+.advantages-list__item:hover {
+  transform: scale(1.3);
+}
+
+.advantages-list__item:hover .advantages-list__item-icon *:nth-child(1) {
+  stroke: #00A03E;
+}
+

@@ -1,4 +1,5 @@
 :root {
+  --theme-brand-color: #FD665E;
   --theme-bg-color: #FFF;
   --theme-text-color: #000;
   --theme-bg-color-trans: rgba(255, 255, 255, .9);

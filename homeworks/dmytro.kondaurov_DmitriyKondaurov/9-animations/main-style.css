@@ -47,7 +47,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #FD665E;
+  background-color: var(--theme-brand-color);
   border: none;
   border-radius: 13px;
   color: #FFF;
@@ -110,7 +110,7 @@ body {
 .call-to-action-btn {
   width: 180px;
   height: 55px;
-  background-color: #FD665E;
+  background-color: var(--theme-brand-color);
   border-radius: 4px;
   font-weight: 900;
   color: #FFF;
@@ -224,7 +224,7 @@ body {
 .header__btn-sing-up {
   height: 45px;
   width: 85px;
-  background-color: #FD665E;
+  background-color: var(--theme-brand-color);
 }
 
 .section-hero {
@@ -387,7 +387,7 @@ body {
 }
 
 .banner-focus {
-  color: #FD665E;
+  color: var(--theme-brand-color);
 }
 
 .footer__logo {
@@ -426,7 +426,8 @@ body {
 
 .header__btn-sing-in:hover,
 .header__btn-sing-in:focus {
-  color: #FD665E;
+  color: var(--theme-brand-color);
+  border-color: #000;
 }
 
 .call-to-action-btn:hover,
@@ -438,21 +439,21 @@ body {
 .list__item:hover,
 .list__item:focus {
   border-radius: 25px;
-  color: #FD665E;
+  color: var(--theme-brand-color);
   background-color: var(--theme-text-color);
 }
 
 .list__item:hover .list__link,
 .list__item:focus .list__link {
-  color: #FD665E;
+  color: var(--theme-brand-color);
 }
 
 .header-menu__link_active {
-  color: #FD665E;
+  color: var(--theme-brand-color);
 }
 
 .header__theme-switcher:hover {
-  border-color: #FD665E;
+  border-color: var(--theme-brand-color);
 }
 
 .header--scrolled {
