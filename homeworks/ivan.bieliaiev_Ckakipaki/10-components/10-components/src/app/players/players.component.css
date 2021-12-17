@@ -1,0 +1,49 @@
+.players__list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  list-style: none;
+}
+
+.player {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 56px;
+  margin: 0 0 13px;
+}
+
+.player__attributes {
+  display: flex;
+  align-items: center;
+  max-width: 177px;
+  background: #A5D9F6;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 9px;
+}
+
+.player__logo {
+  opacity: 0;
+}
+
+.player__name {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFF;
+}
+
+.player__score {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFF;
+  background: #A5D9F6;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

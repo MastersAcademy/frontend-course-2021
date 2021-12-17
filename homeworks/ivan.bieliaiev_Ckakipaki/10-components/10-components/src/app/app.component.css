@@ -1,12 +1,76 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
-.container {
+body {
   width: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 56px;
+  background: #78D4F1;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-size: 30px;
+  padding: 0 0 0 25px;
+  align-items: center;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.game-logo {
+  margin: 0 22px 0 0;
+}
+
+.who-turn {
+  width: 100%;
+  max-width: 336px;
+  margin: 62px auto;
+  display: flex;
+  height: 56px;
+  background: #A5D9F6;
+  align-items: center;
+  justify-content: start;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.who-turn__icon {
+  margin: 0 40px 0 10px;
+}
+
+.game__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  border: 1px solid #123;
+  padding: 0 0 0 77px;
+  justify-content: space-between;
+}
+
+.players-actions__container {
+  width: 100%;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.players__container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
 }
