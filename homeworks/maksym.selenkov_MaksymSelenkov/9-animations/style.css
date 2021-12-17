@@ -1,0 +1,379 @@
+html {
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+
+a::after {
+  background-color: #7F887FFF;
+  display: block;
+  content: "";
+  height: 2px;
+  width: 0;
+  left: 50%;
+  position: absolute;
+  transition: width .3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: none;
+  animation: btnLive 4s infinite;
+}
+
+@keyframes btnLive {
+
+  from, to {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .6;
+    color: #2C3A41;
+    transform: rotate(1deg);
+  }
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2.9%;
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto 10%;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 35px 50px;
+}
+
+.header__logo {
+  margin-right: 60px;
+}
+
+.live-logo {
+  animation: liveLogo 1s 3;
+}
+
+@keyframes liveLogo {
+
+  50% {
+    fill: #0D0D0D;
+    opacity: .5;
+  }
+
+  from, to {
+    fill: #FD665E;
+    opacity: 1;
+  }
+}
+
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav__link {
+  margin-right: 48px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 286%;
+  text-align: center;
+}
+
+.header__controls {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.controls__light {
+  max-width: 24px;
+  width: 100%;
+}
+
+.controls__in {
+  margin-left: 40px;
+}
+
+.controls__up {
+  margin-left: 40px;
+  width: 99px;
+  height: 48px;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 286%;
+  text-align: center;
+}
+
+.start__heading {
+  max-width: 870px;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 112px;
+  line-height: 100%;
+}
+
+.start__content {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 55px;
+  row-gap: 15px;
+}
+
+.start__message {
+  max-width: 290px;
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.start__button {
+  width: 179px;
+  height: 56px;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 286%;
+  text-align: center;
+}
+
+.start__image {
+  max-width: 100%;
+  animation: liveStartImg 3s;
+}
+
+@keyframes liveStartImg {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.page__rooms {
+  margin-bottom: 10%;
+}
+
+.rooms__heading {
+  max-width: 535px;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 124%;
+  margin: 0 auto;
+}
+
+.rooms__gallery {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 15px;
+  margin: 3% 0;
+  opacity: 0;
+}
+
+.shown {
+  opacity: 1;
+  animation: lazyImg 3s forwards;
+}
+
+@keyframes lazyImg {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.rooms__image {
+  max-width: 100%;
+}
+
+.needs__heading {
+  max-width: 459px;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 124%;
+}
+
+.needs__content {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 159px;
+}
+
+.needs__image {
+  max-width: 100%;
+  opacity: 0;
+}
+
+.needs__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item {
+  max-width: 391px;
+  display: flex;
+  column-gap: 40px;
+}
+
+.item__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  margin-top: 0;
+}
+
+.item__text {
+  max-width: 305px;
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.needs__button {
+  margin-top: 5.5%;
+  width: 205px;
+  height: 56px;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 286%;
+  text-align: center;
+}
+
+.page__dream {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 138px;
+  row-gap: 15px;
+  align-items: center;
+  margin-bottom: 200px;
+}
+
+.dream__heading {
+  max-width: 521px;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 124%;
+}
+
+.dream__button {
+  width: 205px;
+  height: 56px;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 286%;
+  text-align: center;
+}
+
+.dream__image {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .25));
+  opacity: 0;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__link {
+  margin-right: 48px;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 333%;
+  text-align: center;
+}
+
+.footer__logo {
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+}
+
+.to-top {
+  position: fixed;
+  right: 10%;
+  bottom: 10%;
+  width: 99px;
+  border-radius: 50%;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 340%;
+  text-align: center;
+  color: var(--color-carrot);
+  opacity: 0;
+  transition: 1s;
+}
+
+.to-top--shown {
+  opacity: .8;
+  transition: 1s;
+}
+
+@media (max-width: 320px) {
+
+  .start__heading {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .rooms__heading, .dream__heading, .needs__heading {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .header__logo {
+    margin: 0 auto;
+  }
+
+  .nav__link {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .controls__light {
+    margin-right: auto;
+  }
+}
