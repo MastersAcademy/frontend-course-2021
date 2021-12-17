@@ -72,9 +72,28 @@
   animation-timing-function: ease-in;
 }
 
-/*.gallery__image:hover {*/
-/*  transform: scale(1.1);*/
-/*}*/
+.nav-to-top-btn.active {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+button {
+  box-shadow: 0 0 5px 5px transparent;
+  transition: all 1s ease;
+}
+
+button:hover {
+  box-shadow: 0 0 5px 5px var(--theme-brand-color);
+  border: 1px solid #000;
+  transition: all 1s ease;
+}
+
+.list__item:hover {
+  border-radius: 25px;
+  color: var(--theme-brand-color);
+  background-color: var(--theme-text-color);
+}
+
 
 @keyframes rotateLogo {
 

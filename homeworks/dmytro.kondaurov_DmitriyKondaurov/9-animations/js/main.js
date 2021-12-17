@@ -40,6 +40,9 @@ const scrollActions = () => {
         if (window.scrollY > galleryContainer.offsetTop - 450) {
             galleryContainer.classList.add('show');
         }
+        if (window.scrollY > window.screen.height) {
+            navToTopBtn.classList.add('active');
+        }
     } else {
         headerContainer.classList.remove('header--scrolled');
     }

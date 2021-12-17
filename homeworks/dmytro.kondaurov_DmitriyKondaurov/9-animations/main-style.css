@@ -402,6 +402,7 @@ body {
   height: 60px;
   padding-bottom: 5px;
   box-sizing: border-box;
+  opacity: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -410,6 +411,7 @@ body {
   color: #00A03E;
   font-size: 25px;
 }
+
 
 @media only screen and (min-width: 585px) {
 
@@ -439,12 +441,6 @@ body {
   .section-hero__banner {
     margin-left: 80px;
   }
-}
-
-.header__btn-sing-in:hover,
-.header__btn-sing-in:focus {
-  color: var(--theme-brand-color);
-  border-color: #000;
 }
 
 .call-to-action-btn:hover,
