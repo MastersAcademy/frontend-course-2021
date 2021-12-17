@@ -204,6 +204,8 @@ body {
   height: auto;
   width: 70%;
   object-fit: cover;
+  opacity: 0;
+  transform: scale(0);
 }
 
 .info__left-container {
@@ -277,6 +279,8 @@ body {
   height: auto;
   width: 24.5%;
   margin: 0 0 5px;
+  transform: scale(.2);
+  opacity: 0;
 }
 
 .needs {
@@ -306,6 +310,8 @@ body {
   max-width: 70%;
   margin: 0 10px 0 0;
   object-fit: cover;
+  transform: scale(.2);
+  opacity: 0;
 }
 
 .needs__right-info {
@@ -378,6 +384,11 @@ body {
 
 .realize-house {
   width: 100%;
+}
+
+.realize-house__image {
+  opacity: 0;
+  transform: scale(0);
 }
 
 .realize-house__container {
@@ -466,6 +477,12 @@ body {
   transform: scale(1.5);
 }
 
+.animate-img {
+  transition: all .7s ease-in-out;
+  opacity: 1;
+  transform: scale(1);
+}
+
 @media screen and (max-width: 768px) {
 
   body {
@@ -517,11 +534,13 @@ body {
 @keyframes buttonGradient {
 
   from, to {
-    background: #C00;
+    opacity: .9;
+    transform: scale(.95);
   }
 
   50% {
-    background: #EE6F6B;
+    opacity: 1;
+    transform: scale(1);
   }
 }
 

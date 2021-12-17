@@ -2,9 +2,24 @@ const switchLunaEl = document.querySelector('[data-switch-luna]');
 const switchSunEl = document.querySelector('[data-switch-sun]');
 const logoEl = document.querySelector('[data-logo]');
 const scrollEl = document.querySelector('[data-scrolle]');
+const animateImgEls = document.querySelectorAll('[data-image]');
+const mainImgEl = document.querySelector('[data-main-img]');
 scrollEl.classList.add('scroll-up__hidden');
 const { fromEvent } = window.rxjs;
 const { scan, debounceTime } = window.rxjs.operators;
+
+const checkBoxes = () => {
+    const triggerBottom = window.innerHeight;
+
+    animateImgEls.forEach((el) => {
+        const imgTop = el.getBoundingClientRect().top;
+        if (imgTop < triggerBottom) {
+            el.classList.add('animate-img');
+        }
+    });
+};
+
+window.addEventListener('scroll', checkBoxes);
 
 const showAnimationLogo = () => {
     logoEl.animate([
@@ -37,6 +52,7 @@ const switchToWhite = () => {
 
 window.addEventListener('load', () => {
     showAnimationLogo();
+    mainImgEl.classList.add('animate-img');
 });
 
 switchLunaEl.addEventListener('click', () => {
@@ -45,6 +61,12 @@ switchLunaEl.addEventListener('click', () => {
 
 switchSunEl.addEventListener('click', () => {
     switchToWhite();
+});
+
+animateImgEls.forEach((el) => {
+    console.log(el.visibility);
+    el.addEventListener('visibilitychange', () => {
+    });
 });
 
 scrollEl.addEventListener('click', () => {
@@ -61,7 +83,6 @@ const scrolling$ = fromEvent(document, 'scroll')
     );
 
 scrolling$.subscribe((winPos) => {
-    console.log(winPos);
     if (winPos > 100) {
         scrollEl.classList.remove('scroll-up__hidden');
     } else {
