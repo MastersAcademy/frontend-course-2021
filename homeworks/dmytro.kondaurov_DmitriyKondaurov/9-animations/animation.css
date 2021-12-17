@@ -1,3 +1,30 @@
-body {
-  background-color: #FFF;
+@keyframes slideIn {
+
+  0% {
+    position: absolute;
+    left: 100%;
+    top: 35px;
+  }
+
+  75% {
+    position: absolute;
+    left: 0;
+    top: 35px;
+  }
+
+  100% {
+    position: absolute;
+    left: 320px;
+    top: 35px;
+  }
+}
+
+.logo__svg {
+  position: relative;
+  animation-name: slideIn;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease;
 }
