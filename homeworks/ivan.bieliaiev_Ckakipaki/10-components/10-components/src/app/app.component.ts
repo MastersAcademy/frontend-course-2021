@@ -15,7 +15,7 @@ export class AppComponent {
     Players: IPlayer[] = [{
         name: 'Player 1',
         logo: 'src',
-        score: 0,
+        score: 3,
     },
     {
         name: 'Player 2',
@@ -23,5 +23,11 @@ export class AppComponent {
         score: 0,
     }
     ]
+
+    resetPlayersScores () {
+        this.Players.forEach((player) => {
+            player.score = 0;
+        })
+    }
     title = '10-components';
 }

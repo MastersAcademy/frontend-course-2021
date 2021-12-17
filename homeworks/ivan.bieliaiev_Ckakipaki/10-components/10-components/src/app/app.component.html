@@ -21,7 +21,7 @@
     <div class="game__container">
         <div class="players-actions__container">
             <app-players class="players__container" [players] = "Players"></app-players>
-            <app-game-actions class="actions__container"></app-game-actions>
+            <app-game-actions class="actions__container" (onClick)="resetPlayersScores()"></app-game-actions>
         </div>
         <app-game></app-game>
     </div>
