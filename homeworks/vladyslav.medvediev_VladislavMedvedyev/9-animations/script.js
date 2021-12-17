@@ -54,5 +54,8 @@ function showUpArrow() {
 window.addEventListener('scroll', showUpArrow);
 
 upArrowEl.addEventListener('click', () => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
 });
