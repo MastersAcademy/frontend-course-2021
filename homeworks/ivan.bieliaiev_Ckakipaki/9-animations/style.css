@@ -541,4 +541,11 @@ body {
     width: 100%;
     justify-content: space-between;
   }
+
+  .scroll-up {
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+  }
 }
