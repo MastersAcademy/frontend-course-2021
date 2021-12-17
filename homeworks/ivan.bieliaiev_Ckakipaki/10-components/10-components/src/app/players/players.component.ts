@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {IPlayer} from '../app.component';
 
 @Component({
     selector: 'app-players',
@@ -7,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayersComponent implements OnInit {
 
+    @Input() players: IPlayer [] = []
+
+    constructor() {
+        console.log('hello')
+    }
 
     ngOnInit(): void {
         console.log('players');

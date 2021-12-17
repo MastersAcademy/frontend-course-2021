@@ -74,3 +74,11 @@ body {
   align-items: start;
   width: 100%;
 }
+
+.actions__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 18px 0 0;
+}

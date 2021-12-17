@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <ul class="players__list">
-    <li class="player">
+    <li class="player" *ngFor="let player of players;">
         <div class="player__attributes">
             <svg class="player__logo" display="none"></svg>
-            <p class="player__name">Player 1</p>
+            <p class="player__name">{{player.name}}</p>
         </div>
-        <div class="player__score">0</div>
-    </li>
-    <li class="player">
-        <div class="player__attributes">
-            <svg class="player__logo" display="none"></svg>
-            <p class="player__name">Player 2</p>
-        </div>
-        <div class="player__score">0</div>
+        <div class="player__score">{{player.score}}</div>
     </li>
 </ul>
