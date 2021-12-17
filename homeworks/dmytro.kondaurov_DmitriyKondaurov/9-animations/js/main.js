@@ -9,7 +9,7 @@ let themeStatus = styleSrc.getAttribute('href');
 const listNavItems = Array.from(document.querySelectorAll('[data-nav-item]'));
 let width = (window.innerWidth > 0) ? window.innerWidth : window.screen.width;
 
-window.addEventListener('load', () => {
+const initialStateNavMenu = () => {
     if (width > 1024) {
         menuSwitcherBtn.attributes['data-menu-switcher-btn'].value = '0';
         menuContainer.classList.remove('list--visibility-hide');
@@ -17,17 +17,17 @@ window.addEventListener('load', () => {
         menuSwitcherBtn.attributes['data-menu-switcher-btn'].value = '1';
         menuContainer.classList.add('list--visibility-hide');
     }
-});
+};
 
-window.addEventListener('scroll', () => {
+const addBgHeaderOnScroll = () => {
     if (window.scrollY > 50) {
         headerContainer.classList.add('header--scrolled');
     } else {
         headerContainer.classList.remove('header--scrolled');
     }
-});
+};
 
-window.addEventListener('resize', () => {
+const navMenuStateOnResize = () => {
     width = (window.innerWidth > 0) ? window.innerWidth : window.screen.width;
     if (width > 1024) {
         menuSwitcherBtn.attributes['data-menu-switcher-btn'].value = '0';
@@ -36,9 +36,9 @@ window.addEventListener('resize', () => {
         menuSwitcherBtn.attributes['data-menu-switcher-btn'].value = '1';
         menuContainer.classList.add('list--visibility-hide');
     }
-});
+};
 
-menuSwitcherBtn.addEventListener('click', () => {
+const toggleMenu = () => {
     if (menuSwitcherBtn.attributes['data-menu-switcher-btn'].value === '1') {
         menuContainer.classList.remove('list--visibility-hide');
         menuSwitcherBtn.attributes['data-menu-switcher-btn'].value = '0';
@@ -50,13 +50,12 @@ menuSwitcherBtn.addEventListener('click', () => {
         switcherBtnLine1.classList.remove('switcher__cross-lines_close');
         switcherBtnLine2.classList.remove('switcher__cross-lines_close');
     }
-});
+};
 
-menuContainer.addEventListener('click', (e) => {
+const itemMenuTrigger = (e) => {
     const clickEvent = new Event('click');
     const curNavItemEl = e.target;
 
-    // active menu item for landing page
     listNavItems.forEach((item) => {
         if (curNavItemEl.tagName === 'A') {
             item.classList.remove('header-menu__link_active');
@@ -79,9 +78,9 @@ menuContainer.addEventListener('click', (e) => {
             }
         }
     });
-});
+};
 
-themeSwitcherBtn.addEventListener('click', () => {
+const themeTogle = () => {
     if (themeStatus === 'style-day.css') {
         styleSrc.setAttribute('href', 'style-night.css');
         themeSwitcherBtn.firstElementChild.setAttribute('src', 'images/cil_sun.png');
@@ -91,4 +90,11 @@ themeSwitcherBtn.addEventListener('click', () => {
         themeSwitcherBtn.firstElementChild.setAttribute('src', 'images/ic_sharp-mode-night.png');
         themeStatus = 'style-day.css';
     }
-});
+};
+
+window.addEventListener('load', initialStateNavMenu);
+window.addEventListener('scroll', addBgHeaderOnScroll);
+window.addEventListener('resize', navMenuStateOnResize);
+menuSwitcherBtn.addEventListener('click', toggleMenu);
+menuContainer.addEventListener('click', itemMenuTrigger);
+themeSwitcherBtn.addEventListener('click', themeTogle);
