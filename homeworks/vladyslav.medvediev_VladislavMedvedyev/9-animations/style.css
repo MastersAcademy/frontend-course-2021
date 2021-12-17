@@ -21,11 +21,11 @@
 @keyframes button-hover-anim {
 
   0%, 50% {
-    transform: scale(1);
+    transform: scale(.8);
   }
 
   50%, 100% {
-    transform: scale(1.2);
+    transform: scale(1);
   }
 }
 
@@ -453,6 +453,25 @@
   margin-right: 11.45%;
 }
 
+.up-arrow {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.up-arrow-visible {
+  position: fixed;
+  right: 25px;
+  bottom: 50px;
+  z-index: 999;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 2s;
+}
+
+.up-arrow-svg {
+  fill: var(--button-color);
+}
+
 @media (max-width: 1023px) {
 
   .h2 {
@@ -661,5 +680,10 @@
   .footer__logo {
     margin-top: 30px;
     margin-right: 0;
+  }
+
+  .up-arrow-visible {
+    right: 15px;
+    bottom: 35px;
   }
 }
