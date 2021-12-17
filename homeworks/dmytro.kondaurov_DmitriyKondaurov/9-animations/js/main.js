@@ -4,12 +4,20 @@ const menuSwitcherBtn = document.querySelector('[data-menu-switcher-btn]');
 const switcherBtnLine1 = document.querySelector('[data-cross-line-1]');
 const switcherBtnLine2 = document.querySelector('[data-cross-line-2]');
 const menuContainer = document.querySelector('[data-header-menu]');
+const navToTopBtn = document.querySelector('[data-nav-to-top-bnt]');
 const headerContainer = document.querySelector('[data-header]');
 const galleryContainer = document.querySelector('[data-gallery-container]');
 const heroPictureEl = document.querySelector('[data-hero-picture]');
 let themeStatus = styleSrc.getAttribute('href');
 const listNavItems = Array.from(document.querySelectorAll('[data-nav-item]'));
 let width = (window.innerWidth > 0) ? window.innerWidth : window.screen.width;
+
+const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+};
 
 const initialStateNavMenu = () => {
     if (width > 1024) {
@@ -112,3 +120,4 @@ window.addEventListener('resize', navMenuStateOnResize);
 menuSwitcherBtn.addEventListener('click', toggleMenu);
 menuContainer.addEventListener('click', itemMenuTrigger);
 themeSwitcherBtn.addEventListener('click', themeToggle);
+navToTopBtn.addEventListener('click', scrollToTop);
