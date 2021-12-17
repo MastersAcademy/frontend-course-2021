@@ -1,0 +1,476 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-roboto: "Roboto", sant-serif;
+  --font-Mmerriweather: "Merriweather", serif;
+  --text-size: 14px;
+  --title-size3: 48px;
+  --title-size1: 40px;
+  --title-size2: 112px;
+  --font-weight-bold: 700;
+  --font-weight-extra: 900;
+  --color-background: #FFF;
+  --color-font: #111;
+  --navigation-color: #585858;
+  --color-font-red: #FD665E;
+  --transition-all: all .3s linear;
+}
+
+body {
+  width: 100%;
+  background: var(--color-background);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 50px;
+  height: auto;
+}
+
+.header__left-container {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  justify-content: space-between;
+}
+
+.header__logo:hover {
+  cursor: pointer;
+}
+
+.logo__icon {
+  fill: var(--color-font-red);
+  transition: var(--transition-all);
+}
+
+.logo__icon:hover {
+  transform: scale(1.3);
+}
+
+.header__navigation {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 0;
+  width: 85%;
+}
+
+.navigation__item {
+  padding: 0 0 0 9px;
+  color: var(--navigation-color);
+  text-decoration: none;
+  font-size: var(--text-size);
+  font-family: var(--font-roboto);
+  transition: var(--transition-all);
+}
+
+.navigation__item:hover {
+  color: var(--color-font-red);
+}
+
+.header__actions {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.action__switch-style {
+  fill: var(--navigation-color);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: var(--transition-all);
+}
+
+.action__switch-style:hover {
+  fill: var(--color-font-red);
+}
+
+.sign-in__action {
+  color: var(--color-font);
+  width: 92px;
+  height: 48px;
+  background: var(--color-background);
+  transition: var(--transition-all);
+  font-size: var(--text-size);
+  font-family: var(--font-roboto);
+  border: 0;
+  border-radius: 4px;
+}
+
+.sign-in__action:hover {
+  cursor: pointer;
+  border: 1px solid var(--color-font-red);
+}
+
+.sign-up__action {
+  background: var(--color-font-red);
+  color: var(--color-background);
+  font-size: var(--text-size);
+  font-weight: var(--font-weight-extra);
+  font-family: var(--font-roboto);
+  border-radius: 4px;
+  border: 0;
+  width: 99px;
+  height: 48px;
+  transition: var(--transition-all);
+  letter-spacing: .01em;
+}
+
+.sign-up__action:hover {
+  cursor: pointer;
+  border-radius: 10px;
+  opacity: .8;
+}
+
+.dream-house {
+  width: 100%;
+  max-width: 1090px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 48px auto 0;
+}
+
+.dream-house__title {
+  font-family: var(--font-Mmerriweather);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--title-size2);
+  display: block;
+  width: 100%;
+  line-height: 100%;
+  color: var(--color-font);
+}
+
+.dream-house__title__house {
+  color: var(--color-font-red);
+}
+
+.dream-house__info {
+  display: flex;
+  justify-content: space-between;
+  margin: 47px 0 0;
+  width: 100%;
+}
+
+.dream-house__image {
+  padding: 0 0 0 10px;
+  height: auto;
+  width: 70%;
+  object-fit: cover;
+}
+
+.info__left-container {
+  width: 30%;
+  padding: 0 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.dream-house__text {
+  display: block;
+  margin: 0 0 56px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 160%;
+  font-family: var(--font-roboto);
+  color: var(--color-font);
+}
+
+.dream-house__button {
+  font-size: var(--text-size);
+  background: var(--color-font-red);
+  width: 100%;
+  max-width: 179px;
+  height: 56px;
+  border: 0;
+  border-radius: 4px;
+  color: var(--color-background);
+  font-weight: 900;
+  transition: all .3s linear;
+}
+
+.dream-house__button:hover {
+  cursor: pointer;
+  border: 10px;
+  opacity: .8;
+}
+
+.valuable-rooms {
+  margin: 112px 0 0;
+  display: flex;
+  width: 100%;
+  padding: 0 50px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.valuable-rooms__title {
+  display: flex;
+  width: auto;
+  font-family: var(--font-Mmerriweather);
+  font-weight: 900;
+  font-size: var(--title-size3);
+  line-height: 124%;
+  margin: 0 0 40px;
+  color: var(--color-font);
+}
+
+.valuable-rooms__list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.valuable-rooms__img {
+  height: auto;
+  width: 24.5%;
+  margin: 0 0 5px;
+}
+
+.needs {
+  width: 100%;
+  margin: 128px 0;
+  max-width: 1060px;
+  padding: 0 10px 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.needs__title {
+  margin: 0 0 40px;
+  font-family: var(--font-Mmerriweather);
+  font-size: var(--title-size3);
+  color: var(--color-font);
+}
+
+.needs__info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.needs__image {
+  max-width: 70%;
+  margin: 0 10px 0 0;
+  object-fit: cover;
+}
+
+.needs__right-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.needs__list__item {
+  width: 100%;
+  max-width: 391px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.needs__item__icon {
+  display: block;
+  margin: 0 30px 0 0;
+  stroke: var(--color-font);
+  fill: var(--color-background);
+}
+
+.needs__item__info {
+  width: 100%;
+  max-width: 305px;
+}
+
+.needs__item__info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.needs__item__title {
+  font-size: 16px;
+  font-family: var(--font-roboto);
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--color-font);
+}
+
+.needs__item__text {
+  font-family: var(--font-roboto);
+  font-size: 16px;
+  line-height: 160%;
+  margin: 0 0 48px;
+  color: var(--color-font);
+}
+
+.needs__button {
+  margin: 24px 0 0;
+  width: 205px;
+  height: 56px;
+  background: var(--color-font-red);
+  border: 0;
+  border-radius: 4px;
+  font-size: var(--text-size);
+  color: var(--color-background);
+  font-weight: 900;
+  transition: all .3s linear;
+}
+
+.needs__button:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+.realize-house {
+  width: 100%;
+}
+
+.realize-house__container {
+  margin: 128px auto 64px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1202px;
+  padding: 0 61px 0 0;
+  align-items: center;
+}
+
+.realize-house__info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.realize-house__title {
+  display: block;
+  font-size: var(--title-size3);
+  line-height: 124%;
+  font-family: var(--font-Mmerriweather);
+  font-weight: 700;
+  color: var(--color-font);
+}
+
+.realize-house__title-red {
+  color: var(--color-font-red);
+}
+
+.realize-house__button {
+  background: var(--color-font-red);
+  width: 205px;
+  height: 56px;
+  font-size: var(--text-size);
+  line-height: 40px;
+  font-family: var(--font-roboto);
+  color: var(--color-background);
+  border: 0;
+  border-radius: 4px;
+  margin: 72px 0 0;
+  font-weight: 900;
+  transition: all .3s linear;
+}
+
+.realize-house__button:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  padding: 83px 30px;
+  justify-content: space-between;
+}
+
+.footer__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+  body {
+    --title-size2: 48px;
+    --title-size3: 30px;
+  }
+
+  .header {
+    padding: 10px 15px;
+  }
+
+  .header__left-container {
+    padding: 0 30px 0 0;
+  }
+
+  .dream-house {
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .dream-house__title {
+    width: 100%;
+    --title-size2: 60px;
+  }
+
+  .valuable-rooms {
+    margin: 30px 0 10px;
+    padding: 0 10px;
+  }
+
+  .valuable-rooms__img {
+    width: 49%;
+  }
+
+  .needs {
+    padding: 0 10px;
+    margin: 0;
+  }
+
+  .needs__image {
+    width: 50%;
+  }
+
+  .realize-house__image {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+
+  .header {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .header__left-container {
+    width: 100%;
+  }
+
+  .header__actions {
+    margin: 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
