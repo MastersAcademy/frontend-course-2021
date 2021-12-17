@@ -5,6 +5,8 @@ const switcherBtnLine1 = document.querySelector('[data-cross-line-1]');
 const switcherBtnLine2 = document.querySelector('[data-cross-line-2]');
 const menuContainer = document.querySelector('[data-header-menu]');
 const headerContainer = document.querySelector('[data-header]');
+const galleryContainer = document.querySelector('[data-gallery-container]');
+const heroPictureEl = document.querySelector('[data-hero-picture]');
 let themeStatus = styleSrc.getAttribute('href');
 const listNavItems = Array.from(document.querySelectorAll('[data-nav-item]'));
 let width = (window.innerWidth > 0) ? window.innerWidth : window.screen.width;
@@ -19,9 +21,17 @@ const initialStateNavMenu = () => {
     }
 };
 
-const addBgHeaderOnScroll = () => {
+const heroPictureAnimate = () => {
+    heroPictureEl.style.opacity = 1;
+    heroPictureEl.style.transform = 'translateY(0%)';
+};
+
+const scrollActions = () => {
     if (window.scrollY > 50) {
         headerContainer.classList.add('header--scrolled');
+        if (window.scrollY > galleryContainer.offsetTop - 450) {
+            galleryContainer.classList.add('show');
+        }
     } else {
         headerContainer.classList.remove('header--scrolled');
     }
@@ -80,7 +90,7 @@ const itemMenuTrigger = (e) => {
     });
 };
 
-const themeTogle = () => {
+const themeToggle = () => {
     if (themeStatus === 'style-day.css') {
         styleSrc.setAttribute('href', 'style-night.css');
         themeSwitcherBtn.firstElementChild.setAttribute('src', 'images/cil_sun.png');
@@ -92,9 +102,13 @@ const themeTogle = () => {
     }
 };
 
-window.addEventListener('load', initialStateNavMenu);
-window.addEventListener('scroll', addBgHeaderOnScroll);
+window.addEventListener('load', () => {
+    heroPictureAnimate();
+    initialStateNavMenu();
+});
+
+window.addEventListener('scroll', scrollActions);
 window.addEventListener('resize', navMenuStateOnResize);
 menuSwitcherBtn.addEventListener('click', toggleMenu);
 menuContainer.addEventListener('click', itemMenuTrigger);
-themeSwitcherBtn.addEventListener('click', themeTogle);
+themeSwitcherBtn.addEventListener('click', themeToggle);

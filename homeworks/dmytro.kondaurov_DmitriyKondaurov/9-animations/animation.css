@@ -1,11 +1,17 @@
 .logo__svg {
   position: relative;
-  animation-name: slideInLogo;
+  animation-name: rotateLogo;
   animation-duration: 2s;
   animation-delay: 0s;
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-timing-function: ease;
+}
+
+.section-hero__teaser-picture {
+  opacity: 0;
+  transform: translateY(70%);
+  transition: all 2s ease;
 }
 
 .advantages-list__item-icon,  .advantages-list__item {
@@ -23,52 +29,88 @@
 .gallery__image {
   transition: transform .5s ease;
   position: relative;
+  opacity: 0;
 }
 
-.gallery__image:hover {
-  transform: scale(1.1);
-  /*transition: transform .5s cubic-bezier();*/
+.gallery.show .gallery__image {
+  opacity: 1;
 }
 
-@keyframes slideInLogo {
+.gallery.show  .gallery__image:nth-child(1) {
+  animation-name: slideLeft;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-in;
+}
+
+.gallery.show  .gallery__image:nth-child(2) {
+  animation-name: slideLeft;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease;
+}
+
+.gallery.show  .gallery__image:nth-child(3) {
+  animation-name: slideRight;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease;
+}
+
+.gallery.show  .gallery__image:nth-child(4) {
+  animation-name: slideRight;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-in;
+}
+
+/*.gallery__image:hover {*/
+/*  transform: scale(1.1);*/
+/*}*/
+
+@keyframes rotateLogo {
 
   0% {
-    position: absolute;
-    left: 100%;
-    top: 35px;
-  }
-
-  75% {
-    position: absolute;
-    left: 0;
-    top: 35px;
+    transform: rotate(0deg);
   }
 
   100% {
-    position: absolute;
-    left: 320px;
-    top: 35px;
+    transform: rotate(360deg);
   }
 }
 
-@keyframes slideInImg {
+
+@keyframes slideLeft {
 
   0% {
-    position: relative;
-    left: 100%;
-    top: 35px;
-  }
-
-  75% {
-    position: relative;
-    left: 0;
-    top: 35px;
+    opacity: 0;
+    transform: translateX(-70%);
   }
 
   100% {
-    position: relative;
-    left: 320px;
-    top: 35px;
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideRight {
+
+  0% {
+    opacity: 0;
+    transform: translateX(70%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
   }
 }
 
