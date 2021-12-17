@@ -1,0 +1,440 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-red: #FD665E;
+  --color-text: #000;
+  --color-background: #FFF;
+  --color-btn-hover: #F8A09C;
+  --border-radius-button: 4px;
+}
+
+[data-skin="light"] {
+  --color-text: #000;
+  --color-background: #FFF;
+  --color-red: #FD665E;
+}
+
+[data-skin="dark"] {
+  --color-background: #000;
+  --color-text: #FFF;
+  --color-red: #FD7E77;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--color-text);
+}
+
+.wrapper {
+  max-width: 1440px;
+  min-width: 720px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: var(--color-background);
+}
+
+.header__logo {
+  list-style: none;
+}
+
+.logo {
+  width: 62px;
+  height: 28px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-text);
+  cursor: pointer;
+}
+
+.icon:hover {
+  fill: var(--color-red);
+}
+
+.header {
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 1440px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  background-color: var(--color-background);
+}
+
+.header__nav, .header__control {
+  width: auto;
+  height: 96px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header__menu {
+  margin-left: 37px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.header__menu-link, .control__sign-in {
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.header__menu-link:hover, .control__sign-in:hover {
+  color: var(--color-red);
+}
+
+.header__skin-btn {
+  border: none;
+  background-color: var(--color-background);
+}
+
+.control__btn {
+  width: 99px;
+  height: 48px;
+  font-family: Roboto, sans-serif;
+  font-weight: 900;
+  color: var(--color-background);
+  background-color: var(--color-red);
+  border: none;
+  border-radius: var(--border-radius-button);
+  cursor: pointer;
+}
+
+.control__btn:hover {
+  background-color: var(--color-btn-hover);
+}
+
+.main {
+  width: 1440px;
+  background-color: var(--color-background);
+  box-sizing: border-box;
+}
+
+.main__dream-house {
+  margin-top: 50px;
+  margin-left: 165px;
+  width: 1110px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dream-house__name {
+  width: 870px;
+  font-family: Merriweather;
+  font-weight: 900;
+  font-size: 112px;
+  line-height: 100%;
+  letter-spacing: -.02em;
+}
+
+.main__color-word {
+  color: var(--color-red);
+}
+
+.dream-house__info {
+  margin-top: 56px;
+  margin-right: 55px;
+}
+
+.dream-house__text {
+  width: 290px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: var(--color-black);
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: .01em;
+}
+
+.dream-house__btn {
+  margin-top: 48px;
+  width: 179px;
+  height: 56px;
+  background-color: var(--color-red);
+  border: none;
+  border-radius: var(--border-radius-button);
+  font-family: Roboto, sans-serif;
+  font-weight: 900;
+  color: var(--color-background);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dream-house__btn:hover {
+  background-color: var(--color-btn-hover);
+}
+
+.dream-house__picture {
+  margin-top: 47px;
+}
+
+.main__build-room {
+  margin-top: 112px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.build-room__name, .archmove__name, .realize-dream__name {
+  font-family: Merriweather;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 124%;
+  letter-spacing: -.04em;
+}
+
+.build-room__name {
+  width: 535px;
+}
+
+.build-room__picture {
+  margin-top: 40px;
+  width: 92%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main__archmove {
+  margin-top: 128px;
+  margin-left: 165px;
+}
+
+.archmove__name {
+  width: 459px;
+}
+
+.archmove__info {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.archmove__picture {
+  margin-right: 155px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.list__info {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: row;
+}
+
+.info__img {
+  margin-right: 38px;
+  width: 40px;
+  height: 53px;
+  fill: var(--color-background);
+}
+
+.guaranteed {
+  width: 48px;
+  height: 56px;
+}
+
+.fees {
+  width: 39px;
+  height: 48px;
+}
+
+.escort {
+  width: 40px;
+  height: 53px;
+}
+
+.info__text {
+  width: 305px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: .01em;
+}
+
+.info__name {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.free-consultation-btn {
+  margin-top: 72px;
+  margin-left: 83px;
+  width: 205px;
+  height: 56px;
+  background-color: var(--color-red);
+  color: var(--color-background);
+  font-family: Roboto, sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  border: none;
+  border-radius: var(--border-radius-button);
+  cursor: pointer;
+}
+
+.free-consultation-btn:hover {
+  background-color: var(--color-btn-hover);
+}
+
+.free-consultation-btn--no-margin {
+  margin-top: 64px;
+  margin-left: 0;
+}
+
+.main__realize-dream {
+  margin-top: 64px;
+  width: 100%;
+  background: linear-gradient(0deg, rgb(249, 249, 249, .6) 12%, rgba(249, 249, 249, 0) 100%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.realize-dream__img {
+  margin-left: 119px;
+  padding-top: 88px;
+}
+
+.realize-dream__text {
+  margin-left: 123px;
+}
+
+.realize-dream__name {
+  width: 521px;
+}
+
+.footer {
+  width: 1440px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgb(249, 249, 249, .6) 12%, rgba(249, 249, 249, 0) 100%);
+  background-color: var(--color-background);
+  box-sizing: border-box;
+}
+
+.footer__menu, .footer__logo {
+  margin-top: 93px;
+  margin-left: 160px;
+  margin-bottom: 94px;
+}
+
+.footer__menu {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.menu__link {
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: Roboto, sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.menu__link:hover {
+  color: var(--color-red);
+}
+
+.footer__logo {
+  margin-right: 166px;
+  list-style: none;
+}
+
+@media (max-width: 800px) {
+
+  .wrapper, .header, .main, .footer {
+    width: 100%;
+  }
+
+  .header {
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center;
+  }
+
+  .main__dream-house {
+    width: 100%;
+    margin-left: 30px;
+    margin-right: 30px;
+    flex-direction: column;
+  }
+
+  .dream-house__name {
+    width: 600px;
+    font-size: 80px;
+  }
+
+  .dream-house__text {
+    width: 75%;
+  }
+
+  .picture__img {
+    width: 92%;
+  }
+
+  .build-room__img {
+    margin-bottom: 20px;
+  }
+
+  .main__archmove {
+    margin-top: 80px;
+    margin-left: 30px;
+  }
+
+  .archmove__info {
+    flex-wrap: wrap;
+  }
+
+  .main__realize-dream {
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer__menu, .footer_logo {
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+  }
+
+  .menu__link {
+    font-size: 18px;
+  }
+
+  .footer__logo {
+    margin-right: 60px;
+  }
+}
