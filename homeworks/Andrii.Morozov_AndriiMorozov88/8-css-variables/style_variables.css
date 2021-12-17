@@ -1,38 +1,38 @@
 html {
-  --clr1: #FD665E;
-  --clr2: #FFF;
-  --clr3: #FFF;
-  --clr4: #F9F9F9;
-  --clr5: #585858;
-  --clr6: #000;
-  --clr7: #444;
+  --clr-n40: #FD665E;
+  --clr-n10: #FFF;
+  --clr-n11: #FFF;
+  --grad: #F9F9F9;
+  --clr-n20: #585858;
+  --clr-n100: #000;
+  --clr-n25: #444;
   --fs-x: 112px;
   --fs-t: 48px;
   --fs-m: 14px;
   --fs-s: 12px;
   --fs-l: 16px;
+  --fs-t-r: 25px;
   --ff-p: "Roboto", sans-serif;
   --ff-h: "Merriweather", serif;
   --fw-b: 900;
 }
 
 .html--night {
-  --clr1: #F97E77;
-  --clr2: #0D0D0D;
-  --clr3: #000;
+  --clr-n40: #F97E77;
+  --clr-n10: #0D0D0D;
+  --clr-n15: #000;
   --grad: linear-gradient(180deg, #0D0D0D 22%, #F9F9F9 300%);
-  --clr5: #FFF;
-  --clr6: #FFF;
+  --clr-n20: #FFF;
+  --clr-n100: #FFF;
 }
 
 .themes-toggle__button--halfmoon {
-  fill: var(--clr7);
+  fill: var(--clr-n25);
 }
 
 .themes-toggle__button--sun {
-  fill: var(--clr6);
+  fill: var(--clr-n100);
 }
-
 
 .themes-toggle__button--hidden {
   display: none;
@@ -43,10 +43,10 @@ html {
 }
 
 body {
-  background-color: var(--clr2);
+  background-color: var(--clr-n10);
   max-width: 1440px;
   margin: 0 auto;
-  color: var(--clr6);
+  color: var(--clr-n100);
 }
 
 .button {
@@ -57,8 +57,8 @@ body {
 }
 
 .button--primary {
-  color: var(--clr3);
-  background-color: var(--clr1);
+  color: var(--clr-n11);
+  background-color: var(--clr-n40);
   border-radius: 4px;
   font-weight: var(--fw-b);
   padding: 15px 24px;
@@ -66,7 +66,7 @@ body {
 
 .button--secondary {
   margin-right: 30px;
-  background-color: var(--clr2);
+  background-color: var(--clr-n10);
   color: var(--clr5);
 }
 
@@ -75,7 +75,7 @@ body {
 }
 
 .logo {
-  fill: var(--clr1);
+  fill: var(--clr-n40);
   width: 61px;
   padding-left: 30px;
 }
@@ -108,7 +108,7 @@ body {
 .menu__link {
   text-decoration: none;
   cursor: pointer;
-  color: var(--clr5);
+  color: var(--clr-n20);
 }
 
 .menu__line:hover {
@@ -249,14 +249,14 @@ body {
 
 .archmove__icon {
   padding-top: 15px;
-  fill: var(--clr1);
-  stroke: var(--clr1);
+  fill: var(--clr-n40);
+  stroke: var(--clr-n40);
 }
 
 .archmove__icon--bird {
   padding-left: 5px;
   padding-top: 15px;
-  stroke: var(--clr1);
+  stroke: var(--clr-n40);
 }
 
 .archmove__block {
@@ -398,16 +398,15 @@ body {
 
   .dreamhouse__text {
     font-family: var(--ff-p);
-    font-size: 25px;
+    font-size: var(--fs-t-r);
     line-height: 1;
   }
 
   .design__title {
-    font-size: 25px;
+    font-size: var(--fs-t-r);
   }
 
   .design__photo {
-    display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: auto;
