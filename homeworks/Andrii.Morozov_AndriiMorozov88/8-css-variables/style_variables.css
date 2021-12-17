@@ -30,7 +30,7 @@ html {
 .themes-toggle__button--halfmoon {
   fill: var(--clr-n25);
   animation-name: halfmoon;
-  animation-duration: 15s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -39,10 +39,24 @@ html {
 
   from {
     transform: rotate(0deg);
+    fill: var(--clr-n25);
+  }
+
+  25% {
+    fill: #AEF802;
+  }
+
+  50% {
+    fill: #02991C;
+  }
+
+  75% {
+    fill: #EC05B2;
   }
 
   to {
     transform: rotate(360deg);
+    fill: #1131C2;
   }
 }
 
@@ -125,7 +139,34 @@ body {
 .logo {
   fill: var(--clr-n40);
   width: 61px;
+  animation-name: logo;
+  animation-duration: 2s;
+}
+
+@keyframes logo {
+
+  from {
+    width: 61px;
+  }
+
+  33% {
+    width: 75px;
+    fill: #F50404
+  }
+
+  66% {
+    width: 45px;
+    fill: #3F1311;
+  }
+
+  to {
+    width: 61px;
+  }
+}
+
+.header__logo {
   padding-left: 30px;
+  width: 70px;
 }
 
 .header__content {
