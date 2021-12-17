@@ -18,6 +18,36 @@
   --background-gradient: linear-gradient(180deg, rgba(13, 13, 13, 1) 22.12%, rgba(249, 249, 249, 0) 100%);
 }
 
+@keyframes button-hover-anim {
+
+  0%, 50% {
+    transform: scale(1);
+  }
+
+  50%, 100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes svg-logo-anim {
+
+  0%, 25% {
+    transform: rotate(45deg);
+  }
+
+  25%, 50% {
+    transform: rotate(0);
+  }
+
+  50%, 75% {
+    transform: rotate(-45deg);
+  }
+
+  75%, 100% {
+    transform: rotate(0);
+  }
+}
+
 .a {
   text-decoration: none;
 }
@@ -108,36 +138,6 @@
   height: 56px;
   max-width: 205px;
   animation: button-hover-anim 3s cubic-bezier(.12, 0, .39, 0) infinite alternate;
-}
-
-@keyframes button-hover-anim {
-
-  0%, 50% {
-    transform: scale(1);
-  }
-
-  50%, 100% {
-    transform: scale(1.2);
-  }
-}
-
-@keyframes svg-logo-anim {
-
-  0%, 25% {
-    transform: rotate(45deg);
-  }
-
-  25%, 50% {
-    transform: rotate(0);
-  }
-
-  50%, 75% {
-    transform: rotate(-45deg);
-  }
-
-  75%, 100% {
-    transform: rotate(0);
-  }
 }
 
 .header {
@@ -272,6 +272,12 @@
 .img {
   object-fit: cover;
   width: 100%;
+  opacity: 0;
+}
+
+.img-show {
+  opacity: 1;
+  transition: opacity 2s;
 }
 
 .main__professional-valuable {

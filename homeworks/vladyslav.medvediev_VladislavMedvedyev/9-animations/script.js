@@ -16,3 +16,26 @@ buttonEl.addEventListener('click', () => {
     nightThemeToggleEl.classList.toggle('header__button-night-theme-hidden');
     dayThemeToggleEl.classList.toggle('header__button-day-theme-visible');
 });
+
+window.onload = () => {
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5,
+    };
+
+    const observerViewport = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const lazyLoad = entry.target;
+                lazyLoad.classList.toggle('img-show');
+                observer.unobserve(lazyLoad);
+            }
+        });
+    }, options);
+
+    const images = document.querySelectorAll('[data-img]');
+    images.forEach((i) => {
+        observerViewport.observe(i);
+    });
+};
