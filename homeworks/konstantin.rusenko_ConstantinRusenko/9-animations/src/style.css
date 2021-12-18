@@ -372,8 +372,10 @@ body {
   bottom: 25px;
   border-radius: 50%;
   color: var(--button-text-color);
-  font-size: 20px;
+  font-size: 40px;
   text-align: center;
+  line-height: 65%;
+  font-weight: 700;
 }
 
 .to-top__button:hover {
