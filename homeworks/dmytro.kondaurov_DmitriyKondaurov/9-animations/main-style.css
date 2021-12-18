@@ -414,20 +414,18 @@ body {
   background: var(--theme-bg-color);
   border: 5px solid var(--theme-brand-color);
   color: var(--theme-text-color);
-  text-shadow: 1px 1px 5px;
   font-size: 25px;
 }
 
 .call-to-action-btn:hover,
 .call-to-action-btn:focus {
   border-color: #000;
-  color: #FFF;
+  color: var(--theme-text-color);
 }
 
 .list__item:hover .list__link,
 .list__item:focus .list__link {
   color: var(--theme-brand-color);
-  transition: color 1s ease;
 }
 
 .header-menu__link_active {
