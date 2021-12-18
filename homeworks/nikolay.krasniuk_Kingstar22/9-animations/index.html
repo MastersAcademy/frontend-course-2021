@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>8-css-variables</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="adaptive.css">
+    </head>
+    <body>
+        <svg style="display: none;">
+            <symbol id="logo" viewBox="0 0 62 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M33.8761 0.555779L38.4458 0L38.4252 6.94723C38.9604 5.78422 40.2263 4.99172 41.9657 4.99172C44.055 4.99172 45.4651 6.05181 45.4651 8.27493V13.7813C45.4651 14.5223 45.64 14.7384 46.659 14.9134V15.4177H41.06V14.9134C41.9349 14.759 42.0892 14.5635 42.0892 13.843V8.47048C42.0892 7.09132 41.41 6.40175 40.2469 6.40175C39.403 6.40175 38.7546 6.79285 38.4458 7.36921V13.843C38.4458 14.5635 38.5796 14.7487 39.475 14.9134V15.4177H33.8761V14.9134C34.8744 14.7384 35.0597 14.5223 35.0597 13.7813V2.21282C35.0597 1.54383 34.9773 1.39974 34.401 1.20419L33.8761 1.02922V0.555779Z" fill="#FD665E"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.68692 0.524902L13.9994 12.68C14.5373 14.1899 14.8848 14.6442 15.7402 14.86C16.5025 14.6968 16.635 14.448 16.635 13.8018V7.256C16.635 6.58701 16.5424 6.44292 15.9763 6.24736L15.4514 6.08269V5.60925L20.0005 5.05347L19.9902 7.95587C20.9783 5.90772 21.8428 5.03289 22.8823 5.03289C23.8086 5.03289 24.2512 5.77392 24.2512 6.70022C24.2512 7.14279 24.138 7.57506 24.0145 7.82207C23.716 7.70886 23.1191 7.61623 22.5324 7.61623C21.5135 7.61623 20.474 7.88382 20.0211 8.3058V13.6989C20.0211 14.512 20.2064 14.7281 21.3385 14.9134V15.4177H9.06939V14.9134C10.3765 14.7178 10.6338 14.2753 10.078 12.5874L9.3164 10.3231H4.7055L4.03651 12.3506C3.42927 14.2444 3.63511 14.6973 5.04514 14.9134V15.4177H0.917969V14.9134C1.98836 14.7178 2.328 14.3473 3.04845 12.3095L7.27855 0.524902H9.68692ZM6.98007 3.32438L4.93193 9.60262H9.07968L6.98007 3.32438Z" fill="#FD665E"></path>
+                <path d="M29.5628 15.6236C31.4154 15.6236 32.9592 14.9134 33.7209 13.8224V13.3181C33.2062 13.8224 32.3108 14.1621 31.3125 14.1621C29.2643 14.1621 27.6073 12.5462 27.6073 9.71584C27.6073 7.35892 28.8424 5.85626 30.7052 5.85626C31.261 5.85626 31.755 5.99006 32.1462 6.23707C32.1256 6.22678 32.1153 6.22678 32.0947 6.22678C31.3022 6.22678 30.6538 6.88548 30.6538 7.71915C30.6538 8.55282 31.3228 9.21152 32.1667 9.21152C32.9901 9.21152 33.6797 8.56311 33.6797 7.6574C33.6797 6.17532 32.2697 4.99172 29.7892 4.99172C26.5163 4.99172 24.1079 7.17366 24.1079 10.3231C24.1079 13.5857 26.5266 15.6236 29.5628 15.6236Z" fill="#FD665E"></path>
+                <path d="M10.6308 17.9857L15.1799 17.4299V19.3443C15.6739 18.1915 16.9296 17.3682 18.6793 17.3682C20.2951 17.3682 21.5096 18.068 21.8801 19.3546C22.3845 18.1915 23.7121 17.3682 25.4309 17.3682C27.4791 17.3682 28.8274 18.4591 28.8274 20.6308V26.1577C28.8274 26.8987 29.0023 27.1149 30.011 27.2898V27.7942H24.412V27.2898C25.3074 27.1252 25.4412 26.9399 25.4412 26.2194V20.8263C25.4412 19.4575 24.8031 18.7782 23.7121 18.7782C22.8785 18.7782 22.2609 19.1384 21.9419 19.6942C21.9933 19.9412 22.0139 20.1882 22.0139 20.4764V26.2194C22.0139 26.9399 22.1477 27.1355 23.0432 27.2898V27.7942H17.6089V27.2898C18.5043 27.1355 18.6278 26.9399 18.6278 26.2194V20.8263C18.6278 19.4575 18.0103 18.7782 16.9296 18.7782C16.0959 18.7782 15.5093 19.1796 15.2005 19.7457V26.2194C15.2005 26.9399 15.3343 27.1355 16.2297 27.2898V27.7942H10.6308V27.2898C11.6291 27.1149 11.8144 26.8987 11.8144 26.1577V19.6324C11.8144 18.9634 11.732 18.8194 11.1557 18.6238L10.6308 18.4591V17.9857Z" fill="#FD665E"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M41.7964 22.6378C41.7964 25.7975 39.3159 28 36.0019 28C32.7186 28 30.2588 25.9519 30.2588 22.7201C30.2588 19.5604 32.7392 17.3682 36.043 17.3682C39.3365 17.3682 41.7964 19.4163 41.7964 22.6378ZM33.8405 22.6069C33.8405 25.5505 34.6947 27.3207 36.0739 27.3207C37.4633 27.3207 38.2044 25.5916 38.2044 22.751C38.2044 19.8074 37.3501 18.0474 35.9813 18.0474C34.5815 18.0474 33.8405 19.7662 33.8405 22.6069Z" fill="#FD665E"></path>
+                <path d="M42.7544 19.7662L45.842 27.8147H47.6946L50.6382 20.1882C51.2763 18.5312 51.5645 18.243 52.3879 18.0783V17.5637H48.9503V18.0783C50.1133 18.243 50.2471 18.5723 49.7633 20.1059L48.1372 24.9844L46.511 20.0853C46.0376 18.5723 46.1714 18.2327 47.3653 18.0783V17.5637H41.1797V18.0783C41.9927 18.2533 42.2706 18.5415 42.7544 19.7662Z" fill="#FD665E"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M57.0716 28C54.0046 28 51.5859 25.9724 51.5859 22.6995C51.5859 19.5707 53.7164 17.3682 56.9275 17.3682C59.7785 17.3682 61.487 19.1281 61.487 21.6806C61.487 21.9482 61.4561 22.2158 61.4355 22.3907H55.0235C55.2911 25.0667 56.8246 26.5797 58.9036 26.5797C59.9123 26.5797 60.7768 26.1989 61.2914 25.674L61.3017 26.1783C60.5504 27.3104 58.986 28 57.0716 28ZM56.9275 18.0474C55.6822 18.0474 54.972 19.2928 54.972 21.5056C54.972 21.6085 54.972 21.7012 54.9823 21.8041L58.5023 21.7629C58.5125 21.5674 58.5125 21.3512 58.5125 21.0528C58.5125 19.2208 58.0185 18.0474 56.9275 18.0474Z" fill="#FD665E"></path>
+            </symbol>
+
+            <symbol id="moon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.5 2C7.68 2 5.97 2.5 4.5 3.35C7.49 5.08 9.5 8.3 9.5 12C9.5 15.7 7.49 18.92 4.5 20.65C5.97 21.5 7.68 22 9.5 22C15.02 22 19.5 17.52 19.5 12C19.5 6.48 15.02 2 9.5 2Z" fill="#444444"></path>
+            </symbol>
+            <symbol id="icon-1" width="48" height="56" viewBox="0 0 48 56" fill ="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.6273 51.9247C10.8481 43.511 3.35716 30.3774 2.0857 15.9972L23.6239 2.35639L45.8748 15.994C44.1284 30.4277 36.3962 43.4887 24.5344 51.9614L23.6066 52.6242L22.6273 51.9247Z" stroke-width="4"></path>
+                <path d="M17.5 24.8995L22.508 29.9075L32.4075 20.008" stroke="#FD665E" stroke-width="4"></path>
+            </symbol>
+            <symbol id="icon-2" width="39" height="48" viewBox="0 0 39 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 2H37V46H2V2Z" stroke-width="4"></path>
+                <path d="M19.2542 32V30.7661C22.3077 30.5017 24 28.9153 24 26.3301C24 24.1267 22.7676 22.7656 20.3487 22.2661L19.2542 22.0507V19.0052C20.0452 19.1423 20.6246 19.818 20.6522 20.5916H23.7425C23.7149 18.2609 21.9858 16.6158 19.2542 16.3416V15H17.9298V16.3318C14.959 16.5668 13.2483 18.1532 13.2483 20.6895C13.2483 22.8341 14.4808 24.2442 16.8353 24.7926L17.9298 25.0472V28.2005C16.9457 28.0927 16.2375 27.4171 16.1915 26.5553H13C13.0092 29.0622 14.8211 30.6192 17.9298 30.7857V32H19.2542ZM20.8545 26.7316C20.8545 27.5639 20.2567 28.1221 19.2542 28.2005V25.2823C20.3303 25.4977 20.8545 25.9775 20.8545 26.7316ZM16.4766 20.3566C16.4766 19.6025 17.0744 19.0444 17.9298 18.9856V21.7667C16.9824 21.5611 16.4766 21.0714 16.4766 20.3566Z" stroke="#FD665E" fill="#FD665E"></path>
+            </symbol>
+            <symbol id="icon-3" width="40" height="53" viewBox="0 0 40 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 51V17.9097L19.5324 2.62508L38 17.9397V51H2Z" stroke-width="4"></path>
+                <circle cx="20" cy="30" r="5" stroke="#FD665E" stroke-width="4"></circle>
+            </symbol>
+            <symbol id="sun" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4.875C8.07127 4.875 4.875 8.07127 4.875 12C4.875 15.9287 8.07127 19.125 12 19.125C15.9287 19.125 19.125 15.9287 19.125 12C19.125 8.07127 15.9287 4.875 12 4.875ZM12 17.625C10.8875 17.625 9.79994 17.2951 8.87492 16.677C7.94989 16.0589 7.22892 15.1804 6.80318 14.1526C6.37743 13.1248 6.26604 11.9938 6.48308 10.9026C6.70012 9.81147 7.23585 8.80919 8.02252 8.02252C8.80919 7.23585 9.81147 6.70012 10.9026 6.48308C11.9938 6.26604 13.1248 6.37743 14.1526 6.80318C15.1804 7.22892 16.0589 7.94989 16.677 8.87492C17.2951 9.79994 17.625 10.8875 17.625 12C17.6233 13.4913 17.0301 14.9211 15.9756 15.9756C14.9211 17.0301 13.4913 17.6233 12 17.625Z" fill="white"></path>
+                <path d="M11.25 0.75H12.75V3H11.25V0.75Z" fill="white"></path>
+                <path d="M11.25 21H12.75V23.25H11.25V21Z" fill="white"></path>
+                <path d="M21 11.25H23.25V12.75H21V11.25Z" fill="white"></path>
+                <path d="M0.75 11.25H3V12.75H0.75V11.25Z" fill="white"></path>
+                <path d="M18.2197 19.2804L19.2804 18.2197L20.7804 19.7197L19.7197 20.7804L18.2197 19.2804Z" fill="white"></path>
+                <path d="M3.21973 4.28041L4.28041 3.21973L5.78041 4.71973L4.71973 5.78041L3.21973 4.28041Z" fill="white"></path>
+                <path d="M3.2196 19.7197L4.7196 18.2197L5.78029 19.2803L4.28029 20.7803L3.2196 19.7197Z" fill="white"></path>
+                <path d="M18.2197 4.71973L19.7197 3.21973L20.7804 4.28041L19.2804 5.78041L18.2197 4.71973Z" fill="white"></path>
+            </symbol>
+            <symbol id="arrow" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 7.58l5.995 5.988-1.416 1.414-4.579-4.574-4.59 4.574-1.416-1.414 6.006-5.988z"></path>
+            </symbol>
+        </svg>
+
+        <header id="up" class="header container">
+            <div class="header__wrapper">
+                <svg class="header__logo">
+                    <use xlink:href="#logo"></use>
+                </svg>
+                <nav data-menu class="header__menu">
+                    <ul class="header__items">
+                        <li class="header__item">
+                            <a class="header__item-link" href="#">Design Gallery</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__item-link" href="#">List of Architect</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__item-link" href="#">Articles</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__item-link" href="#">How it Works</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div data-header-burger class="header__burger">
+                    <span class="header__burger-line"></span>
+                </div>
+            </div>
+            <div class="header__btns">
+                <button data-btn type="button" class="header__btns-theme btn">
+                    <svg class = "header__btns-icon">
+                        <use data-icon xlink:href="#moon"></use>
+                    </svg>
+                </button>
+                <button type="button" class="header__btns-in btn">Sign In</button>
+                <button type="button" class="header__btns-up btn">Sign Up</button>
+            </div>
+        </header>
+        <section class="dream container">
+            <h1 class="dream__title">
+                Build Your Dream <span>House</span>
+            </h1>
+            <main class="dream__content">
+                <article class="dream__desc">
+                    <p class="dream__desc-text">The first and most trusted marketplace of design & build house in The World. 100% guaranteed Build safe, comfortable and transparent with a project management for the best result</p>
+                    <button type="button" class="dream__desc-btn btn">Free Consultation</button>
+                </article>
+                <picture class="dream__content-picture">
+                    <source srcset="img/img2_2x.png">
+                    <img class="dream__content-img img-animation" src="img/img2.png" alt="img">
+                </picture>
+            </main>
+        </section>
+        <section class="room container">
+            <h2 class="room__title">Build professional valuable room for you</h2>
+            <main class="room__gallery">
+                <picture class="room__gallery-picture">
+                    <source srcset="img/img-01_2x.png">
+                    <img class="room__gallery-img img-animation" src="img/img-01.png" alt="img">
+                </picture>
+                <picture class="room__gallery-picture">
+                    <source srcset="img/img-02_2x.png">
+                    <img class="room__gallery-img img-animation" src="img/img-02.png" alt="img">
+                </picture>
+                <picture class="room__gallery-picture">
+                    <source srcset="img/img-03_2x.png">
+                    <img class="room__gallery-img img-animation" src="img/img-03.png" alt="img">
+                </picture>
+                <picture class="room__gallery-picture">
+                    <source srcset="img/img-04_2x.png">
+                    <img class="room__gallery-img img-animation" src="img/img-04.png" alt="img">
+                </picture>
+            </main>
+        </section>
+        <section class="archmove container">
+            <h2 class="archmove__title">Build your needs with Archmove</h2>
+            <main class="archmove__content">
+                <picture class="archmove__content-picture">
+                    <source srcset="img/img-5_2x.png">
+                    <img class="archmove__content-img img-animation" src="img/img-5.png" alt="img">
+                </picture>
+                <aside class="archmove__advantages">
+                    <article class="archmove__item">
+                        <svg class = "archmove__item-icon">
+                            <use xlink:href="#icon-1"></use>
+                        </svg>
+                        <div class="archmove__item-content">
+                            <p class="archmove__item-title">100% guaranteed project completion</p>
+                            <p class="archmove__item-desc">Build safe, comfortable and transparent with a project management application with a joint account.</p>
+                        </div>
+                    </article>
+                    <article class="archmove__item">
+                        <svg class = "archmove__item-icon">
+                            <use xlink:href="#icon-2"></use>
+                        </svg>
+                        <div class="archmove__item-content">
+                            <p class="archmove__item-title">No additional fees</p>
+                            <p class="archmove__item-desc">There are no hidden costs. The value of the offer you get is the value you paid.</p>
+                        </div>
+                    </article>
+                    <article class="archmove__item">
+                        <svg class = "archmove__item-icon">
+                            <use class="test" xlink:href="#icon-3"></use>
+                        </svg>
+                        <div class="archmove__item-content">
+                            <p class="archmove__item-title">Get escort from the Team</p>
+                            <p class="archmove__item-desc">Monitor reports from the Arsitag team who check directly in the field.</p>
+                        </div>
+                    </article>
+                    <button type="button" class="archmove__advantages-btn btn">FREE CONSULTATION</button>
+                </aside>
+            </main>
+        </section>
+        <div class="overlay">
+            <section class="project container">
+                <picture class="project__picture">
+                    <source srcset="img/1_2x.png">
+                    <img class="project__picture-img img-animation" src="img/1.png" alt="img">
+                </picture>
+                <main class="project__content">
+                    <h2 class="project__content-title">
+                        Realize your dream project with <span>Archmove</span>
+                    </h2>
+                    <button type="button" class="project__content-btn btn">FREE CONSULTATION</button>
+                </main>
+            </section>
+            <div class="rectangle"></div>
+            <footer class="footer container">
+                <ul class="footer__menu">
+                    <li class="footer__item">
+                        <a class="footer__item-link" href="#">About Us</a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__item-link" href="#">How it Works</a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__item-link" href="#">FAQ</a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__item-link" href="#">Contact Us</a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__item-link" href="#">Privacy Policy</a>
+                    </li>
+                </ul>
+                <img class="footer__logo" src="img/icons/logo.svg" alt="logo">
+            </footer>
+        </div>
+        <a data-scroll-btn href="#up" class="pageUp">
+            <svg class="pageUp-icon">
+                <use xlink:href="#arrow"></use>
+            </svg>
+        </a>
+        <div data-loader class="screen-loader">
+            <svg class="screen-icon ">
+                <use class="screen-logo" xlink:href="#logo"></use>
+            </svg>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
