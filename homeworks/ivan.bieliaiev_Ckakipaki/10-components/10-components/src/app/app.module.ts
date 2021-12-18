@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { IconSpriteModule } from 'ng-svg-icon-sprite';
 
 import { AppComponent } from './app.component';
 import { PlayersComponent } from './players/players.component';
@@ -14,7 +15,8 @@ import { GameComponent } from './game/game.component';
         GameComponent,
     ],
     imports: [
-        BrowserModule
+        BrowserModule,
+        IconSpriteModule
     ],
     providers: [],
     bootstrap: [AppComponent]

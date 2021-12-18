@@ -27,6 +27,7 @@ body {
 }
 
 .game-logo {
+  display: block;
   margin: 0 22px 0 0;
 }
 
@@ -55,7 +56,6 @@ body {
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
-  border: 1px solid #123;
   padding: 0 0 0 77px;
   justify-content: space-between;
 }

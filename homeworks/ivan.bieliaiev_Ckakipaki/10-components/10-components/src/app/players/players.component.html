@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <ul class="players__list">
-    <li class="player" *ngFor="let player of players;">
-        <div class="player__attributes">
-            <svg class="player__logo" display="none"></svg>
-            <p class="player__name">{{player.name}}</p>
+    <li class="player">
+        <div class="player__attributes bg__user1">
+            <svg-icon-sprite
+                [src]="'assets/sprites/sprite.svg#cross'"
+                class="player__icon player__icon1"
+                [width]="'36'"
+                [height]="'36'"
+                viewBox="0 0 36 36"
+            ></svg-icon-sprite>
+            <p class="player__name">User 1</p>
         </div>
-        <div class="player__score">{{player.score}}</div>
+        <div class="player__score bg__user1">0</div>
+    </li>
+    <li class="player">
+        <div class="player__attributes bg__user2">
+            <svg-icon-sprite
+                [src]="'assets/sprites/sprite.svg#ellipse'"
+                class="player__icon player__icon2"
+                [width]="'41'"
+                [height]="'41'"
+                viewBox="0 0 41 41"
+            ></svg-icon-sprite>
+            <p class="player__name">User 2</p>
+        </div>
+        <div class="player__score bg__user2">0</div>
     </li>
 </ul>

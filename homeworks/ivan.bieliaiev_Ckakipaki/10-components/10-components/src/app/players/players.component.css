@@ -18,14 +18,34 @@
   display: flex;
   align-items: center;
   max-width: 177px;
-  background: #A5D9F6;
   width: 100%;
   height: 100%;
   padding: 0 0 0 9px;
 }
 
-.player__logo {
-  opacity: 0;
+.bg__user1 {
+  background: #A5D9F6;
+}
+
+.bg__user2 {
+  background: #A5A6F6;
+}
+
+.player__icon {
+  fill: #FFF;
+  margin: 0 20px 0 0;
+}
+
+.player__icon1 {
+  width: 36px;
+  height: 36px;
+  fill: #FFF;
+}
+
+.player__icon2 {
+  width: 41px;
+  height: 41px;
+  stroke: #FFF;
 }
 
 .player__name {
@@ -40,7 +60,6 @@
   font-size: 20px;
   line-height: 24px;
   color: #FFF;
-  background: #A5D9F6;
   width: 56px;
   height: 56px;
   display: flex;
