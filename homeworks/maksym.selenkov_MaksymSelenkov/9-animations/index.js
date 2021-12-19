@@ -5,8 +5,16 @@ const btnToTopEl = document.querySelector('[data-to-top]');
 const galleryEl = document.querySelector('[data-gallery]');
 const needsImgEl = document.querySelector('[data-needs-image]');
 const dreamImgEl = document.querySelector('[data-dream-image]');
+const burgerEl = document.querySelector('[data-burger]');
+const navigationEl = document.querySelector('[data-header-nav]');
 const lightTheme = 'light.css';
 const darkTheme = 'dark.css';
+
+burgerEl.addEventListener('click', () => {
+    navigationEl.classList.toggle('header__nav');
+    navigationEl.classList.toggle('header__nav--burger-click');
+    burgerEl.classList.toggle('change');
+});
 
 function changeTheme() {
     let currentTheme = linkEl.getAttribute('href');
