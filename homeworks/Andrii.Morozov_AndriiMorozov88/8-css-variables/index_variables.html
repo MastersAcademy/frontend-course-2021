@@ -47,7 +47,10 @@
                 <button type="button" class="button__sign-up button button--primary">Sign Up</button>
             </div>
         </header>
-        <div class="dreamhouse">
+        <svg width="48" height="48" data-button-up class="button-up--active button-up--hidden">
+            <use xlink:href="sprite.svg#button_up"></use>
+        </svg>
+        <div class="dreamhouse" data-dreamhouse>
             <h1 class="dreamhouse__title">
                 Build Your<br>
                 Dream <span class="word--color">House</span>
@@ -65,8 +68,8 @@
                     </div>
                     <button type="button" class="dreamhouse__button button button--primary">Free Consultation</button>
                 </div>
-                <div class="dreamhouse__photo">
-                    <picture>
+                <div class="dreamhouse__photo-container">
+                    <picture class = "photo--disabled">
                         <source srcset="2x/computers.jpg 2x">
                         <img src="1x/computers.jpg" alt="computers">
                     </picture>
@@ -74,25 +77,25 @@
             </div>
         </div>
         <div class="design">
-            <div class="design__title">
+            <div class="design__title" data-design>
                 <h2 class="design__text">Build professional
                     <br>valuable room for you
                 </h2>
             </div>
             <div class="design__photo">
-                <picture>
+                <picture class="photo--disabled">
                     <source srcset="2x/kitchen.jpg 2x">
                     <img src="1x/kitchen.jpg" alt="kitchen">
                 </picture>
-                <picture>
+                <picture class="photo--disabled">
                     <source srcset="2x/gasstove.jpg 2x">
                     <img src="1x/gasstove.jpg" alt="gasstove">
                 </picture>
-                <picture>
+                <picture class="photo--disabled">
                     <source srcset="2x/bedroom.jpg 2x">
                     <img src="1x/bedroom.jpg" alt="bedroom">
                 </picture>
-                <picture>
+                <picture class="photo--disabled">
                     <source srcset="2x/diningroom.jpg 2x">
                     <img src="1x/diningroom.jpg" alt="diningroom">
                 </picture>
@@ -102,9 +105,9 @@
             <h2 class="archmove__title">Build your needs
                 <br>with Archmove
             </h2>
-            <div class="archmove__container">
+            <div class="archmove__container" data-archmove>
                 <div>
-                    <picture class="archmove__photo">
+                    <picture class="archmove__photo photo--disabled">
                         <source srcset="2x/meeting.jpg 2x">
                         <img src="1x/meeting.jpg" alt="meeting">
                     </picture>
@@ -156,9 +159,9 @@
             </div>
         </div>
         <div class="dream-project">
-            <div class="dream-project__container">
+            <div class="dream-project__container" data-dream-project>
                 <div class="dream-project__photo">
-                    <picture>
+                    <picture class="photo--disabled">
                         <source srcset="2x/house.png 2x">
                         <img src="1x/house.png" alt="diningroom">
                     </picture>
@@ -209,6 +212,7 @@
                 </svg>
             </div>
         </div>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.1.0/rxjs.umd.js"></script>
         <script defer src="script_variables.js"></script>
     </body>
 </html>

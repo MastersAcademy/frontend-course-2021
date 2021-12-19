@@ -16,6 +16,8 @@ html {
   --ff-p: "Roboto", sans-serif;
   --ff-h: "Merriweather", serif;
   --fw-b: 900;
+
+  scroll-behavior: smooth;
 }
 
 .html--night {
@@ -59,6 +61,7 @@ html {
     fill: #1131C2;
   }
 }
+
 
 .themes-toggle__button--sun {
   fill: var(--clr-n100);
@@ -247,6 +250,19 @@ body {
   transition: .2s;
 }
 
+.button-up--active {
+  position: fixed;
+  display: block;
+  left: 20px;
+  top: 30%;
+  cursor: pointer;
+  fill: #E7088A;
+}
+
+.button-up--hidden {
+  display: none;
+}
+
 .theme-toggle {
   margin-right: 45px;
   cursor: pointer;
@@ -287,8 +303,12 @@ body {
   transition: .2s;
 }
 
-.dreamhouse__photo {
+.dreamhouse__photo-container {
   margin-left: 40px;
+}
+
+.photo--disabled {
+  display: none;
 }
 
 .dreamhouse__text {
