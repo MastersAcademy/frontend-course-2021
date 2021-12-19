@@ -171,14 +171,13 @@ h1 {
 .hero__content {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 55px;
-  row-gap: 15px;
 }
 
 .hero__message {
   max-width: 290px;
   font-size: 16px;
   line-height: 160%;
+  margin-right: 20%;
 }
 
 .hero__form .secondary-button {
@@ -254,14 +253,12 @@ h1 {
 
 .needs__content {
   display: flex;
-  flex-wrap: wrap;
-  column-gap: 159px;
 }
 
 .needs__image {
   max-width: 100%;
   opacity: 0;
-  margin-bottom: 3%;
+  margin: 0 11% 3% 0;
 }
 
 .needs__menu {
@@ -298,9 +295,6 @@ h1 {
 .page__dream {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  column-gap: 138px;
-  row-gap: 15px;
   align-items: center;
 }
 
@@ -322,6 +316,7 @@ h1 {
   height: auto;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .25));
   opacity: 0;
+  margin-right: 10%;
 }
 
 .line {
@@ -374,12 +369,30 @@ h1 {
     margin-right: 24px;
   }
 
+  .hero__form {
+    margin-bottom: 5%;
+  }
+
+  .hero__message {
+    max-width: 50%;
+  }
+
+  .rooms__image {
+    margin-left: 10%;
+  }
+
   .page__dream {
     gap: 15px;
   }
 
   .rooms__heading, .needs__heading, .dream__heading {
     font-size: 36px;
+  }
+
+  .needs__image {
+    max-width: 100%;
+    opacity: 0;
+    margin: 0 3% 3% 0;
   }
 }
 
@@ -395,6 +408,49 @@ h1 {
 
   .hero__heading {
     font-size: 60px;
+    margin-top: 5%;
+  }
+
+  .hero__message {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .rooms__gallery {
+    column-gap: 65px;
+    row-gap: 25px;
+  }
+
+  .rooms__image {
+    margin-left: 0;
+  }
+
+  .needs__content {
+    flex-wrap: wrap;
+  }
+
+  .needs__menu, .needs__image {
+    margin: 0 auto;
+  }
+
+  .needs__heading {
+    margin: 0 auto;
+  }
+
+  .needs__image {
+    margin-bottom: 5%;
+  }
+
+  .hero__heading, .rooms__heading, .dream__heading, .needs__heading {
+    text-align: center;
+  }
+
+  .dream__image {
+    margin-right: 5%;
+  }
+
+  .hero__form, .dream__content {
+    text-align: center;
   }
 }
 
@@ -407,7 +463,6 @@ h1 {
 
   .rooms__heading, .dream__heading, .needs__heading {
     font-size: 20px;
-    text-align: center;
   }
 
   .header__logo {
@@ -421,5 +476,9 @@ h1 {
 
   .controls__light {
     margin-right: auto;
+  }
+
+  .page__dream {
+    flex-wrap: wrap;
   }
 }
