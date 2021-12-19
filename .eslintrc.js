@@ -126,10 +126,21 @@ module.exports = {
             },
         },
         {
+            files: ['*.component.html'],
+            extends: ['plugin:@angular-eslint/template/recommended'],
+            rules: {
+                '@html-eslint/require-doctype': 'off',
+            },
+        },
+        {
             files: ['*.ts'],
             plugins: ['@typescript-eslint'],
             parser: '@typescript-eslint/parser',
-            extends: ['plugin:@typescript-eslint/recommended'],
+            extends: [
+                'plugin:@typescript-eslint/recommended',
+                'plugin:@angular-eslint/recommended',
+                'plugin:@angular-eslint/template/process-inline-templates',
+            ],
             rules: {
                 quotes: ['error', 'single'],
                 indent: [
@@ -142,7 +153,6 @@ module.exports = {
                 'no-alert': 'off',
                 'func-names': 'off',
             },
-
         },
     ],
 };
