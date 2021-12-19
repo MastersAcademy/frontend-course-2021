@@ -4,10 +4,8 @@ const bodyEl = document.querySelector('body');
 const currentTheme = localStorage.getItem('skin');
 const preloaderEl = document.querySelector('[data-preloader]');
 const toTopEl = document.querySelector('[data-to-top]');
-const imagesEl = document.querySelectorAll('[data-image]');
-const options = { threshold: [0.5] };
 
-window.addEventListener('load', () => {
+document.body.onload = (() => {
     setTimeout(() => {
         if (!preloaderEl.classList.contains('done')) {
             preloaderEl.classList.add('done');
@@ -40,17 +38,7 @@ function setTheme(name) {
     localStorage.setItem('skin', name);
 }
 
-function onEntry(entry) {
-    entry.forEach((change) => {
-        if (change.isIntersecting) {
-            change.target.classList.add('animation__show');
-        }
-    });
-}
-
 function init() {
-    const observer = new IntersectionObserver(onEntry, options);
-
     if (currentTheme) {
         setTheme(currentTheme);
     } else {
@@ -66,10 +54,6 @@ function init() {
     });
     window.addEventListener('scroll', trackScroll);
     toTopEl.addEventListener('click', backToTop);
-
-    for (let i = 0; i < imagesEl.length; i++) {
-        observer.observe(imagesEl[i]);
-    }
 }
 
 init();

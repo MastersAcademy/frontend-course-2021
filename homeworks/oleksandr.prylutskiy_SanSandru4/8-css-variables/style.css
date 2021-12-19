@@ -52,7 +52,7 @@ body {
   visibility: visible;
 }
 
-.preloader__spin {
+.loader__spin {
   width: 360px;
   height: 360px;
   border: 20px solid var(--color-btn-hover);
@@ -72,7 +72,7 @@ body {
   }
 }
 
-.preloader__logo {
+.loader__logo {
   position: absolute;
   width: 340px;
 }
@@ -227,7 +227,7 @@ body {
   }
 }
 
-.control__btn--animation {
+.btn--animation {
   box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
   transition: .3s;
 }
@@ -491,18 +491,38 @@ body {
   list-style: none;
 }
 
-.animation {
+.picture {
   display: inline-block;
   overflow: hidden;
 }
 
-.animation__img {
-  opacity: 0;
+.picture__img {
+  transition: 1s;
+  display: block;
 }
 
-.animation__show {
-  opacity: 1;
-  transition: opacity 1s;
+.picture__img:hover {
+  transform: scale(1.1);
+  animation: slide 3s ease-in-out infinite;
+}
+
+@keyframes slide {
+
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.2);
+  }
+
+  80% {
+    transform: scale(1.1);
+  }
+
+  95% {
+    transform: scale(1.2);
+  }
 }
 
 .to-top {
