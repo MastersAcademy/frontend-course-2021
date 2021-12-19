@@ -497,24 +497,12 @@ body {
 }
 
 .animation__img {
-  transition: 1s;
-  display: block;
+  opacity: 0;
 }
 
-.animation__img:hover {
-  transform: scale(1.1);
-  animation: slide 3s ease-in-out infinite;
-}
-
-@keyframes slide {
-
-  0% {
-    transform: scale(1);
-  }
-
-  95% {
-    transform: scale(1.2);
-  }
+.animation__show {
+  opacity: 1;
+  transition: opacity 1s;
 }
 
 .to-top {
