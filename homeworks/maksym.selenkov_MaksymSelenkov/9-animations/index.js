@@ -1,14 +1,14 @@
 const btnEl = document.querySelector('[data-theme]');
 const linkEl = document.querySelector('[data-theme-link]');
-const switchEl = document.querySelector('[data-switch]');
+const switchEl = document.querySelector('[data-theme-switch]');
 const btnToTopEl = document.querySelector('[data-to-top]');
 const galleryEl = document.querySelector('[data-gallery]');
 const needsImgEl = document.querySelector('[data-needs-image]');
 const dreamImgEl = document.querySelector('[data-dream-image]');
+const lightTheme = 'light.css';
+const darkTheme = 'dark.css';
 
 function changeTheme() {
-    const lightTheme = 'light.css';
-    const darkTheme = 'dark.css';
     let currentTheme = linkEl.getAttribute('href');
     if (currentTheme === lightTheme) {
         currentTheme = darkTheme;

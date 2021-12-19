@@ -3,14 +3,14 @@ html {
   scroll-behavior: smooth;
 }
 
-a {
+.nav__link, .footer__link {
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
   position: relative;
 }
 
-a::after {
+.nav__link::after, .footer__link::after {
   background-color: #7F887FFF;
   display: block;
   content: "";
@@ -22,15 +22,32 @@ a::after {
   transform: translateX(-50%);
 }
 
-a:hover::after {
+.nav__link:hover::after, .footer__link:hover::after {
   width: 100%;
 }
 
-button {
+.primary-button {
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 286%;
+  text-align: center;
+  width: 99px;
+  height: 48px;
+}
+
+.secondary-button {
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 286%;
+  text-align: center;
+}
+
+.primary-button, .secondary-button {
   padding: 0;
   border: none;
   background: none;
-  animation: btnLive 4s infinite;
+  animation: btnLive 1s infinite;
 }
 
 @keyframes btnLive {
@@ -46,19 +63,15 @@ button {
   }
 }
 
-button:hover {
+.primary-button:hover, .secondary-button:hover {
   cursor: pointer;
+  background-color: var(--color-grey);
 }
 
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
   padding: 2.9%;
-}
-
-.container {
-  max-width: 1110px;
-  margin: 0 auto 10%;
 }
 
 .header {
@@ -72,14 +85,31 @@ button:hover {
   margin-right: 60px;
 }
 
-.live-logo {
-  animation: liveLogo 1s 3;
+.live-logo1 {
+  animation: liveLogo1 1.5s 2;
 }
 
-@keyframes liveLogo {
+@keyframes liveLogo1 {
 
   50% {
     fill: #0D0D0D;
+    opacity: .5;
+  }
+
+  from, to {
+    fill: #FD665E;
+    opacity: 1;
+  }
+}
+
+.live-logo2 {
+  animation: liveLogo2 3s 1;
+}
+
+@keyframes liveLogo2 {
+
+  50% {
+    fill: #FFF;
     opacity: .5;
   }
 
@@ -109,62 +139,59 @@ button:hover {
 }
 
 .controls__light {
-  max-width: 24px;
-  width: 100%;
+  max-width: 48px;
+  padding: 0;
+  border: none;
+  background: none;
 }
 
-.controls__in {
-  margin-left: 40px;
-}
-
-.controls__up {
-  margin-left: 40px;
+.controls .secondary-button {
   width: 99px;
   height: 48px;
-  border-radius: 4px;
-  font-weight: 900;
-  font-size: 14px;
-  line-height: 286%;
-  text-align: center;
 }
 
-.start__heading {
+.page-section {
+  max-width: 1110px;
+  margin: 0 auto 8%;
+}
+
+h1 {
+  margin: 0;
+}
+
+.hero__heading {
   max-width: 870px;
   font-family: "Merriweather", serif;
   font-weight: 700;
   font-size: 112px;
   line-height: 100%;
+  margin-bottom: 3.3%;
 }
 
-.start__content {
+.hero__content {
   display: flex;
   flex-wrap: wrap;
   column-gap: 55px;
   row-gap: 15px;
 }
 
-.start__message {
+.hero__message {
   max-width: 290px;
   font-size: 16px;
   line-height: 160%;
 }
 
-.start__button {
+.hero__form .secondary-button {
   width: 179px;
   height: 56px;
-  border-radius: 4px;
-  font-weight: 900;
-  font-size: 14px;
-  line-height: 286%;
-  text-align: center;
 }
 
-.start__image {
+.hero__image {
   max-width: 100%;
-  animation: liveStartImg 3s;
+  animation: liveHeroImg 3s;
 }
 
-@keyframes liveStartImg {
+@keyframes liveHeroImg {
 
   from {
     opacity: 0;
@@ -234,6 +261,7 @@ button:hover {
 .needs__image {
   max-width: 100%;
   opacity: 0;
+  margin-bottom: 3%;
 }
 
 .needs__menu {
@@ -261,26 +289,19 @@ button:hover {
   line-height: 160%;
 }
 
-.needs__button {
+.needs__menu .secondary-button {
   margin-top: 5.5%;
   width: 205px;
   height: 56px;
-  border-radius: 4px;
-  font-weight: 900;
-  font-size: 14px;
-  line-height: 286%;
-  text-align: center;
 }
 
 .page__dream {
   width: 100%;
-  height: 500px;
   display: flex;
   flex-wrap: wrap;
   column-gap: 138px;
   row-gap: 15px;
   align-items: center;
-  margin-bottom: 200px;
 }
 
 .dream__heading {
@@ -291,14 +312,9 @@ button:hover {
   line-height: 124%;
 }
 
-.dream__button {
+.dream .secondary-button {
   width: 205px;
   height: 56px;
-  border-radius: 4px;
-  font-weight: 900;
-  font-size: 14px;
-  line-height: 286%;
-  text-align: center;
 }
 
 .dream__image {
@@ -352,9 +368,39 @@ button:hover {
   transition: 1s;
 }
 
+@media (max-width: 1024px) {
+
+  .nav__link {
+    margin-right: 24px;
+  }
+
+  .page__dream {
+    gap: 15px;
+  }
+
+  .rooms__heading, .needs__heading, .dream__heading {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .header {
+    margin: 0 auto;
+  }
+
+  .header__controls {
+    margin: 0 auto;
+  }
+
+  .hero__heading {
+    font-size: 60px;
+  }
+}
+
 @media (max-width: 320px) {
 
-  .start__heading {
+  .hero__heading {
     font-size: 30px;
     text-align: center;
   }

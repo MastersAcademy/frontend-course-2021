@@ -1,17 +1,15 @@
-* {
+:root {
   --color-grey: #585858;
   --color-black: #000;
   --color-white: #FFF;
   --color-carrot: #FD665E;
+}
 
+body {
   background: var(--color-black);
 }
 
-.nav__link, .controls__in, .footer__link {
-  color: var(--color-white);
-}
-
-.start__heading, .start__message, .rooms__heading, .needs__heading, .dream__heading, .item__title, .item__text {
+.nav__link, .footer__link, .primary-button, .hero__heading, .hero__message, .rooms__heading, .needs__heading, .dream__heading, .item__title, .item__text {
   color: var(--color-white);
 }
 
@@ -19,7 +17,7 @@
   color: var(--color-carrot);
 }
 
-.start__button, .controls__up, .needs__button, .dream__button {
+.secondary-button {
   background-color: var(--color-carrot);
   color: var(--color-black);
 }
