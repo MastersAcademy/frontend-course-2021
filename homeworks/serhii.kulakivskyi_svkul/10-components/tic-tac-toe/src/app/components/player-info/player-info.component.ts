@@ -11,9 +11,9 @@ export class PlayerInfoComponent {
     @Input() icon= '';
     @Input() score = 0;
     @Input() classes = '';
-    @Output() input = new EventEmitter();
+    @Output() inputHandle = new EventEmitter();
 
     changeInput(id: string, value: string) {
-        this.input.emit({ id, value });
+        this.inputHandle.emit({ id, value });
     }
 }

@@ -36,6 +36,7 @@ export class AppComponent implements OnInit {
             return;
         }
 
+
         if(id === '1') {
             this.player1 = value;
         } else {

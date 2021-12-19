@@ -10,9 +10,9 @@ export class SidebarComponent {
     @Input() player2 = '';
     @Input() player1Score = 0;
     @Input() player2Score = 0;
-    @Output() input = new EventEmitter();
+    @Output() inputHandle = new EventEmitter();
 
     changePlayerName(event: {id:  string, value: string}) {
-        this.input.emit(event);
+        this.inputHandle.emit(event);
     }
 }
