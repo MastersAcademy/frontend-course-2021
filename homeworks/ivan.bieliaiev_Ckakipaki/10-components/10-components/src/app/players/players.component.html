@@ -9,9 +9,9 @@
                 [height]="'36'"
                 viewBox="0 0 36 36"
             ></svg-icon-sprite>
-            <p class="player__name">User 1</p>
+            <p class="player__name">{{players[0].name}}</p>
         </div>
-        <div class="player__score bg__user1">0</div>
+        <div class="player__score bg__user1">{{players[0].score}}</div>
     </li>
     <li class="player">
         <div class="player__attributes bg__user2">
@@ -22,8 +22,8 @@
                 [height]="'41'"
                 viewBox="0 0 41 41"
             ></svg-icon-sprite>
-            <p class="player__name">User 2</p>
+            <p class="player__name">{{players[1].name}}</p>
         </div>
-        <div class="player__score bg__user2">0</div>
+        <div class="player__score bg__user2">{{players[1].score}}</div>
     </li>
 </ul>
