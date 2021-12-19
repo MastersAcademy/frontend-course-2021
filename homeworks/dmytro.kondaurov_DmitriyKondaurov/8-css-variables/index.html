@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>8-css-variables</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style-day.css" data-style-src>
+        <link rel="stylesheet" href="main-style.css">
+    </head>
+    <body>
+        <header class="header" data-header>
+            <div class="header__wrapper">
+                <a class="header__logo" href="#">
+                    <img src="./images/logo-arch.png" alt="logo">
+                </a>
+                <nav class="header__nav nav-menu ">
+                    <ul class="nav-menu__list list--visibility-hide" data-header-menu="0">
+                        <li class="list__item">
+                            <a class="list__link" href="#" data-nav-item>Design Gallery </a>
+                        </li>
+                        <li class="list__item">
+                            <a class="list__link" href="#" data-nav-item>List of Architect </a>
+                        </li>
+                        <li class="list__item">
+                            <a class="list__link" href="#" data-nav-item>Articles </a>
+                        </li>
+                        <li class="list__item">
+                            <a class="list__link" href="#" data-nav-item>How it Works </a>
+                        </li>
+                    </ul>
+                    <button type="button" class="header-menu__switcher switcher" data-menu-switcher-btn="1">
+                        <span class="switcher__cross-line" data-cross-line-1></span>
+                        <span class="switcher__cross-line" data-cross-line-2></span>
+                    </button>
+                </nav>
+                <div class="header__control-buttons">
+                    <button class="button header__theme-switcher" type="button" data-switch-btn>
+                        <img src="images/ic_sharp-mode-night.png" alt="switcher theme">
+                    </button>
+                    <button class="button header__btn-sing-in" type="button">Sign In</button>
+                    <button class="button header__btn-sing-up" type="button">Sign Up</button>
+                </div>
+            </div>
+        </header>
+        <div class="wrapper">
+            <main class="main-content">
+                <section class="section section-hero">
+                    <h1 class="section-hero__banner">
+                        Build Your Dream <span class="banner-focus">House</span>
+                    </h1>
+                    <div class="section-hero__teaser">
+                        <div class="section-hero__teaser-column">
+                            <p class="section-hero__text-description">
+                                The first and most trusted marketplace of design & build house in The World. 100% guaranteed
+                                Build safe, comfortable and transparent with a project management for the best result
+                            </p>
+                            <button class="button call-to-action-btn" type="button">Free Consultation</button>
+                        </div>
+                        <img class="section-hero__teaser-picture" src="images/features.jpg"
+                            alt="Hose Interior">
+                    </div>
+                </section>
+                <section class="section section-examples">
+                    <h2 class="section-title section-examples__title">
+                        Build professional<br> valuable room for you
+                    </h2>
+                    <div class="section-examples__gallery gallery">
+                        <img class="gallery__image" src="images/gall-1.jpg" alt="Examples photo">
+                        <img class="gallery__image" src="images/gall-2.jpg" alt="Examples photo">
+                        <img class="gallery__image" src="images/gall-3.jpg" alt="Examples photo">
+                        <img class="gallery__image" src="images/gall-4.jpg" alt="Examples photo">
+                    </div>
+                </section>
+                <section class="section section-advantage">
+                    <h2 class="section-title section-advantage__title">
+                        Build your needs<br> with Archmove
+                    </h2>
+                    <div class="section-advantage__content">
+                        <div class="section-advantage__image">
+                            <img class="benefits__img" src="images/advantage.jpg"
+                                alt="Advantages photo">
+                        </div>
+                        <ul class="section-advantage__advantages-list advantages-list">
+                            <li class="advantages-list__item">
+                                <img class="advantages-list__item-icon" src="images/Group-7.png" width="48" height="56"
+                                    alt="advantage icon">
+                                <div class="advantages-list__item-description">
+                                    <h3 class="advantages-list__item-title">100% guaranteed project completion</h3>
+                                    <p class="advantages-list__item-text">Build safe, comfortable and transparent with a project
+                                        management application with a joint account.</p>
+                                </div>
+                            </li>
+                            <li class="advantages-list__item">
+                                <img class="advantages-list__item-icon" src="images/Group-2.png" width="48" height="56"
+                                    alt="advantage icon">
+                                <div class="advantages-list__item-description">
+                                    <h3 class="advantages-list__item-title">No additional fees</h3>
+                                    <p class="advantages-list__item-text">There are no hidden costs. The value of the offer you
+                                        get is the value you paid.</p>
+                                </div>
+                            </li>
+                            <li class="advantages-list__item">
+                                <img class="advantages-list__item-icon" src="images/Group-3.png" width="48" height="56"
+                                    alt="advantage icon">
+                                <div class="advantages-list__item-description">
+                                    <h3 class="advantages-list__item-title">Get escort from the Team</h3>
+                                    <p class="advantages-list__item-text">Monitor reports from the Arsitag team who check
+                                        directly in the field.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <button
+                            class="button call-to-action-btn call-to-action-btn--advantages" type="button">FREE CONSULTATION</button>
+                    </div>
+                </section>
+                <section class="section section-resume">
+                    <div class="section-resume__image-container">
+                        <img class="section-resume__image" src="./images/house.png" alt="Photo build your needs with Archmove">
+                    </div>
+                    <div class="section-resume__text">
+                        <h2 class="section-title section-resume__title">
+                            Realize your dream project with <span class="banner-focus">Archmove</span>
+                        </h2>
+                        <button class="button call-to-action-btn call-to-action-btn--resume" type="button">FREE CONSULTATION
+                        </button>
+                    </div>
+                </section>
+            </main>
+            <footer class="footer">
+                <nav class="footer__nav nav-menu">
+                    <ul class="nav-menu__list nav-menu__list--mobile-hide" data-header-menu="0">
+                        <li class="list__item">
+                            <a class="list__link" href="#"> About Us</a>
+                        </li>
+                        <li class="list__item">
+                            <a class="list__link" href="#"> How it Works</a>
+                        </li>
+                        <li class="list__item">
+                            <a class="list__link" href="#"> FAQ</a>
+                        </li>
+                        <li class="list__item">
+                            <a class="list__link" href="#"> Contact Us</a>
+                        </li>
+                        <li class="list__item">
+                            <a class="list__link" href="#"> Privacy Policy</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a class="footer__logo" href="#">
+                    <img src="./images/logo-arch.png" alt="logo" width="62" height="28">
+                </a>
+            </footer>
+        </div>
+        <script defer src="./js/main.js"></script>
+    </body>
+</html>
