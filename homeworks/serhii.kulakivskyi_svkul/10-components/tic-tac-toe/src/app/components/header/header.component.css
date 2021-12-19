@@ -1,0 +1,28 @@
+.header {
+  padding: 1rem 0;
+  background-color: var(--header-background-color);
+  box-shadow: 0 3px 6px var(--header-box-shadow-color);
+  transition: background-color .3s;
+}
+
+.header .container {
+  padding: 0 1.5rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--logo-color);
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.logo span {
+  margin-left: 1rem;
+}
+
+.logo:hover span {
+  text-decoration: underline;
+}

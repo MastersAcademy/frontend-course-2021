@@ -1,0 +1,21 @@
+.footer {
+  padding: 1rem 0;
+  background-color: var(--header-background-color);
+  box-shadow: 0 -3px 6px var(--header-box-shadow-color);
+  transition: background-color .3s;
+}
+
+.footer .container {
+  padding: 0 1.5rem;
+}
+
+.reset-curr-game {
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 332px) {
+
+  .reset-curr-game {
+    margin-bottom: 0;
+  }
+}

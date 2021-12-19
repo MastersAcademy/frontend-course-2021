@@ -1,0 +1,12 @@
+.game {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-content {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

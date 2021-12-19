@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<div class="player player--{{ id }} {{ classes }}">
+    <p class="player__info ma-0 pa-10">
+        <app-svg-icon [icon]="icon" width="25px" height="25px"></app-svg-icon>
+        <input
+            #input
+            class="input ml-16"
+            type="text"
+            (input)="changeInput(id, input.value)"
+            [value]="name"
+        >
+    </p>
+
+    <p class="player__score ma-0 pa-16">{{ score }}</p>
+</div>

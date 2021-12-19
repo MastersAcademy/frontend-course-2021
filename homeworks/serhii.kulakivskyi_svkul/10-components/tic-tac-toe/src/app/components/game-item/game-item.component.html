@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<section
+    class="game-item game-item--{{ type }} game-item--player-{{ currentPlayer }}"
+    [attr.data-col]="colId"
+    [attr.data-row]="rowId"
+>
+    <button
+        class="game-item__content"
+        type="button"
+    >
+        <app-svg-icon
+            *ngIf="type !== 0"
+            [icon]="type === 1 ? 'x' : 'o'"
+            width="85%"
+            height="85%"
+        ></app-svg-icon>
+    </button>
+</section>

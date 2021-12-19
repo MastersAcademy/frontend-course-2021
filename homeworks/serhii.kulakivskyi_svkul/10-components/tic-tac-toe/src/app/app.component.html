@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<section class="game" [attr.theme]="currentPlayer">
+    <app-header [title]="title"></app-header>
+
+    <div class="game-content container">
+        <app-sidebar
+            [player1]="player1"
+            [player2]="player2"
+            [player1Score]="player1Score"
+            [player2Score]="player2Score"
+            (input)="changePlayerName($event)"
+        ></app-sidebar>
+
+        <section app-game
+            [currentPlayer]="currentPlayer"
+            [gameCoords]="gameCoords"
+            [message]="message"
+            (makeStep)="makeStep($event)"
+        ></section>
+    </div>
+
+    <app-footer
+        (resetAll)="resetAll()"
+        (resetCurrentGame)="resetGame()"
+    ></app-footer>
+</section>

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<section class="sidebar">
+    <app-player-info
+        id="1"
+        icon="x"
+        [name]="player1"
+        [score]="player1Score"
+        (input)="changePlayerName($event)"
+    ></app-player-info>
+
+    <app-player-info
+        id="2"
+        icon="o"
+        classes="rotate"
+        [name]="player2"
+        [score]="player2Score"
+        (input)="changePlayerName($event)"
+    ></app-player-info>
+</section>

@@ -1,0 +1,17 @@
+.sidebar {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media only screen and (min-width: 745px) {
+
+  .sidebar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
