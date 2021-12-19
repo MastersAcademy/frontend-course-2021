@@ -1,0 +1,15 @@
+<p>Player {{currentPlayer.name}} turn</p>
+<div *ngIf="winner">{{winner.name}} is a winner!!!</div>
+<div>
+    <div *ngFor="let player of players">
+        <input [value]="player.name" (input)="renamePlayer($event, player)">{{player.score}}
+    </div>
+</div>
+<div class="field" *ngFor="let row of gameCoords; index as rowIndex">
+    <div class="box" *ngFor="let item of row; index as columnIndex" (click)="setElement(rowIndex, columnIndex)">{{item}}</div>
+</div>
+<div>
+    <button type="button" (click)="resetGame()"> Reset Game</button>
+    <button type="button" (click)="resetAll()"> Reset All</button>
+</div>
+

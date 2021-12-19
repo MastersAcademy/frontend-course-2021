@@ -1,0 +1,10 @@
+.field {
+  display: flex;
+}
+
+.box {
+  background: #F6F;
+  min-width: 25px;
+  min-height: 25px;
+  text-align: center;
+}
