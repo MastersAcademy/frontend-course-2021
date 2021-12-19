@@ -28,25 +28,14 @@
             headerWrapperEl.style.height = `${headerHeight}px`;
 
             const hideHeader = () => {
-                // if (buyNowBtnTopPosition < 0) {
-                // headerEl.classList.remove('slide-out-top');
-                // headerEl.classList.add('slide-in-top');
-                // } else {
                 headerEl.classList.remove('slide-in-top');
                 headerEl.classList.add('slide-out-top');
-                // }
             };
 
             const showHeader = () => {
-                // if (buyNowBtnTopPosition < 0) {
-                // headerEl.classList.remove('header--alternative-view');
-                // headerEl.classList.add('slide-in-top');
-                // headerEl.classList.add('header--show-btn');
-                // } else {
                 headerEl.classList.remove('slide-out-top');
                 headerEl.classList.remove('header--show-btn');
                 headerEl.classList.add('slide-in-top');
-                // }
             };
 
             const handleHeaderVisibility = ([scrollPosition, scrollDirection]) => {
