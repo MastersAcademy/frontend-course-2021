@@ -76,15 +76,24 @@ body {
 
 .animated-image {
   animation-name: animated-image;
-  animation-duration: .5s;
+  animation-duration: .75s;
   animation-delay: .25s;
   animation-timing-function: ease-in-out;
+  opacity: 1;
 }
 
 @keyframes animated-image {
 
+  0% {
+    opacity: 0;
+  }
+
   50% {
-    transform: translateY(2.5px);
+    transform: translateY(-25px);
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
@@ -227,6 +236,19 @@ body {
   background-color: var(--accent-color);
   font-weight: 900;
   transition: transform .25s ease-in-out;
+  animation: button-animation 1s ease-in-out 5;
+  animation-delay: 30s;
+}
+
+@keyframes button-animation {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
 }
 
 .header__full-button:hover {
@@ -278,6 +300,7 @@ body {
 
 .main-section__hero-image {
   flex: 3;
+  display: flex;
 }
 
 .main-section__image {
@@ -299,6 +322,19 @@ body {
   background-color: var(--accent-color);
   font-weight: 900;
   transition: transform .25s ease-in-out;
+  animation: button-animation 1s ease-in-out 5;
+  animation-delay: 30s;
+}
+
+@keyframes button-animation {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
 }
 
 .main-section__full-button:hover {
@@ -445,6 +481,19 @@ body {
   font-weight: 900;
   transition: transform .25s ease-in-out;
   align-self: center;
+  animation: button-animation 1s ease-in-out 5;
+  animation-delay: 30s;
+}
+
+@keyframes button-animation {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
 }
 
 .features-section__full-button:hover {
@@ -516,6 +565,19 @@ body {
   background-color: var(--accent-color);
   font-weight: 900;
   transition: transform .25s ease-in-out;
+  animation: button-animation 1s ease-in-out 5;
+  animation-delay: 30s;
+}
+
+@keyframes button-animation {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
 }
 
 .footer-section__full-button:hover {
