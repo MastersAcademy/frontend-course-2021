@@ -108,29 +108,61 @@ body {
   padding: 0 1rem;
 }
 
-.header__logo {
+.header__logo-icon {
+  height: 65px;
+  width: 65px;
   margin-right: 3rem;
   animation-name: logo-animation;
   animation-duration: 1s;
-  animation-delay: .5s;
+  animation-delay: .75s;
   animation-timing-function: ease-in-out;
 }
 
 @keyframes logo-animation {
 
   25% {
-    transform: rotate(-5deg)
+    transform: rotate(5deg)
   }
 
   50% {
-    transform: rotate(5deg)
+    transform: rotate(-5deg)
   }
 }
 
-.header__icon {
-  height: 65px;
-  width: 65px;
-  fill: var(--accent-color);
+.header__logo-icon--layer-1 {
+  animation-name: logo-animation-layer-1;
+  animation-duration: 1s;
+  animation-delay: .75s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes logo-animation-layer-1 {
+
+  25% {
+    transform: translateY(-5px);
+  }
+
+  50% {
+    transform: translateY(0)
+  }
+}
+
+.header__logo-icon--layer-8 {
+  animation-name: logo-animation-layer-8;
+  animation-duration: 1s;
+  animation-delay: .75s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes logo-animation-layer-8 {
+
+  25% {
+    transform: translateY(5px);
+  }
+
+  50% {
+    transform: translateY(0)
+  }
 }
 
 .header__navigation {
