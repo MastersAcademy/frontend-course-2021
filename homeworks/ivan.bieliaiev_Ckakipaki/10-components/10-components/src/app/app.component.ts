@@ -1,8 +1,7 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component} from '@angular/core';
 
 export interface IPlayer {
   name: string
-  logo: string
   score: number
 }
 
@@ -12,16 +11,15 @@ export interface IPlayer {
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    players: IPlayer[] = [{
-        name: 'Player 1',
-        logo: 'src',
-        score: 3,
-    },
-    {
-        name: 'Player 2',
-        logo: 'src',
-        score: 0,
-    }
+    players: IPlayer[] = [
+        {
+            name: 'Player 1',
+            score: 3,
+        },
+        {
+            name: 'Player 2',
+            score: 0,
+        }
     ]
 
     state: number[][] = [
@@ -30,28 +28,39 @@ export class AppComponent {
         [1, 2, 1]
     ]
 
-    currentPlayer = this.players[0].name;
-
-    // @Output() playersState: IPlayer[] = JSON.parse(localStorage.getItem('players') as string);
+    currentPlayer:string = this.players[0].name;
 
     ngOnInit () {
+        if(!localStorage.getItem('state')) {
+            this.saveStorage();
+        }
+    }
+
+    saveStorage () {
         localStorage.setItem('players', JSON.stringify(this.players));
         localStorage.setItem('state', JSON.stringify(this.state));
         localStorage.setItem('currentPlayer', JSON.stringify(this.currentPlayer));
+        localStorage.setItem('currentPlayer', JSON.stringify(this.currentPlayer));
     }
 
-    resetPlayersScores () {
+    resetStorage () {
+        localStorage.clear();
+        this.state = [
+            [0, 0, 0],
+            [0, 0 ,0],
+            [0, 0, 0]
+        ]
+
+        this.currentPlayer = this.players[0].name;
+        this.resetPlayersStorage();
+        this.saveStorage();
+    }
+
+    resetPlayersStorage () {
         this.players.forEach((player) => {
             player.score = 0;
         })
-        const playersStr = localStorage.getItem('players') as string;
-        const playersState: IPlayer[] = JSON.parse(playersStr);
-        playersState.forEach((player) => {
-            player.score = 0;
-        })
-        this.players = playersState;
         localStorage.removeItem('players');
         localStorage.setItem('players', JSON.stringify(this.players));
-        console.log(playersState);
     }
 }

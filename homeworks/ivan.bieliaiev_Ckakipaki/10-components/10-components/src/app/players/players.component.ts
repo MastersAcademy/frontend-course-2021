@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {IPlayer} from '../app.component';
 
 @Component({
@@ -6,16 +6,6 @@ import {IPlayer} from '../app.component';
     templateUrl: './players.component.html',
     styleUrls: ['./players.component.css']
 })
-export class PlayersComponent implements OnInit {
-
-    @Input() players: IPlayer [] = []
-
-    constructor() {
-        console.log('hello')
-    }
-
-    ngOnInit(): void {
-        console.log('players');
-    }
-
+export class PlayersComponent {
+    @Input() playerState: IPlayer[] = [];
 }

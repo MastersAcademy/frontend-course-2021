@@ -87,3 +87,7 @@ body {
   width: 100%;
   max-width: 589px;
 }
+
+.game__item {
+  background: #000;
+}
