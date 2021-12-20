@@ -51,11 +51,23 @@ function showUpArrow() {
     }
 }
 
-window.addEventListener('scroll', showUpArrow);
-
 upArrowEl.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
         behavior: 'smooth',
     });
+});
+
+const { fromEvent } = window.rxjs;
+const {
+    map, throttleTime,
+} = window.rxjs.operators;
+
+const scroll$ = fromEvent(window, 'scroll').pipe(
+    map(() => window.scrollY),
+    throttleTime(200),
+);
+
+scroll$.subscribe(() => {
+    showUpArrow();
 });
