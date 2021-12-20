@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  gap: 17px;
+}
+
+.square {
+  width: 185px;
+  height: 185px;
+  background-color: #C4C4C4;
+  margin-bottom: 17px;
+}
+
+.black {
+  background-color: #0D0D0D;
+}

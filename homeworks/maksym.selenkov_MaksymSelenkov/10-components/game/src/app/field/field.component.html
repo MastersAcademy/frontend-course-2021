@@ -1,0 +1,5 @@
+<div class="wrapper">
+    <div *ngFor="let square of squares" class="square">
+        <div *ngFor="let item of square" class="square" (click)="onChange($event)">{{item}}</div>
+    </div>
+</div>

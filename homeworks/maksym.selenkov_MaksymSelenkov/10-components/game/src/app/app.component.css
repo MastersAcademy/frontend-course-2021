@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #FFF;
+  display: flex;
+}
+
+h1,h2 {
+  margin: 0;
+}
+
+.main {
+  max-width: 50%;
+}
+
+.header {
+  display: flex;
+  background-color: #78D4F1;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, .14), 0 1px 10px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .2);
+  margin-bottom: 5%;
+  color: #FFF;
+}
+
+.main__title {
+  display: flex;
+  max-width: 336px;
+  height: 56px;
+  margin: 0 auto 15%;
+  background: #A5D9F6;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 250%;
+  color: #FFF;
+}
+
+.player1, .player2 {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  gap: 16px;
+  color: #FFF;
+  margin-bottom: 2%;
+}
+
+.player1__title, .player2__title {
+  max-width: 186px;
+  width: 100%;
+  height: 55px;
+  line-height: 200%;
+}
+
+.player1__heading {
+  background-color: #A5D9F6;
+  display: flex;
+}
+
+.player2__heading {
+  background-color: #A5A6F6;
+  display: flex;
+}
+
+.player1__score, .player2__score {
+  max-width: 55px;
+  width: 100%;
+  height: 55px;
+}
+
+.player1__score {
+  background: #A5D9F6;
+}
+
+.player2__score {
+  background: #A5A6F6;
+}
+
+.main__controls {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  margin-bottom: 5%;
+}
+
+.button {
+  max-width: 258px;
+  width: 100%;
+  height: 48px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  color: #FFF;
+  background: #78D4F1;
+  border: none;
+}
