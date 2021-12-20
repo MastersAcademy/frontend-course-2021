@@ -1,0 +1,17 @@
+.page__section {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.game__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 60px;
+}
+
+.game__menu {
+  display: flex;
+  max-width: 260px;
+  flex-direction: column;
+}

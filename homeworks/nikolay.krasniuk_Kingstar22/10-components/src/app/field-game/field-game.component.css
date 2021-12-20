@@ -1,0 +1,29 @@
+.game__field {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.game__field-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  list-style-type: none;
+}
+
+.game__field-col {
+  width: calc(33%);
+}
+
+.game__square {
+  padding: 10px;
+  max-width: 185px;
+  max-height: 185px;
+  background-color: #C4C4C4;
+  border-radius: 5px;
+}
+
+.game__square-logo {
+  max-width: 148px;
+  max-height: 148px;
+}

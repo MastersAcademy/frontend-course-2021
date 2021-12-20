@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  margin: 0 auto;
+  padding: 15px 25px;
+  max-height: 56px;
+  background-color: #87B2B9;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, .14), 0 1px 10px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.page__section {
+  max-width: 1440px;
+}
+
+.header__logo {
+  max-width: 25px;
+  max-height: 25px;
+}
+
+.header__title {
+  margin-left: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  color: #FFF;
+}
