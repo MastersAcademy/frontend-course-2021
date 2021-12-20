@@ -1,13 +1,12 @@
 .game-state {
   box-sizing: border-box;
-  width: 260px;
-  height: 160px;
+  width: 240px;
+  height: 105px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
-  align-content: center;
   flex-flow: column;
-  padding: 20px;
+  padding: 0;
 }
 
 .game-state__player-container {
@@ -15,7 +14,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 260px;
+  width: 200px;
   height: 55px;
 }
 
@@ -51,4 +50,25 @@
   align-items: center;
   color: #FFF;
   font: normal 500 20px/24px Roboto, serif
+}
+
+@media only screen and (min-width: 500px) {
+
+  .game-state {
+    height: 160px;
+    align-content: center;
+  }
+}
+
+@media only screen and (min-width: 1220px) {
+
+  .game-state {
+    width: 260px;
+    padding: 20px;
+    justify-content: space-between;
+  }
+
+  .game-state__player-container {
+    width: 260px;
+  }
 }

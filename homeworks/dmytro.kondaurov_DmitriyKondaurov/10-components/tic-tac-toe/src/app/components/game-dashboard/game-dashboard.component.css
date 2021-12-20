@@ -1,18 +1,18 @@
 .dashboard {
   box-sizing: border-box;
-  width: 260px;
-  height: 160px;
+  width: 240px;
+  height: 105px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   align-content: center;
   flex-flow: column;
-  padding: 20px;
+  padding: 0;
 }
 
 .dashboard__btn {
   box-sizing: border-box;
-  width: 260px;
+  width: 200px;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -22,4 +22,29 @@
   background-color: #78D4F1;
   color: #FFF;
   font: normal 500 20px/24px Roboto, serif;
+}
+
+@media only screen and (min-width: 500px) {
+
+  .dashboard {
+    height: 150px;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+  }
+}
+
+@media only screen and (min-width: 1220px) {
+
+  .dashboard {
+    width: 260px;
+    height: 160px;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .dashboard__btn {
+    width: 260px;
+    justify-content: center;
+  }
 }
