@@ -1,3 +1,54 @@
-body {
-  background-color: #FFF;
+.game-state {
+  box-sizing: border-box;
+  width: 260px;
+  height: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: center;
+  flex-flow: column;
+  padding: 20px;
+}
+
+.game-state__player-container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 260px;
+  height: 55px;
+}
+
+.game-state__player-container div:first-child {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  width: 186px;
+  height: 50px;
+  color: #FFF;
+  font: normal 500 20px/24px Roboto, serif
+}
+
+.player-icon {
+  display: block;
+}
+
+.game-state__player-container:first-child div {
+  background-color: #A5D9F6;
+}
+
+.game-state__player-container:last-child div {
+  background-color: #A5A6F6;
+}
+
+.game-state__player-score {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font: normal 500 20px/24px Roboto, serif
 }

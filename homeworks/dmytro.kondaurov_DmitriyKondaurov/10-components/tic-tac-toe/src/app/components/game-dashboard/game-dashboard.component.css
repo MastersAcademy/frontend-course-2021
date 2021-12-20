@@ -1,24 +1,22 @@
 .dashboard {
   box-sizing: border-box;
-  width: 340px;
-  height: 112px;
+  width: 260px;
+  height: 160px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   align-content: center;
-  flex-wrap: wrap;
   flex-flow: column;
+  padding: 20px;
 }
 
 .dashboard__btn {
   box-sizing: border-box;
   width: 260px;
   height: 50px;
-  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  align-content: center;
   outline: none;
   border: 1px solid #78D4F1;
   background-color: #78D4F1;

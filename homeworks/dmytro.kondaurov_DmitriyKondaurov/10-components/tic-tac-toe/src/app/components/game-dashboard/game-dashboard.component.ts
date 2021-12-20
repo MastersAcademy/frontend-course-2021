@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GoogleFontsService } from './google-fonts.service';
 
 @Component({
     selector: 'app-game-dashboard',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameDashboardComponent implements OnInit {
 
-    constructor() {
-        return
+    constructor(private googleFontsService: GoogleFontsService) {
+        googleFontsService.createLink();
     }
 
     ngOnInit(): void {
