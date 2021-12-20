@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
     selector: 'app-game',
@@ -8,4 +8,9 @@ import {Component, Input} from '@angular/core';
 export class GameComponent {
 
     @Input() gameState: number[][] = [];
+    @Output() onToggle = new EventEmitter();
+
+    onClick (row: number, index: number) {
+        this.onToggle.emit([row, index]);
+    }
 }

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <ul class="game__list">
     <li class="game__list__row" *ngFor="let row of gameState; let rowIndex = index;">
-        <div *ngFor="let symbol of row; let index = index">{{rowIndex}} {{index}}</div>
+        <div *ngFor="let symbol of row; let index = index" (click)="onClick(rowIndex, index)">
+            {{symbol}}
+        </div>
     </li>
 </ul>

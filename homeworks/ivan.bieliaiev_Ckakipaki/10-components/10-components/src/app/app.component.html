@@ -26,6 +26,6 @@
             <app-players class="players__container" [playerState]="players"></app-players>
             <app-game-actions class="actions__container" (resetState)="resetStorage()" (resetPlayersState)="resetPlayersStorage()"></app-game-actions>
         </div>
-        <app-game class="game" [gameState]="state"></app-game>
+        <app-game class="game" [gameState]="state" (onToggle)="changeGameBlock($event[0], $event[1])"></app-game>
     </div>
 </body>
