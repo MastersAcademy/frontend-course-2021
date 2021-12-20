@@ -1,4 +1,16 @@
-.dashboard-btn {
+.dashboard {
+  box-sizing: border-box;
+  width: 340px;
+  height: 112px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-flow: column;
+}
+
+.dashboard__btn {
   box-sizing: border-box;
   width: 260px;
   height: 50px;
