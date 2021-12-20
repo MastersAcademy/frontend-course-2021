@@ -1,0 +1,28 @@
+.game-board {
+  display: flex;
+}
+
+.game-board__icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-board__item {
+  height: 185px;
+  width: 185px;
+  background-color: #C4C4C4;
+  margin: 0 17px 17px 0;
+  cursor: pointer;
+}
+
+.list__game-item--violet {
+  background-color: var(--color-player-violet);
+  overflow: visible;
+}
+
+.list__game-item--blue {
+  background-color: var(--color-player-blue);
+}

@@ -1,0 +1,22 @@
+<section class="information-panel">
+  <div class="content-row">
+    <div class="content-row content-row__information-player  content-row__information-player--one">
+      <svg class="player__icon" width="35" height="35">
+        <use xlink:href="../assets/svg/sprites.svg#x-icon"></use>
+      </svg>
+      <span class="content-player content-player__text" >Player 1</span>
+    </div>
+    <span class="content-player content-player__count content-player__count--one">{{countWinnerPlayer1}}</span>
+  </div>
+  <div class="content-row">
+    <div class="content-row content-row__information-player  content-row__information-player--two">
+      <svg class="player__icon" width="35" height="35">
+        <use xlink:href="../assets/svg/sprites.svg#0-icon"></use>
+      </svg>
+      <span class="content-player content-player__text" >Player 2</span>
+    </div>
+    <span class="content-player content-player__count content-player__count--two">{{countWinnerPlayer2}}</span>
+  </div>
+  <button class="button button__reset-game" (click)="resetGame()">Reset current game</button>
+  <button class="button button__resetAll" (click)="resetAll()" >Reset all</button>
+</section>

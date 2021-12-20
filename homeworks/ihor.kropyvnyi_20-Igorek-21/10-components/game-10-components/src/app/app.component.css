@@ -1,0 +1,70 @@
+.main-header {
+  height: 56px;
+  width: 100%;
+  background-color: var(--color-thema-blue);
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-link {
+  margin-left: 25px;
+}
+
+.main-header__headline {
+  font-size: inherit;
+  padding-left: 45px;
+}
+
+.content-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 55px 0;
+}
+
+.content-wrapper__player-signboard {
+  width: 336px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.content-wrapper__player-signboard--player-1 {
+  background-color: var(--color-player-blue);
+}
+
+.content-wrapper__player-signboard--player-2 {
+  background-color: var(--color-player-violet);
+}
+
+.player-scoreboard__icon {
+  margin-left: 10px;
+}
+
+.player-scoreboard__text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.section-playground {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

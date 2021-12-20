@@ -1,0 +1,11 @@
+<div class="game-board" *ngFor="let items of state ; let i=index">
+  <div  (click)="onClickElement($event)"
+        class="game-board__item"
+        *ngFor="let item of items ; let k=index">
+    <div class="game-board__icon">
+      <svg>
+        <use class="icon" xlink:href=""></use>
+      </svg>
+  </div>
+  </div>
+</div>
