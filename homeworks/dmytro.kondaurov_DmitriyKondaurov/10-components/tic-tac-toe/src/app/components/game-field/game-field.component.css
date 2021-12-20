@@ -1,3 +1,42 @@
-body {
-  background-color: #FFF;
+.display-current-player {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 336px;
+  height: 55px;
+  background-color: #A5D9F6;
+  padding: 10px;
+}
+
+.display-current-player__player-name {
+  padding-left: 50px;
+  color: #FFF;
+  font: normal 500 20px/24px Roboto, serif
+}
+
+.game-field {
+  width: 620px;
+  height: 620px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
+.game-field__row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.game-field__item {
+  width: 185px;
+  height: 185px;
+  list-style: none;
+  background-color: #C4C4C4;
 }
