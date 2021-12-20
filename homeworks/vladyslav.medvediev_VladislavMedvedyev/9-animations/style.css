@@ -20,36 +20,43 @@
 
 @keyframes button-hover-anim {
 
-  0%, 50% {
-    transform: scale(.8);
+  0%, 3% {
+    transform: scale(1.2);
   }
 
-  50%, 100% {
+  3%, 6% {
+    transform: scale(1);
+  }
+
+  6%, 100% {
     transform: scale(1);
   }
 }
 
-@keyframes svg-logo-anim {
+@keyframes svg-anim {
 
-  0%, 25% {
-    transform: rotate(45deg);
+  0%, 50% {
+    opacity: 0;
   }
 
-  25%, 50% {
-    transform: rotate(0);
-  }
-
-  50%, 75% {
-    transform: rotate(-45deg);
-  }
-
-  75%, 100% {
-    transform: rotate(0);
+  50%, 100% {
+    opacity: 1;
   }
 }
 
-.a {
-  text-decoration: none;
+@keyframes svg-anim-2 {
+
+  0%, 50% {
+    opacity: 0;
+  }
+
+  50%, 75% {
+    opacity: 0;
+  }
+
+  75%, 100% {
+    opacity: 1;
+  }
 }
 
 .h2 {
@@ -99,7 +106,14 @@
 .header__logo-svg,
 .footer__logo-svg {
   fill: var(--button-color);
-  animation: svg-logo-anim 2s linear 1 alternate;
+}
+
+.path-1 {
+  animation: svg-anim 2.5s linear alternate;
+}
+
+.path-2 {
+  animation: svg-anim-2 2.5s linear alternate;
 }
 
 .header__button-night-theme {
@@ -137,7 +151,7 @@
   border-radius: 4px;
   height: 56px;
   max-width: 205px;
-  animation: button-hover-anim 3s cubic-bezier(.12, 0, .39, 0) infinite alternate;
+  animation: button-hover-anim 50s cubic-bezier(.12, 0, .39, 0) infinite alternate;
 }
 
 .header {
@@ -176,14 +190,24 @@
   line-height: 40px;
   text-align: center;
   color: var(--header-and-footer-text-color);
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  transition: text-decoration-color 1s ease-in-out;
+  text-decoration: none;
+  position: relative;
 }
 
-.menu__item:hover {
-  text-decoration-color: var(--button-color);
-  transform-origin: center;
+.menu__item::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  bottom: -3px;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--button-color);
+  transition: width 1s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.menu__item:hover::before {
+  width: 100%;
 }
 
 .header__button {
@@ -195,7 +219,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  animation: button-hover-anim 3s cubic-bezier(.12, 0, .39, 0) infinite alternate;
+  animation: button-hover-anim 50s cubic-bezier(.12, 0, .39, 0) infinite alternate;
 }
 
 .header__sign-in {
@@ -206,7 +230,11 @@
   background: none;
   border: none;
   cursor: pointer;
-  animation: button-hover-anim 3s cubic-bezier(.12, 0, .39, 0) infinite alternate;
+}
+
+.header__sign-in:hover {
+  border: 2px solid var(--button-color);
+  border-radius: 4px;
 }
 
 .header__sign-up {
@@ -439,14 +467,24 @@
   line-height: 40px;
   text-align: center;
   color: var(--header-and-footer-text-color);
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  transition: text-decoration-color 1s ease-in-out;
+  text-decoration: none;
+  position: relative;
 }
 
-.about-us__item:hover {
-  text-decoration-color: var(--button-color);
-  transform-origin: center;
+.about-us__item::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  bottom: -3px;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--button-color);
+  transition: width 1s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.about-us__item:hover::before {
+  width: 100%;
 }
 
 .footer__logo {
