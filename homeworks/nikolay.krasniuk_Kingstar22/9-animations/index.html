@@ -23,7 +23,7 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M57.0716 28C54.0046 28 51.5859 25.9724 51.5859 22.6995C51.5859 19.5707 53.7164 17.3682 56.9275 17.3682C59.7785 17.3682 61.487 19.1281 61.487 21.6806C61.487 21.9482 61.4561 22.2158 61.4355 22.3907H55.0235C55.2911 25.0667 56.8246 26.5797 58.9036 26.5797C59.9123 26.5797 60.7768 26.1989 61.2914 25.674L61.3017 26.1783C60.5504 27.3104 58.986 28 57.0716 28ZM56.9275 18.0474C55.6822 18.0474 54.972 19.2928 54.972 21.5056C54.972 21.6085 54.972 21.7012 54.9823 21.8041L58.5023 21.7629C58.5125 21.5674 58.5125 21.3512 58.5125 21.0528C58.5125 19.2208 58.0185 18.0474 56.9275 18.0474Z" fill="#FD665E"></path>
             </symbol>
 
-            <symbol id="moon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <symbol id="dark" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9.5 2C7.68 2 5.97 2.5 4.5 3.35C7.49 5.08 9.5 8.3 9.5 12C9.5 15.7 7.49 18.92 4.5 20.65C5.97 21.5 7.68 22 9.5 22C15.02 22 19.5 17.52 19.5 12C19.5 6.48 15.02 2 9.5 2Z" fill="#444444"></path>
             </symbol>
             <symbol id="icon-1" width="48" height="56" viewBox="0 0 48 56" fill ="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@
                 <path d="M2 51V17.9097L19.5324 2.62508L38 17.9397V51H2Z" stroke-width="4"></path>
                 <circle cx="20" cy="30" r="5" stroke="#FD665E" stroke-width="4"></circle>
             </symbol>
-            <symbol id="sun" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <symbol id="light" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 4.875C8.07127 4.875 4.875 8.07127 4.875 12C4.875 15.9287 8.07127 19.125 12 19.125C15.9287 19.125 19.125 15.9287 19.125 12C19.125 8.07127 15.9287 4.875 12 4.875ZM12 17.625C10.8875 17.625 9.79994 17.2951 8.87492 16.677C7.94989 16.0589 7.22892 15.1804 6.80318 14.1526C6.37743 13.1248 6.26604 11.9938 6.48308 10.9026C6.70012 9.81147 7.23585 8.80919 8.02252 8.02252C8.80919 7.23585 9.81147 6.70012 10.9026 6.48308C11.9938 6.26604 13.1248 6.37743 14.1526 6.80318C15.1804 7.22892 16.0589 7.94989 16.677 8.87492C17.2951 9.79994 17.625 10.8875 17.625 12C17.6233 13.4913 17.0301 14.9211 15.9756 15.9756C14.9211 17.0301 13.4913 17.6233 12 17.625Z" fill="white"></path>
                 <path d="M11.25 0.75H12.75V3H11.25V0.75Z" fill="white"></path>
                 <path d="M11.25 21H12.75V23.25H11.25V21Z" fill="white"></path>
@@ -54,7 +54,7 @@
             </symbol>
         </svg>
 
-        <header id="up" class="header container">
+        <header id="up" class="header page__section">
             <div class="header__wrapper">
                 <svg class="header__logo">
                     <use xlink:href="#logo"></use>
@@ -82,14 +82,14 @@
             <div class="header__btns">
                 <button data-btn type="button" class="header__btns-theme btn">
                     <svg class = "header__btns-icon">
-                        <use data-icon xlink:href="#moon"></use>
+                        <use data-icon xlink:href="#dark"></use>
                     </svg>
                 </button>
                 <button type="button" class="header__btns-in btn">Sign In</button>
                 <button type="button" class="header__btns-up btn">Sign Up</button>
             </div>
         </header>
-        <section class="dream container">
+        <section class="dream page__section">
             <h1 class="dream__title">
                 Build Your Dream <span>House</span>
             </h1>
@@ -100,37 +100,37 @@
                 </article>
                 <picture class="dream__content-picture">
                     <source srcset="img/img2_2x.png">
-                    <img class="dream__content-img img-animation" src="img/img2.png" alt="img">
+                    <img class="dream__content-img img-animation" src="img/img2.png" alt="dream-house">
                 </picture>
             </main>
         </section>
-        <section class="room container">
+        <section class="room page__section">
             <h2 class="room__title">Build professional valuable room for you</h2>
             <main class="room__gallery">
                 <picture class="room__gallery-picture">
                     <source srcset="img/img-01_2x.png">
-                    <img class="room__gallery-img img-animation" src="img/img-01.png" alt="img">
+                    <img class="room__gallery-img img-animation" src="img/img-01.png" alt="house-kitchen">
                 </picture>
                 <picture class="room__gallery-picture">
                     <source srcset="img/img-02_2x.png">
-                    <img class="room__gallery-img img-animation" src="img/img-02.png" alt="img">
+                    <img class="room__gallery-img img-animation" src="img/img-02.png" alt="house-kitchen">
                 </picture>
                 <picture class="room__gallery-picture">
                     <source srcset="img/img-03_2x.png">
-                    <img class="room__gallery-img img-animation" src="img/img-03.png" alt="img">
+                    <img class="room__gallery-img img-animation" src="img/img-03.png" alt="house-bedroom">
                 </picture>
                 <picture class="room__gallery-picture">
                     <source srcset="img/img-04_2x.png">
-                    <img class="room__gallery-img img-animation" src="img/img-04.png" alt="img">
+                    <img class="room__gallery-img img-animation" src="img/img-04.png" alt="house-kitchen">
                 </picture>
             </main>
         </section>
-        <section class="archmove container">
+        <section class="archmove page__section">
             <h2 class="archmove__title">Build your needs with Archmove</h2>
             <main class="archmove__content">
                 <picture class="archmove__content-picture">
                     <source srcset="img/img-5_2x.png">
-                    <img class="archmove__content-img img-animation" src="img/img-5.png" alt="img">
+                    <img class="archmove__content-img img-animation" src="img/img-5.png" alt="advice">
                 </picture>
                 <aside class="archmove__advantages">
                     <article class="archmove__item">
@@ -165,10 +165,10 @@
             </main>
         </section>
         <div class="overlay">
-            <section class="project container">
+            <section class="project page__section">
                 <picture class="project__picture">
                     <source srcset="img/1_2x.png">
-                    <img class="project__picture-img img-animation" src="img/1.png" alt="img">
+                    <img class="project__picture-img img-animation" src="img/1.png" alt="house">
                 </picture>
                 <main class="project__content">
                     <h2 class="project__content-title">
@@ -178,7 +178,7 @@
                 </main>
             </section>
             <div class="rectangle"></div>
-            <footer class="footer container">
+            <footer class="footer page__section">
                 <ul class="footer__menu">
                     <li class="footer__item">
                         <a class="footer__item-link" href="#">About Us</a>
@@ -199,8 +199,8 @@
                 <img class="footer__logo" src="img/icons/logo.svg" alt="logo">
             </footer>
         </div>
-        <a data-scroll-btn href="#up" class="pageUp">
-            <svg class="pageUp-icon">
+        <a data-scroll-btn href="#up" class="page__up">
+            <svg class="page__up-icon">
                 <use xlink:href="#arrow"></use>
             </svg>
         </a>

@@ -274,6 +274,25 @@
     text-align: center;
     margin: 0 auto;
   }
+
+  .dream__content-img {
+    opacity: 1;
+  }
+
+  .dream__content-img.animation-class {
+    animation: none;
+  }
+
+  @keyframes dream-anim {
+
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 @media (max-width: 576px) {

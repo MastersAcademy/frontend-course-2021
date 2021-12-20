@@ -1,0 +1,25 @@
+.game__turn {
+  margin: 60px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.game__turn-value {
+  display: flex;
+  align-items: center;
+  background-color: #87B2B9;
+  padding: 10px 30px 10px 10px;
+  border-radius: 5px;
+}
+
+.game__turn-logo {
+  width: 35px;
+  height: 35px;
+  margin-right: 30px;
+}
+
+.game__turn-name {
+  font-weight: 500;
+  font-size: 20px;
+  color: #FFF;
+}

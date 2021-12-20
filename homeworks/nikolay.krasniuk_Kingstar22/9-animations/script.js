@@ -9,10 +9,12 @@ const loaderEl = document.querySelector('[data-loader]');
 themeBtnEL.addEventListener('click', () => {
     const icon = document.querySelector('[data-icon]');
     const value = icon.getAttribute('xlink:href');
-    if (value !== '#moon') {
-        icon.setAttribute('xlink:href', '#moon');
+    let theme = 'dark';
+    if (value === `#${theme}`) {
+        theme = 'light';
+        icon.setAttribute('xlink:href', `#${theme}`);
     } else {
-        icon.setAttribute('xlink:href', '#sun');
+        icon.setAttribute('xlink:href', `#${theme}`);
     }
     document.body.classList.toggle('dark-theme');
 });
@@ -30,9 +32,9 @@ menuEl.addEventListener('click', () => {
 
 const scrollBtn = () => {
     if (window.scrollY > 600) {
-        scrollTopEl.classList.add('pageUp-show');
+        scrollTopEl.classList.add('page__up-show');
     } else {
-        scrollTopEl.classList.remove('pageUp-show');
+        scrollTopEl.classList.remove('page__up-show');
     }
     scrollTopEl.onclick = () => {
         window.scrollTo(0, 0);
@@ -41,11 +43,12 @@ const scrollBtn = () => {
 
 const scrollAnimation = () => {
     const windowCenter = (window.innerHeight / 2) + window.scrollY;
+    const windowBottom = window.innerHeight + window.scrollY;
     animationImagesEl.forEach((element) => {
         const scrollOffset = element.offsetTop;
         if (windowCenter >= scrollOffset) {
             element.classList.add('animation-class');
-        } else {
+        } else if (windowBottom <= scrollOffset) {
             element.classList.remove('animation-class');
         }
     });
