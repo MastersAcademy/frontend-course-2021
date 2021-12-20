@@ -1,3 +1,15 @@
-body {
-  background-color: #FFF;
+.dashboard-btn {
+  box-sizing: border-box;
+  width: 260px;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  outline: none;
+  border: 1px solid #78D4F1;
+  background-color: #78D4F1;
+  color: #FFF;
+  font: normal 500 20px/24px Roboto, serif;
 }
