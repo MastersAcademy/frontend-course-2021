@@ -44,11 +44,10 @@ window.onload = () => {
 function showUpArrow() {
     const windowScrolled = window.pageYOffset;
     const deviceViewHeight = document.documentElement.clientHeight;
-    if (windowScrolled > deviceViewHeight) {
-        upArrowEl.classList.add('up-arrow-visible');
-    } else {
-        upArrowEl.classList.remove('up-arrow-visible');
+    if (windowScrolled < deviceViewHeight) {
+        return upArrowEl.classList.remove('up-arrow-visible');
     }
+    return upArrowEl.classList.add('up-arrow-visible');
 }
 
 upArrowEl.addEventListener('click', () => {
