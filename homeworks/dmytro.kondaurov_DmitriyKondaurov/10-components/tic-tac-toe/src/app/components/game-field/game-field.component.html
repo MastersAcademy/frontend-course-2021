@@ -4,13 +4,14 @@
       <svg class="player-icon" width="36" height="36" fill="none">
         <use xlink:href="#cross" href="#cross"></use>
       </svg>
+      <span class="display-current-player__player-name">Player 1 turn</span>
     </ng-template>
     <ng-template #elseBlock>
       <svg class="player-icon" width="41" height="42" fill="none">
         <use xlink:href="#circle" href="#circle"></use>
       </svg>
+      <span class="display-current-player__player-name">Player 2 turn</span>
     </ng-template>
-  <span class="display-current-player__player-name" *ngIf="turn">{{turn ? 'Player 1 turn' : 'Player 2 turn'}}</span>
 </div>
 <div class="game-field">
   <ul class="game-field__row game-field__row--first" data-first-column>
