@@ -5,8 +5,16 @@
   align-items: center;
   width: 336px;
   height: 55px;
-  background-color: #A5D9F6;
+  background-color: #C4C4C4;
   padding: 10px;
+}
+
+.display-current-player.active-true {
+  background-color: #A5D9F6;
+}
+
+.display-current-player.active-false {
+  background-color: #A5A6F6;
 }
 
 .display-current-player__player-name {

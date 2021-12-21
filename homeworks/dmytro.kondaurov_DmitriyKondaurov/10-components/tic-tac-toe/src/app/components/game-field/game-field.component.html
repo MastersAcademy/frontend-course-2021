@@ -1,4 +1,4 @@
-<div class="display-current-player">
+<div class="display-current-player active-{{turn}}">
   <span *ngIf="turn; then thenBlock else elseBlock"></span>
     <ng-template #thenBlock>
       <svg class="player-icon" width="36" height="36" fill="none">
