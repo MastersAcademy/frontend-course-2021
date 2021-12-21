@@ -8,9 +8,9 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 export class GameComponent {
 
     @Input() gameState: number[][] = [];
-    @Output() onToggle = new EventEmitter();
+    @Output() changeBlock = new EventEmitter();
 
     onClick (row: number, index: number) {
-        this.onToggle.emit([row, index]);
+        this.changeBlock.emit([row, index]);
     }
 }
