@@ -18,6 +18,16 @@
     <li *ngFor="let field of item; index as column;"
         class="game-field__item"
         (click)="onClick(row, column)">
+      <div [ngSwitch]="field" class="action active{{field}}">
+        <svg *ngSwitchCase="1" class="player-icon" width="148" height="148" fill="none">
+          <use xlink:href="#cross" href="#cross"></use>
+        </svg>
+        <svg *ngSwitchCase="2" class="player-icon" width="148" height="148" fill="none">
+          <use xlink:href="#circle" href="#circle"></use>
+        </svg>
+        <span *ngSwitchDefault>
+        </span>
+      </div>
     </li>
   </ul>
 </div>
