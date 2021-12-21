@@ -14,19 +14,10 @@
     </ng-template>
 </div>
 <div class="game-field">
-  <ul class="game-field__row game-field__row--first" data-first-column>
-    <li class="game-field__item" data-item (click)="onClick()"></li>
-    <li class="game-field__item" data-item></li>
-    <li class="game-field__item" data-item></li>
-  </ul>
-  <ul class="game-field__row game-field__row--second" data-second-column>
-    <li class="game-field__item" data-item></li>
-    <li class="game-field__item" data-item></li>
-    <li class="game-field__item" data-item></li>
-  </ul>
-  <ul class="game-field__row game-field__row--third" data-third-column>
-    <li class="game-field__item" data-item></li>
-    <li class="game-field__item" data-item></li>
-    <li class="game-field__item" data-item></li>
+  <ul *ngFor="let item of state; index as row;" class="game-field__row" >
+    <li *ngFor="let field of item; index as column;"
+        class="game-field__item"
+        (click)="onClick(row, column)">
+    </li>
   </ul>
 </div>
