@@ -1,3 +1,15 @@
-body {
-  background-color: #FFF;
+.header {
+  display: flex;
+  background: #A5D9F6;
+  height: 56px;
+  align-items: center;
+  padding-left: 25px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, .14), 0 1px 10px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.header__title {
+  color: #FFF;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  margin-left: 25px;
 }
