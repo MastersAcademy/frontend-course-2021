@@ -8,7 +8,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class GameFieldComponent implements OnInit {
 
     turn = false;
-    state = [
+    @Output() state = [
         [0, 0, 0],
         [0, 0, 0],
         [0, 0, 0],
@@ -30,7 +30,6 @@ export class GameFieldComponent implements OnInit {
             this.turn = !this.turn
             this.state[row][column] = this.turn ? 1 : 2;
         } else alert('This field is not empty! Try again.')
-        console.log(this.state);
     }
 
 
