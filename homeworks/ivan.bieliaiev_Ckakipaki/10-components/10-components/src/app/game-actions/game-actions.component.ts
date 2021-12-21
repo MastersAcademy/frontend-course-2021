@@ -7,12 +7,12 @@ import {Component, EventEmitter, Output} from '@angular/core';
 })
 export class GameActionsComponent {
     @Output() resetState = new EventEmitter();
-    @Output() resetPlayersState = new EventEmitter();
+    @Output() resetGameState = new EventEmitter();
     resetGame () {
         this.resetState.emit();
     }
 
-    resetPlayersScore () {
-        this.resetPlayersState.emit();
+    resetCurrentGame () {
+        this.resetGameState.emit();
     }
 }

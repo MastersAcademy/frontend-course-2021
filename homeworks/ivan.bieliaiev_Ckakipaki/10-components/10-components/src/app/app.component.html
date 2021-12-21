@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="who-turn">
-        <svg-icon-sprite *ngIf="currentPlayer === 'Player 1'"
+        <svg-icon-sprite
             [src]="'assets/sprites/sprite.svg#cross'"
             class="who-turn__icon player__icon1"
             [width]="'36'"
@@ -24,7 +24,7 @@
     <div class="game__container">
         <div class="players-actions__container">
             <app-players class="players__container" [playerState]="players"></app-players>
-            <app-game-actions class="actions__container" (resetState)="resetStorage()" (resetPlayersState)="resetPlayersStorage()"></app-game-actions>
+            <app-game-actions class="actions__container" (resetState)="resetStorage()" (resetGameState)="resetGameState()"></app-game-actions>
         </div>
         <app-game class="game" [gameState]="state" (onToggle)="changeGameBlock($event[0], $event[1])"></app-game>
     </div>

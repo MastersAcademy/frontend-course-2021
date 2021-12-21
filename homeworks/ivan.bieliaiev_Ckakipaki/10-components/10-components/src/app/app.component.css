@@ -56,7 +56,7 @@ body {
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
-  padding: 0 0 0 77px;
+  padding: 0 10px 0 77px;
   justify-content: space-between;
 }
 
@@ -90,4 +90,18 @@ body {
 
 .game__item {
   background: #000;
+}
+
+@media screen and (max-width: 968px) {
+
+  .game__container {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .game__container {
+    flex-direction: column;
+  }
 }

@@ -3,6 +3,7 @@
 }
 
 .game__list {
+  margin: 0 0 0 10px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -29,3 +30,22 @@
   justify-content: center;
 }
 
+@media screen and (max-width: 968px) {
+
+  .game__list__row {
+    margin: 0 0 20px;
+  }
+
+  .game__list__row div {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .game__list__row div {
+    width: 100px;
+    height: 100px;
+  }
+}
