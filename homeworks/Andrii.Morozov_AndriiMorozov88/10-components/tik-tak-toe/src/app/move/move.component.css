@@ -1,0 +1,17 @@
+.app-move__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 60px;
+  background: #A5D9F6;
+  width: 336px;
+  height: 56px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app-move__text {
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 700;
+}

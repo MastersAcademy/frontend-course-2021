@@ -13,3 +13,9 @@
   font-family: "Roboto", sans-serif;
   margin-left: 25px;
 }
+
+.game-container {
+  display: flex;
+  margin-top: 60px;
+  margin-left: 210px;
+}
