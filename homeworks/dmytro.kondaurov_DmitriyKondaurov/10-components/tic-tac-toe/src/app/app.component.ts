@@ -12,4 +12,12 @@ export class AppComponent {
         [0, 0, 0],
         [0, 0, 0],
     ];
+
+    resetCurGame() {
+        this.state = [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
+        ];
+    }
 }
