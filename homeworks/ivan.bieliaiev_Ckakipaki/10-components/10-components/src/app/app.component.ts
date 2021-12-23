@@ -22,10 +22,12 @@ export class AppComponent implements OnInit{
         }
     ]
 
+    winner: null | string = null
+
     state: number[][] = [
-        [0, 1, 2],
-        [0, 0 , 0],
-        [1, 2, 1]
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
     ]
 
     currentPlayer:string = this.players[0].name;
@@ -109,36 +111,47 @@ export class AppComponent implements OnInit{
         if (this.state[0][0] === this.state[0][1] && this.state[0][1] === this.state[0][2] && this.state[0][2] !== 0) {
             if (this.state[0][0] === 1) {
                 this.players[0].score += 1;
+                this.winner = null;
+                this.winner = this.players[0].name;
             } else if (this.state[0][0] === 2) {
                 this.players[1].score += 1;
+                this.winner = null;
+                this.winner = this.players[1].name;
             }
             this.resetGameState();
         } else if (this.state[1][0] === this.state[1][1] && this.state[1][1] === this.state[1][2] && this.state[1][2] !== 0) {
             if (this.state[1][0] === 1) {
                 this.players[0].score += 1;
+                this.winner = this.players[0].name;
             } else if (this.state[1][0] === 2) {
                 this.players[1].score += 1;
+                this.winner = this.players[1].name;
             }
             this.resetGameState();
         } else if (this.state[2][0] === this.state[2][1] && this.state[2][1] === this.state[2][2] && this.state[2][2] !== 0) {
             if (this.state[2][0] === 1) {
                 this.players[0].score += 1;
+                this.winner = this.players[0].name;
             } else if (this.state[2][0] === 2) {
                 this.players[1].score += 1;
+                this.winner = this.players[1].name;
             }
             this.resetGameState();
-            this.saveToStorage();
         } else if (this.state[0][0] === this.state[1][0] && this.state[1][0] === this.state[2][0] && this.state[0][0] !== 0) {
             if (this.state[0][0] === 1) {
+                this.winner = this.players[0].name;
                 this.players[0].score += 1;
             } else if (this.state[0][0] === 2) {
+                this.winner = this.players[1].name;
                 this.players[1].score += 1;
             }
             this.resetGameState();
         }  else if (this.state[0][1] === this.state[1][1] && this.state[1][1] === this.state[2][1] && this.state[0][1] !== 0) {
             if (this.state[0][1] === 1) {
+                this.winner = this.players[0].name;
                 this.players[0].score += 1;
             } else if (this.state[0][1] === 2) {
+                this.winner = this.players[1].name;
                 this.players[1].score += 1;
             }
             this.resetGameState();

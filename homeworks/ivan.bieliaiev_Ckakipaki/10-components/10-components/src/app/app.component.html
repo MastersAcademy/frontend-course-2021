@@ -1,25 +1,9 @@
 <!DOCTYPE html>
 <body>
-    <div class="header">
-        <div class="header__logo">
-            <svg-icon-sprite
-                [src]="'assets/sprites/sprite.svg#logo'"
-                class="game-logo"
-                [width]="'25'"
-                [height]="'25'"
-            ></svg-icon-sprite>
-            Tic-Tac-Toe game
-        </div>
-    </div>
-    <div class="who-turn">
-        <svg-icon-sprite
-            [src]="'assets/sprites/sprite.svg#cross'"
-            class="who-turn__icon player__icon1"
-            [width]="'36'"
-            [height]="'36'"
-            viewBox="0 0 36 36"
-        ></svg-icon-sprite>
-        {{currentPlayer}}
+    <app-header class="header"></app-header>
+    <app-who-turn class="who-turn" [whoTurn]="currentPlayer"></app-who-turn>
+    <div class="who-won" *ngIf="winner">
+        {{winner}}
     </div>
     <div class="game__container">
         <div class="players-actions__container">

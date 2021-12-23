@@ -1,0 +1,13 @@
+.header__logo {
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.game-logo {
+  display: block;
+  margin: 0 22px 0 0;
+}

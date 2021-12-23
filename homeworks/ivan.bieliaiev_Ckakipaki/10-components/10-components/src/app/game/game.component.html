@@ -1,8 +1,24 @@
 <!DOCTYPE html>
 <ul class="game__list">
     <li class="game__list__row" *ngFor="let row of gameState; let rowIndex = index;">
-        <div *ngFor="let symbol of row; let index = index" (click)="onClick(rowIndex, index)">
-            {{symbol}}
+        <div *ngFor="let symbol of row; let index = index" (click)="onClick(rowIndex, index)" class="game-item">
+            <button type="button" *ngIf="symbol === 0" class="game-item__btn game-item__default"></button>
+            <button type="button" *ngIf="symbol === 1 || symbol === 2" class="game-item__btn" [class.game-item__first-player]="symbol === 1" [class.game-item__second-player]="symbol === 2">
+                <svg-icon-sprite
+                    [src]="'assets/sprites/sprite.svg#cross'"
+                    [height]="'148'"
+                    [width]="'148'"
+                    [viewBox]="'0 0 148 148'"
+                    *ngIf="symbol === 1"
+                ></svg-icon-sprite>
+                <svg-icon-sprite
+                    [src]="'assets/sprites/sprite.svg#ellipse'"
+                    [width]="'148'"
+                    [height]="'148'"
+                    [viewBox]="'0 0 148 148'"
+                    *ngIf="symbol === 2"
+                ></svg-icon-sprite>
+            </button>
         </div>
     </li>
 </ul>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<div
+    class="who-turn__container"
+    *ngIf="whoTurn !== 'undefined'"
+    [class.who-turn__container__player1]="whoTurn === 'Player 1'"
+    [class.who-turn__container__player2]="whoTurn === 'Player 2'"
+>
+    <svg-icon-sprite
+        [src]="'assets/sprites/sprite.svg#cross'"
+        [width]="'35px'"
+        [height]="'35px'"
+        [viewBox]="'0 0 35px 35px'"
+        class="who-turn__icon"
+        *ngIf="whoTurn === 'Player 1'"
+    ></svg-icon-sprite>
+    <svg-icon-sprite
+        [src]="'assets/sprites/sprite.svg#ellipse'"
+        [width]="'41px'"
+        [height]="'42px'"
+        [viewBox]="'0 0 42 42'"
+        class="who-turn__icon"
+        *ngIf="whoTurn === 'Player 2'"
+    ></svg-icon-sprite>
+    <p class="who-turn__name">
+        {{whoTurn}}
+    </p>
+</div>

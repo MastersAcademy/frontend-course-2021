@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { PlayersComponent } from './players/players.component';
 import { GameActionsComponent } from './game-actions/game-actions.component';
 import { GameComponent } from './game/game.component';
+import { WhoTurnComponent } from './who-turn/who-turn.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
     declarations: [
@@ -13,6 +15,8 @@ import { GameComponent } from './game/game.component';
         PlayersComponent,
         GameActionsComponent,
         GameComponent,
+        WhoTurnComponent,
+        HeaderComponent,
     ],
     imports: [
         BrowserModule,
