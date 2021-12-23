@@ -7,104 +7,93 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
-  dataEl = document.getElementsByClassName('icon')
-  playersMove = true;
+  isPlayerMove = true;
+  player  = '0';
   playersWay = 0;
   countWinnerPlayer1 = 0;
   countWinnerPlayer2 = 0;
-  state = [
-      [0, 1, 2],
-      [0, 1, 2],
-      [0, 0, 0],
-  ];
+  squares = Array(9).fill(null);
 
-  onClick(event: Event) {
-      const element = (event as any).target
-      if (this.playersMove) {
-          element.parentElement.classList.add('list__game-item--blue');
-          element.firstElementChild.setAttribute('xlink:href', '../assets/svg/sprites.svg#x-icon');
-          element.firstElementChild.innerHTML = 'x';
-          this.playersMove = false;
-      }
-      else {
-          element.parentElement.classList.add('list__game-item--violet');
-          element.firstElementChild.setAttribute('xlink:href', '../assets/svg/sprites.svg#0-icon');
-          element.firstElementChild.innerHTML = '0';
-          this.playersMove = true;
+  onClick(event: number) {
+      this.player = this.player == '0' ? 'x' : '0';
+
+      if (!this.squares[event]) {
+          this.squares[event] = this.player;
       }
 
       this.playersWay += 1;
+      this.isPlayerMove = !this.isPlayerMove;
       this.checkWinner();
       this.addCountWinnerPlayer1();
       this.addCountWinnerPlayer2();
   }
 
+  winningPlayer() : string | boolean {
+      const elements = [
+          [0,1,2],
+          [3,4,5],
+          [6,7,8],
 
-  checkDataCross() {
-      return (this.dataEl[0].innerHTML == 'x' && this.dataEl[1].innerHTML == 'x' && this.dataEl[2].innerHTML == 'x')
-      || (this.dataEl[3].innerHTML == 'x' && this.dataEl[4].innerHTML == 'x' && this.dataEl[5].innerHTML == 'x')
-      || (this.dataEl[6].innerHTML == 'x' && this.dataEl[7].innerHTML == 'x' && this.dataEl[8].innerHTML == 'x')
-      || (this.dataEl[0].innerHTML == 'x' && this.dataEl[3].innerHTML == 'x' && this.dataEl[6].innerHTML == 'x')
-      || (this.dataEl[1].innerHTML == 'x' && this.dataEl[4].innerHTML == 'x' && this.dataEl[7].innerHTML == 'x')
-      || (this.dataEl[2].innerHTML == 'x' && this.dataEl[5].innerHTML == 'x' && this.dataEl[8].innerHTML == 'x')
-      || (this.dataEl[0].innerHTML == 'x' && this.dataEl[4].innerHTML == 'x' && this.dataEl[8].innerHTML == 'x')
-      || (this.dataEl[2].innerHTML == 'x' && this.dataEl[4].innerHTML == 'x' && this.dataEl[6].innerHTML == 'x')
+          [0,3,6],
+          [2,5,8],
+          [1,4,7],
 
-  }
-
-  checkDataZero() {
-      return (this.dataEl[0].innerHTML == '0' && this.dataEl[1].innerHTML == '0' && this.dataEl[2].innerHTML == '0')
-      || (this.dataEl[3].innerHTML == '0' && this.dataEl[4].innerHTML == '0' && this.dataEl[5].innerHTML == '0')
-      || (this.dataEl[6].innerHTML == '0' && this.dataEl[7].innerHTML == '0' && this.dataEl[8].innerHTML == '0')
-      || (this.dataEl[0].innerHTML == '0' && this.dataEl[3].innerHTML == '0' && this.dataEl[6].innerHTML == '0')
-      || (this.dataEl[1].innerHTML == '0' && this.dataEl[4].innerHTML == '0' && this.dataEl[7].innerHTML == '0')
-      || (this.dataEl[2].innerHTML == '0' && this.dataEl[5].innerHTML == '0' && this.dataEl[8].innerHTML == '0')
-      || (this.dataEl[0].innerHTML == '0' && this.dataEl[4].innerHTML == '0' && this.dataEl[8].innerHTML == '0')
-      || (this.dataEl[2].innerHTML == '0' && this.dataEl[4].innerHTML == '0' && this.dataEl[6].innerHTML == '0')
-
-  }
-
-  deadHeatGame() {
-      return (9 == this.playersWay )
-  }
-
-  addCountWinnerPlayer1() {
-      if (this.checkDataCross()) {
-          this.countWinnerPlayer1 +=1
-      }
-  }
-
-  addCountWinnerPlayer2() {
-      if (this.checkDataZero()) {
-          this.countWinnerPlayer2 +=1
-      }
-  }
-
-  endOfGame() {
-      this.state = [
-          [0, 0, 0],
-          [0, 0, 0],
-          [0, 0, 0],
+          [0, 4, 8],
+          [2, 4, 6]
       ];
-      this.playersWay = 0;
+
+      for (const element of elements) {
+
+          if (this.squares[element[0]]
+        && this.squares[element[0]] == this.squares[element[1]]
+        && this.squares[element[1]] == this.squares[element[2]] )
+          {
+              return this.squares[element[0]];
+          }
+
+      }
+      return false;
   }
 
-  resetCurrentGame() {
+  deadHeatGame() : boolean {
+      return (9 == this.playersWay);
+  }
+
+  addCountWinnerPlayer1() : void {
+      if (this.winningPlayer() === 'x') {
+          this.countWinnerPlayer1 += 1;
+      }
+  }
+
+  addCountWinnerPlayer2() : void {
+      if (this.winningPlayer() === '0') {
+          this.countWinnerPlayer2 += 1;
+      }
+  }
+
+  endOfGame() : void {
+      this.squares = Array(9).fill(null);
+      this.playersWay = 0;
+      console.log(this.playersWay);
+  }
+
+  resetCurrentGame() : void {
       this.endOfGame();
   }
 
-  resetAll() {
-      this.endOfGame()
+  resetAll() : void {
+      this.endOfGame();
       this.countWinnerPlayer1 = 0;
       this.countWinnerPlayer2 = 0;
+      this.isPlayerMove = true;
   }
 
-  checkWinner() {
-      setTimeout(()=> {
-          if (this.checkDataCross() || this.checkDataZero() || this.deadHeatGame() ) {
-              this.endOfGame()
-              this.playersWay = 0
+  checkWinner() : void {
+      setTimeout(() => {
+          if (this.winningPlayer() || this.deadHeatGame()) {
+              this.endOfGame();
+              this.playersWay = 0;
           }
-      },3000)
+      }, 2500)
   }
 }

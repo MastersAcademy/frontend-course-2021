@@ -7,10 +7,16 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class PlayerActionsComponent {
 
-  @Input() 'state' : number[][]
+  @Input() squares : any;
   @Output() sendClickElement = new EventEmitter ();
 
-  onClickElement(event: MouseEvent) {
+  state : number[][] = [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+  ];
+
+  onClickElement(event: number) {
       this.sendClickElement.emit(event)
   }
 }

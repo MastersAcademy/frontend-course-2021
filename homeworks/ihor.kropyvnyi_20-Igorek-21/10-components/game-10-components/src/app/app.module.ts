@@ -5,14 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { gameComponents } from './components';
 
-// import { InformationPanelComponent } from './components/information-panel/information-panel.component';
-
 @NgModule({
     declarations: [
         AppComponent,
         ...gameComponents,
-
-    // InformationPanelComponent
     ],
     imports: [
         BrowserModule,

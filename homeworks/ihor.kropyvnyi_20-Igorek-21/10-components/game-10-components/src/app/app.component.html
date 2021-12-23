@@ -9,13 +9,13 @@
 <main class="main-section">
   <h1 class="visually-hidden">Tic-Tac-Toe game</h1>
   <div class="content-wrapper">
-    <div *ngIf="playersMove" class="content-wrapper__player-signboard content-wrapper__player-signboard--player-1">
+    <div *ngIf="isPlayerMove" class="content-wrapper__player-signboard content-wrapper__player-signboard--player-1">
       <svg class="player-scoreboard__icon" width="35" height="35">
         <use xlink:href="../assets/svg/sprites.svg#x-icon"></use>
       </svg>
-      <span class="player-scoreboard__text" >Player 1 turn</span>
+      <span class="player-scoreboard__text">Player 1 turn</span>
     </div>
-    <div *ngIf="!playersMove" class="content-wrapper__player-signboard content-wrapper__player-signboard--player-2">
+    <div *ngIf="!isPlayerMove" class="content-wrapper__player-signboard content-wrapper__player-signboard--player-2">
       <svg class="player-scoreboard__icon" width="35" height="35">
         <use xlink:href="../assets/svg/sprites.svg#0-icon"></use>
       </svg>
@@ -24,8 +24,16 @@
   </div>
 
   <section class="section-playground">
-    <app-information-panel [countWinnerPlayer1] = 'countWinnerPlayer1' [countWinnerPlayer2] = 'countWinnerPlayer2' (resetCurrentGame) = "resetCurrentGame()" (resetAllGame)="resetAll()" ></app-information-panel>
-    <app-player-actions [state] = 'state' (sendClickElement)="onClick($event)" ></app-player-actions>
+    <app-information-panel
+      [countWinnerPlayer1]='countWinnerPlayer1'
+      [countWinnerPlayer2]='countWinnerPlayer2'
+      (resetCurrentGame)="resetCurrentGame()"
+      (resetAllGame)="resetAll()"
+    ></app-information-panel>
+    <app-player-actions
+      [squares]="squares"
+      (sendClickElement)="onClick($event)"
+    ></app-player-actions>
   </section>
 
 </main>

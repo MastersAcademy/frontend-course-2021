@@ -2,27 +2,27 @@
   display: flex;
 }
 
-.game-board__icon {
-  width: 100%;
-  height: 100%;
+.game-board__item {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.game-board__item {
   height: 185px;
   width: 185px;
   background-color: #C4C4C4;
   margin: 0 17px 17px 0;
   cursor: pointer;
+  transition: 200ms;
 }
 
-.list__game-item--violet {
-  background-color: var(--color-player-violet);
-  overflow: visible;
-}
-
-.list__game-item--blue {
+.game-board__item--x {
   background-color: var(--color-player-blue);
+}
+
+.game-board__item--0 {
+  background-color: var(--color-player-violet);
+}
+
+.game-board__item:hover,
+.game-board__item:focus {
+  transform: scale(1.05);
 }
