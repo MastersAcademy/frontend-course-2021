@@ -74,11 +74,12 @@ export class AppComponent {
   endOfGame() : void {
       this.squares = Array(9).fill(null);
       this.playersWay = 0;
-      console.log(this.playersWay);
+      this.isPlayerMove = true;
   }
 
   resetCurrentGame() : void {
       this.endOfGame();
+
   }
 
   resetAll() : void {
