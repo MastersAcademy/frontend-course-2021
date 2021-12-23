@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {ThisReceiver} from '@angular/compiler';
 
 @Component({
     selector: 'app-game-dashboard',
@@ -7,14 +8,18 @@ import { Component, Input } from '@angular/core';
 })
 export class GameDashboardComponent {
 
+    @Input() state!: number[][];
 
     constructor() {
         return
     }
 
     resetCur() {
-        return
+        this.state = [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
+        ];
+        console.log(this.state)
     }
-
-
 }

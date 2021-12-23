@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
     selector: 'app-game-field',
@@ -8,11 +8,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class GameFieldComponent implements OnInit {
 
     turn = false;
-    @Output() state = [
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0],
-    ];
+    @Input() state!: number[][];
 
     constructor() {
         return
@@ -25,12 +21,12 @@ export class GameFieldComponent implements OnInit {
     }
 
     onClick(row: number, column: number) {
-        if (this.state[row][column] === 0) {
-            this.increaseTurn.emit();
-            this.turn = !this.turn
-            this.state[row][column] = this.turn ? 1 : 2;
-        } else alert('This field is not empty! Try again.')
+        if (this.state) {
+            if (this.state[row][column] === 0) {
+                this.increaseTurn.emit();
+                this.turn = !this.turn
+                this.state[row][column] = this.turn ? 1 : 2;
+            } else alert('This field is not empty! Try again.')
+        }
     }
-
-
 }

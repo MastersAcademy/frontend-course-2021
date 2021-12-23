@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'app-root',
@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'tic-tac-toe';
-
+    title = 'tic-tac-toe';
+    state: number[][] = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+    ];
 }

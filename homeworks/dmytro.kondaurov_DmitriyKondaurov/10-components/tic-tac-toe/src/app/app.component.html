@@ -11,9 +11,9 @@
 <div class="app-container">
   <div class="app-container__first-column">
     <app-game-state></app-game-state>
-    <app-game-dashboard></app-game-dashboard>
+    <app-game-dashboard [state]="state"></app-game-dashboard>
   </div>
-    <app-game-field></app-game-field>
+    <app-game-field [state]="state"></app-game-field>
 </div>
 
 <router-outlet></router-outlet>
