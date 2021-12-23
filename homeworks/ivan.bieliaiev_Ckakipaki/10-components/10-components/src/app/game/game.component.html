@@ -6,16 +6,16 @@
             <button type="button" *ngIf="symbol === 1 || symbol === 2" class="game-item__btn" [class.game-item__first-player]="symbol === 1" [class.game-item__second-player]="symbol === 2">
                 <svg-icon-sprite
                     [src]="'assets/sprites/sprite.svg#cross'"
-                    [height]="'148'"
-                    [width]="'148'"
-                    [viewBox]="'0 0 148 148'"
+                    [width]="'115px'"
+                    [height]="'115px'"
+                    [viewBox]="'0 0 36 36'"
                     *ngIf="symbol === 1"
                 ></svg-icon-sprite>
                 <svg-icon-sprite
                     [src]="'assets/sprites/sprite.svg#ellipse'"
-                    [width]="'148'"
-                    [height]="'148'"
-                    [viewBox]="'0 0 148 148'"
+                    [width]="'148px'"
+                    [height]="'148px'"
+                    [viewBox]="'0 0 41 42'"
                     *ngIf="symbol === 2"
                 ></svg-icon-sprite>
             </button>
