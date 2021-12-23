@@ -12,7 +12,7 @@ export class AppComponent {
   playersWay = 0;
   countWinnerPlayer1 = 0;
   countWinnerPlayer2 = 0;
-  squares = Array(9).fill(null);
+  squares : string[] = Array(9).fill(null);
 
   onClick(event: number) {
       this.player = this.player == '0' ? 'x' : '0';
@@ -23,9 +23,9 @@ export class AppComponent {
 
       this.playersWay += 1;
       this.isPlayerMove = !this.isPlayerMove;
-      this.checkWinner();
       this.addCountWinnerPlayer1();
       this.addCountWinnerPlayer2();
+      this.checkWinner();
   }
 
   winningPlayer() : string | boolean {
@@ -50,7 +50,6 @@ export class AppComponent {
           {
               return this.squares[element[0]];
           }
-
       }
       return false;
   }
@@ -79,22 +78,19 @@ export class AppComponent {
 
   resetCurrentGame() : void {
       this.endOfGame();
-
   }
 
   resetAll() : void {
-      this.endOfGame();
       this.countWinnerPlayer1 = 0;
       this.countWinnerPlayer2 = 0;
       this.isPlayerMove = true;
+      this.endOfGame();
   }
 
   checkWinner() : void {
-      setTimeout(() => {
-          if (this.winningPlayer() || this.deadHeatGame()) {
-              this.endOfGame();
-              this.playersWay = 0;
-          }
-      }, 2500)
+      if (this.winningPlayer() || this.deadHeatGame()) {
+          this.endOfGame();
+          this.playersWay = 0;
+      }
   }
 }

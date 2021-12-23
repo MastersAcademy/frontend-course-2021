@@ -12,6 +12,7 @@
   margin: 0 17px 17px 0;
   cursor: pointer;
   transition: 200ms;
+  border-radius: 10px;
 }
 
 .game-board__item--x {
@@ -22,7 +23,47 @@
   background-color: var(--color-player-violet);
 }
 
+.game-board__logo {
+  width: calc(80%);
+  height: calc(80%);
+}
+
 .game-board__item:hover,
 .game-board__item:focus {
   transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+
+  .game-board__item {
+    height: 170px;
+    width: 170px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .game-board__item {
+    height: 120px;
+    width: 120px;
+    margin: 0 10px 10px 0;
+  }
+}
+
+@media (max-width: 410px) {
+
+  .game-board__item {
+    height: 100px;
+    width: 100px;
+    margin: 0 10px 10px 0;
+  }
+}
+
+@media (max-width: 330px) {
+
+  .game-board__item {
+    height: 85px;
+    width: 85px;
+    margin: 0 10px 10px 0;
+  }
 }

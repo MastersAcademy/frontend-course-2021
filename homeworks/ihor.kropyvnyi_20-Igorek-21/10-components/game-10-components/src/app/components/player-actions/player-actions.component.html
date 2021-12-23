@@ -2,7 +2,7 @@
   <div (click)="onClickElement(i + k * 3)"
           class="game-board__item  game-board__item--{{squares[i+k*3]}}"
           *ngFor="let item of  items ; let k=index">
-    <svg width="148" height="148">
+    <svg class="game-board__logo" >
       <use [attr.href]="'./assets/svg/sprites.svg#' + squares[i+k*3] + '-icon' "></use>
     </svg>
   </div>

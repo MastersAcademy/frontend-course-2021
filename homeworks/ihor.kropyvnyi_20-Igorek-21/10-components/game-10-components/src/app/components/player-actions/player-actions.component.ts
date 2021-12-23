@@ -7,7 +7,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class PlayerActionsComponent {
 
-  @Input() squares : any;
+  @Input() squares : string[] = [];
   @Output() sendClickElement = new EventEmitter ();
 
   state : number[][] = [
@@ -17,6 +17,6 @@ export class PlayerActionsComponent {
   ];
 
   onClickElement(event: number) {
-      this.sendClickElement.emit(event)
+      this.sendClickElement.emit(event);
   }
 }
