@@ -1,1 +1,3 @@
-
+<div class="field">
+  <div class="field__square" *ngFor="let square of fieldsquares; let i=index" (click)="move(i)">{{fieldsquares[i]}}</div>
+</div>

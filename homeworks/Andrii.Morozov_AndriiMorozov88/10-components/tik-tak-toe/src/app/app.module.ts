@@ -4,16 +4,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MoveComponent } from './move/move.component';
 import { ControlComponent } from './control/control.component';
 import { FieldComponent } from './field/field.component';
+import { MoveComponent } from './field/move/move.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        MoveComponent,
         ControlComponent,
-        FieldComponent
+        FieldComponent,
+        MoveComponent
     ],
     imports: [
         BrowserModule,
