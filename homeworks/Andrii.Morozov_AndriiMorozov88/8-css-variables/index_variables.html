@@ -18,7 +18,7 @@
                     <use xlink:href="sprite.svg#logo"></use>
                 </svg>
             </div>
-            <div class="header__menu">
+            <nav class="header__menu">
                 <ul class="menu__list">
                     <li class="menu__line">
                         <a class="menu__link" href="#">Design Gallery</a>
@@ -33,7 +33,7 @@
                         <a class="menu__link" href="#">How it Works</a>
                     </li>
                 </ul>
-            </div>
+            </nav>
             <div class="header__buttons">
                 <div class="theme-toggle" data-toggle>
                     <svg width="15" height="20" data-halfmoon class="themes-toggle__button--halfmoon">
@@ -47,13 +47,15 @@
                 <button type="button" class="button__sign-up button button--primary">Sign Up</button>
             </div>
         </header>
-        <svg width="48" height="48" data-button-up class="button-up--active button-up--hidden">
-            <use xlink:href="sprite.svg#button_up"></use>
-        </svg>
+        <button type="button" class="button__up--active button__up--hidden" data-button-up>
+            <svg width="30" height="30">
+                <use xlink:href="sprite.svg#button-up"></use>
+            </svg>
+        </button>
         <div class="dreamhouse" data-dreamhouse>
             <h1 class="dreamhouse__title">
                 Build Your<br>
-                Dream <span class="word--color">House</span>
+                Dream <span class="text--accent">House</span>
             </h1>
             <div class="dreamhouse__container">
                 <div class="dreamhouse__aside">
@@ -171,14 +173,14 @@
                         <p>
                             Realize your dream<br>
                             project with
-                            <span class="word--color">Archmove</span>
+                            <span class="text--accent">Archmove</span>
                         </p>
                         <button type="button" class="dream-project__button button button--primary">FREE CONSULTATION</button>
                     </div>
                 </div>
             </div>
             <div class="footer">
-                <div class="footer__menu">
+                <nav class="footer__menu">
                     <ul class="footer__list">
                         <li class="footer__line">
                             <a href="#" class="menu__link">
@@ -206,7 +208,7 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+                </nav>
                 <svg class="logo footer__logo">
                     <use xlink:href="sprite.svg#logo"></use>
                 </svg>

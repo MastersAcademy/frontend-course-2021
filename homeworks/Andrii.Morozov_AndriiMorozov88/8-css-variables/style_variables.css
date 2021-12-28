@@ -31,37 +31,7 @@ html {
 
 .themes-toggle__button--halfmoon {
   fill: var(--clr-n25);
-  animation-name: halfmoon;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
-
-@keyframes halfmoon {
-
-  from {
-    transform: rotate(0deg);
-    fill: var(--clr-n25);
-  }
-
-  25% {
-    fill: #AEF802;
-  }
-
-  50% {
-    fill: #02991C;
-  }
-
-  75% {
-    fill: #EC05B2;
-  }
-
-  to {
-    transform: rotate(360deg);
-    fill: #1131C2;
-  }
-}
-
 
 .themes-toggle__button--sun {
   fill: var(--clr-n100);
@@ -194,7 +164,6 @@ body {
   font-family: var(--ff-p);
   font-size: var(--fs-m);
   color: var(--clr5);
-  transition: .2s;
 }
 
 .menu__link {
@@ -218,11 +187,6 @@ body {
 
 .menu__link:hover::before {
   transform: scale(1);
-}
-
-.menu__line:hover {
-  transform: scale(1.2);
-  transition: .2s;
 }
 
 .header__buttons {
@@ -250,16 +214,19 @@ body {
   transition: .2s;
 }
 
-.button-up--active {
+.button__up--active {
   position: fixed;
   display: block;
-  left: 20px;
-  top: 30%;
+  right: 0;
+  bottom: 10%;
+  width: 50px;
+  height: 20px;
   cursor: pointer;
-  fill: #E7088A;
+  border: none;
+  background: none;
 }
 
-.button-up--hidden {
+.button__up--hidden {
   display: none;
 }
 
@@ -276,7 +243,7 @@ body {
   letter-spacing: -2px;
 }
 
-.word--color {
+.text--accent {
   color: #FD665E;
 }
 
@@ -467,12 +434,6 @@ body {
   font-family: var(--ff-p);
   font-size: var(--fs-s);
   margin-right: 48px;
-  transition: .2s;
-}
-
-.footer__line:hover {
-  transform: scale(1.2);
-  transition: .2s;
 }
 
 .footer__logo {
