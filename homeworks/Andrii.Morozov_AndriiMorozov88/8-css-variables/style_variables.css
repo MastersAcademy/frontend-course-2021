@@ -1,5 +1,8 @@
 html {
   --color-n40: #FD665E;
+  --color-n40-fixed: #FD665E;
+  --color-n50: #F50404;
+  --color-n60: #501414;
   --color-n10: #FFF;
   --color-n11: #FFF;
   --color-n17: #FF0;
@@ -97,12 +100,24 @@ body {
   animation-duration: 8s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
+  transition: transform .2s ease-in-out;
+}
+
+.button--primary:hover {
+  transform: scale(1.2);
+  transition: transform .2s ease-in-out;
 }
 
 .button--secondary {
   margin-right: 30px;
   background-color: var(--color-n10);
   color: var(--color5);
+  transition: transform .2s ease-in-out;
+}
+
+.button--secondary:hover {
+  transform: scale(1.2);
+  transition: transform .2s ease-in-out;
 }
 
 .p__line-height {
@@ -124,12 +139,12 @@ body {
 
   33% {
     width: 75px;
-    fill: #F50404
+    fill: var(--color-n50);
   }
 
   66% {
     width: 45px;
-    fill: #3F1311;
+    fill: var(--color-n60);
   }
 
   to {
@@ -194,23 +209,6 @@ body {
   align-items: center;
   justify-content: flex-end;
   padding-right: 40px;
-}
-
-.button__sign-in {
-  transition: transform .2s ease-in-out;
-}
-
-.button__sign-up {
-  transition: transform .2s ease-in-out;
-}
-
-.button__sign-in:hover {
-  transform: scale(1.2);
-  transition: transform .2s ease-in-out;
-}
-
-.button__sign-up:hover {
-  transform: scale(1.2);
   transition: transform .2s ease-in-out;
 }
 
@@ -244,7 +242,7 @@ body {
 }
 
 .text--accent {
-  color: #FD665E;
+  color: var(--color-n40-fixed);
 }
 
 .dreamhouse {
@@ -274,7 +272,7 @@ body {
   margin-left: 40px;
 }
 
-.photo--disabled {
+.photo--hidden {
   display: none;
 }
 
@@ -415,7 +413,7 @@ body {
 .footer {
   display: flex;
   width: 100%;
-  height: 208px;
+  height: 200px;
   align-items: center;
   justify-content: space-between;
 }
