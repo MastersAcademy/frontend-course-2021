@@ -8,7 +8,7 @@ const halfmoon = document.querySelector('[data-halfmoon]');
 const sun = document.querySelector('[data-sun]');
 const picture = document.querySelectorAll('picture');
 toggleButton.addEventListener('click', () => {
-    page.classList.toggle('html--night');
+    page.classList.toggle('html--dark');
     halfmoon.classList.toggle('themes-toggle__button--hidden');
     sun.classList.toggle('themes-toggle__button--active');
 });
@@ -55,7 +55,6 @@ const dreamProjectObserver = new IntersectionObserver(imageIntersectDreamProject
 dreamProjectObserver.observe(dreamProject);
 const buttonUp = document.querySelector('[data-button-up]');
 buttonUp.addEventListener('click', () => {
-    document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 });
 const scroll$ = fromEvent(window, 'scroll');
@@ -63,8 +62,8 @@ scroll$.pipe(
     map(() => window.scrollY),
 ).subscribe(() => {
     if (window.scrollY > 600) {
-        buttonUp.classList.replace('button-up--hidden', 'button-up--active');
+        buttonUp.classList.replace('button__up--hidden', 'button__up--active');
     } else {
-        buttonUp.classList.replace('button-up--active', 'button-up--hidden');
+        buttonUp.classList.replace('button__up--active', 'button__up--hidden');
     }
 });
