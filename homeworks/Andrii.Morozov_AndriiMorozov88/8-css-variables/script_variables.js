@@ -18,26 +18,26 @@ const archmove = document.querySelector('[data-archmove]');
 const dreamProject = document.querySelector('[data-dream-project]');
 function imageIntersectDreamhouse(entry) {
     if (entry[0].isIntersecting) {
-        picture[0].classList.remove('photo--disabled');
+        picture[0].classList.remove('photo--hidden');
         picture[0].classList.add('photo--animate');
     }
 }
 function imageIntersectDesign(entry) {
     if (entry[0].isIntersecting) {
-        picture[1].classList.remove('photo--disabled');
-        picture[2].classList.remove('photo--disabled');
-        picture[3].classList.remove('photo--disabled');
-        picture[4].classList.remove('photo--disabled');
+        picture[1].classList.remove('photo--hidden');
+        picture[2].classList.remove('photo--hidden');
+        picture[3].classList.remove('photo--hidden');
+        picture[4].classList.remove('photo--hidden');
     }
 }
 function imageIntersectArchmove(entry) {
     if (entry[0].isIntersecting) {
-        picture[5].classList.remove('photo--disabled');
+        picture[5].classList.remove('photo--hidden');
     }
 }
 function imageIntersectDreamProject(entry) {
     if (entry[0].isIntersecting) {
-        picture[6].classList.remove('photo--disabled');
+        picture[6].classList.remove('photo--hidden');
     }
 }
 const options = {
