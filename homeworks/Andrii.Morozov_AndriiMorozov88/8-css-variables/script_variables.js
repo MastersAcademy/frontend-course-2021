@@ -62,7 +62,6 @@ const scroll$ = fromEvent(window, 'scroll');
 scroll$.pipe(
     map(() => window.scrollY),
 ).subscribe(() => {
-    console.log(window.scrollY);
     if (window.scrollY > 600) {
         buttonUp.classList.replace('button-up--hidden', 'button-up--active');
     } else {
