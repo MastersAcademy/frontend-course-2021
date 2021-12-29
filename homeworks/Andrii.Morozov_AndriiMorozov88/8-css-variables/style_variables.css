@@ -19,8 +19,6 @@ html {
   --font-family-paragraf: "Roboto", sans-serif;
   --font-family-title: "Merriweather", serif;
   --font-weight-bold: 900;
-
-  scroll-behavior: smooth;
 }
 
 .html--dark {

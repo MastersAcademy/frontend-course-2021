@@ -1,7 +1,3 @@
-const { fromEvent } = window.rxjs;
-const {
-    map,
-} = window.rxjs.operators;
 const page = document.querySelector('html');
 const toggleButton = document.querySelector('[data-toggle]');
 const halfmoon = document.querySelector('[data-halfmoon]');
@@ -55,13 +51,13 @@ const dreamProjectObserver = new IntersectionObserver(imageIntersectDreamProject
 dreamProjectObserver.observe(dreamProject);
 const buttonUp = document.querySelector('[data-button-up]');
 buttonUp.addEventListener('click', () => {
-    document.documentElement.scrollTop = 0;
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
 });
-const scroll$ = fromEvent(window, 'scroll');
-scroll$.pipe(
-    map(() => window.scrollY),
-).subscribe(() => {
-    if (window.scrollY > 600) {
+window.addEventListener('scroll', () => {
+    if (window.scrollY > document.documentElement.clientHeight) {
         buttonUp.classList.replace('button__up--hidden', 'button__up--active');
     } else {
         buttonUp.classList.replace('button__up--active', 'button__up--hidden');
