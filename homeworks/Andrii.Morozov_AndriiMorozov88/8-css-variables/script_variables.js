@@ -2,13 +2,14 @@ const page = document.querySelector('html');
 const toggleButton = document.querySelector('[data-toggle]');
 const halfmoon = document.querySelector('[data-halfmoon]');
 const sun = document.querySelector('[data-sun]');
-const picture = document.querySelectorAll('picture');
+// const picture = document.querySelectorAll('picture');
 toggleButton.addEventListener('click', () => {
     page.classList.toggle('html--dark');
     halfmoon.classList.toggle('themes-toggle__button--hidden');
     sun.classList.toggle('themes-toggle__button--active');
 });
-const dreamhouse = document.querySelector('[data-dreamhouse]');
+
+/* const dreamhouse = document.querySelector('[data-dreamhouse]');
 const design = document.querySelector('[data-design]');
 const archmove = document.querySelector('[data-archmove]');
 const dreamProject = document.querySelector('[data-dream-project]');
@@ -48,7 +49,8 @@ designObserver.observe(design);
 const archmoveObserver = new IntersectionObserver(imageIntersectArchmove, options);
 archmoveObserver.observe(archmove);
 const dreamProjectObserver = new IntersectionObserver(imageIntersectDreamProject, options);
-dreamProjectObserver.observe(dreamProject);
+dreamProjectObserver.observe(dreamProject); */
+
 const buttonUp = document.querySelector('[data-button-up]');
 buttonUp.addEventListener('click', () => {
     window.scrollTo({
