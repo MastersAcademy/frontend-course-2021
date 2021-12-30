@@ -18,7 +18,7 @@ function imageIntersect(entry) {
     if (entry[0].isIntersecting) {
         entry[0].target.classList.add('image-animation');
         setTimeout(() => {
-            entry[0].target.classList.remove('image-translate');
+            entry[0].target.classList.remove('image');
         }, 3000);
     }
 }
