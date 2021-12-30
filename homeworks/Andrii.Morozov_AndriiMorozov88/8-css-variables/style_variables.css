@@ -19,6 +19,8 @@ html {
   --font-family-paragraf: "Roboto", sans-serif;
   --font-family-title: "Merriweather", serif;
   --font-weight-bold: 900;
+  --image-traslate-x: 0;
+  --image-translate-y: -20px;
 }
 
 .html--dark {
@@ -61,6 +63,26 @@ html {
   display: block;
 }
 
+.image-animation {
+  animation-name: image;
+  animation-duration: 3s;
+}
+
+.image-translate {
+  transform: translate(var(--image-traslate-x), var(--image-translate-y));
+}
+
+@keyframes image {
+
+  from {
+    transform: translate(var(--image-traslate-x), var(--image-translate-y));
+  }
+
+  to {
+    transform: none;
+  }
+}
+
 body {
   background-color: var(--color-n10);
   max-width: 1440px;
@@ -75,30 +97,12 @@ body {
   cursor: pointer;
 }
 
-@keyframes flash {
-
-  from {
-    background-color: var(--color-n40);
-    color: var(--color-n11)
-  }
-
-  to {
-    background-color: var(--color-n10);
-    color: var(--color-n40);
-  }
-}
-
 .button--primary {
   color: var(--color-n11);
   background-color: var(--color-n40);
   border-radius: 4px;
   font-weight: var(--font-weight-bold);
   padding: 15px 24px;
-  animation-name: flash;
-  animation-duration: 8s;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  transition: transform .2s ease-in-out;
 }
 
 .button--primary:hover {
@@ -270,10 +274,6 @@ body {
   margin-left: 40px;
 }
 
-.photo--hidden {
-  display: none;
-}
-
 .dreamhouse__text {
   font-family: var(--font-family-paragraf);
   font-size: var(--font-size-large);
@@ -299,7 +299,7 @@ body {
   margin-bottom: 100px;
 }
 
-.design__photo {
+.design__photo-container {
   display: flex;
   justify-content: space-around;
 }
@@ -378,7 +378,7 @@ body {
   display: flex;
 }
 
-.dream-project__photo {
+.dream-project__photo-container {
   margin-left: 100px;
 }
 
