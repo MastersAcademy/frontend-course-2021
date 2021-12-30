@@ -68,18 +68,21 @@ html {
   animation-duration: 3s;
 }
 
-.image-translate {
+.image {
   transform: translate(var(--image-traslate-x), var(--image-translate-y));
+  opacity: .5;
 }
 
 @keyframes image {
 
   from {
     transform: translate(var(--image-traslate-x), var(--image-translate-y));
+    opacity: .5;
   }
 
   to {
     transform: none;
+    opacity: 1;
   }
 }
 
