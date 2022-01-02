@@ -11,6 +11,8 @@ html {
   --color-n100: #000;
   --color-n25: #444;
   --font-size-big: 112px;
+  --font-size-big-ipad: 80px;
+  --font-size-big-mobile: 40px;
   --font-size-title: 48px;
   --font-size-medium: 14px;
   --font-size-small: 12px;
@@ -442,10 +444,6 @@ body {
     justify-content: center;
   }
 
-  .header__burger {
-    display: none;
-  }
-
   .menu__list {
     display: block;
   }
@@ -480,7 +478,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    font-size: 80px;
+    font-size: var(--font-size-big-ipad);
   }
 
   .dreamhouse__text {
@@ -496,10 +494,6 @@ body {
   .design__photo-container {
     display: block;
     text-align: center;
-  }
-
-  .archmove {
-    max-width: 770px;
   }
 
   .archmove__container {
@@ -538,7 +532,7 @@ body {
 @media (max-width: 400px) {
 
   .dreamhouse__title {
-    font-size: 40px;
+    font-size: var(--font-size-big-mobile);
   }
 
   .design__text {
@@ -554,7 +548,7 @@ body {
   }
 
   .dreamhouse__text {
-    font-size: 15px;
+    font-size: var(--font-size-medium);
   }
 
   .archmove__container {
