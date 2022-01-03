@@ -21,8 +21,6 @@ html {
   --font-family-paragraf: "Roboto", sans-serif;
   --font-family-title: "Merriweather", serif;
   --font-weight-bold: 900;
-  --image-traslate-x: 0;
-  --image-translate-y: -20px;
 }
 
 .html--dark {
@@ -71,14 +69,14 @@ html {
 }
 
 .image {
-  transform: translate(var(--image-traslate-x), var(--image-translate-y));
+  transform: translate(0, -20px);
   opacity: .5;
 }
 
 @keyframes image {
 
   from {
-    transform: translate(var(--image-traslate-x), var(--image-translate-y));
+    transform: translate(0, -20px);
     opacity: .5;
   }
 
@@ -108,6 +106,7 @@ body {
   border-radius: 4px;
   font-weight: var(--font-weight-bold);
   padding: 15px 24px;
+  transition: transform .2s ease-in-out;
 }
 
 .button--primary:hover {
@@ -133,7 +132,7 @@ body {
 
 .logo {
   fill: var(--color-n40);
-  width: 61px;
+  width: 60px;
   /* animation-name: logo;
   animation-duration: 2s; */
 }
@@ -164,13 +163,8 @@ body {
   width: 70px;
 }
 
-.header__burger {
-  display: none;
-}
-
 .header__content {
   display: flex;
-  height: 96px;
   justify-content: space-between;
   align-items: center
 }
@@ -214,7 +208,7 @@ body {
   transition: transform .2s ease-in-out;
 }
 
-.button__up--active {
+.button__back-to-top--active {
   position: fixed;
   display: block;
   right: 5%;
@@ -226,7 +220,7 @@ body {
   background: none;
 }
 
-.button__up--hidden {
+.button__back-to-top--hidden {
   display: none;
 }
 
@@ -364,7 +358,7 @@ body {
 
 .archmove__button:hover {
   transform: scale(1.2);
-  transition-duration: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
 }
 
 .dream-project {
@@ -389,7 +383,7 @@ body {
 
 .dream-project__button:hover {
   transform: scale(1.2);
-  transition: .2s;
+  transition: transform .2s ease-in-out;
 }
 
 .dream-project__text {
@@ -431,15 +425,12 @@ body {
     display: flex;
   }
 
-  .header__logo {
-    display: none;
-  }
-
-  .logo {
-    display: none;
-  }
-
-  .dreamhouse__photo-container {
+  .header__logo,
+  .logo,
+  .dreamhouse__photo-container,
+  .archmove__photo-container,
+  .dream-project__photo-container,
+  .footer__logo {
     display: none;
   }
 
@@ -479,16 +470,8 @@ body {
     display: block;
   }
 
-  .archmove__photo-container {
-    display: none;
-  }
-
   .archmove__title {
     width: 70%;
-  }
-
-  .dream-project__photo-container {
-    display: none;
   }
 
   .dream-project__content {
@@ -497,10 +480,6 @@ body {
 
   .footer__list {
     display: block;
-  }
-
-  .footer__logo {
-    display: none;
   }
 
   .button__up--active {

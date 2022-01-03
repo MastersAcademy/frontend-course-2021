@@ -3,7 +3,7 @@ const toggleButton = document.querySelector('[data-toggle]');
 const halfmoon = document.querySelector('[data-halfmoon]');
 const sun = document.querySelector('[data-sun]');
 const imagesIn = document.querySelectorAll('[data-image-in]');
-const buttonUp = document.querySelector('[data-button-up]');
+const buttonUp = document.querySelector('[data-back-to-top]');
 toggleButton.addEventListener('click', () => {
     page.classList.toggle('html--dark');
     halfmoon.classList.toggle('themes-toggle__button--hidden');
@@ -28,9 +28,9 @@ for (let count = 0; count < imagesIn.length; count++) {
 }
 window.addEventListener('scroll', () => {
     if (window.scrollY < document.documentElement.clientHeight) {
-        buttonUp.classList.replace('button__up--active', 'button__up--hidden');
+        buttonUp.classList.add('button__back-to-top--hidden');
     } else {
-        buttonUp.classList.replace('button__up--hidden', 'button__up--active');
+        buttonUp.classList.remove('button__back-to-top--hidden');
     }
 });
 buttonUp.addEventListener('click', () => {
