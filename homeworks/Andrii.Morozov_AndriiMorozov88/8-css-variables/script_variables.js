@@ -2,7 +2,7 @@ const page = document.querySelector('html');
 const toggleButton = document.querySelector('[data-toggle]');
 const halfmoon = document.querySelector('[data-halfmoon]');
 const sun = document.querySelector('[data-sun]');
-const imageIn = document.querySelectorAll('[data-image-in]');
+const imagesIn = document.querySelectorAll('[data-image-in]');
 const buttonUp = document.querySelector('[data-button-up]');
 toggleButton.addEventListener('click', () => {
     page.classList.toggle('html--dark');
@@ -14,17 +14,17 @@ const options = {
     rootMargin: '0px',
     threshold: 0.7,
 };
-function imageIntersect(entry) {
-    if (entry[0].isIntersecting) {
-        entry[0].target.classList.add('image-animation');
+function imageIntersect([entry]) {
+    if (entry.isIntersecting) {
+        entry.target.classList.add('image-animation');
         setTimeout(() => {
-            entry[0].target.classList.remove('image');
+            entry.target.classList.remove('image');
         }, 3000);
     }
 }
 const observer = new IntersectionObserver(imageIntersect, options);
-for (let count = 0; count < imageIn.length; count++) {
-    observer.observe(imageIn[count]);
+for (let count = 0; count < imagesIn.length; count++) {
+    observer.observe(imagesIn[count]);
 }
 window.addEventListener('scroll', () => {
     if (window.scrollY < document.documentElement.clientHeight) {
