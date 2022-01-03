@@ -1,13 +1,13 @@
-const page = document.querySelector('html');
-const toggleButton = document.querySelector('[data-toggle]');
-const halfmoon = document.querySelector('[data-halfmoon]');
-const sun = document.querySelector('[data-sun]');
-const imagesIn = document.querySelectorAll('[data-image-in]');
-const buttonUp = document.querySelector('[data-back-to-top]');
-toggleButton.addEventListener('click', () => {
-    page.classList.toggle('html--dark');
-    halfmoon.classList.toggle('themes-toggle__button--hidden');
-    sun.classList.toggle('themes-toggle__button--active');
+const pageEl = document.querySelector('html');
+const toggleButtonEl = document.querySelector('[data-toggle]');
+const halfmoonEl = document.querySelector('[data-halfmoon]');
+const sunEl = document.querySelector('[data-sun]');
+const imagesInEl = document.querySelectorAll('[data-image-in]');
+const buttonBackToTopEl = document.querySelector('[data-back-to-top]');
+toggleButtonEl.addEventListener('click', () => {
+    pageEl.classList.toggle('html--dark');
+    halfmoonEl.classList.toggle('themes-toggle__button--hidden');
+    sunEl.classList.toggle('themes-toggle__button--active');
 });
 const options = {
     root: null,
@@ -23,17 +23,17 @@ function imageIntersect([entry]) {
     }
 }
 const observer = new IntersectionObserver(imageIntersect, options);
-for (let count = 0; count < imagesIn.length; count++) {
-    observer.observe(imagesIn[count]);
+for (let count = 0; count < imagesInEl.length; count++) {
+    observer.observe(imagesInEl[count]);
 }
 window.addEventListener('scroll', () => {
     if (window.scrollY < document.documentElement.clientHeight) {
-        buttonUp.classList.add('button__back-to-top--hidden');
+        buttonBackToTopEl.classList.add('button__back-to-top--hidden');
     } else {
-        buttonUp.classList.remove('button__back-to-top--hidden');
+        buttonBackToTopEl.classList.remove('button__back-to-top--hidden');
     }
 });
-buttonUp.addEventListener('click', () => {
+buttonBackToTopEl.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
         behavior: 'smooth',

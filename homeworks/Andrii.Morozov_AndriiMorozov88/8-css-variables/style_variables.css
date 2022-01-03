@@ -235,6 +235,7 @@ body {
   font-family: var(--font-family-title);
   line-height: 1;
   letter-spacing: -2px;
+  padding-left: 13%;
 }
 
 .text--accent {
@@ -243,25 +244,17 @@ body {
 
 .dreamhouse {
   display: block;
-  margin-left: 165px;
   margin-bottom: 100px;
 }
 
 .dreamhouse__container {
   display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
 }
 
 .dreamhouse__aside {
   display: block;
-}
-
-.dreamhouse__button {
-  transition: transform .2s ease-in-out;
-}
-
-.dreamhouse__button:hover {
-  transform: scale(1.2);
-  transition: transform .2s ease-in-out;
 }
 
 .dreamhouse__photo-container {
@@ -271,7 +264,7 @@ body {
 .dreamhouse__text {
   font-family: var(--font-family-paragraf);
   font-size: var(--font-size-large);
-  line-height: 1;
+  line-height: 1.5;
   margin-bottom: 50px;
 }
 
@@ -297,14 +290,18 @@ body {
   justify-content: space-around;
 }
 
-.archmove__title {
-  width: 40%;
+.archmove__title--h2 {
   display: flex;
+  width: 40%;
   justify-content: flex-end;
   font-size: var(--font-size-title);
   font-family: var(--font-family-title);
   line-height: 1.25;
   letter-spacing: -2px;
+}
+
+.archmove__title--h4 {
+  font-weight: 700;
 }
 
 .archmove {
@@ -351,16 +348,6 @@ body {
   padding-left: 40px;
 }
 
-.archmove__button {
-  margin-left: 90px;
-  transition: transform .2s ease-in-out;
-}
-
-.archmove__button:hover {
-  transform: scale(1.2);
-  transition: transform .2s ease-in-out;
-}
-
 .dream-project {
   width: 100%;
   background: var(--color-n13);
@@ -375,15 +362,6 @@ body {
   display: block;
   padding-top: 200px;
   padding-left: 100px;
-}
-
-.dream-project__button {
-  transition: .2s;
-}
-
-.dream-project__button:hover {
-  transform: scale(1.2);
-  transition: transform .2s ease-in-out;
 }
 
 .dream-project__text {
