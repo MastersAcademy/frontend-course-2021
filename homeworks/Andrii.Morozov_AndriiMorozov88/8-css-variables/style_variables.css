@@ -134,8 +134,8 @@ body {
 .logo {
   fill: var(--color-n40);
   width: 61px;
-  animation-name: logo;
-  animation-duration: 2s;
+  /* animation-name: logo;
+  animation-duration: 2s; */
 }
 
 @keyframes logo {
@@ -179,23 +179,15 @@ body {
   display: flex;
 }
 
-.menu__list {
-  display: flex;
-}
-
-.menu__line {
-  list-style-type: none;
-  margin-right: 48px;
-  font-family: var(--font-family-paragraf);
-  font-size: var(--font-size-medium);
-  color: var(--color5);
-}
-
 .menu__link {
   position: relative;
   text-decoration: none;
   cursor: pointer;
   color: var(--color-n20);
+  margin-right: 48px;
+  font-family: var(--font-family-paragraf);
+  font-size: var(--font-size-medium);
+  color: var(--color5);
 }
 
 .menu__link::before {
@@ -414,16 +406,7 @@ body {
   max-width: 100%;
   height: 200px;
   align-items: center;
-  justify-content: space-between;
-}
-
-.footer__menu {
-  display: flex;
-}
-
-.footer__list {
-  display: flex;
-  margin-left: 80px;
+  justify-content: space-around;
 }
 
 .footer__line {
@@ -431,10 +414,6 @@ body {
   font-family: var(--font-family-paragraf);
   font-size: var(--font-size-small);
   margin-right: 48px;
-}
-
-.footer__logo {
-  margin-right: 180px;
 }
 
 @media (max-width: 770px) {
