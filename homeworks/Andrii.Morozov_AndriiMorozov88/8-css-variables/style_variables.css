@@ -33,6 +33,7 @@ html {
 
 .themes-toggle__button--halfmoon {
   fill: var(--color-g25);
+  padding-bottom: 15px;
 }
 
 .themes-toggle__button--sun {
@@ -64,7 +65,7 @@ html {
 
 .image-animation {
   transform: translate(0, 0);
-  transition-duration: 3s;
+  transition-duration: 2s;
 }
 
 .image {
@@ -74,9 +75,8 @@ html {
 
 body {
   background-color: var(--color-w10);
-  max-width: 100%;
-  margin: 0 auto;
   color: var(--color-b100);
+  max-width: 100%;
 }
 
 .button {
@@ -144,15 +144,10 @@ body {
   }
 }
 
-.header__logo {
-  padding-left: 30px;
-  width: 70px;
-}
-
 .header__content {
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 }
 
 .menu__link {
@@ -293,6 +288,7 @@ body {
 .archmove__title--h2 {
   display: flex;
   padding-left: 140px;
+  padding-right: 140px;
   font-size: var(--font-size-title);
   font-family: var(--font-family-title);
   line-height: 1.25;
@@ -392,28 +388,26 @@ body {
   margin-right: 48px;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 810px) {
 
   .header__content {
     display: flex;
+    width: 90%;
     justify-content: center;
+    flex-wrap: wrap;
+    line-height: 4;
   }
 
   .header__buttons {
     display: flex;
   }
 
-  .header__logo,
   .logo,
   .dreamhouse__photo-container,
   .archmove__photo-container,
   .dream-project__photo-container,
   .footer__logo {
     display: none;
-  }
-
-  .dreamhouse {
-    margin-left: 0;
   }
 
   .dreamhouse__aside {
@@ -425,7 +419,6 @@ body {
   .dreamhouse__title {
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
     font-size: var(--font-size-big-ipad);
   }
 
@@ -449,19 +442,28 @@ body {
   }
 
   .dream-project__content {
+    padding-top: 200px;
     padding-left: 0;
   }
 
-  .footer__list {
+  .footer__menu {
     display: block;
+    text-align: center;
+    line-height: 2;
   }
 
-  .button__up--active {
+  .button__back-to-top--active {
     right: 10%;
   }
 }
 
 @media (max-width: 400px) {
+
+  .header__content {
+    line-height: 1.5;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 
   .dreamhouse__title {
     font-size: var(--font-size-big-mobile);
@@ -471,8 +473,14 @@ body {
     font-size: var(--font-size-title-mobile);
   }
 
-  .archmove__title {
+  .archmove__title--h2 {
     font-size: var(--font-size-title-mobile);
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  .archmove__text {
+    font-size: 10px;
   }
 
   .dream-project__text {
@@ -488,10 +496,10 @@ body {
   }
 
   .archmove__block {
-    display: block;
+    display: flex;
   }
 
   .archmove__block--bird {
-    display: block;
+    display: flex;
   }
 }
