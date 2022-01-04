@@ -215,6 +215,21 @@ body {
   cursor: pointer;
   border: none;
   background: none;
+  animation-name: back-to-top;
+  animation-duration: .5s;
+}
+
+@keyframes back-to-top {
+
+  from {
+    opacity: 0;
+    transform: scale(0)
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .button__back-to-top--hidden {
