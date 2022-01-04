@@ -1,15 +1,14 @@
 html {
-  --color-n40: #FD665E;
-  --color-n40-fixed: #FD665E;
-  --color-n50: #F50404;
-  --color-n60: #501414;
-  --color-n10: #FFF;
-  --color-n11: #FFF;
-  --color-n17: #FF0;
-  --color-n13: #F9F9F9;
-  --color-n20: #585858;
-  --color-n100: #000;
-  --color-n25: #444;
+  --color-r40: #FD665E;
+  --color-r40-fixed: #FD665E;
+  --color-r50: #F50404;
+  --color-r80: #501414;
+  --color-w10: #FFF;
+  --color-w11: #FFF;
+  --color-w20: #F9F9F9;
+  --color-g20: #585858;
+  --color-b100: #000;
+  --color-g25: #444;
   --font-size-big: 112px;
   --font-size-big-ipad: 80px;
   --font-size-big-mobile: 40px;
@@ -25,19 +24,19 @@ html {
 }
 
 .html--dark {
-  --color-n40: #F97E77;
-  --color-n10: #0D0D0D;
-  --color-n15: #000;
-  --color-n20: #FFF;
-  --color-n100: #FFF;
+  --color-r40: #F97E77;
+  --color-y50: #FF0;
+  --color-w10: #0D0D0D;
+  --color-g20: #FFF;
+  --color-b100: #FFF;
 }
 
 .themes-toggle__button--halfmoon {
-  fill: var(--color-n25);
+  fill: var(--color-g25);
 }
 
 .themes-toggle__button--sun {
-  fill: var(--color-n100);
+  fill: var(--color-b100);
   animation-name: sun;
   animation-duration: 5s;
   animation-direction: alternate;
@@ -47,11 +46,11 @@ html {
 @keyframes sun {
 
   from {
-    fill: var(--color-n11);
+    fill: var(--color-g20);
   }
 
   to {
-    fill: var(--color-n17);
+    fill: var(--color-y50);
   }
 }
 
@@ -87,10 +86,10 @@ html {
 }
 
 body {
-  background-color: var(--color-n10);
+  background-color: var(--color-w10);
   max-width: 100%;
   margin: 0 auto;
-  color: var(--color-n100);
+  color: var(--color-b100);
 }
 
 .button {
@@ -101,8 +100,8 @@ body {
 }
 
 .button--primary {
-  color: var(--color-n11);
-  background-color: var(--color-n40);
+  color: var(--color-w11);
+  background-color: var(--color-r40);
   border-radius: 4px;
   font-weight: var(--font-weight-bold);
   padding: 15px 24px;
@@ -116,7 +115,7 @@ body {
 
 .button--secondary {
   margin-right: 30px;
-  background-color: var(--color-n10);
+  background-color: var(--color-w10);
   color: var(--color5);
   transition: var(--button-transition);
 }
@@ -126,12 +125,12 @@ body {
   transition: var(--button-transition);
 }
 
-.p__line-height {
+.line-spacing--lg {
   line-height: 1.5;
 }
 
 .logo {
-  fill: var(--color-n40);
+  fill: var(--color-r40);
   width: 60px;
   /* animation-name: logo;
   animation-duration: 2s; */
@@ -145,12 +144,12 @@ body {
 
   33% {
     width: 75px;
-    fill: var(--color-n50);
+    fill: var(--color-r50);
   }
 
   66% {
     width: 45px;
-    fill: var(--color-n60);
+    fill: var(--color-r80);
   }
 
   to {
@@ -177,7 +176,7 @@ body {
   position: relative;
   text-decoration: none;
   cursor: pointer;
-  color: var(--color-n20);
+  color: var(--color-w20);
   margin-right: 48px;
   font-family: var(--font-family-paragraf);
   font-size: var(--font-size-medium);
@@ -189,11 +188,11 @@ body {
   position: absolute;
   width: 100%;
   height: 2px;
-  background: var(--color-n40);
+  background: var(--color-r40);
   left: 0;
   bottom: -5px;
   transform: scale(0);
-  transition: transform .5s ease-out;
+  transition: transform, .1s ease-out;
 }
 
 .menu__link:hover::before {
@@ -239,7 +238,7 @@ body {
 }
 
 .text--accent {
-  color: var(--color-n40-fixed);
+  color: var(--color-r40-fixed);
 }
 
 .dreamhouse {
@@ -322,8 +321,8 @@ body {
 
 .archmove__icon {
   padding-top: 15px;
-  fill: var(--color-n40);
-  stroke: var(--color-n40);
+  fill: var(--color-r40);
+  stroke: var(--color-r40);
 }
 
 .archmove__icon--bird {
@@ -350,7 +349,7 @@ body {
 
 .dream-project {
   width: 100%;
-  background: var(--color-n13);
+  background: var(--color-w20);
 }
 
 .html--dark .dream-project {
