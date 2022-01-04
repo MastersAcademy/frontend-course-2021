@@ -17,9 +17,7 @@ const options = {
 function imageIntersect([entry]) {
     if (entry.isIntersecting) {
         entry.target.classList.add('image-animation');
-        setTimeout(() => {
-            entry.target.classList.remove('image');
-        }, 3000);
+        entry.target.classList.remove('image');
     }
 }
 const observer = new IntersectionObserver(imageIntersect, options);

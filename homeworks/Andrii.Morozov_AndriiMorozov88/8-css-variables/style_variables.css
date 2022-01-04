@@ -63,26 +63,13 @@ html {
 }
 
 .image-animation {
-  animation-name: image;
-  animation-duration: 3s;
+  transform: translate(0, 0);
+  transition-duration: 3s;
 }
 
 .image {
   transform: translate(0, -20px);
   opacity: .5;
-}
-
-@keyframes image {
-
-  from {
-    transform: translate(0, -20px);
-    opacity: .5;
-  }
-
-  to {
-    transform: none;
-    opacity: 1;
-  }
 }
 
 body {
@@ -168,10 +155,6 @@ body {
   align-items: center
 }
 
-.header__menu {
-  display: flex;
-}
-
 .menu__link {
   position: relative;
   text-decoration: none;
@@ -217,6 +200,7 @@ body {
   background: none;
   animation-name: back-to-top;
   animation-duration: .5s;
+  z-index: 1;
 }
 
 @keyframes back-to-top {
@@ -413,10 +397,6 @@ body {
   .header__content {
     display: flex;
     justify-content: center;
-  }
-
-  .menu__list {
-    display: block;
   }
 
   .header__buttons {
