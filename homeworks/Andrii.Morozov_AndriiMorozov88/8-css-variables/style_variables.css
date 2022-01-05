@@ -10,13 +10,10 @@ html {
   --color-b100: #000;
   --color-g25: #444;
   --font-size-big: 112px;
-  --font-size-big-ipad: 80px;
-  --font-size-big-mobile: 40px;
   --font-size-title: 48px;
   --font-size-medium: 14px;
   --font-size-small: 12px;
   --font-size-large: 16px;
-  --font-size-title-mobile: 25px;
   --font-family-paragraf: "Roboto", sans-serif;
   --font-family-title: "Merriweather", serif;
   --font-weight-bold: 900;
@@ -384,6 +381,12 @@ body {
 
 @media (max-width: 810px) {
 
+  html {
+    --font-size-big: 70px;
+    --font-size-title: 40px;
+    --font-size-paragraf: 20px;
+  }
+
   .header__content {
     display: flex;
     width: 90%;
@@ -413,17 +416,17 @@ body {
   .dreamhouse__title {
     margin-left: auto;
     margin-right: auto;
-    font-size: var(--font-size-big-ipad);
+    font-size: var(--font-size-big);
   }
 
   .dreamhouse__text {
     font-family: var(--font-family-paragraf);
-    font-size: var(--font-size-title-mobile);
-    line-height: 1;
+    font-size: var(--font-size-paragraf);
+    line-height: 1.25;
   }
 
   .design__title {
-    font-size: var(--font-size-title-mobile);
+    font-size: var(--font-size-title);
   }
 
   .design__photo-container {
@@ -431,8 +434,12 @@ body {
     text-align: center;
   }
 
-  .archmove__container {
+  .archmove__content {
     display: block;
+  }
+
+  .archmove__text {
+    font-size: var(--font-size-paragraf);
   }
 
   .dream-project__content {
@@ -453,6 +460,12 @@ body {
 
 @media (max-width: 400px) {
 
+  html {
+    --font-size-big: 40px;
+    --font-size-title: 30px;
+    --font-size-paragraf: 15px;
+  }
+
   .header__content {
     line-height: 1.5;
     padding-left: 40px;
@@ -460,15 +473,15 @@ body {
   }
 
   .dreamhouse__title {
-    font-size: var(--font-size-big-mobile);
+    font-size: var(--font-size-big);
   }
 
   .design__text {
-    font-size: var(--font-size-title-mobile);
+    font-size: var(--font-size-title);
   }
 
   .archmove__title--h2 {
-    font-size: var(--font-size-title-mobile);
+    font-size: var(--font-size-title);
     padding-right: 50px;
     padding-left: 50px;
   }
@@ -478,7 +491,7 @@ body {
   }
 
   .dream-project__text {
-    font-size: var(--font-size-title-mobile);
+    font-size: var(--font-size-title);
   }
 
   .dreamhouse__text {
@@ -500,6 +513,12 @@ body {
 
 @media (min-width: 2000px) {
 
+  html {
+    --font-size-big: 180px;
+    --font-size-title: 70px;
+    --font-size-paragraf: 25px;
+  }
+
   .logo {
     width: 120px;
   }
@@ -519,11 +538,11 @@ body {
   }
 
   .button {
-    font-size: 25px;
+    font-size: var(--font-size-paragraf);
   }
 
   .dreamhouse__title {
-    font-size: 150px;
+    font-size: var(--font-size-big);
   }
 
   .dreamhouse__container {
@@ -535,11 +554,11 @@ body {
   }
 
   .dreamhouse__text {
-    font-size: 25px;
+    font-size: var(--font-size-paragraf);
   }
 
   .design__text {
-    font-size: 70px;
+    font-size: var(--font-size-title);
   }
 
   .archmove__title--h2 {
@@ -548,11 +567,11 @@ body {
   }
 
   .archmove__title--h4 {
-    font-size: 25px;
+    font-size: var(--font-size-paragraf);
   }
 
   .archmove__text {
-    font-size: 25px;
+    font-size: var(--font-size-paragraf);
   }
 
   .archmove__icon--bird {
@@ -571,7 +590,7 @@ body {
   }
 
   .dream-project__text {
-    font-size: 70px;
+    font-size: var(--font-size-title);
   }
 }
 
