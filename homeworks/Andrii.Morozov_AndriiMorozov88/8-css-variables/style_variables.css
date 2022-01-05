@@ -528,6 +528,10 @@ body {
     font-size: var(--font-size-title);
   }
 
+  .design__photo-container {
+    margin-top: 20px;
+  }
+
   .archmove__title--h2 {
     font-size: var(--font-size-title);
     padding-right: 50px;
