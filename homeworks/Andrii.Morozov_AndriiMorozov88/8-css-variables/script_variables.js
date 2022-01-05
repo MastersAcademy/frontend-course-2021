@@ -4,6 +4,13 @@ const halfmoonEl = document.querySelector('[data-halfmoon]');
 const sunEl = document.querySelector('[data-sun]');
 const imagesInEl = document.querySelectorAll('[data-image-in]');
 const buttonBackToTopEl = document.querySelector('[data-back-to-top]');
+const burgerEl = document.querySelector('[data-burger]');
+const headerButtonsEl = document.querySelector('[data-header-buttons]');
+const headerMenuEl = document.querySelector('[data-header-menu]');
+burgerEl.addEventListener('click', () => {
+    headerButtonsEl.classList.toggle('header__buttons--hidden');
+    headerMenuEl.classList.toggle('header__menu--active');
+});
 toggleButtonEl.addEventListener('click', () => {
     pageEl.classList.toggle('html--dark');
     halfmoonEl.classList.toggle('themes-toggle__button--hidden');

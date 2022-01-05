@@ -45,6 +45,11 @@ html {
   height: 24px;
 }
 
+.burger {
+  display: none;
+  fill: var(--color-b100);
+}
+
 @keyframes sun {
 
   from {
@@ -196,6 +201,8 @@ body {
 
 .back-to-top__icon {
   fill: var(--color-r40);
+  width: 60px;
+  height: 60px;
 }
 
 .theme-toggle {
@@ -385,18 +392,28 @@ body {
     --font-size-big: 70px;
     --font-size-title: 40px;
     --font-size-paragraf: 20px;
+    --font-size-link: 15px;
   }
 
   .header__content {
     display: flex;
-    width: 90%;
-    justify-content: center;
-    flex-wrap: wrap;
-    line-height: 4;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .burger {
+    display: block;
+    width: 70px;
+    height: 70px;
   }
 
   .header__buttons {
     display: flex;
+  }
+
+  .header__buttons--hidden {
+    display: none;
   }
 
   .logo,
@@ -405,6 +422,18 @@ body {
   .dream-project__photo-container,
   .footer__logo {
     display: none;
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .header__menu--active {
+    display: flex;
+  }
+
+  .menu__link {
+    font-size: var(--font-size-link);
   }
 
   .dreamhouse__aside {
@@ -467,9 +496,22 @@ body {
   }
 
   .header__content {
-    line-height: 1.5;
     padding-left: 40px;
-    padding-right: 40px;
+    line-height: 1.5;
+  }
+
+  .burger {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+
+  .menu__link {
+    display: flex;
+  }
+
+  .header__buttons-hidden {
+    display: none;
   }
 
   .dreamhouse__title {
@@ -509,6 +551,11 @@ body {
   .archmove__block--bird {
     display: flex;
   }
+
+  .back-to-top__icon {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media (min-width: 2000px) {
@@ -521,6 +568,10 @@ body {
 
   .logo {
     width: 120px;
+  }
+
+  .burger {
+    display: none;
   }
 
   .themes-toggle__button--halfmoon {
