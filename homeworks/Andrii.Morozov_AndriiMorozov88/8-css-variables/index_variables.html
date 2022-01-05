@@ -24,10 +24,10 @@
             </nav>
             <div class="header__buttons">
                 <div class="theme-toggle" data-toggle>
-                    <svg width="15" height="20" data-halfmoon class="themes-toggle__button--halfmoon">
+                    <svg data-halfmoon class="themes-toggle__button--halfmoon">
                         <use xlink:href="sprite.svg#halfmoon"></use>
                     </svg>
-                    <svg width="24" height="24" data-sun class="themes-toggle__button--sun themes-toggle__button--hidden">
+                    <svg data-sun class="themes-toggle__button--sun themes-toggle__button--hidden">
                         <use xlink:href="sprite.svg#sun"></use>
                     </svg>
                 </div>
@@ -58,6 +58,7 @@
                 </div>
                 <div class="dreamhouse__photo-container image" data-image-in>
                     <picture>
+                        <source srcset="4x/computers.jpg 4x" media="(min-width: 2000px)" width="1200px">
                         <source srcset="2x/computers.jpg 2x">
                         <img src="1x/computers.jpg" alt="computers">
                     </picture>
@@ -72,18 +73,22 @@
             </div>
             <div class="design__photo-container image" data-image-in>
                 <picture>
+                    <source srcset="4x/kitchen.jpg 4x" media="(min-width: 2000px)" width="450px">
                     <source srcset="2x/kitchen.jpg 2x">
                     <img src="1x/kitchen.jpg" alt="kitchen">
                 </picture>
                 <picture>
+                    <source srcset="4x/gasstove.jpg 4x" media="(min-width: 2000px)" width="450px">
                     <source srcset="2x/gasstove.jpg 2x">
                     <img src="1x/gasstove.jpg" alt="gasstove">
                 </picture>
                 <picture>
+                    <source srcset="4x/bedroom.jpg 4x" media="(min-width: 2000px)" width="450px">
                     <source srcset="2x/bedroom.jpg 2x">
                     <img src="1x/bedroom.jpg" alt="bedroom">
                 </picture>
                 <picture>
+                    <source srcset="4x/diningroom.jpg 4x" media="(min-width: 2000px)" width="450px">
                     <source srcset="2x/diningroom.jpg 2x">
                     <img src="1x/diningroom.jpg" alt="diningroom">
                 </picture>
@@ -96,13 +101,14 @@
             <div class="archmove__container">
                 <div class="archmove__photo-container image" data-image-in>
                     <picture>
+                        <source srcset="4x/meeting.jpg 4x" media="(min-width: 2000px)" width="900px">
                         <source srcset="2x/meeting.jpg 2x">
                         <img src="1x/meeting.jpg" alt="meeting">
                     </picture>
                 </div>
                 <div class="archmove__content">
                     <div class="archmove__block--bird">
-                        <svg width="48" height="56" class="archmove__icon archmove__icon--bird">
+                        <svg class="archmove__icon archmove__icon--bird">
                             <use xlink:href="sprite.svg#bird"></use>
                         </svg>
                         <div class="archmove__text">
@@ -115,7 +121,7 @@
                         </div>
                     </div>
                     <div class="archmove__block">
-                        <svg width="39" height="48" class="archmove__icon">
+                        <svg class="archmove__icon archmove__icon--dollar">
                             <use xlink:href="sprite.svg#dollar"></use>
                         </svg>
                         <div class="archmove__text">
@@ -126,7 +132,7 @@
                         </div>
                     </div>
                     <div class="archmove__block">
-                        <svg width="40" height="53" class="archmove__icon">
+                        <svg class="archmove__icon archmove__icon--circle">
                             <use xlink:href="sprite.svg#circle"></use>
                         </svg>
                         <div class="archmove__text">
@@ -144,8 +150,9 @@
             <div class="dream-project__container">
                 <div class="dream-project__photo-container">
                     <picture>
+                        <source srcset="4x/house.png 4x" media="(min-width: 2000px)" width="900px">
                         <source srcset="2x/house.png 2x">
-                        <img src="1x/house.png" alt="diningroom">
+                        <img src="1x/house.png" alt="house">
                     </picture>
                 </div>
                 <div class="dream-project__content">
