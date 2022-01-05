@@ -34,6 +34,8 @@ html {
 .themes-toggle__button--halfmoon {
   fill: var(--color-g25);
   padding-bottom: 15px;
+  width: 15px;
+  height: 20px;
 }
 
 .themes-toggle__button--sun {
@@ -42,6 +44,8 @@ html {
   animation-duration: 5s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
+  width: 24px;
+  height: 24px;
 }
 
 @keyframes sun {
@@ -119,29 +123,7 @@ body {
 .logo {
   fill: var(--color-r40);
   width: 60px;
-  /* animation-name: logo;
-  animation-duration: 2s; */
-}
-
-@keyframes logo {
-
-  from {
-    width: 61px;
-  }
-
-  33% {
-    width: 75px;
-    fill: var(--color-r50);
-  }
-
-  66% {
-    width: 45px;
-    fill: var(--color-r80);
-  }
-
-  to {
-    width: 61px;
-  }
+  padding-left: 30px;
 }
 
 .header__content {
@@ -271,7 +253,7 @@ body {
 .design__text {
   font-size: var(--font-size-title);
   font-family: var(--font-family-title);
-  line-height: 1;
+  line-height: 1.25;
   letter-spacing: -2px;
 }
 
@@ -324,6 +306,18 @@ body {
 
 .archmove__icon--bird {
   padding-left: 5px;
+  width: 48px;
+  height: 56px;
+}
+
+.archmove__icon--dollar {
+  width: 39px;
+  height: 48px;
+}
+
+.archmove__icon--circle {
+  width: 40px;
+  height: 53px;
 }
 
 .archmove__block {
@@ -503,3 +497,81 @@ body {
     display: flex;
   }
 }
+
+@media (min-width: 2000px) {
+
+  .logo {
+    width: 120px;
+  }
+
+  .themes-toggle__button--halfmoon {
+    width: 24px;
+    height: 30px;
+  }
+
+  .themes-toggle__button--sun {
+    width: 36px;
+    height: 36px;
+  }
+
+  .menu__link {
+    font-size: 25px;
+  }
+
+  .button {
+    font-size: 25px;
+  }
+
+  .dreamhouse__title {
+    font-size: 150px;
+  }
+
+  .dreamhouse__container {
+    justify-content: space-around;
+  }
+
+  .dreamhouse__aside {
+    padding-left: 150px;
+  }
+
+  .dreamhouse__text {
+    font-size: 25px;
+  }
+
+  .design__text {
+    font-size: 70px;
+  }
+
+  .archmove__title--h2 {
+    font-size: 70px;
+    padding-left: 200px;
+  }
+
+  .archmove__title--h4 {
+    font-size: 25px;
+  }
+
+  .archmove__text {
+    font-size: 25px;
+  }
+
+  .archmove__icon--bird {
+    width: 72px;
+    height: 84px;
+  }
+
+  .archmove__icon--dollar {
+    width: 60px;
+    height: 72px;
+  }
+
+  .archmove__icon--circle {
+    width: 60px;
+    height: 81px;
+  }
+
+  .dream-project__text {
+    font-size: 70px;
+  }
+}
+
