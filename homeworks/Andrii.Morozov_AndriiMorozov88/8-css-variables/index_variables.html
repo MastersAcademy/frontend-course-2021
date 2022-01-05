@@ -16,13 +16,16 @@
             <svg class="logo">
                 <use xlink:href="sprite.svg#logo"></use>
             </svg>
-            <nav class="header__menu">
+            <svg class="burger" data-burger>
+                <use xlink:href="sprite.svg#burger"></use>
+            </svg>
+            <nav class="header__menu" data-header-menu>
                 <a class="menu__link" href="#">Design Gallery</a>
                 <a class="menu__link" href="#">List of Architect</a>
                 <a class="menu__link" href="#">Articles</a>
                 <a class="menu__link" href="#">How it Works</a>
             </nav>
-            <div class="header__buttons">
+            <div class="header__buttons" data-header-buttons>
                 <div class="theme-toggle" data-toggle>
                     <svg data-halfmoon class="themes-toggle__button--halfmoon">
                         <use xlink:href="sprite.svg#halfmoon"></use>
@@ -36,7 +39,7 @@
             </div>
         </header>
         <button type="button" class="button__back-to-top--hidden button__back-to-top--active" data-back-to-top>
-            <svg width="60" height="60" class="back-to-top__icon">
+            <svg class="back-to-top__icon">
                 <use xlink:href="sprite.svg#button-back-to-top"></use>
             </svg>
         </button>
