@@ -68,14 +68,17 @@ html {
   display: block;
 }
 
-.image-animation {
-  transform: translate(0, 0);
-  transition-duration: 2s;
-}
+@media (min-width: 750px) {
 
-.image {
-  transform: translate(0, -20px);
-  opacity: .5;
+  .image-animation {
+    transform: translate(0, 0);
+    transition-duration: 2s;
+  }
+
+  .image {
+    transform: translate(0, -20px);
+    opacity: .5;
+  }
 }
 
 body {
