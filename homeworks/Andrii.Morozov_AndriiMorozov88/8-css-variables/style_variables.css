@@ -45,9 +45,8 @@ html {
   height: 24px;
 }
 
-.burger {
+.burger-icon {
   display: none;
-  fill: var(--color-b100);
 }
 
 @keyframes sun {
@@ -379,13 +378,6 @@ body {
   justify-content: space-around;
 }
 
-.footer__line {
-  list-style-type: none;
-  font-family: var(--font-family-paragraf);
-  font-size: var(--font-size-small);
-  margin-right: 48px;
-}
-
 @media (max-width: 810px) {
 
   html {
@@ -399,13 +391,17 @@ body {
     display: flex;
     justify-content: space-between;
     padding-left: 30px;
-    padding-right: 30px;
+    padding-right: 70px;
   }
 
-  .burger {
+  .header__burger {
     display: block;
-    width: 70px;
-    height: 70px;
+  }
+
+  .burger-icon {
+    width: 60px;
+    height: 60px;
+    fill: var(--color-b100);
   }
 
   .header__buttons {
@@ -476,41 +472,51 @@ body {
     padding-left: 0;
   }
 
-  .footer__menu {
-    display: block;
-    text-align: center;
-    line-height: 2;
-  }
-
   .button__back-to-top--active {
     right: 10%;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
 
   html {
     --font-size-big: 40px;
-    --font-size-title: 30px;
+    --font-size-title: 20px;
     --font-size-paragraf: 15px;
   }
 
   .header__content {
-    padding-left: 40px;
-    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
-  .burger {
+  .header__burger {
     display: block;
+  }
+
+  .footer__burger {
+    display: block;
+  }
+
+  .burger-icon {
     width: 30px;
     height: 30px;
+    fill: var(--color-b100);
   }
 
-  .menu__link {
+  .header__menu {
+    display: none;
+  }
+
+  .header__menu--active {
     display: flex;
+    flex-direction: column;
+    line-height: 2;
   }
 
-  .header__buttons-hidden {
+  .header__buttons--hidden {
     display: none;
   }
 
@@ -556,6 +562,20 @@ body {
     width: 30px;
     height: 30px;
   }
+
+  .footer__burger {
+    display: block;
+  }
+
+  .footer__menu {
+    display: none;
+  }
+
+  .footer__menu--active {
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+  }
 }
 
 @media (min-width: 2000px) {
@@ -570,13 +590,8 @@ body {
     width: 120px;
   }
 
-  .burger {
+  .burger-icon {
     display: none;
-  }
-
-  .themes-toggle__button--halfmoon {
-    width: 24px;
-    height: 30px;
   }
 
   .themes-toggle__button--sun {
