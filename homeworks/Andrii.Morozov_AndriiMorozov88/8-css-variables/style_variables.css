@@ -1,9 +1,9 @@
 html {
   --color-r40: #FD665E;
-  --color-r40-fixed: #FD665E;
+  --color-pink: #FD665E;
   --color-r50: #F50404;
   --color-r80: #501414;
-  --color-w10: #FFF;
+  --color-white: #FFF;
   --color-w11: #FFF;
   --color-w20: #F9F9F9;
   --color-g20: #585858;
@@ -95,7 +95,7 @@ body {
 }
 
 .button--primary {
-  color: var(--color-w11);
+  color: var(--color-white);
   background-color: var(--color-r40);
   border-radius: 4px;
   font-weight: var(--font-weight-bold);
@@ -222,7 +222,7 @@ body {
 }
 
 .text--accent {
-  color: var(--color-r40-fixed);
+  color: var(--color-pink);
 }
 
 .dreamhouse {
@@ -273,7 +273,7 @@ body {
   justify-content: space-around;
 }
 
-.archmove__title--h2 {
+.archmove__main-title {
   display: flex;
   padding-left: 140px;
   padding-right: 140px;
@@ -283,7 +283,7 @@ body {
   letter-spacing: -2px;
 }
 
-.archmove__title--h4 {
+.archmove__title {
   font-weight: 700;
 }
 
@@ -485,7 +485,7 @@ body {
   html {
     --font-size-big: 40px;
     --font-size-title: 20px;
-    --font-size-paragraf: 15px;
+    --font-size-paragraf: 10px;
   }
 
   .header__content {
@@ -535,14 +535,14 @@ body {
     margin-top: 20px;
   }
 
-  .archmove__title--h2 {
+  .archmove__main-title {
     font-size: var(--font-size-title);
     padding-right: 50px;
     padding-left: 50px;
   }
 
   .archmove__text {
-    font-size: 10px;
+    font-size: var(--font-size-paragraf);
   }
 
   .dream-project__text {
@@ -607,7 +607,7 @@ body {
   }
 
   .menu__link {
-    font-size: 25px;
+    font-size: var(--font-size-paragraf);
   }
 
   .button {
@@ -634,12 +634,12 @@ body {
     font-size: var(--font-size-title);
   }
 
-  .archmove__title--h2 {
-    font-size: 70px;
+  .archmove__main-title {
+    font-size: var(--font-size-title);
     padding-left: 200px;
   }
 
-  .archmove__title--h4 {
+  .archmove__title {
     font-size: var(--font-size-paragraf);
   }
 
