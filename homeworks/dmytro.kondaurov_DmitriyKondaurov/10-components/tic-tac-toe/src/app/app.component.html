@@ -10,10 +10,10 @@
 </header>
 <div class="app-container">
   <div class="app-container__first-column">
-    <app-game-state></app-game-state>
+    <app-game-state  [state]="state"></app-game-state>
     <app-game-dashboard (resetCurGame)="resetCurGame()"></app-game-dashboard>
   </div>
-    <app-game-field [state]="state"></app-game-field>
+    <app-game-field [state]="state" (stateCheck) = stateCheck($event)></app-game-field>
 </div>
 
 <router-outlet></router-outlet>

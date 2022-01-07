@@ -9,11 +9,11 @@
   padding: 10px;
 }
 
-.display-current-player.active-true {
+.display-current-player.active-false {
   background-color: #A5D9F6;
 }
 
-.display-current-player.active-false {
+.display-current-player.active-true {
   background-color: #A5A6F6;
 }
 

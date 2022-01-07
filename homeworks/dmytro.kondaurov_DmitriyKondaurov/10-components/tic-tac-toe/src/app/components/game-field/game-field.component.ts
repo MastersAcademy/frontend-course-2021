@@ -14,14 +14,14 @@ export class GameFieldComponent {
         return
     }
 
-    @Output() increaseTurn = new EventEmitter
+    @Output() stateCheck = new EventEmitter<number>()
 
     onClick(row: number, column: number) {
         if (this.state) {
             if (this.state[row][column] === 0) {
-                // this.increaseTurn.emit();
                 this.turn = !this.turn
                 this.state[row][column] = this.turn ? 1 : 2;
+                this.stateCheck.emit(this.state[row][column]);
             } else alert('This field is not empty! Try again.')
         }
     }

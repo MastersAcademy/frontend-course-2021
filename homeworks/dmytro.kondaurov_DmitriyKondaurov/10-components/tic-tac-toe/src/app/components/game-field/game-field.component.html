@@ -1,12 +1,12 @@
 <div class="display-current-player active-{{turn}}">
   <span *ngIf="turn; then thenBlock else elseBlock"></span>
-    <ng-template #thenBlock>
+    <ng-template #elseBlock>
       <svg class="player-icon" width="36" height="36" fill="none">
         <use xlink:href="#cross" href="#cross"></use>
       </svg>
       <span class="display-current-player__player-name">Player 1 turn</span>
     </ng-template>
-    <ng-template #elseBlock>
+    <ng-template #thenBlock>
       <svg class="player-icon" width="41" height="42" fill="none">
         <use xlink:href="#circle" href="#circle"></use>
       </svg>

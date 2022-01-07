@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
     selector: 'app-game-state',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
     styleUrls: ['./game-state.component.css']
 })
 export class GameStateComponent {
+
+    @Input() state!: number[][];
 
     constructor() {
         return

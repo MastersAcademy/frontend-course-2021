@@ -13,11 +13,16 @@ export class AppComponent {
         [0, 0, 0],
     ];
 
+
     resetCurGame() {
         this.state = [
             [0, 0, 0],
             [0, 0, 0],
             [0, 0, 0],
         ];
+    }
+
+    stateCheck(player:number) {
+        return console.log(player)
     }
 }
