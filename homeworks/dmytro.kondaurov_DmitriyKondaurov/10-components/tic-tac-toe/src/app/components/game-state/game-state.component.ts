@@ -7,7 +7,8 @@ import {Component, Input} from '@angular/core';
 })
 export class GameStateComponent {
 
-    @Input() state!: number[][];
+    @Input() scorePl1!: number;
+    @Input() scorePl2!: number;
 
     constructor() {
         return

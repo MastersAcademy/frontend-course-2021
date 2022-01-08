@@ -10,10 +10,6 @@ export class GameFieldComponent {
     turn = false;
     @Input() state!: number[][];
 
-    constructor() {
-        return
-    }
-
     @Output() stateCheck = new EventEmitter<number>()
 
     onClick(row: number, column: number) {
@@ -21,7 +17,7 @@ export class GameFieldComponent {
             if (this.state[row][column] === 0) {
                 this.turn = !this.turn
                 this.state[row][column] = this.turn ? 1 : 2;
-                this.stateCheck.emit(this.state[row][column]);
+                setTimeout(() => this.stateCheck.emit(this.state[row][column]), 10);
             } else alert('This field is not empty! Try again.')
         }
     }
