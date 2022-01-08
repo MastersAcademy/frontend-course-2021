@@ -42,13 +42,6 @@ export class AppComponent {
                 this.resetCurGame();
             }
         }
-        if (this.state[0].every((item:number) => item != 0)
-            && this.state[1].every((item:number) => item != 0)
-            && this.state[2].every((item:number) => item != 0)
-        ) {
-            alert('Draw!')
-            this.resetCurGame();
-        }
         if (
             (this.state[0][0] === player && this.state[1][0] === player && this.state[2][0] === player)
             || (this.state[0][1] === player && this.state[1][1] === player && this.state[2][1] === player)
@@ -58,6 +51,12 @@ export class AppComponent {
         ) {
             player === 1? this.scorePl1++ : this.scorePl2++;
             alert('Player '+player+' win!')
+            this.resetCurGame();
+        } else if (this.state[0].every((item:number) => item != 0)
+            && this.state[1].every((item:number) => item != 0)
+            && this.state[2].every((item:number) => item != 0)
+        ) {
+            alert('Draw!')
             this.resetCurGame();
         }
     }
