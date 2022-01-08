@@ -1,0 +1,28 @@
+<div class="players-score">
+  <div class="players-score__element players-score__element--1">
+    <div class="players-score__player players-score__player--1">
+      <svg class="players-score__player-icon">
+        <use href="../../../assets/icons/sprite.svg#circle"></use>
+      </svg>
+      <div class="players-score__player-name">
+        Player 1
+      </div>
+    </div>
+    <div class="players-score__score players-score__score--1">
+      {{gameService.scorePlayer1}}
+    </div>
+  </div>
+  <div class="players-score__element">
+    <div class="players-score__player players-score__player--2">
+      <svg class="players-score__player-icon">
+        <use href="../../../assets/icons/sprite.svg#cross"></use>
+      </svg>
+      <div class="players-score__player-name">
+        Player 2
+      </div>
+    </div>
+    <div class="players-score__score players-score__score--2">
+      {{gameService.scorePlayer2}}
+    </div>
+  </div>
+</div>

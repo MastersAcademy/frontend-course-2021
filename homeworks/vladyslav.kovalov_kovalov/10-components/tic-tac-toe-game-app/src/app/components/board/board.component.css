@@ -1,0 +1,36 @@
+.game-board__grid {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 600px;
+  gap: 1rem;
+}
+
+.game-board__row {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+}
+
+.game-board__element {
+  height: 200px;
+  width: 200px;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-board__element--1 {
+  background-color: var(--primary-color);
+}
+
+.game-board__element--2 {
+  background-color: var(--secondary-color);
+}
+
+.game-board__icon {
+  height: 150px;
+  width: 150px;
+}
