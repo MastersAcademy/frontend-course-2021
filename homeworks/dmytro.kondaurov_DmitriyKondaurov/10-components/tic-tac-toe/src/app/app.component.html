@@ -11,7 +11,7 @@
 <div class="app-container">
   <div class="app-container__first-column">
     <app-game-state  [scorePl1]="scorePl1" [scorePl2]="scorePl2"></app-game-state>
-    <app-game-dashboard (resetCurGame)="resetCurGame()"></app-game-dashboard>
+    <app-game-dashboard (resetCurGame)="resetCurGame()" (resetAll)="resetAll()"></app-game-dashboard>
   </div>
     <app-game-field [state]="state" (stateCheck) = stateCheck($event)></app-game-field>
 </div>

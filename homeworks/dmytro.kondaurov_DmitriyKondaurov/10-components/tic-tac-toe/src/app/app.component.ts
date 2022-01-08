@@ -10,7 +10,6 @@ export class AppComponent {
     title = 'tic-tac-toe';
     scorePl1 = 0;
     scorePl2 = 0;
-    alertBox = '';
     state: number[][] = [
         [0, 0, 0],
         [0, 0, 0],
@@ -23,6 +22,12 @@ export class AppComponent {
             [0, 0, 0],
             [0, 0, 0],
         ];
+    }
+
+    resetAll() {
+        this.resetCurGame();
+        this.scorePl1 = 0;
+        this.scorePl2 = 0;
     }
 
     stateCheck(player:number) {

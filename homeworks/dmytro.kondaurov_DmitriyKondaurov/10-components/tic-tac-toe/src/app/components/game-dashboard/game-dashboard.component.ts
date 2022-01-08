@@ -12,8 +12,13 @@ export class GameDashboardComponent {
     }
 
     @Output() resetCurGame = new EventEmitter
+    @Output() resetAll = new EventEmitter
 
     resetCur() {
         this.resetCurGame.emit();
+    }
+
+    resetAllGame() {
+        this.resetAll.emit();
     }
 }
