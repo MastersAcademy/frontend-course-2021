@@ -44,6 +44,59 @@ body {
   background-color: var(--background-color);
 }
 
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-up-button {
+  z-index: 1;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  padding: .25rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0;
+  background-color: var(--accent-color);
+  transition: transform .25s ease-in-out, opacity .5s ease-in-out;
+}
+
+.scroll-up-button:hover {
+  background-color: var(--accent-color-light);
+  transform: scale(1.05);
+}
+
+.scroll-up-button__icon {
+  height: 40px;
+  width: 40px;
+  fill: var(--button-text-color);
+  display: flex;
+}
+
+.animated-image {
+  animation-name: animated-image;
+  animation-duration: .75s;
+  animation-delay: .25s;
+  animation-timing-function: ease-in-out;
+  opacity: 1;
+}
+
+@keyframes animated-image {
+
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(-25px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .header {
   padding: 1rem 0;
 }
@@ -55,29 +108,61 @@ body {
   padding: 0 1rem;
 }
 
-.header__logo {
+.header__logo-icon {
+  height: 65px;
+  width: 65px;
   margin-right: 3rem;
   animation-name: logo-animation;
   animation-duration: 1s;
-  animation-delay: .5s;
+  animation-delay: .75s;
   animation-timing-function: ease-in-out;
 }
 
 @keyframes logo-animation {
 
   25% {
-    transform: rotate(-5deg)
+    transform: rotate(5deg)
   }
 
   50% {
-    transform: rotate(5deg)
+    transform: rotate(-5deg)
   }
 }
 
-.header__icon {
-  height: 65px;
-  width: 65px;
-  fill: var(--accent-color);
+.header__logo-icon--layer-1 {
+  animation-name: logo-animation-layer-1;
+  animation-duration: 1s;
+  animation-delay: .75s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes logo-animation-layer-1 {
+
+  25% {
+    transform: translateY(-5px);
+  }
+
+  50% {
+    transform: translateY(0)
+  }
+}
+
+.header__logo-icon--layer-8 {
+  animation-name: logo-animation-layer-8;
+  animation-duration: 1s;
+  animation-delay: .75s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes logo-animation-layer-8 {
+
+  25% {
+    transform: translateY(5px);
+  }
+
+  50% {
+    transform: translateY(0)
+  }
 }
 
 .header__navigation {
@@ -183,6 +268,19 @@ body {
   background-color: var(--accent-color);
   font-weight: 900;
   transition: transform .25s ease-in-out;
+  animation: button-animation 1s ease-in-out 5;
+  animation-delay: 30s;
+}
+
+@keyframes button-animation {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
 }
 
 .header__full-button:hover {
@@ -234,6 +332,7 @@ body {
 
 .main-section__hero-image {
   flex: 3;
+  display: flex;
 }
 
 .main-section__image {
@@ -255,6 +354,19 @@ body {
   background-color: var(--accent-color);
   font-weight: 900;
   transition: transform .25s ease-in-out;
+  animation: button-animation 1s ease-in-out 5;
+  animation-delay: 30s;
+}
+
+@keyframes button-animation {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
 }
 
 .main-section__full-button:hover {
@@ -401,6 +513,19 @@ body {
   font-weight: 900;
   transition: transform .25s ease-in-out;
   align-self: center;
+  animation: button-animation 1s ease-in-out 5;
+  animation-delay: 30s;
+}
+
+@keyframes button-animation {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
 }
 
 .features-section__full-button:hover {
@@ -472,6 +597,19 @@ body {
   background-color: var(--accent-color);
   font-weight: 900;
   transition: transform .25s ease-in-out;
+  animation: button-animation 1s ease-in-out 5;
+  animation-delay: 30s;
+}
+
+@keyframes button-animation {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
 }
 
 .footer-section__full-button:hover {
