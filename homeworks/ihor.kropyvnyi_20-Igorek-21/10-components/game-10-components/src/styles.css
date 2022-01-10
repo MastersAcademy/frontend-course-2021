@@ -1,0 +1,14 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+:root {
+  --color-player-violet: #A5A6F6;
+  --color-player-blue: #A5D9F6;
+  --color-thema-blue: #78D4F1;
+}
