@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
-
+enum player {
+  cross = 1,
+  zero = 2
+}
+enum playerMove {
+  cross = 1,
+  zero = -1
+}
 @Component({
     selector: 'app-field',
     templateUrl: './field.component.html',
@@ -7,24 +14,19 @@ import { Component } from '@angular/core';
 })
 export class FieldComponent {
     fieldsquares = new Array(9);
-    player = 1;
-    playerMove = 'assets/sprite.svg#x';
+    player = player.cross;
     togglePlayer() {
-        if (this.player === 1) {
-            this.player = 2;
-            this.playerMove = 'assets/sprite.svg#circle';
+        if (this.player === player.cross) {
+            this.player = player.zero;
         } else {
-            this.player = 1;
-            this.playerMove = 'assets/sprite.svg#x';
+            this.player = player.cross;
         }
-        return this.player, this.playerMove
+        return this.player
     }
-    move(index:number): void {
-        if (this.player === 1) {
-            this.fieldsquares[index] = '1';
-
-        } else { this.fieldsquares[index] = '0' }
+    move(index:number):void {
+        if (this.player === player.cross) {
+            this.fieldsquares[index] = playerMove.cross;
+        } else { this.fieldsquares[index] = playerMove.zero}
         this.togglePlayer();
-        console.log(this.fieldsquares);
     }
 }

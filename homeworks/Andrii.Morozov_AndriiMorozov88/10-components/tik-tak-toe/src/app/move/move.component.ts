@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
     templateUrl: './move.component.html',
     styleUrls: ['./move.component.css']
 })
-export class MoveComponent  {
+export class MoveComponent {
 }

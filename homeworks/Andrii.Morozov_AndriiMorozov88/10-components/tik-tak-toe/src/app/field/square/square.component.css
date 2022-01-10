@@ -1,0 +1,9 @@
+.field__square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 110px;
+  background-color: #C4C4C4;
+  cursor: pointer;
+}
