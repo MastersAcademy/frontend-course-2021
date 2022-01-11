@@ -45,7 +45,15 @@ html {
   height: 24px;
 }
 
+.hidden {
+  display: none;
+}
+
 .burger-icon {
+  display: none;
+}
+
+.hidden {
   display: none;
 }
 
@@ -60,11 +68,7 @@ html {
   }
 }
 
-.themes-toggle__button--hidden {
-  display: none;
-}
-
-.themes-toggle__button--active {
+.themes-toggle__button {
   display: block;
 }
 
@@ -197,10 +201,6 @@ body {
     opacity: 1;
     transform: scale(1);
   }
-}
-
-.back-to-top--hidden {
-  display: none;
 }
 
 .back-to-top__icon {
@@ -465,8 +465,12 @@ body {
 
   .design__photo-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .design__photo {
+    margin: 15px;
   }
 
   .archmove__content {
