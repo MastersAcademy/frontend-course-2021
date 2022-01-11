@@ -1,0 +1,28 @@
+<div class="game-state">
+  <div class="game-state__player-container">
+    <div>
+      <span class="game-state__player-icon">
+        <svg class="player-icon" width="36" height="36" fill="none">
+          <use xlink:href="#cross" href="#cross"></use>
+        </svg>
+      </span>
+      <span class="game-state__player-name game-state__player-name--first-player">Player 1</span>
+    </div>
+    <div class="game-state__player-score game-state__player-score--first-player">
+      <span class="player-score__value player-score__value--first-player" data-player1-score="0">{{scorePl1}}</span>
+    </div>
+  </div>
+  <div class="game-state__player-container">
+    <div>
+      <span class="game-state__player-icon">
+        <svg class="player-icon" width="41" height="42" fill="none">
+          <use xlink:href="#circle" href="#circle"></use>
+        </svg>
+      </span>
+      <span class="game-state__player-name game-state__player-name--second-player">Player 2</span>
+    </div>
+    <div class="game-state__player-score game-state__player-score--second-player">
+      <span class="player-score__value player-score__value--second-player" data-player2-score="0">{{scorePl2}}</span>
+    </div>
+  </div>
+</div>
