@@ -38,16 +38,18 @@
                 <button type="button" class="button__sign-up button button--primary">Sign Up</button>
             </div>
         </header>
-        <button type="button" class="button__back-to-top--hidden button__back-to-top--active" data-back-to-top>
+        <button type="button" class="back-to-top--hidden back-to-top" data-back-to-top>
             <svg class="back-to-top__icon">
                 <use xlink:href="sprite.svg#button-back-to-top"></use>
             </svg>
         </button>
         <div class="dreamhouse">
-            <h1 class="dreamhouse__title">
-                Build Your<br>
-                Dream <span class="text--accent">House</span>
-            </h1>
+            <div class="dreamhouse__title-container">
+                <h1 class="dreamhouse__title">
+                    Build Your<br>
+                    Dream <span class="text--accent">House</span>
+                </h1>
+            </div>
             <div class="dreamhouse__container">
                 <div class="dreamhouse__aside">
                     <p class="dreamhouse__text">The first and most trusted marketplace
@@ -62,6 +64,7 @@
                 <div class="dreamhouse__photo-container image" data-image-in>
                     <picture>
                         <source srcset="4x/computers.jpg 4x" media="(min-width: 2000px)" width="1200px">
+                        <source srcset="2x/computers.jpg 2x" media="(max-width: 1025px)" width="550px">
                         <source srcset="2x/computers.jpg 2x">
                         <img src="1x/computers.jpg" alt="computers">
                     </picture>
@@ -77,21 +80,29 @@
             <div class="design__photo-container image" data-image-in>
                 <picture>
                     <source srcset="4x/kitchen.jpg 4x" media="(min-width: 2000px)" width="450px">
+                    <source srcset="2x/kitchen.jpg 2x" media="(min-width: 1020px)" width="225px">
+                    <source srcset="2x/kitchen.jpg 2x" media="(min-width: 760px)" width="350px">
                     <source srcset="2x/kitchen.jpg 2x">
                     <img src="1x/kitchen.jpg" alt="kitchen">
                 </picture>
                 <picture>
                     <source srcset="4x/gasstove.jpg 4x" media="(min-width: 2000px)" width="450px">
+                    <source srcset="2x/gasstove.jpg 2x" media="(min-width: 1020px)" width="225px">
+                    <source srcset="2x/gasstove.jpg 2x" media="(min-width: 760px)" width="350px">
                     <source srcset="2x/gasstove.jpg 2x">
                     <img src="1x/gasstove.jpg" alt="gasstove">
                 </picture>
                 <picture>
                     <source srcset="4x/bedroom.jpg 4x" media="(min-width: 2000px)" width="450px">
+                    <source srcset="2x/bedroom.jpg 2x" media="(min-width: 1020px)" width="225px">
+                    <source srcset="2x/bedroom.jpg 2x" media="(min-width: 760px)" width="350px">
                     <source srcset="2x/bedroom.jpg 2x">
                     <img src="1x/bedroom.jpg" alt="bedroom">
                 </picture>
                 <picture>
                     <source srcset="4x/diningroom.jpg 4x" media="(min-width: 2000px)" width="450px">
+                    <source srcset="2x/diningroom.jpg 2x" media="(min-width: 1020px)" width="225px">
+                    <source srcset="2x/diningroom.jpg 2x" media="(min-width: 760px)" width="350px">
                     <source srcset="2x/diningroom.jpg 2x">
                     <img src="1x/diningroom.jpg" alt="diningroom">
                 </picture>
@@ -105,6 +116,7 @@
                 <div class="archmove__photo-container image" data-image-in>
                     <picture>
                         <source srcset="4x/meeting.jpg 4x" media="(min-width: 2000px)" width="900px">
+                        <source srcset="2x/meeting.jpg 2x" media="(max-width: 1025px)" width="450px">
                         <source srcset="2x/meeting.jpg 2x">
                         <img src="1x/meeting.jpg" alt="meeting">
                     </picture>
@@ -170,25 +182,12 @@
                 </div>
             </div>
             <div class="footer">
-                <svg class="footer__burger burger-icon" data-burger>
-                    <use xlink:href="sprite.svg#burger"></use>
-                </svg>
-                <nav class="footer__menu" data-footer-menu>
-                    <a href="#" class="menu__link">
-                        <b>About Us</b>
-                    </a>
-                    <a href="#" class="menu__link">
-                        <b>How it Works</b>
-                    </a>
-                    <a href="#" class="menu__link">
-                        <b>FAQ</b>
-                    </a>
-                    <a href="#" class="menu__link">
-                        <b>Contact Us</b>
-                    </a>
-                    <a href="#" class="menu__link">
-                        <b>Privacy Policy</b>
-                    </a>
+                <nav class="footer__menu">
+                    <a href="#" class="menu__link">About Us</a>
+                    <a href="#" class="menu__link">How it Works</a>
+                    <a href="#" class="menu__link">FAQ</a>
+                    <a href="#" class="menu__link">Contact Us</a>
+                    <a href="#" class="menu__link">Privacy Policy</a>
                 </nav>
                 <svg class="logo">
                     <use xlink:href="sprite.svg#logo"></use>

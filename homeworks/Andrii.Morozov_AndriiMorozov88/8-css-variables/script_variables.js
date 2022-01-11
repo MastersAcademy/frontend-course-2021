@@ -4,16 +4,12 @@ const halfmoonEl = document.querySelector('[data-halfmoon]');
 const sunEl = document.querySelector('[data-sun]');
 const imagesInEl = document.querySelectorAll('[data-image-in]');
 const buttonBackToTopEl = document.querySelector('[data-back-to-top]');
-const burgerEl = document.querySelectorAll('[data-burger]');
+const burgerEl = document.querySelector('[data-burger]');
 const headerButtonsEl = document.querySelector('[data-header-buttons]');
 const headerMenuEl = document.querySelector('[data-header-menu]');
-const footerMenuEl = document.querySelector('[data-footer-menu]');
-burgerEl[0].addEventListener('click', () => {
+burgerEl.addEventListener('click', () => {
     headerButtonsEl.classList.toggle('header__buttons--hidden');
     headerMenuEl.classList.toggle('header__menu--active');
-});
-burgerEl[1].addEventListener('click', () => {
-    footerMenuEl.classList.toggle('footer__menu--active');
 });
 toggleButtonEl.addEventListener('click', () => {
     pageEl.classList.toggle('html--dark');
@@ -36,11 +32,8 @@ for (let count = 0; count < imagesInEl.length; count++) {
     observer.observe(imagesInEl[count]);
 }
 window.addEventListener('scroll', () => {
-    if (window.scrollY < document.documentElement.clientHeight) {
-        buttonBackToTopEl.classList.add('button__back-to-top--hidden');
-    } else {
-        buttonBackToTopEl.classList.remove('button__back-to-top--hidden');
-    }
+    const isHidden = window.scrollY < document.documentElement.clientHeight;
+    buttonBackToTopEl.classList.toggle('back-to-top--hidden', isHidden);
 });
 buttonBackToTopEl.addEventListener('click', () => {
     window.scrollTo({
