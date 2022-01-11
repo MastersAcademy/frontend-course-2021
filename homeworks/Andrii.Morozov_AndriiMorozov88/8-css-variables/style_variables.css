@@ -465,12 +465,8 @@ body {
 
   .design__photo-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
-  }
-
-  .design__photo {
-    margin: 15px;
   }
 
   .archmove__content {
