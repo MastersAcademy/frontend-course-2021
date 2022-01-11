@@ -157,6 +157,7 @@ body {
   bottom: -5px;
   transform: scale(0);
   transition: transform, .1s ease-out;
+  will-change: transform;
 }
 
 .menu__link:hover::before {
@@ -486,6 +487,10 @@ body {
     --font-size-big: 40px;
     --font-size-title: 20px;
     --font-size-paragraf: 10px;
+  }
+
+  body {
+    margin: 0;
   }
 
   .header__content {
