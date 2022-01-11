@@ -16,7 +16,7 @@ html {
   --font-size-large: 16px;
   --font-family-paragraf: "Roboto", sans-serif;
   --font-family-title: "Merriweather", serif;
-  --font-weight-bold: 900;
+  --font-weight-bold: 700;
   --button-transition: transform .2s ease-in-out;
 }
 
@@ -144,6 +144,7 @@ body {
   margin-right: 48px;
   font-family: var(--font-family-paragraf);
   font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-bold);
   color: var(--color5);
 }
 
@@ -172,7 +173,7 @@ body {
   transition: var(--button-transition);
 }
 
-.button__back-to-top--active {
+.back-to-top {
   position: fixed;
   display: block;
   right: 1%;
@@ -198,7 +199,7 @@ body {
   }
 }
 
-.button__back-to-top--hidden {
+.back-to-top--hidden {
   display: none;
 }
 
@@ -219,7 +220,6 @@ body {
   font-family: var(--font-family-title);
   line-height: 1;
   letter-spacing: -2px;
-  padding-left: 13%;
 }
 
 .text--accent {
@@ -227,14 +227,19 @@ body {
 }
 
 .dreamhouse {
-  display: block;
-  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dreamhouse__title-container {
+  display: flex;
+  width: 85%;
+  justify-content: flex-start;
 }
 
 .dreamhouse__container {
   display: flex;
-  justify-content: flex-end;
-  padding-right: 30px;
 }
 
 .dreamhouse__aside {
@@ -285,7 +290,7 @@ body {
 }
 
 .archmove__title {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .archmove {
@@ -376,9 +381,8 @@ body {
 
 .footer {
   display: flex;
-  max-width: 100%;
-  height: 200px;
   align-items: center;
+  height: 200px;
   justify-content: space-around;
 }
 
@@ -389,6 +393,11 @@ body {
     --font-size-title: 40px;
     --font-size-paragraf: 20px;
     --font-size-link: 15px;
+  }
+
+  body {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .header__content {
@@ -438,13 +447,9 @@ body {
 
   .dreamhouse__aside {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .dreamhouse__title {
-    margin-left: auto;
-    margin-right: auto;
     font-size: var(--font-size-big);
   }
 
@@ -459,8 +464,9 @@ body {
   }
 
   .design__photo-container {
-    display: block;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
 
   .archmove__content {
@@ -501,10 +507,6 @@ body {
   }
 
   .header__burger {
-    display: block;
-  }
-
-  .footer__burger {
     display: block;
   }
 
@@ -575,18 +577,9 @@ body {
     height: 30px;
   }
 
-  .footer__burger {
-    display: block;
-  }
-
   .footer__menu {
-    display: none;
-  }
-
-  .footer__menu--active {
     display: flex;
-    flex-direction: column;
-    line-height: 2;
+    flex-flow: column wrap;
   }
 }
 
@@ -625,6 +618,10 @@ body {
 
   .dreamhouse__container {
     justify-content: space-around;
+  }
+
+  .dreamhouse__title-container {
+    width: 75%;
   }
 
   .dreamhouse__aside {
