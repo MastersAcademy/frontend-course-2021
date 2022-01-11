@@ -542,10 +542,6 @@ body {
     font-size: var(--font-size-title);
   }
 
-  .design__photo-container {
-    margin-top: 20px;
-  }
-
   .archmove__main-title {
     font-size: var(--font-size-title);
     padding-right: 50px;
@@ -582,8 +578,10 @@ body {
   }
 
   .footer__menu {
-    display: flex;
-    flex-flow: column wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    line-height: 1.5;
   }
 }
 
@@ -593,6 +591,10 @@ body {
     --font-size-big: 180px;
     --font-size-title: 70px;
     --font-size-paragraf: 25px;
+  }
+
+  body {
+    margin: 0;
   }
 
   .logo {
