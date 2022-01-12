@@ -10,7 +10,7 @@ html {
   --color-r50: #F50404;
   --color-r80: #501414;
   --color-white: #FFF;
-  --color-w11: #FFF;
+  --color-w10: #FFF;
   --color-w20: #F9F9F9;
   --color-g20: #585858;
   --color-b100: #000;
@@ -478,7 +478,7 @@ body {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 485px) {
 
   html {
     --font-size-big: 40px;
@@ -513,12 +513,17 @@ body {
 
   .header__menu--active {
     display: flex;
+    position: fixed;
+    left: 10px;
+    top: 45px;
+    padding-top: 20px;
+    background-color: var(--color-w10);
     flex-direction: column;
     line-height: 2;
   }
 
-  .header__buttons--hidden {
-    display: none;
+  .header__buttons {
+    display: flex;
   }
 
   .button--primary {
