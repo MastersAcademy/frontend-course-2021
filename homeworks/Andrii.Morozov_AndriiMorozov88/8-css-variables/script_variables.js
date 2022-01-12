@@ -14,7 +14,7 @@ burgerEl.addEventListener('click', () => {
 toggleButtonEl.addEventListener('click', () => {
     pageEl.classList.toggle('html--dark');
     halfmoonEl.classList.toggle('hidden');
-    sunEl.classList.toggle('themes-toggle__button');
+    sunEl.classList.toggle('hidden');
 });
 const options = {
     root: null,
@@ -32,8 +32,8 @@ for (let count = 0; count < imagesInEl.length; count++) {
     observer.observe(imagesInEl[count]);
 }
 window.addEventListener('scroll', () => {
-    const isHidden = window.scrollY > document.documentElement.clientHeight;
-    buttonBackToTopEl.classList.toggle('back-to-top', isHidden);
+    const isHidden = window.scrollY < document.documentElement.clientHeight;
+    buttonBackToTopEl.classList.toggle('hidden', isHidden);
 });
 buttonBackToTopEl.addEventListener('click', () => {
     window.scrollTo({
