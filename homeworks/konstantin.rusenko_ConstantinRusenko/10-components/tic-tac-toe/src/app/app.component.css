@@ -4,26 +4,51 @@
   align-items: center;
 }
 
+.play-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.control-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .main__turn {
   font-size: 26px;
+  color: #FFF;
+  padding: 20px;
+}
+
+.cross {
+  background-color: #A5D9F6;
+}
+
+.circle {
+  background-color: #A5A6F6;
 }
 
 .main__players-name {
   display: flex;
+  flex-direction: column;
 }
 
 .main__player {
   display: flex;
   align-items: center;
-  margin: 0 2%;
 }
 
 .player-name__input {
   padding: 20px;
+  margin: 5px 0;
 }
 
 .player__score {
-  margin-left: 5px;
+  padding: 13px;
+  background: #A5D9F6;
+  color: #FFF;
   font-size: 36px;
 }
 
@@ -33,14 +58,15 @@
 }
 
 .box {
-  min-width: 25px;
-  min-height: 25px;
+  min-width: 110px;
+  min-height: 110px;
   text-align: center;
   background: #C4C4C4;
-  padding: 25px;
+  font-family: "Be Vietnam Pro";
   margin: 5px;
-  font-size: 21px;
-  font-weight: 700;
+  color: #FFF;
+  font-size: 87px;
+  font-weight: 500;
 }
 
 .box:hover {
@@ -48,17 +74,22 @@
   cursor: pointer;
 }
 
+.box__player-sign {
+  width: 100px;
+  height: 100px;
+}
+
 .main__winner-message {
   position: absolute;
-  top: 25px;
-  left: 40%;
+  top: 65px;
+  left: 0;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 30px;
   line-height: 24px;
   padding: 25px;
   border-radius: 6px;
-  background: #78D4F1;
-  color: #000;
+  background: #6200EE;
+  color: #FFF;
 }
 
 .main__control-buttons {
@@ -77,6 +108,18 @@
 
   .main__control-buttons {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .play-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main__winner-message {
+    left: 0;
   }
 }
 

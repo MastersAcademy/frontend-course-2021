@@ -4,6 +4,7 @@ interface Player {
     name: string;
     sign: 'X' | 'O' | '';
     score: number;
+    link: string;
 }
 
 const LOCAL_STORAGE_KEY = 'gameInfo'
@@ -16,10 +17,11 @@ const LOCAL_STORAGE_KEY = 'gameInfo'
 
 export class AppComponent implements OnInit {
     title = 'tic-tac-toe';
-    players: Player[] = [{name: 'X', sign: 'X', score: 0}, {name: 'O', sign: 'O', score: 0}];
+    players: Player[] = [{name: 'X', sign: 'X', score: 0, link: 'cross'}, {name: 'O', sign: 'O', score: 0, link: 'circle'}];
     currentPlayer: Player = this.players[0];
     gameCoords = [['','',''],['','',''],['','','']];
     winner?: Player;
+    otherTheme = true;
 
     ngOnInit(): void {
         const storeData = sessionStorage.getItem(LOCAL_STORAGE_KEY);
@@ -31,11 +33,16 @@ export class AppComponent implements OnInit {
         this.winner = data.winner;
         this.currentPlayer = data.currentPlayer;
     }
+    
+    getElem(event: Event) {
+        console.log(event.target);
+        console.log(this.gameCoords)
+    }
 
     toggle() {
-
         const playerIndex = this.currentPlayer.sign === 'X' ? 1 : 0;
         this.currentPlayer = this.players[playerIndex];
+        this.otherTheme = !this.otherTheme;
     }
 
     setElement(rowIndex: number, columnIndex: number) {
@@ -50,6 +57,7 @@ export class AppComponent implements OnInit {
         this.gameCoords = [['','',''],['','',''],['','','']];
         this.currentPlayer = this.players[0];
         this.winner = undefined;
+        this.otherTheme = true;
         this.saveData();
     }
 
@@ -106,6 +114,7 @@ export class AppComponent implements OnInit {
             gameCoords: this.gameCoords,
             winner: this.winner,
             currentPlayer: this.currentPlayer,
+            otherTheme: this.otherTheme,
         }
         sessionStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(storeData));
     }
