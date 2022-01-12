@@ -1,0 +1,19 @@
+<header class="app-header">
+  <h1 class="brand">
+    <span class="brand__icon">
+      <svg class="brand__icon--logo" width="25" height="26" fill="none">
+        <use xlink:href="#logo" href="#logo"></use>
+      </svg>
+    </span>
+    <span class="brand__name">Tic-Tac-Toe game</span>
+  </h1>
+</header>
+<div class="app-container">
+  <div class="app-container__first-column">
+    <app-game-state  [scorePl1]="scorePl1" [scorePl2]="scorePl2"></app-game-state>
+    <app-game-dashboard (resetCurGame)="resetCurGame()" (resetAll)="resetAll()"></app-game-dashboard>
+  </div>
+    <app-game-field [state]="state" (stateCheck) = stateCheck($event)></app-game-field>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,179 @@
+.logo__svg {
+  position: relative;
+  animation-name: rotateLogo;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease;
+}
+
+.section-hero__teaser-picture {
+  opacity: 0;
+  transform: translateY(70%);
+  transition: transform 2s ease;
+}
+
+.advantages-list__item-icon,  .advantages-list__item {
+  transition: transform .5s ease;
+}
+
+.advantages-list__item:hover {
+  transform: scale(1.2);
+}
+
+.advantages-list__item:hover .advantages-list__item-icon *:nth-child(1) {
+  stroke: #00A03E;
+}
+
+.gallery__image {
+  transition: transform .5s ease;
+  position: relative;
+  opacity: 0;
+}
+
+.gallery.show  .gallery__image:nth-child(1),
+.gallery.show  .gallery__image:nth-child(2) {
+  animation-name: slideLeft;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+.gallery.show  .gallery__image:nth-child(3),
+.gallery.show  .gallery__image:nth-child(4) {
+  animation-name: slideRight;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.gallery.show  .gallery__image:nth-child(2) {
+  animation-timing-function: ease;
+}
+
+.gallery.show  .gallery__image:nth-child(4) {
+  animation-timing-function: ease-in;
+}
+
+.nav-to-top-btn.active {
+  opacity: 1;
+  transition: opacity 1s ease, transform .5s ease;
+}
+
+.nav-to-top-btn:hover {
+  color: var(--theme-bg-color);
+  border-color: var(--theme-brand-color);
+  background: var(--theme-text-color);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+button {
+  transition: color .1s ease-in, border-color .1s ease-in;
+}
+
+button:hover {
+  border-color: var(--theme-text-color);
+}
+
+.call-to-action-btn {
+  animation: pulse 4s linear .1s infinite forwards;
+}
+
+.list__link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: var(--theme-brand-color);
+  transition: width .5s ease;
+}
+
+.list__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-flow: column;
+}
+
+.list__item:hover .list__link::after {
+  width: 100%;
+}
+
+
+@keyframes rotateLogo {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes slideLeft {
+
+  0% {
+    opacity: 0;
+    transform: translateX(-70%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideRight {
+
+  0% {
+    opacity: 0;
+    transform: translateX(70%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes pulse {
+
+  0% {
+    transform: scale(1);
+  }
+
+  89% {
+    transform: scale(1);
+  }
+
+  91% {
+    transform: scale(.96);
+  }
+
+  94% {
+    transform: scale(1);
+  }
+
+  95% {
+    transform: scale(1);
+  }
+
+  97% {
+    transform: scale(.96);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
