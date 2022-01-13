@@ -690,7 +690,7 @@ body {
   }
 
   .dreamhouse__title-container {
-    width: 75%;
+    width: 70%;
     justify-content: center;
   }
 
@@ -706,6 +706,10 @@ body {
 
   .design__text {
     font-size: var(--font-size-title);
+  }
+
+  .archmove {
+    padding-left: 150px;
   }
 
   .archmove__main-title {
