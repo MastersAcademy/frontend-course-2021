@@ -41,6 +41,48 @@ body {
   margin: 0;
 }
 
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.row__column {
+  padding-left: 16px;
+  padding-left: 16px;
+}
+
+.row__column--4 {
+  max-width: 33%;
+  flex-basis: 33%;
+}
+
+.row__column--5 {
+  max-width: 40%;
+  flex-basis: 40%;
+}
+
+.row__column--6 {
+  max-width: 50%;
+  flex-basis: 50%;
+}
+
+.row__column--7 {
+  max-width: 60%;
+  flex-basis: 60%;
+}
+
+.row__column--8 {
+  max-width: 67%;
+  flex-basis: 67%;
+}
+
 .theme-toggle {
   margin-right: 45px;
   cursor: pointer;
@@ -209,9 +251,11 @@ body {
 }
 
 .dreamhouse {
+  display: block;
+}
+
+.dreamhouse__title-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .dreamhouse__title {
@@ -225,22 +269,9 @@ body {
   color: var(--color-pink);
 }
 
-.dreamhouse__title-container {
-  display: flex;
-  width: 85%;
-  justify-content: flex-start;
-}
-
-.dreamhouse__container {
-  display: flex;
-}
-
 .dreamhouse__aside {
-  display: block;
-}
-
-.dreamhouse__photo-container {
-  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .dreamhouse__text {
@@ -248,6 +279,10 @@ body {
   font-size: var(--font-size-large);
   line-height: 1.5;
   margin-bottom: 50px;
+}
+
+.dreamhouse__photo-container {
+  display: flex;
 }
 
 .design__title {
@@ -273,9 +308,6 @@ body {
 }
 
 .archmove__main-title {
-  display: flex;
-  width: 50%;
-  justify-content: center;
   font-size: var(--font-size-title);
   font-family: var(--font-family-title);
   line-height: 1.25;
@@ -293,9 +325,6 @@ body {
 
 .archmove__container {
   display: flex;
-  justify-content: space-around;
-  padding-left: 80px;
-  padding-right: 40px;
 }
 
 .archmove__content {
@@ -353,13 +382,11 @@ body {
 
 .dream-project__container {
   display: flex;
-  justify-content: space-around;
 }
 
 .dream-project__content {
   display: block;
   padding-top: 200px;
-  padding-left: 100px;
 }
 
 .dream-project__text {
@@ -391,6 +418,10 @@ body {
     --font-size-link: 15px;
   }
 
+  .container {
+    max-width: 810px;
+  }
+
   .header__content {
     display: flex;
     justify-content: space-between;
@@ -403,8 +434,8 @@ body {
   }
 
   .burger-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     fill: var(--color-b100);
   }
 
@@ -437,7 +468,28 @@ body {
   }
 
   .dreamhouse__aside {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row__column--4 {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .row__column--5 {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .row__column--6 {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .dreamhouse__title-container {
+    justify-content: center;
   }
 
   .dreamhouse__title {
@@ -460,8 +512,13 @@ body {
     flex-wrap: wrap;
   }
 
+  .archmove__main-title {
+    text-align: center;
+  }
+
   .archmove__content {
     display: block;
+    padding-left: 100px;
   }
 
   .archmove__text {
@@ -469,8 +526,8 @@ body {
   }
 
   .dream-project__content {
-    padding-top: 200px;
-    padding-left: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .button__back-to-top {
@@ -588,12 +645,23 @@ body {
   }
 }
 
+@media (max-width: 325px) {
+
+  .menu__link {
+    font-size: var(--font-size-paragraf);
+  }
+}
+
 @media (min-width: 2000px) {
 
   html {
     --font-size-big: 180px;
     --font-size-title: 70px;
     --font-size-paragraf: 25px;
+  }
+
+  .container {
+    max-width: 2400px;
   }
 
   .logo {
@@ -621,16 +689,15 @@ body {
     font-size: var(--font-size-big);
   }
 
-  .dreamhouse__container {
-    justify-content: space-around;
-  }
-
   .dreamhouse__title-container {
     width: 75%;
+    justify-content: center;
   }
 
   .dreamhouse__aside {
-    padding-left: 150px;
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
   }
 
   .dreamhouse__text {
