@@ -473,17 +473,17 @@ body {
     align-items: center;
   }
 
-  .row__column--4 {
+  .row__column--sm-12 {
     max-width: 100%;
     flex-basis: 100%;
   }
 
-  .row__column--5 {
+  .row__column--sm-12 {
     max-width: 100%;
     flex-basis: 100%;
   }
 
-  .row__column--6 {
+  .row__column--sm-12 {
     max-width: 100%;
     flex-basis: 100%;
   }
