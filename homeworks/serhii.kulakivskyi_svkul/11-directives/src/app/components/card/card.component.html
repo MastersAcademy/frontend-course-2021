@@ -1,0 +1,51 @@
+<button class="card" type="button">
+  <div class="card__image-wrapper">
+    <img [src]="data.image_url" [alt]="data.name">
+  </div>
+
+  <div class="card__content">
+    <p class="card__title">{{ data.name }}</p>
+
+    <p class="card__description">{{ data.description }}</p>
+
+    <p class="card__title">Food pairing:</p>
+    <p class="card__list">
+      <ng-container *ngFor='let item of data.food_pairing; let last = last'>
+        <span>{{ item }}{{ !last && ','}}</span>
+      </ng-container>
+    </p>
+
+    <p class="card__title">Ingridients:</p>
+    <p class="card__title-semi">Hops:</p>
+    <p class="card__list">
+      <ng-container *ngFor='let item of data.ingredients.hops; let last = last'>
+        <span>{{ item.name }}{{ !last && ','}}</span>
+      </ng-container>
+    </p>
+
+    <p class="card__title-semi">Malt:</p>
+    <p class="card__list">
+      <ng-container *ngFor='let item of data.ingredients.malt; let last = last'>
+        <span>{{ item.name }}{{ !last && ','}}</span>
+      </ng-container>
+    </p>
+
+    <p class="card__title-semi">Yeast:</p>
+    <p>{{ data.ingredients.yeast }}</p>
+
+    <p
+      class="card__title"
+      *ngIf="(data.method.mash_temp | timeToCook)> 0"
+    >Time to cook: <span class="card__time" [style.color]="getTimeToCookColor(data.method.mash_temp | timeToCook)">{{ data.method.mash_temp | timeToCook }} <app-svg-icon icon="fire" width="26px" height="26px"></app-svg-icon></span></p>
+  </div>
+
+  <p
+    class="card__type"
+    *ngIf="(data.method.mash_temp | timeToCook)> 0"
+    [style.color]="getTimeToCookColor(data.method.mash_temp | timeToCook)"
+  >
+    <app-svg-icon icon="time" width="45px" height="45px"></app-svg-icon>
+
+    <span class="card__time-text">{{ data.method.mash_temp | timeToCook }}</span>
+  </p>
+</button>
