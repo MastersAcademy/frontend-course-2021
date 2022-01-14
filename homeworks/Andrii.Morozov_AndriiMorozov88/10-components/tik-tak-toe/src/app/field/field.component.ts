@@ -5,7 +5,8 @@ enum player {
 }
 enum playerMove {
   cross = 1,
-  zero = -1
+  zero = -1,
+  empty = 0
 }
 @Component({
     selector: 'app-field',
@@ -13,7 +14,7 @@ enum playerMove {
     styleUrls: ['./field.component.css']
 })
 export class FieldComponent {
-    fieldsquares = new Array(9);
+    fieldsquares = [0,0,0,0,0,0,0,0,0];
     player = player.cross;
     togglePlayer() {
         if (this.player === player.cross) {
@@ -24,9 +25,12 @@ export class FieldComponent {
         return this.player
     }
     move(index:number):void {
-        if (this.player === player.cross) {
-            this.fieldsquares[index] = playerMove.cross;
-        } else { this.fieldsquares[index] = playerMove.zero}
-        this.togglePlayer();
+        if (this.fieldsquares[index] === 0) {
+            if (this.player === player.cross) {
+                this.fieldsquares[index] = playerMove.cross;
+            } else { this.fieldsquares[index] = playerMove.zero}
+            this.togglePlayer();
+        }
+        console.log(this.fieldsquares);
     }
 }

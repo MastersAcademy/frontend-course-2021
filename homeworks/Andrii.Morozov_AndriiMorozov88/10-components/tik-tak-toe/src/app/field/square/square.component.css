@@ -7,3 +7,11 @@
   background-color: #C4C4C4;
   cursor: pointer;
 }
+
+.field__square--cross {
+  background-color: #A5D9F6;
+}
+
+.field__square--zero {
+  background-color: #A5A6F6;
+}

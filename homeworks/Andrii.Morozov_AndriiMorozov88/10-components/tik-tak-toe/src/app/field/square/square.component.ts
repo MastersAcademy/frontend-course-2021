@@ -16,7 +16,7 @@ export class SquareComponent  {
           return 'assets/sprite.svg#x'
       }
       if (this.square === playerMove.zero) {
-          return 'assets/sprite.svg#circle-c4c4c4'
+          return 'assets/sprite.svg#circle-a5a6f6'
       } return
   }
 }

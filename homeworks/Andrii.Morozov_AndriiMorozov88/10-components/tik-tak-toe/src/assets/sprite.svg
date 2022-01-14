@@ -12,8 +12,5 @@
         <symbol id="circle-a5a6f6" viewBox="0 0 148 148">
             <circle cx="74" cy="74" r="68" stroke="#fff" stroke-width="12" fill="#A5A6F6" />
         </symbol>
-        <symbol id="circle-c4c4c4" viewBox="0 0 148 148">
-            <circle cx="74" cy="74" r="65" stroke="#fff" stroke-width="20" fill="#C4C4C4" />
-        </symbol>
     </defs>
 </svg>

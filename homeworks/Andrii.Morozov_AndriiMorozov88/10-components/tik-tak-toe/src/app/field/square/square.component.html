@@ -1,5 +1,7 @@
-<div class="field__square">
-<svg width="65">
-    <use [attr.xlink:href]="icon"></use>
-</svg>
+<div class="field__square"
+[class.field__square--cross]="square === 1"
+[class.field__square--zero]="square === -1">
+    <svg width="65">
+        <use [attr.xlink:href]="icon"></use>
+    </svg>
 </div>
