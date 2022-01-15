@@ -1,7 +1,22 @@
-<div>
-    <div *ngFor="let item of data" class="coctails__container">
-        <div class="coctail">
-            {{item.id}}
+<div class="coctails__container">
+    <div *ngFor="let item of data" class="coctail">
+        <img src="{{item.image_url}}" alt="coctail img" class="coctail__image">
+        <div class="coctail__content">
+            <p class="coctail__title">
+                <b>Name</b> {{item.name}}
+            </p>
+            <p class="coctail__description">
+              <b>Description:</b> {{item.description}}
+            </p>
+            <p class="coctail__description">
+                <b>food_pairing:</b> {{item.food_pairing}}
+            </p>
+            <p class="coctail__description">
+                <b>ingredients:</b> {{item.ingredients | json}}
+            </p>
+            <p class="coctail__description">
+                <b>Time:</b> {{item.method.mash_temp[0].duration}}
+            </p>
         </div>
     </div>
 </div>
