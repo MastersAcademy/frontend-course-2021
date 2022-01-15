@@ -1,0 +1,74 @@
+.cocktails__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.cocktail {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45%;
+  border: 1px solid #111;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.cocktail__time {
+  border: 1px solid #111;
+  padding: 10px;
+  width: 100px;
+}
+
+.cocktail__image {
+  width: 30%;
+}
+
+.cocktail__content {
+  width: 65%;
+}
+
+.cocktail__name {
+  font-size: 30px;
+}
+
+.cocktail__name span {
+  font-weight: 700;
+}
+
+.cocktail__description {
+  font-size: 20px;
+}
+
+.cocktail__description span {
+  font-weight: 700;
+}
+
+.cocktail__food-pairing .cocktail__ingredients {
+  font-size: 18px;
+}
+
+.cocktail__food-pairing span {
+  font-weight: 700;
+}
+
+.cocktail__ingredients span {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+
+  .cocktails__container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .cocktail {
+    width: 95%;
+  }
+}
