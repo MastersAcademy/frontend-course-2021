@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-cocktails',
@@ -8,14 +9,11 @@ import { HttpService } from '../http.service';
     providers: [HttpService]
 })
 export class CocktailsComponent implements OnInit {
-    cocktails: object[] | object | undefined = undefined;
+    cocktails: Observable<object> | undefined | null = undefined;
     constructor(private http: HttpService) { }
 
     ngOnInit(): void {
-        this.http.getData()
-            .subscribe((response) =>{
-                this.cocktails = response;
-            });
+        this.cocktails = this.http.getData();
     }
 
 }
