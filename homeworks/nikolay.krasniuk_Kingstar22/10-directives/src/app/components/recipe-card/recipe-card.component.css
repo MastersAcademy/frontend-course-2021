@@ -1,0 +1,44 @@
+.recipes__card {
+  display: flex;
+  align-items: center;
+  margin: 15px 20px;
+  position: relative;
+  width: 100%;
+}
+
+span {
+  font-weight: 500;
+}
+
+.recipes__card-img {
+  max-width: 30%;
+  height: 40%;
+  object-fit: cover;
+}
+
+.recipes__desc {
+  margin-left: 15px;
+}
+
+.recipes__desc-title {
+  font-size: 22px;
+}
+
+.recipes__desc-text {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.recipes__label {
+  transform: rotate(45deg);
+  background: #DEA12F;
+  width: 100px;
+  position: absolute;
+  top: 4px;
+  right: -42px;
+  text-align: center;
+}
+
+.recipes__label-text {
+  color: #FFF;
+}

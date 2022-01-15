@@ -1,0 +1,19 @@
+.recipes {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.recipes__wrapper {
+  display: flex;
+  margin: 30px 25px;
+  flex-wrap: wrap;
+  row-gap: 55px;
+  justify-content: space-between;
+}
+
+.recipes__card {
+  display: flex;
+  background: #EAEAEA;
+  width: 30%;
+  overflow: hidden;
+}
