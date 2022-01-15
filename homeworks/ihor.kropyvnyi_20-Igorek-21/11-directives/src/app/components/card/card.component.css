@@ -1,8 +1,8 @@
 .main-container__section-card {
-  width: 600px;
-  min-height: 940px;
+  width: 550px;
+  min-height: 750px;
   border-radius: 15px;
-  padding: 25px;
+  padding: 22px;
   margin: 0 20px 40px;
   overflow: hidden;
   position: relative;
@@ -28,11 +28,9 @@
 }
 
 .card-features {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   height: 100%;
-  line-height: 29px;
+  line-height: 25px;
+  display: inline-block;
 }
 
 .card-features__name {
@@ -45,9 +43,9 @@
 }
 
 .card-features__description {
-  min-height: 500px;
-  line-height: 29px;
-  font-size: inherit;
+  min-height: 390px;
+  line-height: 24px;
+  font-size: 16px;
   margin: 0;
 }
 
@@ -59,11 +57,11 @@
 }
 
 .content-row__information--food-pairing {
-  min-height: 170px;
+  min-height: 145px;
 }
 
 .content-row__information--ingredients {
-  min-height: 235px;
+  min-height: 230px;
   word-break: break-word;
 }
 
@@ -80,6 +78,10 @@
   padding-left: 5px;
 }
 
+.information__text--time {
+  font-weight: 600;
+}
+
 .section-card__tape {
   width: 195px;
   height: 30px;
@@ -93,4 +95,76 @@
   color: #FFF;
   font-size: 24px;
   font-weight: 700;
+}
+
+
+@media (max-width: 768px) {
+
+  .main-container__section-card {
+    width: 450px;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .content-row {
+    display: block;
+  }
+
+  card-picture__img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .card-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-features__name {
+    min-height: 100%;
+    padding: 20px 0 0;
+    font-size: 24px;
+    line-height: 20px;
+  }
+
+  .card-features__description {
+    min-height: 100%;
+    padding: 20px 0 0;
+  }
+
+  .content-row__information--food-pairing {
+    min-height: 100%;
+    padding: 20px 0 0;
+  }
+
+  .content-row__information--ingredients {
+    min-height: 100%;
+    padding: 20px 0 0;
+  }
+
+  .content-row__information--time {
+    display: flex;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .main-container__section-card {
+    width: 380px;
+  }
+}
+
+@media (max-width: 410px) {
+
+  .main-container__section-card {
+    width: 300px;
+  }
+}
+
+@media (max-width: 330px) {
+
+  .main-container__section-card {
+    width: 250px;
+  }
 }

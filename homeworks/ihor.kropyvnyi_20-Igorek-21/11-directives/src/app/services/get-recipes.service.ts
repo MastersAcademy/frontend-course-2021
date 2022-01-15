@@ -16,7 +16,7 @@ export class GetRecipesService {
       return this.http.get<Recipes[]>(this.recipeUrl)
           .pipe(
               map( (data: Recipes[]) => data),
-              delay(3000)
+              delay(3)
           )
   }
 }
