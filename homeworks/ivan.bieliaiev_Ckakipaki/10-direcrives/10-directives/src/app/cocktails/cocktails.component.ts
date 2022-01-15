@@ -8,13 +8,13 @@ import { HttpService } from '../http.service';
     providers: [HttpService]
 })
 export class CocktailsComponent implements OnInit {
-    cocktail: object[] | object | undefined = undefined;
+    cocktails: object[] | object | undefined = undefined;
     constructor(private http: HttpService) { }
 
     ngOnInit(): void {
         this.http.getData()
             .subscribe((response) =>{
-                this.cocktail = response;
+                this.cocktails = response;
             });
     }
 
