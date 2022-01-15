@@ -16,7 +16,8 @@
       </div>
       <div class="content-row content-row__information content-row__information--time">
         <span class="information__headline">Time to cook:</span>
-        <p class="information__text" [changeColor]="recipe.method.mash_temp[0].duration">{{recipe.method.mash_temp[0].duration}}</p>
+        <p class="information__text information__text--time"
+           [changeColor]="recipe.method.mash_temp[0].duration">{{recipe.method.mash_temp[0].duration}}</p>
         <p class="information__text">minutes</p>
       </div>
     </div>
