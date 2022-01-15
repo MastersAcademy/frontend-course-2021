@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="img-box">
+        <img class="card-img" alt="card-alt" [src]="card.image_url">
+    </div>
+    <div class="card-info">
+        <div class="card__name">{{card.name}}</div>
+        <div class="card__description">{{card.description}}</div>
+        <div class="card__food-pairing">Food pairing: {{card.food_pairing}}</div>
+        <div class="card__ingredients">Ingredients: {{card.ingredients | getIngredients}}</div>
+        <div [ngStyle]="{
+            color: (card.method | getDuration) === 75 ? 
+            'yellow' : (card.method | getDuration) > 75 ? 'red' : 'green'}">Time to cook {{card.method | getDuration}} minutes</div>
+    </div>
+    <div class="card__difficulty" [ngStyle]="{
+        background: (card.method | getDuration) === 75 ? 
+        'yellow' : (card.method | getDuration) > 75 ? 'red' : 'green'}"></div>
+</div>
