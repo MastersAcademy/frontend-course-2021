@@ -1,0 +1,96 @@
+.main-container__section-card {
+  width: 600px;
+  min-height: 940px;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 0 20px 55px 30px;
+  overflow: hidden;
+  position: relative;
+  background-color: #F4F8F6;
+  border: 3px solid #95EF05;
+}
+
+.content-row {
+  display: flex;
+  height: 100%;
+}
+
+.card-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-picture__img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.card-features {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  line-height: 29px;
+}
+
+.card-features__name {
+  min-height: 70px;
+  font-size: 27px;
+  line-height: 32px;
+  font-weight: 600;
+  padding-right: 60px;
+  margin: 0;
+}
+
+.card-features__description {
+  min-height: 500px;
+  line-height: 29px;
+  font-size: inherit;
+  margin: 0;
+}
+
+.content-row__information {
+  justify-content: start;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+}
+
+.content-row__information--food-pairing {
+  min-height: 170px;
+}
+
+.content-row__information--ingredients {
+  min-height: 235px;
+  word-break: break-word;
+}
+
+.information__headline {
+  white-space: pre;
+  font-size: inherit;
+  font-weight: 600;
+  margin: 0;
+}
+
+.information__text {
+  word-wrap: break-word;
+  margin: 0;
+  padding-left: 5px;
+}
+
+.section-card__tape {
+  width: 195px;
+  height: 30px;
+  position: absolute;
+  top: 30px;
+  right: -50px;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 700;
+}
