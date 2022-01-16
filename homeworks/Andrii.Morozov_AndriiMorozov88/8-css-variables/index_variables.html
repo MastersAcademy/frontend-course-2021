@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Variables</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style_variables.css">
+    </head>
+    <body>
+        <header class="header__content">
+            <svg class="logo">
+                <use xlink:href="sprite.svg#logo"></use>
+            </svg>
+            <svg class="header__burger burger-icon" data-burger>
+                <use xlink:href="sprite.svg#burger"></use>
+            </svg>
+            <nav class="header__menu" data-header-menu>
+                <a class="menu__link" href="#">Design Gallery</a>
+                <a class="menu__link" href="#">List of Architect</a>
+                <a class="menu__link" href="#">Articles</a>
+                <a class="menu__link" href="#">How it Works</a>
+            </nav>
+            <div class="header__buttons" data-header-buttons>
+                <div class="theme-toggle" data-toggle>
+                    <svg data-halfmoon class="themes-toggle__button--halfmoon">
+                        <use xlink:href="sprite.svg#halfmoon"></use>
+                    </svg>
+                    <svg data-sun class="themes-toggle__button--sun hidden">
+                        <use xlink:href="sprite.svg#sun"></use>
+                    </svg>
+                </div>
+                <button type="button" class="button button--secondary">Sign In</button>
+                <button type="button" class="button button--primary">Sign Up</button>
+            </div>
+        </header>
+        <button type="button" class="back-to-top hidden" data-back-to-top>
+            <svg class="back-to-top__icon">
+                <use xlink:href="sprite.svg#button-back-to-top"></use>
+            </svg>
+        </button>
+        <div class="dreamhouse container">
+            <div class="dreamhouse__title-container row__column">
+                <h1 class="dreamhouse__title">
+                    Build Your<br>
+                    Dream <span class="text--accent">House</span>
+                </h1>
+            </div>
+            <div class="dreamhouse__container row">
+                <div class="dreamhouse__aside row__column--4 row__column--sm-12 row__column">
+                    <p class="dreamhouse__text">The first and most trusted marketplace
+                        <br>
+                        of design & build house in the World.<br>
+                        100% guaranted Build safe,<br>
+                        comfortable and transparate with a<br>
+                        project management for the best result
+                    </p>
+                    <button type="button" class="dreamhouse__button button button--primary">Free Consultation</button>
+                </div>
+                <div class="dreamhouse__photo-container image row__column row__column--8 row__column--sm-12" data-image-in>
+                    <picture>
+                        <source srcset="4x/computers.jpg 4x" media="(min-width: 2000px)" width="1200px">
+                        <source srcset="2x/computers.jpg 2x" media="(max-width: 1025px)" width="550px">
+                        <source srcset="2x/computers.jpg 2x">
+                        <img src="1x/computers.jpg" alt="computers">
+                    </picture>
+                </div>
+            </div>
+        </div>
+        <div class="design">
+            <div class="design__title">
+                <h2 class="design__text">Build professional
+                    <br>valuable room for you
+                </h2>
+            </div>
+            <div class="design__photo-container image" data-image-in>
+                <picture>
+                    <source srcset="4x/kitchen.jpg 4x" media="(min-width: 2000px)" width="450px">
+                    <source srcset="2x/kitchen.jpg 2x" media="(min-width: 1020px)" width="225px">
+                    <source class="design__photo" srcset="2x/kitchen.jpg 2x" media="(min-width: 760px)" width="300px">
+                    <source srcset="2x/kitchen.jpg 2x">
+                    <img src="1x/kitchen.jpg" alt="kitchen">
+                </picture>
+                <picture>
+                    <source srcset="4x/gasstove.jpg 4x" media="(min-width: 2000px)" width="450px">
+                    <source srcset="2x/gasstove.jpg 2x" media="(min-width: 1020px)" width="225px">
+                    <source class="design__photo" srcset="2x/gasstove.jpg 2x" media="(min-width: 760px)" width="300px">
+                    <source srcset="2x/gasstove.jpg 2x">
+                    <img src="1x/gasstove.jpg" alt="gasstove">
+                </picture>
+                <picture>
+                    <source srcset="4x/bedroom.jpg 4x" media="(min-width: 2000px)" width="450px">
+                    <source srcset="2x/bedroom.jpg 2x" media="(min-width: 1020px)" width="225px">
+                    <source class="design__photo" srcset="2x/bedroom.jpg 2x" media="(min-width: 760px)" width="300px">
+                    <source srcset="2x/bedroom.jpg 2x">
+                    <img src="1x/bedroom.jpg" alt="bedroom">
+                </picture>
+                <picture>
+                    <source srcset="4x/diningroom.jpg 4x" media="(min-width: 2000px)" width="450px">
+                    <source srcset="2x/diningroom.jpg 2x" media="(min-width: 1020px)" width="225px">
+                    <source class="design__photo" srcset="2x/diningroom.jpg 2x" media="(min-width: 760px)" width="300px">
+                    <source srcset="2x/diningroom.jpg 2x">
+                    <img src="1x/diningroom.jpg" alt="diningroom">
+                </picture>
+            </div>
+        </div>
+        <div class="archmove container">
+            <h2 class="archmove__main-title row__column">Build your needs
+                <br>with Archmove
+            </h2>
+            <div class="archmove__container row__column">
+                <div class="archmove__photo-container image row__column--7 row__column--sm-12" data-image-in>
+                    <picture>
+                        <source srcset="4x/meeting.jpg 4x" media="(min-width: 2000px)" width="900px">
+                        <source srcset="2x/meeting.jpg 2x" media="(max-width: 1025px)" width="450px">
+                        <source srcset="2x/meeting.jpg 2x">
+                        <img src="1x/meeting.jpg" alt="meeting">
+                    </picture>
+                </div>
+                <div class="archmove__content row__column--5 row__column--sm-12">
+                    <div class="archmove__block--bird">
+                        <svg class="archmove__icon archmove__icon--bird">
+                            <use xlink:href="sprite.svg#bird"></use>
+                        </svg>
+                        <div class="archmove__text">
+                            <h3 class="archmove__title">100% guaranted project completion</h3>
+                            <p class="line-spacing--lg">Build safe, comfortable and transparent
+                                <br>
+                                with a project management applacation<br>
+                                with a joint account
+                            </p>
+                        </div>
+                    </div>
+                    <div class="archmove__block">
+                        <svg class="archmove__icon archmove__icon--dollar">
+                            <use xlink:href="sprite.svg#dollar"></use>
+                        </svg>
+                        <div class="archmove__text">
+                            <h3 class="archmove__title">No additional fees</h3>
+                            <p class="line-spacing--lg">There are no hidden costs. The value of
+                                <br>the offer you get is the value you paid
+                            </p>
+                        </div>
+                    </div>
+                    <div class="archmove__block">
+                        <svg class="archmove__icon archmove__icon--circle">
+                            <use xlink:href="sprite.svg#circle"></use>
+                        </svg>
+                        <div class="archmove__text">
+                            <h3 class="archmove__title">Get escort from the Team</h3>
+                            <p class="line-spacing--lg">Monitor reports from Arsitag team
+                                <br>who check directly in the field
+                            </p>
+                        </div>
+                    </div>
+                    <button type="button" class="archmove__button button button--primary">FREE CONSULTATION</button>
+                </div>
+            </div>
+        </div>
+        <div class="dream-project container">
+            <div class="dream-project__container">
+                <div class="dream-project__photo-container row__column--6 row__column--sm-12 row__column">
+                    <picture>
+                        <source srcset="4x/house.png 4x" media="(min-width: 2000px)" width="900px">
+                        <source srcset="2x/house.png 2x">
+                        <img src="1x/house.png" alt="house">
+                    </picture>
+                </div>
+                <div class="dream-project__content row__column--6 row__column--sm-12 row__column">
+                    <div class="dream-project__text">
+                        <p>
+                            Realize your dream<br>
+                            project with
+                            <span class="text--accent">Archmove</span>
+                        </p>
+                        <button type="button" class="dream-project__button button button--primary">FREE CONSULTATION</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <nav class="footer__menu">
+                    <a href="#" class="menu__link">About Us</a>
+                    <a href="#" class="menu__link">How it Works</a>
+                    <a href="#" class="menu__link">FAQ</a>
+                    <a href="#" class="menu__link">Contact Us</a>
+                    <a href="#" class="menu__link">Privacy Policy</a>
+                </nav>
+                <svg class="logo">
+                    <use xlink:href="sprite.svg#logo"></use>
+                </svg>
+            </div>
+        </div>
+        <script defer src="script_variables.js"></script>
+    </body>
+</html>
