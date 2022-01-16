@@ -11,86 +11,12 @@ export interface Recipes {
   ebc: number,
   first_brewed: string,
   food_pairing: {
-    0: string,
-    1: string,
-    2: string
+    0: string
   }
   ibu: number,
   id: number,
   image_url: string,
-  ingredients: {
-    hops:{
-      0: {
-        add: string,
-        amount: {
-          unit: string,
-          value: number
-        },
-        attribute: string,
-        name: string
-      },
-      1: {
-        add: string,
-        amount: {
-          unit: string,
-          value: number
-        },
-        attribute: string,
-        name: string
-      },
-      2: {
-        add: string,
-        amount: {
-          unit: string,
-          value: number
-        },
-        attribute: string,
-        name: string
-      },
-      3: {
-        add: string,
-        amount: {
-          unit: string,
-          value: number
-        },
-        attribute: string,
-        name: string
-      },
-      4: {
-        add: string,
-        amount: {
-          unit: string,
-          value: number
-        },
-        attribute: string,
-        name: string
-      }
-    },
-    malt: {
-      0: {
-        amount:{
-          unit: string,
-          value: number
-        } ,
-        name: string
-      },
-      1: {
-        amount:{
-          unit: string,
-          value: number
-        } ,
-        name: string
-      },
-      2: {
-        amount:{
-          unit: string,
-          value: number
-        } ,
-        name: string
-      }
-    },
-    yeast: string
-  }
+  ingredients: IIngredients[],
   method: {
     fermentation: {
       temp: {
@@ -109,7 +35,7 @@ export interface Recipes {
     },
     twist: null
   }
-  name: string,
+    name: IName,
   ph: number,
   srm: number,
   tagline: string,
@@ -119,4 +45,31 @@ export interface Recipes {
     unit: string,
     value: number
   }
+}
+
+export interface IIngredients {
+    hops: IHops[],
+    malt: IMalt[]
+    yeast: string
+}
+
+export interface IHops {
+    add: string,
+    amount: IAmount[]
+    attribute: string,
+    name: IName
+}
+
+export interface IMalt {
+    name: IName,
+    amount: IAmount[]
+}
+
+interface IAmount {
+    unit: string,
+    value: number
+}
+
+export interface IName {
+    name: string
 }

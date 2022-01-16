@@ -11,13 +11,12 @@ import {GetRecipesService} from '../../services';
 export class CardsComponent implements OnInit, OnDestroy{
 
   recipes: Recipes[] = [];
-  isLoader = false;
+  isLoader = true;
   private subscription: Subscription = new Subscription();
 
   constructor( private getRecipes: GetRecipesService ) { }
 
   ngOnInit(): void {
-      this.isLoader = true;
       this.subscription.add(this.getRecipes.getRecipes()
           .pipe( (finalize( () => {
               this.isLoader = false;
