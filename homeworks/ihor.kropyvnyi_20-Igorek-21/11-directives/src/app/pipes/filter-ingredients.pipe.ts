@@ -1,19 +1,20 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {IngredientModel} from '../models/ingredient.model';
+import {IHops, IIngredients, IMalt, IName} from '../models/recipes.model';
 
 @Pipe({
     name: 'filterIngredients'
 })
 export class FilterIngredientsPipe implements PipeTransform {
 
-    array: IngredientModel[] = [];
+    array: IName[] = [];
 
-    transform(value: any): IngredientModel[] {
+    transform(value: IIngredients): IName[] {
+        console.log(value)
         if (value) {
-            value.malt.forEach((element: any) => {
+            value.malt.forEach((element:IMalt ) => {
                 this.array.push(element.name);
             })
-            value.hops.forEach((element: any) => {
+            value.hops.forEach((element: IHops) => {
                 this.array.push(element.name);
             })
         }

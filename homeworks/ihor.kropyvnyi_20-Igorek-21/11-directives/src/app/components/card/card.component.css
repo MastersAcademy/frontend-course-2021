@@ -1,5 +1,5 @@
 .main-container__section-card {
-  width: 550px;
+  max-width: 550px;
   min-height: 750px;
   border-radius: 15px;
   padding: 22px;
@@ -101,7 +101,7 @@
 @media (max-width: 768px) {
 
   .main-container__section-card {
-    width: 450px;
+    max-width: 450px;
     min-height: auto;
     padding: 15px;
   }
@@ -111,8 +111,8 @@
   }
 
   card-picture__img {
-    width: 150px;
-    height: 150px;
+    max-width: 150px;
+    max-height: 150px;
   }
 
   .card-features {
@@ -145,26 +145,5 @@
 
   .content-row__information--time {
     display: flex;
-  }
-}
-
-@media (max-width: 576px) {
-
-  .main-container__section-card {
-    width: 380px;
-  }
-}
-
-@media (max-width: 410px) {
-
-  .main-container__section-card {
-    width: 300px;
-  }
-}
-
-@media (max-width: 330px) {
-
-  .main-container__section-card {
-    width: 250px;
   }
 }
