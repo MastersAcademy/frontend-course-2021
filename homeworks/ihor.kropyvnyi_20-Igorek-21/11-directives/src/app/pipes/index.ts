@@ -4,4 +4,4 @@ export const appPipes = [
     FilterIngredientsPipe
 ]
 
-export *from './filter-ingredients.pipe';
+export * from './filter-ingredients.pipe';

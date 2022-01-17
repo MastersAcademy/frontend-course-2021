@@ -1,55 +1,38 @@
 export interface Recipes {
-  abv: number,
-  attenuation_level: number,
-  boil_volume: {
-    unit: string,
-    value: number
-  },
-  brewers_tips: string,
-  contributed_by: string,
-  description: string,
-  ebc: number,
-  first_brewed: string,
-  food_pairing: {
-    0: string
-  }
-  ibu: number,
-  id: number,
-  image_url: string,
-  ingredients: IIngredients[],
-  method: {
-    fermentation: {
-      temp: {
-        unit: string,
-        value: number
-      }
-    },
-    mash_temp: {
-      0: {
-        duration: number,
-        temp: {
-          unit: string,
-          value: number
-        }
-      }
-    },
-    twist: null
-  }
+    abv: number,
+    attenuation_level: number,
+    boil_volume: IAmount,
+    brewers_tips: string,
+    contributed_by: string,
+    description: string,
+    ebc: number,
+    first_brewed: string,
+    food_pairing: {
+        0: string
+    }
+    ibu: number,
+    id: number,
+    image_url: string,
+    ingredients: IIngredients,
+    method: {
+        fermentation: IMethod,
+        mash_temp: {
+            [key: number]: IMethod
+        },
+        twist: string
+    }
     name: IName,
-  ph: number,
-  srm: number,
-  tagline: string,
-  target_fg: number,
-  target_og: number,
-  volume: {
-    unit: string,
-    value: number
-  }
+    ph: number,
+    srm: number,
+    tagline: string,
+    target_fg: number,
+    target_og: number,
+    volume: IAmount
 }
 
 export interface IIngredients {
     hops: IHops[],
-    malt: IMalt[]
+    malt: IMalt[],
     yeast: string
 }
 
@@ -72,4 +55,9 @@ interface IAmount {
 
 export interface IName {
     name: string
+}
+
+interface IMethod {
+    duration: number,
+    temp: IAmount
 }

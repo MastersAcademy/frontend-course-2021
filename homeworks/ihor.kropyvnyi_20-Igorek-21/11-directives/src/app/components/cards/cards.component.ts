@@ -30,6 +30,6 @@ export class CardsComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy() {
-      this.subscription.unsubscribe()
+      this.subscription.unsubscribe();
   }
 }
