@@ -7,7 +7,7 @@
   display: flex;
   width: 186px;
   height: 56px;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 700;
   justify-content: space-around;
   align-items: center;
@@ -20,6 +20,7 @@
   width: 56px;
   height: 56px;
   margin-left: 16px;
+  font-size: 50px;
 }
 
 .player--cross {
@@ -33,14 +34,24 @@
 
 .reset-button {
   display: flex;
-  justify-content: center;
-  align-content: center;
+  border: none;
   background-color: #78D4F1;
   color: #FFF;
-  width: 258px;
-  height: 48px;
   margin-top: 20px;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
+  font-size: 15px;
   cursor: pointer;
+}
+
+.reset-button:hover {
+  background-color: #44636D;
+}
+
+.reset-button--current-game {
+  padding: 20px;
+}
+
+.reset-button--all {
+  padding: 20px 62px;
 }

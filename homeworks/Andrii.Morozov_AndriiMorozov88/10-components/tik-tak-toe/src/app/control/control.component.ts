@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
     styleUrls: ['./control.component.css']
 })
 export class ControlComponent {
-
+    countPlayerOne = 0;
+    countPlayerTwo = 0;
+    resetAll() {
+        location.reload();
+    }
 }

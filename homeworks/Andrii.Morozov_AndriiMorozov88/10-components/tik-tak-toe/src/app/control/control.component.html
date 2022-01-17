@@ -5,7 +5,9 @@
   </svg>
   <p>Player 1</p>
   </div>
-  <div class="player__score player--cross"></div>
+  <div class="player__score player--cross">
+    <p>{{countPlayerOne}}</p>
+  </div>
 </div>
 <div class="player">
   <div class="player__name player--null">
@@ -15,11 +17,8 @@
   <p>Player 2</p>
   </div>
   <div class="player__score player--null">
+    <p>{{countPlayerTwo}}</p>
   </div>
 </div>
-<div class="reset-button">
-  <p>Reset Current Game</p>
-</div>
-<div class="reset-button">
-  <p>Reset All</p>
-</div>
+<button type="button" class="reset-button reset-button--current-game">Reset Current Game</button>
+<button type="button" class="reset-button reset-button--all" (click)="resetAll()">Reset All</button>
