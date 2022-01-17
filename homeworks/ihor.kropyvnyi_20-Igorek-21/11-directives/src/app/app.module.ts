@@ -26,7 +26,7 @@ import { appPipes } from './pipes';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
     ],
 
     providers: [...appServices],

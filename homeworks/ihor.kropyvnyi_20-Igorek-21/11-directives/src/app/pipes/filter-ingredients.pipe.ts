@@ -9,7 +9,6 @@ export class FilterIngredientsPipe implements PipeTransform {
     array: IName[] = [];
 
     transform(value: IIngredients): IName[] {
-        console.log(value)
         if (value) {
             value.malt.forEach((element:IMalt ) => {
                 this.array.push(element.name);
