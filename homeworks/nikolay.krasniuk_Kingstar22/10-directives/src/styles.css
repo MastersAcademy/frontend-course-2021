@@ -6,5 +6,11 @@
 }
 
 body {
-  background: #B6B5B0;
+  background: var(--background-color);
+}
+
+:root {
+  --background-color: #B6B5B0;
+  --background-color-card: #EAEAEA;
+  --color-label-text: #FFF;
 }

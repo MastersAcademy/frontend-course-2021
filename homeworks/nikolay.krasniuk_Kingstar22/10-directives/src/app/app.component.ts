@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
 
     ngOnInit() {
         this.http.getData()
-            .subscribe((recipes) => console.log(this.arrCards = recipes));
+            .subscribe((recipes) => this.arrCards = recipes);
     }
 
 }

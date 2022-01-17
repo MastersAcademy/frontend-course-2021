@@ -5,7 +5,6 @@ import {IAllDDuration, IDuration} from '../app.interface';
     providedIn: 'root'
 })
 export class GetDurationService {
-
     duration = 0;
     getDuration(value: IAllDDuration)  {
         this.duration = 0;

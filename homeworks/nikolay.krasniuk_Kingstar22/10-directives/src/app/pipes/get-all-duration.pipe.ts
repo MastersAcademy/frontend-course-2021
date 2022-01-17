@@ -6,9 +6,9 @@ import {GetDurationService} from '../services';
     name: 'getAllDuration'
 })
 export class GetAllDurationPipe implements PipeTransform {
-    constructor(private testServ: GetDurationService) {}
+    constructor(private durationService: GetDurationService) {}
     transform(value: IAllDDuration): number {
-        return this.testServ.getDuration(value);
+        return this.durationService.getDuration(value);
     }
 
 }

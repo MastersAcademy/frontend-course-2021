@@ -7,13 +7,13 @@
   display: flex;
   margin: 30px 25px;
   flex-wrap: wrap;
-  row-gap: 55px;
-  justify-content: space-between;
+  gap: 30px;
+  justify-content: center;
 }
 
 .recipes__card {
   display: flex;
-  background: #EAEAEA;
-  width: 30%;
+  background: var(--background-color-card);
   overflow: hidden;
+  border-radius: 8px;
 }
