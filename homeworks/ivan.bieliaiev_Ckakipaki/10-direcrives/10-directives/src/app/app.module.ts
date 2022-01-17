@@ -4,13 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CocktailsComponent } from './cocktails/cocktails.component';
 import { HttpClientModule} from '@angular/common/http';
-import { IngridientsPipe } from './ingridients.pipe';
+import { IngridientsPipe } from './pipes/ingridients.pipe';
+import { CookTimeDirective } from './directives/cook-time.directive';
 
 @NgModule({
     declarations: [
         AppComponent,
         CocktailsComponent,
-        IngridientsPipe
+        IngridientsPipe,
+        CookTimeDirective
     ],
     imports: [
         BrowserModule, HttpClientModule

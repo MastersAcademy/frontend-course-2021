@@ -1,19 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../http.service';
-import { Observable } from 'rxjs';
+import { HttpService } from '../services/http.service';
+import { CocktailsService } from './cocktails.service';
 
 @Component({
     selector: 'app-cocktails',
     templateUrl: './cocktails.component.html',
     styleUrls: ['./cocktails.component.css'],
-    providers: [HttpService]
+    providers: [CocktailsService, HttpService]
 })
 export class CocktailsComponent implements OnInit {
-    cocktails: Observable<object> | undefined | null = undefined;
-    constructor(private http: HttpService) { }
+    data: object = {};
+
+    constructor(private service: CocktailsService) { }
 
     ngOnInit(): void {
-        this.cocktails = this.http.getData();
+        this.service.getCocktails().subscribe(data => {
+            this.data = data
+        });
     }
-
 }

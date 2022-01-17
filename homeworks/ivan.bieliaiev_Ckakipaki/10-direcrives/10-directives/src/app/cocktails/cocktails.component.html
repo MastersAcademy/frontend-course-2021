@@ -1,8 +1,8 @@
 <div class="cocktails__container">
-    <div *ngFor="let cocktail of cocktails | async" class="cocktail">
+    <div *ngFor="let cocktail of data" class="cocktail">
         <img src="{{cocktail.image_url}}" alt="{{cocktail.name}}" class="cocktail__image">
         <div class="cocktail__content">
-            <p class="cocktail__time"><span>Time:</span>{{cocktail.method.mash_temp[0].duration | json}}m</p>
+            <p class="cocktail__time" appCookTime [timeNumber]="cocktail.method.mash_temp[0].duration"><span>Time:</span>{{cocktail.method.mash_temp[0].duration | json}}m</p>
             <p class="cocktail__name"><span>Name:</span> {{cocktail.name}}</p>
             <p class="cocktail__description"><span>Description:</span> {{cocktail.description}}</p>
             <p class="cocktail__food-pairing"><span>Food pairing:</span> {{cocktail.food_pairing}}</p>
