@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from '../data.service';
 enum player {
   cross = 1,
   zero = 2
@@ -14,6 +15,9 @@ enum playerMove {
     styleUrls: ['./field.component.css']
 })
 export class FieldComponent {
+    constructor(private data: DataService) {
+        this.data.currentPlayer$.subscribe(player => this.player = player);
+    }
     fieldsquares = [0,0,0,0,0,0,0,0,0];
     player = player.cross;
     togglePlayer() {
@@ -25,12 +29,13 @@ export class FieldComponent {
         return this.player
     }
     move(index:number):void {
-        if (this.fieldsquares[index] === 0) {
+        if (this.fieldsquares[index] === playerMove.empty) {
             if (this.player === player.cross) {
                 this.fieldsquares[index] = playerMove.cross;
             } else { this.fieldsquares[index] = playerMove.zero}
             this.togglePlayer();
+            this.data.changePlayer(this.player);
         }
-        console.log(this.fieldsquares);
     }
 }
+

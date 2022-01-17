@@ -8,6 +8,7 @@ import { ControlComponent } from './control/control.component';
 import { FieldComponent } from './field/field.component';
 import { SquareComponent } from './field/square/square.component';
 import { MoveComponent } from './move/move.component';
+import { DataService } from './data.service';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,7 @@ import { MoveComponent } from './move/move.component';
         AppRoutingModule,
         FormsModule
     ],
-    providers: [],
+    providers: [DataService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
