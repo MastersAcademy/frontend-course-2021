@@ -1,9 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { playerMove } from '../../enums';
 
-enum playerMove {
-  cross = 1,
-  zero = -1
-}
 @Component({
     selector: 'app-square',
     templateUrl: './square.component.html',

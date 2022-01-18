@@ -1,14 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-enum player {
-  cross = 1,
-  zero = 2
-}
-enum playerMove {
-  cross = 1,
-  zero = -1,
-  empty = 0
-}
+import { playerMove } from '../enums';
 @Component({
     selector: 'app-field',
     templateUrl: './field.component.html',
@@ -19,38 +11,36 @@ export class FieldComponent implements OnInit {
         this.dataService.currentPlayer$.subscribe(player => this.player = player);
     }
     state = [
-        [0,0,0],
-        [0,0,0],
-        [0,0,0]
+        [playerMove.empty,playerMove.empty,playerMove.empty],
+        [playerMove.empty,playerMove.empty,playerMove.empty],
+        [playerMove.empty,playerMove.empty,playerMove.empty]
     ]
     fieldsquares!: number[];
     player!:number;
     ngOnInit() {
         this.currentReset();
-        console.log(this.fieldsquares)
     }
     currentReset() {
         this.fieldsquares = this.state.flat();
-        this.player = player.cross;
+        this.player = playerMove.cross;
         this.dataService.changePlayer(this.player);
-        console.log(this.fieldsquares)
     }
     togglePlayer() {
-        if (this.player === player.cross) {
-            this.player = player.zero;
+        if (this.player === playerMove.cross) {
+            this.player = playerMove.zero;
         } else {
-            this.player = player.cross;
+            this.player = playerMove.cross;
         }
         return this.player
     }
     move(index:number):void {
         if (this.fieldsquares[index] === playerMove.empty) {
-            if (this.player === player.cross) {
+            if (this.player === playerMove.cross) {
                 this.fieldsquares[index] = playerMove.cross;
             } else { this.fieldsquares[index] = playerMove.zero}
+
             this.togglePlayer();
             this.dataService.changePlayer(this.player);
-            console.log(this.fieldsquares);
         }
     }
 }
