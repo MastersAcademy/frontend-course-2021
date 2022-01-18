@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 enum player {
   cross = 1,
@@ -14,12 +14,25 @@ enum playerMove {
     templateUrl: './field.component.html',
     styleUrls: ['./field.component.css']
 })
-export class FieldComponent {
-    constructor(private data: DataService) {
-        this.data.currentPlayer$.subscribe(player => this.player = player);
+export class FieldComponent implements OnInit {
+    constructor(private dataService: DataService) {
+        this.dataService.currentPlayer$.subscribe(player => this.player = player);
     }
-    fieldsquares = [0,0,0,0,0,0,0,0,0];
-    player = player.cross;
+    state = [
+        [0,0,0],
+        [0,0,0],
+        [0,0,0]
+    ]
+    fieldsquares!: number[];
+    player!:number;
+    ngOnInit() {
+        this.currentReset();
+    }
+    currentReset() {
+        this.fieldsquares = this.state.flat();
+        this.player = player.cross;
+        this.dataService.changePlayer(this.player);
+    }
     togglePlayer() {
         if (this.player === player.cross) {
             this.player = player.zero;
@@ -34,7 +47,7 @@ export class FieldComponent {
                 this.fieldsquares[index] = playerMove.cross;
             } else { this.fieldsquares[index] = playerMove.zero}
             this.togglePlayer();
-            this.data.changePlayer(this.player);
+            this.dataService.changePlayer(this.player);
         }
     }
 }

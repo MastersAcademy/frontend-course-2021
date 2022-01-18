@@ -8,8 +8,8 @@ import { DataService } from '../data.service';
 })
 export class MoveComponent {
     player!:number;
-    constructor(private data: DataService) {
-        this.data.currentPlayer$.subscribe(player => this.player = player);
+    constructor(private dataService: DataService) {
+        this.dataService.currentPlayer$.subscribe(player => this.player = player);
     }
     get icon() {
         if (this.player === 1) {

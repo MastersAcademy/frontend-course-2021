@@ -13,10 +13,3 @@
   font-family: "Roboto", sans-serif;
   margin-left: 25px;
 }
-
-.game-container {
-  display: flex;
-  margin-top: 60px;
-  justify-content: space-around;
-  align-items: center;
-}

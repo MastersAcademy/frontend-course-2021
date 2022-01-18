@@ -1,3 +1,10 @@
+.game-container {
+  display: flex;
+  margin-top: 60px;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .player {
   display: flex;
   color: #FFF;
