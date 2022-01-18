@@ -9,6 +9,7 @@ export class CocktailsService {
     constructor(private httpReq: HttpService) {}
 
     getCocktails() {
-        return this.httpReq.getData('https://api.punkapi.com/v2/beers');
+        return this.httpReq.getCocktailsData();
     }
+
 }

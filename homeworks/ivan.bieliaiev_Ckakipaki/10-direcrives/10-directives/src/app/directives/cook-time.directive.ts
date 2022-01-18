@@ -5,7 +5,7 @@ import { Directive, Input, Renderer2, ElementRef, OnInit } from '@angular/core';
 })
 export class CookTimeDirective implements OnInit{
 
-    @Input() timeNumber = 0;
+    @Input() timeNumber: number | null = 0;
 
     private timeColor = {
         fastTimeColor: '#8fce00',
