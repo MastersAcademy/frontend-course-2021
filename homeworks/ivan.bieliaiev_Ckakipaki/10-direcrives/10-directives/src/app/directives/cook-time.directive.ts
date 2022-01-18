@@ -17,6 +17,10 @@ export class CookTimeDirective implements OnInit{
     constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
     ngOnInit () {
+        this.setStyle();
+    }
+
+    setStyle () {
         if (this.timeNumber === null) {
             this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', this.timeColor.nullTimeCook);
         } else if (this.timeNumber <= 50) {
@@ -26,7 +30,5 @@ export class CookTimeDirective implements OnInit{
         } else if (this.timeNumber > 75) {
             this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', this.timeColor.slowTimeColor);
         }
-        console.log(this.timeNumber)
     }
-
 }
