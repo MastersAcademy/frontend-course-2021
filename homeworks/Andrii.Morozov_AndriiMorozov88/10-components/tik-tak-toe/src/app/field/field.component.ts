@@ -27,11 +27,13 @@ export class FieldComponent implements OnInit {
     player!:number;
     ngOnInit() {
         this.currentReset();
+        console.log(this.fieldsquares)
     }
     currentReset() {
         this.fieldsquares = this.state.flat();
         this.player = player.cross;
         this.dataService.changePlayer(this.player);
+        console.log(this.fieldsquares)
     }
     togglePlayer() {
         if (this.player === player.cross) {
@@ -48,6 +50,7 @@ export class FieldComponent implements OnInit {
             } else { this.fieldsquares[index] = playerMove.zero}
             this.togglePlayer();
             this.dataService.changePlayer(this.player);
+            console.log(this.fieldsquares);
         }
     }
 }
