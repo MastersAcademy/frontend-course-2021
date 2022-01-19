@@ -1,0 +1,14 @@
+<div
+[class.current-player--1]="gameService.currentPlayer === 1"
+[class.current-player--2]="gameService.currentPlayer === 2"
+class="current-player">
+  <svg *ngIf="gameService.currentPlayer === 1" class="current-player__icon">
+    <use href="../../../assets/sprite.svg#circle"></use>
+  </svg>
+  <svg *ngIf="gameService.currentPlayer === 2" class="current-player__icon">
+    <use href="../../../assets/sprite.svg#cross"></use>
+  </svg>
+  <div class="current-player__name">
+    Player {{ gameService.currentPlayer }} turn
+  </div>
+</div>

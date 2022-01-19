@@ -1,0 +1,14 @@
+.reset__button {
+  border: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.reset__button--match {
+  margin-bottom: 1rem;
+}
