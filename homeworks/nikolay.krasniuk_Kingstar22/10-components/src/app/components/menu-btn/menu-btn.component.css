@@ -1,0 +1,13 @@
+.game__menu-btn {
+  width: 100%;
+  padding: 12px 40px;
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #FFF;
+  background-color: var(--color-player1);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
