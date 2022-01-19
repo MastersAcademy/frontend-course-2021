@@ -2,17 +2,18 @@
   position: relative;
   display: flex;
   align-items: center;
-  word-wrap: break-word;
-  justify-content: space-between;
-  padding: 0 20px;
-  height: 500px;
+  flex-direction: column;
+  padding: 20px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .img-box {
-  width: 15%;
+  width: 40%;
   height: 0;
-  padding-top: 60%;
+  padding-top: 50%;
   position: relative;
+  margin: 20px 0;
 }
 
 .card-img {
@@ -21,20 +22,23 @@
   height: 100%;
   top: 0;
   left: 0;
+  object-fit: contain;
 }
 
 .card-info {
-  width: 70%;
-  word-wrap: break-word;
+  width: 100%;
 }
 
 .card__description {
+  width: 100%;
   overflow-x: hidden;
+  padding: 5px 0;
 }
 
 .card__ingredients {
   overflow-x: hidden;
   word-wrap: break-word;
+  padding: 5px 0;
 }
 
 .card__difficulty {

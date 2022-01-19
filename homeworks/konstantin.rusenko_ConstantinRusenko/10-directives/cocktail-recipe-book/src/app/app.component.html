@@ -1,5 +1,5 @@
 <div class="controls">
-    <input class="input" type="text" placeholder="Beer name" [(ngModel)]="searchName">
+    <input class="input" type="text" placeholder="food pairing" [(ngModel)]="searchName">
     <select class="select" [(ngModel)] = "selectedValue">
         <option *ngFor="let choise of choises" [value]="choise.id">{{choise.name}}</option>
     </select>
