@@ -15,6 +15,8 @@ export class ControlComponent {
     countPlayerOne = 0;
     countPlayerTwo = 0;
     resetAll() {
-        location.reload();
+        this.countPlayerOne = 0;
+        this.countPlayerTwo = 0;
+        this.getCurrentReset();
     }
 }
