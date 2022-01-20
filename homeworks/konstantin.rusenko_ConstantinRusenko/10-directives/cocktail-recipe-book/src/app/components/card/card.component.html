@@ -5,8 +5,8 @@
     <div class="card-info">
         <div class="card__name">{{card.name}}</div>
         <div class="card__description">{{card.description}}</div>
-        <div class="card__food-pairing">Food pairing: {{card.food_pairing}}</div>
-        <div class="card__ingredients">Ingredients: {{card.ingredients | getIngredients}}</div>
+        <div class="card__food-pairing"><span class="bold">Food pairing:</span> {{card.food_pairing}}</div>
+        <div class="card__ingredients"><span class="bold">Ingredients:</span> {{card.ingredients | getIngredients}}</div>
         <div [ngStyle]="{
             color: (card.method | getDuration) === 75 ? 
             'yellow' : (card.method | getDuration) > 75 ? 'red' : 'green'}">Time to cook {{card.method | getDuration}} minutes</div>
