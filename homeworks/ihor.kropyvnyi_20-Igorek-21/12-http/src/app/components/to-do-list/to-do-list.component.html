@@ -1,0 +1,47 @@
+<main class="main-section">
+
+  <div class="container-loader"
+       *ngIf="isLoader">
+    <div class="container-loader__loader">
+      <span class="loader__moving-indicator"></span>
+    </div>
+  </div>
+
+  <section *ngIf="!isLoader"
+           class="section-list" >
+    <ul class="section-list__to-do-list">
+      <li class="to-do-list__to-do-item" *ngFor="let item of toDoList">
+        <span class="to-do-item__text">{{ item.text.task }} </span>
+        <button class="button to-do-item__button to-do-item__button--status"
+                type="button"
+                (click)="changeStatusTask( item.id, item.isDone )">
+          <svg class="to-do-item__icon--ok"
+               [ngStyle]="{ stroke: (item.isDone) === false? 'transparent' : colorStyleOk }" >
+            <use xlink:href="./assets/svg/sprites.svg#ok-icon"></use>
+          </svg>
+        </button>
+        <button class="button to-do-item__button to-do-item__button--delete"
+                type="button"
+                (click)="deleteTask( item.id )">
+          <svg class="to-do-item__icon--delete">
+            <use xlink:href="./assets/svg/sprites.svg#basket-icon"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+    <hr>
+
+    <app-add-to-do-item class="field section-list__field"></app-add-to-do-item>
+
+  </section>
+
+</main>
+
+<button class="button to-do-item__button to-do-item__button--sing-out"
+        type="button"
+        (click)="singOut()"
+        routerLink="/login">
+  <svg class="to-do-item__icon--sing-out">
+    <use xlink:href="./assets/svg/sprites.svg#out-icon"></use>
+  </svg>
+</button>
