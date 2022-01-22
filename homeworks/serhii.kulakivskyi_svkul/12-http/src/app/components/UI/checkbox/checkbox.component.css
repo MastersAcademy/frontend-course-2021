@@ -5,6 +5,10 @@
 .checkbox {
   width: 25px;
   height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--checkbox-color);
   border-radius: 3px;
   box-shadow: 0 2px 6px #CCC;
   cursor: pointer;

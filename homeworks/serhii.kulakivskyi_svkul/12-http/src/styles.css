@@ -27,6 +27,9 @@
 
   /* header */
   --header-background-color: var(--color-green);
+
+  /* checkbox */
+  --checkbox-color: var(--color-green);
 }
 
 body {
