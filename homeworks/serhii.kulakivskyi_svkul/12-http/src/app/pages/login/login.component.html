@@ -1,0 +1,33 @@
+<form (keydown.enter)="$event.preventDefault()">
+    <div class="login__input-wrapper">
+        <label for="email">Email:</label>
+
+        <input
+          #email
+          class="input"
+          id="email"
+          [value]="user.email"
+          (input)="user.email = email.value"
+        >
+    </div>
+
+    <div class="login__input-wrapper">
+        <label for="password">Password:</label>
+
+        <input
+          #password
+          class="input"
+          id='password'
+          [value]="user.password"
+          (input)="user.password = password.value"
+          type="password"
+        >
+    </div>
+
+    <button
+      class="button"
+      (click)="login()"
+      type="button"
+    >Login</button>
+</form>
+
