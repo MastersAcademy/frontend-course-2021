@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ITodo } from 'src/app/models';
-import { AuthService, TodoService } from 'src/app/services';
+import { TodoService } from 'src/app/services';
 
 @Component({
     selector: 'app-home',
@@ -11,10 +11,7 @@ export class HomeComponent implements OnInit {
     todos: ITodo[] = [];
     task = '';
 
-    constructor(
-      private todoService: TodoService,
-      private authService: AuthService
-    ) {}
+    constructor(private todoService: TodoService) {}
 
     ngOnInit() {
         this.getTodos();
@@ -65,10 +62,5 @@ export class HomeComponent implements OnInit {
             .subscribe(() => {
                 this.getTodos();
             })
-    }
-
-    handleLogOut() {
-        this.authService
-            .logout()
     }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
+import { AuthService } from 'src/app/services';
 
 @Component({
     selector: 'app-root',
@@ -9,8 +10,9 @@ import { Location } from '@angular/common';
               <h1 class="header__title">Todo list</h1>
 
               <button
-                  *ngIf="location.path() !== '/login'"
+                  *ngIf="location.path() !== '/login' && location.path() === ''"
                   class="button button--secondary"
+                  (click)="handleLogOut()"
               >Log out</button>
           </header>
 
@@ -22,5 +24,13 @@ import { Location } from '@angular/common';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    constructor(public location: Location ) {}
+    constructor(
+        public location: Location,
+        private authService: AuthService
+    ) {}
+
+    handleLogOut() {
+        this.authService
+            .logout()
+    }
 }
