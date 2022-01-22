@@ -1,0 +1,30 @@
+<div class="todo__item">
+    <label class="todo__item-label">
+        <input
+            type="checkbox"
+            [checked]="todo.isDone"
+            class="todo__item-checkbox"
+            (click)="onChange($event, todo)"
+        >
+        <del *ngIf="todo.isDone"><span>{{todo.text}}</span></del>
+        <span *ngIf="!todo.isDone">{{todo.text}}</span>
+    </label>
+    <div>
+        <button
+            type="button"
+            (click)="getEditItem()"
+            class="todo__item-btn">
+            <svg class="todo__icon">
+                <use  class="todo__icon-edit" xlink:href="/assets/sprite.svg#pencil"></use>
+            </svg>
+        </button>
+        <button
+            type="button"
+            (click)="getId(todo.id)"
+            class="todo__item-btn">
+            <svg class="todo__icon">
+                <use  class="todo__icon-del" xlink:href="/assets/sprite.svg#trash"></use>
+            </svg>
+        </button>
+    </div>
+</div>

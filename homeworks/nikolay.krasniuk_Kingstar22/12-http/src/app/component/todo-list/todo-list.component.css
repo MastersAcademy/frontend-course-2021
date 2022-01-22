@@ -1,0 +1,42 @@
+.todo__item {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid  #8280A2;
+  border-radius: 8px;
+}
+
+.todo__item-label {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.todo__item-checkbox {
+  margin-right: 10px;
+}
+
+.todo__item-btn {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 5px;
+  background: transparent;
+}
+
+.todo__icon {
+  width: 100%;
+  height: 100%;
+}
+
+.todo__icon-edit {
+  fill: #424761;
+}
+
+.todo__icon-del {
+  fill: #E55;
+}

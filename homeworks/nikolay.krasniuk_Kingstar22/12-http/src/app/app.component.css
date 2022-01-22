@@ -1,0 +1,53 @@
+.todo {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.todo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo__new {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  margin: 20px;
+  align-items: flex-end;
+}
+
+.todo__new-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.todo__new-input {
+  padding: 5px;
+  border-radius: 8px;
+  border: 2px solid  #FECB3E;
+  font-size: 20px;
+  margin-top: 15px;
+  outline: none;
+  cursor: pointer;
+}
+
+.todo__new-btn, .todo__read-btn {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 8px;
+  color: #FFF;
+  background: #FECB3E;
+  flex: 1;
+  margin-left: 15px;
+  border: 2px solid  #FECB3E;
+  cursor: pointer;
+}
+
+.todo__item {
+  width: 50%;
+}
