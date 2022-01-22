@@ -1,0 +1,60 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.card {
+  width: 30%;
+  margin: 20px 10px;
+  white-space: pre-wrap;
+  background-color: #E5E5E5;
+  border-radius: 6px;
+  display: flex;
+  overflow-x: hidden;
+  transition: box-shadow 1s;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px #000;
+  cursor: pointer;
+}
+
+.input {
+  padding: 8px;
+  font-size: 24px;
+  border: none;
+}
+
+.select {
+  padding: 8px;
+  font-size: 24px;
+  border: hidden;
+}
+
+@media (max-width: 1400px) {
+
+  .card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .card {
+    width: 70%;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
