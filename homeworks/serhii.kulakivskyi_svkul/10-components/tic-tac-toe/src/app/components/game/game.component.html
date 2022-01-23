@@ -1,0 +1,23 @@
+<section class="game" (click)="click($event)">
+    <div
+        *ngFor="let row of gameCoords; let i = index;"
+        class="game__row"
+    >
+        <div
+            *ngFor="let col of row; let j = index;"
+            class="game__col"
+        >
+            <app-game-item
+                [currentPlayer]="currentPlayer"
+                [type]="col"
+                [rowId]="i"
+                [colId]="j"
+            ></app-game-item>
+        </div>
+    </div>
+
+    <section app-message
+        *ngIf="message"
+        [message]="message"
+    ></section>
+</section>

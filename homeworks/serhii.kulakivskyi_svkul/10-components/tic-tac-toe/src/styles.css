@@ -1,0 +1,103 @@
+:root {
+  --color-transparent: transparent;
+  --color-white: #FFF;
+  --color-grey-70: #333;
+  --color-grey-10: #CCC;
+
+  --color-red: #CA3E47;
+  --color-green: #9DD3A8;
+
+  --player-1: var(--color-red);
+  --player-2: var(--color-green);
+}
+
+[theme="1"] {
+  /* font */
+  --font-color-1: var(--color-grey-70);
+  --font-color-2: var(--color-white);
+
+  /* header */
+  --header-background-color: var(--player-1);
+  --header-box-shadow-color: var(--color-grey-10);
+
+  /* logo */
+  --logo-color: var(--color-white);
+
+  /* game */
+  --game-item-background-color: var(--color-grey-10);
+  --game-item-color: var(--color-white);
+
+  /* message */
+  --message-background-color: var(--color-white);
+
+  /* player-info */
+  --player-info-input-color: var(--color-white);
+  --player-info-input-border-color: var(--color-white);
+}
+
+[theme="2"] {
+  /* font */
+  --font-color-1: var(--color-grey-70);
+  --font-color-2: var(--color-white);
+
+  /* header */
+  --header-background-color: var(--player-2);
+  --header-box-shadow-color: var(--color-grey-10);
+
+  /* logo */
+  --logo-color: var(--color-white);
+
+  /* game */
+  --game-item-background-color: var(--color-grey-10);
+  --game-item-color: var(--color-white);
+
+  /* message */
+  --message-background-color: var(--color-white);
+
+  /* player-info */
+  --player-info-input-color: var(--color-white);
+  --player-info-input-border-color: var(--color-white);
+}
+
+body {
+  font-size: 14px;
+  color: var(--font-color-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.button {
+  padding: .5rem 1rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  transition: opacity .3s;
+}
+
+.button:not([disabled]):hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.button[disabled] {
+  cursor: not-allowed;
+}
+
+[app-game] {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+[app-message] {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}

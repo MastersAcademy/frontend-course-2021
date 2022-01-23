@@ -1,0 +1,53 @@
+.game-item {
+  position: relative;
+  padding-bottom: 100%;
+  border-radius: 6px;
+  transition: opacity .3s, background-color .3s;
+  cursor: pointer;
+}
+
+.game-item:not(.game-item--1):hover,
+.game-item:not(.game-item--2):hover {
+  opacity: .8;
+}
+
+.game-item__content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--game-item-color);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.game-item--0 {
+  background-color: var(--game-item-background-color);
+}
+
+.game-item--1 {
+  background-color: var(--player-1);
+}
+
+.game-item--2 {
+  background-color: var(--player-2);
+}
+
+.game-item--1 .game-item__content,
+.game-item--2 .game-item__content {
+  cursor: not-allowed;
+}
+
+.game-item:not(.game-item--2).game-item--player-1:hover,
+.game-item:not(.game-item--2).game-item--player-1:focus {
+  background-color: var(--player-1);
+}
+
+.game-item:not(.game-item--1).game-item--player-2:hover,
+.game-item:not(.game-item--1).game-item--player-2:focus {
+  background-color: var(--player-2);
+}
