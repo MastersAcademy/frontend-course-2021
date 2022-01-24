@@ -1,0 +1,42 @@
+.main-container {
+  display: flex;
+  padding: 0 1rem;
+}
+
+.main-container__element {
+  flex: 1;
+}
+
+.main-container__controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10rem;
+}
+
+@media (max-width: 1200px) {
+
+  .main-container__controls {
+    padding: 5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .main-container__controls {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .main-container {
+    flex-direction: column-reverse;
+  }
+
+  .main-container__board {
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+  }
+}

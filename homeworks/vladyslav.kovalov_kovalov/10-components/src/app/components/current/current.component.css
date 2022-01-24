@@ -1,0 +1,35 @@
+.current-player {
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  padding: .5rem 1rem;
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+.current-player--1 {
+  background-color: var(--primary-color);
+}
+
+.current-player--2 {
+  background-color: var(--secondary-color);
+}
+
+.current-player__icon {
+  height: 40px;
+  width: 40px;
+  margin-right: 1rem;
+}
+
+.current-player__name {
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+
+  .current-player {
+    margin-bottom: 2rem;
+  }
+}

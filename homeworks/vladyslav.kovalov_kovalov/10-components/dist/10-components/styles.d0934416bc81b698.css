@@ -1,0 +1,1 @@
+:root{--main-font: roboto, sans-serif;--font-size: 1.25rem;--primary-color: #A5D9F6;--secondary-color: #A5A6F6;--white-color: #FFF;--gray-color: #C4C4C4}*,*:before,*:after{box-sizing:border-box;padding:0;margin:0}body{font-family:var(--main-font);font-size:var(--font-size)}.page-container{max-width:1200px;margin:0 auto;padding:0 1rem}
