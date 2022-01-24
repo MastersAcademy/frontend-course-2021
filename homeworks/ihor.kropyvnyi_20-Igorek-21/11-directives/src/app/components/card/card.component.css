@@ -1,0 +1,149 @@
+.main-container__section-card {
+  max-width: 550px;
+  min-height: 750px;
+  border-radius: 15px;
+  padding: 22px;
+  margin: 0 20px 40px;
+  overflow: hidden;
+  position: relative;
+  background-color: #F4F8F6;
+  border: 3px solid #95EF05;
+}
+
+.content-row {
+  display: flex;
+  height: 100%;
+}
+
+.card-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-picture__img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.card-features {
+  height: 100%;
+  line-height: 25px;
+  display: inline-block;
+}
+
+.card-features__name {
+  min-height: 70px;
+  font-size: 27px;
+  line-height: 32px;
+  font-weight: 600;
+  padding-right: 60px;
+  margin: 0;
+}
+
+.card-features__description {
+  min-height: 390px;
+  line-height: 24px;
+  font-size: 16px;
+  margin: 0;
+}
+
+.content-row__information {
+  justify-content: start;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+}
+
+.content-row__information--food-pairing {
+  min-height: 145px;
+}
+
+.content-row__information--ingredients {
+  min-height: 230px;
+  word-break: break-word;
+}
+
+.information__headline {
+  white-space: pre;
+  font-size: inherit;
+  font-weight: 600;
+  margin: 0;
+}
+
+.information__text {
+  word-wrap: break-word;
+  margin: 0;
+  padding-left: 5px;
+}
+
+.information__text--time {
+  font-weight: 600;
+}
+
+.section-card__tape {
+  width: 195px;
+  height: 30px;
+  position: absolute;
+  top: 30px;
+  right: -50px;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+@media (max-width: 768px) {
+
+  .main-container__section-card {
+    max-width: 450px;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .content-row {
+    display: block;
+  }
+
+  card-picture__img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .card-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-features__name {
+    min-height: 100%;
+    padding: 20px 0 0;
+    font-size: 24px;
+    line-height: 20px;
+  }
+
+  .card-features__description {
+    min-height: 100%;
+    padding: 20px 0 0;
+  }
+
+  .content-row__information--food-pairing {
+    min-height: 100%;
+    padding: 20px 0 0;
+  }
+
+  .content-row__information--ingredients {
+    min-height: 100%;
+    padding: 20px 0 0;
+  }
+
+  .content-row__information--time {
+    display: flex;
+  }
+}
