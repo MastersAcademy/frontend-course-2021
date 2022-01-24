@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+}
+
+:root {
+  --background-field-color: #C4C4C4;
+  --color-player1: #87B2B9;
+  --color-player2: #A5A6F6;
+  --color-them: #78D4F1;
+}
