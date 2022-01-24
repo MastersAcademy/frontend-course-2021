@@ -21,7 +21,7 @@ export class FieldComponent implements OnInit {
     ngOnInit() {
         this.currentReset();
     }
-    currentReset() {
+    currentReset():void {
         this.fieldsquares = this.state.flat();
         this.player = playerMove.cross;
         this.dataService.changePlayer(this.player);
@@ -47,7 +47,8 @@ export class FieldComponent implements OnInit {
             this.dataService.changePlayer(this.player);
         }
     }
-    checkWinCombination() {
+    @Output() getScore = new EventEmitter<number>();
+    checkWinCombination():void {
         const winCombination = [
             [this.fieldsquares[0], this.fieldsquares[1], this.fieldsquares[2]],
             [this.fieldsquares[3], this.fieldsquares[4], this.fieldsquares[5]],
@@ -62,12 +63,17 @@ export class FieldComponent implements OnInit {
             if (winCombination[count].every(this.isCross)) {
                 setTimeout(this.crossWin, 1);
                 this.gameOver = true;
+                this.changeScore(playerMove.cross);
             }
             if (winCombination[count].every(this.isZero)) {
                 setTimeout(this.zeroWin, 1);
                 this.gameOver = true;
+                this.changeScore(playerMove.zero);
             }
         }
+    }
+    changeScore(point:number):void {
+        this.getScore.emit(point);
     }
     isCross(element:number) {
         return element === playerMove.cross;
@@ -75,10 +81,10 @@ export class FieldComponent implements OnInit {
     isZero(element:number) {
         return element === playerMove.zero;
     }
-    crossWin() {
+    crossWin():void {
         alert('Player 1 Win!!!! Reset Current Game');
     }
-    zeroWin() {
+    zeroWin():void {
         alert('Player 2 Win!!!! Reset Current Game');
     }
 }
