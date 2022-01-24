@@ -1,11 +1,9 @@
 .game-board__grid {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: auto;
-  max-width: 100%;
-  max-height: 100%;
   gap: 1rem;
+  height: 600px;
+  width: 600px;
 }
 
 .game-board__row {
@@ -15,8 +13,7 @@
 }
 
 .game-board__element {
-  height: 200px;
-  width: 200px;
+  width: 33.3%;
   flex: 1;
   border: 0;
   cursor: pointer;
@@ -34,19 +31,22 @@
 }
 
 .game-board__icon {
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
 }
 
-/* @media (max-width: 600px) {
+@media (max-width: 650px) {
 
   .game-board__grid {
     height: 400px;
     width: 400px;
-    gap: 0;
   }
-  .game-board__element {
-    height: 100px;
-    width: 100px;
+}
+
+@media (max-width: 450px) {
+
+  .game-board__grid {
+    height: 300px;
+    width: 300px;
   }
-} */
+}
