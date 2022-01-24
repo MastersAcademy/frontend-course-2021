@@ -26,19 +26,23 @@ export class GameService {
 
   public changeCurrentPlayer(): void {
       this.currentPlayer = this.currentPlayer === 1 ? this.currentPlayer = 2 : this.currentPlayer = 1;
+      this.handleGameDraw();
   }
 
   public changeGameState(rowIndex: number, itemIndex: number): void {
-      if(!this.gameState.flat(1).includes(0)) {
-          this.gameActive = false;
-          this.reset();
-          return;
-      }
 
       if(this.gameState[rowIndex][itemIndex] === 0 && this.gameActive) {
           this.gameState[rowIndex][itemIndex] = this.currentPlayer;
           this.handleResultValidation();
           this.changeCurrentPlayer()
+          return;
+      }
+  }
+
+  public handleGameDraw() {
+      if(!this.gameState.flat(1).includes(0)) {
+          this.gameActive = false;
+          this.reset();
           return;
       }
   }
@@ -68,10 +72,6 @@ export class GameService {
       ];
       this.currentPlayer = 1;
       this.gameActive = true;
-  }
-
-  public resetCurrentGame(): void {
-      this.reset();
   }
 
   public resetAll(): void {

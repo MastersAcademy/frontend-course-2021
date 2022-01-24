@@ -11,7 +11,7 @@ export class ResetComponent {
     constructor(public gameService: GameService) { }
 
     public onClickMatch() {
-        this.gameService.resetCurrentGame();
+        this.gameService.reset();
     }
 
     public onClickAll() {
