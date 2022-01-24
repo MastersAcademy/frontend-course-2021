@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Title</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@200;300&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+            <symbol id="logo" viewBox="0 0 32 32" fill="none">
+                <title>Gallery Logo</title>
+                <path d="M2.66665 24L9.33331 16L13.3333 20L18.6666 13.3333L25.3333 21.3333M1.33331 1.33334H25.3333V25.3333H1.33331V1.33334ZM6.66665 25.3333V30.6667H30.6666V7.96001H25.3333L6.66665 25.3333ZM7.99998 10.6667C8.3536 10.6667 8.69274 10.5262 8.94279 10.2762C9.19284 10.0261 9.33331 9.68697 9.33331 9.33334C9.33331 8.97972 9.19284 8.64058 8.94279 8.39053C8.69274 8.14049 8.3536 8.00001 7.99998 8.00001C7.64636 8.00001 7.30722 8.14049 7.05717 8.39053C6.80712 8.64058 6.66665 8.97972 6.66665 9.33334C6.66665 9.68697 6.80712 10.0261 7.05717 10.2762C7.30722 10.5262 7.64636 10.6667 7.99998 10.6667Z" stroke="white" stroke-width="2"></path>
+            </symbol>
+            <symbol id="add" viewBox="0 0 24 24">
+                <title>Add</title>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="black" fill-opacity="0.87"></path>
+            </symbol>
+            <symbol id="close" viewBox="0 0 25 25" fill="none">
+                <title>Close</title>
+                <path d="M15.8056 12.9884L24.3973 4.41669C24.7735 4.04045 24.9849 3.53015 24.9849 2.99807C24.9849 2.46598 24.7735 1.95568 24.3973 1.57944C24.021 1.20319 23.5107 0.991821 22.9786 0.991821C22.4465 0.991821 21.9362 1.20319 21.56 1.57944L12.9883 10.1711L4.41656 1.57944C4.04032 1.20319 3.53003 0.991821 2.99794 0.991821C2.46585 0.991821 1.95555 1.20319 1.57931 1.57944C1.20306 1.95568 0.991691 2.46598 0.991691 2.99807C0.991691 3.53015 1.20306 4.04045 1.57931 4.41669L10.171 12.9884L1.57931 21.5601C1.39203 21.7459 1.24339 21.9669 1.14195 22.2103C1.04051 22.4538 0.988281 22.715 0.988281 22.9788C0.988281 23.2425 1.04051 23.5037 1.14195 23.7472C1.24339 23.9906 1.39203 24.2116 1.57931 24.3974C1.76505 24.5847 1.98604 24.7333 2.22952 24.8347C2.47301 24.9362 2.73417 24.9884 2.99794 24.9884C3.2617 24.9884 3.52286 24.9362 3.76635 24.8347C4.00983 24.7333 4.23082 24.5847 4.41656 24.3974L12.9883 15.8057L21.56 24.3974C21.7457 24.5847 21.9667 24.7333 22.2102 24.8347C22.4537 24.9362 22.7149 24.9884 22.9786 24.9884C23.2424 24.9884 23.5036 24.9362 23.747 24.8347C23.9905 24.7333 24.2115 24.5847 24.3973 24.3974C24.5845 24.2116 24.7332 23.9906 24.8346 23.7472C24.9361 23.5037 24.9883 23.2425 24.9883 22.9788C24.9883 22.715 24.9361 22.4538 24.8346 22.2103C24.7332 21.9669 24.5845 21.7459 24.3973 21.5601L15.8056 12.9884Z" fill="white"></path>
+            </symbol>
+            <symbol id="load" viewBox="0 0 58 58" fill="none">
+                <path d="M2.33337 29C2.33337 43.728 14.272 55.6666 29 55.6666C43.728 55.6666 55.6667 43.728 55.6667 29C55.6667 14.272 43.728 2.33331 29 2.33331" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </symbol>
+        </svg>
+        <header class="header">
+            <svg class="header__logo">
+                <use xlink:href="#logo"></use>
+            </svg>
+            <h1 class="header__title">MyLibrary</h1>
+        </header>
+        <main class="gallery-section" data-gallery>
+            <ul class="gallery-section__images" data-images>
+                <template data-template-images>
+                    <li>
+                        <img class="gallery-section__img" data-image src="" alt="">
+                    </li>
+                </template>
+            </ul>
+            <div>
+                <button class="gallery-section__button" data-button-add type="button">
+                    <svg class="gallery-section__add-icon">
+                        <use xlink:href="#add"></use>
+                    </svg>
+                </button>
+                <input class="gallery-section__upload-input" data-input-file type="file">
+            </div>
+            <div class="gallery-section__full-images-container" data-load-modal>
+                <svg class="gallery-section__load-icon">
+                    <use xlink:href="#load"></use>
+                </svg>
+            </div>
+            <div class="gallery-section__full-images-container" data-full-size-modal>
+                <img class="full-images-container__image" data-full-image src="" alt="">
+                <button class="full-images-container__button-close" data-button-close type="button">
+                    <svg class="full-images-container__close-icon">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+            </div>
+        </main>
+    </body>
+</html>

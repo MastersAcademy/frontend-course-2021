@@ -1,0 +1,30 @@
+<div class="block">
+<section class="main-container__section-card">
+  <div class="content-row content-row__section-card">
+    <picture class="card-picture">
+      <img class="card-picture__img" src="{{recipe.image_url}} " alt="">
+    </picture>
+    <div class="card-features">
+      <h2 class="card-features__name">{{recipe.name}}</h2>
+      <h3 class="card-features__description">{{recipe.description}}</h3>
+      <div class="content-row content-row__information content-row__information--food-pairing">
+        <h3 class="information__headline">Food pairing:</h3>
+        <p class="information__text">{{recipe.food_pairing}}</p>
+      </div>
+      <div class="content-row content-row__information content-row__information--ingredients">
+        <span class="information__headline">Ingredients:</span>
+        <p class="information__text">{{recipe.ingredients | filterIngredients }}</p>
+      </div>
+      <div class="content-row content-row__information content-row__information--time">
+        <span class="information__headline">Time to cook:</span>
+        <p class="information__text information__text--time"
+           [changeColor]="recipe.method.mash_temp[0].duration">{{recipe.method.mash_temp[0].duration}}</p>
+        <p class="information__text">minutes</p>
+      </div>
+    </div>
+  </div>
+  <div class="section-card__tape"
+       changeColor
+       [changeBackgroundColor]="recipe.method.mash_temp[0].duration"></div>
+</section>
+</div>

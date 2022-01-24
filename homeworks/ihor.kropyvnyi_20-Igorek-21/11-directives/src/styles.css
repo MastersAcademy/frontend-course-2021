@@ -1,0 +1,16 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(238, 245, 237);
+  color: #232222;
+  scroll-behavior: smooth;
+}
