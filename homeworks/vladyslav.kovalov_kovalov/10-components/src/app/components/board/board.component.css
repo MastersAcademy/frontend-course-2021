@@ -31,8 +31,8 @@
 }
 
 .game-board__icon {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
 }
 
 @media (max-width: 650px) {
