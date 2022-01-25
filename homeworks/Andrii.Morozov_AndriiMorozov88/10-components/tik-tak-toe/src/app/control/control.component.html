@@ -22,8 +22,8 @@
         <p>{{countPlayerTwo}}</p>
       </div>
     </div>
-    <button type="button" class="reset-button reset-button--current-game" (click)="getCurrentReset()">Reset Current Game</button>
+    <button type="button" class="reset-button reset-button--current-game" (click)="currentReset()">Reset Current Game</button>
     <button type="button" class="reset-button reset-button--all" (click)="resetAll()">Reset All</button>
     </div>>
-    <app-field (getScore)="getScore($event)"></app-field>
+    <app-field (getScore)="changeCount($event)"></app-field>
 </section>

@@ -7,6 +7,7 @@ import { FieldComponent } from './field/field.component';
 import { SquareComponent } from './field/square/square.component';
 import { MoveComponent } from './move/move.component';
 import { DataService } from './data.service';
+import { IconComponent } from './icon/icon.component';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,8 @@ import { DataService } from './data.service';
         ControlComponent,
         FieldComponent,
         SquareComponent,
-        MoveComponent
+        MoveComponent,
+        IconComponent
     ],
     imports: [
         BrowserModule,

@@ -8,12 +8,14 @@ import { PlayerMove } from '../../enums';
 })
 export class SquareComponent  {
   @Input() square!:number;
+  sprite = 'assets/sprite.svg#';
   get icon() {
       if (this.square === PlayerMove.cross) {
-          return 'assets/sprite.svg#x'
+          return 'cross'
       }
       if (this.square === PlayerMove.zero) {
-          return 'assets/sprite.svg#circle'
-      } return
+          return 'circle'
+      }
+      return null
   }
 }

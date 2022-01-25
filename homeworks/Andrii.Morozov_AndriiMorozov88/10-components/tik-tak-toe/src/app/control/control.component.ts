@@ -8,19 +8,19 @@ import { PlayerMove } from '../enums';
     styleUrls: ['./control.component.css']
 })
 export class ControlComponent {
-    @ViewChild(FieldComponent)
-    childComponent!: FieldComponent;
-    getCurrentReset():void {
-        this.childComponent.currentReset();
-    }
     countPlayerOne = 0;
     countPlayerTwo = 0;
+    @ViewChild(FieldComponent)
+    childComponent!: FieldComponent;
+    currentReset():void {
+        this.childComponent.currentReset();
+    }
     resetAll(): void {
         this.countPlayerOne = 0;
         this.countPlayerTwo = 0;
-        this.getCurrentReset();
+        this.currentReset();
     }
-    getScore(point:number):void {
+    changeCount(point:number):void {
         if (point === PlayerMove.cross) {
             this.countPlayerOne++;
         }

@@ -1,7 +1,7 @@
 <button type="button" class="field__square"
 [ngClass]="{'field__square--cross': square===1, 'field__square--zero': square===2}">
     <svg width="65" class="icon-opacity">
-        <use [attr.xlink:href]="icon"></use>
+        <use [attr.xlink:href]="sprite+icon"></use>
     </svg>
 </button>
 

@@ -7,17 +7,18 @@ import { PlayerMove } from '../enums';
     styleUrls: ['./field.component.css']
 })
 export class FieldComponent implements OnInit {
-    constructor(private dataService: DataService) {
-        this.dataService.currentPlayer$.subscribe(player => this.player = player);
-    }
+    fieldsquares!: number[];
+    player!:number;
+    gameOver!:boolean;
     state = [
         [PlayerMove.empty,PlayerMove.empty,PlayerMove.empty],
         [PlayerMove.empty,PlayerMove.empty,PlayerMove.empty],
         [PlayerMove.empty,PlayerMove.empty,PlayerMove.empty]
     ]
-    fieldsquares!: number[];
-    player!:number;
-    gameOver!:boolean;
+    constructor(private dataService: DataService) {
+        this.dataService.currentPlayer$.subscribe(player => this.player = player);
+    }
+    @Output() getScore = new EventEmitter<number>();
     ngOnInit() {
         this.currentReset();
     }
@@ -47,7 +48,6 @@ export class FieldComponent implements OnInit {
             this.dataService.changePlayer(this.player);
         }
     }
-    @Output() getScore = new EventEmitter<number>();
     checkWinCombination():void {
         const winCombination = [
             [this.fieldsquares[0], this.fieldsquares[1], this.fieldsquares[2]],
