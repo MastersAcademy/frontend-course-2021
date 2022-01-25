@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { FieldComponent } from '../field/field.component';
-import { playerMove } from '../enums';
+import { PlayerMove } from '../enums';
 
 @Component({
     selector: 'app-control',
@@ -21,10 +21,10 @@ export class ControlComponent {
         this.getCurrentReset();
     }
     getScore(point:number):void {
-        if (point === playerMove.cross) {
+        if (point === PlayerMove.cross) {
             this.countPlayerOne++;
         }
-        if (point === playerMove.zero) {
+        if (point === PlayerMove.zero) {
             this.countPlayerTwo++;
         }
     }

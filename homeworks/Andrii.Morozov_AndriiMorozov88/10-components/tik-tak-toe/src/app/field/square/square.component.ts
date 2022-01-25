@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { playerMove } from '../../enums';
+import { PlayerMove } from '../../enums';
 
 @Component({
     selector: 'app-square',
@@ -9,10 +9,10 @@ import { playerMove } from '../../enums';
 export class SquareComponent  {
   @Input() square!:number;
   get icon() {
-      if (this.square === playerMove.cross) {
+      if (this.square === PlayerMove.cross) {
           return 'assets/sprite.svg#x'
       }
-      if (this.square === playerMove.zero) {
+      if (this.square === PlayerMove.zero) {
           return 'assets/sprite.svg#circle'
       } return
   }
