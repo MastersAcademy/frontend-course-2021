@@ -28,4 +28,9 @@ export class BackendService {
         });
     }
 
+    updateTodoItem(updateText: string, id: string) {
+        return this.http.patch<ITodo>(`https://ma-http-homework.herokuapp.com/secure/todos/${id}`, {
+            text: updateText
+        });
+    }
 }

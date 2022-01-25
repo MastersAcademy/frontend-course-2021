@@ -9,7 +9,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
         const change = request.clone({
-            headers: request.headers.append('Authorization', '0ffda07f-1321-4137-9a82-fdee37ebbd5f')
+            headers: request.headers.append('Authorization', '0a676987-8d2a-4454-8571-5e53a4730202')
         })
         return next.handle(change);
     }

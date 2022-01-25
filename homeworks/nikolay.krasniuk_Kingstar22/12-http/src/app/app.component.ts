@@ -43,4 +43,12 @@ export class AppComponent {
                 this.todos = this.todos.map(item => item.id !== todo.id ? item : todo)
             });
     }
+
+    updateTodoItem(text: string, id: string) {
+        this.postService.updateTodoItem(text, id)
+            .subscribe(() => {
+                this.getTodoList()
+            });
+
+    }
 }

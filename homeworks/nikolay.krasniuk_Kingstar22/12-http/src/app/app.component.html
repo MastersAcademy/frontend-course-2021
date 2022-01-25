@@ -14,6 +14,7 @@
                 [todo]="todo"
                 (clickBtn)="removeTodoItem($event)"
                 (changeTodo)="changeTodoItemStatus($event)"
+                (editTodoItem)="updateTodoItem($event, todo.id)"
             ></app-todo-list>
         </div>
     </div>

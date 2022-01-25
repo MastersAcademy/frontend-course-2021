@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output,} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output,} from '@angular/core';
 import { ITodo} from '../../app.interface';
 
 @Component({
@@ -6,21 +6,35 @@ import { ITodo} from '../../app.interface';
     templateUrl: './todo-list.component.html',
     styleUrls: ['./todo-list.component.css']
 })
-export class TodoListComponent {
-@Input() todo!:ITodo
-@Output() clickBtn = new EventEmitter();
-@Output() changeTodo = new EventEmitter();
+export class TodoListComponent implements OnInit{
+    editItem = false;
+    text = '';
+    @Input() todo!:ITodo
+    @Output() clickBtn = new EventEmitter();
+    @Output() changeTodo = new EventEmitter();
+    @Output() editTodoItem = new EventEmitter();
 
-getId(id: string) {
-    this.clickBtn.emit(id);
-}
+    ngOnInit() {
+        this.text = this.todo.text;
+    }
 
-onChange(event: MouseEvent, todo: ITodo) {
-    event.preventDefault()
-    this.changeTodo.emit(todo);
-}
+    getId(id: string) {
+        this.clickBtn.emit(id);
+    }
 
-getEditItem() {
-    alert('under development')
-}
+    onChange(event: MouseEvent, todo: ITodo) {
+        event.preventDefault()
+        this.changeTodo.emit(todo);
+    }
+
+    clickEdit() {
+        this.editItem = !this.editItem;
+    }
+
+    getEditItem() {
+        if(this.text) {
+            this.editTodoItem.emit( this.text);
+            this.clickEdit();
+        }
+    }
 }
