@@ -1,11 +1,11 @@
-<div class="game-container">
+<section class="game-container">
   <div>
     <div class="player">
       <div class="player__name player--cross">
-        <svg width="35">
+        <svg width="30">
           <use xlink:href="assets/sprite.svg#x"></use>
       </svg>
-      <p>Player 1</p>
+      <h1>Player 1</h1>
       </div>
       <div class="player__score player--cross">
         <p>{{countPlayerOne}}</p>
@@ -13,10 +13,10 @@
     </div>
     <div class="player">
       <div class="player__name player--null">
-        <svg width="35" class="icon-circle">
+        <svg width="30" class="icon-circle">
           <use xlink:href="assets/sprite.svg#circle"></use>
       </svg>
-      <p>Player 2</p>
+      <h1>Player 2</h1>
       </div>
       <div class="player__score player--null">
         <p>{{countPlayerTwo}}</p>
@@ -24,6 +24,6 @@
     </div>
     <button type="button" class="reset-button reset-button--current-game" (click)="getCurrentReset()">Reset Current Game</button>
     <button type="button" class="reset-button reset-button--all" (click)="resetAll()">Reset All</button>
-    </div>
+    </div>>
     <app-field (getScore)="getScore($event)"></app-field>
-</div>
+</section>

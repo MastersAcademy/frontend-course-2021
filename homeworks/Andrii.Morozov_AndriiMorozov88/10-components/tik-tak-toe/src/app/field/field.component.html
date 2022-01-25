@@ -1,5 +1,7 @@
 <div class="field">
-  <app-square *ngFor="let square of fieldsquares let i=index"
-  [square]="square" (click)="move(i)">
-  </app-square>
+  <app-square
+    *ngFor="let square of fieldsquares; let i=index"
+    [square]="square"
+    (click)="move(i)"
+  ></app-square>
 </div>
