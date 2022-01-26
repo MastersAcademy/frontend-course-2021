@@ -8,16 +8,9 @@ import { DataService } from '../data.service';
 })
 export class MoveComponent {
     player!:number;
+    iconSize = 35;
     constructor(private dataService: DataService) {
         this.dataService.currentPlayer$.subscribe(player => this.player = player);
-    }
-    get icon() {
-        if (this.player === 1) {
-            return 'assets/sprite.svg#x'
-        }
-        if (this.player === 2) {
-            return 'assets/sprite.svg#circle'
-        } return
     }
 }
 

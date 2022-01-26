@@ -1,4 +1,4 @@
-.field__square {
+.field__button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,4 +14,10 @@
 
 .field__square--zero {
   background-color: #A5A6F6;
+}
+
+.svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
