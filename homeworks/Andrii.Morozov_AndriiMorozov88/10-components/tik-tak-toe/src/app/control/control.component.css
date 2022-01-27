@@ -5,38 +5,8 @@
   align-items: center;
 }
 
-.player {
+.player-info {
   display: flex;
-  color: #FFF;
-}
-
-.player__name {
-  display: flex;
-  width: 186px;
-  height: 56px;
-  font-size: 18px;
-  font-weight: 700;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.player__score {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 56px;
-  height: 56px;
-  margin-left: 16px;
-  font-size: 50px;
-}
-
-.player--cross {
-  background-color: #A5D9F6;
-}
-
-.player--null {
-  background-color: #A5A6F6;
-  margin-top: 15px;
 }
 
 .reset-button {
@@ -49,6 +19,15 @@
   font-weight: 700;
   font-size: 15px;
   cursor: pointer;
+}
+
+.player--cross {
+  background-color: #A5D9F6;
+}
+
+.player--zero {
+  background: #A5A6F6;
+  margin-top: 15px;
 }
 
 .reset-button:hover {

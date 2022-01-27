@@ -6,8 +6,8 @@ import { PlayerMove } from '../enums';
     templateUrl: './field.component.html',
     styleUrls: ['./field.component.css']
 })
-export class FieldComponent implements OnInit {
-    fieldsquares!: number[];
+export class FieldComponent {
+    /*fieldsquares!: number[];
     player!:number;
     gameOver!:boolean;
     state = [
@@ -86,6 +86,6 @@ export class FieldComponent implements OnInit {
     }
     zeroWin():void {
         alert('Player 2 Win!!!! Reset Current Game');
-    }
+    }*/
 }
 

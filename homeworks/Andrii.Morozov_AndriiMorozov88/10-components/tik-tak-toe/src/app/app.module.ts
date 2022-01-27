@@ -8,6 +8,8 @@ import { SquareComponent } from './field/square/square.component';
 import { MoveComponent } from './move/move.component';
 import { DataService } from './data.service';
 import { IconComponent } from './icon/icon.component';
+import { GetterComponent } from './getter/getter.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +18,9 @@ import { IconComponent } from './icon/icon.component';
         FieldComponent,
         SquareComponent,
         MoveComponent,
-        IconComponent
+        IconComponent,
+        GetterComponent,
+        PlayerComponent
     ],
     imports: [
         BrowserModule,

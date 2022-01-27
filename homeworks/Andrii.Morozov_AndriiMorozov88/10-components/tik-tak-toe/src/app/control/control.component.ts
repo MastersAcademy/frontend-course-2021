@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { FieldComponent } from '../field/field.component';
-import { PlayerMove } from '../enums';
+import { PlayerMove, Icons } from '../enums';
 
 @Component({
     selector: 'app-control',
@@ -8,7 +8,13 @@ import { PlayerMove } from '../enums';
     styleUrls: ['./control.component.css']
 })
 export class ControlComponent {
-    countPlayerOne = 0;
+    iconSize = 30;
+    icon = 'cross';
+    playerOne = PlayerMove.cross;
+    playerTwo = PlayerMove.zero;
+    iconCross = Icons.cross;
+    iconZero = Icons.zero;
+    /*countPlayerOne = 0;
     countPlayerTwo = 0;
     @ViewChild(FieldComponent)
     childComponent!: FieldComponent;
@@ -27,5 +33,5 @@ export class ControlComponent {
         if (point === PlayerMove.zero) {
             this.countPlayerTwo++;
         }
-    }
+    }*/
 }

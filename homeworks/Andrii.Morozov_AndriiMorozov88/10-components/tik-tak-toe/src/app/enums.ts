@@ -3,3 +3,9 @@ export enum PlayerMove {
   zero = 2,
   empty = 0
 }
+
+export enum Icons {
+    cross = 'cross',
+    zero = 'zero',
+    logo = 'logo'
+  }

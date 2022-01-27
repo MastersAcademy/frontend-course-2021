@@ -1,29 +1,9 @@
 <section class="game-container">
   <div>
-    <div class="player">
-      <div class="player__name player--cross">
-        <svg width="30">
-          <use xlink:href="assets/sprite.svg#cross"></use>
-      </svg>
-      <h1>Player 1</h1>
-      </div>
-      <div class="player__score player--cross">
-        <p>{{countPlayerOne}}</p>
-      </div>
-    </div>
-    <div class="player">
-      <div class="player__name player--null">
-        <svg width="30" class="icon-opacity">
-          <use xlink:href="assets/sprite.svg#circle"></use>
-      </svg>
-      <h1>Player 2</h1>
-      </div>
-      <div class="player__score player--null">
-        <p>{{countPlayerTwo}}</p>
-      </div>
-    </div>
-    <button type="button" class="reset-button reset-button--current-game" (click)="currentReset()">Reset Current Game</button>
-    <button type="button" class="reset-button reset-button--all" (click)="resetAll()">Reset All</button>
-    </div>>
-    <app-field (getScore)="changeCount($event)"></app-field>
+    <app-player class="player-info player--cross" [iconSize]="iconSize" [icon]="iconCross" [player]="playerOne"></app-player>
+    <app-player class="player-info player--zero" [iconSize]="iconSize" [icon]="iconZero" [player]="playerTwo"></app-player>
+    <!--button type="button" class="reset-button reset-button--current-game" (click)="currentReset()">Reset Current Game</button>
+    <button type="button" class="reset-button reset-button--all" (click)="resetAll()">Reset All</button-->
+  </div>
+    <!--app-field (getScore)="changeCount($event)"></app-field-->
 </section>

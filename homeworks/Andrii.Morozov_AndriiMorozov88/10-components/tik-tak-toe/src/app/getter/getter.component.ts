@@ -1,16 +1,15 @@
 import { Component, Input } from '@angular/core';
-import { Icons } from '../enums';
+import { PlayerMove, Icons } from '../enums';
 
 @Component({
-    selector: 'app-icon',
-    templateUrl: './icon.component.html',
-    styleUrls: ['./icon.component.css']
+    selector: 'app-getter',
+    templateUrl: './getter.component.html',
+    styleUrls: ['./getter.component.css']
 })
-export class IconComponent {
-    sprite = 'assets/sprite.svg#';
-    @Input() icon!:string;
+export class GetterComponent {
+    @Input() player!:number;
     @Input() iconSize!:number;
-    /* @Input() player!:number;
+    sprite = 'assets/sprite.svg#';
     get iconType() {
         if (this.player === PlayerMove.cross) {
             return Icons.cross
@@ -19,6 +18,5 @@ export class IconComponent {
             return Icons.zero
         }
         return null
-    }*/
+    }
 }
-

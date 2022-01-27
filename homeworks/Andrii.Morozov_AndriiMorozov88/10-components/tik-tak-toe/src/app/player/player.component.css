@@ -1,0 +1,25 @@
+.player {
+  display: flex;
+  color: #FFF;
+}
+
+.player__name {
+  display: flex;
+  width: 186px;
+  height: 56px;
+  font-size: 18px;
+  font-weight: 700;
+  justify-content: space-around;
+  align-items: center;
+  border-right: 4px solid #FFF;
+}
+
+.player__score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  font-size: 50px;
+  border-left: 4px solid #FFF;
+}
