@@ -1,0 +1,52 @@
+<div class="form-wrapper">
+    <h1 class="title">Ng-Form</h1>
+    <form
+        id="form"
+        class="login-form"
+        [formGroup]="userForm"
+        (ngSubmit)="submit()">
+        <p class="login-form__title">Sign in</p>
+        <div class="login-form__item">
+            <label for="username">Email</label>
+            <input  type="email"
+                    class="login-form__item-input"
+                    id="username"
+                    name="username"
+                    formControlName="email">
+            <div class="validation"
+                 *ngIf="controls.email.invalid && controls.email.touched">
+                <small *ngIf="controls.email.errors?.['required']">Email field cannot be empty</small>
+
+                <small *ngIf="controls.email.errors?.['email']">Enter the correct data</small>
+            </div>
+        </div>
+        <div class="login-form__item">
+            <label for="password">Password</label>
+            <input type="password"
+                   class="login-form__item-input"
+                   id="password"
+                   name="password"
+                   formControlName="password">
+            <div
+                class="validation"
+                *ngIf="controls.password.invalid && controls.password.touched">
+                <small *ngIf="controls.password.errors?.['required']"
+                >Password field cannot be empty</small>
+                <small *ngIf="controls.password.errors?.['minlength']"
+                >Minimum password length is 8 characters</small>
+            </div>
+        </div>
+        <div class="login-form__item">
+            <input type="checkbox"
+                   class="login-form__item-checkbox"
+                   formControlName="rememberCheckbox">
+            Remember me
+        </div>
+        <button
+            class="login-form__btn"
+            type="submit"
+            [disabled]="userForm.invalid">
+            Continue
+        </button>
+    </form>
+</div>
