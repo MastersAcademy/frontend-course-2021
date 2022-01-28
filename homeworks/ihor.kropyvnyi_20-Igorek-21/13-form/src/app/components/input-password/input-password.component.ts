@@ -22,7 +22,7 @@ export class InputPasswordComponent implements ControlValueAccessor {
     public inputTypeIcon = 'hide';
 
     public showPassword(): void {
-        this.inputType = this.inputType == 'password' ? 'text': 'password';
+        this.inputType = this.inputType == 'password' ? 'text' : 'password';
         this.inputTypeIcon = this.inputTypeIcon == 'hide' ? 'show' : 'hide';
     }
 
