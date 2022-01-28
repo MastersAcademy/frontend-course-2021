@@ -1,0 +1,55 @@
+<div class="page-wrapper">
+  <section class="page-form">
+    <h2 class="page-form page-form__title">Log In to Your Account</h2>
+    <form class="page-form page-form__login-form"
+            (ngSubmit)="onSubmit()"
+            [formGroup]="loginForm">
+
+        <app-input-login class="login-form__field-input"
+                         [validateStyle]="controls.email.errors && controls.email.touched"
+                         formControlName="loginEmail">
+        </app-input-login>
+
+        <ul class="login-form__error login-form__error--email"
+               *ngIf="controls.email.errors && controls.email.touched ">
+          <li class="error__item"
+              *ngIf="controls.email.hasError('required') ">
+            Please enter your email address</li>
+          <li class="error__item"
+              *ngIf="controls.email.hasError('email')">
+            Email is not valid</li>
+        </ul>
+
+        <app-input-password class="login-form__field-input"
+                            [validateStyle]="controls.password.errors && controls.password.touched"
+                            [validateShowPassword]="controls.password.value"
+                            formControlName="loginPassword">
+        </app-input-password>
+
+        <ul class="login-form__error login-form__error--password"
+            *ngIf="controls.password.invalid && controls.password.touched">
+          <li class="error__item"
+              *ngIf="controls.password.hasError('required') ">
+            Please enter your password</li>
+          <li class="error__item"
+              *ngIf="controls.password.hasError('minlength')">
+            Password must be at least {{limitPassword}} characters long</li>
+        </ul>
+
+        <label for="checkbox"
+               class="login-form__checkbox">
+          Remember me:
+          <input class="checkbox__input"
+                 id="checkbox"
+                 formControlName="loginCheckbox"
+                 type="checkbox">
+        </label>
+
+        <button class="button login-form__button"
+                [ngClass]="{'disabled': loginForm.invalid}"
+                [disabled]="loginForm.invalid"
+                type="submit">Log In</button>
+      </form>
+
+  </section>
+</div>
