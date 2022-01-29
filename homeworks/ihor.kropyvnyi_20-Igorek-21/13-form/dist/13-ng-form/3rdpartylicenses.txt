@@ -10,6 +10,9 @@ MIT
 @angular/platform-browser
 MIT
 
+@ngneat/reactive-forms
+MIT
+
 rxjs
 Apache-2.0
                                Apache License

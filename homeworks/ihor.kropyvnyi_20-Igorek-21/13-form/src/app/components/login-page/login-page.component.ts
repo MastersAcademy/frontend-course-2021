@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormGroup, Validators} from '@angular/forms';
+import {  FormControl } from '@ngneat/reactive-forms';
 
 @Component({
     selector: 'app-login-page',
@@ -11,9 +12,9 @@ export class LoginPageComponent implements OnInit {
     public limitPassword = 6;
 
     loginForm  = new FormGroup({
-        loginEmail: new FormControl('', [Validators.required, Validators.email]),
-        loginPassword: new FormControl('', [Validators.required, Validators.minLength(this.limitPassword)]),
-        loginCheckbox: new FormControl(false)
+        loginEmail: new FormControl<string>('', [Validators.required, Validators.email]),
+        loginPassword: new FormControl<string>('', [Validators.required, Validators.minLength(this.limitPassword)]),
+        loginCheckbox: new FormControl<boolean>(false)
     })
 
     ngOnInit(): void {
@@ -30,8 +31,9 @@ export class LoginPageComponent implements OnInit {
 
     public get controls() {
         return {
-            email: this.loginForm.get('loginEmail') as FormControl,
-            password: this.loginForm.get('loginPassword') as FormControl
+            email: this.loginForm.get('loginEmail') as FormControl<string>,
+            password: this.loginForm.get('loginPassword') as FormControl<string>,
+            passwordIcon: this.loginForm.get('loginPassword') as FormControl<boolean>
         }
     }
 
