@@ -34,11 +34,11 @@ export class InputLoginComponent implements ControlValueAccessor {
         console.log('touch')
     }
 
-    public registerOnChange(fn: any) {
+    public registerOnChange(fn: never) {
         this.onChange = fn
     }
 
-    public registerOnTouched(fn: any) {
+    public registerOnTouched(fn: never) {
         this.onTouched = fn
     }
 }
