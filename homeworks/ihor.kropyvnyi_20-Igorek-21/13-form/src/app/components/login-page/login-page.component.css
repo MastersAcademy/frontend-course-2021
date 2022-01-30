@@ -1,0 +1,109 @@
+.page-wrapper {
+  max-width: 450px;
+  min-width: 285px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 10px 0;
+}
+
+.page-form__title {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 38px;
+  line-height: 45px;
+}
+
+.page-form__login-form {
+  width: 100%;
+  height: 320px;
+  padding: 15px;
+  position: relative;
+  justify-content: space-around;
+  border-radius: 7px;
+  background-color: #FFF;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);
+}
+
+.login-form__field-input {
+  width: 100%;
+}
+
+.login-form__error {
+  position: absolute;
+}
+
+.login-form__error--email {
+  top: 60px;
+  left: -20px;
+}
+
+.login-form__error--password {
+  top: 148px;
+  left: -20px;
+}
+
+.error__item {
+  font-size: 15px;
+  list-style: none;
+}
+
+.login-form__checkbox {
+  font-size: 25px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox__input {
+  width: 20px;
+  height: 20px;
+}
+
+.login-form__button {
+  height: 50px;
+  width: 100%;
+  box-sizing: content-box;
+  flex-shrink: 2;
+  background-color: #1877F2;
+  color: #FFF;
+  margin-bottom: 15px;
+}
+
+.login-form__button:hover,
+.login-form__button:focus {
+  background-color: #006FFF;
+}
+
+.login-form__checkbox:hover {
+  opacity: .7;
+}
+
+@media (max-width: 390px) {
+
+  .page-form__login-form {
+    height: 330px;
+  }
+
+  .page-form {
+    margin: 20px 10px 0;
+  }
+
+  .page-form__title {
+    padding-left: 30px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .login-form__checkbox {
+    margin-top: 18px;
+  }
+}
