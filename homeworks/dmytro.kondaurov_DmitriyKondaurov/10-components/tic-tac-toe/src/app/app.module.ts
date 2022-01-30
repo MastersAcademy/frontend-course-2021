@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { HeaderComponent } from './components/header/header.component';
-
+import { GameFieldComponent } from './components/game-field/game-field.component';
+import { GameStateComponent } from './components/game-state/game-state.component';
+import { GameDashboardComponent } from './components/game-dashboard/game-dashboard.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HeaderComponent,
+        GameFieldComponent,
+        GameStateComponent,
+        GameDashboardComponent
     ],
     imports: [
         BrowserModule,
