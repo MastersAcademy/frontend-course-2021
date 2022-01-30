@@ -1,0 +1,24 @@
+<section class="section-login">
+  <h1 class="section-login__title">Welcome to Your To Do List!</h1>
+    <form class="section-login__form"
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()"  >
+        <h3 class="form__title">Log In to Your Account</h3>
+        <div class="form__field">
+            <input class="field__input field__input--form" id="login"
+                   type="text"
+                   placeholder="Write your logo"
+                   formControlName="login" >
+        </div>
+
+        <div class="form__field">
+            <input class="field__input field__input--form" id="password"
+                   type="password"
+                   placeholder="Write your password"
+                   formControlName="password">
+        </div>
+        <button class="button field__button "
+                type="submit"
+                [disabled]="form.invalid || form.disabled">LogIn</button>
+    </form>
+</section>
