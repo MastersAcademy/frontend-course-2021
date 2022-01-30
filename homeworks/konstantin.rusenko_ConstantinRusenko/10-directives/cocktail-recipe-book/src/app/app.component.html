@@ -1,0 +1,9 @@
+<div class="controls">
+    <input class="input" type="text" placeholder="food pairing" [(ngModel)]="searchName">
+    <select class="select" [(ngModel)] = "selectedValue">
+        <option *ngFor="let choise of choises" [value]="choise.id">{{choise.name}}</option>
+    </select>
+</div>
+<div class="cards">
+    <app-card class="card" *ngFor="let card of cards | cocktailFilter:searchName | cocktailSort:selectedValue" [card]="card"></app-card>
+</div>
