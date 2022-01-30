@@ -8,7 +8,6 @@ import { SquareComponent } from './field/square/square.component';
 import { MoveComponent } from './move/move.component';
 import { DataService } from './data.service';
 import { IconComponent } from './icon/icon.component';
-import { GetterComponent } from './getter/getter.component';
 import { PlayerComponent } from './player/player.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { PlayerComponent } from './player/player.component';
         SquareComponent,
         MoveComponent,
         IconComponent,
-        GetterComponent,
         PlayerComponent
     ],
     imports: [

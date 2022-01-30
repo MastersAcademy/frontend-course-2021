@@ -7,9 +7,10 @@ import { PlayerMove } from '../enums';
     styleUrls: ['./field.component.css']
 })
 export class FieldComponent {
-    /*fieldsquares!: number[];
+    fieldsquares!: number[];
     player!:number;
     gameOver!:boolean;
+    icon!:string;
     state = [
         [PlayerMove.empty,PlayerMove.empty,PlayerMove.empty],
         [PlayerMove.empty,PlayerMove.empty,PlayerMove.empty],
@@ -19,18 +20,22 @@ export class FieldComponent {
         this.dataService.currentPlayer$.subscribe(player => this.player = player);
     }
     @Output() getScore = new EventEmitter<number>();
+    changeScore(point:number):void {
+        this.getScore.emit(point);
+    }
     ngOnInit() {
         this.currentReset();
     }
     currentReset():void {
         this.fieldsquares = this.state.flat();
         this.player = PlayerMove.cross;
-        this.dataService.changePlayer(this.player);
+        //this.dataService.changePlayer(this.player);
         this.gameOver = false;
     }
     togglePlayer() {
         if (this.player === PlayerMove.cross) {
             this.player = PlayerMove.zero;
+            this.icon = 'cross'
         } else {
             this.player = PlayerMove.cross;
         }
@@ -72,9 +77,7 @@ export class FieldComponent {
             }
         }
     }
-    changeScore(point:number):void {
-        this.getScore.emit(point);
-    }
+
     isCross(element:number) {
         return element === PlayerMove.cross;
     }
@@ -86,6 +89,6 @@ export class FieldComponent {
     }
     zeroWin():void {
         alert('Player 2 Win!!!! Reset Current Game');
-    }*/
+    }
 }
 

@@ -7,10 +7,10 @@ import { DataService } from '../data.service';
     styleUrls: ['./move.component.css']
 })
 export class MoveComponent {
-    /*player!:number;
+    player!:number;
     iconSize = 35;
     constructor(private dataService: DataService) {
         this.dataService.currentPlayer$.subscribe(player => this.player = player);
-    }*/
+    }
 }
 
