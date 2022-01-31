@@ -1,0 +1,15 @@
+<div class="container-loader"
+     *ngIf="isLoader">
+  <div class="container-loader__loader">
+    <span class="loader__moving-indicator"></span>
+  </div>
+</div>
+
+<div class="container" *ngIf="!isLoader">
+  <app-card *ngFor="let recipe of recipes"
+            [recipe]="recipe">
+  </app-card>
+</div>
+
+
+
