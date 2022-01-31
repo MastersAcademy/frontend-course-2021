@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from '../data.service';
+import { RxjsService } from '../rxjs.service';
 
 @Component({
     selector: 'app-move',
@@ -9,8 +9,8 @@ import { DataService } from '../data.service';
 export class MoveComponent {
     player!:number;
     iconSize = 35;
-    constructor(private dataService: DataService) {
-        this.dataService.currentPlayer$.subscribe(player => this.player = player);
+    constructor(private rxjsService: RxjsService) {
+        this.rxjsService.currentPlayer$.subscribe(player => this.player = player);
     }
 }
 

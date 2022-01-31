@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DataService } from '../data.service';
+import { RxjsService } from '../rxjs.service';
 import { Player } from '../enums';
 @Component({
     selector: 'app-field',
@@ -9,8 +10,8 @@ import { Player } from '../enums';
 export class FieldComponent {
     player!:number;
     fieldsquares: number[] = this.dataService.fieldsquares;
-    constructor(private dataService: DataService) {
-        this.dataService.currentPlayer$.subscribe(player => this.player = player);
+    constructor(private rxjsService: RxjsService, private dataService: DataService) {
+        this.rxjsService.currentPlayer$.subscribe(player => this.player = player);
     }
     @Output() getScore = new EventEmitter<number>();
     changeScore(point:number):void {
@@ -42,7 +43,7 @@ export class FieldComponent {
             }
             this.dataService.checkWinCombination();
             this.togglePlayer();
-            this.dataService.changePlayer(this.player);
+            this.rxjsService.changePlayer(this.player);
         }
     }
 }
