@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { FieldComponent } from '../field/field.component';
-import { PlayerMove, Icons } from '../enums';
+import { Player, Icons } from '../enums';
 
 @Component({
     selector: 'app-control',
@@ -10,8 +10,8 @@ import { PlayerMove, Icons } from '../enums';
 export class ControlComponent {
     iconSize = 30;
     icon = 'cross';
-    playerOne = PlayerMove.cross;
-    playerTwo = PlayerMove.zero;
+    playerOne = Player.cross;
+    playerTwo = Player.zero;
     iconCross = Icons.cross;
     iconZero = Icons.zero;
     /*countPlayerOne = 0;

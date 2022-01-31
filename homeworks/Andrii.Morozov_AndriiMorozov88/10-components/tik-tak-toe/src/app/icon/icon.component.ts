@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Icons, PlayerMove } from '../enums';
+import { Icons, Player } from '../enums';
 
 @Component({
     selector: 'app-icon',
@@ -12,10 +12,10 @@ export class IconComponent {
     @Input() iconSize!:number;
     @Input() player!:number;
     get iconType() {
-        if (this.player === PlayerMove.cross) {
+        if (this.player === Player.cross) {
             return Icons.cross
         }
-        if (this.player === PlayerMove.zero) {
+        if (this.player === Player.zero) {
             return Icons.zero
         }
         return null
