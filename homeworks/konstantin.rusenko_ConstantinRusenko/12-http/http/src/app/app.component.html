@@ -1,0 +1,20 @@
+<header class="header">
+  <div class="header__title">Todo</div>
+</header>
+<main class="main">
+  <div class="main__app">
+    <div class="app__control">
+      <input class="input control-input" type="text" placeholder="Enter Todo" [(ngModel)]="newTodo">
+      <button class="button-input" type="button" (click)="addTodo()">Add todo</button>
+    </div>
+      <div class="container" >
+          <app-todo-item 
+              *ngFor="let todo of todos"
+              [todo]="todo"
+              (handleRemove)="deleteTodo($event)"
+              (handleDone)="updateTodo($event)"
+              (handleEdit)="updateTodo($event)">
+          </app-todo-item>
+      </div>
+  </div>
+</main>

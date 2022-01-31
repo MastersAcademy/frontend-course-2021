@@ -1,0 +1,17 @@
+<div class="todo-item">
+    <div class="todo-item__actions">
+        <div class="todo-item__name" *ngIf="!edit" [ngStyle]="{'text-decoration': todo.isDone ? 'line-through' : 'none'}">{{todo.text}}</div>
+        <div class="todo-item__edit" *ngIf="edit">
+            <input class="input edit__input" type="text" [(ngModel)]="todo.text">
+            <div>
+                <button class="button" type="button" (click)="handleEdit.emit(todo)">Update</button>
+                <button class="button" type="button" (click)="handleCancelClick()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!edit">
+        <button class="button" type="button" (click)="handleRemoveClick(todo.id)">Del</button>
+        <button class="button" type="button" (click)="handleDoneClick(todo)">{{buttonName}}</button>
+        <button class="button" type="button" (click)="handleEditClick()">Edit</button>
+    </div>
+</div>

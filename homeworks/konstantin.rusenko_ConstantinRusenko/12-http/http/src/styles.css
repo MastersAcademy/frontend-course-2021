@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+}
+
+.button {
+  padding: 5px;
+  width: 50px;
+  text-align: center;
+  margin: 0 5px;
+  border: none;
+  border-radius: 25px;
+  background-color: #232629;
+  color: #FFF
+}
+
+.button:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+.input {
+  border: none;
+}
+
+.input:hover {
+  cursor: pointer;
+}
