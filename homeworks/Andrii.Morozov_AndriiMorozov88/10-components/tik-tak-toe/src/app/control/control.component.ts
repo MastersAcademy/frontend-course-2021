@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { FieldComponent } from '../field/field.component';
+import { Component } from '@angular/core';
+import { DataService } from '../data.service';
 import { Player, Icons } from '../enums';
 
 @Component({
@@ -14,14 +14,13 @@ export class ControlComponent {
     playerTwo = Player.zero;
     iconCross = Icons.cross;
     iconZero = Icons.zero;
+    constructor(private dataService: DataService) {}
+    currentReset() {
+        this.dataService.currentReset();
+    }
     /*countPlayerOne = 0;
     countPlayerTwo = 0;
-    @ViewChild(FieldComponent)
-    childComponent!: FieldComponent;
-    currentReset():void {
-        this.childComponent.currentReset();
-    }
-    resetAll(): void {
+    /*resetAll(): void {
         this.countPlayerOne = 0;
         this.countPlayerTwo = 0;
         this.currentReset();

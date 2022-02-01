@@ -2,8 +2,8 @@
   <div>
     <app-player class="player-info player--cross" [iconSize]="iconSize" [icon]="iconCross" [player]="playerOne"></app-player>
     <app-player class="player-info player--zero" [iconSize]="iconSize" [icon]="iconZero" [player]="playerTwo"></app-player>
-    <!--button type="button" class="reset-button reset-button--current-game" (click)="currentReset()">Reset Current Game</button>
-    <button type="button" class="reset-button reset-button--all" (click)="resetAll()">Reset All</button-->
+    <button type="button" (click)="currentReset()" class="reset-button reset-button--current-game">Reset Current Game</button>
+    <button type="button" class="reset-button reset-button--all">Reset All</button>
   </div>
     <app-field></app-field>
     <!--(getScore)="changeCount($event)"-->

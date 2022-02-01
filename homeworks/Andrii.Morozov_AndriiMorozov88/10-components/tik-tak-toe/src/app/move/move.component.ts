@@ -7,7 +7,7 @@ import { RxjsService } from '../rxjs.service';
     styleUrls: ['./move.component.css']
 })
 export class MoveComponent {
-    player!:number;
+    player!: number;
     iconSize = 35;
     constructor(private rxjsService: RxjsService) {
         this.rxjsService.currentPlayer$.subscribe(player => this.player = player);
