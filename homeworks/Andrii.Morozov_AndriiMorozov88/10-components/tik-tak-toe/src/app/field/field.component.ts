@@ -8,9 +8,7 @@ import { Player } from '../enums';
     styleUrls: ['./field.component.css']
 })
 export class FieldComponent implements OnInit {
-    player!: number;
-    fieldsquares = this.dataService.fieldsquares;
-    constructor(private rxjsService: RxjsService, public dataService: DataService) {
+    constructor(public dataService: DataService, private rxjsService: RxjsService) {
         this.rxjsService.currentPlayer$.subscribe(player => this.dataService.player = player);
     }
     ngOnInit(): void {
