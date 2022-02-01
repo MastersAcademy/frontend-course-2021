@@ -13,10 +13,6 @@ export class FieldComponent implements OnInit {
     constructor(private rxjsService: RxjsService, public dataService: DataService) {
         this.rxjsService.currentPlayer$.subscribe(player => this.dataService.player = player);
     }
-    /*@Output() getScore = new EventEmitter<number>();
-    changeScore(point:number):void {
-        this.getScore.emit(point);
-    }*/
     ngOnInit(): void {
         this.dataService.currentReset();
     }
