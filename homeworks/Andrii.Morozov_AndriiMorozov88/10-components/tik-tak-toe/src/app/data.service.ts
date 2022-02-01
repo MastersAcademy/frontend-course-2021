@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Player } from './enums';
 import { RxjsService } from './rxjs.service';
+import { ScoreService } from './score.service';
 
 @Injectable({
     providedIn: 'root'
@@ -14,7 +15,7 @@ export class DataService {
     player!: number;
     fieldsquares: number[] = this.state.flat();
     gameOver!:boolean;
-    constructor (private rxjsService: RxjsService) {}
+    constructor (private rxjsService: RxjsService, private scoreService: ScoreService) {}
     checkWinCombination():void {
         const winCombination = [
             [this.fieldsquares[0], this.fieldsquares[1], this.fieldsquares[2]],
@@ -30,11 +31,13 @@ export class DataService {
             if (winCombination[count].every(this.isCross)) {
                 setTimeout(this.crossWin, 1);
                 this.gameOver = true;
+                this.scoreService.crossWin();
                 //this.changeScore(Player.cross);
             }
             if (winCombination[count].every(this.isZero)) {
                 setTimeout(this.zeroWin, 1);
                 this.gameOver = true;
+                this.scoreService.zeroWin();
                 //this.changeScore(Player.zero);
             }
         }

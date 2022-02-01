@@ -9,4 +9,5 @@ export class PlayerComponent  {
     @Input() player!:number;
     @Input() icon!:string;
     @Input() iconSize!:number;
+    @Input() countPlayer!: number;
 }
