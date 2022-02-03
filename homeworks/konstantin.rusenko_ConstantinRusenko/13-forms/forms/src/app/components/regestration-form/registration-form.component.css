@@ -10,7 +10,7 @@
 .registration-form {
   background: #FFF;
   max-width: 100%;
-  padding: 2rem;
+  padding: 3rem;
   border: 2px solid #E6E6E6;
   margin: auto;
   box-shadow: 0 1px 2px 2px rgba(#000, .3);
@@ -25,4 +25,29 @@
   background: rgba(#EFEFEF, .4);
   border: none;
   cursor: pointer;
+  padding: 20px;
+  font-size: 24px;
+}
+
+.registration-remember-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.remember-login-control {
+  margin-right: 10px;
+}
+
+.form-input {
+  padding: 0 15px;
+  width: 100px;
+}
+
+.button:hover {
+  opacity: .8;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
 }

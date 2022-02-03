@@ -58,5 +58,6 @@ export class PasswordInputComponent implements ControlValueAccessor {
         } else {
             this.buttonShowName = 'show';
         }
+        console.log(this.formField.hasError('minlength'));
     }
 }

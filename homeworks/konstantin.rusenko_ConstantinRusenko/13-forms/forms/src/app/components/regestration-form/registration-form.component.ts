@@ -61,7 +61,7 @@ export class RegistrationFormComponent implements OnInit {
                 {
                     validators: [
                         Validators.required,
-                        Validators.minLength(8)
+                        Validators.minLength(6)
                     ]
                 }
             ),
