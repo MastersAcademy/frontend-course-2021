@@ -24,9 +24,8 @@
 .button-submit {
   background: rgba(#EFEFEF, .4);
   border: none;
-  cursor: pointer;
-  padding: 20px;
-  font-size: 24px;
+  padding: 12px 20px;
+  font-size: 18px;
 }
 
 .registration-remember-wrapper {
@@ -38,6 +37,10 @@
   margin-right: 10px;
 }
 
+.remember-login-control:hover {
+  cursor: pointer;
+}
+
 .form-input {
   padding: 0 15px;
   width: 100px;
@@ -45,6 +48,7 @@
 
 .button:hover {
   opacity: .8;
+  cursor: pointer;
 }
 
 .button-row {
