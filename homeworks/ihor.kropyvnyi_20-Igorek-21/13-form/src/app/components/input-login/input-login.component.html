@@ -1,0 +1,7 @@
+<input class="field-input__input"
+       [(ngModel)]="value"
+       (click)="onTouched()"
+       [ngClass]="{'input__has-error': validateStyle}"
+       placeholder="Email"
+       (ngModelChange)="handleInput($event)"
+       type="text">

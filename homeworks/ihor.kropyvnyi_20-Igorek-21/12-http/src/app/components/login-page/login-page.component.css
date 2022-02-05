@@ -1,0 +1,34 @@
+.section-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50px;
+  position: relative;
+}
+
+.section-login__title {
+  line-height: 65px;
+  font-size: 45px;
+  font-weight: 900;
+  padding-bottom: 50px;
+  word-wrap: break-word;
+}
+
+.section-login__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 550px;
+  height: 350px;
+  border: 4px solid #000;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.form__title {
+  margin: 0;
+  font-size: 29px;
+  padding-bottom: 20px;
+}

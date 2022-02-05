@@ -1,0 +1,24 @@
+.field__input--add-item {
+  width: 250px;
+  height: 45px;
+  border-radius: 10px;
+  font-size: inherit;
+  padding: 20px;
+  margin-right: 40px;
+  border: 1px solid #161617;
+}
+
+.field__button--add-item {
+  margin-right: 30px;
+}
+
+@media (max-width: 468px) {
+
+  .field__input--add-item {
+    margin: 0 0 20px;
+  }
+
+  .field__button--add-item {
+    margin: 0;
+  }
+}
