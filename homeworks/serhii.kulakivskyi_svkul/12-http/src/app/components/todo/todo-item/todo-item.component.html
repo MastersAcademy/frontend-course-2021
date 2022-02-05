@@ -1,0 +1,57 @@
+<div class="todo-item__text">
+    <p *ngIf="!edit">{{ todo.text }}</p>
+
+    <input
+        *ngIf="edit"
+        #inp
+        class="input"
+        type="text"
+        [value]="todo.text"
+        (input)="todo.text = inp.value"
+    >
+</div>
+
+<div
+  *ngIf="!edit"
+  class="todo-item__controls"
+>
+  <app-checkbox [checked]="todo.isDone" (handleChange)="handleUpdateClick({ todo, status: $event })"></app-checkbox>
+
+  <button
+    class="todo-item__button todo-item__button--pencil"
+    title='Edit text'
+    (click)="handleEditClick()"
+  >
+    <app-svg-icon icon="pencil" width="12px" height="12px"></app-svg-icon>
+  </button>
+
+  <button
+    class="todo-item__button todo-item__button--trash"
+    title='Remove task'
+    (click)="handleRemoveClick(todo)"
+  >
+    <app-svg-icon icon="trash" width="12px" height="12px"></app-svg-icon>
+  </button>
+</div>
+
+<div
+  *ngIf="edit"
+  class="todo-item__controls"
+>
+  <button
+    class="todo-item__button todo-item__button--pencil"
+    title='Edit text'
+    (click)="handleUpdateClick({ todo, status: todo.isDone })"
+  >
+    <app-svg-icon icon="check" width="12px" height="12px"></app-svg-icon>
+  </button>
+
+  <button
+    class="todo-item__button todo-item__button--trash"
+    title='Remove task'
+    (click)="handleEditDecline()"
+  >
+    <app-svg-icon icon="close" width="12px" height="12px"></app-svg-icon>
+  </button>
+</div>
+

@@ -1,0 +1,79 @@
+:root {
+  --color-transparent: transparent;
+  --color-white: #FFF;
+  --color-grey-70: #333;
+  --color-grey-10: #CCC;
+  --color-yellow: #F6D04D;
+  --color-green: #8BC24C;
+  --color-red: #DE4307;
+  --color-blue: #2196F3;
+
+  /* font */
+  --font-color-1: var(--color-grey-70);
+
+  /* button */
+  --button-color: var(--color-white);
+  --button-color-2: var(--color-grey-70);
+  --button-background-color: var(--color-green);
+  --button-background-color-2: var(--color-white);
+
+  /* input */
+  --input-border-color: var(--color-grey-10);
+
+  /* todo-item */
+  --todo-item-edit-icon-color: var(--color-blue);
+  --todo-item-remove-icon-color: var(--color-red);
+  --todo-item-check-icon-color: var(--color-green);
+
+  /* header */
+  --header-background-color: var(--color-green);
+
+  /* checkbox */
+  --checkbox-color: var(--color-green);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 700;
+  /* stylelint-disable-next-line */
+  font-family: Montserrat, system-ui, -apple-system, /* Firefox supports this but not yet `system-ui` */ 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  color: var(--font-color-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.input {
+  padding: .5rem;
+  border: 1px solid var(--input-border-color);
+  border-radius: none;
+  font-size: 1.2;
+}
+
+.button {
+  padding: .5rem 1rem;
+  color: var(--button-color);
+  background-color: var(--button-background-color);
+  border: none;
+  font-size: 1.2rem;
+  transition: opacity .3s;
+}
+
+.button--secondary {
+  color: var(--button-color-2);
+  background-color: var(--button-background-color-2);
+}
+
+.button:not([disabled]):hover {
+  opacity: .7;
+  cursor: pointer;
+}

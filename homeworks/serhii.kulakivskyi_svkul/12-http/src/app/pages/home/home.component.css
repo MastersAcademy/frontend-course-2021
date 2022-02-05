@@ -1,0 +1,21 @@
+:host {
+  width: 100%;
+}
+
+.todo__wrapper {
+  margin: auto;
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px #CCC;
+}
+
+.todo__items {
+  padding: 1rem;
+}
+
+.todo__items-footer {
+  padding: 1rem;
+  border-top: 1px solid #CCC;
+}

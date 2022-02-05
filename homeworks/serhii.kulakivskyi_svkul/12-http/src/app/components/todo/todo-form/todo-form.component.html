@@ -1,0 +1,19 @@
+<form (keydown.enter)="$event.preventDefault()">
+    <label for='input'>Create task:</label>
+
+    <input
+        #todo
+        id='input'
+        class="input"
+        [value]="task"
+        placeholder="Task name..."
+        (input)="handleChange(todo.value)"
+    >
+
+    <button
+        class="button button-primary"
+        (click)="handleAddTodo()"
+        (keydown.enter)="handleAddTodo()"
+        type="button"
+    >Add new task</button>
+</form>

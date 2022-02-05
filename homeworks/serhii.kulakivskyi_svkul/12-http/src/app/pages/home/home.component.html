@@ -1,0 +1,21 @@
+<section class="todo__wrapper">
+    <div class="todo__items">
+        <app-todo-item
+            *ngFor="let todo of todos"
+            [todo]="todo"
+            (handleRemove)="handleRemove($event)"
+            (handleUpdate)="handleUpdate($event)"
+        ></app-todo-item>
+
+        <p *ngIf="!todos.length">No tasks yet...</p>
+    </div>
+
+    <footer class="todo__items-footer">
+      <app-todo-form
+          [task]="task"
+          (handleAdd)="handleAdd()"
+          (handleInputChange)="handleInputChange($event)"
+      ></app-todo-form>
+    </footer>
+</section>
+
