@@ -7,33 +7,28 @@
         (ngSubmit)="submit()">
         <p class="login-form__title">Sign in</p>
         <div class="login-form__item">
-            <label for="username">Email</label>
-            <input  type="email"
-                    class="login-form__item-input"
-                    id="username"
-                    name="username"
-                    formControlName="email">
+            <app-form-field
+                label="email"
+                formControlName="email"
+                [errorStyleInput]=" controls.email.invalid && controls.email.touched"
+            ></app-form-field>
             <div class="validation"
                  *ngIf="controls.email.invalid && controls.email.touched">
                 <small *ngIf="controls.email.errors?.['required']">Email field cannot be empty</small>
-
                 <small *ngIf="controls.email.errors?.['email']">Enter the correct data</small>
             </div>
         </div>
         <div class="login-form__item">
-            <label for="password">Password</label>
-            <input type="password"
-                   class="login-form__item-input"
-                   id="password"
-                   name="password"
-                   formControlName="password">
-            <div
-                class="validation"
-                *ngIf="controls.password.invalid && controls.password.touched">
-                <small *ngIf="controls.password.errors?.['required']"
-                >Password field cannot be empty</small>
-                <small *ngIf="controls.password.errors?.['minlength']"
-                >Minimum password length is 8 characters</small>
+            <app-form-field
+                label="password"
+                formControlName="password"
+                class="form__item"
+                [errorStyleInput]="controls.password.invalid && controls.password.touched"
+            ></app-form-field>
+            <div class="validation"
+                 *ngIf="controls.password.invalid && controls.password.touched">
+                <small *ngIf="controls.password.errors?.['required']">Password field cannot be empty</small>
+                <small *ngIf="controls.password.errors?.['minlength']">Minimum password length is 8 characters</small>
             </div>
         </div>
         <div class="login-form__item">

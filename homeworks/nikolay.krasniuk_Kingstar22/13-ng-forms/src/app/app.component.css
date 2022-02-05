@@ -26,29 +26,15 @@
   font-weight: 600;
 }
 
+.form__item {
+  position: relative;
+}
+
 .login-form__item {
   color: #13212A;
   margin-top: 15px;
   font-size: 16px;
   font-weight: 600;
-}
-
-.login-form__item-input {
-  width: 100%;
-  height: 30px;
-  margin-top: 5px;
-  padding: 10px;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-}
-
-.login-form__item-input.ng-invalid.ng-touched {
-  border: 1px solid #F00F;
-}
-
-.login-form__item-input.ng-valid.ng-touched {
-  border: 1px solid #008000FF;
 }
 
 .login-form__item-checkbox {
@@ -65,10 +51,4 @@
   border-radius: 5px;
   color: #FFF;
   font-weight: 600;
-}
-
-.validation {
-  margin-top: 5px;
-  color: #F00F;
-  font-size: 15px;
 }

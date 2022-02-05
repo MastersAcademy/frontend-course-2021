@@ -15,15 +15,15 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         const saveDate: User = this.userDataService.getUserData();
         this.userForm = this.formBuilder.group({
-            email: new FormControl(saveDate.email, [
+            email: [saveDate.email, [
                 Validators.email,
                 Validators.required
-            ]),
-            password: new FormControl(saveDate.password, [
+            ]],
+            password: [saveDate.password, [
                 Validators.required,
                 Validators.minLength(8)
-            ]),
-            rememberCheckbox: new FormControl(false),
+            ]],
+            rememberCheckbox: false,
         });
     }
     get controls() {
