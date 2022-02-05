@@ -1,0 +1,21 @@
+<div class="game-board">
+  <div class="game-board__grid">
+    <div class="game-board__row"
+    *ngFor="let row of gameService.gameState; let rowIndex = index"
+    >
+      <button class="game-board__element"
+      *ngFor="let item of row; let itemIndex = index"
+      [class.game-board__element--1]="item === 1"
+      [class.game-board__element--2]="item === 2"
+      (click)="onClick(rowIndex, itemIndex)"
+      >
+      <svg *ngIf="item === 1" class="game-board__icon">
+        <use href="./assets/icons/sprite.svg#circle"></use>
+      </svg>
+      <svg *ngIf="item === 2" class="game-board__icon">
+        <use href="./assets/icons/sprite.svg#cross"></use>
+      </svg>
+      </button>
+    </div>
+  </div>
+</div>

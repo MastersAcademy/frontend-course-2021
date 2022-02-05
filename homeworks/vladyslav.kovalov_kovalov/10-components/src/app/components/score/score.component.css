@@ -1,0 +1,55 @@
+.players-score {
+  margin-bottom: 2rem;
+}
+
+.players-score__element {
+  display: flex;
+}
+
+.players-score__element--1 {
+  margin-bottom: 1rem;
+}
+
+.players-score__player {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: .5rem;
+  color: var(--white-color);
+  margin-right: 1rem;
+}
+
+.players-score__player-name {
+  width: 100%;
+  text-align: center;
+}
+
+.players-score__player--1 {
+  background-color: var(--primary-color);
+}
+
+.players-score__player--2 {
+  background-color: var(--secondary-color);
+}
+
+.players-score__player-icon {
+  height: 40px;
+  width: 40px;
+  margin-right: 1rem;
+}
+
+.players-score__score {
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.players-score__score--1 {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.players-score__score--2 {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}

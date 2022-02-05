@@ -1,0 +1,52 @@
+.game-board__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 600px;
+  width: 600px;
+}
+
+.game-board__row {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+}
+
+.game-board__element {
+  width: 33.3%;
+  flex: 1;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-board__element--1 {
+  background-color: var(--primary-color);
+}
+
+.game-board__element--2 {
+  background-color: var(--secondary-color);
+}
+
+.game-board__icon {
+  height: 50px;
+  width: 50px;
+}
+
+@media (max-width: 650px) {
+
+  .game-board__grid {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+
+  .game-board__grid {
+    height: 300px;
+    width: 300px;
+  }
+}
