@@ -1,0 +1,34 @@
+:root {
+  --color-transparent: transparent;
+  --color-white: #FFF;
+  --color-grey-70: #333;
+  --color-grey-10: #CCC;
+  --color-yellow: #F6D04D;
+  --color-green: #8BC24C;
+  --color-red: #DE4307;
+
+  /* font */
+  --font-color-1: var(--color-grey-70);
+  --font-color-2: var(--color-white);
+
+  /* card */
+  --card-box-shadow-color: var(--color-grey-10);
+  --card-time-none: var(--color-grey-10);
+  --card-time-short: var(--color-green);
+  --card-time-medium: var(--color-yellow);
+  --card-time-long: var(--color-red);
+  --card-time-color: var(--color-white);
+}
+
+body {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--font-color-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
