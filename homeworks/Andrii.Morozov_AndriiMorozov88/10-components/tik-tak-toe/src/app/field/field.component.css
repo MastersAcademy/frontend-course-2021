@@ -7,3 +7,10 @@
   align-items: center;
 }
 
+@media (max-width:500px) {
+
+  .field {
+    width: 300px;
+    height: 300px;
+  }
+}

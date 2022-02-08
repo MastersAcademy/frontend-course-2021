@@ -21,3 +21,11 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width:500px) {
+
+  .field__button {
+    width: 90px;
+    height: 90px;
+  }
+}
