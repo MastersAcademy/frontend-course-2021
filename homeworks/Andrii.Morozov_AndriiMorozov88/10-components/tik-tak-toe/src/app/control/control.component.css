@@ -41,3 +41,14 @@
 .reset-button--all {
   padding: 20px 62px;
 }
+
+@media (max-width: 800px) {
+
+  .game-container {
+    flex-direction: column-reverse;
+  }
+
+  .player-info {
+    margin-top: 20px;
+  }
+}
