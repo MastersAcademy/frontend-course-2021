@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Icons, Player } from '../enums';
+import { Icons } from '../enums/icon_enum';
+import { Player } from '../enums/player_enum';
 
 @Component({
     selector: 'app-icon',
@@ -8,7 +9,7 @@ import { Icons, Player } from '../enums';
 export class IconComponent {
     sprite = 'assets/sprite.svg#';
     @Input() icon!:string;
-    @Input() iconSize!:number;
+    @Input() size!:number;
     @Input() player!:number;
     get iconType() {
         if (this.player === Player.cross) {

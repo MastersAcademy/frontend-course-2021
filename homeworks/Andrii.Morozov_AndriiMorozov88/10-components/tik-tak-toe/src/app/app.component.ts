@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Icons } from './enums';
+import { Icons } from './enums/icon_enum';
 
 @Component({
     selector: 'app-root',

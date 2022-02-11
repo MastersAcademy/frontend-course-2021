@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
-import { Player, Icons } from '../enums';
+import { Player } from '../enums/player_enum';
+import { Icons } from '../enums/icon_enum';
 import { ScoreService } from '../score.service';
 
 @Component({

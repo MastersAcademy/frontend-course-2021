@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Player } from './enums';
+import { Player } from './enums/player_enum';
 import { RxjsService } from './rxjs.service';
 import { ScoreService } from './score.service';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class DataService {
     state = [
         [Player.empty,Player.empty,Player.empty],
