@@ -1,0 +1,18 @@
+<label for="{{label}}">{{label | titlecase}}:</label>
+<input  [type]="label === 'password' && !showPassword ? 'password' : 'text'"
+        class="form__item-input"
+        id="{{label}}"
+        [(ngModel)]="value"
+        (click)="onTouched()"
+        [ngClass]="{'error': errorStyleInput}"
+        (ngModelChange)="handleInput($event)">
+<button *ngIf="label === 'password'"
+        class="form__item-btn"
+        type="button"
+        (click)="showPassword = !showPassword">
+    <svg class="form__item-icon">
+        <use [attr.xlink:href]="'/assets/sprite.svg#' + (showPassword ? 'open' : 'close')"></use>
+    </svg>
+</button>
+
+

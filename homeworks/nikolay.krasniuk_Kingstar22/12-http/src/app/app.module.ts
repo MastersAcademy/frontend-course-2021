@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {TokenInterceptor} from './token.interceptor';
-import {TodoListComponent} from './component/todo-list/todo-list.component';
+import {AppRoutingModule} from './app-routing.module';
+import {appComponents} from './component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        TodoListComponent,
+        appComponents,
     ],
     imports: [
         BrowserModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
     ],
     providers: [
         {

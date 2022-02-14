@@ -1,50 +1,30 @@
-.todo__item {
+.todo {
+  max-width: 1220px;
+  margin: 50px auto;
+  padding: 0 30px;
+}
+
+.todo-wrapper {
+  position: relative;
   display: flex;
-  margin-bottom: 20px;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  border: 1px solid  #8280A2;
-  border-radius: 8px;
-  height: 60px;
   width: 100%;
+  box-shadow: 0 4px 96px rgb(0 0 0 / 18%);
+  border-radius: 30px;
+  height: 600px;
+  overflow: hidden;
 }
 
-.todo__item-label {
-  padding-left: 10px;
-  cursor: pointer;
-  font-size: 25px;
-  font-weight: 400;
-  width: 60%;
-}
-
-.todo__item-checkbox {
-  margin-right: 10px;
-  height: 20px;
-  width: 25px;
-}
-
-.test-true {
-  opacity: .3;
-}
-
-
-.todo__item-input {
-  padding: 5px;
-  border-radius: 8px;
-  border: 2px solid  #FECB3E;
-  font-size: 22px;
-  width: 100%;
-  outline: none;
-  cursor: pointer;
-}
-
-.todo__item-btn {
-  width: 40px;
-  height: 40px;
+.todo__btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 26px;
+  height: 26px;
   border: 0;
   border-radius: 8px;
   cursor: pointer;
-  padding: 5px;
   background: transparent;
 }
 
@@ -53,36 +33,79 @@
   height: 100%;
 }
 
-.todo__icon-edit {
-  fill: #424761;
-}
-
 .todo__icon-del {
   fill: #E55;
 }
 
+.todo__new {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  padding: 10px;
+  align-items: flex-end;
+}
+
+.todo__new-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.todo__new-input {
+  padding: 5px;
+  border-radius: 8px;
+  border: 2px solid  #FECB3E;
+  font-size: 25px;
+  margin-top: 15px;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.todo__new-btn, .todo__read-btn {
+  font-size: 25px;
+  padding: 5px;
+  border-radius: 8px;
+  color: #FFF;
+  background: #FECB3E;
+  flex: 1;
+  margin-left: 15px;
+  border: 2px solid  #FECB3E;
+  cursor: pointer;
+}
+
+.todo__item {
+  width: 59%;
+  overflow-y: auto;
+  padding: 0 15px 5px 5px;
+  margin-top: 20px;
+}
+
 @media (max-width: 768px) {
 
-  .todo__item {
-    height: 50px;
+  .todo__new, .todo__item {
+    width: 100%;
   }
 
-  .todo__item-input {
-    font-size: 16px;
+  .todo__new-label {
+    width: 60%;
   }
 }
 
 @media (max-width: 425px) {
 
-  .todo__item-label {
+  .todo {
+    padding: 15px;
+  }
+
+  .todo__new-input {
     font-size: 16px;
   }
 
-  .todo__item {
-    height: 40px;
-  }
-
-  .todo__item-input {
-    font-size: 14px;
+  .todo__new-btn, .todo__read-btn {
+    margin-left: 7px;
+    font-size: 16px;
   }
 }
