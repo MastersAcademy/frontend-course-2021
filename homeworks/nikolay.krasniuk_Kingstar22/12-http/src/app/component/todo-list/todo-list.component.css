@@ -1,0 +1,111 @@
+.todo {
+  max-width: 1220px;
+  margin: 50px auto;
+  padding: 0 30px;
+}
+
+.todo-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 4px 96px rgb(0 0 0 / 18%);
+  border-radius: 30px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.todo__btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.todo__icon {
+  width: 100%;
+  height: 100%;
+}
+
+.todo__icon-del {
+  fill: #E55;
+}
+
+.todo__new {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  padding: 10px;
+  align-items: flex-end;
+}
+
+.todo__new-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.todo__new-input {
+  padding: 5px;
+  border-radius: 8px;
+  border: 2px solid  #FECB3E;
+  font-size: 25px;
+  margin-top: 15px;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.todo__new-btn, .todo__read-btn {
+  font-size: 25px;
+  padding: 5px;
+  border-radius: 8px;
+  color: #FFF;
+  background: #FECB3E;
+  flex: 1;
+  margin-left: 15px;
+  border: 2px solid  #FECB3E;
+  cursor: pointer;
+}
+
+.todo__item {
+  width: 59%;
+  overflow-y: auto;
+  padding: 0 15px 5px 5px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+
+  .todo__new, .todo__item {
+    width: 100%;
+  }
+
+  .todo__new-label {
+    width: 60%;
+  }
+}
+
+@media (max-width: 425px) {
+
+  .todo {
+    padding: 15px;
+  }
+
+  .todo__new-input {
+    font-size: 16px;
+  }
+
+  .todo__new-btn, .todo__read-btn {
+    margin-left: 7px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,1 @@
+*{box-sizing:border-box;margin:0;padding:0;font-family:Roboto,sans-serif}body{background:rgba(161,227,236,.25)}.form__item-input{width:100%;height:30px;margin-top:5px;padding:10px;border-radius:5px;outline:none;border:none}.form__item-input.error{background:rgba(253,192,192,.56)}.validation{margin-top:5px;color:red;font-size:15px}

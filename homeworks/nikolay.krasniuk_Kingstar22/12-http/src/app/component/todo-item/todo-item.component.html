@@ -1,0 +1,59 @@
+<div class="todo__item test-{{todo.isDone}}" *ngIf="!editItem">
+    <label class="todo__item-label">
+        <input
+            type="checkbox"
+            [checked]="todo.isDone"
+            class="todo__item-checkbox "
+            (click)="onChange($event, todo)"
+        >
+        <del *ngIf="todo.isDone"><span>{{todo.text}}</span></del>
+        <span *ngIf="!todo.isDone">{{todo.text}}</span>
+    </label>
+    <div>
+        <button
+            type="button"
+            (click)="clickEdit()"
+            class="todo__item-btn">
+            <svg class="todo__icon">
+                <use class="todo__icon-edit" xlink:href="/assets/sprite.svg#pencil"></use>
+            </svg>
+        </button>
+        <button
+            type="button"
+            (click)="getId(todo.id)"
+            class="todo__item-btn">
+            <svg class="todo__icon">
+                <use class="todo__icon-del" xlink:href="/assets/sprite.svg#trash"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<div *ngIf="editItem" class="todo__item">
+    <label class="todo__item-label">
+        <input
+            type="text"
+            class="todo__item-input"
+            [(ngModel)]="text"
+        >
+    </label>
+    <div>
+        <button
+            type="button"
+            [disabled]="!text"
+            (click)="getEditItem()"
+            class="todo__item-btn">
+            <svg class="todo__icon">
+                <use class="todo__icon-edit" xlink:href="/assets/sprite.svg#check"></use>
+            </svg>
+        </button>
+        <button
+            type="button"
+            (click)="clickEdit()"
+            class="todo__item-btn">
+            <svg class="todo__icon">
+                <use class="todo__icon-del" xlink:href="/assets/sprite.svg#cancel"></use>
+            </svg>
+        </button>
+    </div>
+</div>

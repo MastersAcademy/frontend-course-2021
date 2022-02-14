@@ -1,0 +1,31 @@
+<main class="todo">
+    <div class="todo-wrapper">
+        <button
+            type="button"
+            (click)="logOut()"
+            routerLink=""
+            class="todo__btn">
+            <svg class="todo__icon">
+                <use class="todo__icon-del" xlink:href="/assets/sprite.svg#cancel"></use>
+            </svg>
+        </button>
+        <section class="todo__new">
+            <label class="todo__new-label">
+                New Todo:
+                <input class="todo__new-input" type="text" [(ngModel)]="todoText"/>
+            </label>
+            <button class="todo__new-btn" type="submit" (click)="addTodoItem()">Add</button>
+            <button class="todo__read-btn" type="submit" (click)="getTodoList()">Read</button>
+        </section>
+        <div class="todo__item">
+            <app-todo-item
+                *ngFor="let todo of todos"
+                [todo]="todo"
+                (clickBtn)="removeTodoItem($event)"
+                (changeTodo)="changeTodoItemStatus($event)"
+                (editTodoItem)="updateTodoItem($event, todo.id)"
+            ></app-todo-item>
+        </div>
+    </div>
+</main>
+
