@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Player } from './enums/player_enum';
+import { Player } from './../enums/player_enum';
 import { RxjsService } from './rxjs.service';
 import { ScoreService } from './score.service';
 

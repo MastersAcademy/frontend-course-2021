@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { DataService } from '../data.service';
-import { Player } from '../enums/player_enum';
-import { Icons } from '../enums/icon_enum';
-import { ScoreService } from '../score.service';
+import { DataService } from '../../services/data.service';
+import { Player } from '../../enums/player_enum';
+import { Icons } from '../../enums/icon_enum';
+import { ScoreService } from '../../services/score.service';
 
 @Component({
     selector: 'app-control',

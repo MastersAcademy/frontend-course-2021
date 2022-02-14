@@ -1,9 +1,0 @@
-<section class="game-container">
-  <div>
-    <app-player class="player-info player--cross" [iconSize]="iconSize" [icon]="iconCross" [player]="playerOne" [countPlayer]="this.scoreService.countPlayerOne"></app-player>
-    <app-player class="player-info player--zero" [iconSize]="iconSize" [icon]="iconZero" [player]="playerTwo" [countPlayer]="this.scoreService.countPlayerTwo"></app-player>
-    <button type="button" (click)="currentReset()" class="reset-button reset-button--current-game">Reset Current Game</button>
-    <button type="button" (click)="resetAll()" class="reset-button reset-button--all">Reset All</button>
-  </div>
-    <app-field></app-field>
-</section>

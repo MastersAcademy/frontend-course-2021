@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
-import { RxjsService } from '../rxjs.service';
-import { Player } from '../enums/player_enum';
+import { DataService } from '../../services/data.service';
+import { RxjsService } from '../../services/rxjs.service';
+import { Player } from '../../enums/player_enum';
 @Component({
     selector: 'app-field',
     templateUrl: './field.component.html',

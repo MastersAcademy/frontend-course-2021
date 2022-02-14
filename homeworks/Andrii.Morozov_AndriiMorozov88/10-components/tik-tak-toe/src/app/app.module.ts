@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { ControlComponent } from './control/control.component';
-import { FieldComponent } from './field/field.component';
-import { SquareComponent } from './field/square/square.component';
-import { MoveComponent } from './move/move.component';
-import { DataService } from './data.service';
-import { IconComponent } from './icon/icon.component';
-import { PlayerComponent } from './player/player.component';
+import { ControlComponent } from './components/control/control.component';
+import { FieldComponent } from './components/field/field.component';
+import { SquareComponent } from './components/square/square.component';
+import { PlayerTurnComponent } from './components/player-turn/player-turn.component';
+import { DataService } from './services/data.service';
+import { IconComponent } from './components/icon/icon.component';
+import { PlayerComponent } from './components/player/player.component';
 
 @NgModule({
     declarations: [
@@ -16,9 +16,9 @@ import { PlayerComponent } from './player/player.component';
         ControlComponent,
         FieldComponent,
         SquareComponent,
-        MoveComponent,
+        PlayerTurnComponent,
         IconComponent,
-        PlayerComponent
+        PlayerComponent,
     ],
     imports: [
         BrowserModule,

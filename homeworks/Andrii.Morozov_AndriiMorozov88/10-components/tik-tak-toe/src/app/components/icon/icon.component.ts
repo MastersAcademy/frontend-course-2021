@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Icons } from '../enums/icon_enum';
-import { Player } from '../enums/player_enum';
+import { Icons } from '../../enums/icon_enum';
+import { Player } from '../../enums/player_enum';
 
 @Component({
     selector: 'app-icon',
