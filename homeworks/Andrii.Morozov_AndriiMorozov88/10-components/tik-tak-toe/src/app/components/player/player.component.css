@@ -5,11 +5,11 @@
 
 .player__name {
   display: flex;
-  width: 185px;
+  width: 184px;
   height: 56px;
   font-size: 18px;
   font-weight: 700;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   border-right: 4px solid #FFF;
 }

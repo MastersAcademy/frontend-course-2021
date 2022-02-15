@@ -1,10 +1,9 @@
 .field {
-  display: flex;
-  width: 350px;
-  height: 350px;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  grid-template-rows: repeat(3, 110px);
+  column-gap: 15px;
+  row-gap: 5px;
 }
 
 @media (max-width:500px) {

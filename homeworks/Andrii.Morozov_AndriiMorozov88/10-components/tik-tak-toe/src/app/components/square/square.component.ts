@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Player } from '../../enums/player_enum';
 
 @Component({
     selector: 'app-square',
@@ -8,5 +9,15 @@ import { Component, Input } from '@angular/core';
 export class SquareComponent  {
     @Input() player!:number;
     @Input() icon!:string;
-    iconSize = 65;
+    iconSize = 100;
+
+    get squareColor () {
+        if (this.player === Player.cross) {
+            return 'field__square--cross';
+        }
+        if (this.player === Player.zero) {
+            return 'field__square--zero';
+        }
+        return null
+    }
 }

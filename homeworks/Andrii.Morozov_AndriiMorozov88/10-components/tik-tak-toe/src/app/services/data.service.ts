@@ -59,11 +59,7 @@ export class DataService {
     }
 
     togglePlayer() {
-        if (this.player === Player.cross) {
-            this.player = Player.zero;
-        } else {
-            this.player = Player.cross;
-        }
+        this.player = this.player === Player.cross ? Player.zero : Player.cross;
         return this.player
     }
 
