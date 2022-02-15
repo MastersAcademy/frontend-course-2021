@@ -10,10 +10,13 @@ export class DataService {
         [Player.empty,Player.empty,Player.empty],
         [Player.empty,Player.empty,Player.empty]
     ]
+
     player! :number;
     fieldsquares: number[] = this.state.flat();
     gameOver!:boolean;
+
     constructor (private rxjsService: RxjsService, private scoreService: ScoreService) {}
+
     checkWinCombination():void {
         const winCombination = [
             [this.fieldsquares[0], this.fieldsquares[1], this.fieldsquares[2]],
@@ -42,15 +45,19 @@ export class DataService {
     isCross(element:number) {
         return element === Player.cross;
     }
+
     isZero(element:number) {
         return element === Player.zero;
     }
+
     crossWin():void {
         alert('Player 1 Win!!!! Reset Current Game');
     }
+
     zeroWin():void {
         alert('Player 2 Win!!!! Reset Current Game');
     }
+
     togglePlayer() {
         if (this.player === Player.cross) {
             this.player = Player.zero;
@@ -59,6 +66,7 @@ export class DataService {
         }
         return this.player
     }
+
     currentReset():void {
         this.fieldsquares = this.state.flat();
         this.player = Player.cross;

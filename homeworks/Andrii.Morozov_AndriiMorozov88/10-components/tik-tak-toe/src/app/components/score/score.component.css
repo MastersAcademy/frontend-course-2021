@@ -21,11 +21,11 @@
   cursor: pointer;
 }
 
-.player--cross {
+.player-info--cross {
   background-color: #A5D9F6;
 }
 
-.player--zero {
+.player-info--zero {
   background: #A5A6F6;
   margin-top: 15px;
 }
@@ -41,6 +41,7 @@
 .reset-button--all {
   padding: 20px 62px;
 }
+
 
 @media (max-width: 800px) {
 

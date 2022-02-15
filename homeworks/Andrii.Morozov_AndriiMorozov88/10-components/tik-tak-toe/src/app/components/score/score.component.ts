@@ -5,23 +5,33 @@ import { Icons } from '../../enums/icon_enum';
 import { ScoreService } from '../../services/score.service';
 
 @Component({
-    selector: 'app-control',
-    templateUrl: './control.component.html',
-    styleUrls: ['./control.component.css']
+    selector: 'app-score',
+    templateUrl: './score.component.html',
+    styleUrls: ['./score.component.css']
 })
-export class ControlComponent {
+export class ScoreComponent {
     iconSize = 30;
     playerOne = Player.cross;
     playerTwo = Player.zero;
     iconCross = Icons.cross;
     iconZero = Icons.zero;
     constructor(private dataService: DataService, public scoreService: ScoreService) {}
+
     currentReset() {
         this.dataService.currentReset()
     }
+
     resetAll(): void {
         this.scoreService.countPlayerOne = 0;
         this.scoreService.countPlayerTwo = 0;
         this.dataService.currentReset();
+    }
+
+    get countPlayerOne() {
+        return this.scoreService.countPlayerOne
+    }
+
+    get countPlayerTwo() {
+        return this.scoreService.countPlayerTwo
     }
 }

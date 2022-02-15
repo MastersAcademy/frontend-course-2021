@@ -11,20 +11,18 @@ export class FieldComponent implements OnInit {
     constructor(public dataService: DataService, private rxjsService: RxjsService) {
         this.rxjsService.currentPlayer$.subscribe(player => this.dataService.player = player);
     }
+
     ngOnInit(): void {
         this.dataService.currentReset();
     }
+
     move(index:number):void {
-        if (this.dataService.fieldsquares[index] === Player.empty && this.dataService.gameOver === false) {
-            if (this.dataService.player === Player.cross) {
-                this.dataService.fieldsquares[index] = Player.cross;
-            } else {
-                this.dataService.fieldsquares[index] = Player.zero;
-            }
-            this.dataService.checkWinCombination();
-            this.dataService.togglePlayer();
-            this.rxjsService.changePlayer(this.dataService.player);
-        }
+        if (this.dataService.fieldsquares[index] !== Player.empty) return;
+        if (this.dataService.gameOver) return;
+        this.dataService.fieldsquares[index] = this.dataService.player;
+        this.dataService.checkWinCombination();
+        this.dataService.togglePlayer();
+        this.rxjsService.changePlayer(this.dataService.player);
     }
 }
 

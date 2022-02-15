@@ -6,9 +6,11 @@ import { Injectable } from '@angular/core';
 export class ScoreService {
     countPlayerOne = 0;
     countPlayerTwo = 0;
+
     crossWin(): void {
         this.countPlayerOne++
     }
+    
     zeroWin(): void {
         this.countPlayerTwo++
     }
