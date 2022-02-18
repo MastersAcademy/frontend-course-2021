@@ -10,8 +10,7 @@ export class SquareComponent  {
     @Input() player!:number;
     @Input() icon!:string;
     iconSize = 100;
-
-    get squareColor () {
+    get componentColor () {
         if (this.player === Player.cross) {
             return 'field__square--cross';
         }

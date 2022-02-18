@@ -10,14 +10,13 @@ import { ScoreService } from '../../services/score.service';
     styleUrls: ['./score.component.css']
 })
 export class ScoreComponent {
-    iconSize = 30;
     playerOne = Player.cross;
     playerTwo = Player.zero;
     iconCross = Icons.cross;
     iconZero = Icons.zero;
-    constructor(private dataService: DataService, public scoreService: ScoreService) {}
+    constructor(private dataService: DataService, private scoreService: ScoreService) {}
 
-    currentReset() {
+    currentReset() :void {
         this.dataService.currentReset()
     }
 
@@ -28,10 +27,10 @@ export class ScoreComponent {
     }
 
     get countPlayerOne() {
-        return this.scoreService.countPlayerOne
+        return this.scoreService.countPlayerOne;
     }
 
     get countPlayerTwo() {
-        return this.scoreService.countPlayerTwo
+        return this.scoreService.countPlayerTwo;
     }
 }

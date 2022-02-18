@@ -10,7 +10,7 @@ export class ScoreService {
     crossWin(): void {
         this.countPlayerOne++
     }
-    
+
     zeroWin(): void {
         this.countPlayerTwo++
     }
