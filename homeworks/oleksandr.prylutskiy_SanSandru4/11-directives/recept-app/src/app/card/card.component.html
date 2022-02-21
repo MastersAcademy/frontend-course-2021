@@ -1,0 +1,21 @@
+<ul class="card">
+  <li class="card_list" *ngFor="let recept of recepts">
+      <div class="list_head">
+        <img class="card_image" src="{{recept.image_url}}">
+        <h2 class="card_name">{{recept.name}}</h2>
+      </div>
+
+      <div class="card_description">
+          <p>{{recept.description}}</p>
+      </div>
+      <div class="card_food-pairing">
+          <p><strong>Food pairing:</strong> {{recept.food_pairing}}</p>
+      </div>
+      <div class="card_ingredients">
+          <p><strong>Ingredients:</strong> {{recept.ingredients}}</p>
+      </div>
+      <div class="card_time">
+        <p><strong>Time to cook: </strong></p>
+      </div>
+  </li>
+</ul>

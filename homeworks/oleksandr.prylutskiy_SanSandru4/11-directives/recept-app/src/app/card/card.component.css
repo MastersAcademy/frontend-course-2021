@@ -1,0 +1,43 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.card_list {
+  margin-bottom: 10px;
+  padding: 14px;
+  box-sizing: border-box;
+  width: 310px;
+  font-size: 16px;
+  border: 2px solid #066D45;
+  border-radius: 15px;
+  background-color: #E2F2ED;
+}
+
+.list_head {
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card_image {
+  margin-right: 24px;
+  margin-bottom: 10px;
+  width: 50px;
+  height: auto;
+}
+
+.card_name {
+  width: 180px;
+  color: #21030D;
+  font-size: 23px;
+}
+
+.card_description, .card_food-pairing, .card_ingredients, .card_time {
+  margin-bottom: 10px;
+  width: 280px;
+  font-size: 14px;
+}
