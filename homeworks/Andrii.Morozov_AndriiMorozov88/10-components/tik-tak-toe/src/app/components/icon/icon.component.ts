@@ -10,7 +10,7 @@ export class IconComponent {
     sprite = 'assets/sprite.svg#';
     @Input() icon!:string;
     @Input() size!:number;
-    @Input() player!:number;
+    @Input() player!:Player;
     get iconType() {
         if (this.player === Player.cross) {
             return Icons.cross

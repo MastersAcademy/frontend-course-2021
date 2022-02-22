@@ -7,7 +7,7 @@ import { Player } from '../../enums/player_enum';
     styleUrls: ['./square.component.css']
 })
 export class SquareComponent  {
-    @Input() player!:number;
+    @Input() player!:Player;
     @Input() icon!:string;
     iconSize = 100;
     get componentColor () {

@@ -9,9 +9,8 @@ import { Observable } from 'rxjs';
     styleUrls: ['./player-turn.component.css']
 })
 export class PlayerTurnComponent {
-    player!: number;
+    player!: Player;
     iconSize = 35;
-    player$: Observable<Player> = this.rxjsService.currentPlayer$;
     constructor(private rxjsService: RxjsService) {
         this.rxjsService.currentPlayer$.subscribe(player => this.player = player);
     }

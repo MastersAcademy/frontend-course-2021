@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Player } from './../enums/player_enum';
 import { RxjsService } from './rxjs.service';
 import { ScoreService } from './score.service';
@@ -11,11 +12,14 @@ export class DataService {
         [Player.empty,Player.empty,Player.empty]
     ]
 
-    player! :number;
+    player!:Player;
     fieldsquares: number[] = this.state.flat();
     gameOver!:boolean;
 
     constructor (private rxjsService: RxjsService, private scoreService: ScoreService) {}
+
+    private winPlayer = new Subject<Player>();
+    currentWinner$ = this.winPlayer.asObservable()
 
     checkWinCombination():void {
         const winCombination = [
@@ -30,14 +34,14 @@ export class DataService {
         ]
         for (let count = 0; count < 8; count++) {
             if (winCombination[count].every(this.isCross)) {
-                setTimeout(this.crossWin, 1);
                 this.gameOver = true;
                 this.scoreService.crossWin();
+                this.winPlayer.next(Player.cross);
             }
             if (winCombination[count].every(this.isZero)) {
-                setTimeout(this.zeroWin, 1);
                 this.gameOver = true;
                 this.scoreService.zeroWin();
+                this.winPlayer.next(Player.zero);
             }
         }
     }
@@ -48,14 +52,6 @@ export class DataService {
 
     isZero(element:number) {
         return element === Player.zero;
-    }
-
-    crossWin():void {
-        alert('Player 1 Win!!!! Reset Current Game');
-    }
-
-    zeroWin():void {
-        alert('Player 2 Win!!!! Reset Current Game');
     }
 
     togglePlayer() {
