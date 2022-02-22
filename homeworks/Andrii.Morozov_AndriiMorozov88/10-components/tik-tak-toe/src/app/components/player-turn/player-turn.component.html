@@ -1,4 +1,14 @@
-<div class="player-turn__container" [ngClass]="''+componentColor">
-    <app-icon [player]="player" [size]="iconSize"></app-icon>
-    <p class="app-move__text">Player {{player}} Turn</p>
+<div *ngIf="!gameOver" class="player-turn__container" [ngClass]="''+componentColor">
+    <app-icon  [player]="player" [size]="iconSize"></app-icon>
+    <p class="player-turn__text">Player {{player}} Turn</p>
 </div>
+<div *ngIf="cross" class="player-turn__container player-turn--cross">
+    <p class="player-turn__text">Player 1 Won</p>
+</div>
+<div *ngIf="zero" class="player-turn__container player-turn--zero">
+    <p class="player-turn__text ">Player 2 Won</p>
+</div>
+<div *ngIf="draw" class="player-turn__container player-turn--draw">
+    <p class="player-turn__text ">DRAW!!!!!</p>
+</div>
+

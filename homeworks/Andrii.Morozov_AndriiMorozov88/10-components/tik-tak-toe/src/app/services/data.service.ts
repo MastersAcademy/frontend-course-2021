@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { Player } from './../enums/player_enum';
 import { RxjsService } from './rxjs.service';
 import { ScoreService } from './score.service';
@@ -15,11 +15,16 @@ export class DataService {
     player!:Player;
     fieldsquares: number[] = this.state.flat();
     gameOver!:boolean;
-
     constructor (private rxjsService: RxjsService, private scoreService: ScoreService) {}
 
     private winPlayer = new Subject<Player>();
-    currentWinner$ = this.winPlayer.asObservable()
+    currentWinner$ = this.winPlayer.asObservable();
+
+    private showWinner = new BehaviorSubject<boolean>(false)
+    showWinner$ = this.showWinner.asObservable();
+    changeWinnerState(state:boolean): void {
+        this.showWinner.next(state);
+    }
 
     checkWinCombination():void {
         const winCombination = [
@@ -32,17 +37,24 @@ export class DataService {
             [this.fieldsquares[0], this.fieldsquares[4], this.fieldsquares[8]],
             [this.fieldsquares[2], this.fieldsquares[4], this.fieldsquares[6]]
         ]
+
         for (let count = 0; count < 8; count++) {
             if (winCombination[count].every(this.isCross)) {
                 this.gameOver = true;
                 this.scoreService.crossWin();
                 this.winPlayer.next(Player.cross);
+                this.changeWinnerState(true);
             }
             if (winCombination[count].every(this.isZero)) {
                 this.gameOver = true;
                 this.scoreService.zeroWin();
                 this.winPlayer.next(Player.zero);
+                this.changeWinnerState(true);
             }
+        }
+        if (this.fieldsquares.every(this.isDraw)) {
+            this.winPlayer.next(Player.empty);
+            this.changeWinnerState(true);
         }
     }
 
@@ -52,6 +64,10 @@ export class DataService {
 
     isZero(element:number) {
         return element === Player.zero;
+    }
+
+    isDraw(element:number) {
+        return element !== Player.empty
     }
 
     togglePlayer() {
@@ -64,5 +80,6 @@ export class DataService {
         this.player = Player.cross;
         this.rxjsService.changePlayer(this.player);
         this.gameOver = false;
+        this.changeWinnerState(false)
     }
 }
