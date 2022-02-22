@@ -23,15 +23,15 @@ export class PlayerTurnComponent {
             if (winner === Player.cross) {
                 this.dataService.showWinner$.subscribe(gameOver => {
                     this.cross = gameOver;
-                    this.zero = false;
                     this.draw = false;
+                    this.zero = false
                 });
             }
             if (winner === Player.zero) {
                 this.dataService.showWinner$.subscribe(gameOver => {
                     this.zero = gameOver;
                     this.cross = false;
-                    this.draw = false;
+                    this.draw = false
                 });
             }
             if (winner === Player.empty) {

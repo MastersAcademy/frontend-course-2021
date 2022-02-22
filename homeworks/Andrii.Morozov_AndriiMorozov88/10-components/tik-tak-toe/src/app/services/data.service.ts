@@ -37,6 +37,10 @@ export class DataService {
             [this.fieldsquares[0], this.fieldsquares[4], this.fieldsquares[8]],
             [this.fieldsquares[2], this.fieldsquares[4], this.fieldsquares[6]]
         ]
+        if (this.fieldsquares.every(this.isDraw)) {
+            this.winPlayer.next(Player.empty);
+            this.changeWinnerState(true);
+        }
 
         for (let count = 0; count < 8; count++) {
             if (winCombination[count].every(this.isCross)) {
@@ -51,10 +55,6 @@ export class DataService {
                 this.winPlayer.next(Player.zero);
                 this.changeWinnerState(true);
             }
-        }
-        if (this.fieldsquares.every(this.isDraw)) {
-            this.winPlayer.next(Player.empty);
-            this.changeWinnerState(true);
         }
     }
 
