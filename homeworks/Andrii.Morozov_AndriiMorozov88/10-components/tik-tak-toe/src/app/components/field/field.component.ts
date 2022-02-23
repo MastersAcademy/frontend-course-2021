@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data.service';
+import { GameService } from '../../services/game.service';
 import { RxjsService } from '../../services/rxjs.service';
 import { Player } from '../../enums/player_enum';
 @Component({
@@ -8,21 +8,21 @@ import { Player } from '../../enums/player_enum';
     styleUrls: ['./field.component.css']
 })
 export class FieldComponent implements OnInit {
-    constructor(public dataService: DataService, private rxjsService: RxjsService) {
-        this.rxjsService.currentPlayer$.subscribe(player => this.dataService.player = player);
+    constructor(public gameService: GameService, private rxjsService: RxjsService) {
+        this.rxjsService.currentPlayer$.subscribe(player => this.gameService.player = player);
     }
 
     ngOnInit(): void {
-        this.dataService.currentReset();
+        this.gameService.currentReset();
     }
 
     move(index:number):void {
-        if (this.dataService.fieldsquares[index] !== Player.empty) return;
-        if (this.dataService.gameOver) return;
-        this.dataService.fieldsquares[index] = this.dataService.player;
-        this.dataService.checkWinCombination();
-        this.dataService.togglePlayer();
-        this.rxjsService.changePlayer(this.dataService.player);
+        if (this.gameService.fieldsquares[index] !== Player.empty) return;
+        if (this.gameService.gameOver) return;
+        this.gameService.fieldsquares[index] = this.gameService.player;
+        this.gameService.checkWinCombination();
+        this.gameService.togglePlayer();
+        this.rxjsService.changePlayer(this.gameService.player);
     }
 }
 

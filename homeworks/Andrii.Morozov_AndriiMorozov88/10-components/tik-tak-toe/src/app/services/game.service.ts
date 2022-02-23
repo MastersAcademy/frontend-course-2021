@@ -5,7 +5,7 @@ import { RxjsService } from './rxjs.service';
 import { ScoreService } from './score.service';
 
 @Injectable()
-export class DataService {
+export class GameService {
     state = [
         [Player.empty,Player.empty,Player.empty],
         [Player.empty,Player.empty,Player.empty],

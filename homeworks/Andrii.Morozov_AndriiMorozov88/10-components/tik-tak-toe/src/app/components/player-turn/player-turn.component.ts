@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RxjsService } from '../../services/rxjs.service';
 import { Player } from 'src/app/enums/player_enum';
-import { DataService } from 'src/app/services/data.service';
+import { GameService } from 'src/app/services/game.service';
 
 @Component({
     selector: 'app-player-turn',
@@ -16,7 +16,7 @@ export class PlayerTurnComponent {
     zero!: boolean;
     draw!: boolean
 
-    constructor(private rxjsService: RxjsService, private dataService: DataService) {
+    constructor(private rxjsService: RxjsService, private dataService: GameService) {
         this.rxjsService.currentPlayer$.subscribe(player => this.player = player);
         this.dataService.showWinner$.subscribe(gameOver => this.gameOver = gameOver);
         this.dataService.currentWinner$.subscribe(winner => {

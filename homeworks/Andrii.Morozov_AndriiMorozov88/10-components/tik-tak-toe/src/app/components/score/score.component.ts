@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from '../../services/data.service';
+import { GameService } from '../../services/game.service';
 import { Player } from '../../enums/player_enum';
 import { Icons } from '../../enums/icon_enum';
 import { ScoreService } from '../../services/score.service';
@@ -14,16 +14,16 @@ export class ScoreComponent {
     playerTwo = Player.zero;
     iconCross = Icons.cross;
     iconZero = Icons.zero;
-    constructor(private dataService: DataService, private scoreService: ScoreService) {}
+    constructor(private gameService: GameService, private scoreService: ScoreService) {}
 
     currentReset() :void {
-        this.dataService.currentReset()
+        this.gameService.currentReset()
     }
 
     resetAll(): void {
         this.scoreService.countPlayerOne = 0;
         this.scoreService.countPlayerTwo = 0;
-        this.dataService.currentReset();
+        this.gameService.currentReset();
     }
 
     get countPlayerOne() {
