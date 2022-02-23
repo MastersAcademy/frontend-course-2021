@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RxjsService } from '../../services/rxjs.service';
 import { Player } from 'src/app/enums/player_enum';
 import { GameService } from 'src/app/services/game.service';
 
@@ -16,32 +15,32 @@ export class PlayerTurnComponent {
     zero!: boolean;
     draw!: boolean
 
-    constructor(private rxjsService: RxjsService, private dataService: GameService) {
-        this.rxjsService.currentPlayer$.subscribe(player => this.player = player);
-        this.dataService.showWinner$.subscribe(gameOver => this.gameOver = gameOver);
-        this.dataService.currentWinner$.subscribe(winner => {
+    constructor(private gameService: GameService) {
+        this.gameService.currentPlayer$.subscribe(player => this.player = player);
+        this.gameService.showWinner$.subscribe(gameOver => this.gameOver = gameOver);
+        this.gameService.currentWinner$.subscribe(winner => {
             if (winner === Player.cross) {
-                this.dataService.showWinner$.subscribe(gameOver => {
+                this.gameService.showWinner$.subscribe(gameOver => {
                     this.cross = gameOver;
                     this.draw = false;
                     this.zero = false
                 });
             }
+
             if (winner === Player.zero) {
-                this.dataService.showWinner$.subscribe(gameOver => {
+                this.gameService.showWinner$.subscribe(gameOver => {
                     this.zero = gameOver;
                     this.cross = false;
                     this.draw = false
                 });
             }
             if (winner === Player.empty) {
-                this.dataService.showWinner$.subscribe(gameOver => {
+                this.gameService.showWinner$.subscribe(gameOver => {
                     this.draw = gameOver;
                     this.cross = false;
                     this.zero = false
                 });
             }
-            return null
         });
     }
 

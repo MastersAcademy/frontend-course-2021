@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service';
-import { RxjsService } from '../../services/rxjs.service';
 import { Player } from '../../enums/player_enum';
 @Component({
     selector: 'app-field',
@@ -8,8 +7,8 @@ import { Player } from '../../enums/player_enum';
     styleUrls: ['./field.component.css']
 })
 export class FieldComponent implements OnInit {
-    constructor(public gameService: GameService, private rxjsService: RxjsService) {
-        this.rxjsService.currentPlayer$.subscribe(player => this.gameService.player = player);
+    constructor(public gameService: GameService) {
+        this.gameService.currentPlayer$.subscribe(player => this.gameService.player = player);
     }
 
     ngOnInit(): void {
@@ -22,7 +21,7 @@ export class FieldComponent implements OnInit {
         this.gameService.fieldsquares[index] = this.gameService.player;
         this.gameService.checkWinCombination();
         this.gameService.togglePlayer();
-        this.rxjsService.changePlayer(this.gameService.player);
+        this.gameService.changePlayer(this.gameService.player);
     }
 }
 

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Player } from './../enums/player_enum';
-import { RxjsService } from './rxjs.service';
 import { ScoreService } from './score.service';
 
 @Injectable()
@@ -15,7 +14,7 @@ export class GameService {
     player!:Player;
     fieldsquares: number[] = this.state.flat();
     gameOver!:boolean;
-    constructor (private rxjsService: RxjsService, private scoreService: ScoreService) {}
+    constructor (private scoreService: ScoreService) {}
 
     private winPlayer = new Subject<Player>();
     currentWinner$ = this.winPlayer.asObservable();
@@ -24,6 +23,12 @@ export class GameService {
     showWinner$ = this.showWinner.asObservable();
     changeWinnerState(state:boolean): void {
         this.showWinner.next(state);
+    }
+
+    private players = new BehaviorSubject <Player>(1);
+    currentPlayer$ = this.players.asObservable();
+    changePlayer(player:Player) {
+        this.players.next(player);
     }
 
     checkWinCombination():void {
@@ -78,8 +83,9 @@ export class GameService {
     currentReset():void {
         this.fieldsquares = this.state.flat();
         this.player = Player.cross;
-        this.rxjsService.changePlayer(this.player);
+        this.changePlayer(this.player);
         this.gameOver = false;
         this.changeWinnerState(false)
     }
+
 }
