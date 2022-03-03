@@ -1,0 +1,21 @@
+<ng-container *ngIf="formField?.dirty">
+    <span class="field-error"
+        *ngIf="formField?.hasError( 'required' )">
+        This is a required field.
+    </span>
+
+    <span class="field-error"
+        *ngIf="formField?.hasError( 'email' )">
+        Email format is invalid.
+    </span>
+
+    <span class="field-error"
+        *ngIf="formField?.hasError( 'maxlength' )">
+        Max length 12 symblos
+    </span>
+
+    <span class="field-error"
+        *ngIf="formField?.hasError( 'minlength' )">
+        Min length 6 symblos
+    </span>
+</ng-container>
