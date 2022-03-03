@@ -8,7 +8,7 @@ import { Player } from 'src/app/enums/player_enum';
     templateUrl: './player-icon.component.html'
 })
 export class PlayerIconComponent {
-    @Input() player!: Player;
+    @Input() player!: Player | null;
     @Input() size!: number;
     sprite = 'assets/sprite.svg#';
 

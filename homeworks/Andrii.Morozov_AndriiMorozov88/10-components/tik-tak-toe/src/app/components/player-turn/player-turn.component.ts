@@ -8,14 +8,12 @@ import { GameService } from 'src/app/services/game.service';
     styleUrls: ['./player-turn.component.css']
 })
 export class PlayerTurnComponent {
-    player!: Player;
     gameOver!:boolean;
     isCross!: boolean;
     isZero!: boolean;
     isDraw!: boolean
 
     constructor(private gameService: GameService) {
-        this.gameService.currentPlayer$.subscribe(player => this.player = player);
         this.gameService.showWinner$.subscribe(gameOver => this.gameOver = gameOver);
         this.gameService.currentWinner$.subscribe(winner => {
             if (winner === Player.cross) {
@@ -44,11 +42,21 @@ export class PlayerTurnComponent {
     }
 
     get componentColor() {
-        if (this.player === Player.cross) {
+        if (this.gameService.player$ === Player.cross) {
             return 'player-turn--cross';
         }
-        if (this.player === Player.zero) {
+        if (this.gameService.player$ === Player.zero) {
             return 'player-turn--zero';
+        }
+        return null
+    }
+
+    get player() {
+        if (this.gameService.player$ === Player.cross) {
+            return Player.cross;
+        }
+        if (this.gameService.player$ === Player.zero) {
+            return Player.zero;
         }
         return null
     }

@@ -27,13 +27,15 @@ export class GameService {
         this.showWinner.next(state);
     }
 
-    private players = new BehaviorSubject <Player>(Player.cross);
+    private players = new BehaviorSubject<Player>(Player.cross);
     currentPlayer$ = this.players.asObservable();
     changePlayer(player:Player) {
         this.players.next(player);
     }
 
-
+    get player$(){
+        return this.players.value
+    }
 
     checkWinCombination() {
         const winCombination = [
