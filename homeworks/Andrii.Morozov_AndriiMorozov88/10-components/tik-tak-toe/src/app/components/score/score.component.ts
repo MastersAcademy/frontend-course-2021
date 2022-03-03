@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { GameService } from '../../services/game.service';
 import { Player } from '../../enums/player_enum';
 import { Icons } from '../../enums/icon_enum';
-import { ScoreService } from 'src/app/services/score.service';
+import { GameService } from 'src/app/services/game.service';
 
 @Component({
     selector: 'app-score',
@@ -14,24 +13,25 @@ export class ScoreComponent {
     playerTwo = Player.zero;
     iconCross = Icons.cross;
     iconZero = Icons.zero;
-    
-    constructor(private gameService: GameService, private scoreService: ScoreService) {}
+
+    constructor(private gameService: GameService) {}
 
     currentReset() :void {
         this.gameService.currentReset()
+
     }
 
     resetAll(): void {
-        this.scoreService.countPlayerOne = 0;
-        this.scoreService.countPlayerTwo = 0;
         this.gameService.currentReset();
+        this.gameService.countPlayerOne = 0;
+        this.gameService.countPlayerTwo = 0;
     }
 
     get countPlayerOne() {
-        return this.scoreService.countPlayerOne;
+        return this.gameService.countPlayerOne;
     }
 
     get countPlayerTwo() {
-        return this.scoreService.countPlayerTwo;
+        return this.gameService.countPlayerTwo;
     }
 }

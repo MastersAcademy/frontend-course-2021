@@ -11,7 +11,8 @@ export class PlayerIconComponent {
     @Input() player!: Player;
     @Input() size!: number;
     sprite = 'assets/sprite.svg#';
-    get iconType() {
+
+    get icon() {
         if (this.player === Player.cross) {
             return Icons.cross
         }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Player } from './../enums/player_enum';
-import { ScoreService } from './score.service';
+
 
 @Injectable()
 export class GameService {
@@ -11,10 +11,12 @@ export class GameService {
         [Player.empty,Player.empty,Player.empty]
     ]
 
+    countPlayerOne = 0;
+    countPlayerTwo = 0;
+
     player!:Player;
     fieldsquares: number[] = this.state.flat();
     gameOver!:boolean;
-    constructor (private scoreService: ScoreService) {}
 
     private currentWinner = new Subject<Player>();
     currentWinner$ = this.currentWinner.asObservable();
@@ -31,7 +33,7 @@ export class GameService {
         this.players.next(player);
     }
 
-    checkWinCombination():void {
+    checkWinCombination() {
         const winCombination = [
             [this.fieldsquares[0], this.fieldsquares[1], this.fieldsquares[2]],
             [this.fieldsquares[3], this.fieldsquares[4], this.fieldsquares[5]],
@@ -50,15 +52,17 @@ export class GameService {
         for (let count = 0; count < 8; count++) {
             if (winCombination[count].every(this.isCross)) {
                 this.gameOver = true;
-                this.scoreService.crossWin();
+                this.crossWin();
                 this.currentWinner.next(Player.cross);
                 this.changeWinnerState(true);
+                return
             }
             if (winCombination[count].every(this.isZero)) {
                 this.gameOver = true;
-                this.scoreService.zeroWin();
+                this.zeroWin();
                 this.currentWinner.next(Player.zero);
                 this.changeWinnerState(true);
+                return
             }
         }
     }
@@ -75,6 +79,14 @@ export class GameService {
         return element !== Player.empty
     }
 
+    crossWin(): void {
+        this.countPlayerOne++
+    }
+
+    zeroWin(): void {
+        this.countPlayerTwo++
+    }
+
     togglePlayer() {
         this.player = this.player === Player.cross ? Player.zero : Player.cross;
         return this.player
@@ -85,7 +97,7 @@ export class GameService {
         this.player = Player.cross;
         this.changePlayer(this.player);
         this.gameOver = false;
-        this.changeWinnerState(false)
+        this.changeWinnerState(false);
     }
 
 }
