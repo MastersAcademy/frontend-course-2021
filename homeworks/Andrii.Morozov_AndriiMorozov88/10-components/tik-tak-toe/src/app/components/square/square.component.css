@@ -1,0 +1,29 @@
+.field__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #C4C4C4;
+  cursor: pointer;
+}
+
+.svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.field__square--cross {
+  background-color: #A5D9F6;
+}
+
+.field__square--zero {
+  background-color: #A5A6F6;
+}
+
+@media (max-width:500px) {
+
+  .field__button {
+    width: 90px;
+    height: 90px;
+  }
+}

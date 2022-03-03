@@ -1,0 +1,30 @@
+.player-turn__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 60px;
+  background: #A5D9F6;
+  max-width: 336px;
+  width: 100%;
+  height: 56px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.player-turn__text {
+  color: #FFF;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.player-turn--cross {
+  background-color: #A5D9F6;
+}
+
+.player-turn--zero {
+  background-color: #A5A6F6;
+}
+
+.player-turn--draw {
+  background-color: #CA6565;
+}

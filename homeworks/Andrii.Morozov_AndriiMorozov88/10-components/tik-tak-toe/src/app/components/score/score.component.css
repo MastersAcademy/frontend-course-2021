@@ -1,0 +1,55 @@
+.game-container {
+  display: flex;
+  margin-top: 60px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player-info {
+  display: flex;
+}
+
+.reset-button {
+  display: flex;
+  border: none;
+  background-color: #78D4F1;
+  color: #FFF;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.player-info--cross {
+  background-color: #A5D9F6;
+}
+
+.player-info--zero {
+  background: #A5A6F6;
+  margin-top: 15px;
+}
+
+.reset-button:hover {
+  background-color: #44636D;
+}
+
+.reset-button--current-game {
+  padding: 18px;
+}
+
+.reset-button--all {
+  padding: 18px 59px
+}
+
+
+@media (max-width: 800px) {
+
+  .game-container {
+    flex-direction: column-reverse;
+  }
+
+  .player-info {
+    margin-top: 20px;
+  }
+}

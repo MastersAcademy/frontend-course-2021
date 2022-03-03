@@ -1,0 +1,14 @@
+<div *ngIf="!gameOver" class="player-turn__container" [ngClass]="''+componentColor">
+    <app-player-icon [size]="35" [player]="player"></app-player-icon>
+    <p class="player-turn__text">Player {{player}} Turn</p>
+</div>
+<div *ngIf="isCross" class="player-turn__container player-turn--cross">
+    <p class="player-turn__text">Player 1 Won</p>
+</div>
+<div *ngIf="isZero" class="player-turn__container player-turn--zero">
+    <p class="player-turn__text ">Player 2 Won</p>
+</div>
+<div *ngIf="isDraw" class="player-turn__container player-turn--draw">
+    <p class="player-turn__text ">DRAW!!!!!</p>
+</div>
+

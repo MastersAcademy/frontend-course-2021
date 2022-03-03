@@ -1,0 +1,8 @@
+<div class="field">
+  <app-square
+    *ngFor="let square of gameService.fieldsquares; let i=index"
+    (click)="move(i)"
+    [player]="square"
+  ></app-square>
+</div>
+
