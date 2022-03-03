@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service';
-import { Player } from '../../enums/player_enum';
 @Component({
     selector: 'app-field',
     templateUrl: './field.component.html',
@@ -16,12 +15,7 @@ export class FieldComponent implements OnInit {
     }
 
     move(index:number):void {
-        if (this.gameService.fieldsquares[index] !== Player.empty) return;
-        if (this.gameService.gameOver) return;
-        this.gameService.fieldsquares[index] = this.gameService.player;
-        this.gameService.checkWinCombination();
-        this.gameService.togglePlayer();
-        this.gameService.changePlayer(this.gameService.player);
+        this.gameService.move(index)
     }
 }
 

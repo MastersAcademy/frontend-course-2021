@@ -27,11 +27,13 @@ export class GameService {
         this.showWinner.next(state);
     }
 
-    private players = new BehaviorSubject <Player>(1);
+    private players = new BehaviorSubject <Player>(Player.cross);
     currentPlayer$ = this.players.asObservable();
     changePlayer(player:Player) {
         this.players.next(player);
     }
+
+
 
     checkWinCombination() {
         const winCombination = [
@@ -90,6 +92,15 @@ export class GameService {
     togglePlayer() {
         this.player = this.player === Player.cross ? Player.zero : Player.cross;
         return this.player
+    }
+
+    move(index:number):void {
+        if (this.fieldsquares[index] !== Player.empty) return;
+        if (this.gameOver) return;
+        this.fieldsquares[index] = this.player;
+        this.checkWinCombination();
+        this.togglePlayer();
+        this.changePlayer(this.player);
     }
 
     currentReset():void {
