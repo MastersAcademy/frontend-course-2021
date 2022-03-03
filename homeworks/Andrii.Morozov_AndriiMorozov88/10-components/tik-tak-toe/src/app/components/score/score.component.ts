@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { GameService } from '../../services/game.service';
 import { Player } from '../../enums/player_enum';
 import { Icons } from '../../enums/icon_enum';
-import { ScoreService } from '../../services/score.service';
+import { ScoreService } from 'src/app/services/score.service';
 
 @Component({
     selector: 'app-score',
@@ -14,6 +14,7 @@ export class ScoreComponent {
     playerTwo = Player.zero;
     iconCross = Icons.cross;
     iconZero = Icons.zero;
+    
     constructor(private gameService: GameService, private scoreService: ScoreService) {}
 
     currentReset() :void {

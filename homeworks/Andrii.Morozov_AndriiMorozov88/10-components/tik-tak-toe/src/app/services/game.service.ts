@@ -16,8 +16,8 @@ export class GameService {
     gameOver!:boolean;
     constructor (private scoreService: ScoreService) {}
 
-    private winPlayer = new Subject<Player>();
-    currentWinner$ = this.winPlayer.asObservable();
+    private currentWinner = new Subject<Player>();
+    currentWinner$ = this.currentWinner.asObservable();
 
     private showWinner = new BehaviorSubject<boolean>(false)
     showWinner$ = this.showWinner.asObservable();
@@ -43,7 +43,7 @@ export class GameService {
             [this.fieldsquares[2], this.fieldsquares[4], this.fieldsquares[6]]
         ]
         if (this.fieldsquares.every(this.isDraw)) {
-            this.winPlayer.next(Player.empty);
+            this.currentWinner.next(Player.empty);
             this.changeWinnerState(true);
         }
 
@@ -51,13 +51,13 @@ export class GameService {
             if (winCombination[count].every(this.isCross)) {
                 this.gameOver = true;
                 this.scoreService.crossWin();
-                this.winPlayer.next(Player.cross);
+                this.currentWinner.next(Player.cross);
                 this.changeWinnerState(true);
             }
             if (winCombination[count].every(this.isZero)) {
                 this.gameOver = true;
                 this.scoreService.zeroWin();
-                this.winPlayer.next(Player.zero);
+                this.currentWinner.next(Player.zero);
                 this.changeWinnerState(true);
             }
         }

@@ -9,7 +9,6 @@ import { Player } from '../../enums/player_enum';
 export class SquareComponent  {
     @Input() player!:Player;
     @Input() icon!:string;
-    iconSize = 100;
     get componentColor () {
         if (this.player === Player.cross) {
             return 'field__square--cross';

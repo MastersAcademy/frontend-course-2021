@@ -9,11 +9,10 @@ import { GameService } from 'src/app/services/game.service';
 })
 export class PlayerTurnComponent {
     player!: Player;
-    iconSize = 35;
     gameOver!:boolean;
-    cross!: boolean;
-    zero!: boolean;
-    draw!: boolean
+    isCross!: boolean;
+    isZero!: boolean;
+    isDraw!: boolean
 
     constructor(private gameService: GameService) {
         this.gameService.currentPlayer$.subscribe(player => this.player = player);
@@ -21,30 +20,30 @@ export class PlayerTurnComponent {
         this.gameService.currentWinner$.subscribe(winner => {
             if (winner === Player.cross) {
                 this.gameService.showWinner$.subscribe(gameOver => {
-                    this.cross = gameOver;
-                    this.draw = false;
-                    this.zero = false
+                    this.isCross = gameOver;
+                    this.isDraw = false;
+                    this.isZero = false
                 });
             }
 
             if (winner === Player.zero) {
                 this.gameService.showWinner$.subscribe(gameOver => {
-                    this.zero = gameOver;
-                    this.cross = false;
-                    this.draw = false
+                    this.isZero = gameOver;
+                    this.isCross = false;
+                    this.isDraw = false
                 });
             }
             if (winner === Player.empty) {
                 this.gameService.showWinner$.subscribe(gameOver => {
-                    this.draw = gameOver;
-                    this.cross = false;
-                    this.zero = false
+                    this.isDraw = gameOver;
+                    this.isCross = false;
+                    this.isZero = false
                 });
             }
         });
     }
 
-    get componentColor () {
+    get componentColor() {
         if (this.player === Player.cross) {
             return 'player-turn--cross';
         }

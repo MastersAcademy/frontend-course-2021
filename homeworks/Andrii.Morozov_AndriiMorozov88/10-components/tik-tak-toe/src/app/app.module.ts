@@ -9,6 +9,7 @@ import { PlayerTurnComponent } from './components/player-turn/player-turn.compon
 import { GameService } from './services/game.service';
 import { IconComponent } from './components/icon/icon.component';
 import { PlayerComponent } from './components/player/player.component';
+import { PlayerIconComponent } from './components/player-icon/player-icon.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { PlayerComponent } from './components/player/player.component';
         PlayerTurnComponent,
         IconComponent,
         PlayerComponent,
+        PlayerIconComponent,
     ],
     imports: [
         BrowserModule,
