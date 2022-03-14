@@ -1,0 +1,59 @@
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.img-box {
+  width: 40%;
+  height: 0;
+  padding-top: 50%;
+  position: relative;
+  margin: 20px 0;
+}
+
+.card-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+}
+
+.card-info {
+  width: 100%;
+}
+
+.card__description {
+  width: 100%;
+  overflow-x: hidden;
+  padding: 10px 0;
+}
+
+.card__ingredients {
+  overflow-x: hidden;
+  word-wrap: break-word;
+  padding: 10px 0;
+}
+
+.card__difficulty {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+}
+
+.card__name {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.bold {
+  font-weight: 700;
+}

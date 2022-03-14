@@ -1,0 +1,70 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(45deg, #FFF, #FFF1F1);
+  scroll-behavior: smooth;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: none;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.field__button {
+  width: 150px;
+  height: 45px;
+  background-color: #F82323;
+  border-radius: 10px;
+  color: #FFF;
+  font-weight: 600;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-name: pulsations-red;
+  animation-fill-mode: backwards;
+}
+
+.field {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.field__input {
+  width: 250px;
+  height: 45px;
+  border-radius: 20px;
+  font-size: inherit;
+  padding: 20px;
+  border: 1px solid #161617;
+}
+
+.field__button:hover {
+  background-color: #BE1717;
+}
+
+.field__input:focus,
+.field__input:hover {
+  box-shadow: 0 0 12px #FF0202;
+}
+
+@keyframes pulsations-red {
+  0% { box-shadow: 0 0 0 0 rgb(245, 169, 169); }
+
+  100% { box-shadow: 0 0 0 10px rgb(243 243 243 / 0%); }
+}
+

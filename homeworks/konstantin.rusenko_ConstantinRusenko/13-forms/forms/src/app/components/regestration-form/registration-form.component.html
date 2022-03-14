@@ -1,0 +1,48 @@
+<div class="registration-page-wrapper">
+    <form class="registration-form" autocomplete="off"
+        *ngIf="registrationForm"
+        [formGroup]="registrationForm"
+        (ngSubmit)="submitRegistrationForm()">
+
+        <h1 class="h1">
+            Register:
+        </h1>
+
+        <app-input
+            class="form-input"
+            [parentForm]="registrationForm"
+            fieldName="name"
+            label="Name"
+            formControlName="name">
+        </app-input>
+
+        <app-input
+            class="form-input"
+            [parentForm]="registrationForm"
+            fieldName="email"
+            label="Email"
+            formControlName="email">
+        </app-input>
+
+        <app-password-input
+            class="form-input"
+            [parentForm]="registrationForm"
+            fieldName="password"
+            label="Password"
+            formControlName="password"> 
+        </app-password-input>
+
+        <div class="registration-remember-wrapper">
+            <input class="remember-login-control" type="checkbox" formControlName="rememberLoginControl" (change)="toggleRemember()">
+            <p>Remember me</p>
+        </div>
+
+        <div class="button-row">
+            <button class="button-submit" type="submit"
+                [disabled]="registrationForm?.invalid"
+                [ngClass]="{'button': registrationForm?.invalid === false}">
+                Sign Up
+            </button>
+        </div>
+    </form>
+</div>

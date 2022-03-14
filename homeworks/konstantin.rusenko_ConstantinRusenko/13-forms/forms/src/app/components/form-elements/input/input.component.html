@@ -1,0 +1,21 @@
+<div class="form-input">
+    <label class="form-label" [for]="fieldName">
+        <span class="is-required">
+            {{label}}
+        </span>
+        <app-field-errors class="error"
+            [formField]="formField">
+        </app-field-errors>
+    </label>
+    <input #inp type="text" class="input"
+        [ngClass]="{
+            'has-error':
+                formField?.invalid
+                && formField?.dirty
+        }"
+        [id]="fieldName"
+        [name]="fieldName"
+        [value]="value"
+        (input)="changed(inp.value)"
+        (blure)="touched()">
+</div>
