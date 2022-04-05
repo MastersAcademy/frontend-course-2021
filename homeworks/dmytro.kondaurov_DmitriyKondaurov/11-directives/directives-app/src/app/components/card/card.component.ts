@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {AppInterface} from '../../app.interface';
 
 @Component({
     selector: 'app-card',
@@ -8,14 +11,22 @@ import { Component, OnInit } from '@angular/core';
 export class CardComponent implements OnInit {
   stickerColor = 'green';
   cookSpeed = 'slow';
+  cards: AppInterface[] | undefined;
+  $data: Observable<AppInterface[]> | undefined;
 
-  constructor() {
+  constructor(private http: HttpClient) {
       return
   }
 
   ngOnInit(): void {
-      console.log('init component')
-  }
+      this.$data = this.http.get<AppInterface[]>(
+          'https://api.punkapi.com/v2/beers'
+      );
 
+      this.$data.subscribe(recList => {
+          this.cards = recList;
+          console.log(this.cards);
+      })
+  }
 
 }
