@@ -13,9 +13,5 @@ export class CardComponent {
   @Input() cards: Irecipes[] | undefined = [];
 
 
-  constructor() {
-      return
-  }
-
 
 }

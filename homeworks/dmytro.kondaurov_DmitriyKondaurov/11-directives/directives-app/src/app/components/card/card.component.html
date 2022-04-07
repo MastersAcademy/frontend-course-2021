@@ -1,17 +1,24 @@
+<ul class="list" >
 <li *ngFor="let card of cards;" class="list__item recipe">
   <div class="recipe__stick"  [style.border-bottom-color]="stickerColor">{{cookSpeed}}</div>
   <div><img class="recipe__image" src="#" alt="dish image" width="150px" height="150px"></div>
   <div>
     <h1 class="recipe__name">{{card.name}}</h1>
-    <p class="recipe__description">Description:{{card.description}}</p>
-    <div class="recipe__food-pairing"><span>Food pairing:</span><span>{{card.food_pairing}}</span></div>
-    <div
-      class="recipe__ingredients"><span>Ingredients:</span><span>{{ card.ingredients | names }}</span></div>
-    <div class="recipe__time-cook">
-      <span>Time to cook:</span>
-      <span class="recipe__time-cook--number">{{ card.method | duration }}</span>
+    <h2 class="recipe__description">Description:</h2>
+    <textarea rows="5" cols="30">{{card.description}}</textarea>
+    <div class="recipe__food-pairing-el">
+      <span class="recipe__food-pairing-title">Food pairing:</span>
+      <textarea rows="5" cols="30" class="recipe__food-pairing-content">{{card.food_pairing}}</textarea>
+    </div>
+    <div class="recipe__ingredients-el">
+      <span class="recipe__ingredients-title">Ingredients:</span>
+      <textarea rows="5" cols="30" class="recipe__ingredients-content">{{card.ingredients | names }}</textarea>
+    </div>
+    <div class="recipe__time-cook-el">
+      <span class="recipe__time-cook-title">Time to cook:</span>
+      <span class="recipe__time-cook-volume">{{ card.method | duration }}</span>
       <span>minutes</span>
     </div>
   </div>
 </li>
-
+</ul>

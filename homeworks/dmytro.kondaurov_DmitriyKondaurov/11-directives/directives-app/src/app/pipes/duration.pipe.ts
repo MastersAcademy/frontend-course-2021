@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {DurationCalcService} from '../services/duration-calc.service';
-import {Imethod} from '../app.interface';
+import { DurationCalcService } from '../services/duration-calc.service';
+import { Imethod } from '../app.interface';
 
 @Pipe({
     name: 'duration'

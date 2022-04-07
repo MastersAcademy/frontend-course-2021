@@ -4,6 +4,7 @@ import {Imethod} from '../app.interface';
 @Injectable({
     providedIn: 'root'
 })
+
 export class DurationCalcService {
 
     calc(obj: Imethod | any): number {
