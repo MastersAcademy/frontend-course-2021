@@ -1,32 +1,21 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
-import {AppInterface} from '../../app.interface';
+import {Component, Input } from '@angular/core';
+import {Irecipes} from '../../app.interface';
 
 @Component({
     selector: 'app-card',
     templateUrl: './card.component.html',
     styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
+
+export class CardComponent {
   stickerColor = 'green';
   cookSpeed = 'slow';
-  cards: AppInterface[] | undefined;
-  $data: Observable<AppInterface[]> | undefined;
+  @Input() cards: Irecipes[] | undefined = [];
 
-  constructor(private http: HttpClient) {
+
+  constructor() {
       return
   }
 
-  ngOnInit(): void {
-      this.$data = this.http.get<AppInterface[]>(
-          'https://api.punkapi.com/v2/beers'
-      );
-
-      this.$data.subscribe(recList => {
-          this.cards = recList;
-          console.log(this.cards);
-      })
-  }
 
 }

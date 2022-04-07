@@ -1,4 +1,4 @@
-export interface AppInterface {
+export interface Irecipes {
   id: number;
   name: string;
   tagline: string;
@@ -15,14 +15,14 @@ export interface AppInterface {
   attenuation_level: number;
   volume: object;
   boil_volume: object;
-  method: object;
-  ingredients: Ingredients;
+  method: Imethod;
+  ingredients: Iingredients;
   food_pairing: [];
   brewers_tips: string;
   contributed_by: string;
 }
 
-export interface Ingredients {
+export interface Iingredients {
   malt: [{
     name: string;
     amount: object;
@@ -35,3 +35,10 @@ export interface Ingredients {
   }];
   yeast: string;
 }
+
+export interface Imethod {
+  fermentation: object;
+  mash_temp: object[];
+  twist: string | null;
+}
+

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Ingredients} from '../app.interface';
+import {Iingredients} from '../app.interface';
 import {NamesSearchService} from '../services/names-search.service';
 
 @Pipe({
@@ -9,7 +9,7 @@ export class NamesPipe implements PipeTransform {
 
     constructor(private finedNames: NamesSearchService) {}
 
-    transform(value: Ingredients): string[] {
+    transform(value: Iingredients): string[] {
         return this.finedNames.check(value);
     }
 

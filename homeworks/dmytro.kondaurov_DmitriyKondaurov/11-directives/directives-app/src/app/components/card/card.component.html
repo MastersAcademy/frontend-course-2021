@@ -9,7 +9,7 @@
       class="recipe__ingredients"><span>Ingredients:</span><span>{{ card.ingredients | names }}</span></div>
     <div class="recipe__time-cook">
       <span>Time to cook:</span>
-      <span class="recipe__time-cook--number">75</span>
+      <span class="recipe__time-cook--number">{{ card.method | duration }}</span>
       <span>minutes</span>
     </div>
   </div>

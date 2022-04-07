@@ -4,12 +4,14 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
 import {HttpClientModule} from '@angular/common/http';
 import { NamesPipe } from './pipes/names.pipe';
+import { DurationPipe } from './pipes/duration.pipe';
 
 @NgModule({
     declarations: [
         AppComponent,
         CardComponent,
-        NamesPipe
+        NamesPipe,
+        DurationPipe
     ],
     imports: [
         BrowserModule,
