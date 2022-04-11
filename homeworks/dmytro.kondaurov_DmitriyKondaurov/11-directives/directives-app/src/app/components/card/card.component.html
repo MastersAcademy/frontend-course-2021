@@ -1,0 +1,30 @@
+<ul class="list" >
+<li *ngFor="let card of cards;" class="list__item recipe">
+  <svg height="90" width="90" class="recipe__stick">
+    <polygon points="10,0 40,0 90,50 90,80" [appHighlight]="color" curCompDuration="{{card.method | duration}}"/>
+    Sorry, your browser does not support inline SVG.
+    <text x="15" y="15" fill="black" transform="rotate(45 20,40)">{{card.method | speedTest}}</text>
+  </svg>
+  <div><img class="recipe__image" src="{{card.image_url}}" alt="dish image" width="50px" ></div>
+  <div>
+    <h1 class="recipe__name">{{card.name}}</h1>
+    <h2 class="recipe__description">Description:</h2>
+    <textarea rows="5" cols="30">{{card.description}}</textarea>
+    <div class="recipe__food-pairing-el">
+      <span class="recipe__food-pairing-title">Food pairing:</span>
+      <textarea rows="5" cols="30" class="recipe__food-pairing-content">{{card.food_pairing}}</textarea>
+    </div>
+    <div class="recipe__ingredients-el">
+      <span class="recipe__ingredients-title">Ingredients:</span>
+      <textarea rows="5" cols="30" class="recipe__ingredients-content">{{card.ingredients | names }}</textarea>
+    </div>
+    <div class="recipe__time-cook-el">
+      <span class="recipe__time-cook-title">Time to cook:</span>
+      <span class="recipe__time-cook-volume" [appHighlight]="color" curCompDuration="{{card.method | duration}}">
+        {{ card.method | duration }}
+      </span>
+      <span>minutes</span>
+    </div>
+  </div>
+</li>
+</ul>
