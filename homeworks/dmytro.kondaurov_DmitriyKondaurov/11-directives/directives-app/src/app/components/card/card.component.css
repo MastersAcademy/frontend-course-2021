@@ -14,6 +14,10 @@
   margin: 10px;
 }
 
+.recipe__image {
+  padding: 0 10px 0 0;
+}
+
 .recipe {
   position: relative;
   display: flex;
@@ -28,24 +32,17 @@
 
 .recipe__stick {
   position: absolute;
-  right: -23px;
-  top: 22px;
-  width: 70px;
-  border-bottom: 20px solid #FFF;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  height: 0;
-  transform: rotate(45deg);
-  text-align: center;
+  right: 0;
+  top: 0;
 }
 
-.recipe__name, .recipe__description {
+.recipe__name, .recipe__description, .recipe__time-cook-volume {
   margin: 0;
   padding: 5px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
-.recipe__food-pairing-title, .recipe__ingredients-title, .recipe__time-cook {
+.recipe__food-pairing-title, .recipe__ingredients-title, .recipe__time-cook-title {
   padding: 5px;
   font-size: 18px;
 }

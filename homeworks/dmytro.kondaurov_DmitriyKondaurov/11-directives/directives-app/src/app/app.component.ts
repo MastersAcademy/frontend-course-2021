@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
 
       this.$data.subscribe(recList => {
           this.recipes = recList;
-          console.log(this.recipes);
       })
 
   }

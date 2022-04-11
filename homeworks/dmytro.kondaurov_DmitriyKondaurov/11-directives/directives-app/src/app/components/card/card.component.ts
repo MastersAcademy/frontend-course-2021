@@ -8,10 +8,9 @@ import {Irecipes} from '../../app.interface';
 })
 
 export class CardComponent {
-  stickerColor = 'green';
-  cookSpeed = 'slow';
+  color = '';
+  cookSpeed = 'fast';
   @Input() cards: Irecipes[] | undefined = [];
-
-
+  @Input() curCompDuration: number | string = '';
 
 }

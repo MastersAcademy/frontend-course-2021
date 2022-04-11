@@ -5,13 +5,17 @@ import { CardComponent } from './components/card/card.component';
 import {HttpClientModule} from '@angular/common/http';
 import { NamesPipe } from './pipes/names.pipe';
 import { DurationPipe } from './pipes/duration.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
+import { SpeedTestPipe } from './pipes/speed-test.pipe';
 
 @NgModule({
     declarations: [
         AppComponent,
         CardComponent,
         NamesPipe,
-        DurationPipe
+        DurationPipe,
+        HighlightDirective,
+        SpeedTestPipe
     ],
     imports: [
         BrowserModule,
